@@ -1,6 +1,6 @@
 # Slovník pojmů
 
-Verze 1.39 · 3. 10. 2026 · **Závazný pro všechny texty na webu.** Nový pojem se na stránce nepoužije bez zápisu sem.
+Verze 1.40 · 4. 10. 2026 · **Závazný pro všechny texty na webu.** Nový pojem se na stránce nepoužije bez zápisu sem.
 
 Slovník pojmů říká, **jakými slovy mluvíme k rodičům a uchazečům**, aby tatáž věc nezněla na každé stránce jinak. Doplňuje [slovník ukazatelů](slovnik-ukazatelu.md), který říká, **jak se veličina jmenuje v datech a jak se počítá**. Kde se oba liší, platí: v datech, kódu a API název ze slovníku ukazatelů, v textu stránky pojem odsud.
 
@@ -91,6 +91,7 @@ Slovník pojmů říká, **jakými slovy mluvíme k rodičům a uchazečům**, a
 | **maturitu udělalo X z Y přihlášených** | úspěšní ze všech přihlášených ke společné části (tak ji počítá CERMAT) | u rozdílu přihlášených a konajících: „1 ke zkoušce nešel“ | úspěšnost bez jmenovatele, X z Y konajících vedle podílu z přihlášených |
 | **jak si škola vede** | nadpis oddílu s maturitou a inspekcí | není potřeba | kvalita školy, hodnocení školy |
 | **souběžní uchazeči**, **kam se hlásí stejní uchazeči** | uchazeči, kteří měli na přihlášce tento obor i obor jiné školy | „uchazeči, kteří měli na přihlášce i tento obor“ | konkurence, konkurenční škola |
+| **směr studia** | skupina oborů podle toho, co se v nich učí, podle číselníku oborů MŠMT (první dvojčíslí kódu oboru); lycea podle předmětu, víceletá gymnázia zvlášť (`src/lib/smery-studia.ts`) | „obory seskupené podle toho, co se v nich učí, podle číselníku oborů MŠMT“; u rozcestníku vždy i to, že pořadí směrů nic neříká o obtížnosti přijetí | obor (pro celou skupinu), zaměření (to je část oboru), okruh oborů (ten vzniká z přihlášek), kategorie, žebříček |
 | **okruh oborů** | *Okruh oborů* ze slovníku ukazatelů: obory jednoho města, které měli titíž uchazeči často zároveň na přihlášce; návrh ke schválení ([okruhy oborů](navrh-shluky-oboru-2027.md)) | „obory, mezi kterými se uchazeči rozhodovali: měli je často zároveň na přihlášce“; v bloku vždy i „obory na okraji okruhu se mohou mezi ročníky přesunout do sousedního“ | shluk, cluster, trh, skupina oborů (to jsou podobné školy), konkurence, kategorie |
 | **spíš výš**, **spíš níž v okruhu** | *Přednost v okruhu*: jak často měli uchazeči obor na přihlášce výš než ostatní obory okruhu | „uchazeči ho měli na přihlášce spíš výš než ostatní obory okruhu“ a u rad věta „pořadí na přihlášce šanci na přijetí nemění“ | oblíbenost, žádanost, první volba okruhu, pojistka (má jiný význam v Simulátoru přijímaček), škola první volby (je to kohorta podle celé země) |
 | **„Které další obory v okolí uchazeči také volí“** | nadpis bloku na stránce oboru a oddílu okruhů na stránce města; „v okolí“ znamená podle přihlášek uchazečů, ne podle vzdálenosti | pod nadpisem: „obory, které měli na přihlášce i uchazeči tohoto oboru, bez ohledu na to, ve které obci leží“; u souhrnu po obcích „56 % uchazečů mělo na přihlášce i obor v Praze“ | podobné obory (okruh neříká, že jsou si obsahově podobné), lidé také volí, v okolí jako vzdálenost, blízké školy |
@@ -147,6 +148,7 @@ Slovník pojmů říká, **jakými slovy mluvíme k rodičům a uchazečům**, a
 
 | Verze | Změna |
 |---|---|
+| 1.40 | Pojem **směr studia** pro členění stránky města ([přehled oborů ve městě](navrh-prehled-oboru-ve-meste-2027.md), 4. 10. 2026). Okruhy oborů se na stránce města přestávají zobrazovat, zůstávají na stránce oboru. |
 | 1.39 | Nadpis **„Které další obory v okolí uchazeči také volí“** (rozhodnutí vlastníka 3. 10. 2026); „v okolí“ podle přihlášek, ne podle vzdálenosti; „podobné obory“ se nepoužívá. |
 | 1.38 | **Okruh oborů** a **spíš výš / spíš níž v okruhu** pro návrh okruhů oborů ve městě (3. 10. 2026, issue #277). Na webu zatím nejsou; „shluk“, „trh“ a „skupina oborů“ se v textu pro rodiče nepoužívají. |
 | 1.37 | Zprávy z **výpisu aktualit** na stránce školy (1. 10. 2026): patička bloku říká „z výpisu aktualit na webu školy, naposledy přečteno …“ a připojí výhradu, že titulky a data mohou být přečtené chybně. Věta „objevilo se …“ se u nich nevysvětluje, čtečka bere jen položky s datem. |

@@ -13,10 +13,12 @@ import React from 'react';
 import { text } from './_zavadec.mjs';
 import { renderToStaticMarkup } from 'react-dom/server';
 import { getCityStats, MESTA } from '../src/lib/cityData.ts';
-import { CitySchoolsTable } from '../src/components/CitySchoolsTable.tsx';
 import { ZARAZENI_POPISEK } from '../src/lib/obor-profil.ts';
-import { dalsiOboryVeMeste } from '../src/lib/kontext-prihlasek.ts';
-import { DalsiOboryVeMeste } from '../src/components/DalsiOboryVeMeste.tsx';
+import { dalsiOboryVeMeste, nactiIndexRejstriku } from '../src/lib/kontext-prihlasek.ts';
+import { getSchoolAnalysis } from '../src/lib/data.ts';
+import { sestavKartySkol, velikostMesta } from '../src/lib/mesto-karty.ts';
+import { smerOboru, SMERY_STUDIA } from '../src/lib/smery-studia.ts';
+import { SkolyPodleSmeru } from '../src/components/mesto/SkolyPodleSmeru.tsx';
 
 /** Města napříč velikostmi; celá stovka by test protáhla bez užitku. */
 const VZOREK = ['Praha', 'Pardubice', 'Karlovy Vary', 'Chrudim'];
@@ -124,16 +126,25 @@ test('každé město ze seznamu má aspoň jednu nabídku', async () => {
 // čtou text, který uvidí čtenář.
 // ---------------------------------------------------------------------------
 
-/** Vykreslí přehled města do statického HTML. */
-async function vykresliPrehled(mesto) {
+/** Karty škol města stejně jako na stránce (podklad z katalogu, school_analysis a rejstříku). */
+async function kartyMesta(mesto) {
   const stats = await getCityStats(mesto);
   assert.ok(stats, `${mesto}: getCityStats nic nevrátil`);
-  return {
-    html: renderToStaticMarkup(
-      React.createElement(CitySchoolsTable, { schools: stats.schools, rok: 2026, rokDruhehoKola: 2026 }),
-    ),
-    stats,
-  };
+  const klice = new Set(stats.schools.map(r => `${r.redizo}_${r.id.split('_')[1] ?? ''}`));
+  const dalsi = await dalsiOboryVeMeste(mesto, klice);
+  const kanonickeNazvy = new Map();
+  for (const s of Object.values(await getSchoolAnalysis())) {
+    const redizo = s.id.split('_')[0];
+    if (!kanonickeNazvy.has(redizo)) kanonickeNazvy.set(redizo, s.nazev);
+  }
+  const nazvyKatalogu = new Map(stats.schools.map(r => [r.redizo, r.nazev_display]));
+  const { identifikace } = await nactiIndexRejstriku();
+  const karty = sestavKartySkol(stats.schools, dalsi.obory, { nazvyKatalogu, kanonickeNazvy, adresySidel: identifikace });
+  return { stats, dalsi, karty };
+}
+
+function vykresli(karty, velikost = 'velke', rok = 2026) {
+  return renderToStaticMarkup(React.createElement(SkolyPodleSmeru, { skoly: karty, rok, velikost, hlavicka: null }));
 }
 
 /** Klíče `REDIZO_KKOV`, které hlavní přehled města vede. */
@@ -143,257 +154,124 @@ async function klaceVPrehledu(mesto) {
   return new Set(stats.schools.map(r => `${r.redizo}_${r.id.split('_')[1] ?? ''}`));
 }
 
-/** HTML na čistý text, aby se dalo hledat ve větách přes značky. */
-
-test('vykreslení: nesplněné podmínky školy jsou v textu u „místa pro všechny“', async () => {
-  const stats = await getCityStats('Pardubice');
-  const nadPrahem = stats.schools.filter(r => {
-    const prihlasky = r.prihlasky2026 ?? r.prihlasky2025;
-    const c = r.nesplniliPodminky;
-    return c && prihlasky && (c >= (r.prijatiZeSoutezicich ?? 0) || c >= 0.2 * prihlasky);
-  });
-  assert.ok(nadPrahem.length > 0, 'v Pardubicích není nabídka nad prahem podmínek');
-
-  // Vykresluje se po jedné nabídce; hledání v celém městě by prošlo i tehdy,
-  // kdyby věta u „místa pro všechny“ zmizela a zbyla jen u ostatních stupňů.
-  for (const r of nadPrahem.slice(0, 5)) {
-    const vykresleny = text(renderToStaticMarkup(
-      React.createElement(CitySchoolsTable, { schools: [r], rok: 2026, rokDruhehoKola: 2026 }),
-    ));
-    assert.ok(
-      vykresleny.includes('nedosáhlo požadavků školy'),
-      `u „${r.obor}“ (${r.zarazeni}) chybí věta o nesplněných podmínkách, `
-      + `přestože ${r.nesplniliPodminky} přihlášených jich nedosáhlo`,
-    );
-    assert.ok(
-      vykresleny.includes(String(r.nesplniliPodminky)),
-      `u „${r.obor}“ chybí počet ${r.nesplniliPodminky}`,
-    );
+test('každý kód oboru v katalogu i v dalších oborech má směr studia', async () => {
+  // Zbytková skupina „ostatní“ znamená, že mapa KKOV → směr zaostala za daty.
+  for (const mesto of ['Praha', 'Brno', 'Ostrava', 'Pardubice']) {
+    const { karty } = await kartyMesta(mesto);
+    const bezSmeru = karty.flatMap(k => k.radky).filter(r => r.smer === 'ostatni').map(r => r.id);
+    assert.deepEqual(bezSmeru, [], `${mesto}: obory bez směru studia`);
   }
-
-  // Nejméně jedna z nich musí být „místo pro všechny“ — to je jádro nálezu 2.
-  const misto = nadPrahem.filter(r => r.zarazeni === 'kapacita_nerozhodovala');
-  assert.ok(misto.length > 0, 'vzorek neobsahuje „místo pro všechny“ nad prahem podmínek');
+  assert.equal(smerOboru('79-41-K/41'), 'gymnazia');
+  assert.equal(smerOboru('79-41-K/81'), 'viceleta');
+  assert.equal(smerOboru('79-41-K/61'), 'viceleta');
+  assert.equal(smerOboru('78-42-M/01'), 'technika');
+  assert.equal(smerOboru('78-42-M/04'), 'zdravotnictvi');
+  assert.equal(smerOboru('78-42-M/06'), 'gymnazia');
+  assert.equal(smerOboru('69-41-L/02'), 'zdravotnictvi');
+  assert.equal(smerOboru('65-51-H/01'), 'sluzby');
+  assert.equal(SMERY_STUDIA.at(-1).id, 'ostatni');
 });
 
-test('vykreslení: předchozí ročník je v textu i u „místa pro všechny“', async () => {
-  const stats = await getCityStats('Praha');
-  const zmena = stats.schools.filter(r =>
-    r.zarazeni === 'kapacita_nerozhodovala'
-    && r.zarazeniPredchozi
-    && r.zarazeniPredchozi !== 'kapacita_nerozhodovala');
-  assert.ok(zmena.length > 0, 'v Praze není nabídka, která se posunula na „místo pro všechny“');
-
-  // Vykreslí se **jen ta jedna nabídka**. Hledat text v celém městě nestačí:
-  // „v roce 2025“ nese i 264 jiných pražských nabídek, takže by test prošel
-  // i po vrácení předčasného returnu, který historii u této kategorie skryl.
-  for (const r of zmena.slice(0, 5)) {
-    const vykresleny = text(renderToStaticMarkup(
-      React.createElement(CitySchoolsTable, { schools: [r], rok: 2026, rokDruhehoKola: 2026 }),
-    ));
-    assert.ok(
-      vykresleny.includes(`v roce ${r.predchoziRok} ${ZARAZENI_POPISEK[r.zarazeniPredchozi]}`),
-      `u „${r.obor}“ se nevykreslilo předchozí zařazení `
-      + `(čekáno „v roce ${r.predchoziRok} ${ZARAZENI_POPISEK[r.zarazeniPredchozi]}“)`,
-    );
+test('karty: každá nabídka i každý další obor je právě jednou, karta = jedno REDIZO', async () => {
+  for (const mesto of ['Brno', 'Pardubice', 'Tišnov']) {
+    const { stats, dalsi, karty } = await kartyMesta(mesto);
+    const ids = karty.flatMap(k => k.radky.map(r => r.id));
+    assert.equal(ids.length, new Set(stats.schools.map(r => r.id)).size + dalsi.obory.length, `${mesto}: počet řádků nesedí`);
+    assert.equal(new Set(ids).size, ids.length, `${mesto}: některý obor je na kartách dvakrát`);
+    assert.equal(new Set(karty.map(k => k.redizo)).size, karty.length, `${mesto}: dvě karty pro jednu školu`);
+    // Žádná karta nenese holý zkrácený název z rejstříku.
+    for (const k of karty) assert.notEqual(k.nazev, 'Gymnázium', `${mesto}: karta ${k.redizo} bez ulice`);
   }
 });
 
-test('vykreslení: karta školy odkazuje na přehled školy', async () => {
-  const { html, stats } = await vykresliPrehled('Pardubice');
-  const podleSkoly = new Map();
-  for (const r of stats.schools) {
-    podleSkoly.set(r.redizo, [...(podleSkoly.get(r.redizo) ?? []), r]);
+test('karty: škola odkazuje na svůj přehled a obor na stránku oboru, která existuje', async () => {
+  const { stats, karty } = await kartyMesta('Pardubice');
+  const prehledy = new Map(stats.schools.map(r => [r.redizo, r.slugSkoly]));
+  for (const k of karty) {
+    if (prehledy.has(k.redizo)) assert.equal(k.href, `/skola/${prehledy.get(k.redizo)}`, `${k.redizo}: jiný přehled školy`);
   }
-  const viceNabidek = [...podleSkoly.entries()].filter(([, v]) => v.length > 1);
-  assert.ok(viceNabidek.length > 0, 'v Pardubicích není škola s víc nabídkami');
-
-  for (const [redizo, nabidky] of viceNabidek) {
-    const odkazy = [...html.matchAll(new RegExp(`href="/skola/(${redizo}[^"]*)"`, 'g'))]
-      .map(m => m[1]);
-    assert.ok(odkazy.length > 0, `škola ${redizo} není v přehledu odkázaná`);
-    assert.deepEqual(
-      [...new Set(odkazy)], [nabidky[0].slugSkoly],
-      `škola ${redizo} odkazuje jinam než na svůj přehled`,
-    );
-  }
-
-  // Podstata nálezu 5: cíl odkazu nesmí záviset na tom, které nabídky jsou
-  // zobrazené. Vykreslíme tutéž školu vždy jen s jednou z jejích nabídek a
-  // adresa musí zůstat stejná.
-  //
-  // Kontrola „adresa neobsahuje název oboru“ se tu nedá použít: u AGYS —
-  // Anglického gymnázia a SOŠ je slovo „gymnázium“ součástí názvu školy,
-  // takže by hlásila planý poplach nad správnou adresou.
-  for (const [redizo, nabidky] of viceNabidek) {
-    const adresyPodleFiltru = new Set();
-    for (const jedna of nabidky) {
-      const castecne = renderToStaticMarkup(
-        React.createElement(CitySchoolsTable, { schools: [jedna], rok: 2026, rokDruhehoKola: 2026 }),
-      );
-      const nalezene = [...castecne.matchAll(/href="\/skola\/([^"]+)"/g)].map(m => m[1]);
-      assert.equal(
-        nalezene.length, 1,
-        `${redizo}: karta s jednou nabídkou má ${nalezene.length} odkazů na školu`,
-      );
-      adresyPodleFiltru.add(nalezene[0]);
-    }
-    assert.equal(
-      adresyPodleFiltru.size, 1,
-      `škola ${redizo} mění adresu podle zobrazené nabídky: ${[...adresyPodleFiltru].join(' | ')}`,
-    );
-  }
+  const radky = karty.flatMap(k => k.radky.filter(r => r.druh === 'jpz'));
+  const sOdkazem = radky.filter(r => r.href);
+  assert.ok(sOdkazem.length >= radky.length * 0.9, `odkaz na obor má jen ${sOdkazem.length} z ${radky.length} nabídek`);
+  // Adresu oboru skládá sdílený modul, takže vždy začíná REDIZO školy.
+  for (const r of sOdkazem) assert.ok(r.href.startsWith(`/skola/${r.id.split('_')[0]}-`), `${r.id}: ${r.href}`);
+  assert.equal(new Set(sOdkazem.map(r => r.href)).size, sOdkazem.length, 'dvě nabídky sdílejí stránku oboru');
 });
 
-test('vykreslení: obor s doloženým výsledkem nenese „nevypsán“', async () => {
-  const { html, stats } = await vykresliPrehled('Praha');
-  const vykresleny = text(html);
-  const doklad = stats.schools.filter(r => r.zarazeni !== null);
-  assert.ok(doklad.length > 0, 'v Praze není nabídka se zařazením');
-  // Počet hlášení „nevypsán“ nesmí přesáhnout počet nabídek, které v ročníku chybí.
-  const hlaseni = (vykresleny.match(/nevypsán/g) ?? []).length;
-  const chybejici = stats.schools.filter(r => r.chybiVRocniku).length;
-  assert.ok(
-    hlaseni <= chybejici,
-    `„nevypsán“ se vykreslil ${hlaseni}×, ale v ročníku chybí jen ${chybejici} nabídek`,
-  );
+test('vykreslení: obory bez jednotné zkoušky nenesou obtížnost přijetí', async () => {
+  // Obor bez dat by se s odznakem tvářil jako snadný; tak se rozbil starý index u 386 oborů.
+  const { karty } = await kartyMesta('Chomutov');
+  const jenDalsi = karty
+    .map(k => ({ ...k, radky: k.radky.filter(r => r.druh !== 'jpz') }))
+    .filter(k => k.radky.length);
+  assert.ok(jenDalsi.length > 0, 'v Chomutově nejsou další obory');
+  const html = vykresli(jenDalsi);
+  const odznaky = [...html.matchAll(/rounded-full[^"]*"[^>]*>([^<]+)</g)].map(m => m[1].trim());
+  for (const popisek of Object.values(ZARAZENI_POPISEK)) {
+    assert.ok(!odznaky.includes(popisek), `obor bez dat nese odznak „${popisek}“`);
+  }
+  assert.match(text(html), /bez jednotné zkoušky/);
 });
 
-test('vykreslení: rozložení obtížnosti odpovídá datům', async () => {
-  const { html, stats } = await vykresliPrehled('Pardubice');
-  const vykresleny = text(html);
-  const pocty = new Map();
-  for (const r of stats.schools) {
-    if (r.zarazeni) pocty.set(r.zarazeni, (pocty.get(r.zarazeni) ?? 0) + 1);
+test('vykreslení: každý obor je v textu, výchozí stav ukazuje všechny směry', async () => {
+  const { karty } = await kartyMesta('Pardubice');
+  const vykresleny = text(vykresli(karty, velikostMesta(karty.flatMap(k => k.radky).filter(r => r.druh === 'jpz').length)));
+  for (const r of karty.flatMap(k => k.radky)) {
+    assert.ok(vykresleny.includes(r.obor), `obor „${r.obor}“ se nevykreslil`);
   }
-  assert.ok(pocty.size > 1, 'v Pardubicích není víc stupňů obtížnosti');
-  for (const [zarazeni, pocet] of pocty) {
-    const popisek = ZARAZENI_POPISEK[zarazeni];
-    assert.ok(
-      new RegExp(`${popisek}[^0-9]*${pocet}\\b`).test(vykresleny),
-      `u stupně „${popisek}“ chybí ve výpisu počet ${pocet}`,
-    );
+  assert.match(vykresleny, /Všechny směry/);
+});
+
+test('vykreslení: počty v čipech směrů a v nabídce obtížnosti odpovídají datům', async () => {
+  const { karty } = await kartyMesta('Brno');
+  const radky = karty.flatMap(k => k.radky);
+  const vykresleny = text(vykresli(karty));
+  for (const s of SMERY_STUDIA) {
+    const pocet = radky.filter(r => r.smer === s.id).length;
+    if (!pocet) continue;
+    assert.ok(new RegExp(`${s.kratce}\\s*${pocet}\\b`).test(vykresleny), `čip „${s.kratce}“ nemá počet ${pocet}`);
   }
-  // Pojem se musí vysvětlit při prvním výskytu v bloku (slovník pojmů).
+  for (const [z, popisek] of Object.entries(ZARAZENI_POPISEK)) {
+    const pocet = radky.filter(r => r.zarazeni === z).length;
+    assert.ok(vykresleny.includes(`${popisek} (${pocet})`), `nabídka obtížnosti „${popisek}“ nemá počet ${pocet}`);
+  }
+  // Pojem se vysvětlí při prvním výskytu v bloku (slovník pojmů).
   assert.match(vykresleny, /soutěžících uchazečů/);
   assert.match(vykresleny, /kdo splnili požadavky školy/);
 });
 
-// ---------------------------------------------------------------------------
-// Další obory ve městě a značka 2. kola
-// ---------------------------------------------------------------------------
-
-test('další obory: nenesou obtížnost přijetí', async () => {
-  // Obor bez jednotné zkoušky žádný výsledek nemá. Kdyby dostal odznak, tvářil
-  // by se jako snadný — přesně tím se rozbil starý index u 386 oborů.
-  const { obory } = await dalsiOboryVeMeste('Chomutov', await klaceVPrehledu('Chomutov'));
-  assert.ok(obory.length > 0, 'v Chomutově nejsou žádné další obory');
-  const html = renderToStaticMarkup(
-    React.createElement(DalsiOboryVeMeste, { obory, minUchazecu: 10 }),
-  );
-  const vykresleny = text(html);
-  // Hledá se odznak, ne slovo: „těžké“ je podřetězcem vysvětlující věty
-  // „jak těžké bylo se na ně dostat“, která v oddílu být má.
-  const odznaky = [...html.matchAll(/rounded-full[^"]*"[^>]*>([^<]+)</g)].map(m => m[1].trim());
-  for (const popisek of Object.values(ZARAZENI_POPISEK)) {
-    assert.ok(
-      !odznaky.includes(popisek),
-      `oddíl dalších oborů nese odznak obtížnosti „${popisek}“, přestože u nich data nejsou`,
-    );
-  }
-  // Ani žádná věta o podílu přijatých, kterou nelze doložit.
-  assert.ok(!vykresleny.includes('přijato '), 'oddíl uvádí počet přijatých, který nemáme');
-  // Musí být vidět, že o nich víme jen název.
-  assert.match(vykresleny, /víme o nich jen název/i);
+test('vykreslení: malé město nemá čipy ani filtry, rok bez registru se nevypíše', async () => {
+  const { karty } = await kartyMesta('Tišnov');
+  const html = vykresli(karty, 'male', null);
+  assert.doesNotMatch(html, /Všechny směry|Hledat školu|S výučním listem/);
+  assert.doesNotMatch(text(html), /v 1\. kole \d{4}/);
 });
+
+test('vykreslení: obor s doloženým výsledkem nenese „nevypsán“', async () => {
+  const { stats, karty } = await kartyMesta('Praha');
+  const hlaseni = (text(vykresli(karty)).match(/nevypsán/g) ?? []).length;
+  const chybejici = stats.schools.filter(r => r.chybiVRocniku).length;
+  assert.ok(hlaseni <= chybejici, `„nevypsán“ ${hlaseni}×, v ročníku chybí jen ${chybejici} nabídek`);
+});
+
+test('vykreslení: podle obtížnosti se neřadí, karty jdou podle názvu školy', async () => {
+  const { karty } = await kartyMesta('Brno');
+  const nazvy = karty.map(k => k.nazev);
+  assert.deepEqual(nazvy, [...nazvy].sort((a, b) => a.localeCompare(b, 'cs')));
+});
+
+// ---------------------------------------------------------------------------
+// Další obory ve městě: podklad
+// ---------------------------------------------------------------------------
 
 test('další obory: dvě školy se stejným názvem zůstanou dvěma kartami', () => {
   // Zkrácený název z rejstříku je u řady škol jen „Gymnázium“; seskupení podle názvu je slilo.
-  const o = (redizo, skola, obor) => ({ klic: `${redizo}_x`, redizo, skola, obor, duvod: 'bez_zkousky' });
-  const html = renderToStaticMarkup(React.createElement(DalsiOboryVeMeste, {
-    obory: [o('1', 'Gymnázium', 'Obor A'), o('2', 'Gymnázium', 'Obor B')], minUchazecu: 10,
-  }));
-  assert.equal((html.match(/rounded-xl border/g) ?? []).length, 2);
-});
-
-test('další obory: každý obor je v textu a skupiny se nemíchají', async () => {
-  const { obory } = await dalsiOboryVeMeste('Pardubice', await klaceVPrehledu('Pardubice'));
-  assert.ok(obory.length > 0, 'v Pardubicích nejsou další obory');
-  const vykresleny = text(renderToStaticMarkup(
-    React.createElement(DalsiOboryVeMeste, { obory, minUchazecu: 10 }),
-  ));
-  for (const o of obory) {
-    assert.ok(vykresleny.includes(o.obor), `obor „${o.obor}“ se nevykreslil`);
-  }
-  // Dva důvody chybění se nesmí slít do jedné věty: u každého platí něco jiného.
-  const bez = obory.filter(o => o.duvod === 'bez_zkousky').length;
-  const jine = obory.filter(o => o.duvod === 'jiny').length;
-  if (bez > 0) assert.match(vykresleny, /Bez jednotné zkoušky/);
-  if (jine > 0) assert.match(vykresleny, /Mimo náš přehled/);
-});
-
-test('další obory: prázdný seznam nevykreslí nic', () => {
-  const html = renderToStaticMarkup(
-    React.createElement(DalsiOboryVeMeste, { obory: [], minUchazecu: 10 }),
-  );
-  assert.equal(html, '', 'oddíl se zobrazuje i bez oborů');
-});
-
-test('značka 2. kola se vykreslí jen u nabídek, které ho měla', async () => {
-  const stats = await getCityStats('Jeseník');
-  assert.ok(stats, 'Jeseník nemá stránku');
-  const s2 = stats.schools.filter(r => r.meloDruheKolo);
-  const bez2 = stats.schools.filter(r => !r.meloDruheKolo);
-  assert.ok(s2.length > 0 && bez2.length > 0, 'v Jeseníku chybí obě skupiny nabídek');
-
-  for (const r of s2.slice(0, 3)) {
-    const vykresleny = text(renderToStaticMarkup(
-      React.createElement(CitySchoolsTable, { schools: [r], rok: 2026, rokDruhehoKola: 2026 }),
-    ));
-    assert.match(
-      vykresleny, /v roce 2026 tu bylo i 2\. kolo/,
-      `u „${r.obor}“ chybí značka 2. kola`,
-    );
-  }
-  for (const r of bez2.slice(0, 3)) {
-    const vykresleny = text(renderToStaticMarkup(
-      React.createElement(CitySchoolsTable, { schools: [r], rok: 2026, rokDruhehoKola: 2026 }),
-    ));
-    assert.ok(
-      !vykresleny.includes('2. kolo'),
-      `u „${r.obor}“ je značka 2. kola, přestože ho nevypsal`,
-    );
-  }
-});
-
-test('značka 2. kola se bez ročníku z registru nevykreslí', async () => {
-  // Rok se nikdy nepíše napevno; bez registru se značka raději neukáže,
-  // než aby tvrdila ročník, který nemáme doložený.
-  const stats = await getCityStats('Jeseník');
-  const s2 = stats.schools.find(r => r.meloDruheKolo);
-  const vykresleny = text(renderToStaticMarkup(
-    React.createElement(CitySchoolsTable, { schools: [s2], rok: 2026, rokDruhehoKola: null }),
-  ));
-  assert.ok(!vykresleny.includes('2. kolo'), 'značka se ukázala i bez ročníku z registru');
-});
-
-test('další obory: netvrdí, že se u nich jednotná zkouška koná', async () => {
-  // Příznak `bez_jednotne_zkousky: false` znamená jen „není v kategoriích
-  // C/E/H/J/P“, ne že se zkouška koná: 53 ze 64 oborů skupiny „jiný“ jsou
-  // umělecké obory (KKOV 82-…), kde se JPZ nekoná a rozhoduje talentová zkouška.
-  const { obory } = await dalsiOboryVeMeste('Praha', await klaceVPrehledu('Praha'));
-  const jine = obory.filter(o => o.duvod === 'jiny');
-  assert.ok(jine.length > 0, 'v Praze není žádný obor ve skupině „jiný“');
-  const vykresleny = text(renderToStaticMarkup(
-    React.createElement(DalsiOboryVeMeste, { obory, minUchazecu: 10 }),
-  ));
-  assert.ok(
-    !/Jednotná zkouška se u nich koná/.test(vykresleny),
-    'oddíl tvrdí, že se jednotná zkouška koná, což z příznaku kategorie nevyplývá',
-  );
-  // Většina skupiny jsou umělecké obory; text to musí připustit, ne popřít.
-  const umelecke = jine.filter(o => o.klic.split('_')[1]?.startsWith('82-')).length;
-  assert.ok(umelecke > 0, 've skupině „jiný“ nejsou umělecké obory, předpoklad textu neplatí');
+  const o = (redizo, obor) => ({ klic: `${redizo}_65-51-H/01`, redizo, skola: 'Gymnázium', obor, duvod: 'bez_zkousky' });
+  const karty = sestavKartySkol([], [o('1', 'Kuchař'), o('2', 'Číšník')], {
+    nazvyKatalogu: new Map(), kanonickeNazvy: new Map(),
+    adresySidel: { 1: { adresa: 'Křenová 304, 602 00 Brno' }, 2: { adresa: '17. listopadu 1126, 708 00 Ostrava' } },
+  });
+  assert.deepEqual(karty.map(k => k.nazev), ['Gymnázium, 17. listopadu', 'Gymnázium, Křenová']);
 });
 
 test('další obory: podklad je soupis oborů, ne výběr souběžných voleb', async () => {
@@ -422,46 +300,13 @@ test('další obory: nezdvojují nabídku z hlavního přehledu', async () => {
   }
 });
 
-test('další obory: přiznávají práh, pod kterým obory v seznamu nejsou', async () => {
-  // Zdroj vyřazuje obory s méně než `meze.min_uchazecu` uchazeči, takže seznam
-  // není úplný soupis nabídky. Doložený případ: Praktická škola jednoletá
-  // SVÍTÁNÍ v Pardubicích (600024270_78-62-C/01) v něm není, zatímco dvouletá
-  // se 13 uchazeči ano. Čtenář to musí vědět, jinak seznam vypadá jako úplný.
-  const { obory, minUchazecu } = await dalsiOboryVeMeste(
-    'Pardubice', await klaceVPrehledu('Pardubice'),
-  );
+test('další obory: zdroj nese práh, pod kterým obory v seznamu nejsou', async () => {
+  // Zdroj vyřazuje obory s méně než `meze.min_uchazecu` uchazeči; stránka to říká ve vysvětlivce.
+  // Doložený případ: Praktická škola jednoletá v Pardubicích (600024270_78-62-C/01) v seznamu není,
+  // dvouletá se 13 uchazeči ano.
+  const { obory, minUchazecu } = await dalsiOboryVeMeste('Pardubice', await klaceVPrehledu('Pardubice'));
   assert.equal(typeof minUchazecu, 'number', 'práh ze zdroje se nečte');
-
   const klice = new Set(obory.map(o => o.klic));
-  assert.ok(
-    !klice.has('600024270_78-62-C/01'),
-    'obor pod prahem je v seznamu — zdroj se změnil, přiznání prahu přehodnoť',
-  );
-  assert.ok(
-    klice.has('600024270_78-62-C/02'),
-    'dvouletá varianta nad prahem chybí, i když ji zdroj nese',
-  );
-
-  const vykresleny = text(renderToStaticMarkup(
-    React.createElement(DalsiOboryVeMeste, { obory, minUchazecu }),
-  ));
-  assert.ok(
-    vykresleny.includes('není úplný'),
-    'oddíl netvrdí, že seznam je neúplný, přestože pod prahem obory chybí',
-  );
-  assert.ok(
-    vykresleny.includes(String(minUchazecu)),
-    `oddíl neuvádí práh ${minUchazecu}`,
-  );
-});
-
-test('další obory: bez prahu ze zdroje se věta o neúplnosti neukáže', () => {
-  // Kdyby zdroj práh přestal deklarovat, nesmí se tvrdit konkrétní číslo.
-  const vykresleny = text(renderToStaticMarkup(
-    React.createElement(DalsiOboryVeMeste, {
-      obory: [{ klic: 'X_1', redizo: 'X', skola: 'Škola', obor: 'Obor', duvod: 'bez_zkousky' }],
-      minUchazecu: null,
-    }),
-  ));
-  assert.ok(!vykresleny.includes('není úplný'), 'věta o prahu se ukázala bez čísla ze zdroje');
+  assert.ok(!klice.has('600024270_78-62-C/01'), 'obor pod prahem je v seznamu — zdroj se změnil');
+  assert.ok(klice.has('600024270_78-62-C/02'), 'dvouletá varianta nad prahem chybí');
 });

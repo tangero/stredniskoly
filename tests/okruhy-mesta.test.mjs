@@ -4,8 +4,6 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { createRequire } from 'node:module';
 import ts from 'typescript';
-import React from 'react';
-import { renderToStaticMarkup } from 'react-dom/server';
 
 // Okruhy na stránce města (#277, etapa 2c): výběr okruhů z podkladu a vykreslení oddílu.
 const require = createRequire(import.meta.url);
@@ -19,7 +17,6 @@ function load(relative) {
   return modul.exports;
 }
 const { vyberOkruhu, popisOboruOkruhu, uliceZAdresy } = load('src/lib/okruhy-oboru.ts');
-const { OkruhyVeMeste } = load('src/components/OkruhyVeMeste.tsx');
 
 const obor = (klic, uchazecu) => ({ klic, obec: 'Brno', uchazecu, ukotven: true });
 const okruh = (id, uchazecu, obory, presun) => ({ id, uchazecu, obory, presun_zajmu_v_okruhu: presun });
@@ -58,19 +55,6 @@ test('věta o přesunu jen nad šumem', () => {
   assert.equal(o(false).presunNadSumem, false);
 });
 
-test('oddíl: nadpis, tři největší obory v názvu, nástavby zvlášť, přesun jen s příznakem', () => {
-  const radek = (k, skola) => ({ klic: k, skola, obor: 'Gymnázium', doplnek: null, href: null, obec: null, uchazecu: 100, zarazeni: null, bezJednoteZkousky: false });
-  const okruhy = [{ id: 1, uchazecu: 400, presun: { od: 2025, do: 2026 }, radky: ['A', 'B', 'C', 'D'].map((s, i) => radek(`${i}_x`, `Škola ${s}`)) }];
-  const nastavby = [{ id: 2, uchazecu: 90, presun: null, radky: [radek('7_n', 'Škola N'), radek('8_n', 'Škola M'), radek('9_n', 'Škola O')] }];
-  const html = renderToStaticMarkup(React.createElement(OkruhyVeMeste, { okruhy, nastavby, rok: 2026 }));
-  assert.match(html, /Které další obory v okolí uchazeči také volí/);
-  assert.match(html, /Škola A · Škola B · Škola C a další/);
-  assert.match(html, /Kam po výučním listu/);
-  assert.equal((html.match(/mezi ročníky 2025 a 2026 přesouvá/g) ?? []).length, 1);
-  assert.doesNotMatch(html, /oblíben|žádan|pojistk|shluk/i);
-  assert.equal(renderToStaticMarkup(React.createElement(OkruhyVeMeste, { okruhy: [], nastavby: [], rok: 2026 })), '');
-});
-
 test('řádek okruhu: název školy s ulicí z katalogu, ne holé „Gymnázium“ z rejstříku', () => {
   const z = (nazevDisplay, zamereni, delka = 4) => ({ nazevDisplay, obor: 'Gymnázium', zamereni, delka });
   const katalog = new Map([
@@ -99,10 +83,3 @@ test('ulice z adresy rejstříku', () => {
   assert.equal(uliceZAdresy(undefined), null);
 });
 
-test('řádek okruhu odkazuje na školu a pod názvem nese obor, délku a obec', () => {
-  const r = { klic: '1_x', skola: 'Gymnázium, Křenová', obor: 'Gymnázium', doplnek: '4leté', href: '/skola/1-gymnazium-krenova', obec: 'Tišnov', uchazecu: 100, zarazeni: null, bezJednoteZkousky: false };
-  const okruhy = [{ id: 1, uchazecu: 300, presun: null, radky: [r, { ...r, klic: '2_x', skola: 'B', href: null }, { ...r, klic: '3_x', skola: 'C' }] }];
-  const html = renderToStaticMarkup(React.createElement(OkruhyVeMeste, { okruhy, nastavby: [], rok: 2026 }));
-  assert.match(html, /<a [^>]*href="\/skola\/1-gymnazium-krenova"[^>]*>Gymnázium, Křenová<\/a>/);
-  assert.match(html, /Gymnázium · 4leté · Tišnov/);
-});

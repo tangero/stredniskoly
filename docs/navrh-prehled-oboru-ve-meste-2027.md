@@ -1,6 +1,6 @@
 # Návrh: přehled oborů ve městě (stránka města, druhá verze)
 
-Verze 0.1 · 4. 10. 2026 · Stav: **návrh ke schválení**, oprava řádků „Gymnázium“ je hotová (oddíl 1)
+Verze 0.2 · 4. 10. 2026 · Stav: **zrealizováno ve větvi `zadani/mesto-karty-podle-smeru`** (oddíl 9), oprava řádků „Gymnázium“ hotová (oddíl 1)
 
 Zadání vlastníka ze 4. 10. 2026 k [náhledu Brna](https://stredniskoly-6a7ka66ga-tangeros-projects.vercel.app/mesto/brno):
 
@@ -251,8 +251,21 @@ Odznak „středně těžké“ má na webu šedé pozadí `slate-400` (#94a3b8)
 
 Před etapou A navrhuji ukázat vizuální maketu na skutečných datech Brna a Tišnova.
 
+## 9. Co se nakonec udělalo
+
+Vlastník 4. 10. 2026 zvolil: čtenář je rodič i uchazeč stejnou měrou, úspěch je krátký seznam oborů ke kliknutí, výstupem přímá přestavba stránky. Ze tří vylosovaných struktur (karty škol podle směru, nejdřív krátký seznam, rejstřík se směry vlevo) vybral **karty škol podle směru**. Proti oddílu 4 to znamená:
+
+- **Škola zůstává kartou** (rozhodnutí z 21. 9. 2026), směr studia ji neseskupuje, ale **zužuje**: čipy směrů s počty v tmavém pásu pod nadpisem vyberou směr a zůstanou jen karty škol, které ho učí, a v nich jen jeho obory.
+- **Řádek oboru** podle 4.2: obor, délka, ročník u víceletých gymnázií, zaměření, obtížnost přijetí, místa; vede na stránku oboru (adresu skládá `adresa-oboru.mjs`). Učební obory a konzervatoře jsou na kartách svých škol se značkou výuční list a bez obtížnosti.
+- **Velikosti** podle 4.3 (`velikostMesta`): malé město jen karty, střední a velké čipy, přepínač maturita / výuční list a výběr obtížnosti, velké navíc hledání. Na telefonu jsou výběr obtížnosti a hledání pod tlačítkem „Upřesnit výběr“, aby byla první karta v prvním výhledu.
+- **Odebráno**: okruhy, karty podle typu školy, samostatný oddíl dalších oborů, tři součty za město, věta s podílem, pozice na přihlášce, přihlášky na místo, body a značka 2. kola v řádku (vše je na stránce oboru). „Kam se uchazeči hlásí i jinam“ (4.6) a pruh obtížnosti u směru (4.1) zatím nejsou: první potřebuje zápis ukazatele, druhý se do čipů nevešel.
+- **Název školy na kartě**: plný název z katalogu (`nazev`) s ulicí, bez právní formy (`nazevSUlici`). U části škol je i `nazev` zkratka z rejstříku („Bezpečnost. práv. akad.“); delší tvar mají soubory přihlášek CERMAT, převzetí je otevřené.
+- **Vada dat**: katalog 2026 nese nabídku SŠ KNIH v Brně (66-43-M/01) dvakrát se stejným id; karta ji ukazuje jednou.
+- Odznak „středně těžké“ má `slate-500` (kontrast 4,8 : 1).
+
 ## Historie
 
 | Verze | Datum | Změna |
 |---|---|---|
+| 0.2 | 4. 10. 2026 | přestavba podle volby vlastníka: karty škol zúžené směrem studia (oddíl 9) |
 | 0.1 | 4. 10. 2026 | první verze; oprava řádků „Gymnázium“ a slévání škol v dalších oborech hotová |

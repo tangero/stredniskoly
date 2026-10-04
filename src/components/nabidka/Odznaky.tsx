@@ -16,7 +16,8 @@ import {
 export const ODSTIN_OBTIZNOSTI: Record<ZarazeniObtiznosti, string> = {
   velmi_tezke: 'bg-slate-800 text-white',
   tezke: 'bg-slate-600 text-white',
-  stredne_tezke: 'bg-slate-400 text-white',
+  // slate-400 s bílým písmem měl kontrast 2,6 : 1; slate-500 má 4,8 : 1 (WCAG AA).
+  stredne_tezke: 'bg-slate-500 text-white',
   vetsina_uspela: 'bg-slate-200 text-slate-800',
   kapacita_nerozhodovala: 'bg-slate-100 text-slate-700',
 };
