@@ -1,0 +1,169 @@
+{
+  "rok_testu": 2024,
+  "rok_pasem": 2026,
+  "dosah_bodu": 10,
+  "druhy": {
+    "4": {
+      "oboru_s_hranici": 2499,
+      "prumerny_rozdil": 0.291,
+      "prumerny_rozdil_abs": 2.619,
+      "podil_rozdil_aspon_5": 0.089,
+      "zmena_skupiny_vsechny_obory": 0.064,
+      "zmena_skupiny_obory_v_dosahu": 0.171,
+      "terminy": [
+        {
+          "klic": "1-radny",
+          "resitelu": 88482,
+          "prumerny_rozdil": 2.691,
+          "prumerny_rozdil_abs": 2.691,
+          "podil_rozdil_aspon_5": 0,
+          "zmena_skupiny_vsechny_obory": 0.078,
+          "zmena_skupiny_obory_v_dosahu": 0.173,
+          "prevedeno_po_10_bodech": {
+            "0": 0,
+            "10": 12,
+            "20": 23,
+            "30": 33,
+            "40": 43,
+            "50": 53,
+            "60": 63,
+            "70": 72,
+            "80": 81,
+            "90": 91,
+            "100": 100
+          }
+        },
+        {
+          "klic": "2-radny",
+          "resitelu": 86551,
+          "prumerny_rozdil": -2.108,
+          "prumerny_rozdil_abs": 2.547,
+          "podil_rozdil_aspon_5": 0.178,
+          "zmena_skupiny_vsechny_obory": 0.051,
+          "zmena_skupiny_obory_v_dosahu": 0.169,
+          "prevedeno_po_10_bodech": {
+            "0": 0,
+            "10": 12,
+            "20": 21,
+            "30": 30,
+            "40": 39,
+            "50": 48,
+            "60": 56,
+            "70": 66,
+            "80": 75,
+            "90": 86,
+            "100": 99
+          }
+        }
+      ]
+    },
+    "6": {
+      "oboru_s_hranici": 68,
+      "prumerny_rozdil": 2.307,
+      "prumerny_rozdil_abs": 2.76,
+      "podil_rozdil_aspon_5": 0.156,
+      "zmena_skupiny_vsechny_obory": 0.08,
+      "zmena_skupiny_obory_v_dosahu": 0.18,
+      "terminy": [
+        {
+          "klic": "1-radny",
+          "resitelu": 7420,
+          "prumerny_rozdil": 4.3,
+          "prumerny_rozdil_abs": 4.3,
+          "podil_rozdil_aspon_5": 0.309,
+          "zmena_skupiny_vsechny_obory": 0.125,
+          "zmena_skupiny_obory_v_dosahu": 0.27,
+          "prevedeno_po_10_bodech": {
+            "0": 8,
+            "10": 15,
+            "20": 25,
+            "30": 34,
+            "40": 44,
+            "50": 54,
+            "60": 64,
+            "70": 75,
+            "80": 84,
+            "90": 92,
+            "100": 98
+          }
+        },
+        {
+          "klic": "2-radny",
+          "resitelu": 7212,
+          "prumerny_rozdil": 0.315,
+          "prumerny_rozdil_abs": 1.221,
+          "podil_rozdil_aspon_5": 0.004,
+          "zmena_skupiny_vsechny_obory": 0.035,
+          "zmena_skupiny_obory_v_dosahu": 0.091,
+          "prevedeno_po_10_bodech": {
+            "0": 8,
+            "10": 12,
+            "20": 21,
+            "30": 30,
+            "40": 39,
+            "50": 49,
+            "60": 61,
+            "70": 73,
+            "80": 84,
+            "90": 93,
+            "100": 98
+          }
+        }
+      ]
+    },
+    "8": {
+      "oboru_s_hranici": 263,
+      "prumerny_rozdil": -2.391,
+      "prumerny_rozdil_abs": 2.464,
+      "podil_rozdil_aspon_5": 0.137,
+      "zmena_skupiny_vsechny_obory": 0.067,
+      "zmena_skupiny_obory_v_dosahu": 0.152,
+      "terminy": [
+        {
+          "klic": "1-radny",
+          "resitelu": 18591,
+          "prumerny_rozdil": -1.171,
+          "prumerny_rozdil_abs": 1.317,
+          "podil_rozdil_aspon_5": 0,
+          "zmena_skupiny_vsechny_obory": 0.037,
+          "zmena_skupiny_obory_v_dosahu": 0.091,
+          "prevedeno_po_10_bodech": {
+            "0": 2,
+            "10": 11,
+            "20": 21,
+            "30": 30,
+            "40": 39,
+            "50": 48,
+            "60": 58,
+            "70": 68,
+            "80": 78,
+            "90": 89,
+            "100": 98.5
+          }
+        },
+        {
+          "klic": "2-radny",
+          "resitelu": 17972,
+          "prumerny_rozdil": -3.612,
+          "prumerny_rozdil_abs": 3.612,
+          "podil_rozdil_aspon_5": 0.275,
+          "zmena_skupiny_vsechny_obory": 0.096,
+          "zmena_skupiny_obory_v_dosahu": 0.213,
+          "prevedeno_po_10_bodech": {
+            "0": 2,
+            "10": 9,
+            "20": 19,
+            "30": 28,
+            "40": 37,
+            "50": 46,
+            "60": 55,
+            "70": 65,
+            "80": 76,
+            "90": 88,
+            "100": 98
+          }
+        }
+      ]
+    }
+  }
+}
