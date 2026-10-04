@@ -20,7 +20,7 @@ vypnuté nebo selhalo; napiš to do PR a protokol nepiš.
 
 ## 2. Ověření
 
-Projdi každé kritérium „Hotovo když“ z issue v Chromiu přes Playwright (je předinstalovaný; spouštěj
+Projdi každé kritérium „Hotovo když“ (K1, K2…) a protikritérium z „Nesmí se dotknout“ (P1, P2…) z issue v Chromiu přes Playwright (je předinstalovaný; spouštěj
 s `executablePath: '/opt/pw-browsers/chromium'`, nic neinstaluj) na šířce **390 px** a **1280 px**.
 Když náhled vrátí 401, je zapnutá ochrana náhledů: bez proměnné `VERCEL_AUTOMATION_BYPASS_SECRET`
 v prostředí relace (hlavička `x-vercel-protection-bypass`) ověřit nejde; napiš to do PR jako blokaci.
@@ -35,6 +35,11 @@ a řádek `Commit:` s prvními 7 znaky **aktuálního** commitu PR, a nepustí p
 „nesplněno“. Počítá se jen protokol od vlastníka, asistenta zadání nebo `github-actions[bot]`. Po každém
 novém commitu napiš nový protokol.
 
+Má-li zadání, které PR uzavírá (`Closes #N`), kritéria s označením K a P, protokol má pro každé z nich
+řádek, který označením začíná (`| K1: … |`). Přeškrtnuté (zrušené) kritérium se neuvádí, rozdělené
+se uvádí po částech (K3.1, K3.2). Když řádek chybí, brána PR nepustí a vypíše chybějící označení. Zadání
+bez označení a etapy („Souvisí s #N“) se kontrolují jako dřív.
+
 ```
 ## Protokol z preview
 
@@ -43,7 +48,9 @@ Náhled: https://….vercel.app
 
 | kritérium | adresa | 390 px | 1280 px |
 |---|---|---|---|
-| … | /skola/… | splněno | splněno |
+| K1: … | /skola/… | splněno | splněno |
+| K2: … | /skola/… | splněno | splněno |
+| P1: … | sitemap | splněno | splněno |
 
 Mimo kritéria: konzole bez chyb, bez vodorovného posouvání.
 

@@ -36,24 +36,32 @@ body:
     id: hotovo
     attributes:
       label: Hotovo když
-      description: Akceptační kritéria jako checklist, každé ověřitelné na Vercel preview.
+      description: "Kritéria jako checklist. Každé má označení K1, K2… a za pomlčkou, čím se ověří (adresa a šířka náhledu, test, příkaz). Jedno kritérium = jedna kontrola s výsledkem ano/ne; místo „A a B“ napište dvě kritéria. Označení se nepřečíslovávají: rozdělené K3 má K3.1 a K3.2, zrušené kritérium zůstane přeškrtnuté (~~K4: …~~). Protokol z preview musí mít řádek pro každé K a P, jinak ho brána nepustí."
       value: |
-        - [ ] 
-        - [ ] 
-        - [ ] Lint, testy a build prošly
+        - [ ] K1: … - ověření: náhled /…, 390 a 1280 px
+        - [ ] K2: … - ověření: …
+        - Lint, typy, testy a build hlídá CI.
     validations:
       required: true
   - type: textarea
     id: omezeni
     attributes:
       label: Nesmí se dotknout / omezení
-      description: Co se nesmí změnit (stránky, data, API, SEO adresy…). Změna produkčních dat v Neonu je dovolená jen s migrací, která je výslovně uvedená tady.
+      description: "Co se nesmí změnit (stránky, data, API, SEO adresy…). U změn webu aspoň jedno ověřitelné protikritérium s označením P1, P2… a způsobem ověření, například „P1: adresy v sitemap beze změny - ověření: npm run build“. Změna produkčních dat v Neonu je dovolená jen s migrací, která je výslovně uvedená tady."
       value: |
+        - P1: … - ověření: …
         - Žádné refaktory mimo zadání.
         - Produkční data v Neonu beze změny (migrace: žádná).
         - Cizí servery: žádné (jinak uvést server, endpointy, rychlost, data a důvod; před použitím ohlásit v issue a počkat na schválení, CLAUDE.md pravidlo 7).
     validations:
       required: true
+  - type: textarea
+    id: otazky
+    attributes:
+      label: Otevřené otázky
+      description: Co zatím nevíte a ovlivní řešení. Claude Code nezačne, dokud otázky nejsou zodpovězené nebo přesunuté mimo rozsah (CLAUDE.md, pravidlo 8). Nevíte-li nic, nechte prázdné.
+    validations:
+      required: false
   - type: textarea
     id: test
     attributes:

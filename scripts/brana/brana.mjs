@@ -16,6 +16,9 @@ export const STITKY_HLASENI = ['bug-report', 'portal-skoly', 'feature-request', 
 const HODINA = 60 * 60 * 1000;
 const ZDROJ = /^Zdroj:\s*(briefing \d{4}-\d{2}-\d{2}|oprava od školy \d{4}-\d{2}-\d{2}-\d{9}|vlastník)\s*$/im;
 const ODKAZ_NA_ISSUE = /\b(?:close[sd]?|fix(?:e[sd])?|resolve[sd]?|souvisí s|souvisi s)\s*:?\s*#(\d+)/gi;
+const UZAVRENI_ISSUE = /\b(?:close[sd]?|fix(?:e[sd])?|resolve[sd]?)\s*:?\s*#(\d+)/gi;
+// Řádek kritéria v těle zadání: „- [ ] K1: …“, „- P2: …“, zrušené „- [ ] ~~K3: …~~“.
+const RADEK_KRITERIA = /^\s*[-*]\s+(?:\[[ xX]\]\s+)?(~~)?\s*([KP]\d+(?:\.\d+)*)\s*:/;
 
 // Záznamy, které brána sama píše do komentářů (autor BOT). Jinému autorovi nevěří.
 export const ZNACKA = {
@@ -52,6 +55,34 @@ export function propojenaIssues(telo = '') {
   const cisla = new Set();
   for (const m of (telo || '').matchAll(ODKAZ_NA_ISSUE)) cisla.add(Number(m[1]));
   return [...cisla];
+}
+
+/** Čísla issues, která PR uzavírá (Closes #N); etapa se „Souvisí s #N“ mezi nimi není. */
+export function uzaviranaIssues(telo = '') {
+  const cisla = new Set();
+  for (const m of (telo || '').matchAll(UZAVRENI_ISSUE)) cisla.add(Number(m[1]));
+  return [...cisla];
+}
+
+/**
+ * Označení kritérií (K1, K3.1) a protikritérií (P1) z řádků seznamu v těle zadání. Přeškrtnuté
+ * kritérium je zrušené a protokol ho neuvádí; označení se nepřečíslovávají.
+ */
+export function oznaceniKriterii(telo = '') {
+  const platna = new Set();
+  for (const radek of (telo || '').replace(/\r\n?/g, '\n').split('\n')) {
+    const m = radek.match(RADEK_KRITERIA);
+    if (m && !m[1]) platna.add(m[2]);
+  }
+  return [...platna];
+}
+
+/** Označení, pro která protokol nemá řádek. Řádek tabulky nebo seznamu začíná označením. */
+export function chybejiciVProtokolu(oznaceni, teloProtokolu = '') {
+  return oznaceni.filter((o) => {
+    const vzor = new RegExp(`^\\s*(?:\\|\\s*|[-*]\\s+)?${o.replace(/\./g, '\\.')}(?!\\.?\\d)`, 'm');
+    return !vzor.test(teloProtokolu);
+  });
 }
 
 /** Oddíl „Rozsah“ z těla issue; bez něj celé tělo. Normalizovaný, aby otisk nezávisel na koncích řádků. */
@@ -234,7 +265,7 @@ export function rozbor(soubory, konfig) {
  * Poslední protokol z preview pro aktuální hlavu PR (oddíl 11). Repozitář je veřejný, proto se počítá
  * jen protokol od vlastníka, asistenta zadání nebo github-actions[bot]; tělo PR jen u důvěryhodného autora.
  */
-export function protokol(pr, konfig) {
+export function protokol(pr, konfig, issues = []) {
   const smi = (autor) => autor === BOT || duveryhodny(autor, konfig);
   const kratke = pr.hlava.sha.slice(0, 7);
   // Tělo PR nemá čas úpravy; updated_at je pozdější nebo stejný, tedy opatrnější.
@@ -244,6 +275,12 @@ export function protokol(pr, konfig) {
     .sort((a, b) => cas(b.cas) - cas(a.cas));
   if (!texty.length) return { ok: false, duvod: `chybí protokol z preview pro commit ${kratke}` };
   if (/(^|[^\p{L}])nesplněno/iu.test(texty[0].telo)) return { ok: false, duvod: 'protokol z preview obsahuje nesplněné kritérium' };
+  // Pokrytí kritérií K a P z uzavíraných zadání; zadání bez označení se posuzují jako dřív.
+  const uzavirana = new Set(uzaviranaIssues(pr.telo));
+  for (const i of issues.filter((i) => uzavirana.has(i.cislo))) {
+    const chybi = chybejiciVProtokolu(oznaceniKriterii(i.telo), texty[0].telo);
+    if (chybi.length) return { ok: false, duvod: `protokol z preview neuvádí kritéria z issue #${i.cislo}: ${chybi.join(', ')}` };
+  }
   return { ok: true, telo: texty[0].telo };
 }
 
@@ -289,7 +326,7 @@ export function vyhodnot({ pr, soubory, issues, konfig, zamrznuti, ted, predchoz
 
   let protokolTelo = '';
   if (!a.jenBezPreview) {
-    const p = protokol(pr, konfig);
+    const p = protokol(pr, konfig, issues);
     if (!p.ok) blokuje.push(p.duvod);
     else protokolTelo = p.telo;
   }
