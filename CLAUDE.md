@@ -61,6 +61,9 @@ Nastavení GitHubu (formuláře, tabule projektu, ochrana `main`) popisuje `docs
    Výjimka: když issue nebo vlastník projektu určí dodávku **po etapách**, má každá etapa vlastní větev
    (`zadani/<N>-etapa-<M>-<kratky-popis>`) a PR, který na issue odkazuje („Souvisí s #N“); `Closes #N` nese
    jen PR poslední etapy. Titulek PR podle issue (například „Fáze 2 / etapa M: …“).
+   **Drobný úkol projektu**, který Patrick rozhodl v rozhovoru, zapiš jako issue s dokladem `Zdroj: vlastník`
+   a připoj ho jako sub-issue k issue projektu (`POST /repos/tangero/stredniskoly/issues/<projekt>/sub_issues`,
+   `sub_issue_id` je `id` úkolu). PR nese `Closes #<úkol>`; schválený projekt ho pustí jako etapu bez lhůty.
 3. **Nikdy nepushuj do `main`; slučuj jen skriptem** `node scripts/brana/sloucit.mjs <PR>`, a to jen když je
    v `.github/rezimy.yml` na `main` `slucovani_ai: true`. Do té doby slučuje Patrick. Nikdy neslučuj tlačítkem,
    `gh pr merge` ani přímým voláním API. Žádný force-push do cizích větví. **Štítky `schvaleno` a `zamitnuto`

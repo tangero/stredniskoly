@@ -14,7 +14,7 @@ export const BOT = 'github-actions[bot]';
 export const STITKY_HLASENI = ['bug-report', 'portal-skoly', 'feature-request', 'puvod:hlaseni', 'puvod:email'];
 
 const HODINA = 60 * 60 * 1000;
-const ZDROJ = /^Zdroj:\s*(briefing \d{4}-\d{2}-\d{2}|oprava od školy \d{4}-\d{2}-\d{2}-\d{9}|vlastník)\s*$/im;
+export const ZDROJ = /^Zdroj:\s*(briefing \d{4}-\d{2}-\d{2}|oprava od školy \d{4}-\d{2}-\d{2}-\d{9}|vlastník)\s*$/im;
 const ODKAZ_NA_ISSUE = /\b(?:close[sd]?|fix(?:e[sd])?|resolve[sd]?|souvisí s|souvisi s)\s*:?\s*#(\d+)/gi;
 
 // Záznamy, které brána sama píše do komentářů (autor BOT). Jinému autorovi nevěří.
@@ -269,6 +269,17 @@ export function zamrznuto(zamrznuti, ted) {
  * `predchozi` je { stav, od } z poslední kontroly brány pro tento PR a commit (externiId).
  * `duvody` jsou věty pro souhrn kontroly; při úspěchu popisují, proč PR prošel.
  */
+/**
+ * Sub-issue patří ke schválenému projektu: rodič je otevřený, má štítek `projekt`, nečeká na rozhodnutí
+ * (`navrh`, `zamitnuto`) a má platný souhlas vlastníka nebo doklad „Zdroj:“ od vlastníka či asistenta.
+ * Drobný úkol zapsaný z rozhodnutí vlastníka (vlastní doklad) se pak slučuje jako etapa, bez lhůty.
+ */
+export function schvalenyProjekt(rodic, konfig) {
+  if (!rodic || rodic.stav !== 'open' || !rodic.stitky.includes('projekt')) return false;
+  if (rodic.stitky.some((s) => s === 'navrh' || s === 'zamitnuto' || STITKY_HLASENI.includes(s))) return false;
+  return souhlasIssue(rodic, konfig).platny || (ZDROJ.test(rodic.telo || '') && duveryhodny(rodic.autor, konfig));
+}
+
 export function vyhodnot({ pr, soubory, issues, konfig, zamrznuti, ted, predchozi = null }) {
   const r = konfig.rezimy;
   const blokuje = [];
@@ -278,6 +289,7 @@ export function vyhodnot({ pr, soubory, issues, konfig, zamrznuti, ted, predchoz
 
   if (stopPlati(pr, konfig)) blokuje.push('PR má štítek stop (nebo ho odebral jiný účet než ten, kdo ho přidal, či vlastník)');
   for (const i of issues) if (stopPlati(i, konfig)) blokuje.push(`issue #${i.cislo} má štítek stop`);
+  for (const i of issues) if (i.rodic && stopPlati(i.rodic, konfig)) blokuje.push(`projekt #${i.rodic.cislo} (rodič issue #${i.cislo}) má štítek stop`);
   if (pr.draft) blokuje.push('PR je rozpracovaný (draft)');
 
   const vRozsahuRutiny = !a.h2.length && !a.k.length && a.radky <= r.rutina_max_radku && a.oblasti.length <= 1;
@@ -351,6 +363,10 @@ export function vyhodnot({ pr, soubory, issues, konfig, zamrznuti, ted, predchoz
         ri = 'K';
         blokuje.push(`issue #${i.cislo} založil účet ${i.autor || 'neznámý'}; doklad „Zdroj:“ platí jen od vlastníka nebo asistenta (${s.duvod})`);
       } else if (i.stitky.includes('projekt')) ri = 'E';
+      else if (schvalenyProjekt(i.rodic, konfig)) {
+        ri = 'E';
+        info.push(`issue #${i.cislo} je úkol schváleného projektu #${i.rodic.cislo}`);
+      }
       else if (i.stitky.includes('rutina') || pr.stitky.includes('rutina')) {
         if (vRozsahuRutiny) ri = 'R';
         else {

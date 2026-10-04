@@ -103,7 +103,18 @@ const udalosti = async (api, cislo) =>
     .filter((u) => u.event === 'labeled' || u.event === 'unlabeled')
     .map((u) => ({ akce: u.event, stitek: u.label?.name, cas: u.created_at, aktor: u.actor?.login }));
 
-export async function nactiIssue(api, cislo) {
+/** Rodič sub-issue (projekt), nebo null. Rodič se načítá bez vlastního rodiče. */
+async function nactiRodice(api, cislo) {
+  let r;
+  try {
+    r = await api(`repos/${REPO}/issues/${cislo}/parent`);
+  } catch {
+    return null; // 404: issue nemá rodiče
+  }
+  return r?.number ? nactiIssue(api, r.number, { sRodicem: false }) : null;
+}
+
+export async function nactiIssue(api, cislo, { sRodicem = true } = {}) {
   const i = await api(`repos/${REPO}/issues/${cislo}`);
   if (i.pull_request) return null;
   return {
@@ -114,6 +125,7 @@ export async function nactiIssue(api, cislo) {
     telo: i.body || '',
     komentare: await komentare(api, cislo),
     udalosti: await udalosti(api, cislo),
+    rodic: sRodicem ? await nactiRodice(api, cislo) : null,
   };
 }
 

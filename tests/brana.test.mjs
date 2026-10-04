@@ -116,6 +116,36 @@ test('etapa projektu s dokladem projde hned', () => {
   assert.equal(v.uspech, true, v.duvody.join('; '));
 });
 
+test('úkol schváleného projektu (sub-issue) s dokladem projde hned, bez lhůty', () => {
+  const TELO_PROJEKTU = '## Rozsah\nZavést řízení vývoje.';
+  const projekt = (o = {}) => issue({
+    cislo: 50, stitky: ['interni', 'projekt', 'schvaleno'], telo: TELO_PROJEKTU,
+    udalosti: [schvalenoUdalost(PRED(100))], komentare: [souhlasZaznam(TELO_PROJEKTU, PRED(100))], ...o,
+  });
+  const ukol = (rodic, o = {}) => issue({ rodic, ...o });
+  const hned = (rodic, o) => run({ predchozi: null, issues: [ukol(rodic, o)] });
+
+  const v = hned(projekt());
+  assert.equal(v.rezim, 'E');
+  assert.equal(v.uspech, true, v.duvody.join('; '));
+  assert.match(v.duvody.join(), /úkol schváleného projektu #50/);
+  // projekt založený s dokladem od vlastníka stačí i bez štítku schvaleno
+  assert.equal(hned(projekt({ stitky: ['interni', 'projekt'], telo: `Zdroj: vlastník\n\n${TELO_PROJEKTU}`, udalosti: [], komentare: [] })).rezim, 'E');
+
+  // bez schváleného projektu jde o drobné zadání s lhůtou
+  assert.equal(hned(null).rezim, 'L');
+  assert.equal(hned(projekt({ stitky: ['interni', 'projekt', 'navrh'], udalosti: [], komentare: [] })).rezim, 'L');
+  assert.equal(hned(projekt({ stitky: ['interni', 'schvaleno'] })).rezim, 'L', 'rodič bez štítku projekt');
+  assert.equal(hned(projekt({ stav: 'closed' })).rezim, 'L');
+  assert.equal(hned(projekt({ autor: 'cizi', stitky: ['interni', 'projekt'], telo: `Zdroj: vlastník\n\n${TELO_PROJEKTU}`, udalosti: [], komentare: [] })).rezim, 'L');
+
+  // úkol bez vlastního dokladu nepustí ani schválený projekt; stop na projektu blokuje i úkoly
+  assert.equal(hned(projekt(), { telo: 'bez zdroje' }).uspech, false);
+  const stop = hned(projekt({ stitky: ['interni', 'projekt', 'schvaleno', 'stop'] }));
+  assert.equal(stop.uspech, false);
+  assert.match(stop.duvody.join(), /projekt #50 \(rodič issue #10\) má štítek stop/);
+});
+
 test('issue bez dokladu a bez souhlasu neprojde, hlášení ve fázi 1 také ne', () => {
   assert.equal(run({ issues: [issue({ telo: 'bez zdroje' })] }).uspech, false);
   const hlaseni = run({ issues: [issue({ stitky: ['bug-report'] })] });

@@ -1,6 +1,6 @@
 # Pokyny pro asistenta zadání (Eduarda) na GitHubu
 
-Verze 1.0 · 3. 10. 2026 · podle [návrhu řízení vývoje](navrh-rizeni-vyvoje-2027.md) 0.13a (RA36)
+Verze 1.1 · 4. 10. 2026 · podle [návrhu řízení vývoje](navrh-rizeni-vyvoje-2027.md) 0.13a (RA36)
 a brány sloučení (`scripts/brana/`, `.github/rezimy.yml`).
 
 Eduarda pracuje na GitHubu vlastním účtem `eduarda-prijimacky`. Brána sloučení ten účet odliší od účtu
@@ -15,19 +15,25 @@ vlastníka, proto se některá pravidla níže vynucují technicky.
    drobného zadání.
 3. **Doklad původu** na samostatném řádku těla, jen podle skutečného zdroje:
    - `Zdroj: briefing RRRR-MM-DD`: rozhodnutí z briefingu, které vlastník potvrdil na konci briefingu;
-   - `Zdroj: vlastník`: zadání, které vlastník napsal nebo nadiktoval sám;
+   - `Zdroj: vlastník`: zadání, které vlastník napsal, nadiktoval nebo výslovně rozhodl v rozhovoru s tebou
+     nebo s Claude Code (zapisuješ jeho rozhodnutí, ne svůj nápad);
    - `Zdroj: oprava od školy RRRR-MM-DD-<RED IZO>`: oprava údajů od ověřené školy (oddíl 12 návrhu).
    Brána doklad uzná jen v issue, které založil tvůj účet nebo účet vlastníka; v cizím issue (repozitář
    je veřejný) se nepočítá, proto doklad do cizího issue nedoplňuj a hlášení převeď na nové issue.
    Zadání s dokladem Claude Code realizuje bez dalšího schválení jako drobné zadání (48 h na veto) nebo
    jako etapu projektu. Zadání bez dokladu čeká na `schvaleno`.
-4. **Co potřebuje rozhodnutí vlastníka** (oddíl 3 návrhu: nevyžádané rozesílky, pravomoci AI, právní
+4. **Drobný úkol, který patří k projektu** (issue se štítkem `projekt`), zakládej jako samostatné issue
+   s vlastním dokladem a připoj ho k projektu jako **sub-issue** (na GitHubu „Add sub-issue“ v projektu, přes
+   API `POST /repos/tangero/stredniskoly/issues/<projekt>/sub_issues` s `sub_issue_id` = `id` úkolu, ne číslo).
+   Úkol schváleného projektu se slučuje hned jako etapa, bez lhůty 48 h a bez dalšího `schvaleno`.
+   Nový cíl nebo překročení mandátu projektu není drobný úkol: patří do `navrh`.
+5. **Co potřebuje rozhodnutí vlastníka** (oddíl 3 návrhu: nevyžádané rozesílky, pravomoci AI, právní
    závazky, výdaje nad limit, směr a strategické projekty): štítek `navrh`. Brána při něm uloží otisk
    rozsahu. **Po přidání `navrh` rozsah neměň;** když je změna nutná, uprav ho, odeber `navrh` a přidej
    ho znovu, aby vlastník schvaloval aktuální verzi.
-5. **Hlášení od veřejnosti** a e-maily od neověřených odesílatelů převáděj na zadání se štítkem
+6. **Hlášení od veřejnosti** a e-maily od neověřených odesílatelů převáděj na zadání se štítkem
    `puvod:hlaseni` nebo `puvod:email`. Ve fázi 1 je Claude Code realizuje jen se `schvaleno`.
-6. **Osobní údaje** do issues, komentářů ani PR nepiš (jména, e-maily, telefony, kódy); školu označ
+7. **Osobní údaje** do issues, komentářů ani PR nepiš (jména, e-maily, telefony, kódy); školu označ
    RED IZO.
 
 ## Štítky
