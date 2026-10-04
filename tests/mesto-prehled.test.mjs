@@ -16,6 +16,7 @@ import { getCityStats, MESTA } from '../src/lib/cityData.ts';
 import { ZARAZENI_POPISEK } from '../src/lib/obor-profil.ts';
 import { dalsiOboryVeMeste, nactiIndexRejstriku } from '../src/lib/kontext-prihlasek.ts';
 import { getSchoolAnalysis, getProgramsByRedizo, getSchoolsData } from '../src/lib/data.ts';
+import { zrizovatelPodleRedizo } from '../src/lib/simulator-filter.ts';
 import { sestavKartySkol, velikostMesta } from '../src/lib/mesto-karty.ts';
 import { smerOboru, SMERY_STUDIA } from '../src/lib/smery-studia.ts';
 import { SkolyPodleSmeru } from '../src/components/mesto/SkolyPodleSmeru.tsx';
@@ -139,7 +140,8 @@ async function kartyMesta(mesto) {
   }
   const nazvyKatalogu = new Map(stats.schools.map(r => [r.redizo, r.nazev_display]));
   const { identifikace } = await nactiIndexRejstriku();
-  const karty = sestavKartySkol(stats.schools, dalsi.obory, { nazvyKatalogu, kanonickeNazvy, adresySidel: identifikace });
+  const zrizovatele = zrizovatelPodleRedizo(await getSchoolsData());
+  const karty = sestavKartySkol(stats.schools, dalsi.obory, { nazvyKatalogu, kanonickeNazvy, adresySidel: identifikace, zrizovatele });
   return { stats, dalsi, karty };
 }
 
@@ -326,4 +328,20 @@ test('pruh oborů školy: místa vypsané nabídky jsou z katalogu zobrazeného 
       assert.equal(x.kapacita, z.kapacita, `${x.id}: pruh ${x.kapacita}, katalog ${z.kapacita}`);
     }
   }
+});
+
+test('vykreslení: soukromá a církevní škola nese větu o školném, veřejná ne', async () => {
+  const { karty } = await kartyMesta('Brno');
+  const akademia = karty.find(k => k.redizo === '600024938');
+  assert.equal(akademia.zrizovatel, 'soukroma');
+  const verejna = karty.find(k => k.zrizovatel === 'verejna');
+  const cirkevni = karty.find(k => k.zrizovatel === 'cirkevni');
+  assert.ok(verejna && cirkevni, 'v Brně chybí veřejná nebo církevní škola');
+  assert.match(text(vykresli([akademia])), /soukromá škola · může vybírat školné/);
+  assert.match(text(vykresli([cirkevni])), /církevní škola · může vybírat školné/);
+  assert.doesNotMatch(text(vykresli([verejna])), /školné/);
+  // Výběr zřizovatele počítá školy, ne obory.
+  const html = text(vykresli(karty));
+  const soukromych = karty.filter(k => k.zrizovatel === 'soukroma').length;
+  assert.ok(html.includes(`soukromé (${soukromych})`), `výběr zřizovatele nemá počet ${soukromych}`);
 });
