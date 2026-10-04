@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { jeDbNastavena, vTransakci } from '@/lib/novinky-db';
 import { zapisHlaseni, propojIssue } from '@/lib/hlaseni';
 import { ipZPozadavku } from '@/lib/portal-api';
+import { bezEmailu } from '@/lib/bez-emailu';
 
 interface BugReportBody {
   description: string;
@@ -72,7 +73,8 @@ async function sendEmailNotification(email: string, issueUrl: string, issueNumbe
   const RESEND_API_KEY = process.env.RESEND_API_KEY;
 
   if (!RESEND_API_KEY) {
-    console.log(`📧 Would send email to ${email} about issue #${issueNumber} (RESEND_API_KEY not set)`);
+    // Bez adresy hlásícího (#279): identifikátorem je číslo issue.
+    console.log(`📧 Would send email about issue #${issueNumber} (RESEND_API_KEY not set)`);
     return;
   }
 
@@ -150,13 +152,13 @@ async function sendEmailNotification(email: string, issueUrl: string, issueNumbe
     });
 
     if (response.ok) {
-      console.log(`✅ Email sent to ${email} for issue #${issueNumber}`);
+      console.log(`✅ Email sent for issue #${issueNumber}`);
     } else {
       const errorText = await response.text();
-      console.error(`❌ Failed to send email: ${response.status} - ${errorText}`);
+      console.error(`❌ Failed to send email for issue #${issueNumber}: ${response.status} - ${bezEmailu(errorText)}`);
     }
   } catch (error) {
-    console.error('❌ Email notification error:', error);
+    console.error(`❌ Email notification error for issue #${issueNumber}:`, bezEmailu(error instanceof Error ? error.message : String(error)));
   }
 }
 
@@ -284,7 +286,8 @@ export async function POST(request: NextRequest) {
   try {
     hlaseniId = await vTransakci((s) => zapisHlaseni(s, { email, popis: description, url }));
   } catch (e) {
-    console.error('❌ Hlášení: uložení selhalo', e);
+    // Chyba databáze může v detailu nést hodnotu sloupce, tedy i adresu hlásícího.
+    console.error('❌ Hlášení: uložení selhalo', bezEmailu(e instanceof Error ? e.message : String(e)));
     return NextResponse.json(
       { error: 'Hlášení se nepodařilo uložit. Zkuste to prosím znovu.' },
       { status: 503 }
