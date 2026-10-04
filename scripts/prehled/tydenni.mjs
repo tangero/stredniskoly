@@ -22,6 +22,19 @@ const MAX_DELKA_TITULKU = 80;
 
 const adresa = (cislo, pr = false) => `https://github.com/${REPO}/${pr ? 'pull' : 'issues'}/${cislo}`;
 const odkaz = (cislo, pr = false) => `[#${cislo}](${adresa(cislo, pr)})`;
+/** Celé položky nejvýš do `rozpocet` znaků a `max` kusů; zbytek shrne řádkem s počtem. */
+export function vypisPolozek(polozky, rozpocet, max) {
+  const vypis = [];
+  let delka = 0;
+  for (const p of polozky.slice(0, max)) {
+    const dalsi = delka + p.length + 1;
+    if (dalsi > rozpocet - 60) break; // 60 znaků rezerva na řádek „… a dalších N v celém přehledu“
+    vypis.push(p);
+    delka = dalsi;
+  }
+  if (vypis.length < polozky.length) vypis.push(`… a dalších ${polozky.length - vypis.length} v celém přehledu`);
+  return vypis;
+}
 const zkrat = (t = '') => (t.length > MAX_DELKA_TITULKU ? `${t.slice(0, MAX_DELKA_TITULKU - 1)}…` : t);
 
 async function strankuj(api, cesta, staci) {
@@ -109,20 +122,28 @@ export function sestavPrehled(d, { vlastnik = 'tangero' } = {}) {
     ...d.navrhy.map((n) => polozka('Návrh:', n.cislo, n.titulek)),
     ...d.cekajiNaSouhlas.map((p) => polozka('PR čeká na schvaleno:', p.cislo, p.titulek, true)),
   ];
-  const vypis = cekajici.slice(0, MAX_POLOZEK);
-  if (cekajici.length > MAX_POLOZEK) vypis.push(`… a dalších ${cekajici.length - MAX_POLOZEK} v celém přehledu`);
+  const zastavene = d.zastavene.map((z) => polozka('', z.cislo, z.titulek).trimStart());
+  const cizi = ciziSchvaleni.map((r) => `#${r.cislo} (${r.kdo})\n${adresa(r.cislo)}`);
 
-  const kratky = [
+  // Provozní varování jdou hned za souhrn a vejdou se vždy; seznamy se skládají po celých položkách
+  // z toho, co zbyde do limitu, takže zkrácení nikdy neodřízne varování ani nepřeřízne titulek či adresu.
+  const hlavicka = [
     `Týdenní přehled stredniskoly (${datum(d.od)} až ${datum(d.ted)})`,
     `Sloučeno PR: ${d.slouceno.length}`,
     `Rozhodnutí štítky: ${d.rozhodnuti.length} (zkontroluj v přehledu, co si nevybavíš)`,
     d.navrhy.length ? `Čeká na tebe: ${d.navrhy.length} návrhů, ${d.cekajiNaSouhlas.length} PR bez souhlasu` : `Čeká na tebe: ${d.cekajiNaSouhlas.length} PR bez souhlasu`,
-    ...vypis,
-    d.zastavene.length ? `Zastaveno (stop):\n${d.zastavene.map((z) => polozka('', z.cislo, z.titulek).trimStart()).join('\n')}` : '',
     d.cervenaMain.length ? `POZOR, červené CI na main: ${d.cervenaMain.join(', ')}\nhttps://github.com/${REPO}/commits/main` : '',
     ...tokenyPozor.map((t) => `POZOR, token ${t}`),
-    ciziSchvaleni.length ? `POZOR, schvaleno z jiného účtu:\n${ciziSchvaleni.map((r) => `#${r.cislo} (${r.kdo})\n${adresa(r.cislo)}`).join('\n')}` : '',
-  ].filter(Boolean).join('\n').slice(0, MAX_DELKA_KRATKE);
+    ciziSchvaleni.length ? `POZOR, schvaleno z jiného účtu:\n${vypisPolozek(cizi, Infinity, MAX_POLOZEK).join('\n')}` : '',
+  ].filter(Boolean).join('\n');
+  const cekajiciVypis = vypisPolozek(cekajici, MAX_DELKA_KRATKE - hlavicka.length, MAX_POLOZEK);
+  const zbyva = MAX_DELKA_KRATKE - [hlavicka, ...cekajiciVypis].join('\n').length;
+  const zastaveneVypis = zastavene.length ? vypisPolozek(zastavene, zbyva - 'Zastaveno (stop):\n'.length - 1, MAX_POLOZEK) : [];
+  const kratky = [
+    hlavicka,
+    ...cekajiciVypis,
+    zastaveneVypis.length ? `Zastaveno (stop):\n${zastaveneVypis.join('\n')}` : '',
+  ].filter(Boolean).join('\n');
 
   const radky = (pole, f, prazdne) => (pole.length ? pole.map(f) : [`- ${prazdne}`]);
   const dlouhy = [

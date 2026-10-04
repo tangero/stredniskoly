@@ -66,3 +66,27 @@ test('titulek se znaky <, > a & zůstane v prostém textu beze změny', () => {
   const { kratky } = sestavPrehled({ ...zaklad, navrhy: [{ cislo: 320, titulek: 'a <b> & c', od: '2026-10-05T00:00:00Z' }] });
   assert.ok(kratky.includes('Návrh: #320 a <b> & c'));
 });
+
+test('dlouhé seznamy čekajících a zastavených položek neodříznou provozní varování ani adresy', () => {
+  const titulek = 'Dlouhý titulek '.repeat(10);
+  const { kratky } = sestavPrehled({
+    ...zaklad,
+    rozhodnuti: [{ ...zaklad.rozhodnuti[0], kdo: 'eduarda-prijimacky' }],
+    navrhy: Array.from({ length: 15 }, (_, i) => ({ cislo: 500 + i, titulek, od: '2026-10-05T00:00:00Z' })),
+    zastavene: Array.from({ length: 12 }, (_, i) => ({ cislo: 600 + i, titulek })),
+    cervenaMain: ['TypeScript'],
+    expirace: { CSI_PR_TOKEN: 'neplatny' },
+  });
+  assert.ok(kratky.length <= 3800, `délka ${kratky.length}`);
+  assert.match(kratky, /červené CI na main: TypeScript/);
+  assert.match(kratky, /CSI_PR_TOKEN: token neplatí/);
+  assert.match(kratky, /schvaleno z jiného účtu:\n#301 \(eduarda-prijimacky\)/);
+  assert.match(kratky, /Zastaveno \(stop\):/);
+  // každý řádek s adresou je úplný a těsně navazuje na svou položku
+  const radky = kratky.split('\n');
+  radky.forEach((r, i) => {
+    if (/^(Návrh:|PR čeká|#\d+ )/.test(r) && !/\(eduarda/.test(r)) assert.match(radky[i + 1], /^https:\/\/github\.com\/tangero\/stredniskoly\/(issues|pull)\/\d+$/);
+  });
+  // co se nevešlo, je shrnuto výslovným počtem
+  assert.match(kratky, /… a dalších \d+ v celém přehledu/);
+});
