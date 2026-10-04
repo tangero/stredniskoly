@@ -392,7 +392,7 @@ test('okruhy Brna: jména se neopakují, řádky nesou školu s ulicí, pořadí
     const u = o.radky.map(r => r.uchazecu);
     assert.deepEqual(u, [...u].sort((a, b) => b - a), `okruh ${o.id} není seřazený podle uchazečů`);
   }
-  const html = text(renderToStaticMarkup(React.createElement(OkruhyMesta, { okruhy, nastavby, rok: data.rok })));
+  const html = text(renderToStaticMarkup(React.createElement(OkruhyMesta, { okruhy, nastavby, rok: data.rok, rokObtiznosti: data.rok })));
   assert.match(html, /Které další obory v okolí uchazeči také volí/);
   // Pojem okruh se vysvětlí při prvním výskytu v bloku (slovník pojmů).
   assert.match(html, /měli je často zároveň na přihlášce/);
@@ -405,4 +405,16 @@ test('okruhy: obor s jedinou nabídkou ve městě vede na stránku oboru', async
   const radky = okruhy.flatMap(o => o.radky).filter(r => r.href);
   assert.ok(radky.some(r => /-gymnazium-4lete$/.test(r.href)), 'žádný řádek nevede na stránku oboru');
   for (const r of radky) assert.ok(r.href.startsWith(`/skola/${r.klic.split('_')[0]}-`), `${r.klic}: ${r.href}`);
+});
+
+test('okruhy: rok uchazečů a rok obtížnosti se nesloučí, když se liší', async () => {
+  // Sady cermat-uchazeci-kolo1 a cermat-vysledky se přepínají zvlášť (review PR #351, P2).
+  const { okruhy, nastavby } = await okruhyMesta('Brno');
+  const html = text(renderToStaticMarkup(React.createElement(OkruhyMesta, { okruhy, nastavby, rok: 2027, rokObtiznosti: 2026 })));
+  assert.match(html, /Data o uchazečích 1\. kola 2027/);
+  assert.match(html, /Obtížnost přijetí je z 1\. kola 2026/);
+  assert.match(html, /Obtížnost přijetí 2026/);
+  assert.doesNotMatch(html, /Obtížnost přijetí 2027/);
+  const stejne = text(renderToStaticMarkup(React.createElement(OkruhyMesta, { okruhy, nastavby, rok: 2026, rokObtiznosti: 2026 })));
+  assert.doesNotMatch(stejne, /Obtížnost přijetí je z 1\. kola/);
 });
