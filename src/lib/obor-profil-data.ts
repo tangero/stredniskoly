@@ -6,6 +6,7 @@ import { druhTestu, type DruhTestu, type KriteriaOboru, type PoziceOboru, type P
 import { getSchoolsData, getExtractionsByRedizo, getInspisDataByRedizo } from '@/lib/data';
 import { getSouhrnNabidky, nabidkyVeSkupineKraje, souhrnOboru, type SouhrnRocniku } from '@/lib/souhrny-kolo1';
 import { getKontextPrihlasek, type KontextPrihlasek } from '@/lib/kontext-prihlasek';
+import { getSoubezneObce, type SoubezneObce } from '@/lib/okruhy-oboru';
 import { getPasmaPrijeti, getPasmaPrijetiZaRok, celostatniMedianUchazecu, rokPasemPrijeti, type PasmaPrijetiObor } from '@/lib/pasma-prijeti';
 import { getDruheKolo, type DruheKoloNabidky } from '@/lib/druhe-kolo';
 import { verzeObdobi, zobrazeneObdobi } from '@/lib/stav-datovych-sad';
@@ -90,6 +91,8 @@ export interface ProfilOboruData {
   /** Verze dat o uchazečích z registru; nese ji jen předběžný ročník. */
   verzeUchazecu: string | null;
   kontext: { rok: number; data: KontextPrihlasek; vys: OborNaPrihlasce[]; niz: OborNaPrihlasce[] } | null;
+  /** Souběžné přihlášky podle obce (okruhy oborů, issue #277); blok „Které další obory v okolí uchazeči také volí“. */
+  soubezneObce: SoubezneObce | null;
   druheKolo: DruheKoloNabidky | null;
   web: string | null;
   inspekce: {
@@ -160,10 +163,10 @@ function kriteriaZamereni(k: KriteriaOboru | null, zamereni: string | undefined)
 export async function getProfilOboru(programId: string, zamereni: string | undefined, redizo: string): Promise<ProfilOboruData | null> {
   const souhrn = await getSouhrnNabidky(programId);
   if (!souhrn) return null;
-  const [rokPasem, kontextVysledek, druheKolo, web, extrakce, inspis, nazvy, verzeUchazecu] = await Promise.all([
+  const [rokPasem, kontextVysledek, druheKolo, web, extrakce, inspis, nazvy, verzeUchazecu, soubezneObce] = await Promise.all([
     rokPasemPrijeti(), getKontextPrihlasek(programId), getDruheKolo(programId, zamereni), getWebSkoly(redizo),
     getExtractionsByRedizo(redizo), getInspisDataByRedizo(redizo), nazvyOboru(),
-    verzeObdobi('cermat-uchazeci-kolo1'),
+    verzeObdobi('cermat-uchazeci-kolo1'), getSoubezneObce(programId),
   ]);
   const pasmaData = rokPasem ? await getPasmaPrijeti(programId) : null;
 
@@ -282,6 +285,7 @@ export async function getProfilOboru(programId: string, zamereni: string | undef
     srovnaniRocniku,
     verzeUchazecu,
     kontext,
+    soubezneObce,
     druheKolo,
     web,
     inspekce: posledni ? {
