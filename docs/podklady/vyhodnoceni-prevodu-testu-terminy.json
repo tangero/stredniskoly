@@ -1,0 +1,169 @@
+{
+  "zdroj": "JPZ2024_CJL4_polozkova_data.xlsx, JPZ2024_MA4_polozkova_data.xlsx, řádné termíny",
+  "uchazecu_oba_terminy": 85619,
+  "korelace_terminu": 0.927,
+  "z_1_do_2_terminu": {
+    "bez_prevodu": {
+      "pocet": 42840,
+      "prumerna_chyba": 4.42,
+      "prumerna_abs_chyba": 7.31,
+      "rmse": 9.24,
+      "podil_chyba_nad_5": 0.547
+    },
+    "s_prevodem": {
+      "pocet": 42840,
+      "prumerna_chyba": 0.0,
+      "prumerna_abs_chyba": 6.39,
+      "rmse": 8.19,
+      "podil_chyba_nad_5": 0.479
+    },
+    "podle_vysledku": {
+      "0-30": {
+        "bez_prevodu": {
+          "pocet": 8806,
+          "prumerna_chyba": 3.89,
+          "prumerna_abs_chyba": 6.52,
+          "rmse": 8.54,
+          "podil_chyba_nad_5": 0.48
+        },
+        "s_prevodem": {
+          "pocet": 8806,
+          "prumerna_chyba": 2.4,
+          "prumerna_abs_chyba": 6.13,
+          "rmse": 8.02,
+          "podil_chyba_nad_5": 0.454
+        }
+      },
+      "30-50": {
+        "bez_prevodu": {
+          "pocet": 14439,
+          "prumerna_chyba": 4.18,
+          "prumerna_abs_chyba": 7.69,
+          "rmse": 9.72,
+          "podil_chyba_nad_5": 0.565
+        },
+        "s_prevodem": {
+          "pocet": 14439,
+          "prumerna_chyba": 0.38,
+          "prumerna_abs_chyba": 6.96,
+          "rmse": 8.77,
+          "podil_chyba_nad_5": 0.527
+        }
+      },
+      "50-70": {
+        "bez_prevodu": {
+          "pocet": 12162,
+          "prumerna_chyba": 5.57,
+          "prumerna_abs_chyba": 8.15,
+          "rmse": 10.02,
+          "podil_chyba_nad_5": 0.612
+        },
+        "s_prevodem": {
+          "pocet": 12162,
+          "prumerna_chyba": -0.94,
+          "prumerna_abs_chyba": 6.6,
+          "rmse": 8.39,
+          "podil_chyba_nad_5": 0.5
+        }
+      },
+      "70-100": {
+        "bez_prevodu": {
+          "pocet": 7433,
+          "prumerna_chyba": 3.6,
+          "prumerna_abs_chyba": 6.11,
+          "rmse": 7.57,
+          "podil_chyba_nad_5": 0.488
+        },
+        "s_prevodem": {
+          "pocet": 7433,
+          "prumerna_chyba": -2.03,
+          "prumerna_abs_chyba": 5.21,
+          "rmse": 6.79,
+          "podil_chyba_nad_5": 0.381
+        }
+      }
+    }
+  },
+  "z_2_do_1_terminu": {
+    "bez_prevodu": {
+      "pocet": 42840,
+      "prumerna_chyba": -4.42,
+      "prumerna_abs_chyba": 7.31,
+      "rmse": 9.24,
+      "podil_chyba_nad_5": 0.547
+    },
+    "s_prevodem": {
+      "pocet": 42840,
+      "prumerna_chyba": 0.03,
+      "prumerna_abs_chyba": 5.96,
+      "rmse": 7.59,
+      "podil_chyba_nad_5": 0.453
+    },
+    "podle_vysledku": {
+      "0-30": {
+        "bez_prevodu": {
+          "pocet": 7612,
+          "prumerna_chyba": 1.0,
+          "prumerna_abs_chyba": 5.37,
+          "rmse": 6.88,
+          "podil_chyba_nad_5": 0.408
+        },
+        "s_prevodem": {
+          "pocet": 7612,
+          "prumerna_chyba": 2.38,
+          "prumerna_abs_chyba": 5.56,
+          "rmse": 7.15,
+          "podil_chyba_nad_5": 0.417
+        }
+      },
+      "30-50": {
+        "bez_prevodu": {
+          "pocet": 12188,
+          "prumerna_chyba": -2.99,
+          "prumerna_abs_chyba": 6.45,
+          "rmse": 8.12,
+          "podil_chyba_nad_5": 0.497
+        },
+        "s_prevodem": {
+          "pocet": 12188,
+          "prumerna_chyba": 0.34,
+          "prumerna_abs_chyba": 5.91,
+          "rmse": 7.47,
+          "podil_chyba_nad_5": 0.456
+        }
+      },
+      "50-70": {
+        "bez_prevodu": {
+          "pocet": 12012,
+          "prumerna_chyba": -6.3,
+          "prumerna_abs_chyba": 8.16,
+          "rmse": 10.13,
+          "podil_chyba_nad_5": 0.607
+        },
+        "s_prevodem": {
+          "pocet": 12012,
+          "prumerna_chyba": -0.31,
+          "prumerna_abs_chyba": 6.2,
+          "rmse": 7.91,
+          "podil_chyba_nad_5": 0.471
+        }
+      },
+      "70-100": {
+        "bez_prevodu": {
+          "pocet": 11028,
+          "prumerna_chyba": -7.68,
+          "prumerna_abs_chyba": 8.67,
+          "rmse": 10.68,
+          "podil_chyba_nad_5": 0.635
+        },
+        "s_prevodem": {
+          "pocet": 11028,
+          "prumerna_chyba": -1.58,
+          "prumerna_abs_chyba": 6.01,
+          "rmse": 7.65,
+          "podil_chyba_nad_5": 0.456
+        }
+      }
+    }
+  }
+}
