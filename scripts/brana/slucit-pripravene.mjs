@@ -5,16 +5,25 @@
 
 import { pathToFileURL } from 'node:url';
 import { REPO, vytvorApi } from './data.mjs';
+import { ctiExterniId } from './brana.mjs';
 import { sloucit, posledniKontrola } from './sloucit.mjs';
 
-/** Čísla otevřených PR do main (bez draftů), která brána naposledy pustila. */
+/**
+ * Čísla otevřených PR do main (bez draftů), která brána naposledy pustila. Vynechá PR s konfliktem
+ * a PR, jejichž poslední kontrola už odpovídala na žádost před sloučením: pokus na tomto commitu
+ * proběhl a GitHub ho odmítl. Bez toho by každá žádost spustila bránu a ta nový pokus, dokola.
+ */
 export async function pripravene(api) {
   const otevrene = await api(`repos/${REPO}/pulls?state=open&base=main&per_page=100`);
   const vysledek = [];
   for (const p of otevrene) {
     if (p.draft) continue;
     const k = await posledniKontrola(api, p.head.sha);
-    if (k?.status === 'completed' && k.conclusion === 'success') vysledek.push(p.number);
+    if (k?.status !== 'completed' || k.conclusion !== 'success') continue;
+    if (ctiExterniId(k.external_id)?.zadost) continue;
+    const detail = await api(`repos/${REPO}/pulls/${p.number}`);
+    if (detail.mergeable === false) continue;
+    vysledek.push(p.number);
   }
   return vysledek;
 }
