@@ -89,9 +89,10 @@ export function spocitejMeritka({ pulls, issues, rezimy, komentare, akce, navrhy
     const t0 = Math.min(cas(issue.vytvoreno), tPr);
     const tSchv = cas(issue.schvaleno);
     const tMerge = cas(p.slouceno);
-    const start = tSchv && tSchv < tPr ? tSchv : t0;
+    const start = tSchv && tSchv <= tPr ? tSchv : t0;
     const faze = {
-      naSchvaleni: tSchv && tSchv > t0 ? Math.min(tSchv, tPr) - t0 : null,
+      // Schválení až po začátku realizace (#342) do fáze „na schválení“ nepatří, jinak by se překrývala s realizací.
+      naSchvaleni: tSchv && tSchv > t0 && tSchv <= tPr ? tSchv - t0 : null,
       naRealizaci: Math.max(0, tPr - start),
       vPr: tMerge - tPr,
     };
