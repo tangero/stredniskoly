@@ -17,9 +17,9 @@ const HODINA = 60 * 60 * 1000;
 const ZDROJ = /^Zdroj:\s*(briefing \d{4}-\d{2}-\d{2}|oprava od školy \d{4}-\d{2}-\d{2}-\d{9}|vlastník)\s*$/im;
 const ODKAZ_NA_ISSUE = /\b(?:close[sd]?|fix(?:e[sd])?|resolve[sd]?|souvisí s|souvisi s)\s*:?\s*#(\d+)/gi;
 const UZAVRENI_ISSUE = /\b(?:close[sd]?|fix(?:e[sd])?|resolve[sd]?)\s*:?\s*#(\d+)/gi;
-// Řádek kritéria v těle zadání: „- [ ] K1: …“, „- P2: …“, „P1: …“ bez odrážky, tučné „- **P1:** …“,
+// Řádek kritéria v těle zadání: „- [ ] K1: …“, „- P2: …“, „1. P1: …“, „P1: …“ bez odrážky, tučné „- **P1:** …“,
 // zrušené „- [ ] ~~K3: …~~“.
-const RADEK_KRITERIA = /^\s*(?:[-*]\s+)?(?:\[[ xX]\]\s+)?(~~)?\s*(?:\*\*)?([KP]\d+(?:\.\d+)*)(?:\*\*)?\s*:/;
+const RADEK_KRITERIA = /^\s*(?:(?:[-*+]|\d+[.)])\s+)?(?:\[[ xX]\]\s+)?(~~)?\s*(?:\*\*)?([KP]\d+(?:\.\d+)*)(?:\*\*)?\s*:/;
 
 // Záznamy, které brána sama píše do komentářů (autor BOT). Jinému autorovi nevěří.
 export const ZNACKA = {
