@@ -1,6 +1,6 @@
 # Řízení vývoje: směr určuje člověk, provedení a přehled zajišťuje AI
 
-Verze 0.13d · 4. 10. 2026 · **část A ke schválení hned, část B k rozhodnutí podle měřítek.**
+Verze 0.13e · 4. 10. 2026 · **část A ke schválení hned, část B k rozhodnutí podle měřítek.**
 Stav zavedení: fáze 0 hotová, brána sloučení je v `main` a zatím nic neblokuje (postup v
 [postup-zavedeni-faze-0.md](postup-zavedeni-faze-0.md)).
 
@@ -26,7 +26,7 @@ a výdaje, posílá týdenní přehled a hlásí jen výjimky.
 **Co tím odpadne:** schvalování drobných zadání, kontrola na preview a merge u zhruba 20 PR týdně,
 odpovídání na dotazy v issues, obnova většiny tokenů.
 
-**Co je potřeba schválit:** část A jako celek (rozhodnutí RA1 až RA39 v oddílu 21). Část B se rozhodne
+**Co je potřeba schválit:** část A jako celek (rozhodnutí RA1 až RA40 v oddílu 21). Část B se rozhodne
 po čtyřech týdnech provozu podle měřítek.
 
 **Zavedení po fázích podle přínosu** (oddíl 20): fáze 1 odstraní merge a kontrolu preview, fáze 2 přidá
@@ -241,8 +241,9 @@ větvi tak nemůže posoudit sama sebe. Spouští se na otevření, push a ští
 nový `stop` hned zneplatnil výsledek)**, komentáře (protokol z preview) a jednou za hodinu (lhůty).
 `pull_request_review` mezi spouštěči není: běží ve verzi workflow z větve PR, a review brána ve fázi 1
 nepodmiňuje. Výsledek zapisuje skript přes Checks API na aktuální hlavu PR (implementace
-`scripts/brana/`, workflow `brana-slouceni.yml`). **Merge provádí Claude skriptem,
-který bránu těsně před sloučením spustí znovu** a ověří aktuální veto; vestavěný automatický merge
+`scripts/brana/`, workflow `brana-slouceni.yml`). **Merge provádí skript,
+který bránu těsně před sloučením spustí znovu** a ověří aktuální veto; spouští ho Claude v relaci
+nebo automaticky workflow **Sloučení** po každém doběhnutí brány (RA40); vestavěný automatický merge
 GitHubu se nepoužívá, protože by sloučil podle staršího výsledku. Určí režim podle cest
 (`.github/rezimy.yml`) a podle propojeného issue a pustí PR jen při splnění
 podmínek režimu z oddílu 4. **Původ zadání:**
@@ -627,6 +628,7 @@ ověří ho měřítka.
 | RA37 | Směr vývoje veřejně v `docs/smer-vyvoje.md` včetně rozpočtu; změny jen se souhlasem vlastníka | **ano** (rozhodnutí vlastníka) |
 | RA38 | Drobné úkoly projektu jako sub-issues s dokladem `Zdroj:`; úkol schváleného projektu brána pustí v režimu E bez dalšího `schvaleno` (oddíl 10) | **ano** (rozhodnutí vlastníka) |
 | RA39 | Veřejné hlášení připojené jako sub-issue ke schválenému projektu brána pustí v režimu E bez dalšího `schvaleno`; připojuje vlastník nebo AI na jeho pokyn (oddíl 10) | **ano** (rozhodnutí vlastníka) |
+| RA40 | Automatické slučování: workflow Sloučení po každém běhu brány sloučí PR, které brána pustila, skriptem `sloucit.mjs` s tokenem vlastníka; vlastník dostává po sloučení souhrn od asistenta zadání | **ano** (rozhodnutí vlastníka) |
 
 # Část B: rozšíření podle měřítek
 
@@ -656,6 +658,8 @@ Po čtyřech týdnech provozu části A:
 
 ## Změny návrhu
 
+- **0.13e** (4. 10. 2026, rozhodnutí vlastníka): automatické slučování po bráně a souhrn nasazení od asistenta
+  zadání (RA40); běh brány po přidání `schvaleno` nebo `navrh` ve vlastní frontě.
 - **0.13d** (4. 10. 2026, rozhodnutí vlastníka): hlášení připojené ke schválenému projektu jako sub-issue
   nepotřebuje vlastní `schvaleno` (RA39, oddíl 10).
 - **0.13c** (4. 10. 2026, rozhodnutí vlastníka): drobné úkoly projektu jako sub-issues s dokladem `Zdroj:`,

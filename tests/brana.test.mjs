@@ -523,3 +523,27 @@ test('veřejný repozitář: PR jiného autora potřebuje souhlas na PR, i se sc
 test('rozpracovaný PR neprojde', () => {
   assert.equal(run({ pr: pr({ draft: true }) }).uspech, false);
 });
+
+test('automatické slučování bere jen PR, které brána naposledy pustila, bez draftů', async () => {
+  const { pripravene } = await import('../scripts/brana/slucit-pripravene.mjs');
+  const kontroly = {
+    a: [{ id: 2, status: 'completed', conclusion: 'success' }, { id: 1, status: 'completed', conclusion: 'failure' }],
+    b: [{ id: 3, status: 'completed', conclusion: 'failure' }],
+    c: [{ id: 4, status: 'in_progress', conclusion: null }],
+    d: [{ id: 5, status: 'completed', conclusion: 'success' }],
+  };
+  const api = async (cesta) => {
+    if (cesta.includes('/pulls?')) {
+      return [
+        { number: 1, draft: false, head: { sha: 'a' } },
+        { number: 2, draft: false, head: { sha: 'b' } },
+        { number: 3, draft: false, head: { sha: 'c' } },
+        { number: 4, draft: true, head: { sha: 'd' } },
+        { number: 5, draft: false, head: { sha: 'e' } },
+      ];
+    }
+    const sha = cesta.match(/commits\/(\w+)\//)[1];
+    return { check_runs: kontroly[sha] || [] };
+  };
+  assert.deepEqual(await pripravene(api), [1]);
+});

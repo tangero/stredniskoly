@@ -35,33 +35,26 @@ export async function posledniKontrola(api, sha) {
   return (d.check_runs || []).sort((a, b) => b.id - a.id)[0] || null;
 }
 
-async function main() {
-  const [arg, prepinac] = process.argv.slice(2);
-  const cislo = Number(arg);
-  if (!cislo) {
-    console.error('Použití: node scripts/brana/sloucit.mjs <číslo PR> [--jen-vyhodnotit]');
-    process.exit(2);
-  }
-  const api = vytvorApi();
+/**
+ * Vyhodnotí PR a když brána pustí, sloučí ho. Vrací { slouceno, duvod }; neúspěch brány nevyhazuje,
+ * výjimku dá jen chyba API.
+ */
+export async function sloucit(api, cislo, { jenVyhodnotit = false, log = console.log } = {}) {
   const konfig = await nactiKonfig(api);
   const vstup = await nactiPr(api, cislo);
   const verdikt = vyhodnot({ ...vstup, konfig, zamrznuti: null, ted: Date.now() });
-  console.log(`PR #${cislo}, režim ${verdikt.rezim}: ${verdikt.uspech ? 'prošlo' : 'neprošlo'}`);
-  for (const d of verdikt.duvody) console.log(`  - ${d}`);
+  log(`PR #${cislo}, režim ${verdikt.rezim}: ${verdikt.uspech ? 'prošlo' : 'neprošlo'}`);
+  for (const d of verdikt.duvody) log(`  - ${d}`);
 
   const kontrola = await posledniKontrola(api, vstup.pr.hlava.sha);
-  console.log(`Kontrola na ${vstup.pr.hlava.sha.slice(0, 7)}: ${kontrola ? `${kontrola.conclusion} (${kontrola.output?.title})` : 'zatím žádná'}`);
+  log(`Kontrola na ${vstup.pr.hlava.sha.slice(0, 7)}: ${kontrola ? `${kontrola.conclusion} (${kontrola.output?.title})` : 'zatím žádná'}`);
 
-  if (prepinac === '--jen-vyhodnotit') return;
+  if (jenVyhodnotit) return { slouceno: false, duvod: 'jen vyhodnocení' };
   if (konfig.rezimy.slucovani_ai !== true) {
-    console.error('Slučování AI je vypnuté (slucovani_ai v .github/rezimy.yml v main); sloučí vlastník.');
-    process.exit(1);
+    return { slouceno: false, duvod: 'Slučování AI je vypnuté (slucovani_ai v .github/rezimy.yml v main); sloučí vlastník.' };
   }
-  if (vstup.pr.stav !== 'open' || vstup.pr.zakladna !== 'main') {
-    console.error('PR není otevřený do main; nesloučeno.');
-    process.exit(1);
-  }
-  if (!verdikt.uspech) process.exit(1);
+  if (vstup.pr.stav !== 'open' || vstup.pr.zakladna !== 'main') return { slouceno: false, duvod: 'PR není otevřený do main; nesloučeno.' };
+  if (!verdikt.uspech) return { slouceno: false, duvod: 'brána neprošla; nesloučeno.' };
 
   const zadost = await api(`repos/${REPO}/issues/${cislo}/comments`, {
     method: 'POST',
@@ -69,23 +62,40 @@ async function main() {
   });
   const odpoved = await odpovedNaZadost(api, vstup.pr.hlava.sha, cislo, zadost.id);
   if (odpoved?.conclusion !== 'success') {
-    console.error(odpoved
-      ? `Brána po žádosti neprošla (${odpoved.output?.title}); nesloučeno.`
-      : 'Brána do 10 minut na žádost neodpověděla; nesloučeno.');
-    process.exit(1);
+    return {
+      slouceno: false,
+      duvod: odpoved
+        ? `Brána po žádosti neprošla (${odpoved.output?.title}); nesloučeno.`
+        : 'Brána do 10 minut na žádost neodpověděla; nesloučeno.',
+    };
   }
   // Veto mohlo přibýt i během čekání: poslední místní kontrola na čerstvých datech a stejné hlavě.
   const znovu = await nactiPr(api, cislo);
   const zaver = vyhodnot({ ...znovu, konfig, zamrznuti: null, ted: Date.now() });
   if (!zaver.uspech || znovu.pr.hlava.sha !== vstup.pr.hlava.sha) {
-    console.error(`Před sloučením se stav změnil: ${zaver.duvody.join('; ')}; nesloučeno.`);
-    process.exit(1);
+    return { slouceno: false, duvod: `Před sloučením se stav změnil: ${zaver.duvody.join('; ')}; nesloučeno.` };
   }
   await api(`repos/${REPO}/pulls/${cislo}/merge`, {
     method: 'PUT',
     body: { sha: vstup.pr.hlava.sha, merge_method: 'merge' },
   });
-  console.log(`PR #${cislo} sloučen.`);
+  log(`PR #${cislo} sloučen.`);
+  return { slouceno: true };
+}
+
+async function main() {
+  const [arg, prepinac] = process.argv.slice(2);
+  const cislo = Number(arg);
+  if (!cislo) {
+    console.error('Použití: node scripts/brana/sloucit.mjs <číslo PR> [--jen-vyhodnotit]');
+    process.exit(2);
+  }
+  const jenVyhodnotit = prepinac === '--jen-vyhodnotit';
+  const v = await sloucit(vytvorApi(), cislo, { jenVyhodnotit });
+  if (!v.slouceno && !jenVyhodnotit) {
+    console.error(v.duvod);
+    process.exit(1);
+  }
 }
 
 if (import.meta.url === pathToFileURL(process.argv[1] || '').href) await main();
