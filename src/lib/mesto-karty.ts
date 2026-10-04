@@ -3,6 +3,7 @@ import type { DalsiOborVeMeste } from '@/lib/kontext-prihlasek';
 import { adresaPrehledu } from '@/lib/adresa-oboru.mjs';
 import { nazevSkolyProRadek, uliceZAdresy } from '@/lib/okruhy-oboru';
 import { jeNastavba, jeVyucniList, smerOboru } from '@/lib/smery-studia';
+import { druhZrizovatele } from '@/lib/simulator-filter';
 import type { KartaSkoly, RadekKarty, VelikostMesta } from '@/components/mesto/SkolyPodleSmeru';
 
 /**
@@ -18,9 +19,9 @@ export interface PodkladKaret {
   kanonickeNazvy: Map<string, string>;
   /** REDIZO → adresa sídla z rejstříku, pro školy mimo katalog. */
   adresySidel: Record<string, { adresa: string }>;
+  /** REDIZO → zřizovatel z katalogu kteréhokoli ročníku (`zrizovatelPodleRedizo`), pro školy mimo katalog ročníku. */
+  zrizovatele?: Map<string, string>;
 }
-
-const ZRIZOVATEL: Record<string, string> = { 'soukromé': 'soukromá škola', 'církevní': 'církevní škola' };
 
 /**
  * Název školy na kartě: plný název z katalogu (`nazev`) a ulice z adresy nabídky bez čísla popisného.
@@ -42,15 +43,24 @@ export function velikostMesta(nabidek: number): VelikostMesta {
   return 'velke';
 }
 
-/** Délka, ročník u víceletých gymnázií, nástavba a zaměření, když se liší od názvu oboru. */
-export function doplnekOboru(r: Pick<CitySchoolRow, 'delka_studia' | 'zamereni' | 'obor'>, kkov: string): string {
+/** Délka studia a ročník, ze kterého se hlásí (víceletá gymnázia), nebo nástavba. */
+export function delkaOboru(r: Pick<CitySchoolRow, 'delka_studia'>, kkov: string): string {
   const casti: string[] = [];
   if (r.delka_studia) casti.push(`${r.delka_studia}leté`);
   if (smerOboru(kkov) === 'viceleta') casti.push(r.delka_studia === 6 ? 'ze 7. třídy' : 'z 5. třídy');
   if (jeNastavba(kkov)) casti.push('nástavba po výučním listu');
-  const zamereni = (r.zamereni ?? '').trim();
-  if (zamereni && zamereni !== r.obor) casti.push(zamereni);
-  return casti.join(' · ');
+  return casti.join(', ');
+}
+
+/** Zaměření, když se liší od názvu oboru. */
+export function zamereniOboru(r: Pick<CitySchoolRow, 'zamereni' | 'obor'>): string {
+  const z = (r.zamereni ?? '').trim();
+  return z && z !== r.obor ? z : '';
+}
+
+/** Délka, ročník a zaměření jedním řetězcem (pro hledání). */
+export function doplnekOboru(r: Pick<CitySchoolRow, 'delka_studia' | 'zamereni' | 'obor'>, kkov: string): string {
+  return [delkaOboru(r, kkov), zamereniOboru(r)].filter(Boolean).join(' · ');
 }
 
 export function sestavKartySkol(
@@ -59,11 +69,15 @@ export function sestavKartySkol(
   podklad: PodkladKaret,
 ): KartaSkoly[] {
   const karty = new Map<string, KartaSkoly>();
-  const karta = (redizo: string, nazev: string, zrizovatel: string | null): KartaSkoly => {
+  const karta = (redizo: string, nazev: string, zrizovatel: string | null | undefined): KartaSkoly => {
     let k = karty.get(redizo);
     if (!k) {
       const kanonicky = podklad.kanonickeNazvy.get(redizo);
-      k = { redizo, nazev, href: kanonicky ? `/skola/${adresaPrehledu(redizo, kanonicky)}` : null, zrizovatel, radky: [] };
+      k = {
+        redizo, nazev, href: kanonicky ? `/skola/${adresaPrehledu(redizo, kanonicky)}` : null,
+        zrizovatel: druhZrizovatele(zrizovatel ?? podklad.zrizovatele?.get(redizo)),
+        radky: [],
+      };
       karty.set(redizo, k);
     }
     return k;
@@ -78,6 +92,8 @@ export function sestavKartySkol(
       id: r.id,
       obor: r.obor,
       doplnek: doplnekOboru(r, kkov),
+      delka: delkaOboru(r, kkov),
+      zamereni: zamereniOboru(r),
       smer: smerOboru(kkov),
       druh: 'jpz',
       zarazeni: r.zarazeni,
@@ -85,7 +101,7 @@ export function sestavKartySkol(
       href: r.adresaOboru ? `/skola/${r.adresaOboru}` : null,
       nevypsano: r.chybiVRocniku,
     };
-    karta(r.redizo, nazevSUlici(r.nazev || r.nazev_display, r.ulice), ZRIZOVATEL[r.zrizovatel] ?? null).radky.push(radek);
+    karta(r.redizo, nazevSUlici(r.nazev || r.nazev_display, r.ulice), r.zrizovatel).radky.push(radek);
   }
   for (const o of dalsi) {
     const kkov = o.klic.split('_')[1] ?? '';
@@ -97,6 +113,8 @@ export function sestavKartySkol(
       id: o.klic,
       obor: o.obor,
       doplnek: vyucni ? 'výuční list' : '',
+      delka: vyucni ? 'výuční list' : '',
+      zamereni: '',
       smer: smerOboru(kkov),
       // Obor bez jednotné zkoušky nemá výsledky, takže ani obtížnost přijetí (chybějící údaj není nula).
       druh: o.duvod === 'jiny' ? 'mimo' : vyucni ? 'vyucni' : 'bez_zkousky',

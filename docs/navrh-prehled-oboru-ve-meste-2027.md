@@ -263,9 +263,18 @@ Vlastník 4. 10. 2026 zvolil: čtenář je rodič i uchazeč stejnou měrou, ús
 - **Vada dat**: katalog 2026 nese nabídku SŠ KNIH v Brně (66-43-M/01) dvakrát se stejným id; karta ji ukazuje jednou.
 - Odznak „středně těžké“ má `slate-500` (kontrast 4,8 : 1).
 
+## 10. Etapa 3b: řádky místo karet (4. 10. 2026)
+
+Vlastník po nasazení etapy 3: mřížka karet ve dvou sloupcích má různě vysoké rámečky a je nepřehledná, soukromá škola neupozorňuje, že může být placená, a u AKADEMIA Gy je na stránce města 10 míst, na stránce oboru 20. Změny:
+
+- **Jedna tabulka přes celou šířku**: škola je záhlaví skupiny, pod ní její obory ve stálých sloupcích (obor a zaměření, délka, obtížnost přijetí, místa). Na telefonu název oboru a pod ním jeden řádek s délkou, odznakem a místy.
+- **Zřizovatel u názvu školy**: soukromá a církevní škola nese štítek „… škola · může vybírat školné“ (slovník pojmů, heslo zřizovatel; výši školného nemáme, slovo „placená“ se nepoužívá). V upřesnění přibyl výběr zřizovatele s počty škol.
+- **Rozpor 10 a 20 míst** byl na stránce oboru: pruh oborů školy bral u oborů bez zaměření místa ze staršího zpracování (`school_analysis.json`), u 737 z 1 845 oborů. Opravuje samostatné PR „místa v pruhu oborů“; stránka města měla číslo správně (katalog 2026).
+
 ## Historie
 
 | Verze | Datum | Změna |
 |---|---|---|
+| 0.3 | 4. 10. 2026 | etapa 3b: tabulka po školách místo karet, zřizovatel a školné (oddíl 10) |
 | 0.2 | 4. 10. 2026 | přestavba podle volby vlastníka: karty škol zúžené směrem studia (oddíl 9) |
 | 0.1 | 4. 10. 2026 | první verze; oprava řádků „Gymnázium“ a slévání škol v dalších oborech hotová |
