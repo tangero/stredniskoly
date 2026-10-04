@@ -109,7 +109,13 @@ export function PortalKriteriaForm({ redizo, roky, nabidky, ulozena, podklady, p
 
   // Neuložená změna: formulář se liší od záznamu této kombinace (nebo od prázdného formuláře).
   const rozpracovano = jeFormularRozpracovan(vychozi(rok, oborKlic, koloHodnota), { struktura, popis, odkaz }, obor?.konaJPZ === false);
-  const smiZahodit = () => !rozpracovano || window.confirm('Máte neuložené změny. Opravdu je chcete zahodit?');
+  // Po zrušení se ovládací prvky překreslí (nový klíč), aby se vrátily na hodnotu, kterou drží state.
+  const [obnova, setObnova] = useState(0);
+  const smiZahodit = () => {
+    if (!rozpracovano || window.confirm('Máte neuložené změny. Opravdu je chcete zahodit?')) return true;
+    setObnova((n) => n + 1);
+    return false;
+  };
 
   useEffect(() => {
     if (!rozpracovano) return;
@@ -214,7 +220,7 @@ export function PortalKriteriaForm({ redizo, roky, nabidky, ulozena, podklady, p
   });
 
   const vyberKopie = kopirovatelne.length > 0 && <label className="block text-sm text-slate-700">{s ? 'Zkopírovat z uloženého (přepíše formulář):' : 'Nebo zkopírovat z uloženého:'}
-    <select value={kopieZ} onChange={(e) => zkopiruj(e.target.value)} className={POLE}>
+    <select key={`kopie${obnova}`} value={kopieZ} onChange={(e) => zkopiruj(e.target.value)} className={POLE}>
       <option value="">vyberte obor, rok a kolo…</option>
       {kopirovatelne.map((z) => <option key={z.id} value={z.id}>{popisZaznamu(z)}</option>)}
     </select>
@@ -252,12 +258,12 @@ export function PortalKriteriaForm({ redizo, roky, nabidky, ulozena, podklady, p
         <fieldset disabled={stav === 'odesilam'} className="space-y-6">
         <div className="grid gap-4 sm:grid-cols-[10rem_1fr]">
           <label className="block text-sm font-medium text-slate-700">Rok přijímání
-            <select value={rok} onChange={(e) => zmenRok(Number(e.target.value))} className={POLE}>
+            <select key={`rok${obnova}`} value={rok} onChange={(e) => zmenRok(Number(e.target.value))} className={POLE}>
               {roky.map((r) => <option key={r} value={r}>{r}</option>)}
             </select>
           </label>
           <label className="block text-sm font-medium text-slate-700">Obor a zaměření
-            <select value={oborKlic} onChange={(e) => { if (!smiZahodit()) return; setOborKlic(e.target.value); nastav(rok, e.target.value, koloHodnota); }} required className={POLE}>
+            <select key={`obor${obnova}`} value={oborKlic} onChange={(e) => { if (!smiZahodit()) return; setOborKlic(e.target.value); nastav(rok, e.target.value, koloHodnota); }} required className={POLE}>
               {nabidka.map((o) => <option key={o.klic} value={o.klic}>{o.kkov} · {o.nazev}{o.zamereni ? ` – ${o.zamereni}` : ''}</option>)}
             </select>
           </label>
@@ -265,9 +271,9 @@ export function PortalKriteriaForm({ redizo, roky, nabidky, ulozena, podklady, p
         <fieldset>
           <legend className="text-sm font-medium text-slate-700">Pravidla platí pro</legend>
           <div className="mt-2 flex flex-wrap items-center gap-4 text-sm">
-            <label className="flex items-center gap-2"><input type="radio" checked={vsechnaKola} onChange={() => { if (!smiZahodit()) return; setVsechnaKola(true); nastav(rok, oborKlic, null); }} />všechna kola</label>
-            <label className="flex items-center gap-2"><input type="radio" checked={!vsechnaKola} onChange={() => { if (!smiZahodit()) return; setVsechnaKola(false); nastav(rok, oborKlic, kolo); }} />jen kolo</label>
-            {!vsechnaKola && <select aria-label="Číslo kola" value={kolo} onChange={(e) => { if (!smiZahodit()) return; const n = Number(e.target.value); setKolo(n); nastav(rok, oborKlic, n); }} className="rounded-lg border border-slate-300 p-2">
+            <label className="flex items-center gap-2"><input key={`vse${obnova}`} type="radio" checked={vsechnaKola} onChange={() => { if (!smiZahodit()) return; setVsechnaKola(true); nastav(rok, oborKlic, null); }} />všechna kola</label>
+            <label className="flex items-center gap-2"><input key={`kolo${obnova}`} type="radio" checked={!vsechnaKola} onChange={() => { if (!smiZahodit()) return; setVsechnaKola(false); nastav(rok, oborKlic, kolo); }} />jen kolo</label>
+            {!vsechnaKola && <select key={`cislo${obnova}`} aria-label="Číslo kola" value={kolo} onChange={(e) => { if (!smiZahodit()) return; const n = Number(e.target.value); setKolo(n); nastav(rok, oborKlic, n); }} className="rounded-lg border border-slate-300 p-2">
               {[1, 2, 3].map((k) => <option key={k} value={k}>{k}.</option>)}
             </select>}
           </div>
