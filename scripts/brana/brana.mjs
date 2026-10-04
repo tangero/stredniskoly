@@ -94,15 +94,16 @@ export function chybejiciVProtokolu(oznaceni, teloProtokolu = '') {
  */
 export function oddilProtokolu(telo = '', commit = '') {
   const radky = (telo || '').replace(/\r\n?/g, '\n').split('\n');
+  const nadpisProtokolu = (r) => /^\s*(?:#{1,6}\s*|\*\*\s*)Protokol z preview/i.test(r);
   const oddily = [];
   radky.forEach((r, start) => {
-    if (!/^\s*(?:#{1,6}\s*|\*\*\s*)Protokol z preview/i.test(r)) return;
+    if (!nadpisProtokolu(r)) return;
     const nadpis = r.trim().match(/^#+/);
     // Tučný nadpis nemá úroveň: oddíl končí prvním markdown nadpisem.
     const uroven = nadpis ? nadpis[0].length : 6;
-    // Konec: markdown nadpis stejné nebo vyšší úrovně, nebo další nadpis protokolu (i tučný).
+    // Konec: markdown nadpis stejné nebo vyšší úrovně, nebo další nadpis protokolu jakékoli úrovně (i tučný).
     const konec = radky.findIndex((x, i) => i > start && ((/^#+\s/.test(x.trim()) && x.trim().match(/^#+/)[0].length <= uroven)
-      || /^\s*\*\*\s*Protokol z preview/i.test(x)));
+      || nadpisProtokolu(x)));
     oddily.push(radky.slice(start, konec < 0 ? undefined : konec).join('\n'));
   });
   // Víc protokolů v jednom textu: platí poslední oddíl s aktuálním commitem, ne starší protokol nad ním.

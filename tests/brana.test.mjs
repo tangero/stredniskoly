@@ -130,6 +130,7 @@ test('kritérium zmíněné mimo oddíl protokolu se nepočítá', () => {
   assert.match(v2.duvody.join(), /neuvádí kritéria z issue #10: K2, K3, P1$/);
   assert.equal(oddilProtokolu('**Protokol z preview**\n| K1 | ok |\n## Jiné\n| K2 | ok |'), '**Protokol z preview**\n| K1 | ok |');
   assert.equal(oddilProtokolu('**Protokol z preview**\nCommit: aaaaaaa\n| K1 | ok |\n**Protokol z preview**\nCommit: bbbbbbb\n| K2 | ok |', 'aaaaaaa'), '**Protokol z preview**\nCommit: aaaaaaa\n| K1 | ok |');
+  assert.equal(oddilProtokolu('## Protokol z preview\nCommit: aaaaaaa\n| K1 | ok |\n### Protokol z preview\nCommit: bbbbbbb\n| K2 | ok |', 'aaaaaaa'), '## Protokol z preview\nCommit: aaaaaaa\n| K1 | ok |');
 });
 
 test('zadání bez označení K a P a etapa se „Souvisí s“ se posuzují jako dřív', () => {
