@@ -24,7 +24,8 @@ Založení:
 ### Hotovo když
 
 <!-- Každé kritérium: označení K1, K2…, jedna kontrola ano/ne a čím se ověří. Označení se nepřečíslovávají
-     (rozdělené K3 → K3.1, K3.2; zrušené přeškrtnout ~~K4: …~~). Protokol z preview má řádek pro každé K a P. -->
+     (rozdělené K3 → K3.1, K3.2; zrušené přeškrtnout ~~K4: …~~). Protokol z preview má řádek pro každé K a P.
+     Tvar `ověření: /adresa „očekávaný text“` se po sloučení ověřuje i v produkci (#325). -->
 
 - [ ] K1: … - ověření: náhled /…, 390 a 1280 px
 - [ ] K2: … - ověření: …

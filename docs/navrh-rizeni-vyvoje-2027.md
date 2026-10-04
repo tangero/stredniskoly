@@ -397,7 +397,11 @@ brána uzná jen protokol k aktuální hlavě a bez slova „nesplněno“. Maj�
 označení K1, K2… a protikritéria P1, P2…, protokol musí mít řádek pro každé z nich (#300).
 Protokol píše samostatný ověřovatel (workflow „Ověření na náhledu“, #333), který zná jen kritéria a adresu
 náhledu, ne diff; protokol od relace, která změnu naprogramovala, je jen záloha a nese řádek
-`Ověřovatel: implementace (záloha)`. Změny jen v dokumentaci, testech
+`Ověřovatel: implementace (záloha)`.
+Po nasazení `main` a jednou týdně workflow „Ověření v produkci“ (#325) zkontroluje na produkci kritéria
+zadání sloučených za 14 dní, která za `ověření:` uvádějí adresu na webu (a případně očekávaný text v „…“).
+Výsledek zapíše do sloučeného PR jen poprvé, při regresi a po opravě; nesplnění ohlásí v Telegramu
+a založí issue se štítkem `rutina`. Změny jen v dokumentaci, testech
 a nastavení (`bez_preview` v `rezimy.yml`) protokol nepotřebují. Chybějící protokol nahradí platný souhlas
 vlastníka na PR (`schvaleno` na PR, vázaný na aktuální commit): vlastník tím potvrzuje, že změnu zkontroloval
 sám, nebo že ji ověřit nejde, například stránky za přihlášením (RA42). Protokol se slovem „nesplněno“ blokuje
