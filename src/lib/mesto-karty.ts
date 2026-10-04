@@ -1,7 +1,7 @@
 import type { CitySchoolRow } from '@/lib/cityData';
 import type { DalsiOborVeMeste } from '@/lib/kontext-prihlasek';
 import { adresaPrehledu } from '@/lib/adresa-oboru.mjs';
-import { nazevSkolyProRadek } from '@/lib/okruhy-oboru';
+import { nazevSkolyProRadek, uliceZAdresy } from '@/lib/okruhy-oboru';
 import { jeNastavba, jeVyucniList, smerOboru } from '@/lib/smery-studia';
 import type { KartaSkoly, RadekKarty, VelikostMesta } from '@/components/mesto/SkolyPodleSmeru';
 
@@ -21,6 +21,19 @@ export interface PodkladKaret {
 }
 
 const ZRIZOVATEL: Record<string, string> = { 'soukromé': 'soukromá škola', 'církevní': 'církevní škola' };
+
+/**
+ * Název školy na kartě: plný název z katalogu (`nazev`) a ulice z adresy nabídky bez čísla popisného.
+ * Pole `nazev_display` je u části škol zkrácené („Cyrilomet.gymnázium a SOŠ pedagog. Brno“), `nazev`
+ * nese plnější tvar („Cyrilometodějské gymnázium, SPedŠ a MŠ Brno“); úplný zkrácený název
+ * „Gymnázium“ odliší teprve ulice.
+ */
+export function nazevSUlici(nazev: string, ulice: string | null | undefined): string {
+  // Právní forma (s.r.o., o.p.s., z.ú.) rodině nepomůže školu poznat a název jen prodlouží.
+  const bezFormy = nazev.replace(/,?\s*(s\.\s*r\.\s*o\.|o\.\s*p\.\s*s\.|z\.\s*ú\.|z\.\s*s\.)(?=,|$)/g, '').trim();
+  const u = uliceZAdresy(ulice ?? '');
+  return u && !bezFormy.includes(u) ? `${bezFormy}, ${u}` : bezFormy;
+}
 
 /** Velikost města podle počtu nabídek s jednotnou zkouškou (návrh, oddíl 4.3). */
 export function velikostMesta(nabidek: number): VelikostMesta {
@@ -72,7 +85,7 @@ export function sestavKartySkol(
       href: r.adresaOboru ? `/skola/${r.adresaOboru}` : null,
       nevypsano: r.chybiVRocniku,
     };
-    karta(r.redizo, r.nazev_display, ZRIZOVATEL[r.zrizovatel] ?? null).radky.push(radek);
+    karta(r.redizo, nazevSUlici(r.nazev || r.nazev_display, r.ulice), ZRIZOVATEL[r.zrizovatel] ?? null).radky.push(radek);
   }
   for (const o of dalsi) {
     const kkov = o.klic.split('_')[1] ?? '';

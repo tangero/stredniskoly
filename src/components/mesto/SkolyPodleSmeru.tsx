@@ -47,6 +47,8 @@ const pocetSkol = (n: number) => `${cislo(n)} ${n === 1 ? 'škola' : n >= 2 && n
 const pocetMist = (n: number) => `${cislo(n)} ${n === 1 ? 'místo' : n >= 2 && n <= 4 ? 'místa' : 'míst'}`;
 
 const PORADI_SMERU = new Map(SMERY_STUDIA.map((s, i) => [s.id, i]));
+/** Gymnázia a víceletá gymnázia rozliší už délka a ročník v řádku; popisek nad „Gymnázium“ by jen opakoval slovo. */
+const BEZ_POPISKU = new Set<SmerStudia>(['gymnazia', 'viceleta']);
 
 function textBezUdaje(r: RadekKarty): string {
   if (r.druh === 'mimo') return 'mimo náš přehled';
@@ -68,6 +70,7 @@ export function SkolyPodleSmeru({
   const [doklad, setDoklad] = useState<Doklad>('vse');
   const [obtiznost, setObtiznost] = useState<ZarazeniObtiznosti | 'vse'>('vse');
   const [hledat, setHledat] = useState('');
+  const [upresnit, setUpresnit] = useState(false);
   const idHledat = useId();
   const idObtiznost = useId();
 
@@ -79,6 +82,10 @@ export function SkolyPodleSmeru({
     return SMERY_STUDIA.filter(s => pocty.has(s.id)).map(s => ({ ...s, pocet: pocty.get(s.id)! }));
   }, [vsechnyRadky]);
 
+  const cipy: { id: SmerStudia | 'vse'; nazev: string; pocet: number }[] = [
+    { id: 'vse', nazev: 'Všechny směry', pocet: vsechnyRadky.length },
+    ...smery.map(s => ({ id: s.id, nazev: s.kratce, pocet: s.pocet })),
+  ];
   const maVyucni = vsechnyRadky.some(r => r.druh === 'vyucni');
   const maMaturitni = vsechnyRadky.some(r => r.druh === 'jpz');
   const ukazCipy = velikost !== 'male' && smery.length > 1;
@@ -120,22 +127,24 @@ export function SkolyPodleSmeru({
   return (
     <>
       <div className="bg-[#16325c] text-white">
-        <div className="mx-auto max-w-6xl px-4 pb-7 pt-8">
+        <div className="mx-auto max-w-6xl px-4 pb-5 pt-6 md:pb-7 md:pt-8">
           {hlavicka}
           {ukazCipy && (
-            <div className="mt-6">
-              <h2 className="mb-3 text-[17px] font-semibold text-[#d6e2f3]">Co tu můžete studovat</h2>
-              <div
-                role="group"
-                aria-label="Směr studia"
-                className="-mx-4 flex gap-2 overflow-x-auto px-4 pb-1 md:mx-0 md:flex-wrap md:overflow-visible md:px-0"
-              >
-                <CipSmeru aktivni={smer === 'vse'} onClick={() => setSmer('vse')} nazev="Všechny směry" pocet={vsechnyRadky.length} />
-                {smery.map(s => (
-                  <CipSmeru key={s.id} aktivni={smer === s.id} onClick={() => setSmer(s.id)} nazev={s.kratce} pocet={s.pocet} />
-                ))}
+            <div className="mt-5 md:mt-6">
+              <h2 className="mb-2 text-[17px] md:mb-3 font-semibold text-[#d6e2f3]">Co tu můžete studovat</h2>
+              {/* Na telefonu dvě řady posouvané vodorovně jako celek, čtené po řádcích; od md jedna zalomená řada. */}
+              <div role="group" aria-label="Směr studia" className="-mx-4 overflow-x-auto px-4 pb-2 md:mx-0 md:overflow-visible md:px-0 md:pb-1">
+                <div className="flex w-max flex-col gap-2 md:w-auto md:flex-row md:flex-wrap">
+                  {[cipy.slice(0, Math.ceil(cipy.length / 2)), cipy.slice(Math.ceil(cipy.length / 2))].map((rada, i) => (
+                    <div key={i} className="flex gap-2 md:contents">
+                      {rada.map(c => (
+                        <CipSmeru key={c.id} aktivni={smer === c.id} onClick={() => setSmer(c.id)} nazev={c.nazev} pocet={c.pocet} />
+                      ))}
+                    </div>
+                  ))}
+                </div>
               </div>
-              <p className="mt-3 max-w-3xl text-[13px] leading-relaxed text-[#c3d3ea]">
+              <p className="mt-2 max-w-3xl text-[13px] leading-snug text-[#c3d3ea] md:mt-3">
                 Směry seskupují obory podle toho, co se v nich učí, podle číselníku oborů MŠMT. Jejich pořadí nic
                 neříká o obtížnosti přijetí.
               </p>
@@ -144,9 +153,9 @@ export function SkolyPodleSmeru({
         </div>
       </div>
 
-      <div className="mx-auto max-w-6xl px-4 pt-6">
+      <div className="mx-auto max-w-6xl px-4 pt-4 md:pt-6">
         {(ukazDoklad || ukazObtiznost || ukazHledani) && (
-          <div className="mb-4 flex flex-wrap items-end gap-x-6 gap-y-4">
+          <div className="mb-3 flex flex-wrap items-end gap-x-6 gap-y-3 md:mb-4 md:gap-y-4">
             {ukazDoklad && (
               <div role="group" aria-label="Jaké vzdělání obor dává" className="inline-flex rounded-full bg-[#e6ecf3] p-1">
                 {([['vse', 'Vše'], ['maturita', 'S maturitou'], ['vyucni', 'S výučním listem']] as [Doklad, string][]).map(([k, l]) => (
@@ -164,6 +173,17 @@ export function SkolyPodleSmeru({
                 ))}
               </div>
             )}
+            {(ukazObtiznost || ukazHledani) && (
+              <button
+                type="button"
+                aria-expanded={upresnit}
+                onClick={() => setUpresnit(!upresnit)}
+                className="min-h-[44px] rounded-full border border-slate-300 bg-white px-4 text-[15px] font-semibold text-[#16325c] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0074e4] md:hidden"
+              >
+                {upresnit ? 'Skrýt upřesnění' : 'Upřesnit výběr'}
+              </button>
+            )}
+            <div className={`${upresnit ? 'flex' : 'hidden'} w-full flex-wrap items-end gap-x-6 gap-y-4 md:flex md:w-auto md:flex-1`}>
             {ukazObtiznost && (
               <div className="flex flex-col gap-1">
                 <label htmlFor={idObtiznost} className="text-[13px] font-medium text-slate-600">
@@ -197,16 +217,17 @@ export function SkolyPodleSmeru({
                 />
               </div>
             )}
+            </div>
           </div>
         )}
 
-        <p className="max-w-3xl text-[14px] leading-relaxed text-slate-600">
-          U každého oboru je <b className="font-semibold text-slate-800">obtížnost přijetí</b>
-          {rok ? ` v 1. kole ${rok}` : ''}: kolik soutěžících uchazečů se dostalo, tedy těch, kdo splnili
-          požadavky školy a nedostali se na obor, který měli na přihlášce výš. Neříká nic o kvalitě školy.
+        <p className="max-w-[68ch] text-[14px] leading-relaxed text-slate-600">
+          <b className="font-semibold text-slate-800">Obtížnost přijetí</b>{rok ? ` v 1. kole ${rok}` : ''}: kolik
+          soutěžících uchazečů se dostalo, tedy těch, kdo splnili požadavky školy a nedostali se na obor, který měli
+          na přihlášce výš. Kvalitu školy nepopisuje.
         </p>
 
-        <div className="mb-4 mt-5 flex flex-wrap items-baseline justify-between gap-2" aria-live="polite">
+        <div className="mb-3 mt-3 flex flex-wrap items-baseline justify-between gap-2 md:mb-4 md:mt-5" aria-live="polite">
           <p className="text-[15px] font-semibold text-[#16325c]">
             {pocetSkol(vysledek.length)}, {pocetOboru(nRadku)}
           </p>
@@ -234,7 +255,7 @@ export function SkolyPodleSmeru({
             </button>
           </div>
         ) : (
-          <ul className="grid gap-4 md:grid-cols-2">
+          <ul className="grid items-start gap-4 md:grid-cols-2">
             {vysledek.map(s => (
               <li key={s.redizo}>
                 <KartaSkolyView skola={s} rok={rok} seSkupinami={smer === 'vse'} />
@@ -272,7 +293,7 @@ function KartaSkolyView({ skola, rok, seSkupinami }: { skola: KartaSkoly; rok: n
   }
   const popisky = seSkupinami && skupiny.length > 1;
   return (
-    <article className="h-full rounded-[14px] border border-[#dde4ee] bg-white px-5 pb-3 pt-4">
+    <article className="rounded-[14px] border border-[#dde4ee] bg-white px-5 pb-3 pt-4">
       <h3 className="text-[17px] font-bold leading-snug text-[#16325c]">
         {skola.href ? (
           <Link href={skola.href} className="hover:text-[#0062c4] hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0074e4]">
@@ -281,9 +302,12 @@ function KartaSkolyView({ skola, rok, seSkupinami }: { skola: KartaSkoly; rok: n
         ) : skola.nazev}
       </h3>
       {skola.zrizovatel && <p className="mt-0.5 text-[13px] text-slate-600">{skola.zrizovatel}</p>}
-      {skupiny.map(g => (
-        <div key={g.smer} className="mt-2">
-          {popisky && (
+      {skupiny.map((g, i) => {
+        const sPopiskem = popisky && !BEZ_POPISKU.has(g.smer);
+        // Skupina bez popisku navazuje na předchozí stejnou dělicí čarou jako řádky uvnitř skupiny.
+        return (
+        <div key={g.smer} className={i === 0 || sPopiskem ? 'mt-2' : 'border-t border-[#eef2f6]'}>
+          {sPopiskem && (
             <p className="mt-3 text-[13px] font-semibold text-slate-500">
               {SMERY_STUDIA.find(s => s.id === g.smer)?.kratce}
             </p>
@@ -296,7 +320,8 @@ function KartaSkolyView({ skola, rok, seSkupinami }: { skola: KartaSkoly; rok: n
             ))}
           </ul>
         </div>
-      ))}
+        );
+      })}
     </article>
   );
 }

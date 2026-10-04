@@ -8,7 +8,7 @@ import { zobrazeneObdobi } from '@/lib/stav-datovych-sad';
 import { dalsiOboryVeMeste, nactiIndexRejstriku } from '@/lib/kontext-prihlasek';
 import { getSchoolAnalysis, getSchoolsData } from '@/lib/data';
 import { rocnikyKatalogu } from '@/lib/school-key';
-import { sestavKartySkol, velikostMesta } from '@/lib/mesto-karty';
+import { nazevSUlici, sestavKartySkol, velikostMesta } from '@/lib/mesto-karty';
 import { SkolyPodleSmeru } from '@/components/mesto/SkolyPodleSmeru';
 import { VeletrhVMeste } from '@/components/veletrhy/VeletrhVMeste';
 import type { CityStats } from '@/lib/cityData';
@@ -37,10 +37,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     alternates: { canonical: `/mesto/${meta.slug}` },
     title: `Střední školy ${meta.nazev} — kompletní přehled`,
-    description: `Co se dá studovat v ${meta.nazev}: obory po školách a směrech, jak těžké bylo se na ně dostat v 1. kole${zaRok} a počty míst.`,
+    description: `Střední školy ${meta.nazev}: co se tu dá studovat po školách a směrech, jak těžké bylo se na obory dostat v 1. kole${zaRok} a počty míst.`,
     openGraph: {
       title: `Střední školy ${meta.nazev} — kompletní přehled`,
-      description: `Které školy v ${meta.nazev} nabízejí co a jak těžké bylo se na ně dostat v 1. kole${zaRok}.`,
+      description: `Střední školy ${meta.nazev}: které školy nabízejí co a jak těžké bylo se na ně dostat v 1. kole${zaRok}.`,
     },
   };
 }
@@ -51,14 +51,14 @@ function fmt(n: number) {
 
 const sklon = (n: number, a: string, b: string, c: string) => (n === 1 ? a : n >= 2 && n <= 4 ? b : c);
 
-/** Název školy s ulicí podle REDIZO z katalogu, ročníky podle registru (`rocnikyKatalogu`). */
+/** Název školy s ulicí podle REDIZO z katalogu (`nazevSUlici`), ročníky podle registru (`rocnikyKatalogu`). */
 async function nazvySkolKatalogu(): Promise<Map<string, string>> {
   const data = await getSchoolsData() as unknown as Record<string, Array<Record<string, unknown>>>;
   const skoly = new Map<string, string>();
   for (const rocnik of rocnikyKatalogu(Object.keys(data), await zobrazeneObdobi('cermat-vysledky'))) {
     for (const z of data[rocnik] ?? []) {
       const redizo = String(z.redizo ?? '');
-      const nazev = String(z.nazev_display || z.nazev || '');
+      const nazev = z.nazev ? nazevSUlici(String(z.nazev), String(z.ulice ?? '')) : String(z.nazev_display ?? '');
       if (redizo && nazev && !skoly.has(redizo)) skoly.set(redizo, nazev);
     }
   }
