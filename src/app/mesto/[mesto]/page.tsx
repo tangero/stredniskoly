@@ -10,6 +10,7 @@ import { getSchoolAnalysis, getSchoolsData } from '@/lib/data';
 import { rocnikyKatalogu } from '@/lib/school-key';
 import { nazevSUlici, sestavKartySkol, velikostMesta } from '@/lib/mesto-karty';
 import { SkolyPodleSmeru } from '@/components/mesto/SkolyPodleSmeru';
+import { zrizovatelPodleRedizo } from '@/lib/simulator-filter';
 import { VeletrhVMeste } from '@/components/veletrhy/VeletrhVMeste';
 import type { CityStats } from '@/lib/cityData';
 
@@ -93,6 +94,7 @@ export default async function MestoPage({ params }: Props) {
 
   const skoly = sestavKartySkol(schools, dalsi.obory, {
     nazvyKatalogu, kanonickeNazvy, adresySidel: rejstrik.identifikace,
+    zrizovatele: zrizovatelPodleRedizo(await getSchoolsData() as unknown as Record<string, unknown>),
   });
   const pocetNabidek = skoly.flatMap(k => k.radky).filter(r => r.druh === 'jpz').length;
   const pocetDalsich = dalsi.obory.length;

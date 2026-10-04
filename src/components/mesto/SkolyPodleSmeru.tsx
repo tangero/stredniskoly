@@ -5,19 +5,25 @@ import Link from 'next/link';
 import { OdznakObtiznosti } from '@/components/nabidka/Odznaky';
 import { cislo, ZARAZENI_POPISEK, PORADI_OBTIZNOSTI, type ZarazeniObtiznosti } from '@/lib/obor-profil';
 import { SMERY_STUDIA, type SmerStudia } from '@/lib/smery-studia';
+import type { DruhZrizovatele } from '@/lib/simulator-filter';
 
 /**
- * Přehled oborů ve městě po kartách škol, zúžený směrem studia
- * (docs/navrh-prehled-oboru-ve-meste-2027.md). Řádek oboru nese jen obor, obtížnost přijetí
- * a počet míst; podrobnosti jsou na stránce oboru. Podle obtížnosti se neřadí.
+ * Přehled oborů ve městě jako jedna tabulka: škola je záhlaví skupiny, pod ní její obory ve stálých
+ * sloupcích (obor a zaměření, délka, obtížnost přijetí, místa), zúžená směrem studia
+ * (docs/navrh-prehled-oboru-ve-meste-2027.md). Podrobnosti jsou na stránce oboru.
+ * Podle obtížnosti se neřadí; školy jdou podle názvu.
  */
 export type DruhOboru = 'jpz' | 'vyucni' | 'bez_zkousky' | 'mimo';
 
 export interface RadekKarty {
   id: string;
   obor: string;
-  /** Délka, zaměření, „výuční list“ nebo „nástavba po výučním listu“. */
+  /** Délka, zaměření, „výuční list“ nebo nástavba jedním řetězcem (hledání). */
   doplnek: string;
+  /** Délka studia a ročník, ze kterého se hlásí; u učebních oborů „výuční list“. */
+  delka: string;
+  /** Zaměření, když se liší od názvu oboru. */
+  zamereni: string;
   smer: SmerStudia;
   druh: DruhOboru;
   zarazeni: ZarazeniObtiznosti | null;
@@ -33,8 +39,8 @@ export interface KartaSkoly {
   /** Název s ulicí. */
   nazev: string;
   href: string | null;
-  /** „soukromá škola“ nebo „církevní škola“; veřejné školy nic nenesou. */
-  zrizovatel: string | null;
+  /** Zřizovatel; `null`, když ho katalog nezná. */
+  zrizovatel: DruhZrizovatele | null;
   radky: RadekKarty[];
 }
 
@@ -43,18 +49,29 @@ export type VelikostMesta = 'male' | 'stredni' | 'velke';
 type Doklad = 'vse' | 'maturita' | 'vyucni';
 
 const pocetOboru = (n: number) => `${cislo(n)} ${n === 1 ? 'obor' : n >= 2 && n <= 4 ? 'obory' : 'oborů'}`;
-const pocetSkol = (n: number) => `${cislo(n)} ${n === 1 ? 'škola' : n >= 2 && n <= 4 ? 'školy' : 'škol'}`;
 const pocetMist = (n: number) => `${cislo(n)} ${n === 1 ? 'místo' : n >= 2 && n <= 4 ? 'místa' : 'míst'}`;
+const pocetSkol = (n: number) => `${cislo(n)} ${n === 1 ? 'škola' : n >= 2 && n <= 4 ? 'školy' : 'škol'}`;
 
 const PORADI_SMERU = new Map(SMERY_STUDIA.map((s, i) => [s.id, i]));
-/** Gymnázia a víceletá gymnázia rozliší už délka a ročník v řádku; popisek nad „Gymnázium“ by jen opakoval slovo. */
-const BEZ_POPISKU = new Set<SmerStudia>(['gymnazia', 'viceleta']);
+
+/** Slovník pojmů, heslo zřizovatel: soukromé a církevní školy mohou vybírat školné (výši neznáme). */
+const ZRIZOVATEL_TEXT: Record<DruhZrizovatele, string | null> = {
+  verejna: null,
+  soukroma: 'soukromá škola · může vybírat školné',
+  cirkevni: 'církevní škola · může vybírat školné',
+};
+
+const ZRIZOVATEL_VOLBA: [DruhZrizovatele | 'vse', string][] = [
+  ['vse', 'všechny školy'], ['verejna', 'veřejné'], ['soukroma', 'soukromé'], ['cirkevni', 'církevní'],
+];
 
 function textBezUdaje(r: RadekKarty): string {
   if (r.druh === 'mimo') return 'mimo náš přehled';
   if (r.druh !== 'jpz') return 'bez jednotné zkoušky';
   return 'bez údaje';
 }
+
+const POLE = 'min-h-[44px] rounded-[10px] border border-slate-300 bg-white px-3 text-[15px] text-slate-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-[#0074e4]';
 
 export function SkolyPodleSmeru({
   skoly, rok, velikost, hlavicka,
@@ -69,10 +86,12 @@ export function SkolyPodleSmeru({
   const [smer, setSmer] = useState<SmerStudia | 'vse'>('vse');
   const [doklad, setDoklad] = useState<Doklad>('vse');
   const [obtiznost, setObtiznost] = useState<ZarazeniObtiznosti | 'vse'>('vse');
+  const [zrizovatel, setZrizovatel] = useState<DruhZrizovatele | 'vse'>('vse');
   const [hledat, setHledat] = useState('');
   const [upresnit, setUpresnit] = useState(false);
   const idHledat = useId();
   const idObtiznost = useId();
+  const idZrizovatel = useId();
 
   const vsechnyRadky = useMemo(() => skoly.flatMap(s => s.radky), [skoly]);
 
@@ -91,7 +110,9 @@ export function SkolyPodleSmeru({
   const ukazCipy = velikost !== 'male' && smery.length > 1;
   const ukazDoklad = velikost !== 'male' && maVyucni && maMaturitni;
   const ukazObtiznost = velikost !== 'male' && vsechnyRadky.some(r => r.zarazeni);
+  const ukazZrizovatele = velikost !== 'male' && skoly.some(s => s.zrizovatel && s.zrizovatel !== 'verejna');
   const ukazHledani = velikost === 'velke';
+  const maUpresneni = ukazObtiznost || ukazZrizovatele || ukazHledani;
 
   const dotaz = hledat.trim().toLocaleLowerCase('cs');
   const sedi = (r: RadekKarty, skola: KartaSkoly) => {
@@ -99,6 +120,7 @@ export function SkolyPodleSmeru({
     if (doklad === 'maturita' && r.druh !== 'jpz') return false;
     if (doklad === 'vyucni' && r.druh !== 'vyucni') return false;
     if (obtiznost !== 'vse' && r.zarazeni !== obtiznost) return false;
+    if (zrizovatel !== 'vse' && skola.zrizovatel !== zrizovatel) return false;
     if (dotaz && !`${skola.nazev} ${r.obor} ${r.doplnek}`.toLocaleLowerCase('cs').includes(dotaz)) return false;
     return true;
   };
@@ -121,8 +143,16 @@ export function SkolyPodleSmeru({
     return m;
   }, [vsechnyRadky, smer]);
 
-  const filtrovano = smer !== 'vse' || doklad !== 'vse' || obtiznost !== 'vse' || dotaz !== '';
-  const zrusit = () => { setSmer('vse'); setDoklad('vse'); setObtiznost('vse'); setHledat(''); };
+  const pocetZrizovatele = useMemo(() => {
+    const m = new Map<DruhZrizovatele, number>();
+    for (const s of skoly) if (s.zrizovatel) m.set(s.zrizovatel, (m.get(s.zrizovatel) ?? 0) + 1);
+    return m;
+  }, [skoly]);
+
+  const filtrovano = smer !== 'vse' || doklad !== 'vse' || obtiznost !== 'vse' || zrizovatel !== 'vse' || dotaz !== '';
+  const zrusit = () => {
+    setSmer('vse'); setDoklad('vse'); setObtiznost('vse'); setZrizovatel('vse'); setHledat('');
+  };
 
   return (
     <>
@@ -131,7 +161,7 @@ export function SkolyPodleSmeru({
           {hlavicka}
           {ukazCipy && (
             <div className="mt-5 md:mt-6">
-              <h2 className="mb-2 text-[17px] md:mb-3 font-semibold text-[#d6e2f3]">Co tu můžete studovat</h2>
+              <h2 className="mb-2 text-[17px] font-semibold text-[#d6e2f3] md:mb-3">Co tu můžete studovat</h2>
               {/* Na telefonu dvě řady posouvané vodorovně jako celek, čtené po řádcích; od md jedna zalomená řada. */}
               <div role="group" aria-label="Směr studia" className="-mx-4 overflow-x-auto px-4 pb-2 md:mx-0 md:overflow-visible md:px-0 md:pb-1">
                 <div className="flex w-max flex-col gap-2 md:w-auto md:flex-row md:flex-wrap">
@@ -154,7 +184,7 @@ export function SkolyPodleSmeru({
       </div>
 
       <div className="mx-auto max-w-6xl px-4 pt-4 md:pt-6">
-        {(ukazDoklad || ukazObtiznost || ukazHledani) && (
+        {(ukazDoklad || maUpresneni) && (
           <div className="mb-3 flex flex-wrap items-end gap-x-6 gap-y-3 md:mb-4 md:gap-y-4">
             {ukazDoklad && (
               <div role="group" aria-label="Jaké vzdělání obor dává" className="inline-flex rounded-full bg-[#e6ecf3] p-1">
@@ -173,7 +203,7 @@ export function SkolyPodleSmeru({
                 ))}
               </div>
             )}
-            {(ukazObtiznost || ukazHledani) && (
+            {maUpresneni && (
               <button
                 type="button"
                 aria-expanded={upresnit}
@@ -184,39 +214,46 @@ export function SkolyPodleSmeru({
               </button>
             )}
             <div className={`${upresnit ? 'flex' : 'hidden'} w-full flex-wrap items-end gap-x-6 gap-y-4 md:flex md:w-auto md:flex-1`}>
-            {ukazObtiznost && (
-              <div className="flex flex-col gap-1">
-                <label htmlFor={idObtiznost} className="text-[13px] font-medium text-slate-600">
-                  Obtížnost přijetí{rok ? ` v 1. kole ${rok}` : ''}
-                </label>
-                <select
-                  id={idObtiznost}
-                  value={obtiznost}
-                  onChange={e => setObtiznost(e.target.value as ZarazeniObtiznosti | 'vse')}
-                  className="min-h-[44px] rounded-[10px] border border-slate-300 bg-white px-3 text-[15px] text-slate-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-[#0074e4]"
-                >
-                  <option value="vse">všechny stupně</option>
-                  {PORADI_OBTIZNOSTI.map(z => (
-                    <option key={z} value={z} disabled={!pocetObtiznosti.get(z)}>
-                      {ZARAZENI_POPISEK[z]} ({cislo(pocetObtiznosti.get(z) ?? 0)})
-                    </option>
-                  ))}
-                </select>
-              </div>
-            )}
-            {ukazHledani && (
-              <div className="flex min-w-[240px] flex-1 flex-col gap-1 md:max-w-[340px]">
-                <label htmlFor={idHledat} className="text-[13px] font-medium text-slate-600">Hledat školu nebo obor</label>
-                <input
-                  id={idHledat}
-                  type="search"
-                  value={hledat}
-                  onChange={e => setHledat(e.target.value)}
-                  placeholder="například Purkyňova nebo elektro"
-                  className="min-h-[44px] rounded-[10px] border border-slate-300 bg-white px-3 text-[15px] text-slate-900 placeholder:text-slate-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-[#0074e4]"
-                />
-              </div>
-            )}
+              {ukazObtiznost && (
+                <div className="flex flex-col gap-1">
+                  <label htmlFor={idObtiznost} className="text-[13px] font-medium text-slate-600">
+                    Obtížnost přijetí{rok ? ` v 1. kole ${rok}` : ''}
+                  </label>
+                  <select id={idObtiznost} value={obtiznost} onChange={e => setObtiznost(e.target.value as ZarazeniObtiznosti | 'vse')} className={POLE}>
+                    <option value="vse">všechny stupně</option>
+                    {PORADI_OBTIZNOSTI.map(z => (
+                      <option key={z} value={z} disabled={!pocetObtiznosti.get(z)}>
+                        {ZARAZENI_POPISEK[z]} ({cislo(pocetObtiznosti.get(z) ?? 0)})
+                      </option>
+                    ))}
+                  </select>
+                </div>
+              )}
+              {ukazZrizovatele && (
+                <div className="flex flex-col gap-1">
+                  <label htmlFor={idZrizovatel} className="text-[13px] font-medium text-slate-600">Zřizovatel školy</label>
+                  <select id={idZrizovatel} value={zrizovatel} onChange={e => setZrizovatel(e.target.value as DruhZrizovatele | 'vse')} className={POLE}>
+                    {ZRIZOVATEL_VOLBA.map(([k, l]) => (
+                      <option key={k} value={k} disabled={k !== 'vse' && !pocetZrizovatele.get(k)}>
+                        {k === 'vse' ? l : `${l} (${cislo(pocetZrizovatele.get(k) ?? 0)})`}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+              )}
+              {ukazHledani && (
+                <div className="flex min-w-[240px] flex-1 flex-col gap-1 md:max-w-[320px]">
+                  <label htmlFor={idHledat} className="text-[13px] font-medium text-slate-600">Hledat školu nebo obor</label>
+                  <input
+                    id={idHledat}
+                    type="search"
+                    value={hledat}
+                    onChange={e => setHledat(e.target.value)}
+                    placeholder="například Purkyňova nebo elektro"
+                    className={`${POLE} placeholder:text-slate-500`}
+                  />
+                </div>
+              )}
             </div>
           </div>
         )}
@@ -225,6 +262,7 @@ export function SkolyPodleSmeru({
           <b className="font-semibold text-slate-800">Obtížnost přijetí</b>{rok ? ` v 1. kole ${rok}` : ''}: kolik
           soutěžících uchazečů se dostalo, tedy těch, kdo splnili požadavky školy a nedostali se na obor, který měli
           na přihlášce výš. Kvalitu školy nepopisuje.
+          {ukazZrizovatele && ' Zřizovatel je ten, kdo školu založil a odpovídá za ni; soukromé a církevní školy mohou vybírat školné.'}
         </p>
 
         <div className="mb-3 mt-3 flex flex-wrap items-baseline justify-between gap-2 md:mb-4 md:mt-5" aria-live="polite">
@@ -255,13 +293,24 @@ export function SkolyPodleSmeru({
             </button>
           </div>
         ) : (
-          <ul className="grid items-start gap-4 md:grid-cols-2">
-            {vysledek.map(s => (
-              <li key={s.redizo}>
-                <KartaSkolyView skola={s} rok={rok} seSkupinami={smer === 'vse'} />
-              </li>
-            ))}
-          </ul>
+          <div className="overflow-hidden rounded-[14px] border border-[#dde4ee] bg-white">
+            <table className="w-full border-collapse text-left">
+              <caption className="sr-only">
+                Obory ve městě po školách: obor a zaměření, délka studia, obtížnost přijetí{rok ? ` v 1. kole ${rok}` : ''} a počet míst
+              </caption>
+              <thead className="hidden bg-[#f4f6f9] md:table-header-group">
+                <tr className="text-[13px] font-semibold text-slate-600">
+                  <th scope="col" className="px-5 py-2.5 font-semibold">Obor</th>
+                  <th scope="col" className="w-[11rem] px-3 py-2.5 font-semibold">Délka</th>
+                  <th scope="col" className="w-[12rem] px-3 py-2.5 font-semibold">Obtížnost přijetí{rok ? ` ${rok}` : ''}</th>
+                  <th scope="col" className="w-[6rem] px-5 py-2.5 text-right font-semibold">Míst</th>
+                </tr>
+              </thead>
+              {vysledek.map(s => (
+                <SkolaView key={s.redizo} skola={s} rok={rok} />
+              ))}
+            </table>
+          </div>
         )}
       </div>
     </>
@@ -284,77 +333,65 @@ function CipSmeru({ aktivni, onClick, nazev, pocet }: { aktivni: boolean; onClic
   );
 }
 
-function KartaSkolyView({ skola, rok, seSkupinami }: { skola: KartaSkoly; rok: number | null; seSkupinami: boolean }) {
-  const skupiny: { smer: SmerStudia; radky: RadekKarty[] }[] = [];
-  for (const r of skola.radky) {
-    const posledni = skupiny[skupiny.length - 1];
-    if (posledni && posledni.smer === r.smer) posledni.radky.push(r);
-    else skupiny.push({ smer: r.smer, radky: [r] });
-  }
-  const popisky = seSkupinami && skupiny.length > 1;
+function SkolaView({ skola, rok }: { skola: KartaSkoly; rok: number | null }) {
+  const zrizovatel = skola.zrizovatel ? ZRIZOVATEL_TEXT[skola.zrizovatel] : null;
   return (
-    <article className="rounded-[14px] border border-[#dde4ee] bg-white px-5 pb-3 pt-4">
-      <h3 className="text-[17px] font-bold leading-snug text-[#16325c]">
-        {skola.href ? (
-          <Link href={skola.href} className="hover:text-[#0062c4] hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0074e4]">
-            {skola.nazev}
-          </Link>
-        ) : skola.nazev}
-      </h3>
-      {skola.zrizovatel && <p className="mt-0.5 text-[13px] text-slate-600">{skola.zrizovatel}</p>}
-      {skupiny.map((g, i) => {
-        const sPopiskem = popisky && !BEZ_POPISKU.has(g.smer);
-        // Skupina bez popisku navazuje na předchozí stejnou dělicí čarou jako řádky uvnitř skupiny.
-        return (
-        <div key={g.smer} className={i === 0 || sPopiskem ? 'mt-2' : 'border-t border-[#eef2f6]'}>
-          {sPopiskem && (
-            <p className="mt-3 text-[13px] font-semibold text-slate-500">
-              {SMERY_STUDIA.find(s => s.id === g.smer)?.kratce}
-            </p>
-          )}
-          <ul className="divide-y divide-[#eef2f6]">
-            {g.radky.map(r => (
-              <li key={r.id}>
-                <RadekView r={r} rok={rok} />
-              </li>
-            ))}
-          </ul>
-        </div>
-        );
-      })}
-    </article>
+    <tbody className="border-t border-[#dde4ee] first-of-type:border-t-0">
+      <tr className="bg-[#f7f9fc]">
+        <th scope="colgroup" colSpan={4} className="px-4 pb-2 pt-3.5 text-left font-normal md:px-5">
+          <span className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
+            <span className="text-[17px] font-bold leading-snug text-[#16325c]">
+              {skola.href ? (
+                <Link href={skola.href} className="hover:text-[#0062c4] hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0074e4]">
+                  {skola.nazev}
+                </Link>
+              ) : skola.nazev}
+            </span>
+            {zrizovatel && (
+              <span className="whitespace-nowrap rounded-full border border-[#b9893a] bg-[#fdf6e9] px-2.5 py-0.5 text-[13px] font-medium text-[#7a4e0c]">
+                {zrizovatel}
+              </span>
+            )}
+          </span>
+        </th>
+      </tr>
+      {skola.radky.map(r => (
+        <RadekView key={r.id} r={r} rok={rok} />
+      ))}
+    </tbody>
   );
 }
 
 function RadekView({ r, rok }: { r: RadekKarty; rok: number | null }) {
-  const obsah = (
-    <>
-      <span className="min-w-0">
-        <span className={`block text-[15px] font-semibold leading-snug ${r.href ? 'text-slate-900 group-hover:text-[#0062c4]' : 'text-slate-800'}`}>
-          {r.obor}
-        </span>
-        {r.doplnek && <span className="mt-0.5 block text-[13px] leading-snug text-slate-600">{r.doplnek}</span>}
+  return (
+    <tr className="grid grid-cols-[auto_minmax(0,1fr)_auto] items-center gap-x-3 border-t border-[#eef2f6] px-4 py-3 md:table-row md:px-0 md:py-0 md:hover:bg-[#f5f8fc]">
+      <td className="col-span-3 md:px-5 md:py-3 md:align-top">
+        {r.href ? (
+          <Link href={r.href} className="text-[15px] font-semibold leading-snug text-slate-900 hover:text-[#0062c4] hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0074e4]">
+            {r.obor}
+          </Link>
+        ) : (
+          <span className="text-[15px] font-semibold leading-snug text-slate-800">{r.obor}</span>
+        )}
+        {r.zamereni && <span className="mt-0.5 block text-[13px] leading-snug text-slate-600">{r.zamereni}</span>}
         {r.nevypsano && (
           <span className="mt-0.5 block text-[13px] text-amber-800">v 1. kole{rok ? ` ${rok}` : ''} nevypsán, údaje jsou starší</span>
         )}
-      </span>
-      <span className="flex shrink-0 flex-col items-end gap-1 text-right">
+      </td>
+      <td className="mt-1.5 text-[14px] text-slate-700 md:mt-0 md:px-3 md:py-3 md:align-top">{r.delka}</td>
+      <td className="mt-1.5 md:mt-0 md:px-3 md:py-3 md:align-top">
         {r.zarazeni ? <OdznakObtiznosti zarazeni={r.zarazeni} /> : (
           <span className="text-[13px] text-slate-600">{textBezUdaje(r)}</span>
         )}
-        {r.mista !== null && <span className="text-[13px] tabular-nums text-slate-600">{pocetMist(r.mista)}</span>}
-      </span>
-    </>
-  );
-  const tridy = 'flex items-start justify-between gap-4 py-3';
-  return r.href ? (
-    <Link
-      href={r.href}
-      className={`group -mx-2 rounded-lg px-2 ${tridy} hover:bg-[#f5f8fc] focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#0074e4]`}
-    >
-      {obsah}
-    </Link>
-  ) : (
-    <div className={tridy}>{obsah}</div>
+      </td>
+      <td className="mt-1.5 text-right text-[14px] tabular-nums text-slate-700 md:mt-0 md:px-5 md:py-3 md:align-top">
+        {r.mista !== null ? (
+          <>
+            <span className="md:hidden">{pocetMist(r.mista)}</span>
+            <span className="hidden md:inline">{cislo(r.mista)}</span>
+          </>
+        ) : <span className="text-slate-500" aria-label="počet míst neuvádíme">–</span>}
+      </td>
+    </tr>
   );
 }
