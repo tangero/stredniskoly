@@ -6,7 +6,11 @@ import { druhTestu, type DruhTestu, type KriteriaOboru, type PoziceOboru, type P
 import { getSchoolsData, getExtractionsByRedizo, getInspisDataByRedizo } from '@/lib/data';
 import { getSouhrnNabidky, nabidkyVeSkupineKraje, souhrnOboru, type SouhrnRocniku } from '@/lib/souhrny-kolo1';
 import { getKontextPrihlasek, type KontextPrihlasek } from '@/lib/kontext-prihlasek';
-import { getSoubezneObce, type SoubezneObce } from '@/lib/okruhy-oboru';
+import { getOkruhOboru, getSoubezneObce, type SoubezneObce } from '@/lib/okruhy-oboru';
+import { sestavOkruhyMesta, type OkruhMestaKZobrazeni } from '@/lib/mesto-karty';
+import { katalogOboru, kanonickeNazvySkol, nazvySkolKatalogu, obtiznostOboru } from '@/lib/okruhy-podklad';
+import { nactiIndexRejstriku } from '@/lib/kontext-prihlasek';
+import { MESTA } from '@/lib/mesta.mjs';
 import { getPasmaPrijeti, getPasmaPrijetiZaRok, celostatniMedianUchazecu, rokPasemPrijeti, type PasmaPrijetiObor } from '@/lib/pasma-prijeti';
 import { getDruheKolo, type DruheKoloNabidky } from '@/lib/druhe-kolo';
 import { verzeObdobi, zobrazeneObdobi } from '@/lib/stav-datovych-sad';
@@ -93,6 +97,8 @@ export interface ProfilOboruData {
   kontext: { rok: number; data: KontextPrihlasek; vys: OborNaPrihlasce[]; niz: OborNaPrihlasce[] } | null;
   /** Souběžné přihlášky podle obce (okruhy oborů, issue #277); blok „Které další obory v okolí uchazeči také volí“. */
   soubezneObce: SoubezneObce | null;
+  /** Okruh oboru (obory, mezi kterými se uchazeči rozhodují) se stejným jménem a řádky jako na stránce města. */
+  okruh: OkruhNaStranceOboru | null;
   druheKolo: DruheKoloNabidky | null;
   web: string | null;
   inspekce: {
@@ -159,14 +165,51 @@ function kriteriaZamereni(k: KriteriaOboru | null, zamereni: string | undefined)
   return shoda.length ? { ...k, prepisy: shoda } : k;
 }
 
+export interface OkruhNaStranceOboru {
+  rok: number;
+  /** Rok souhrnů 1. kola, ze kterých je obtížnost přijetí (může se lišit od roku uchazečů). */
+  rokObtiznosti: number | null;
+  obec: string;
+  /** Odkaz na okruh na stránce města, když město stránku má. */
+  hrefMesta: string | null;
+  /** Klíč REDIZO_KKOV tohoto oboru, aby se jeho řádek dal zvýraznit. */
+  klic: string;
+  zobrazeni: OkruhMestaKZobrazeni;
+}
+
+/** Okruh oboru sestavený stejně jako na stránce města (`sestavOkruhyMesta`); řádky odkazují na přehled školy. */
+async function okruhNaStranceOboru(programId: string): Promise<OkruhNaStranceOboru | null> {
+  const nalez = await getOkruhOboru(programId);
+  if (!nalez) return null;
+  const klice = nalez.okruh.obory.map(o => o.klic);
+  const [katalog, nazvyKatalogu, kanonickeNazvy, rejstrik, obtiznost, rokObtiznosti] = await Promise.all([
+    katalogOboru(), nazvySkolKatalogu(), kanonickeNazvySkol(), nactiIndexRejstriku(), obtiznostOboru(klice),
+    zobrazeneObdobi('cermat-vysledky'),
+  ]);
+  const { okruhy, nastavby } = sestavOkruhyMesta([nalez.okruh], nalez.obec, [], {
+    katalog, nazvyKatalogu, kanonickeNazvy, rejstrik, obtiznost,
+  });
+  const zobrazeni = okruhy[0] ?? nastavby[0];
+  if (!zobrazeni) return null;
+  const mesto = MESTA.find(m => m.nazev === nalez.obec);
+  return {
+    rok: nalez.rok,
+    rokObtiznosti: Number(rokObtiznosti) || null,
+    obec: nalez.obec,
+    hrefMesta: mesto ? `/mesto/${mesto.slug}#okruh-${nalez.okruh.id}` : null,
+    klic: programId.split('_').slice(0, 2).join('_'),
+    zobrazeni,
+  };
+}
+
 /** Null, když nabídka v zobrazeném ročníku souhrnů není; stránka pak použije starší podobu. */
 export async function getProfilOboru(programId: string, zamereni: string | undefined, redizo: string): Promise<ProfilOboruData | null> {
   const souhrn = await getSouhrnNabidky(programId);
   if (!souhrn) return null;
-  const [rokPasem, kontextVysledek, druheKolo, web, extrakce, inspis, nazvy, verzeUchazecu, soubezneObce] = await Promise.all([
+  const [rokPasem, kontextVysledek, druheKolo, web, extrakce, inspis, nazvy, verzeUchazecu, soubezneObce, okruh] = await Promise.all([
     rokPasemPrijeti(), getKontextPrihlasek(programId), getDruheKolo(programId, zamereni), getWebSkoly(redizo),
     getExtractionsByRedizo(redizo), getInspisDataByRedizo(redizo), nazvyOboru(),
-    verzeObdobi('cermat-uchazeci-kolo1'), getSoubezneObce(programId),
+    verzeObdobi('cermat-uchazeci-kolo1'), getSoubezneObce(programId), okruhNaStranceOboru(programId),
   ]);
   const pasmaData = rokPasem ? await getPasmaPrijeti(programId) : null;
 
@@ -286,6 +329,7 @@ export async function getProfilOboru(programId: string, zamereni: string | undef
     verzeUchazecu,
     kontext,
     soubezneObce,
+    okruh,
     druheKolo,
     web,
     inspekce: posledni ? {

@@ -18,8 +18,8 @@ import { dalsiOboryVeMeste, nactiIndexRejstriku } from '../src/lib/kontext-prihl
 import { getSchoolAnalysis, getProgramsByRedizo, getSchoolsData } from '../src/lib/data.ts';
 import { zrizovatelPodleRedizo } from '../src/lib/simulator-filter.ts';
 import { sestavKartySkol, sestavOkruhyMesta, nazevOkruhu, velikostMesta } from '../src/lib/mesto-karty.ts';
-import { getOkruheMesta } from '../src/lib/okruhy-oboru.ts';
-import { OkruhyMesta } from '../src/components/mesto/OkruhyMesta.tsx';
+import { getOkruheMesta, getOkruhOboru } from '../src/lib/okruhy-oboru.ts';
+import { OkruhyMesta, OkruhOboruObsah } from '../src/components/mesto/OkruhyMesta.tsx';
 import { smerOboru, SMERY_STUDIA } from '../src/lib/smery-studia.ts';
 import { SkolyPodleSmeru } from '../src/components/mesto/SkolyPodleSmeru.tsx';
 
@@ -417,4 +417,39 @@ test('okruhy: rok uchazečů a rok obtížnosti se nesloučí, když se liší',
   assert.doesNotMatch(html, /Obtížnost přijetí 2027/);
   const stejne = text(renderToStaticMarkup(React.createElement(OkruhyMesta, { okruhy, nastavby, rok: 2026, rokObtiznosti: 2026 })));
   assert.doesNotMatch(stejne, /Obtížnost přijetí je z 1\. kola/);
+});
+
+test('stránka oboru: obor najde svůj okruh, týž jako na stránce města', async () => {
+  const nalez = await getOkruhOboru('600013464_79-41-K/41_všeobecné');
+  assert.ok(nalez, 'Gymnázium Křenová nemá okruh');
+  assert.equal(nalez.obec, 'Brno');
+  const mesto = await getOkruheMesta('Brno');
+  const stejny = mesto.okruhy.find(o => o.id === nalez.okruh.id);
+  assert.ok(stejny, 'okruh oboru není mezi okruhy stránky města');
+  assert.deepEqual(stejny.obory.map(o => o.klic), nalez.okruh.obory.map(o => o.klic));
+  assert.equal(await getOkruhOboru('999999999_00-00-X/00'), null);
+});
+
+test('stránka oboru: okruh sdílený více městy se bere z města, kde obor leží (review PR #352, P2)', async () => {
+  const nalez = await getOkruhOboru('600006751_79-41-K/41');
+  assert.ok(nalez, 'gymnázium ve Vlašimi nemá okruh');
+  assert.equal(nalez.obec, 'Vlašim');
+  const mesto = await getOkruheMesta('Vlašim');
+  const stejny = mesto.okruhy.find(o => o.id === nalez.okruh.id);
+  assert.deepEqual(stejny.obory.map(o => o.klic), nalez.okruh.obory.map(o => o.klic));
+});
+
+test('stránka oboru: okruh zkrácený na deset oborů, tento obor vždy a zvýrazněný', async () => {
+  const { okruhy } = await okruhyMesta('Brno');
+  const velky = okruhy.find(o => o.radky.length > 12);
+  assert.ok(velky, 'v Brně není okruh s víc než 12 obory');
+  const posledni = velky.radky.at(-1);
+  const html = renderToStaticMarkup(React.createElement(OkruhOboruObsah, {
+    okruh: velky, klic: posledni.klic, rokObtiznosti: 2026, obec: 'Brno', hrefMesta: `/mesto/brno#okruh-${velky.id}`,
+  }));
+  assert.equal((html.match(/<tr/g) ?? []).length, 11, 'čekáno 10 největších a tento obor');
+  assert.equal((html.match(/aria-current="true"/g) ?? []).length, 1);
+  assert.match(text(html), new RegExp(`ještě ${velky.radky.length - 11} `));
+  assert.match(html, new RegExp(`href="/mesto/brno#okruh-${velky.id}"`));
+  assert.match(text(html), /měli je často zároveň na přihlášce/);
 });

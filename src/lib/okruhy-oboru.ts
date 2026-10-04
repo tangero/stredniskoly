@@ -25,6 +25,8 @@ export interface SoubezneObce {
 
 interface ZaznamOboru {
   uchazecu?: number;
+  /** Okruh, do kterého obor patří; generátor ho uvádí jen u zveřejněného okruhu. */
+  okruh?: number;
   obce?: ObecPrihlasek[];
   potlacene_obce?: number;
 }
@@ -139,6 +141,38 @@ export function vyberOkruhu(rok: number, zaznam: ZaznamMesta | undefined): Okruh
   }
   okruhy.sort((a, b) => b.uchazecu - a.uchazecu || a.id - b.id);
   return okruhy.length ? { rok, okruhy } : null;
+}
+
+/** Okruh, do kterého obor (REDIZO_KKOV) patří, i s obcí, jejíž okruhy ho nesou. */
+export interface OkruhOboru {
+  rok: number;
+  obec: string;
+  okruh: OkruhMesta;
+}
+
+/**
+ * Okruh oboru pro stránku oboru: příslušnost z `obory.{klic}.okruh`, okruh sám z `mesta.{obec}`
+ * se stejným výběrem jako na stránce města (`vyberOkruhu`), takže obě stránky ukazují týž okruh.
+ */
+export async function getOkruhOboru(programId: string): Promise<OkruhOboru | null> {
+  const rok = await rokKontextu();
+  if (!rok) return null;
+  const [redizo, kkov] = programId.split('_');
+  const klic = `${redizo}_${kkov}`;
+  const id = (await nactiObory(rok))[klic]?.okruh;
+  if (id === undefined) return null;
+  // Stejné id okruhu nese více měst; vybere se město, kde obor leží (jeho domovská obec), jinak to s nejvíc obory okruhu.
+  let nejlepsi: { obec: string; okruh: OkruhMesta; domov: boolean } | null = null;
+  for (const [obec, zaznam] of Object.entries(await nactiMesta(rok))) {
+    const okruh = vyberOkruhu(rok, zaznam)?.okruhy.find(o => o.id === id);
+    const radek = okruh?.obory.find(o => o.klic === klic);
+    if (!okruh || !radek) continue;
+    const domov = radek.obec === obec;
+    if (!nejlepsi || (domov && !nejlepsi.domov) || (domov === nejlepsi.domov && okruh.obory.length > nejlepsi.okruh.obory.length)) {
+      nejlepsi = { obec, okruh, domov };
+    }
+  }
+  return nejlepsi ? { rok, obec: nejlepsi.obec, okruh: nejlepsi.okruh } : null;
 }
 
 export async function getOkruheMesta(obec: string): Promise<OkruheMesta | null> {

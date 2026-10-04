@@ -6,13 +6,11 @@ import { Footer } from '@/components/Footer';
 import { MESTA, getCityStats } from '@/lib/cityData';
 import { zobrazeneObdobi } from '@/lib/stav-datovych-sad';
 import { dalsiOboryVeMeste, nactiIndexRejstriku } from '@/lib/kontext-prihlasek';
-import { getSchoolAnalysis, getSchoolsData } from '@/lib/data';
-import { klicOboru, rocnikyKatalogu } from '@/lib/school-key';
-import { souhrnyPodleRedizo } from '@/lib/souhrny-kolo1';
-import { zarazeniObtiznosti, type ZarazeniObtiznosti } from '@/lib/obor-profil';
-import { getOkruheMesta, type ZaznamKataloguProOkruh } from '@/lib/okruhy-oboru';
+import { getSchoolsData } from '@/lib/data';
+import { getOkruheMesta } from '@/lib/okruhy-oboru';
+import { katalogOboru, kanonickeNazvySkol, nazvySkolKatalogu, obtiznostOboru } from '@/lib/okruhy-podklad';
 import { OkruhyMesta } from '@/components/mesto/OkruhyMesta';
-import { nazevSUlici, sestavKartySkol, sestavOkruhyMesta, velikostMesta } from '@/lib/mesto-karty';
+import { sestavKartySkol, sestavOkruhyMesta, velikostMesta } from '@/lib/mesto-karty';
 import { SkolyPodleSmeru } from '@/components/mesto/SkolyPodleSmeru';
 import { zrizovatelPodleRedizo } from '@/lib/simulator-filter';
 import { VeletrhVMeste } from '@/components/veletrhy/VeletrhVMeste';
@@ -56,68 +54,6 @@ function fmt(n: number) {
 
 const sklon = (n: number, a: string, b: string, c: string) => (n === 1 ? a : n >= 2 && n <= 4 ? b : c);
 
-/** Název školy s ulicí podle REDIZO z katalogu (`nazevSUlici`), ročníky podle registru (`rocnikyKatalogu`). */
-async function nazvySkolKatalogu(): Promise<Map<string, string>> {
-  const data = await getSchoolsData() as unknown as Record<string, Array<Record<string, unknown>>>;
-  const skoly = new Map<string, string>();
-  for (const rocnik of rocnikyKatalogu(Object.keys(data), await zobrazeneObdobi('cermat-vysledky'))) {
-    for (const z of data[rocnik] ?? []) {
-      const redizo = String(z.redizo ?? '');
-      const nazev = z.nazev ? nazevSUlici(String(z.nazev), String(z.ulice ?? '')) : String(z.nazev_display ?? '');
-      if (redizo && nazev && !skoly.has(redizo)) skoly.set(redizo, nazev);
-    }
-  }
-  return skoly;
-}
-
-/**
- * Záznamy katalogu podle klíče REDIZO_KKOV pro popis řádků okruhu: z nejnovějšího ročníku, ve kterém
- * obor je, ročníky podle registru. Okruh obsahuje i obory z jiných obcí, proto celý katalog.
- */
-let katalogOboruCache: Promise<Map<string, ZaznamKataloguProOkruh[]>> | null = null;
-function katalogOboru(): Promise<Map<string, ZaznamKataloguProOkruh[]>> {
-  katalogOboruCache ??= (async () => {
-    const data = await getSchoolsData() as unknown as Record<string, Array<Record<string, unknown>>>;
-    const obory = new Map<string, ZaznamKataloguProOkruh[]>();
-    for (const rocnik of rocnikyKatalogu(Object.keys(data), await zobrazeneObdobi('cermat-vysledky'))) {
-      const vRocniku = new Map<string, ZaznamKataloguProOkruh[]>();
-      for (const z of data[rocnik] ?? []) {
-        const klic = klicOboru(z);
-        if (!klic || obory.has(klic)) continue;
-        vRocniku.set(klic, [...(vRocniku.get(klic) ?? []), {
-          nazevDisplay: String(z.nazev_display || z.nazev || ''),
-          obor: String(z.obor ?? ''),
-          zamereni: String(z.zamereni ?? ''),
-          delka: typeof z.delka_studia === 'number' ? z.delka_studia : null,
-        }]);
-      }
-      for (const [klic, seznam] of vRocniku) obory.set(klic, seznam);
-    }
-    return obory;
-  })();
-  return katalogOboruCache;
-}
-
-/**
- * Obtížnost přijetí po klíči REDIZO_KKOV ze souhrnů 1. kola zobrazeného ročníku (práh deseti
- * soutěžících uplatňuje `zarazeniObtiznosti`). Zaměření s různou obtížností dají „lisi_se“.
- */
-async function obtiznostOboru(klice: string[]): Promise<Map<string, ZarazeniObtiznosti | null | 'lisi_se'>> {
-  const souhrny = await souhrnyPodleRedizo(new Set(klice.map(k => k.split('_')[0])));
-  const hledane = new Set(klice);
-  const podleKlice = new Map<string, Set<ZarazeniObtiznosti | null>>();
-  for (const [redizo, nabidky] of souhrny) {
-    for (const n of nabidky) {
-      const k = `${redizo}_${n.kkov}`;
-      if (!hledane.has(k)) continue;
-      podleKlice.set(k, (podleKlice.get(k) ?? new Set()).add(zarazeniObtiznosti(n.aktualni)));
-    }
-  }
-  const out = new Map<string, ZarazeniObtiznosti | null | 'lisi_se'>();
-  for (const [k, z] of podleKlice) out.set(k, z.size === 1 ? [...z][0] : 'lisi_se');
-  return out;
-}
-
 export default async function MestoPage({ params }: Props) {
   const { mesto: mestoSlug } = await params;
   const mestoMeta = MESTA.find(m => m.slug === mestoSlug);
@@ -135,14 +71,9 @@ export default async function MestoPage({ params }: Props) {
     mestoMeta.nazev,
     new Set(schools.map(s => `${s.redizo}_${s.id.split('_')[1] ?? ''}`)),
   );
-  const [rejstrik, nazvyKatalogu, analyza] = await Promise.all([
-    nactiIndexRejstriku(), nazvySkolKatalogu(), getSchoolAnalysis(),
+  const [rejstrik, nazvyKatalogu, kanonickeNazvy] = await Promise.all([
+    nactiIndexRejstriku(), nazvySkolKatalogu(), kanonickeNazvySkol(),
   ]);
-  const kanonickeNazvy = new Map<string, string>();
-  for (const s of Object.values(analyza)) {
-    const redizo = s.id.split('_')[0];
-    if (!kanonickeNazvy.has(redizo)) kanonickeNazvy.set(redizo, s.nazev);
-  }
 
   const skoly = sestavKartySkol(schools, dalsi.obory, {
     nazvyKatalogu, kanonickeNazvy, adresySidel: rejstrik.identifikace,
