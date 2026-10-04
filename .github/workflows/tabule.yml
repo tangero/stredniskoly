@@ -60,9 +60,31 @@ jobs:
             gh issue edit "$CISLO" -R "$REPO" --add-label navrh
           fi
 
+  k-overeni:
+    name: Štítek k-overeni po sloučení
+    # Sloučený PR etapy: issue projektu zůstává otevřené a k-overeni by na něm visel do další etapy.
+    if: github.event_name == 'pull_request_target' && github.event.action == 'closed' && github.event.pull_request.merged
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ github.token }}
+      REPO: ${{ github.repository }}
+      TELO: ${{ github.event.pull_request.body }}
+    steps:
+      - name: Odebrat k-overeni z otevřených propojených issues
+        run: |
+          set -euo pipefail
+          # Stejné odkazy jako brána (propojenaIssues): Closes/Fixes/Resolves #N a Souvisí s #N.
+          for n in $(printf '%s' "$TELO" | grep -oiE '(close[sd]?|fix(e[sd])?|resolve[sd]?|souvisí s|souvisi s)[[:space:]]*:?[[:space:]]*#[0-9]+' \
+                     | grep -oE '[0-9]+$' | sort -u); do
+            if [ "$(gh issue view "$n" -R "$REPO" --json state,labels \
+                   --jq '.state == "OPEN" and any(.labels[]; .name == "k-overeni")' 2>/dev/null || echo false)" = "true" ]; then
+              gh issue edit "$n" -R "$REPO" --remove-label k-overeni
+            fi
+          done
+
   sync:
     name: Stav karet podle štítků
-    needs: [stitky]
+    needs: [stitky, k-overeni]
     if: always()
     runs-on: ubuntu-latest
     timeout-minutes: 10
