@@ -331,13 +331,18 @@ Po otevření nebo aktualizaci PR od vlastníka napíše asistent zadání revie
   nálezů. Workflow `oprava-z-review.yml` (Claude Code GitHub Action, předplatné vlastníka přes secret
   `CLAUDE_CODE_OAUTH_TOKEN`) nálezy opraví ve větvi PR a napíše, co opravil a co ne. Spustí se jen na
   komentář vlastníka nebo asistenta u PR, který založil jeden z nich, nikdy u PR z forku; rozhoduje
-  skript z `main` (`scripts/brana/oprava-z-review.mjs`). Claude commituje jen lokálně; pushne krok
-  workflow po kontrole, že oprava nemění cesty H2 a nepřepsala historii. Push přes `GITHUB_TOKEN`
-  nespouští workflow, proto poslední job spustí Testy a náhled ručně (`workflow_dispatch`).
+  skript z `main` (`scripts/brana/oprava-z-review.mjs`). Kód větve (testy, závislosti) běží jen v jobu
+  se čtecím tokenem; Claude tam commituje lokálně a výsledek předá jako patch. Zapisovací job kód větve
+  nespouští: patch použije, ověří, že nemění cesty H2 (i přejmenováním) a nepřepisuje historii, znovu
+  ověří veto a pushne. Push přes `GITHUB_TOKEN` nespouští workflow, proto poslední job spustí Testy ručně
+  (`workflow_dispatch`) bez nasazení náhledu: nasazovací job spouští skript z větve s `VERCEL_TOKEN`.
+  Náhled a protokol z preview pro nový commit zajistí vlastník nebo Claude Code.
 - **Strop:** nejvýš 5 kol na PR (`review.max_kol_oprav` v `rezimy.yml`), kola se počítají podle značky
-  v komentáři workflow „Oprava z review“. Po pátém kole, nebo když oprava sahá na cestu H2, přidá workflow
-  štítek `potrebuje-cloveka`; další `@claude` se nespustí a PR vypíše týdenní přehled (i jeho krátká verze
-  v Telegramu). Smyčku zastaví i `stop` na PR nebo propojeném issue; přidat ho smí vlastník i asistent.
+  v komentáři workflow „Oprava z review“. Když review po pátém kole pořád nese P1 nebo P2, přidá asistent
+  štítek `potrebuje-cloveka`; workflow ho přidá samo, když páté kolo skončí bez commitu, když oprava sahá
+  na cestu H2 a při šestém `@claude`; další `@claude` se nespustí a PR vypíše týdenní přehled (i jeho krátká verze
+  v Telegramu). Smyčku zastaví i `stop` na PR nebo propojeném issue (ověřuje se i před začátkem kola a před pushem);
+  přidat ho smí vlastník i asistent.
 - **Brána:** u PR, které mění web, vyžaduje pro aktuální hlavu review od účtu `asistent` s verdiktem
   „Bez P1 a P2“ a řádkem `Commit:` (`review.vyzadovat`). Review od vlastníka se nepočítá, protože přes
   jeho účet pracuje Claude Code, který PR připravil. Výjimky: změny bez dopadu na web (`bez_preview`)

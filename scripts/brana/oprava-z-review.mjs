@@ -2,7 +2,8 @@
 // oprava-z-review.yml, zda komentář `@claude` v PR spustí kolo oprav, a kontrola oprav před pushem.
 //
 //   node scripts/brana/oprava-z-review.mjs rozhodni           (job „Rozhodnutí“, čte událost komentáře)
-//   node scripts/brana/oprava-z-review.mjs kontrola <sha>     (job „Oprava“, po Claude, před pushem)
+//   node scripts/brana/oprava-z-review.mjs veto <pr>          (před začátkem kola a před pushem: stop, štítek)
+//   node scripts/brana/oprava-z-review.mjs kontrola <sha>     (job „Zápis“, po použití patche, před pushem)
 //
 // Výsledek zapisuje do GITHUB_OUTPUT. Konfiguraci čte z main přes API, jako brána.
 
@@ -45,6 +46,23 @@ export function rozhodniOpravu({ komentar, pr, issues = [], konfig }) {
   return { akce: 'oprava', duvod: `kolo ${kola + 1} z ${max}`, kolo: kola + 1, max };
 }
 
+/**
+ * Platí na PR teď veto? Kontroluje se znovu před začátkem kola a před pushem, protože `stop` mohl
+ * přibýt, zatímco job čekal. Vrací { ok, duvod }.
+ */
+export function vetoTed({ pr, issues = [], konfig }) {
+  if (pr.stav !== 'open') return { ok: false, duvod: 'PR není otevřený' };
+  if (stopPlati(pr, konfig)) return { ok: false, duvod: 'PR má štítek stop' };
+  for (const i of issues) if (stopPlati(i, konfig)) return { ok: false, duvod: `issue #${i.cislo} má štítek stop` };
+  if (pr.stitky.includes(STITEK_CLOVEK)) return { ok: false, duvod: `PR má štítek ${STITEK_CLOVEK}` };
+  return { ok: true, duvod: 'bez veta' };
+}
+
+/** Cesty z `git diff --name-only --no-renames -z` (přejmenování dá starou i novou cestu, názvy bez escapování). */
+export function cestyZDiffu(vystup = '') {
+  return vystup.split('\0').filter(Boolean);
+}
+
 /** Soubory z cest H2 (`h2` v rezimy.yml), které oprava změnila; ty smyčka nepushne. */
 export function zasahH2(soubory, konfig) {
   const vzory = konfig.rezimy.h2 || [];
@@ -74,6 +92,11 @@ async function rozhodni(api) {
 
 const git = (...args) => execFileSync('git', args, { encoding: 'utf8' }).trim();
 
+async function veto(api, cislo) {
+  const { pr, issues } = await nactiPr(api, Number(cislo));
+  vystup(vetoTed({ pr, issues, konfig: await nactiKonfig(api) }));
+}
+
 async function kontrola(api, pred) {
   if (!/^[0-9a-f]{40}$/.test(pred || '')) throw new Error('kontrola potřebuje plné sha hlavy před opravou');
   const konfig = await nactiKonfig(api);
@@ -84,7 +107,7 @@ async function kontrola(api, pred) {
   } catch {
     return vystup({ push: false, duvod: 'oprava přepsala historii větve (hlava před opravou není předkem)' });
   }
-  const soubory = git('diff', '--name-only', pred, hlava).split('\n').filter(Boolean);
+  const soubory = cestyZDiffu(execFileSync('git', ['diff', '--name-only', '--no-renames', '-z', pred, hlava], { encoding: 'utf8' }));
   const h2 = zasahH2(soubory, konfig);
   if (h2.length) return vystup({ push: false, h2: h2.join(', '), duvod: `oprava mění cesty H2: ${h2.join(', ')}` });
   vystup({ push: true, duvod: `změněno souborů: ${soubory.length}` });
@@ -94,8 +117,9 @@ async function main() {
   const [prikaz, arg] = process.argv.slice(2);
   const api = vytvorApi();
   if (prikaz === 'rozhodni') return rozhodni(api);
+  if (prikaz === 'veto') return veto(api, arg);
   if (prikaz === 'kontrola') return kontrola(api, arg);
-  throw new Error('použití: oprava-z-review.mjs rozhodni | kontrola <sha>');
+  throw new Error('použití: oprava-z-review.mjs rozhodni | veto <pr> | kontrola <sha>');
 }
 
 if (import.meta.url === pathToFileURL(process.argv[1] || '').href) {

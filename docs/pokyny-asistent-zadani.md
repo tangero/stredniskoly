@@ -64,8 +64,10 @@ vlastníka, proto se některá pravidla níže vynucují technicky.
    Workflow „Oprava z review“ nálezy opraví ve větvi PR a napíše, co opravil a co ne. Po novém commitu
    napiš nové review. Workflow reaguje jen na tvůj komentář nebo komentář vlastníka a jen u PR,
    které založil jeden z vás.
-6. **Strop a zastavení.** Nejvýš 5 kol oprav na PR. Šesté `@claude` workflow nespustí, přidá PR štítek
-   `potrebuje-cloveka` a PR se objeví v týdenním přehledu; další `@claude` už nepiš. Štítek `stop`
+6. **Strop a zastavení.** Nejvýš 5 kol oprav na PR. Když review po pátém kole pořád obsahuje P1 nebo P2,
+   přidej PR štítek `potrebuje-cloveka` sama a další `@claude` už nepiš; PR se objeví v týdenním přehledu.
+   Workflow štítek přidá samo, když páté kolo skončí bez nového commitu, když oprava sahá na cestu H2
+   a když přesto přijde šesté `@claude`. Štítek `stop`
    na PR nebo propojeném issue zastaví i opravy. Zastavit smyčku smíš i ty: přidej `stop` nebo
    `potrebuje-cloveka`, když se opravy točí v kruhu.
 

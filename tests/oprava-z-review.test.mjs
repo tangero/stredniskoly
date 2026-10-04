@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import yaml from 'js-yaml';
 import { BOT } from '../scripts/brana/brana.mjs';
-import { rozhodniOpravu, pocetKol, zasahH2, ZNACKA_KOLA, STITEK_CLOVEK } from '../scripts/brana/oprava-z-review.mjs';
+import { rozhodniOpravu, pocetKol, zasahH2, vetoTed, cestyZDiffu, ZNACKA_KOLA, STITEK_CLOVEK } from '../scripts/brana/oprava-z-review.mjs';
 
 const konfig = { rezimy: yaml.load(fs.readFileSync('.github/rezimy.yml', 'utf8')), oblasti: {} };
 const REPO = 'tangero/stredniskoly';
@@ -64,6 +64,21 @@ test('kola počítá jen značka od workflow; značka od jiného autora se nepo�
   assert.equal(pocetKol([kolo(1), { ...kolo(2), autor: 'tangero' }, { autor: BOT, telo: 'Oprava z review bez značky' }]), 1);
 });
 
+test('veto těsně před kolem a před pushem', () => {
+  assert.deepEqual(vetoTed({ pr: pr(), konfig }), { ok: true, duvod: 'bez veta' });
+  assert.equal(vetoTed({ pr: pr({ stitky: ['stop'] }), konfig }).ok, false);
+  assert.equal(vetoTed({ pr: pr({ stitky: [STITEK_CLOVEK] }), konfig }).ok, false);
+  assert.equal(vetoTed({ pr: pr({ stav: 'closed' }), konfig }).ok, false);
+  assert.match(vetoTed({ pr: pr(), issues: [{ cislo: 10, stitky: ['stop'], udalosti: [] }], konfig }).duvod, /issue #10/);
+});
+
+test('přejmenování a neescapované názvy: kontrola H2 vidí obě cesty', () => {
+  // `git diff --name-only --no-renames -z`: přesun CLAUDE.md dá starou i novou cestu, diakritika bez escapování.
+  const cesty = cestyZDiffu('CLAUDE.md\0docs/CLAUDE.md\0scripts/brana/žluťoučký.mjs\0');
+  assert.deepEqual(cesty, ['CLAUDE.md', 'docs/CLAUDE.md', 'scripts/brana/žluťoučký.mjs']);
+  assert.deepEqual(zasahH2(cesty, konfig), ['CLAUDE.md', 'scripts/brana/žluťoučký.mjs']);
+});
+
 test('oprava nesmí změnit cesty H2', () => {
   assert.deepEqual(zasahH2(['src/app/page.tsx', 'scripts/brana/brana.mjs', '.github/rezimy.yml', 'CLAUDE.md', 'docs/x.md'], konfig),
     ['scripts/brana/brana.mjs', '.github/rezimy.yml', 'CLAUDE.md']);
@@ -77,14 +92,25 @@ test('workflow: minimální oprávnění, jen token pro Claude, bez pull_request
   assert.doesNotMatch(obsah, /pull_request_target/);
   assert.deepEqual(w.permissions, {});
   assert.deepEqual([...new Set(obsah.match(/secrets\.[A-Za-z0-9_]+/g))], ['secrets.CLAUDE_CODE_OAUTH_TOKEN']);
-  assert.deepEqual(w.jobs.oprava.permissions, { contents: 'write', 'pull-requests': 'write' });
+  // Kód větve běží jen v jobu oprava, a to se čtecím tokenem; zápis kód větve nespouští.
+  assert.deepEqual(w.jobs.oprava.permissions, { contents: 'read' });
+  assert.deepEqual(w.jobs.zapis.permissions, { contents: 'write', 'pull-requests': 'write', issues: 'read' });
+  assert.ok(!w.jobs.zapis.steps.some((s) => /npm (test|run)|npx /.test(s.run || '')), 'zápis nesmí spouštět kód větve');
+  assert.match(JSON.stringify(w.jobs.zapis.steps), /cd main && npm ci --ignore-scripts/);
   assert.deepEqual(w.jobs.testy.permissions, { actions: 'write' });
+  // Testy bez nasazení: nasazovací job by spustil skript z větve s VERCEL_TOKEN.
+  assert.match(w.jobs.testy.steps[0].run, /-f deployment=none/);
+  // Veto se ověřuje znovu před kolem i před pushem.
+  assert.match(JSON.stringify(w.jobs.zacatek.steps), /oprava-z-review\.mjs veto/);
+  assert.match(JSON.stringify(w.jobs.zapis.steps), /oprava-z-review\.mjs veto/);
+  // Claude dostane jen CLAUDE_CODE_OAUTH_TOKEN a v jobu se zápisem žádný secret není.
+  assert.doesNotMatch(JSON.stringify(w.jobs.zapis), /secrets\./);
   for (const [id, job] of Object.entries(w.jobs)) assert.ok(job['timeout-minutes'] > 0, id);
   assert.match(w.concurrency.group, /github\.event\.issue\.number/);
   // Claude nemá push ani gh v povolených nástrojích; pushne až krok po kontrole H2.
   const claude = w.jobs.oprava.steps.find((s) => s.uses?.startsWith('anthropics/claude-code-action'));
   assert.doesNotMatch(claude.with.claude_args, /git push|Bash\(gh|Bash\(\*\)|Bash"/);
-  assert.match(obsah, /oprava-z-review\.mjs" kontrola/);
+  assert.match(obsah, /oprava-z-review\.mjs kontrola/);
   // Žádný krok neslučuje ani nepřidává schvaleno či zamitnuto.
   assert.doesNotMatch(obsah, /gh pr merge|--add-label (schvaleno|zamitnuto)|\/merge/);
 });
