@@ -17,7 +17,9 @@ import { ZARAZENI_POPISEK } from '../src/lib/obor-profil.ts';
 import { dalsiOboryVeMeste, nactiIndexRejstriku } from '../src/lib/kontext-prihlasek.ts';
 import { getSchoolAnalysis, getProgramsByRedizo, getSchoolsData } from '../src/lib/data.ts';
 import { zrizovatelPodleRedizo } from '../src/lib/simulator-filter.ts';
-import { sestavKartySkol, velikostMesta } from '../src/lib/mesto-karty.ts';
+import { sestavKartySkol, sestavOkruhyMesta, nazevOkruhu, velikostMesta } from '../src/lib/mesto-karty.ts';
+import { getOkruheMesta } from '../src/lib/okruhy-oboru.ts';
+import { OkruhyMesta } from '../src/components/mesto/OkruhyMesta.tsx';
 import { smerOboru, SMERY_STUDIA } from '../src/lib/smery-studia.ts';
 import { SkolyPodleSmeru } from '../src/components/mesto/SkolyPodleSmeru.tsx';
 
@@ -344,4 +346,63 @@ test('vykreslení: soukromá a církevní škola nese větu o školném, veřejn
   const html = text(vykresli(karty));
   const soukromych = karty.filter(k => k.zrizovatel === 'soukroma').length;
   assert.ok(html.includes(`soukromé (${soukromych})`), `výběr zřizovatele nemá počet ${soukromych}`);
+});
+
+// ---------------------------------------------------------------------------
+// Okruhy oborů na stránce města
+// ---------------------------------------------------------------------------
+
+async function okruhyMesta(mesto) {
+  const { stats } = await kartyMesta(mesto);
+  const data = await getOkruheMesta(mesto);
+  assert.ok(data, `${mesto}: okruhy nevycházejí`);
+  const kanonickeNazvy = new Map();
+  for (const s of Object.values(await getSchoolAnalysis())) {
+    const redizo = s.id.split('_')[0];
+    if (!kanonickeNazvy.has(redizo)) kanonickeNazvy.set(redizo, s.nazev);
+  }
+  const katalog = new Map();
+  for (const z of (await getSchoolsData())['2026']) {
+    const k = `${z.redizo}_${z.id.split('_')[1]}`;
+    katalog.set(k, [...(katalog.get(k) ?? []), { nazevDisplay: z.nazev_display, obor: z.obor, zamereni: z.zamereni ?? '', delka: z.delka_studia ?? null }]);
+  }
+  const nazvyKatalogu = new Map((await getSchoolsData())['2026'].map(z => [z.redizo, z.nazev_display]));
+  const rejstrik = await nactiIndexRejstriku();
+  return { data, ...sestavOkruhyMesta(data.okruhy, mesto, stats.schools, { katalog, nazvyKatalogu, kanonickeNazvy, rejstrik }) };
+}
+
+test('jméno okruhu ze směrů studia, víceletá gymnázia podle délky, učební obory', () => {
+  const o = (kkov, uchazecu) => ({ klic: `1_${kkov}`, uchazecu });
+  assert.equal(nazevOkruhu([o('79-41-K/41', 300), o('78-42-M/05', 50)]), 'Gymnázia a všeobecná lycea');
+  assert.equal(nazevOkruhu([o('79-41-K/81', 300), o('79-41-K/41', 20)]), 'Osmiletá gymnázia (z 5. třídy)');
+  assert.equal(nazevOkruhu([o('79-41-K/61', 300)]), 'Šestiletá gymnázia (ze 7. třídy)');
+  assert.equal(nazevOkruhu([o('23-51-H/01', 200), o('36-67-H/01', 100)]), 'Technika a IT · učební obory');
+  assert.equal(nazevOkruhu([o('63-41-M/02', 200), o('79-41-K/41', 100)]), 'Ekonomika, obchod a správa · Gymnázia a všeobecná lycea');
+});
+
+test('okruhy Brna: jména se neopakují, řádky nesou školu s ulicí, pořadí podle uchazečů', async () => {
+  const { data, okruhy, nastavby } = await okruhyMesta('Brno');
+  const vse = [...okruhy, ...nastavby];
+  assert.ok(vse.length >= 10, `Brno má jen ${vse.length} okruhů`);
+  const jmena = vse.map(o => o.nazev);
+  assert.equal(new Set(jmena).size, jmena.length, `opakuje se jméno: ${jmena.join(' | ')}`);
+  for (const o of vse) {
+    assert.ok(o.radky.length >= 3, `okruh ${o.id} má méně než 3 obory`);
+    for (const r of o.radky) assert.notEqual(r.skola, 'Gymnázium', `okruh ${o.id}: holé „Gymnázium“`);
+    const u = o.radky.map(r => r.uchazecu);
+    assert.deepEqual(u, [...u].sort((a, b) => b - a), `okruh ${o.id} není seřazený podle uchazečů`);
+  }
+  const html = text(renderToStaticMarkup(React.createElement(OkruhyMesta, { okruhy, nastavby, rok: data.rok })));
+  assert.match(html, /Které další obory v okolí uchazeči také volí/);
+  // Pojem okruh se vysvětlí při prvním výskytu v bloku (slovník pojmů).
+  assert.match(html, /měli je často zároveň na přihlášce/);
+  assert.match(html, /Obory na okraji okruhu se mohou mezi ročníky přesunout do sousedního/);
+  assert.doesNotMatch(html, /oblíben|žádan|pojistk|shluk/i);
+});
+
+test('okruhy: obor s jedinou nabídkou ve městě vede na stránku oboru', async () => {
+  const { okruhy } = await okruhyMesta('Brno');
+  const radky = okruhy.flatMap(o => o.radky).filter(r => r.href);
+  assert.ok(radky.some(r => /-gymnazium-4lete$/.test(r.href)), 'žádný řádek nevede na stránku oboru');
+  for (const r of radky) assert.ok(r.href.startsWith(`/skola/${r.klic.split('_')[0]}-`), `${r.klic}: ${r.href}`);
 });

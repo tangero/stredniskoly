@@ -7,8 +7,12 @@ import { MESTA, getCityStats } from '@/lib/cityData';
 import { zobrazeneObdobi } from '@/lib/stav-datovych-sad';
 import { dalsiOboryVeMeste, nactiIndexRejstriku } from '@/lib/kontext-prihlasek';
 import { getSchoolAnalysis, getSchoolsData } from '@/lib/data';
-import { rocnikyKatalogu } from '@/lib/school-key';
-import { nazevSUlici, sestavKartySkol, velikostMesta } from '@/lib/mesto-karty';
+import { klicOboru, rocnikyKatalogu } from '@/lib/school-key';
+import { souhrnyPodleRedizo } from '@/lib/souhrny-kolo1';
+import { zarazeniObtiznosti, type ZarazeniObtiznosti } from '@/lib/obor-profil';
+import { getOkruheMesta, type ZaznamKataloguProOkruh } from '@/lib/okruhy-oboru';
+import { OkruhyMesta } from '@/components/mesto/OkruhyMesta';
+import { nazevSUlici, sestavKartySkol, sestavOkruhyMesta, velikostMesta } from '@/lib/mesto-karty';
 import { SkolyPodleSmeru } from '@/components/mesto/SkolyPodleSmeru';
 import { zrizovatelPodleRedizo } from '@/lib/simulator-filter';
 import { VeletrhVMeste } from '@/components/veletrhy/VeletrhVMeste';
@@ -66,6 +70,54 @@ async function nazvySkolKatalogu(): Promise<Map<string, string>> {
   return skoly;
 }
 
+/**
+ * Záznamy katalogu podle klíče REDIZO_KKOV pro popis řádků okruhu: z nejnovějšího ročníku, ve kterém
+ * obor je, ročníky podle registru. Okruh obsahuje i obory z jiných obcí, proto celý katalog.
+ */
+let katalogOboruCache: Promise<Map<string, ZaznamKataloguProOkruh[]>> | null = null;
+function katalogOboru(): Promise<Map<string, ZaznamKataloguProOkruh[]>> {
+  katalogOboruCache ??= (async () => {
+    const data = await getSchoolsData() as unknown as Record<string, Array<Record<string, unknown>>>;
+    const obory = new Map<string, ZaznamKataloguProOkruh[]>();
+    for (const rocnik of rocnikyKatalogu(Object.keys(data), await zobrazeneObdobi('cermat-vysledky'))) {
+      const vRocniku = new Map<string, ZaznamKataloguProOkruh[]>();
+      for (const z of data[rocnik] ?? []) {
+        const klic = klicOboru(z);
+        if (!klic || obory.has(klic)) continue;
+        vRocniku.set(klic, [...(vRocniku.get(klic) ?? []), {
+          nazevDisplay: String(z.nazev_display || z.nazev || ''),
+          obor: String(z.obor ?? ''),
+          zamereni: String(z.zamereni ?? ''),
+          delka: typeof z.delka_studia === 'number' ? z.delka_studia : null,
+        }]);
+      }
+      for (const [klic, seznam] of vRocniku) obory.set(klic, seznam);
+    }
+    return obory;
+  })();
+  return katalogOboruCache;
+}
+
+/**
+ * Obtížnost přijetí po klíči REDIZO_KKOV ze souhrnů 1. kola zobrazeného ročníku (práh deseti
+ * soutěžících uplatňuje `zarazeniObtiznosti`). Zaměření s různou obtížností dají „lisi_se“.
+ */
+async function obtiznostOboru(klice: string[]): Promise<Map<string, ZarazeniObtiznosti | null | 'lisi_se'>> {
+  const souhrny = await souhrnyPodleRedizo(new Set(klice.map(k => k.split('_')[0])));
+  const hledane = new Set(klice);
+  const podleKlice = new Map<string, Set<ZarazeniObtiznosti | null>>();
+  for (const [redizo, nabidky] of souhrny) {
+    for (const n of nabidky) {
+      const k = `${redizo}_${n.kkov}`;
+      if (!hledane.has(k)) continue;
+      podleKlice.set(k, (podleKlice.get(k) ?? new Set()).add(zarazeniObtiznosti(n.aktualni)));
+    }
+  }
+  const out = new Map<string, ZarazeniObtiznosti | null | 'lisi_se'>();
+  for (const [k, z] of podleKlice) out.set(k, z.size === 1 ? [...z][0] : 'lisi_se');
+  return out;
+}
+
 export default async function MestoPage({ params }: Props) {
   const { mesto: mestoSlug } = await params;
   const mestoMeta = MESTA.find(m => m.slug === mestoSlug);
@@ -99,6 +151,16 @@ export default async function MestoPage({ params }: Props) {
   const pocetNabidek = skoly.flatMap(k => k.radky).filter(r => r.druh === 'jpz').length;
   const pocetDalsich = dalsi.obory.length;
 
+  // Okruhy oborů: jen města, kde okruhy vycházejí (meze zveřejnění uplatnil generátor).
+  const okruheMesta = await getOkruheMesta(mestoMeta.nazev);
+  const okruhy = okruheMesta
+    ? sestavOkruhyMesta(okruheMesta.okruhy, mestoMeta.nazev, schools, {
+      katalog: await katalogOboru(), nazvyKatalogu, kanonickeNazvy, rejstrik,
+      obtiznost: await obtiznostOboru(okruheMesta.okruhy.flatMap(o => o.obory.map(x => x.klic))),
+    })
+    : { okruhy: [], nastavby: [] };
+  const maOkruhy = okruhy.okruhy.length + okruhy.nastavby.length > 0;
+
   const hlavicka = (
     <>
       <nav aria-label="Drobečková navigace" className="mb-4 text-[14px] text-[#c3d3ea]">
@@ -115,6 +177,12 @@ export default async function MestoPage({ params }: Props) {
         {pocetDalsich > 0 && (
           <> a {fmt(pocetDalsich)} {sklon(pocetDalsich, 'další obor', 'další obory', 'dalších oborů')}, většinou učebních</>
         )}.
+        {maOkruhy && (
+          <>
+            {' '}Mezi kterými obory se uchazeči rozhodují, ukazují{' '}
+            <a href="#okruhy" className="font-semibold text-white underline underline-offset-2 hover:text-[#dbe5f3]">okruhy oborů</a>.
+          </>
+        )}
       </p>
     </>
   );
@@ -132,6 +200,8 @@ export default async function MestoPage({ params }: Props) {
         />
 
         <div className="mx-auto mt-12 max-w-6xl space-y-10 px-4">
+          {okruheMesta && <OkruhyMesta okruhy={okruhy.okruhy} nastavby={okruhy.nastavby} rok={okruheMesta.rok} />}
+
           {/* Nejbližší veletrh středních škol ve městě, nejvýš dvě akce podle
               data. Bez potvrzené akce komponenta nevykreslí nic. */}
           <VeletrhVMeste obec={mestoMeta.nazev} variant="mesto" />
