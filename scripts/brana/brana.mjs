@@ -272,7 +272,8 @@ export function review(pr, konfig) {
   if (!/^bez\s+P1\s+a\s+P2\b/i.test(verdikt)) {
     return { ok: false, duvod: `review asistenta zadání pro commit ${kratke} nemá verdikt „Bez P1 a P2“ (${verdikt || 'verdikt chybí'})` };
   }
-  return { ok: true, telo: texty[0].telo };
+  // Do stavu lhůty jde i identita a čas review: nové review se stejným textem lhůtu založí znovu.
+  return { ok: true, telo: texty[0].telo, stav: JSON.stringify([texty[0].id ?? null, texty[0].cas, texty[0].telo]) };
 }
 
 /**
@@ -341,7 +342,7 @@ export function vyhodnot({ pr, soubory, issues, konfig, zamrznuti, ted, predchoz
   if (r.review?.vyzadovat && !a.jenBezPreview && !sPr.platny) {
     const rv = review(pr, konfig);
     if (!rv.ok) blokuje.push(rv.duvod);
-    else reviewTelo = rv.telo;
+    else reviewTelo = rv.stav;
   }
   const stav = stavLhuty(pr, issues, protokolTelo, reviewTelo);
   const lhutaOd = predchozi?.stav === stav ? predchozi.od : ted;

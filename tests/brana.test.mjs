@@ -524,3 +524,13 @@ test('review: lhůta L běží od review, nové review ji založí znovu', () =>
   assert.equal(sReview.uspech, false);
   assert.match(sReview.duvody.join(), /lhůta na veto běží/);
 });
+
+test('review: nové review se stejným textem lhůtu L založí znovu', () => {
+  const stare = reviewKomentar(SHA, 'Bez P1 a P2', { id: 1, cas: PRED(60) });
+  const v1 = run({ pr: pr({ komentare: [stare, protokolKomentar()] }), predchozi: null });
+  const nove = { ...stare, id: 2, cas: PRED(0.1) };
+  const v2 = run({ pr: pr({ komentare: [nove, protokolKomentar()] }), predchozi: { stav: v1.stav, od: Date.parse(PRED(60)) } });
+  assert.notEqual(v2.stav, v1.stav);
+  assert.equal(v2.lhutaOd, TED);
+  assert.equal(v2.uspech, false);
+});
