@@ -71,7 +71,27 @@ function textBezUdaje(r: RadekKarty): string {
   return 'bez údaje';
 }
 
-const POLE = 'min-h-[44px] rounded-[10px] border border-slate-300 bg-white px-3 text-[15px] text-slate-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-[#0074e4]';
+/** Pole a výběr mají stejnou výšku i vzhled ve všech prohlížečích (Safari jinak výběr zmenší). */
+const POLE = 'h-11 rounded-[10px] border border-slate-300 bg-white text-[15px] text-slate-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-[#0074e4]';
+const POPISEK = 'text-[13px] font-medium leading-5 text-slate-600 whitespace-nowrap';
+
+function Vyber({ id, value, onChange, children }: { id: string; value: string; onChange: (v: string) => void; children: ReactNode }) {
+  return (
+    <span className="relative block">
+      <select
+        id={id}
+        value={value}
+        onChange={e => onChange(e.target.value)}
+        className={`${POLE} w-full cursor-pointer appearance-none pl-3 pr-10`}
+      >
+        {children}
+      </select>
+      <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true" className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-slate-500">
+        <path d="M4 6l4 4 4-4" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+      </svg>
+    </span>
+  );
+}
 
 export function SkolyPodleSmeru({
   skoly, rok, velikost, hlavicka,
@@ -92,6 +112,7 @@ export function SkolyPodleSmeru({
   const idHledat = useId();
   const idObtiznost = useId();
   const idZrizovatel = useId();
+  const idDoklad = useId();
 
   const vsechnyRadky = useMemo(() => skoly.flatMap(s => s.radky), [skoly]);
 
@@ -185,22 +206,26 @@ export function SkolyPodleSmeru({
 
       <div className="mx-auto max-w-6xl px-4 pt-4 md:pt-6">
         {(ukazDoklad || maUpresneni) && (
-          <div className="mb-3 flex flex-wrap items-end gap-x-6 gap-y-3 md:mb-4 md:gap-y-4">
+          // Každý prvek: popisek ve stejné výšce a ovládání vysoké 44 px, aby řada držela jednu linku.
+          <div className="mb-3 flex flex-wrap items-end gap-x-4 gap-y-3 md:mb-4">
             {ukazDoklad && (
-              <div role="group" aria-label="Jaké vzdělání obor dává" className="inline-flex rounded-full bg-[#e6ecf3] p-1">
-                {([['vse', 'Vše'], ['maturita', 'S maturitou'], ['vyucni', 'S výučním listem']] as [Doklad, string][]).map(([k, l]) => (
-                  <button
-                    key={k}
-                    type="button"
-                    aria-pressed={doklad === k}
-                    onClick={() => setDoklad(k)}
-                    className={`min-h-[40px] rounded-full px-4 text-[15px] font-semibold transition-colors duration-150 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0074e4] ${
-                      doklad === k ? 'bg-white text-[#16325c] shadow-[0_1px_3px_rgba(22,50,92,0.18)]' : 'text-slate-700 hover:text-[#16325c]'
-                    }`}
-                  >
-                    {l}
-                  </button>
-                ))}
+              <div className="flex flex-col gap-1.5">
+                <span id={idDoklad} className={POPISEK}>Vzdělání</span>
+                <div role="group" aria-labelledby={idDoklad} className="inline-flex h-11 items-center rounded-full bg-[#e6ecf3] p-1">
+                  {([['vse', 'Vše'], ['maturita', 'S maturitou'], ['vyucni', 'S výučním listem']] as [Doklad, string][]).map(([k, l]) => (
+                    <button
+                      key={k}
+                      type="button"
+                      aria-pressed={doklad === k}
+                      onClick={() => setDoklad(k)}
+                      className={`h-9 rounded-full px-4 text-[15px] font-semibold transition-colors duration-150 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0074e4] ${
+                        doklad === k ? 'bg-white text-[#16325c] shadow-[0_1px_3px_rgba(22,50,92,0.18)]' : 'text-slate-700 hover:text-[#16325c]'
+                      }`}
+                    >
+                      {l}
+                    </button>
+                  ))}
+                </div>
               </div>
             )}
             {maUpresneni && (
@@ -208,49 +233,49 @@ export function SkolyPodleSmeru({
                 type="button"
                 aria-expanded={upresnit}
                 onClick={() => setUpresnit(!upresnit)}
-                className="min-h-[44px] rounded-full border border-slate-300 bg-white px-4 text-[15px] font-semibold text-[#16325c] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0074e4] md:hidden"
+                className="h-11 rounded-full border border-slate-300 bg-white px-4 text-[15px] font-semibold text-[#16325c] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0074e4] md:hidden"
               >
                 {upresnit ? 'Skrýt upřesnění' : 'Upřesnit výběr'}
               </button>
             )}
-            <div className={`${upresnit ? 'flex' : 'hidden'} w-full flex-wrap items-end gap-x-6 gap-y-4 md:flex md:w-auto md:flex-1`}>
+            <div className={`${upresnit ? 'flex' : 'hidden'} w-full flex-col gap-3 md:flex md:w-auto md:flex-1 md:flex-row md:items-end md:gap-4`}>
               {ukazObtiznost && (
-                <div className="flex flex-col gap-1">
-                  <label htmlFor={idObtiznost} className="text-[13px] font-medium text-slate-600">
+                <div className="flex flex-col gap-1.5 md:w-[15rem]">
+                  <label htmlFor={idObtiznost} className={POPISEK}>
                     Obtížnost přijetí{rok ? ` v 1. kole ${rok}` : ''}
                   </label>
-                  <select id={idObtiznost} value={obtiznost} onChange={e => setObtiznost(e.target.value as ZarazeniObtiznosti | 'vse')} className={POLE}>
+                  <Vyber id={idObtiznost} value={obtiznost} onChange={v => setObtiznost(v as ZarazeniObtiznosti | 'vse')}>
                     <option value="vse">všechny stupně</option>
                     {PORADI_OBTIZNOSTI.map(z => (
                       <option key={z} value={z} disabled={!pocetObtiznosti.get(z)}>
                         {ZARAZENI_POPISEK[z]} ({cislo(pocetObtiznosti.get(z) ?? 0)})
                       </option>
                     ))}
-                  </select>
+                  </Vyber>
                 </div>
               )}
               {ukazZrizovatele && (
-                <div className="flex flex-col gap-1">
-                  <label htmlFor={idZrizovatel} className="text-[13px] font-medium text-slate-600">Zřizovatel školy</label>
-                  <select id={idZrizovatel} value={zrizovatel} onChange={e => setZrizovatel(e.target.value as DruhZrizovatele | 'vse')} className={POLE}>
+                <div className="flex flex-col gap-1.5 md:w-[15rem]">
+                  <label htmlFor={idZrizovatel} className={POPISEK}>Zřizovatel školy</label>
+                  <Vyber id={idZrizovatel} value={zrizovatel} onChange={v => setZrizovatel(v as DruhZrizovatele | 'vse')}>
                     {ZRIZOVATEL_VOLBA.map(([k, l]) => (
                       <option key={k} value={k} disabled={k !== 'vse' && !pocetZrizovatele.get(k)}>
                         {k === 'vse' ? l : `${l} (${cislo(pocetZrizovatele.get(k) ?? 0)})`}
                       </option>
                     ))}
-                  </select>
+                  </Vyber>
                 </div>
               )}
               {ukazHledani && (
-                <div className="flex min-w-[240px] flex-1 flex-col gap-1 md:max-w-[320px]">
-                  <label htmlFor={idHledat} className="text-[13px] font-medium text-slate-600">Hledat školu nebo obor</label>
+                <div className="flex flex-col gap-1.5 md:min-w-[15rem] md:flex-1">
+                  <label htmlFor={idHledat} className={POPISEK}>Hledat školu nebo obor</label>
                   <input
                     id={idHledat}
                     type="search"
                     value={hledat}
                     onChange={e => setHledat(e.target.value)}
                     placeholder="například Purkyňova nebo elektro"
-                    className={`${POLE} placeholder:text-slate-500`}
+                    className={`${POLE} w-full px-3 placeholder:text-slate-500`}
                   />
                 </div>
               )}
