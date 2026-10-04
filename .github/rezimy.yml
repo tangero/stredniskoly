@@ -90,6 +90,7 @@ bez_preview:
   - .claude/**
   - scripts/brana/**
   - scripts/prehled/**
+  - scripts/tabule/**
 
 # Do limitu řádků rutiny se nepočítají.
 testy:

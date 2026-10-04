@@ -41,32 +41,35 @@ První připomínka: #240, vyhodnocení sklizně výpisů aktualit k 8. 10. 2026
 
 ## 3. Tabule projektu
 
-Projekt **Přijímačky – vývoj webu** (`github.com/users/tangero/projects/1`) se stavy Návrh,
-Oponentura, Schváleno, Ke schválení merge a Hotovo. Zapnuté vestavěné automatizace:
+Projekt **Přijímačky – vývoj webu** (`github.com/users/tangero/projects/1`). Stav karty issue
+dopočítává ze štítků a otevřených PR workflow `.github/workflows/tabule.yml` (`scripts/tabule/`)
+při každé změně štítků, issues a PR, po každém běhu brány sloučení a jednou denně. Ruční přesun karty se při dalším běhu srovná.
 
-| automatizace | co dělá |
-|---|---|
-| Auto-add to project | přidá každé nové otevřené issue a PR z `stredniskoly` (`is:issue,pr is:open`) |
-| Item added to project | nové položce nastaví stav Návrh |
-| Item closed | zavřené issue → Hotovo |
-| Pull request merged | sloučený PR → Hotovo |
-| Auto-add sub-issues to project | přidá dílčí issues |
+| stav | podle čeho | kdo je na tahu |
+|---|---|---|
+| Hlášení | veřejná hlášení, připomínky a issues bez stavového štítku | třídění (AI) |
+| Návrh | `navrh` (bez `schvaleno`) nebo `stop` | **vlastník** |
+| Oponentura | `oponentura`: návrh posuzuje asistent zadání nebo druhý model, teprve pak jde k vlastníkovi | AI |
+| Schváleno | `schvaleno`, žádný otevřený PR | denní úloha podle Směru vývoje |
+| V PR | otevřený PR s `Closes #N` nebo `Souvisí s #N` (CI, review, vypořádání, lhůta) | AI |
+| Čeká na souhlas s merge | otevřený PR, brána chce `schvaleno` | **vlastník** |
+| Hotovo | zavřené issue | |
 
-Ověřeno na PR #242: po založení se objevil v Návrhu, po merge přešel do Hotovo.
+Workflow navíc při přidání `schvaleno` odebere `navrh` a při odebrání `schvaleno` vrátí otevřené
+interní zadání do `navrh`; řídí se aktuálními štítky issue, ne pořadím doručených událostí. Stavy hledá podle názvu; chybějící stav jen ohlásí varováním v běhu.
+Karty PR nemění.
 
-- Vestavěné automatizace převádějí jen události, ne štítky. Štítek `schvaleno` proto obsluhuje
-  workflow `.github/workflows/tabule-schvaleno.yml`: nastaví Status Schváleno (issue mimo tabuli
-  přidá) a odebere štítek `navrh`; u zavřeného issue nic nemění. Odebrání `schvaleno` vrátí
-  otevřené issue ze Schváleno do Návrhu (u interního zadání i se štítkem `navrh`). Ruční přesun
-  do jiného sloupce workflow nepřepisuje. Potřebuje secret `PROJECT_TOKEN`, klasický token se scopes
-  `project` a `public_repo` (fine-grained token do projektu na osobním účtu zapisovat neumí).
-  Token má omezenou platnost; po vypršení workflow selže a token je potřeba obnovit.
-- Přesun do Oponentury dělá Patrick ručně.
-- Auto-add přidává jen položky založené nebo změněné po zapnutí. Starší zavřené věci na tabuli
-  doplněné nejsou, kromě těch, které se ručně synchronizovaly 1. 10. 2026.
-- „Auto-close issue“ a „Pull request linked to issue“ míří na neexistující stav „Done“ (červený
-  vykřičník). Jsou vypnuté; bez opravy cíle je nezapínat.
-- Do projektu vidí `gh` jen s oprávněním `project` (`gh auth refresh -s project`).
+Potřebuje secret `PROJECT_TOKEN`, klasický token se scopes `project` a `public_repo` (fine-grained token
+do projektu na osobním účtu zapisovat neumí). Token má omezenou platnost; expiraci hlídá týdenní přehled.
+
+Nastavení projektu (dělá vlastník, API stavy neumí měnit):
+
+- stavy: Hlášení, Návrh, Oponentura, Schváleno, V PR (dříve „Ke schválení merge“), Čeká na souhlas s merge, Hotovo;
+- Auto-add jen issues: `is:issue is:open -label:trvale`; karty PR archivovat;
+- vestavěnou automatizaci „Item added to project“ (nastavuje Návrh) vypnout, stav určuje workflow;
+- „Item closed“ může zůstat (Hotovo), „Auto-close issue“ a „Pull request linked to issue“ zůstávají vypnuté.
+
+Do projektu vidí `gh` jen s oprávněním `project` (`gh auth refresh -s project`).
 
 ## 4. Ochrana `main`
 
