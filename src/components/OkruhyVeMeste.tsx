@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { OdznakObtiznosti } from '@/components/nabidka/Odznaky';
 import type { ZarazeniObtiznosti } from '@/lib/obor-profil';
 
@@ -9,8 +10,13 @@ import type { ZarazeniObtiznosti } from '@/lib/obor-profil';
  */
 export interface RadekOkruhu {
   klic: string;
+  /** Název školy s ulicí („Gymnázium, Křenová“), ne zkrácený název z rejstříku. */
   skola: string;
   obor: string;
+  /** Délka studia a zaměření, když jsou jednoznačné. */
+  doplnek: string | null;
+  /** Přehled školy; null, když škola stránku nemá. */
+  href: string | null;
   /** Obec oboru, jen když se liší od města stránky. */
   obec: string | null;
   uchazecu: number;
@@ -33,9 +39,10 @@ function pocetOboru(n: number) {
   return `${fmt(n)} ${n === 1 ? 'obor' : n < 5 ? 'obory' : 'oborů'}`;
 }
 
+/** Názvy škol samy obsahují čárku („Gymnázium, Křenová“), proto je odděluje tečka. */
 function nazevOkruhu(radky: RadekOkruhu[]) {
   const nazvy = Array.from(new Set(radky.map((r) => r.skola))).slice(0, 3);
-  return radky.length > nazvy.length ? `${nazvy.join(', ')} a další` : nazvy.join(', ');
+  return radky.length > nazvy.length ? `${nazvy.join(' · ')} a další` : nazvy.join(' · ');
 }
 
 function Okruh({ o, rok }: { o: OkruhKZobrazeni; rok: number }) {
@@ -55,10 +62,11 @@ function Okruh({ o, rok }: { o: OkruhKZobrazeni; rok: number }) {
           {o.radky.map((r) => (
             <li key={r.klic} className="flex flex-wrap items-center justify-between gap-x-4 gap-y-1 py-2">
               <div>
-                <div className="text-[15px] font-semibold text-slate-900">{r.skola}</div>
+                <div className="text-[15px] font-semibold text-slate-900">
+                  {r.href ? <Link href={r.href} className="hover:text-[#0074e4] hover:underline">{r.skola}</Link> : r.skola}
+                </div>
                 <div className="text-[13px] text-slate-600">
-                  {r.obor}
-                  {r.obec ? ` · ${r.obec}` : ''}
+                  {[r.obor, r.doplnek, r.obec].filter(Boolean).join(' · ')}
                 </div>
               </div>
               <div className="flex flex-wrap items-center gap-2">

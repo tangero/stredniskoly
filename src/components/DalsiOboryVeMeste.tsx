@@ -19,10 +19,13 @@ export function DalsiOboryVeMeste(
   const bezZkousky = obory.filter(o => o.duvod === 'bez_zkousky');
   const jine = obory.filter(o => o.duvod === 'jiny');
 
+  // Seskupuje se podle REDIZO, ne podle názvu: dvě školy mohou mít stejný název.
   const podleSkoly = (seznam: DalsiOborVeMeste[]) => {
     const m = new Map<string, DalsiOborVeMeste[]>();
-    for (const o of seznam) m.set(o.skola, [...(m.get(o.skola) ?? []), o]);
-    return [...m.entries()].sort((a, b) => a[0].localeCompare(b[0], 'cs'));
+    for (const o of seznam) m.set(o.redizo, [...(m.get(o.redizo) ?? []), o]);
+    return [...m.values()]
+      .map(obory => [obory[0].skola, obory] as [string, DalsiOborVeMeste[]])
+      .sort((a, b) => a[0].localeCompare(b[0], 'cs'));
   };
 
   return (
@@ -74,7 +77,7 @@ function SeznamSkol({ skupiny }: { skupiny: [string, DalsiOborVeMeste[]][] }) {
   return (
     <div className="space-y-2">
       {skupiny.map(([skola, obory]) => (
-        <div key={skola} className="rounded-xl border border-slate-200 bg-white px-4 py-3">
+        <div key={obory[0].redizo} className="rounded-xl border border-slate-200 bg-white px-4 py-3">
           <p className="text-[15px] font-medium text-slate-900">{skola}</p>
           <p className="mt-0.5 text-[13px] text-slate-600">
             {obory.map(o => o.obor).sort((a, b) => a.localeCompare(b, 'cs')).join(' · ')}

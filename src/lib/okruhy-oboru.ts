@@ -146,3 +146,69 @@ export async function getOkruheMesta(obec: string): Promise<OkruheMesta | null> 
   if (!rok) return null;
   return vyberOkruhu(rok, (await nactiMesta(rok))[obec]);
 }
+
+/** Záznam katalogu, ze kterého se skládá popis řádku okruhu. */
+export interface ZaznamKataloguProOkruh {
+  /** Název školy pro zobrazení s ulicí, například „Gymnázium, Křenová“. */
+  nazevDisplay: string;
+  obor: string;
+  zamereni: string;
+  delka: number | null;
+}
+
+/** Popis jednoho oboru okruhu pro řádek na stránce města. */
+export interface PopisOboruOkruhu {
+  skola: string;
+  obor: string;
+  /** Délka studia a zaměření, když je katalog nese jednoznačně. */
+  doplnek: string | null;
+}
+
+/** Ulice z adresy rejstříku („Koněvova 100, 417 42 Krupka“ → „Koněvova“); bez ulice null. */
+export function uliceZAdresy(adresa: string | undefined): string | null {
+  const prvni = (adresa ?? '').split(',')[0].trim().replace(/\s+(č\.\s*p\.\s*)?\d[\dA-Za-z/]*$/, '').trim();
+  // Ulice může začínat datem („17. listopadu“); bez ulice začíná adresa číslem popisným nebo „č. p.“.
+  return prvni && !/^\d+(\/\d+)?$/.test(prvni) && !/^\d+\s/.test(prvni) && !/^č\.\s*p\./.test(prvni) ? prvni : null;
+}
+
+/**
+ * Název školy pro řádek seznamu: z katalogu s ulicí, jinak zkrácený název z rejstříku doplněný o ulici
+ * sídla. Zkrácený název sám nestačí, u 97 škol je to jen „Gymnázium“.
+ */
+export function nazevSkolyProRadek(
+  redizo: string,
+  nazvySkolKatalogu: Map<string, string>,
+  rejstrik: { skola?: string; adresa?: string },
+): string | null {
+  const zKatalogu = nazvySkolKatalogu.get(redizo);
+  if (zKatalogu) return zKatalogu;
+  if (!rejstrik.skola) return null;
+  const ulice = uliceZAdresy(rejstrik.adresa);
+  return ulice && !rejstrik.skola.includes(ulice) ? `${rejstrik.skola}, ${ulice}` : rejstrik.skola;
+}
+
+/**
+ * Jak řádek okruhu pojmenuje školu a obor. Zkrácený název z rejstříku je u 97 škol jen „Gymnázium“
+ * a název oboru 79-41-K/41 také, takže řádek „Gymnázium / Gymnázium“ nic neřekl. Název školy se proto
+ * bere z katalogu (s ulicí), a to i pro obor mimo katalog, když katalog zná jiný obor téže školy;
+ * teprve škola mimo katalog dostane zkrácený název z rejstříku doplněný o ulici z adresy sídla.
+ * Zaměření se uvede jen tehdy, když ho klíč REDIZO_KKOV má v katalogu jediné; víc zaměření se uvede počtem.
+ */
+export function popisOboruOkruhu(
+  klic: string,
+  katalog: Map<string, ZaznamKataloguProOkruh[]>,
+  nazvySkolKatalogu: Map<string, string>,
+  rejstrik: { skola?: string; adresa?: string; obor?: string },
+): PopisOboruOkruhu | null {
+  const zaznamy = katalog.get(klic) ?? [];
+  const skola = nazevSkolyProRadek(klic.split('_')[0], nazvySkolKatalogu, rejstrik);
+  const obor = zaznamy[0]?.obor || rejstrik.obor;
+  if (!skola || !obor) return null;
+  const casti: string[] = [];
+  const delky = new Set(zaznamy.map((z) => z.delka).filter((d): d is number => typeof d === 'number' && d > 0));
+  if (delky.size === 1) casti.push(`${Array.from(delky)[0]}leté`);
+  const zamereni = Array.from(new Set(zaznamy.map((z) => z.zamereni.trim()).filter((z) => z && z !== obor)));
+  if (zaznamy.length === 1 && zamereni.length === 1) casti.push(zamereni[0]);
+  else if (zamereni.length > 1) casti.push(`${zamereni.length} zaměření`);
+  return { skola, obor, doplnek: casti.length ? casti.join(', ') : null };
+}

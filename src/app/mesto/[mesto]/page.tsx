@@ -8,7 +8,10 @@ import { MESTA, getCityStats } from '@/lib/cityData';
 import { zobrazeneObdobi } from '@/lib/stav-datovych-sad';
 import { rokDruhehoKola } from '@/lib/druhe-kolo';
 import { dalsiOboryVeMeste, kategorieOboru, KATEGORIE_BEZ_JPZ, nactiIndexRejstriku } from '@/lib/kontext-prihlasek';
-import { getOkruheMesta } from '@/lib/okruhy-oboru';
+import { getOkruheMesta, nazevSkolyProRadek, popisOboruOkruhu, type ZaznamKataloguProOkruh } from '@/lib/okruhy-oboru';
+import { getSchoolAnalysis, getSchoolsData } from '@/lib/data';
+import { adresaPrehledu } from '@/lib/adresa-oboru.mjs';
+import { klicOboru, rocnikyKatalogu } from '@/lib/school-key';
 import { OkruhyVeMeste } from '@/components/OkruhyVeMeste';
 import type { OkruhKZobrazeni, RadekOkruhu } from '@/components/OkruhyVeMeste';
 import type { ZarazeniObtiznosti } from '@/lib/obor-profil';
@@ -199,8 +202,48 @@ function jeNastavba(klic: string): boolean {
 }
 
 /**
- * Okruhy města s názvy z rejstříku a obtížností z katalogu. Obtížnost se ukáže, jen když ji mají
- * všechny nabídky oboru stejnou; u oborů bez jednotné zkoušky žádná není.
+ * Katalog pro popis řádků okruhu: záznamy oboru (REDIZO_KKOV) z nejnovějšího ročníku, ve kterém se
+ * obor vyskytuje, a název školy s ulicí podle REDIZO. Ročníky určuje registr (`rocnikyKatalogu`).
+ */
+type KatalogProOkruhy = { obory: Map<string, ZaznamKataloguProOkruh[]>; skoly: Map<string, string> };
+let katalogProOkruhyCache: Promise<KatalogProOkruhy> | null = null;
+
+function katalogProOkruhy(): Promise<KatalogProOkruhy> {
+  katalogProOkruhyCache ??= sestavKatalogProOkruhy();
+  return katalogProOkruhyCache;
+}
+
+async function sestavKatalogProOkruhy(): Promise<KatalogProOkruhy> {
+  const data = await getSchoolsData() as unknown as Record<string, Array<Record<string, unknown>>>;
+  const obory = new Map<string, ZaznamKataloguProOkruh[]>();
+  const skoly = new Map<string, string>();
+  for (const rocnik of rocnikyKatalogu(Object.keys(data), await zobrazeneObdobi('cermat-vysledky'))) {
+    const vRocniku = new Map<string, ZaznamKataloguProOkruh[]>();
+    for (const z of data[rocnik] ?? []) {
+      const klic = klicOboru(z);
+      if (!klic) continue;
+      const redizo = String(z.redizo ?? '');
+      const nazev = String(z.nazev_display || z.nazev || '');
+      if (redizo && nazev && !skoly.has(redizo)) skoly.set(redizo, nazev);
+      if (obory.has(klic)) continue;
+      const seznam = vRocniku.get(klic) ?? [];
+      seznam.push({
+        nazevDisplay: nazev,
+        obor: String(z.obor ?? ''),
+        zamereni: String(z.zamereni ?? ''),
+        delka: typeof z.delka_studia === 'number' ? z.delka_studia : null,
+      });
+      vRocniku.set(klic, seznam);
+    }
+    for (const [klic, seznam] of vRocniku) obory.set(klic, seznam);
+  }
+  return { obory, skoly };
+}
+
+/**
+ * Okruhy města s názvy škol z katalogu a obtížností z katalogu. Obtížnost se ukáže, jen když ji mají
+ * všechny nabídky oboru stejnou; u oborů bez jednotné zkoušky žádná není. Odkaz vede na přehled školy,
+ * adresu skládá `adresaPrehledu` s názvem ze school_analysis.json jako hlavní přehled města.
  */
 async function okruhyKZobrazeni(
   data: Awaited<ReturnType<typeof getOkruheMesta>>,
@@ -209,7 +252,14 @@ async function okruhyKZobrazeni(
 ): Promise<{ okruhy: OkruhKZobrazeni[]; nastavby: OkruhKZobrazeni[] }> {
   const out = { okruhy: [] as OkruhKZobrazeni[], nastavby: [] as OkruhKZobrazeni[] };
   if (!data) return out;
-  const { skoly, obory } = await nactiIndexRejstriku();
+  const [{ skoly, obory, identifikace }, katalog, analyza] = await Promise.all([
+    nactiIndexRejstriku(), katalogProOkruhy(), getSchoolAnalysis(),
+  ]);
+  const kanonickeNazvy = new Map<string, string>();
+  for (const s of Object.values(analyza)) {
+    const redizo = s.id.split('_')[0];
+    if (!kanonickeNazvy.has(redizo)) kanonickeNazvy.set(redizo, s.nazev);
+  }
   const zarazeni = new Map<string, Set<ZarazeniObtiznosti | null>>();
   for (const s of schools) {
     const k = `${s.redizo}_${s.id.split('_')[1] ?? ''}`;
@@ -219,14 +269,18 @@ async function okruhyKZobrazeni(
     const radky: RadekOkruhu[] = [];
     for (const x of o.obory) {
       const [redizo, kkov] = x.klic.split('_');
-      const skola = skoly[redizo]?.[0];
-      const nazevOboru = obory[kkov];
-      if (!skola || !nazevOboru) continue;
+      const popis = popisOboruOkruhu(x.klic, katalog.obory, katalog.skoly, {
+        skola: skoly[redizo]?.[0], adresa: identifikace[redizo]?.adresa, obor: obory[kkov],
+      });
+      if (!popis) continue;
+      const kanonicky = kanonickeNazvy.get(redizo);
       const z = zarazeni.get(x.klic);
       radky.push({
         klic: x.klic,
-        skola,
-        obor: nazevOboru,
+        skola: popis.skola,
+        obor: popis.obor,
+        doplnek: popis.doplnek,
+        href: kanonicky ? `/skola/${adresaPrehledu(redizo, kanonicky)}` : null,
         obec: x.obec && x.obec !== obec ? x.obec : null,
         uchazecu: x.uchazecu,
         zarazeni: z && z.size === 1 ? [...z][0] : null,
@@ -267,6 +321,14 @@ export default async function MestoPage({ params }: Props) {
     mestoMeta.nazev,
     new Set(schools.map(s => `${s.redizo}_${s.id.split('_')[1] ?? ''}`)),
   );
+  // Zkrácený název z rejstříku je u řady škol stejný („Gymnázium“); seznam by je slil do jedné.
+  const [rejstrik, katalogNazvu] = await Promise.all([nactiIndexRejstriku(), katalogProOkruhy()]);
+  const dalsiObory = dalsi.obory.map(o => ({
+    ...o,
+    skola: nazevSkolyProRadek(o.redizo, katalogNazvu.skoly, {
+      skola: o.skola, adresa: rejstrik.identifikace[o.redizo]?.adresa,
+    }) ?? o.skola,
+  }));
   const okruheMesta = await getOkruheMesta(mestoMeta.nazev);
   const { okruhy, nastavby } = await okruhyKZobrazeni(okruheMesta, mestoMeta.nazev, schools);
   const pocetSkol = new Set(schools.map(s => s.redizo)).size;
@@ -348,7 +410,7 @@ export default async function MestoPage({ params }: Props) {
 
           {/* Obory, které hlavní přehled nevede */}
           <div id="dalsi-obory" className="scroll-mt-24">
-            <DalsiOboryVeMeste obory={dalsi.obory} minUchazecu={dalsi.minUchazecu} />
+            <DalsiOboryVeMeste obory={dalsiObory} minUchazecu={dalsi.minUchazecu} />
           </div>
 
           {/* Okruhy oborů podle souběžných přihlášek; jen města, kde okruhy vycházejí */}

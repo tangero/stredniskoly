@@ -307,6 +307,15 @@ test('další obory: nenesou obtížnost přijetí', async () => {
   assert.match(vykresleny, /víme o nich jen název/i);
 });
 
+test('další obory: dvě školy se stejným názvem zůstanou dvěma kartami', () => {
+  // Zkrácený název z rejstříku je u řady škol jen „Gymnázium“; seskupení podle názvu je slilo.
+  const o = (redizo, skola, obor) => ({ klic: `${redizo}_x`, redizo, skola, obor, duvod: 'bez_zkousky' });
+  const html = renderToStaticMarkup(React.createElement(DalsiOboryVeMeste, {
+    obory: [o('1', 'Gymnázium', 'Obor A'), o('2', 'Gymnázium', 'Obor B')], minUchazecu: 10,
+  }));
+  assert.equal((html.match(/rounded-xl border/g) ?? []).length, 2);
+});
+
 test('další obory: každý obor je v textu a skupiny se nemíchají', async () => {
   const { obory } = await dalsiOboryVeMeste('Pardubice', await klaceVPrehledu('Pardubice'));
   assert.ok(obory.length > 0, 'v Pardubicích nejsou další obory');
