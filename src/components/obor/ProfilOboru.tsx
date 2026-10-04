@@ -13,6 +13,7 @@ import {
 } from '@/components/obor/grafy';
 import { VeletrhVMeste } from '@/components/veletrhy/VeletrhVMeste';
 import { BlokKriterii, KdeStojim } from '@/components/obor/KdeStojim';
+import { SoubezneObceObsah } from '@/components/obor/SoubezneObce';
 
 /**
  * Stránka oboru ve třech otázkách: jak těžké bude se dostat, co pomůže, jak se tu studuje.
@@ -569,6 +570,11 @@ export function ProfilOboru({ data, inspekceHref, skolaHref, obec }: ProfilOboru
                   </table>
                 </div>
                 <Zdroj>Jen obory s aspoň 10 společnými uchazeči. Pořadí na přihlášce říká, kam kdo chtěl víc, ne jak je obor těžký: tatáž škola bývá u různých uchazečů výš i níž.{[...kontext.vys, ...kontext.niz].some(o => o.mimoPrehled) && ' Obory bez jednotné zkoušky, například učební obory s výučním listem, a několik dalších oborů přehled zatím nezahrnuje a nemají u nás vlastní stránku.'}</Zdroj>
+              </Dukaz>
+            )}
+            {data.soubezneObce && (
+              <Dukaz nadpis="Které další obory v okolí uchazeči také volí" rok={`1. kolo ${data.soubezneObce.rok}`}>
+                <SoubezneObceObsah data={data.soubezneObce} />
               </Dukaz>
             )}
             {dk && (
