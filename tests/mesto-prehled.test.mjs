@@ -430,6 +430,15 @@ test('stránka oboru: obor najde svůj okruh, týž jako na stránce města', as
   assert.equal(await getOkruhOboru('999999999_00-00-X/00'), null);
 });
 
+test('stránka oboru: okruh sdílený více městy se bere z města, kde obor leží (review PR #352, P2)', async () => {
+  const nalez = await getOkruhOboru('600006751_79-41-K/41');
+  assert.ok(nalez, 'gymnázium ve Vlašimi nemá okruh');
+  assert.equal(nalez.obec, 'Vlašim');
+  const mesto = await getOkruheMesta('Vlašim');
+  const stejny = mesto.okruhy.find(o => o.id === nalez.okruh.id);
+  assert.deepEqual(stejny.obory.map(o => o.klic), nalez.okruh.obory.map(o => o.klic));
+});
+
 test('stránka oboru: okruh zkrácený na deset oborů, tento obor vždy a zvýrazněný', async () => {
   const { okruhy } = await okruhyMesta('Brno');
   const velky = okruhy.find(o => o.radky.length > 12);

@@ -161,11 +161,18 @@ export async function getOkruhOboru(programId: string): Promise<OkruhOboru | nul
   const klic = `${redizo}_${kkov}`;
   const id = (await nactiObory(rok))[klic]?.okruh;
   if (id === undefined) return null;
+  // Stejné id okruhu nese více měst; vybere se město, kde obor leží (jeho domovská obec), jinak to s nejvíc obory okruhu.
+  let nejlepsi: { obec: string; okruh: OkruhMesta; domov: boolean } | null = null;
   for (const [obec, zaznam] of Object.entries(await nactiMesta(rok))) {
     const okruh = vyberOkruhu(rok, zaznam)?.okruhy.find(o => o.id === id);
-    if (okruh && okruh.obory.some(o => o.klic === klic)) return { rok, obec, okruh };
+    const radek = okruh?.obory.find(o => o.klic === klic);
+    if (!okruh || !radek) continue;
+    const domov = radek.obec === obec;
+    if (!nejlepsi || (domov && !nejlepsi.domov) || (domov === nejlepsi.domov && okruh.obory.length > nejlepsi.okruh.obory.length)) {
+      nejlepsi = { obec, okruh, domov };
+    }
   }
-  return null;
+  return nejlepsi ? { rok, obec: nejlepsi.obec, okruh: nejlepsi.okruh } : null;
 }
 
 export async function getOkruheMesta(obec: string): Promise<OkruheMesta | null> {
