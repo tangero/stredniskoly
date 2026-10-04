@@ -36,3 +36,71 @@ export function cilovyStav(issue, prs = []) {
 export function branaCekaNaSouhlas(kontrola) {
   return kontrola?.conclusion === 'failure' && /chybí souhlas vlastníka/.test(kontrola.output?.summary || '');
 }
+
+const NA_CO_CEKA_MAX = 120;
+const zkrat = (t) => (t.length > NA_CO_CEKA_MAX ? `${t.slice(0, NA_CO_CEKA_MAX - 1)}…` : t);
+
+/** Čas brány (UTC „RRRR-MM-DD HH:MM“) jako „8. 10. 14:30“ v pražském čase. */
+function praha(utc) {
+  const d = new Date(`${utc.replace(' ', 'T')}:00Z`);
+  if (Number.isNaN(d.getTime())) return utc;
+  const c = new Intl.DateTimeFormat('cs-CZ', { timeZone: 'Europe/Prague', day: 'numeric', month: 'numeric', hour: '2-digit', minute: '2-digit' }).format(d);
+  return c.replace(/\s+/g, ' ');
+}
+
+/**
+ * Jedna věta o tom, na co PR čeká, pro pole „Na co čeká“.
+ * @param {{ draft?: boolean, mergeable?: boolean|null, kontrola?: { status?: string, conclusion?: string, output?: { summary?: string } }, review?: 'ok'|'nalezy'|null }} p
+ */
+export function naCoCekaPr(p) {
+  if (p.draft) return 'rozpracovaný (draft)';
+  const review = p.review === 'ok' ? 'review bez P1/P2' : p.review === 'nalezy' ? 'review má nálezy k opravě' : 'review zatím není';
+  if (p.mergeable === false) return `konflikt s main, opraví autor PR · ${review}`;
+  const k = p.kontrola;
+  if (!k || k.status !== 'completed') return `brána se vyhodnocuje · ${review}`;
+  if (k.conclusion === 'success') return `brána prošla, sloučí se automaticky · ${review}`;
+  const duvod = ((k.output?.summary || '').split('\n')[0] || '').replace(/^-\s*/, '');
+  let co;
+  if (/chybí protokol z preview/.test(duvod)) co = 'chybí protokol z preview';
+  else if (/protokol z preview obsahuje nesplněné/.test(duvod)) co = 'protokol z preview má nesplněné kritérium';
+  else if (/lhůta na veto běží do (\d{4}-\d\d-\d\d \d\d:\d\d)/.test(duvod)) co = `lhůta na veto do ${praha(duvod.match(/(\d{4}-\d\d-\d\d \d\d:\d\d)/)[1])}`;
+  else if (/chybí souhlas vlastníka/.test(duvod)) co = 'čeká na tvé schvaleno';
+  else if (/štítek stop/.test(duvod)) co = 'zastaveno štítkem stop';
+  else if (/^zamrznutí/.test(duvod)) co = 'zamrznutí, sloučí se po něm';
+  else co = `brána: ${duvod || 'neprošla'}`;
+  return `${co} · ${review}`;
+}
+
+/**
+ * Jedna věta o tom, na co issue čeká, pro pole „Na co čeká“; '' u zavřeného, null u trvale.
+ * @param {{ stav: 'OPEN'|'CLOSED', stitky: string[], telo?: string, rodic?: number|null, ukoly?: { total: number, completed: number }|null }} issue
+ * @param {{ cislo: number }[]} prs otevřené PR s hotovou větou `naCoCeka`
+ * @param {string} dnes RRRR-MM-DD
+ */
+export function naCoCeka(issue, prs = [], dnes = new Date().toISOString().slice(0, 10)) {
+  const s = new Set(issue.stitky);
+  if (issue.stav === 'CLOSED') return '';
+  if (s.has('trvale')) return null;
+  if (s.has('stop')) return 'zastaveno štítkem stop';
+  if (s.has('navrh') && !s.has('schvaleno')) return 'čeká na tvé rozhodnutí: schvaleno, nebo zamitnuto';
+  if (s.has('oponentura')) return 'oponentura, pak k tvému rozhodnutí';
+  if (s.has('pripominka')) {
+    const t = (issue.telo || '').match(/Termín:?\s*(\d{4})-(\d{2})-(\d{2})/);
+    if (t && `${t[1]}-${t[2]}-${t[3]}` > dnes) return `připomínka, termín ${Number(t[3])}. ${Number(t[2])}. ${t[1]}`;
+    return 'připomínka je splatná, čeká na vyhodnocení';
+  }
+  if (prs.length) return zkrat(prs.map((p) => `PR #${p.cislo}: ${p.naCoCeka}`).join('; '));
+  const hlaseni = STITKY_HLASENI.some((h) => s.has(h));
+  if (hlaseni) return issue.rodic ? `patří k projektu #${issue.rodic}, vyřeší ho jeho etapa` : 'hlášení: čeká na třídění, schvaleno nebo připojení k projektu';
+  const schvalene = s.has('schvaleno') || (s.has('interni') && ZDROJ.test(issue.telo || ''));
+  if (!schvalene) {
+    if (s.has('nova-data')) return 'čeká na nová data (datová linka)';
+    return s.has('interni') ? 'chybí schvaleno nebo doklad Zdroj:' : 'čeká na třídění';
+  }
+  if (s.has('question')) return 'čeká na odpověď na dotaz v issue';
+  if (s.has('projekt')) {
+    const u = issue.ukoly;
+    return u?.total ? `projekt: hotovo ${u.completed} z ${u.total} úkolů, čeká na další etapu` : 'projekt: čeká na další etapu';
+  }
+  return 'čeká na realizaci (hodinová úloha)';
+}

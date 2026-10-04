@@ -23,15 +23,27 @@ Založení:
 
 ### Hotovo když
 
-- [ ] …
-- [ ] …
-- [ ] Lint, testy a build prošly
+<!-- Každé kritérium: označení K1, K2…, jedna kontrola ano/ne a čím se ověří. Označení se nepřečíslovávají
+     (rozdělené K3 → K3.1, K3.2; zrušené přeškrtnout ~~K4: …~~). Protokol z preview má řádek pro každé K a P. -->
+
+- [ ] K1: … - ověření: náhled /…, 390 a 1280 px
+- [ ] K2: … - ověření: …
+- Lint, typy, testy a build hlídá CI.
 
 ### Nesmí se dotknout / omezení
 
+<!-- U změn webu aspoň jedno ověřitelné protikritérium P1, P2… se způsobem ověření. -->
+
+- P1: … - ověření: …
 - Žádné refaktory mimo zadání.
 - Produkční data v Neonu beze změny (migrace: žádná).
-- Cizí servery: žádné (jinak uvést server, endpointy, rychlost, data a důvod; před použitím ohlásit v issue a počkat na schválení, CLAUDE.md pravidlo 7).
+- Cizí servery: žádné (jinak uvést server, endpointy, rychlost, data a důvod; před prvním dotazem zapsat do issue, odkud se stahuje, schválení netřeba; CLAUDE.md pravidlo 7).
+
+### Otevřené otázky
+
+<!-- Co zatím nevíte a ovlivní řešení (CLAUDE.md, pravidlo 8). Nevíte-li nic, oddíl smažte. -->
+
+…
 
 ### Jak otestovat
 

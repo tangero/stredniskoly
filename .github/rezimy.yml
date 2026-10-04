@@ -45,6 +45,7 @@ h2:
   - .github/CODEOWNERS
   - .github/workflows/brana-slouceni.yml
   - .github/workflows/oblasti-pr.yml
+  - .github/workflows/slouceni.yml
   - scripts/brana/**
   - CLAUDE.md
   - .claude/claude.md

@@ -4,7 +4,7 @@ import fs from 'node:fs';
 import yaml from 'js-yaml';
 import {
   vyhodnot, rozsah, otisk, propojenaIssues, zaznamSouhlasu, souhlasIssue, rozbor, zamrznuto, ZNACKA, BOT,
-  stavLhuty, externiId, ctiExterniId, review,
+  stavLhuty, externiId, ctiExterniId, review, oznaceniKriterii, chybejiciVProtokolu, uzaviranaIssues,
 } from '../scripts/brana/brana.mjs';
 import { oblastiZLabeleru } from '../scripts/brana/data.mjs';
 import { odpovedNaZadost } from '../scripts/brana/sloucit.mjs';
@@ -94,6 +94,46 @@ test('bez protokolu z preview pro aktuální hlavu neprojde', () => {
   assert.match(nesplneno.duvody.join(), /nesplněné/);
 });
 
+const TELO_K = `Zdroj: vlastník
+
+### Hotovo když
+
+- [ ] K1: věta na stránce - ověření: náhled
+- [x] K2: odkaz na kalendář - ověření: náhled
+- [ ] K3: karta školy - ověření: náhled
+
+### Nesmí se dotknout / omezení
+
+- P1: adresy v sitemap beze změny - ověření: npm run build`;
+const protokolK = (radky) => ({
+  autor: 'tangero', cas: PRED(55),
+  telo: `## Protokol z preview\nCommit: ${SHA.slice(0, 7)}\n| kritérium | 390 px |\n|---|---|\n${radky.map((r) => `| ${r} | splněno |`).join('\n')}`,
+});
+
+test('protokol musí uvést každé kritérium K a P z uzavíraného zadání', () => {
+  const chybi = run({ issues: [issue({ telo: TELO_K })], pr: pr({ komentare: [protokolK(['K1: věta', 'K2: odkaz', 'P1: sitemap']), reviewKomentar(SHA, 'Bez P1 a P2')] }) });
+  assert.equal(chybi.uspech, false);
+  assert.match(chybi.duvody.join(), /neuvádí kritéria z issue #10: K3$/);
+  const vse = run({ issues: [issue({ telo: TELO_K })], pr: pr({ komentare: [protokolK(['K1: věta', 'K2: odkaz', 'K3: karta', 'P1: sitemap']), reviewKomentar(SHA, 'Bez P1 a P2')] }) });
+  assert.equal(vse.uspech, true, vse.duvody.join('; '));
+});
+
+test('zadání bez označení K a P a etapa se „Souvisí s“ se posuzují jako dřív', () => {
+  const stare = run();
+  assert.equal(stare.uspech, true, stare.duvody.join('; '));
+  const etapa = run({ issues: [issue({ telo: TELO_K })], pr: pr({ telo: 'Souvisí s #10', komentare: [protokolK(['K1: věta'])] }) });
+  assert.doesNotMatch(etapa.duvody.join(), /neuvádí kritéria/);
+});
+
+test('označení kritérií: rozdělení, zrušení a řádek protokolu', () => {
+  const telo = '- [ ] K1: a\n- [ ] ~~K3: rozdělené~~\n- [ ] K3.1: b\n- [x] K3.2: c\n- P1: d\nText K9: není seznam';
+  assert.deepEqual(oznaceniKriterii(telo), ['K1', 'K3.1', 'K3.2', 'P1']);
+  assert.deepEqual(oznaceniKriterii('Zdroj: vlastník\n- [ ] věta bez označení'), []);
+  // K1 neplatí za K10 ani K1.2; řádek seznamu i tabulky se počítá.
+  assert.deepEqual(chybejiciVProtokolu(['K1', 'K3.1', 'P1'], '| K10 | splněno |\n| K1.2 | splněno |\n- K3.1: splněno\n|P1|splněno|'), ['K1']);
+  assert.deepEqual(uzaviranaIssues('Closes #10\nSouvisí s #11\nFixes #12'), [10, 12]);
+});
+
 test('změna jen v dokumentaci protokol nepotřebuje', () => {
   const v = run({ pr: pr({ komentare: [] }), soubory: [soubor('docs/neco.md')] });
   assert.equal(v.uspech, true, v.duvody.join('; '));
@@ -147,6 +187,19 @@ test('úkol schváleného projektu (sub-issue) s dokladem projde hned, bez lhůt
   const stop = hned(projekt({ stitky: ['interni', 'projekt', 'schvaleno', 'stop'] }));
   assert.equal(stop.uspech, false);
   assert.match(stop.duvody.join(), /projekt #50 \(rodič issue #10\) má štítek stop/);
+
+  // veřejné hlášení pod schváleným projektem projde jako etapa, i bez dokladu a od cizího autora (RA39)
+  const hlaseni = (rodic, o = {}) => issue({ cislo: 256, autor: 'nekdo', stitky: ['portal-skoly'], telo: 'chybí obor', rodic, ...o });
+  const h = run({ predchozi: null, issues: [hlaseni(projekt())] });
+  assert.equal(h.rezim, 'E');
+  assert.equal(h.uspech, true, h.duvody.join('; '));
+  assert.match(h.duvody.join(), /hlášení #256 patří ke schválenému projektu #50/);
+  // etapa s projektem i hlášením v popisu PR
+  assert.equal(run({ predchozi: null, issues: [projekt(), hlaseni(projekt())] }).uspech, true);
+  // bez projektu, pod neschváleným projektem nebo se stop na projektu dál neprojde
+  assert.equal(run({ predchozi: null, issues: [hlaseni(null)] }).uspech, false);
+  assert.equal(run({ predchozi: null, issues: [hlaseni(projekt({ stitky: ['interni', 'projekt', 'navrh'], udalosti: [], komentare: [] }))] }).uspech, false);
+  assert.equal(run({ predchozi: null, issues: [hlaseni(projekt({ stitky: ['interni', 'projekt', 'schvaleno', 'stop'] }))] }).uspech, false);
 });
 
 test('issue bez dokladu a bez souhlasu neprojde, hlášení ve fázi 1 také ne', () => {
@@ -533,4 +586,36 @@ test('review: nové review se stejným textem lhůtu L založí znovu', () => {
   assert.notEqual(v2.stav, v1.stav);
   assert.equal(v2.lhutaOd, TED);
   assert.equal(v2.uspech, false);
+});
+
+test('automatické slučování bere jen PR, které brána naposledy pustila, bez draftů', async () => {
+  const { pripravene } = await import('../scripts/brana/slucit-pripravene.mjs');
+  const kontroly = {
+    a: [{ id: 2, status: 'completed', conclusion: 'success' }, { id: 1, status: 'completed', conclusion: 'failure' }],
+    b: [{ id: 3, status: 'completed', conclusion: 'failure' }],
+    c: [{ id: 4, status: 'in_progress', conclusion: null }],
+    d: [{ id: 5, status: 'completed', conclusion: 'success' }],
+    f: [{ id: 6, status: 'completed', conclusion: 'success', external_id: externiId({ pr: 6, stav: 'a'.repeat(64), od: 1, zadost: 99 }) }],
+    g: [{ id: 7, status: 'completed', conclusion: 'success' }],
+    h: [{ id: 8, status: 'completed', conclusion: 'success' }],
+  };
+  const api = async (cesta) => {
+    if (cesta.includes('/pulls?')) {
+      return [
+        { number: 1, draft: false, head: { sha: 'a' } },
+        { number: 2, draft: false, head: { sha: 'b' } },
+        { number: 3, draft: false, head: { sha: 'c' } },
+        { number: 4, draft: true, head: { sha: 'd' } },
+        { number: 5, draft: false, head: { sha: 'e' } },
+        { number: 6, draft: false, head: { sha: 'f' } },
+        { number: 7, draft: false, head: { sha: 'g' } },
+        { number: 8, draft: false, head: { sha: 'h' } },
+      ];
+    }
+    const detail = cesta.match(/pulls\/(\d+)$/);
+    if (detail) return { mergeable: detail[1] !== '7', mergeable_state: detail[1] === '8' ? 'blocked' : detail[1] === '7' ? 'dirty' : 'clean' };
+    const sha = cesta.match(/commits\/(\w+)\//)[1];
+    return { check_runs: kontroly[sha] || [] };
+  };
+  assert.deepEqual(await pripravene(api), [1]);
 });

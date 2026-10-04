@@ -14,10 +14,10 @@ a každou hodinu. Výsledek zapíše jako kontrolu „Brána sloučení“ na ak
 | režim | kdy | podmínka |
 |---|---|---|
 | R | štítek `rutina` na PR nebo issue, do 150 řádků mimo testy, jedna oblast, bez cest K a H2 | hned |
-| E | propojené issue se štítkem `projekt` a dokladem `Zdroj:`, nebo úkol s vlastním dokladem, který je sub-issue schváleného projektu (otevřený rodič `projekt` se `schvaleno` nebo dokladem, bez `navrh`, `zamitnuto` a štítků hlášení); `stop` na rodiči blokuje i úkol | hned |
+| E | propojené issue se štítkem `projekt` a dokladem `Zdroj:`, nebo úkol s vlastním dokladem, který je sub-issue schváleného projektu (otevřený rodič `projekt` se `schvaleno` nebo dokladem, bez `navrh`, `zamitnuto` a štítků hlášení); také veřejné hlášení, které je sub-issue schváleného projektu (RA39); `stop` na rodiči blokuje i úkol | hned |
 | L | ostatní interní zadání s dokladem `Zdroj:` | 48 h od prvního vyhodnocení stavu bez `stop` |
 | souhlas | propojené issue se `schvaleno` od Patricka, rozsah od schválení beze změny | hned |
-| K | cesty z `k` v `rezimy.yml` (migrace, e-maily, portál, nasazení, workflow, závislosti, registr sad, slovník ukazatelů), PR bez zadání, hlášení | `schvaleno` na PR nebo na issue |
+| K | cesty z `k` v `rezimy.yml` (migrace, e-maily, portál, nasazení, workflow, závislosti, registr sad, slovník ukazatelů), PR bez zadání, hlášení mimo schválený projekt | `schvaleno` na PR nebo na issue |
 | H2 | brána, `rezimy.yml`, `labeler.yml`, `CLAUDE.md`, workflow se změnou oprávnění nebo secrets | `schvaleno` přímo na PR, platí pro jeden commit |
 
 **Autoři (repozitář je veřejný):** doklad `Zdroj:` platí jen v issue od vlastníka nebo asistenta zadání
@@ -56,6 +56,10 @@ Patricka (štítek `navrh` na issue) a zmíní ji týdenní přehled.
 Jen `node scripts/brana/sloucit.mjs <PR>` a jen když je v `rezimy.yml` na `main` `slucovani_ai: true`.
 Skript vyhodnotí PR, komentářem si vyžádá nové vyhodnocení na serveru, počká na odpověď na tuto žádost,
 znovu ověří `stop` a commit a sloučí s pevným `sha`. Selhání skriptu nepřebíjej jiným způsobem sloučení.
+
+Totéž dělá automaticky workflow **Sloučení** (`.github/workflows/slouceni.yml`, RA40): po každém doběhnutí
+brány sloučí všechny otevřené PR, jejichž poslední kontrola prošla. Ruční spuštění skriptu je potřeba jen
+tehdy, když nechceš čekat na další běh brány.
 
 ## Šablona popisu PR
 
