@@ -13,17 +13,27 @@ Stav: **platí od 3. 10. 2026**, potvrzeno vlastníkem (PR #293, rozpočet dopln
 
 Podle těchto hodnot posuzujeme každý nápad, ať přijde od vlastníka, asistenta zadání, nebo z AI. Kromě soukromí
 žádná z nich nápad sama nezakazuje: u každého se zváží, které hodnoty posílí, které oslabí a o kolik. Mezi
-hodnotami rozhoduje vlastník (doplněno 4. 10. 2026, #353).
+hodnotami rozhoduje vlastník (doplněno 4. 10. 2026, #353, oponentura v PR #354).
 
 **Základ**
 
 - **Užitek pro rodinu a uchazeče.** Kvůli nim web existuje a všechno ostatní z toho vyrůstá: na stránku, která
-  nikomu nepomáhá, nikdo neodkáže, necituje ji a nevrátí se na ni.
+  nikomu nepomáhá, nikdo neodkáže, necituje ji a nevrátí se na ni. Nápad může vzniknout hlavně kvůli odkazům
+  nebo příjmům (jako rubrika Veletrhy); užitek je pak podmínka, bez které přínos nevznikne. _Signál: události
+  v Matomu, až je doplní #326; do té doby užitek neměříme a odhad značíme jako předpoklad._
 - **Správnost a důvěryhodnost.** Jeden chybný údaj před rodiči stojí víc než většina přínosů. Kvůli důvěryhodnosti
-  na nás odkazují kraje, komory a média a cituje nás AI.
-- **Soukromí uchazečů a rodin.** Osobní údaje uchazečů ani rodičů nezveřejňujeme a sbíráme jen to, co nutně
-  potřebujeme. Pracujeme s daty o dětech a repozitář je veřejný. Jako jediná hodnota se nezvažuje proti
-  ostatním: je to zákonná povinnost.
+  na nás odkazují kraje, komory a média a cituje nás AI. Údaj zveřejněný hned po zdroji je v pořádku, když je
+  označený jako předběžný.
+- **Soukromí uchazečů a rodin.** Osobní údaje uchazečů ani rodičů nezveřejňujeme, v souhrnných číslech nesmí jít
+  uchazeče poznat (skupiny pod 10 uchazečů neukazujeme) a sbíráme jen nezbytné údaje s právním důvodem. Totéž
+  platí pro zaměstnance škol v portálu. Jako jediná hodnota se nezvažuje proti ostatním: je to zákonná povinnost
+  a pracujeme s daty o dětech ve veřejném repozitáři.
+- **Otevřená data.** Prosazujeme otevřená data jako součást férového výběru školy: rodina má rozhodovat podle
+  stejných informací, jaké mají stát a školy. Data bereme z veřejných sad podle jejich podmínek a se zdrojem;
+  vlastní zpracovaná data dáváme dál s uvedením zdroje. Zákon dnes ukládá data zveřejňovat; že stát některou sadu
+  uzavře, je vědomé riziko. Kdyby k tomu docházelo, postavíme se za otevřená data veřejně, ukázkami jejich přínosu
+  pro výběr školy a povolání. Každá sada má v registru stavu sad postup pro případ, že zmizí. _Signál: registr
+  stavu datových sad, výpadky zdrojů._
 - **Férovost vůči školám.** Školy, zřizovatelé i rodiny předpokládají, že školy ukazujeme podle dat. Každá změna
   toho, jak se škola zobrazuje (placená, partnerská, redakční), se posuzuje i očima škol, kterých se netýká.
 
@@ -33,14 +43,16 @@ hodnotami rozhoduje vlastník (doplněno 4. 10. 2026, #353).
   6,4× víc návštěv než srpen (Matomo, 11. 2. až 11. 9. 2026). Rozhoduje, zda je zastihneme, když volí.
   _Signál: Matomo, Search Console._
 - **Dostupnost v sezóně.** Když web spadne v týdnu podávání přihlášek nebo výsledků, škodí víc než jakákoli
-  chybějící funkce. _Signál: zatím chybí, potřebuje monitoring dostupnosti._
+  chybějící funkce. _Signál: zatím chybí, monitoring navrhuje #355._
 - **Odkazy z důvěryhodných domén.** Kraje, komory, výstaviště, školy a média. Jsou nejsilnějším signálem pro
   vyhledávače a zároveň veřejným potvrzením, že nám někdo věří. _Signál: odkazující domény v Search Console._
 - **Zmínky v médiích.** Přinášejí čtenáře, odkazy i důvěru. Novinář cituje zdroj, který mu dá ověřená data
   v převzatelném tvaru. _Signál: zmínky se zdrojem, stažení balíčků Pro novináře._
-- **Citace v odpovědích AI.** Rodiny se čím dál častěji ptají AI asistentů; z nich přišlo 8,4 % návštěv (Matomo, 11. 2. až 11. 9. 2026).
-  Citovaným zdrojem se stává web s přesnými daty a čitelnou metodikou. _Signál: návštěvy z AI asistentů
-  v Matomu, měsíční kontrola typických dotazů._
+- **AI: být první.** Rodiny se ptají i AI asistentů; z nich přišlo 8,4 % návštěv (Matomo, 11. 2. až 11. 9. 2026).
+  K AI se stavíme pragmaticky: kdo je první, získá propagaci značky a nese kanibalizaci dat, kdo je druhý, nese
+  už jen kanibalizaci. Nové kanály AI proto zkoušíme mezi prvními a data nabízíme tak, aby nás AI citovala
+  jménem a odkazem. _Signál: citace se jménem nebo odkazem v měsíční kontrole typických dotazů, návštěvy
+  z AI asistentů v Matomu._
 
 **Postavení na trhu**
 
@@ -48,8 +60,8 @@ hodnotami rozhoduje vlastník (doplněno 4. 10. 2026, #353).
   být první volbou. Vyhráváme tím, co jinde chybí: daty o přijetí a jejich výkladem. _Signál: pozice a podíl
   zobrazení u klíčových dotazů v Search Console, srovnání s ostatními servery._
 - **Rozšíření celého trhu.** Čím víc rodin vybírá školu podle dat místo doslechu, tím víc čtenářů mají všechny
-  takové servery a nejdůvěryhodnější z nich nejvíc. Sem patří spolupráce se školami, výchovnými poradci
-  a médii i otevřená data. _Signál: hledanost témat přijímaček, dosah přes partnery._
+  takové servery a nejdůvěryhodnější z nich nejvíc (předpoklad). Sem patří spolupráce se školami, výchovnými
+  poradci a médii i otevřená data. _Signál: hledanost témat přijímaček, dosah přes partnery._
 
 **Vztahy**
 
@@ -61,14 +73,27 @@ hodnotami rozhoduje vlastník (doplněno 4. 10. 2026, #353).
 **Hospodaření**
 
 - **Příjmy.** Projekt by měl jednou pokrýt své náklady. Každý nápad na příjem se realisticky vyčíslí (kolik,
-  od koho, za rok) a zváží proti dopadu na důvěryhodnost, férovost a vztahy.
+  od koho, za rok) a zváží proti dopadu na důvěryhodnost, férovost a vztahy. Druhy příjmů se liší: placené
+  zvýraznění mění, jak školy ukazujeme; placená služba škole mimo pořadí, dar nebo grant to nemění.
 - **Náklady a pozornost vlastníka.** Rozpočet AI a minuty vlastníka jsou nejvzácnější zdroj. Funkce, která
   každý rok potřebuje údržbu nebo obnovu dat, si to musí vydělat.
+- **Trvanlivost.** Projekt má přežít výpadek vlastníka aspoň jednu sezónu: data o dětech, portál škol a odběry
+  mají popsaný postup předání nebo ukončení. _Signál: zatím chybí, postup není sepsaný._
+
+**Pohledy, kterými nápad zkoušíme**
+
+Každý nápad projde očima lidí, kteří web používají nebo s ním spolupracují:
+
+- **Rodina:** rozhodne se podle toho lépe a pozná, co číslo neříká?
+- **Ředitel školy:** obhájil bych to před školou, které se to netýká?
+- **Novinář, kraj nebo pořadatel:** odkázal by na to pod svým jménem?
 
 **Jak hodnoty používat**
 
-- Každý nápad uvede, které hodnoty posílí a které oslabí, o kolik a podle jakého signálu. Odhad bez dat se
-  označí jako předpoklad.
+- Každý nápad uvede, které hodnoty posílí a které oslabí, o kolik a podle jakého signálu. Odhad je přijatelný,
+  když je označený jako předpoklad; vlastník ho čte jako řád velikosti.
+- Na briefing jde nápad, který posílí aspoň jednu hodnotu a obstojí aspoň v jednom pohledu. Soulad se Směrem
+  vývoje ve skóre nápadů (návrh řízení vývoje, oddíl 17a) se hodnotí podle tohoto oddílu.
 - Příklad: placené zvýraznění školy v seznamu. Kolik by realisticky přineslo (počet škol, cena, zájem)? Jak ho
   přijmou školy, které nezaplatí, zřizovatelé, pořadatelé a média? Klesne důvěra rodin v to, co jim web ukazuje?
 - Signály slouží k orientaci a cílová čísla k nim nestanovujeme: jakmile se počet odkazů stane cílem, začne se
@@ -78,8 +103,8 @@ hodnotami rozhoduje vlastník (doplněno 4. 10. 2026, #353).
   přednost Základ, pak Vztahy, Dosah, Postavení na trhu a nakonec Hospodaření. Střet a volbu AI zapíše do PR
   nebo issue; co je sporné, jde na briefing.
 - Jednou ročně po sezóně, v červnu, AI projde funkce s nejmenším užitím a navrhne, které zrušit nebo zjednodušit.
-  Posuzuje je podle všech hodnot, protože malá návštěvnost neznamená malý přínos: stránka pro novináře
-  přináší hlavně odkazy a citace.
+  Posuzuje je podle všech hodnot, protože malá návštěvnost neznamená malý přínos (stránka pro novináře přináší
+  hlavně odkazy a citace), a před zrušením spočítá, co ztratíme: příchozí odkazy, data hlášená zvenku, vztahy.
 
 ## Cíle k datu
 
