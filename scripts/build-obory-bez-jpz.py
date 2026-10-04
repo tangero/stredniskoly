@@ -106,8 +106,12 @@ def priority(r: dict, predpona: str) -> list[int | None]:
 def zaznam(r: dict, imp, pokracovani: bool) -> dict:
     kapacita, prijati = cislo(r["KAPACITA"]), cislo(r["PŘIJATÍ"])
     zbyla = kapacita - prijati if kapacita is not None and prijati is not None else None
+    id_nabidky = imp.make_full_id(str(r["REDIZO"]), str(r["KKOV"]), str(r["ZAMĚŘENÍ OBORU"] or ""))
+    if pokracovani:
+        # nástavby se stejnou školou a KKOV se liší jen formou (dálková, kombinovaná, distanční)
+        id_nabidky += "_" + str(r["FORMA VZDĚLÁVÁNÍ"] or "")
     return {
-        "id": imp.make_full_id(str(r["REDIZO"]), str(r["KKOV"]), str(r["ZAMĚŘENÍ OBORU"] or "")),
+        "id": id_nabidky,
         "id_sof": str(r["ID_SOF"]),
         "redizo": str(r["REDIZO"]),
         "kkov": str(r["KKOV"]),

@@ -111,6 +111,8 @@ class Vystup(unittest.TestCase):
     def test_id_sof_jedinecne_a_zadne_body(self):
         ids = [n["id_sof"] for n in self.d["nabidky"] + self.d["nastavby"]]
         self.assertEqual(len(ids), len(set(ids)))
+        ids_web = [n["id"] for n in self.d["nastavby"]]
+        self.assertEqual(len(ids_web), len(set(ids_web)))
         text = json.dumps(self.d, ensure_ascii=False)
         for zakazano in ("percentil", "skor", "reditel", "email"):
             self.assertNotIn(zakazano, text.lower())
