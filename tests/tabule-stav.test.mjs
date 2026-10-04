@@ -9,6 +9,7 @@ test('stav karty podle štítků a PR', () => {
   assert.equal(cilovyStav(i(['interni', 'pripominka'])), STAVY.hlaseni);
   assert.equal(cilovyStav(i(['interni', 'navrh'])), STAVY.navrh);
   assert.equal(cilovyStav(i(['interni', 'schvaleno', 'stop'])), STAVY.navrh);
+  assert.equal(cilovyStav(i(['interni', 'navrh', 'schvaleno'])), STAVY.schvaleno);
   assert.equal(cilovyStav(i(['interni', 'oponentura'])), STAVY.oponentura);
   assert.equal(cilovyStav(i(['interni', 'schvaleno'])), STAVY.schvaleno);
   assert.equal(cilovyStav(i(['interni', 'schvaleno', 'k-overeni']), [{ cekaNaSouhlas: false }]), STAVY.vPr);

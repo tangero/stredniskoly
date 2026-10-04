@@ -14,6 +14,10 @@ on:
     types: [opened, reopened, closed, edited, labeled, unlabeled, synchronize]
   schedule:
     - cron: "13 4 * * *"
+  # Stav „Čeká na souhlas s merge“ zná až dokončená brána; tabule běžící souběžně s ní by ho minula.
+  workflow_run:
+    workflows: ["Brána sloučení"]
+    types: [completed]
   workflow_dispatch:
     inputs:
       nanecisto:
@@ -27,14 +31,14 @@ permissions:
   pull-requests: read
   checks: read
 
-concurrency:
-  group: tabule
-
 jobs:
   stitky:
     name: Štítek navrh podle schvaleno
     if: github.event_name == 'issues' && github.event.label.name == 'schvaleno'
     runs-on: ubuntu-latest
+    # Fronta jen pro totéž issue: čekající běh zruší jen novější událost téhož issue, a ta čte aktuální stav.
+    concurrency:
+      group: tabule-stitky-${{ github.event.issue.number }}
     env:
       GH_TOKEN: ${{ github.token }}
       REPO: ${{ github.repository }}
@@ -43,11 +47,16 @@ jobs:
       - name: Upravit štítek navrh
         run: |
           set -euo pipefail
-          # Schválení ukončí návrh; odvolání schválení vrátí otevřené interní zadání do návrhu.
-          if [ "${{ github.event.action }}" = "labeled" ]; then
-            gh issue edit "$CISLO" -R "$REPO" --remove-label navrh || true
-          elif [ "$(gh issue view "$CISLO" -R "$REPO" --json state,labels \
-                 --jq '.state == "OPEN" and any(.labels[]; .name == "interni") and (any(.labels[]; .name == "schvaleno") | not)')" = "true" ]; then
+          # Podle aktuálních štítků, ne podle akce události: schválení ukončí návrh, odvolání schválení
+          # vrátí otevřené interní zadání do návrhu.
+          stav="$(gh issue view "$CISLO" -R "$REPO" --json state,labels --jq '[.state,
+            (any(.labels[]; .name == "interni")), (any(.labels[]; .name == "schvaleno")),
+            (any(.labels[]; .name == "navrh"))] | map(tostring) | join(" ")')"
+          read -r otevreno interni schvaleno navrh <<< "$stav"
+          if [ "$schvaleno" = "true" ] && [ "$navrh" = "true" ]; then
+            gh issue edit "$CISLO" -R "$REPO" --remove-label navrh
+          elif [ "$schvaleno" = "false" ] && [ "$navrh" = "false" ] && [ "$otevreno" = "OPEN" ] && [ "$interni" = "true" ] \
+               && [ "${{ github.event.action }}" = "unlabeled" ]; then
             gh issue edit "$CISLO" -R "$REPO" --add-label navrh
           fi
 
@@ -57,6 +66,9 @@ jobs:
     if: always()
     runs-on: ubuntu-latest
     timeout-minutes: 10
+    # Synchronizace je idempotentní a čte aktuální stav; zrušený čekající běh nahradí novější.
+    concurrency:
+      group: tabule-sync
     steps:
       - uses: actions/checkout@v4
         with:

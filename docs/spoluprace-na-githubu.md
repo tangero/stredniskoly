@@ -43,12 +43,12 @@ První připomínka: #240, vyhodnocení sklizně výpisů aktualit k 8. 10. 2026
 
 Projekt **Přijímačky – vývoj webu** (`github.com/users/tangero/projects/1`). Stav karty issue
 dopočítává ze štítků a otevřených PR workflow `.github/workflows/tabule.yml` (`scripts/tabule/`)
-při každé změně štítků, issues a PR a jednou denně. Ruční přesun karty se při dalším běhu srovná.
+při každé změně štítků, issues a PR, po každém běhu brány sloučení a jednou denně. Ruční přesun karty se při dalším běhu srovná.
 
 | stav | podle čeho | kdo je na tahu |
 |---|---|---|
 | Hlášení | veřejná hlášení, připomínky a issues bez stavového štítku | třídění (AI) |
-| Návrh | `navrh` nebo `stop` | **vlastník** |
+| Návrh | `navrh` (bez `schvaleno`) nebo `stop` | **vlastník** |
 | Oponentura | `oponentura`: návrh posuzuje asistent zadání nebo druhý model, teprve pak jde k vlastníkovi | AI |
 | Schváleno | `schvaleno`, žádný otevřený PR | denní úloha podle Směru vývoje |
 | V PR | otevřený PR s `Closes #N` nebo `Souvisí s #N` (CI, review, vypořádání, lhůta) | AI |
@@ -56,7 +56,7 @@ při každé změně štítků, issues a PR a jednou denně. Ruční přesun kar
 | Hotovo | zavřené issue | |
 
 Workflow navíc při přidání `schvaleno` odebere `navrh` a při odebrání `schvaleno` vrátí otevřené
-interní zadání do `navrh`. Stavy hledá podle názvu; chybějící stav jen ohlásí varováním v běhu.
+interní zadání do `navrh`; řídí se aktuálními štítky issue, ne pořadím doručených událostí. Stavy hledá podle názvu; chybějící stav jen ohlásí varováním v běhu.
 Karty PR nemění.
 
 Potřebuje secret `PROJECT_TOKEN`, klasický token se scopes `project` a `public_repo` (fine-grained token

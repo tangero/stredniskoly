@@ -20,8 +20,9 @@ export function cilovyStav(issue, prs = []) {
   const s = new Set(issue.stitky);
   if (issue.stav === 'CLOSED') return STAVY.hotovo;
   if (s.has('trvale')) return null;
-  // Veto a návrh čekají na vlastníka.
-  if (s.has('stop') || s.has('navrh')) return STAVY.navrh;
+  // Veto a návrh čekají na vlastníka. Zbylý `navrh` vedle `schvaleno` (zmeškaná úprava štítku)
+  // kartu do návrhu nevrací; schválení je novější rozhodnutí.
+  if (s.has('stop') || (s.has('navrh') && !s.has('schvaleno'))) return STAVY.navrh;
   if (s.has('oponentura')) return STAVY.oponentura;
   if (prs.length) return prs.some((p) => p.cekaNaSouhlas) ? STAVY.cekaNaSouhlas : STAVY.vPr;
   if (s.has('schvaleno')) return STAVY.schvaleno;
