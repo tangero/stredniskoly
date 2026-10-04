@@ -57,7 +57,13 @@ při každé změně štítků, issues a PR, po každém běhu brány sloučení
 
 Workflow navíc při přidání `schvaleno` odebere `navrh` a při odebrání `schvaleno` vrátí otevřené
 interní zadání do `navrh`; řídí se aktuálními štítky issue, ne pořadím doručených událostí. Po sloučení PR odebere `k-overeni` z propojených issues, která zůstala otevřená (etapy projektu). Stavy hledá podle názvu; chybějící stav jen ohlásí varováním v běhu.
-Karty PR nemění.
+Karty PR nemění, kromě pole níže.
+
+Pole **„Na co čeká“** (text, založí ho skript) vyplní workflow u issues i PR jednou větou: výsledek brány lidsky
+(chybí protokol, lhůta na veto do…, čeká na tvé schvaleno, konflikt s main, prošlo a sloučí se samo) se stavem
+review asistenta zadání k aktuálnímu commitu, u schválených issues bez PR „čeká na realizaci“ nebo postup projektu,
+u návrhu „čeká na tvé rozhodnutí“, u připomínky termín a u hlášení projekt, ke kterému patří. Na kartách ho zapneš
+v nastavení pohledu (šipka u názvu pohledu → Fields → Na co čeká).
 
 Potřebuje secret `PROJECT_TOKEN`, klasický token se scopes `project` a `public_repo` (fine-grained token
 do projektu na osobním účtu zapisovat neumí). Token má omezenou platnost; expiraci hlídá týdenní přehled.
