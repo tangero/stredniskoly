@@ -85,6 +85,21 @@ export function chybejiciVProtokolu(oznaceni, teloProtokolu = '') {
   });
 }
 
+/**
+ * Oddíl protokolu z preview: od řádku s nadpisem „Protokol z preview“ po další nadpis stejné nebo vyšší
+ * úrovně. Zmínka kritéria jinde v textu (třeba v popisu změn PR) tak ověření nenahradí.
+ */
+export function oddilProtokolu(telo = '') {
+  const radky = (telo || '').replace(/\r\n?/g, '\n').split('\n');
+  const start = radky.findIndex((r) => /Protokol z preview/i.test(r));
+  if (start < 0) return '';
+  const nadpis = radky[start].trim().match(/^#+/);
+  if (!nadpis) return radky.slice(start).join('\n');
+  const uroven = nadpis[0].length;
+  const konec = radky.findIndex((r, i) => i > start && /^#+\s/.test(r.trim()) && r.trim().match(/^#+/)[0].length <= uroven);
+  return radky.slice(start, konec < 0 ? undefined : konec).join('\n');
+}
+
 /** Oddíl „Rozsah“ z těla issue; bez něj celé tělo. Normalizovaný, aby otisk nezávisel na koncích řádků. */
 export function rozsah(telo = '') {
   const radky = (telo || '').replace(/\r\n?/g, '\n').split('\n');
@@ -278,7 +293,7 @@ export function protokol(pr, konfig, issues = []) {
   // Pokrytí kritérií K a P z uzavíraných zadání; zadání bez označení se posuzují jako dřív.
   const uzavirana = new Set(uzaviranaIssues(pr.telo));
   for (const i of issues.filter((i) => uzavirana.has(i.cislo))) {
-    const chybi = chybejiciVProtokolu(oznaceniKriterii(i.telo), texty[0].telo);
+    const chybi = chybejiciVProtokolu(oznaceniKriterii(i.telo), oddilProtokolu(texty[0].telo));
     if (chybi.length) return { ok: false, duvod: `protokol z preview neuvádí kritéria z issue #${i.cislo}: ${chybi.join(', ')}` };
   }
   return { ok: true, telo: texty[0].telo };

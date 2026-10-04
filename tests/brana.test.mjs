@@ -4,7 +4,7 @@ import fs from 'node:fs';
 import yaml from 'js-yaml';
 import {
   vyhodnot, rozsah, otisk, propojenaIssues, zaznamSouhlasu, souhlasIssue, rozbor, zamrznuto, ZNACKA, BOT,
-  stavLhuty, externiId, ctiExterniId, oznaceniKriterii, chybejiciVProtokolu, uzaviranaIssues,
+  stavLhuty, externiId, ctiExterniId, oznaceniKriterii, chybejiciVProtokolu, uzaviranaIssues, oddilProtokolu,
 } from '../scripts/brana/brana.mjs';
 import { oblastiZLabeleru } from '../scripts/brana/data.mjs';
 import { odpovedNaZadost } from '../scripts/brana/sloucit.mjs';
@@ -113,6 +113,14 @@ test('protokol musí uvést každé kritérium K a P z uzavíraného zadání', 
   assert.match(chybi.duvody.join(), /neuvádí kritéria z issue #10: K3$/);
   const vse = run({ issues: [issue({ telo: TELO_K })], pr: pr({ komentare: [protokolK(['K1: věta', 'K2: odkaz', 'K3: karta', 'P1: sitemap'])] }) });
   assert.equal(vse.uspech, true, vse.duvody.join('; '));
+});
+
+test('kritérium zmíněné mimo oddíl protokolu se nepočítá', () => {
+  const telo = `Closes #10\n\n## Co se změnilo\n- K3: přidána karta\n\n## Protokol z preview\nCommit: ${SHA.slice(0, 7)}\n| K1: věta | splněno |\n| K2: odkaz | splněno |\n| P1: sitemap | splněno |\n\n## Mimo rozsah\n- K3: později`;
+  const v = run({ issues: [issue({ telo: TELO_K })], pr: pr({ telo, komentare: [] }) });
+  assert.equal(v.uspech, false);
+  assert.match(v.duvody.join(), /neuvádí kritéria z issue #10: K3$/);
+  assert.equal(oddilProtokolu('úvod\n### Protokol z preview\n| K1 | ok |\n#### Snímky\n| K2 | ok |\n## Další\n| K3 | ok |'), '### Protokol z preview\n| K1 | ok |\n#### Snímky\n| K2 | ok |');
 });
 
 test('zadání bez označení K a P a etapa se „Souvisí s“ se posuzují jako dřív', () => {
