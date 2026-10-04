@@ -1,6 +1,6 @@
 # Zdroje dat
 
-Verze 1.26 · 3. 10. 2026 · **Závazný soupis. Před návrhem stránky nebo funkce se prochází celý.**
+Verze 1.27 · 3. 10. 2026 · **Závazný soupis. Před návrhem stránky nebo funkce se prochází celý.**
 
 Tenhle dokument vznikl kvůli konkrétní chybě. Návrh stránky školy jsem sestavil z toho, co web už zobrazoval, místo z toho, co je ve zdrojových souborech. Tři užitečné údaje proto ležely nepoužité v souborech, které jsem měl otevřené: rozpad přihlášek podle priority jako podíl, souběžné přihlášky uchazečů a nejnižší výsledek jednotné zkoušky mezi přijatými. Poslední z nich byl dokonce už spočítaný a uložený v katalogu, zatímco [slovník ukazatelů](slovnik-ukazatelu.md) tvrdil, že ho nemáme.
 
@@ -252,6 +252,7 @@ Otázka rodiče je jediná: **jak dlouho bude dítě dojíždět**. Odpovídáme
 | `maturita_skoly.json` | CERMAT maturita, jaro, `redizo` a `redizo_smo16` | `build-maturita-skoly.py` přes datovou linku | společná část, čeština a matematika po letech od 2021; zařazení proti skupině oborů; meze zveřejnění jako kódy kvality; vzniká přes datovou linku od 14. 9. 2026 (PR #92), web ho čte na stránce školy |
 | `soubeh_prihlasek_2025.json` | data uchazečů 2025 | `build-soubeh-prihlasek.py` | souběžné přihlášky; popis školy z katalogu přes `scripts/nazvy_oboru.py` — ročníky od nejnovějšího, uvnitř ročníku první v pořadí souboru (viz poznámka níže) |
 | `pasma_prijeti_2025.json` | data uchazečů 2025 | `build-pasma-prijeti.py` | podíl přijatých podle bodového pásma a hranice |
+| `okruhy_oboru_{rok}.json` | data uchazečů zobrazeného roku a dvou let před ním, index názvů z rejstříku, kontext a souběh přihlášek téhož roku | `build-okruhy-oboru.py` (výpočet ve `scripts/okruhy_oboru.py`) | okruhy oborů měst přehledu s ukotvením a souběžné přihlášky podle obce u každého oboru (issue #277, [návrh](navrh-shluky-oboru-2027.md)); žádný nový sloupec zdroje; zveřejněné počty se posuzují společně s počty z kontextu a souběhu, aby nešlo dopočítat skupinu pod 10 |
 | `csi_inspections.json` | seznam ČŠI | `process-csi-data.js` | |
 | `navaznost_notes.json` | rešerše návaznosti | `build-navaznost-notes.py` | ruční poznámky v `school_notes.json` mají přednost |
 | `offer_mapping_2026.json` | párování nabídek | `build-offer-mapping-2026.py` | nabídka 2026 → loňský klíč katalogu; kromě heuristik přebírá ručně ověřené páry z `docs/podklady/overene-pary-nabidek-2026.csv` (sloupce `id_2026`, `katalog_id`, `doklad`); čte ji katalog 2026, souhrny 1. kola i hledání souhrnu na stránce |
@@ -719,6 +720,7 @@ _Vygenerováno z `public/stav_datovych_sad.json` dne 2026-10-02. Neupravovat ru�
 
 | Verze | Změna |
 |---|---|
+| 1.27 | Oddíl 2.10: odvozený soubor `okruhy_oboru_{rok}.json` (okruhy oborů, souhrn po obcích), žádný nový sloupec. |
 | 1.26 | Oddíl 2.2: data uchazečů 1. kola 2024 stažena (revize s REDIZO) pro rozbor okruhů oborů; žádný nový sloupec, web beze změny. |
 | 1.25 | Oddíl 2.14: zprávy z výpisu aktualit se zobrazují na stránce školy s označením zdroje a výhradou ke čtení. |
 | 1.24 | Oddíl 2.14: výpis aktualit v provozu sklízeče jako zdroj `typ` html a tinyfish (registr `public/skoly_vypisy.json`), pole výpisu a co z nich nebereme; na stránce školy zatím skryté. |

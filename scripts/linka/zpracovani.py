@@ -108,6 +108,7 @@ def dopad_uchazeci(rok: int, zobrazene_obdobi: str | None) -> str:
         return (
             f"Přepíše public/pasma_prijeti_{rok}.json, public/kontext_prihlasek_{rok}.json a "
             f"public/soubeh_prihlasek_{rok}.json, které web čte; po sloučení se změní čísla na stránkách oboru i školy. "
+            f"Přepíše i public/okruhy_oboru_{rok}.json (okruhy oborů a souhrn po obcích, issue #277). "
             f"{soubeh} Doklady v docs/podklady a čísla ve slovníku přepočítej nad týmž souborem."
         )
     return (
@@ -116,7 +117,7 @@ def dopad_uchazeci(rok: int, zobrazene_obdobi: str | None) -> str:
     )
 
 
-def zpracuj_uchazeci(uloha: dict, soubor: Path, prace: Path, struktura: dict) -> dict:
+def zpracuj_uchazeci(uloha: dict, soubor: Path, prace: Path, struktura: dict, stahni_fn=jadro.stahni) -> dict:
     chybi = [s for s in POVINNE_UCHAZECI if s not in struktura["hlavicka"]]
     if chybi:
         raise ValueError(f"chybí povinné sloupce {chybi}")
@@ -140,15 +141,31 @@ def zpracuj_uchazeci(uloha: dict, soubor: Path, prace: Path, struktura: dict) ->
         raise ValueError(
             f"podezřele málo oborů: {srovnani['oboru_nove']} proti {srovnani['oboru_na_webu']} na webu"
         )
+    # Okruhy oborů (issue #277) odhadují oblasti přihlášek ze sloučených ročníků: k novému souboru se
+    # stáhnou soubory dvou předchozích let (adresa se liší jen rokem). Chybějící starší rok není chyba,
+    # oblasti se pak odhadnou z toho, co je k dispozici.
+    okruhy = prace / f"okruhy_oboru_{rok}.json"
+    zdroje = [f"{rok}={soubor}"]
+    for starsi in (rok - 1, rok - 2):
+        url = uloha["url"].replace(str(rok), str(starsi))
+        if url == uloha["url"]:
+            continue
+        try:
+            zdroje.append(f"{starsi}={stahni_fn(url, prace / f'PZ{starsi}_kolo1_uchazeci_prihlasky_vysledky.xlsx')['soubor']}")
+        except Exception as e:  # noqa: BLE001  starší ročník je jen doplněk odhadu oblastí
+            print(f"varování: data uchazečů {starsi} se nestáhla ({e}); oblasti bez nich", file=sys.stderr)
+    vystup_okruhy = spust("build-okruhy-oboru.py", "--rok", str(rok), "--jen-zdroje", *[x for z in zdroje for x in ("--zdroj", z)],
+                          "--kontext", str(kontext), "--soubeh", str(soubeh), "--vystup", str(okruhy))
     return {
         "zpracovatel": "cermat-uchazeci-kolo1",
-        "vystupy_skriptu": [vystup_pasma, vystup_soubeh, vystup_kontext, vystup_simulator],
+        "vystupy_skriptu": [vystup_pasma, vystup_soubeh, vystup_kontext, vystup_simulator, vystup_okruhy],
         "srovnani": srovnani,
         "predani": {
             str(pasma): f"public/pasma_prijeti_{rok}.json",
             str(soubeh): f"public/soubeh_prihlasek_{rok}.json",
             str(kontext): f"public/kontext_prihlasek_{rok}.json",
             str(simulator): f"public/simulator_pasma_{rok}.json",
+            str(okruhy): f"public/okruhy_oboru_{rok}.json",
         },
         "dopad": dopad_uchazeci(rok, uloha.get("zobrazene_obdobi")),
     }
@@ -260,7 +277,7 @@ def zpracuj_maturitu(uloha: dict, soubor: Path, prace: Path, struktura: dict, st
 
 ZPRACOVATELE = {"cermat-uchazeci-kolo1": zpracuj_uchazeci, "cermat-kolo2-agregaty": zpracuj_druhe_kolo,
                 "cermat-maturita": zpracuj_maturitu}
-S_DALSIMI_SOUBORY = (zpracuj_druhe_kolo, zpracuj_maturitu)
+S_DALSIMI_SOUBORY = (zpracuj_druhe_kolo, zpracuj_maturitu, zpracuj_uchazeci)
 
 
 def priprav(uloha: dict, registr: dict, stahni_fn=jadro.stahni) -> None:
