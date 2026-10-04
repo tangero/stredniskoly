@@ -150,6 +150,8 @@ test('označení kritérií: rozdělení, zrušení a řádek protokolu', () => 
   assert.deepEqual(oznaceniKriterii('1. P1: adresy beze změny\n2) K2: b\n+ K3: c\n2026. rok bez kritéria'), ['P1', 'K2', 'K3']);
   // K1 neplatí za K10 ani K1.2; řádek seznamu i tabulky se počítá.
   assert.deepEqual(chybejiciVProtokolu(['K1', 'K3.1', 'P1'], '| K10 | splněno |\n| K1.2 | splněno |\n- K3.1: splněno\n|P1|splněno|'), ['K1']);
+  assert.deepEqual(chybejiciVProtokolu(['K1', 'P1', 'K2'], '| **K1:** karta | splněno |\n- **P1**: sitemap\n1. K2: odkaz'), []);
+  assert.deepEqual(chybejiciVProtokolu(['K1'], '| **K10:** karta | splněno |'), ['K1']);
   assert.deepEqual(uzaviranaIssues('Closes #10\nSouvisí s #11\nFixes #12'), [10, 12]);
 });
 

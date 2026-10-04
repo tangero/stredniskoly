@@ -78,10 +78,10 @@ export function oznaceniKriterii(telo = '') {
   return [...platna];
 }
 
-/** Označení, pro která protokol nemá řádek. Řádek tabulky nebo seznamu začíná označením. */
+/** Označení, pro která protokol nemá řádek. Řádek tabulky nebo seznamu začíná označením, i tučným. */
 export function chybejiciVProtokolu(oznaceni, teloProtokolu = '') {
   return oznaceni.filter((o) => {
-    const vzor = new RegExp(`^\\s*(?:\\|\\s*|[-*]\\s+)?${o.replace(/\./g, '\\.')}(?!\\.?\\d)`, 'm');
+    const vzor = new RegExp(`^\\s*(?:\\|\\s*|(?:[-*+]|\\d+[.)])\\s+)?(?:\\*\\*|__)?${o.replace(/\./g, '\\.')}(?!\\.?\\d)`, 'm');
     return !vzor.test(teloProtokolu);
   });
 }
