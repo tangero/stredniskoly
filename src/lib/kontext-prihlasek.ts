@@ -81,14 +81,14 @@ export interface DalsiOborVeMeste {
 }
 
 /** Kategorie oborů, u kterých se jednotná zkouška nekoná; shodné se `scripts/nazvy_oboru.py`. */
-const KATEGORIE_BEZ_JPZ = new Set(['C', 'E', 'H', 'J', 'P']);
+export const KATEGORIE_BEZ_JPZ = new Set(['C', 'E', 'H', 'J', 'P']);
 
 /** Písmeno kategorie v kódu oboru, například `65-51-H/01` → `H`. */
-function kategorieOboru(kkov: string): string {
+export function kategorieOboru(kkov: string): string {
   return kkov.length > 6 ? kkov[6].toUpperCase() : '';
 }
 
-interface IndexRejstriku {
+export interface IndexRejstriku {
   /** REDIZO → [název školy, obec]. */
   skoly: Record<string, [string, string]>;
   /** KKOV → název oboru. */
@@ -100,7 +100,7 @@ interface IndexRejstriku {
 let indexRejstriku: IndexRejstriku | null = null;
 
 /** Index z rejstříku škol MŠMT; tentýž soubor čte portál (`portal-identifikace.ts`). */
-async function nactiIndexRejstriku(): Promise<IndexRejstriku> {
+export async function nactiIndexRejstriku(): Promise<IndexRejstriku> {
   if (indexRejstriku) return indexRejstriku;
   try {
     const obsah = await fs.readFile(
