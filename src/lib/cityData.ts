@@ -2,7 +2,7 @@ import { normalizeSchoolKey, uniqueSchoolIndex } from './school-key';
 import { promises as fs } from 'fs';
 import path from 'path';
 import { souhrnyPodleRedizo, type SouhrnProKatalog } from './souhrny-kolo1';
-import { adresaPrehledu } from './adresa-oboru.mjs';
+import { adresaNabidkyVeSkole, adresaPrehledu, nabidkySeStrankou } from './adresa-oboru.mjs';
 import { druheKoloPodleRedizo, klicDruhehoKola } from './druhe-kolo';
 import { getSchoolAnalysis } from './data';
 import { kohortaPozice, zarazeniObtiznosti, soutezicichUchazecu, type KohortaPozice, type ZarazeniObtiznosti } from './obor-profil';
@@ -120,6 +120,11 @@ export interface CitySchoolRow {
    * sada registru a může se lišit od 1. kola.
    */
   meloDruheKolo: boolean;
+  /**
+   * Adresa stránky oboru (bez úvodního `/skola/`), nebo `null`, když nabídka stránku nemá.
+   * Skládá ji sdílený modul `adresa-oboru.mjs` stejně jako vyhledávání a sitemapa.
+   */
+  adresaOboru: string | null;
 }
 
 export interface NationalTypeStats {
@@ -196,6 +201,26 @@ export async function getCityStats(mestoNazev: string): Promise<CityStats | null
   }
 
   const redizoMesta = new Set(city2025.map(s => String(s.redizo)));
+
+  // Adresa stránky oboru. Jednoznačnost adresy se posuzuje mezi všemi nabídkami školy, i těmi
+  // v jiném městě (PORG), a stránku má jen nabídka, kterou připustí `nabidkySeStrankou`.
+  const kanonickeKlice = new Set(Object.values(await getSchoolAnalysis()).map(s => s.id));
+  const adresaOboru = new Map<string, string>();
+  for (const redizo of redizoMesta) {
+    const nazevSkoly = kanonickeNazvy.get(redizo);
+    if (!nazevSkoly) continue;
+    const nabidky = all2025
+      .filter(r => String(r.redizo) === redizo)
+      .map(r => ({
+        id: String(r.id), obor: String(r.obor || ''), delka_studia: r.delka_studia,
+        zamereni: String(r.zamereni || '').trim() || undefined, nevypsano_2026: r.nevypsano_2026,
+      }));
+    const seStrankou = nabidkySeStrankou(nabidky, k => kanonickeKlice.has(k));
+    for (const n of seStrankou) {
+      const a = adresaNabidkyVeSkole(redizo, nazevSkoly, n, seStrankou);
+      if (a) adresaOboru.set(String(n.id), a);
+    }
+  }
 
   // Obtížnost přijetí ze souhrnů 1. kola. Páruje se REDIZO + KKOV + zaměření;
   // na hrubším klíči by se nabídky téhož oboru s různým zaměřením slily.
@@ -288,6 +313,7 @@ export async function getCityStats(mestoNazev: string): Promise<CityStats | null
       meloDruheKolo: vypsana2Kola.has(
         klicDruhehoKola(String(s25.redizo), String(s25.kkov ?? ''), String(s25.zamereni ?? '')),
       ),
+      adresaOboru: adresaOboru.get(String(s25.id)) ?? null,
     };
   });
 
