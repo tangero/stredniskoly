@@ -1,0 +1,70 @@
+# Ověření kritérií zadání v produkci (#325, docs/navrh-rizeni-vyvoje-2027.md, oddíly 11 a 16): po nasazení
+# main a jednou týdně projde zadání sloučená za 14 dní a jejich kritéria s adresou na webu zkontroluje na
+# https://www.prijimackynaskolu.cz (scripts/brana/overeni-produkce.mjs). Bez modelu, jen skript.
+#
+# Pojistky:
+# - Spouští se z main (workflow_run po Testech na main, plán, ruční spuštění); kód větví se nespouští.
+# - Jen čtení produkce: nejvýš 60 načtení stránky na běh, postupně s prodlevou 2 s, bez souběhu.
+# - Oprávnění jen pro komentáře a issue; secrets jen pro Telegram. Produkční secrets ani VERCEL_TOKEN ne.
+name: Ověření v produkci
+
+on:
+  workflow_run:
+    workflows: [Testy]
+    types: [completed]
+    branches: [main]
+  schedule:
+    # Pondělí 6:13 UTC, po týdenním přehledu, mimo celou hodinu.
+    - cron: "13 6 * * 1"
+  workflow_dispatch:
+
+permissions: {}
+
+concurrency:
+  group: overeni-produkce
+  cancel-in-progress: false
+
+jobs:
+  overeni:
+    name: Ověření v produkci
+    # Po Testech jen úspěšný push do main (tehdy se nasazuje produkce).
+    if: >-
+      github.event_name != 'workflow_run' ||
+      (github.event.workflow_run.event == 'push' && github.event.workflow_run.conclusion == 'success' &&
+       github.event.workflow_run.head_branch == 'main' && github.event.workflow_run.head_repository.full_name == github.repository)
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    permissions:
+      contents: read
+      issues: write
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          persist-credentials: false
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+
+      - name: Závislosti
+        run: npm ci --ignore-scripts --no-audit --no-fund
+
+      - name: Playwright a Chromium
+        run: |
+          mkdir -p "$RUNNER_TEMP/pw"
+          cd "$RUNNER_TEMP/pw"
+          npm init -y >/dev/null
+          npm install --no-audit --no-fund playwright@1.56.1
+          npx playwright install --with-deps chromium
+
+      - name: Ověřit
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          PLAYWRIGHT_MODULE: ${{ runner.temp }}/pw/node_modules/playwright/index.mjs
+          PRODUKCE_SHA: ${{ github.event.workflow_run.head_sha }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: node scripts/brana/overeni-produkce.mjs
