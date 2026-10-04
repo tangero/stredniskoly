@@ -27,6 +27,12 @@ a PR jiného autora (fork, Dependabot) projde jen se `schvaleno` na PR.
 Vždy: `stop` blokuje, při zamrznutí projde jen `incident` v rozsahu rutiny, u změn webu musí být
 protokol z preview k aktuálnímu commitu (skill `overeni-preview`).
 
+**Review asistenta zadání** (oddíl 9d): u změn webu brána navíc chce pro aktuální hlavu komentář
+`## Review` od účtu `asistent` s řádky `Verdikt: Bez P1 a P2` a `Commit: <sha7>`; neplatí s `schvaleno`
+na PR. Review od účtu vlastníka (tedy i tvoje) se nepočítá. Lhůta L běží od review. Nálezy P1 a P2 opraví
+workflow „Oprava z review“ na komentář `@claude` (nejvýš 5 kol, pak štítek `potrebuje-cloveka`);
+do PR se štítkem `potrebuje-cloveka` další `@claude` nepiš, rozhodne člověk.
+
 **Lhůta L** se založí znovu při novém commitu, změně oddílu „Rozsah“ propojeného issue a novém nebo
 upraveném protokolu. Push na konci lhůty ji tedy restartuje; nepushuj kosmetické změny do čekajícího PR.
 

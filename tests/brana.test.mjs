@@ -4,7 +4,7 @@ import fs from 'node:fs';
 import yaml from 'js-yaml';
 import {
   vyhodnot, rozsah, otisk, propojenaIssues, zaznamSouhlasu, souhlasIssue, rozbor, zamrznuto, ZNACKA, BOT,
-  stavLhuty, externiId, ctiExterniId, oznaceniKriterii, chybejiciVProtokolu, uzaviranaIssues,
+  stavLhuty, externiId, ctiExterniId, review, oznaceniKriterii, chybejiciVProtokolu, uzaviranaIssues,
 } from '../scripts/brana/brana.mjs';
 import { oblastiZLabeleru } from '../scripts/brana/data.mjs';
 import { odpovedNaZadost } from '../scripts/brana/sloucit.mjs';
@@ -23,9 +23,12 @@ const issue = (o = {}) => ({ cislo: 10, autor: 'tangero', stav: 'open', stitky: 
 const protokolKomentar = (sha = SHA, vysledek = 'splněno', kdy = PRED(55)) => ({
   autor: 'tangero', cas: kdy, telo: `## Protokol z preview\nCommit: ${sha.slice(0, 7)}\n| věta na stránce | ${vysledek} |`,
 });
+const reviewKomentar = (sha = SHA, verdikt = 'Bez P1 a P2', o = {}) => ({
+  autor: 'eduarda-prijimacky', cas: PRED(56), telo: `## Review\n\n**Verdikt:** ${verdikt}  \n**Commit:** \`${sha.slice(0, 7)}\`\n\nNálezy: žádné`, ...o,
+});
 const pr = (o = {}) => ({
   cislo: 5, autor: 'tangero', stav: 'open', zakladna: 'main', draft: false, telo: 'Closes #10', stitky: [],
-  vytvoreno: PRED(72), hlava: { sha: SHA }, komentare: [protokolKomentar()], udalosti: [], ...o,
+  vytvoreno: PRED(72), hlava: { sha: SHA }, komentare: [reviewKomentar(), protokolKomentar()], udalosti: [], ...o,
 });
 const soubor = (nazev, radky = 10, o = {}) => ({ nazev, stav: 'modified', pridano: radky, odebrano: 0, patch: '', ...o });
 const STRANKA = soubor('src/components/skola/DruheKolo.tsx');
@@ -108,10 +111,10 @@ const protokolK = (radky) => ({
 });
 
 test('protokol musí uvést každé kritérium K a P z uzavíraného zadání', () => {
-  const chybi = run({ issues: [issue({ telo: TELO_K })], pr: pr({ komentare: [protokolK(['K1: věta', 'K2: odkaz', 'P1: sitemap'])] }) });
+  const chybi = run({ issues: [issue({ telo: TELO_K })], pr: pr({ komentare: [protokolK(['K1: věta', 'K2: odkaz', 'P1: sitemap']), reviewKomentar(SHA, 'Bez P1 a P2')] }) });
   assert.equal(chybi.uspech, false);
   assert.match(chybi.duvody.join(), /neuvádí kritéria z issue #10: K3$/);
-  const vse = run({ issues: [issue({ telo: TELO_K })], pr: pr({ komentare: [protokolK(['K1: věta', 'K2: odkaz', 'K3: karta', 'P1: sitemap'])] }) });
+  const vse = run({ issues: [issue({ telo: TELO_K })], pr: pr({ komentare: [protokolK(['K1: věta', 'K2: odkaz', 'K3: karta', 'P1: sitemap']), reviewKomentar(SHA, 'Bez P1 a P2')] }) });
   assert.equal(vse.uspech, true, vse.duvody.join('; '));
 });
 
@@ -496,8 +499,8 @@ test('veřejný repozitář: protokol z preview od cizího účtu se nepočítá
   const v = run({ pr: pr({ komentare: [cizi] }) });
   assert.equal(v.uspech, false);
   assert.match(v.duvody.join(), /chybí protokol/);
-  assert.equal(run({ pr: pr({ komentare: [{ ...protokolKomentar(), autor: 'eduarda-prijimacky' }] }) }).uspech, true);
-  assert.equal(run({ pr: pr({ komentare: [{ ...protokolKomentar(), autor: BOT }] }) }).uspech, true);
+  assert.equal(run({ pr: pr({ komentare: [reviewKomentar(), { ...protokolKomentar(), autor: 'eduarda-prijimacky' }] }) }).uspech, true);
+  assert.equal(run({ pr: pr({ komentare: [reviewKomentar(), { ...protokolKomentar(), autor: BOT }] }) }).uspech, true);
   // Protokol v těle cizího PR také ne.
   const telo = `Closes #10\n\n## Protokol z preview\nCommit: ${SHA.slice(0, 7)}`;
   assert.match(run({ pr: pr({ autor: 'nekdo-z-internetu', telo, komentare: [] }) }).duvody.join(), /chybí protokol/);
@@ -522,6 +525,67 @@ test('veřejný repozitář: PR jiného autora potřebuje souhlas na PR, i se sc
 
 test('rozpracovaný PR neprojde', () => {
   assert.equal(run({ pr: pr({ draft: true }) }).uspech, false);
+});
+
+test('review: bez review asistenta pro aktuální hlavu PR neprojde, s verdiktem „Bez P1 a P2“ projde', () => {
+  const bez = run({ pr: pr({ komentare: [protokolKomentar()] }) });
+  assert.equal(bez.uspech, false);
+  assert.match(bez.duvody.join(), /chybí review asistenta zadání pro commit aaaaaaa/);
+  assert.equal(run().uspech, true, run().duvody.join('; '));
+  // Druhý formát, který asistent píše: bez tučného písma a zpětných apostrofů.
+  const prosty = { autor: 'eduarda-prijimacky', cas: PRED(56), telo: `## Review\n\nVerdikt: Bez P1 a P2\nCommit: ${SHA.slice(0, 7)}\n\nNálezy: žádné` };
+  assert.equal(run({ pr: pr({ komentare: [prosty, protokolKomentar()] }) }).uspech, true);
+});
+
+test('review: cizí účet, vlastník, starší hlava, nálezy P2 a zmínka sha mimo řádek Commit se nepočítají', () => {
+  const zkus = (k) => run({ pr: pr({ komentare: [k, protokolKomentar()] }) });
+  assert.match(zkus(reviewKomentar(SHA, 'Bez P1 a P2', { autor: 'nekdo-z-internetu' })).duvody.join(), /chybí review/);
+  assert.match(zkus(reviewKomentar(SHA, 'Bez P1 a P2', { autor: 'tangero' })).duvody.join(), /chybí review/);
+  assert.match(zkus(reviewKomentar(SHA, 'Bez P1 a P2', { autor: BOT })).duvody.join(), /chybí review/);
+  assert.match(zkus(reviewKomentar(SHA2)).duvody.join(), /chybí review asistenta zadání pro commit aaaaaaa/);
+  const p2 = zkus(reviewKomentar(SHA, 'P2 – opravit před sloučením'));
+  assert.equal(p2.uspech, false);
+  assert.match(p2.duvody.join(), /nemá verdikt „Bez P1 a P2“ \(P2 – opravit před sloučením\)/);
+  const vOdkazu = { autor: 'eduarda-prijimacky', cas: PRED(56), telo: `## Review\n\nVerdikt: Bez P1 a P2\nCommit: ${SHA2.slice(0, 7)}\nViz https://github.com/x/commit/${SHA}` };
+  assert.match(zkus(vOdkazu).duvody.join(), /chybí review/);
+});
+
+test('review: rozhoduje poslední review pro hlavu; po opravě nové review s „Bez P1 a P2“ projde', () => {
+  const stare = reviewKomentar(SHA, 'P1 – rozbitá stránka', { cas: PRED(58) });
+  const nove = reviewKomentar(SHA, 'Bez P1 a P2', { cas: PRED(57) });
+  assert.equal(run({ pr: pr({ komentare: [stare, nove, protokolKomentar()] }) }).uspech, true);
+  assert.equal(run({ pr: pr({ komentare: [nove, { ...stare, cas: PRED(56) }, protokolKomentar()] }) }).uspech, false);
+  assert.equal(review(pr(), konfig).ok, true);
+});
+
+test('review: výjimka pro změny bez dopadu na web a pro PR se schvaleno na PR', () => {
+  const docs = run({ pr: pr({ komentare: [] }), soubory: [soubor('docs/neco.md')] });
+  assert.doesNotMatch(docs.duvody.join(), /review/);
+  const sSouhlasem = run({
+    pr: pr({
+      stitky: ['schvaleno'], udalosti: [schvalenoUdalost(PRED(3))],
+      komentare: [protokolKomentar(), { autor: BOT, cas: PRED(2), telo: ZNACKA.souhlasPr(SHA) }],
+    }),
+  });
+  assert.equal(sSouhlasem.uspech, true, sSouhlasem.duvody.join('; '));
+});
+
+test('review: lhůta L běží od review, nové review ji založí znovu', () => {
+  const bezReview = run({ pr: pr({ komentare: [protokolKomentar()] }), predchozi: null });
+  const sReview = run({ predchozi: { stav: bezReview.stav, od: Date.parse(PRED(60)) } });
+  assert.equal(sReview.lhutaOd, TED);
+  assert.equal(sReview.uspech, false);
+  assert.match(sReview.duvody.join(), /lhůta na veto běží/);
+});
+
+test('review: nové review se stejným textem lhůtu L založí znovu', () => {
+  const stare = reviewKomentar(SHA, 'Bez P1 a P2', { id: 1, cas: PRED(60) });
+  const v1 = run({ pr: pr({ komentare: [stare, protokolKomentar()] }), predchozi: null });
+  const nove = { ...stare, id: 2, cas: PRED(0.1) };
+  const v2 = run({ pr: pr({ komentare: [nove, protokolKomentar()] }), predchozi: { stav: v1.stav, od: Date.parse(PRED(60)) } });
+  assert.notEqual(v2.stav, v1.stav);
+  assert.equal(v2.lhutaOd, TED);
+  assert.equal(v2.uspech, false);
 });
 
 test('automatické slučování bere jen PR, které brána naposledy pustila, bez draftů', async () => {

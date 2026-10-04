@@ -1,6 +1,6 @@
 # Řízení vývoje: směr určuje člověk, provedení a přehled zajišťuje AI
 
-Verze 0.13f · 4. 10. 2026 · **část A ke schválení hned, část B k rozhodnutí podle měřítek.**
+Verze 0.13g · 4. 10. 2026 · **část A ke schválení hned, část B k rozhodnutí podle měřítek.**
 Stav zavedení: fáze 0 a 1 hotové (4. 10. 2026): brána sloučení je povinná kontrola v rulesetu bez obejití,
 AI slučuje skriptem a workflow Sloučení automaticky (RA40); fáze 2 čeká (postup v
 [postup-zavedeni-faze-0.md](postup-zavedeni-faze-0.md)).
@@ -240,8 +240,8 @@ ve verzi z `main`** a kód z PR nespouští, jen čte diff, štítky a timeline 
 větvi tak nemůže posoudit sama sebe. Spouští se na otevření, push a štítky PR,
 **`issues` (štítky a úpravy propojeného issue, aby
 nový `stop` hned zneplatnil výsledek)**, komentáře (protokol z preview) a jednou za hodinu (lhůty).
-`pull_request_review` mezi spouštěči není: běží ve verzi workflow z větve PR, a review brána ve fázi 1
-nepodmiňuje. Výsledek zapisuje skript přes Checks API na aktuální hlavu PR (implementace
+`pull_request_review` mezi spouštěči není: běží ve verzi workflow z větve PR. Review asistenta zadání
+brána čte z komentářů PR (oddíl 9d). Výsledek zapisuje skript přes Checks API na aktuální hlavu PR (implementace
 `scripts/brana/`, workflow `brana-slouceni.yml`). **Merge provádí skript,
 který bránu těsně před sloučením spustí znovu** a ověří aktuální veto; spouští ho Claude v relaci
 nebo automaticky workflow **Sloučení** po každém doběhnutí brány (RA40); vestavěný automatický merge
@@ -323,6 +323,35 @@ a ověří, že mění jen to, co postup dovoluje.
 i se štítkem `incident`; jinak by AI mohla veto obejít tím, že změnu sama označí jako incident.
 Zastavení rozesílání vypínačem a rollback ve Vercelu nejsou PR a brána je neblokuje; jsou povolené vždy.
 
+## 9d. Smyčka review a oprav
+
+Po otevření nebo aktualizaci PR od vlastníka napíše asistent zadání review (oddíl 2, pokyny v
+[pokyny-asistent-zadani.md](pokyny-asistent-zadani.md)): komentář s nadpisem „Review“, verdiktem, řádkem
+`Commit: <sha7>` a nálezy P1, P2 a P3.
+
+- **Oprava:** když review obsahuje P1 nebo P2, asistent napíše do PR komentář `@claude` se seznamem
+  nálezů. Workflow `oprava-z-review.yml` (Claude Code GitHub Action, předplatné vlastníka přes secret
+  `CLAUDE_CODE_OAUTH_TOKEN`) nálezy opraví ve větvi PR a napíše, co opravil a co ne. Spustí se jen na
+  komentář vlastníka nebo asistenta u PR, který založil jeden z nich, nikdy u PR z forku; rozhoduje
+  skript z `main` (`scripts/brana/oprava-z-review.mjs`). Kód větve (testy, závislosti) běží jen v jobu
+  se čtecím tokenem; Claude tam commituje lokálně a výsledek předá jako patch. Zapisovací job kód větve
+  nespouští: patch použije, ověří, že nemění cesty H2 (i přejmenováním) a nepřepisuje historii, znovu
+  ověří veto a pushne. Push přes `GITHUB_TOKEN` nespouští workflow, proto poslední job spustí Testy ručně
+  (`workflow_dispatch`) bez nasazení náhledu: nasazovací job spouští skript z větve s `VERCEL_TOKEN`.
+  Náhled a protokol z preview pro nový commit zajistí vlastník nebo Claude Code.
+- **Strop:** nejvýš 5 kol na PR (`review.max_kol_oprav` v `rezimy.yml`), kola se počítají podle značky
+  v komentáři workflow „Oprava z review“. Když review po pátém kole pořád nese P1 nebo P2, přidá asistent
+  štítek `potrebuje-cloveka`; workflow ho přidá samo, když páté kolo skončí bez commitu, když oprava sahá
+  na cestu H2 a při šestém `@claude`; další `@claude` se nespustí a PR vypíše týdenní přehled (i jeho krátká verze
+  v Telegramu). Smyčku zastaví i `stop` na PR nebo propojeném issue (ověřuje se i před začátkem kola a před pushem);
+  přidat ho smí vlastník i asistent.
+- **Brána:** u PR, které mění web, vyžaduje pro aktuální hlavu review od účtu `asistent` s verdiktem
+  „Bez P1 a P2“ a řádkem `Commit:` (`review.vyzadovat`). Review od vlastníka se nepočítá, protože přes
+  jeho účet pracuje Claude Code, který PR připravil. Výjimky: změny bez dopadu na web (`bez_preview`)
+  a PR se `schvaleno` přímo na PR. Lhůta L se počítá od tohoto review (vstupuje do stavu lhůty).
+- **Co smyčka nesmí:** slučovat, přidávat `schvaleno` nebo `zamitnuto`, měnit cesty H2 a používat jiné
+  secrets než token pro Claude a `GITHUB_TOKEN`. Jiný model než Claude se ve smyčce nepoužívá.
+
 ## 10. Projekty
 
 Životní cyklus (RA4):
@@ -400,6 +429,7 @@ nepatří (pravidlo 4).
 | `trvale` | průběžná issue; vyřazená z tabule a třídění |
 | `puvod:email` | zadání z e-mailu od neověřeného odesílatele; režim K |
 | `incident` | oprava podle incidentního postupu při zamrznutí (oddíl 9c); brána ověří, že PR mění jen to, co postup dovoluje |
+| `potrebuje-cloveka` | u PR: smyčka oprav z review skončila (5 kol nebo oprava cesty H2), rozhodne člověk (oddíl 9d) |
 
 Beze změny `interni`, `schvaleno`, `zamitnuto`, `k-overeni`, `pripominka`, `nova-data`, `bug-report`,
 `portal-skoly`, `feature-request`. **`navrh` znamená „čeká na vlastníka“** (RA2), tedy jen věci z oddílu 3.
@@ -660,6 +690,9 @@ Po čtyřech týdnech provozu části A:
 
 ## Změny návrhu
 
+- **0.13g** (4. 10. 2026, zadání #301): smyčka review a oprav (oddíl 9d): oprava nálezů P1 a P2 workflow
+  s Claude Code na komentář `@claude`, strop 5 kol a štítek `potrebuje-cloveka`, brána vyžaduje review
+  asistenta zadání „Bez P1 a P2“ k aktuální hlavě, lhůta L běží od review.
 - **0.13f** (4. 10. 2026, rozhodnutí vlastníka): stahování z cizích serverů bez schvalování, jen se zápisem
   zdroje do issue (RA41, CLAUDE.md pravidlo 7).
 - **0.13e** (4. 10. 2026, rozhodnutí vlastníka): automatické slučování po bráně a souhrn nasazení od asistenta

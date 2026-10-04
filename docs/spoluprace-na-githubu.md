@@ -16,6 +16,7 @@ dokument popisuje nastavení GitHubu, na kterém stojí.
 | `zamitnuto` | nerealizovat |
 | `k-overeni` | otevřený PR s protokolem z preview (ověřuje AI, vlastník volitelně); po sloučení ho z otevřeného issue (etapa projektu) odebere workflow Tabule |
 | `pripominka` | úkol s termínem; před termínem se nerealizuje |
+| `potrebuje-cloveka` | u PR: smyčka oprav z review skončila (strop 5 kol nebo oprava cesty H2), rozhodne člověk; vypisuje ho týdenní přehled |
 | `bug-report`, `portal-skoly`, `feature-request` | veřejná hlášení (tlačítko na webu, portál škol) |
 
 **Formuláře v „New issue“** (`.github/ISSUE_TEMPLATE/`):

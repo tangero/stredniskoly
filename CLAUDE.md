@@ -32,6 +32,7 @@ schvaluje je Patrick. Stav issue vyjadřují štítky:
 | `zamitnuto` | nerealizovat |
 | `k-overeni` | otevřený PR s protokolem z preview; po sloučení ho z otevřeného issue (etapa projektu) odebere workflow Tabule |
 | `pripominka` | úkol s termínem (řádek `Termín: RRRR-MM-DD` v těle issue nebo pole Termín formuláře); před termínem se nerealizuje |
+| `potrebuje-cloveka` | u PR: smyčka oprav z review skončila (5 kol nebo oprava cesty H2); další `@claude` se nespustí, rozhodne člověk |
 
 Nastavení GitHubu (formuláře, tabule projektu, ochrana `main`) popisuje `docs/spoluprace-na-githubu.md`.
 
