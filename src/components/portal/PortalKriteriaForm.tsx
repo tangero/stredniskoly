@@ -4,7 +4,7 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import type { KriteriaSkoly, OborProKriteria, Predvyplneni } from '@/lib/portal-kriteria';
 import { nazevZdrojeKriterii, odkazNaPodklad, stavKriterii, type DolozenePravidlo } from '@/lib/kriteria-stav';
 import {
-  DRUHY_SLOZEK, NA_CO_MINIMUM, ROVNOST_NABIDKA, overStrukturu, prazdnaStruktura, souhrnBodovani,
+  DRUHY_SLOZEK, NA_CO_MINIMUM, ROVNOST_NABIDKA, jeFormularRozpracovan, overStrukturu, prazdnaStruktura, souhrnBodovani,
   type DruhSlozky, type MinimumKriterii, type StrukturaKriterii,
 } from '@/lib/kriteria-struktura';
 
@@ -107,6 +107,17 @@ export function PortalKriteriaForm({ redizo, roky, nabidky, ulozena, podklady, p
     return `${nazev}, ${z.rok}, ${z.kolo === null ? 'všechna kola' : `${z.kolo}. kolo`}`;
   };
 
+  // Neuložená změna: formulář se liší od záznamu této kombinace (nebo od prázdného formuláře).
+  const rozpracovano = jeFormularRozpracovan(vychozi(rok, oborKlic, koloHodnota), { struktura, popis, odkaz }, obor?.konaJPZ === false);
+  const smiZahodit = () => !rozpracovano || window.confirm('Máte neuložené změny. Opravdu je chcete zahodit?');
+
+  useEffect(() => {
+    if (!rozpracovano) return;
+    const hlidej = (e: BeforeUnloadEvent) => { e.preventDefault(); e.returnValue = ''; };
+    window.addEventListener('beforeunload', hlidej);
+    return () => window.removeEventListener('beforeunload', hlidej);
+  }, [rozpracovano]);
+
   const nastav = (r: number, klic: string, cisloKola: number | null) => {
     const v = vychozi(r, klic, cisloKola);
     setStruktura(v.struktura);
@@ -119,7 +130,17 @@ export function PortalKriteriaForm({ redizo, roky, nabidky, ulozena, podklady, p
     setZprava('');
   };
 
+  const otevri = (z: KriteriaSkoly) => {
+    if (stav === 'odesilam' || !smiZahodit()) return;
+    setRok(z.rok);
+    setOborKlic(z.obor_klic);
+    setVsechnaKola(z.kolo === null);
+    if (z.kolo !== null) setKolo(z.kolo);
+    nastav(z.rok, z.obor_klic, z.kolo);
+  };
+
   const zmenRok = (novy: number) => {
+    if (!smiZahodit()) return;
     setRok(novy);
     const klic = (nabidky[novy] ?? []).find((o) => o.klic === oborKlic)?.klic ?? nabidky[novy]?.[0]?.klic ?? '';
     setOborKlic(klic);
@@ -127,7 +148,7 @@ export function PortalKriteriaForm({ redizo, roky, nabidky, ulozena, podklady, p
   };
 
   const pouzijNavrh = () => {
-    if (!navrh || stav === 'odesilam') return;
+    if (!navrh || stav === 'odesilam' || !smiZahodit()) return;
     setStruktura(structuredClone(navrh.struktura));
     setZPrepisu(true);
     setZkontrolovano(false);
@@ -135,7 +156,7 @@ export function PortalKriteriaForm({ redizo, roky, nabidky, ulozena, podklady, p
 
   const zkopiruj = (id: string) => {
     const z = zaznamy.find((x) => x.id === id);
-    if (!z?.struktura || stav === 'odesilam') return;
+    if (!z?.struktura || stav === 'odesilam' || !smiZahodit()) return;
     setStruktura(structuredClone(z.struktura));
     setPopis(z.popis);
     setOdkaz(z.odkaz);
@@ -173,6 +194,10 @@ export function PortalKriteriaForm({ redizo, roky, nabidky, ulozena, podklady, p
       setZaznamy((old) => [...old.filter((z) => !(z.obor_klic === saved.obor_klic && z.rok === saved.rok && z.kolo === saved.kolo)), saved]);
       // Výběr je během ukládání zamčený; kontrola jen pojistka, ať odpověď nepatří jinam.
       if (`${saved.rok}|${saved.obor_klic}|${saved.kolo}` !== vyber) return;
+      // Formulář se srovná s uloženým záznamem (server ho mohl upravit), aby se po uložení neukazovala neuložená změna.
+      setStruktura(saved.struktura);
+      setPopis(saved.popis ?? '');
+      setOdkaz(saved.odkaz ?? '');
       setZPrepisu(false);
       setStav('ulozeno');
       setZprava('Pravidla jsme uložili k vybranému oboru, ročníku a rozsahu kol.');
@@ -207,6 +232,22 @@ export function PortalKriteriaForm({ redizo, roky, nabidky, ulozena, podklady, p
         </li>)}</ul>
       </div>}
       {!dostupne && <p role="alert" className="mt-4 rounded-lg bg-amber-50 p-3 text-sm text-amber-900">Databázová část pilotu zatím není připravená. Formulář nyní nelze uložit.</p>}
+      {zaznamy.length > 0 && <nav aria-label="Uložené kombinace" className="mt-4 rounded-lg bg-slate-50 p-3 text-sm text-slate-700">
+        <p className="font-semibold">Uložené kombinace ({zaznamy.length})</p>
+        <ul className="mt-2 space-y-1">
+          {[...zaznamy].sort((a, b) => b.rok - a.rok || popisZaznamu(a).localeCompare(popisZaznamu(b), 'cs')).map((z) => {
+            const aktualni = z.rok === rok && z.obor_klic === oborKlic && z.kolo === koloHodnota;
+            const vNabidce = (nabidky[z.rok] ?? []).some((o) => o.klic === z.obor_klic);
+            return <li key={z.id}>
+              <button type="button" onClick={() => otevri(z)} disabled={aktualni || !vNabidce || stav === 'odesilam'} aria-current={aktualni ? 'true' : undefined}
+                title={vNabidce ? undefined : 'Obor už není v nabídce tohoto ročníku.'}
+                className="text-left text-blue-700 underline disabled:text-slate-500 disabled:no-underline">
+                {popisZaznamu(z)}{z.struktura ? '' : ' · jen text'}{aktualni ? ' (otevřeno)' : ''}
+              </button>
+            </li>;
+          })}
+        </ul>
+      </nav>}
       <form onSubmit={odesli} className="mt-5 space-y-6">
         <fieldset disabled={stav === 'odesilam'} className="space-y-6">
         <div className="grid gap-4 sm:grid-cols-[10rem_1fr]">
@@ -216,7 +257,7 @@ export function PortalKriteriaForm({ redizo, roky, nabidky, ulozena, podklady, p
             </select>
           </label>
           <label className="block text-sm font-medium text-slate-700">Obor a zaměření
-            <select value={oborKlic} onChange={(e) => { setOborKlic(e.target.value); nastav(rok, e.target.value, koloHodnota); }} required className={POLE}>
+            <select value={oborKlic} onChange={(e) => { if (!smiZahodit()) return; setOborKlic(e.target.value); nastav(rok, e.target.value, koloHodnota); }} required className={POLE}>
               {nabidka.map((o) => <option key={o.klic} value={o.klic}>{o.kkov} · {o.nazev}{o.zamereni ? ` – ${o.zamereni}` : ''}</option>)}
             </select>
           </label>
@@ -224,9 +265,9 @@ export function PortalKriteriaForm({ redizo, roky, nabidky, ulozena, podklady, p
         <fieldset>
           <legend className="text-sm font-medium text-slate-700">Pravidla platí pro</legend>
           <div className="mt-2 flex flex-wrap items-center gap-4 text-sm">
-            <label className="flex items-center gap-2"><input type="radio" checked={vsechnaKola} onChange={() => { setVsechnaKola(true); nastav(rok, oborKlic, null); }} />všechna kola</label>
-            <label className="flex items-center gap-2"><input type="radio" checked={!vsechnaKola} onChange={() => { setVsechnaKola(false); nastav(rok, oborKlic, kolo); }} />jen kolo</label>
-            {!vsechnaKola && <select aria-label="Číslo kola" value={kolo} onChange={(e) => { const n = Number(e.target.value); setKolo(n); nastav(rok, oborKlic, n); }} className="rounded-lg border border-slate-300 p-2">
+            <label className="flex items-center gap-2"><input type="radio" checked={vsechnaKola} onChange={() => { if (!smiZahodit()) return; setVsechnaKola(true); nastav(rok, oborKlic, null); }} />všechna kola</label>
+            <label className="flex items-center gap-2"><input type="radio" checked={!vsechnaKola} onChange={() => { if (!smiZahodit()) return; setVsechnaKola(false); nastav(rok, oborKlic, kolo); }} />jen kolo</label>
+            {!vsechnaKola && <select aria-label="Číslo kola" value={kolo} onChange={(e) => { if (!smiZahodit()) return; const n = Number(e.target.value); setKolo(n); nastav(rok, oborKlic, n); }} className="rounded-lg border border-slate-300 p-2">
               {[1, 2, 3].map((k) => <option key={k} value={k}>{k}.</option>)}
             </select>}
           </div>

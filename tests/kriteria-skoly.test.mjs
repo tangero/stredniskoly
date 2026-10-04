@@ -172,3 +172,27 @@ test('kritéria školy se najdou i u oboru bez proužku a bez přepisu (Codex re
   assert.equal(maUdajeSkoly(sPrednostiSkoly(jenPdf, [], '600001431_79-41-K/41', undefined, 2026)), false);
   assert.equal(maUdajeSkoly(null), false);
 });
+
+test('jeFormularRozpracovan: neuložená změna oproti uloženému záznamu nebo prázdnému formuláři', async () => {
+  const { jeFormularRozpracovan, prazdnaStruktura } = await import('../src/lib/kriteria-struktura.ts');
+  const ulozena = prazdnaStruktura();
+  ulozena.jpz.cjl_max = 40;
+  const stav = (struktura, popis = '', odkaz = '') => ({ struktura, popis, odkaz });
+  assert.equal(jeFormularRozpracovan(stav(ulozena), stav(structuredClone(ulozena))), false);
+  const zmenena = structuredClone(ulozena);
+  zmenena.jpz.mat_max = 30;
+  assert.equal(jeFormularRozpracovan(stav(ulozena), stav(zmenena)), true);
+  assert.equal(jeFormularRozpracovan(stav(ulozena), stav(structuredClone(ulozena), 'poznámka')), true);
+  assert.equal(jeFormularRozpracovan(stav(ulozena), stav(null)), true);
+  // Bez záznamu: prázdný formulář změna není, předvyplněný nebo vyplněný je.
+  assert.equal(jeFormularRozpracovan(stav(null), stav(null)), false);
+  assert.equal(jeFormularRozpracovan(stav(null), stav(prazdnaStruktura())), false);
+  assert.equal(jeFormularRozpracovan(stav(null), stav(zmenena)), true);
+  assert.equal(jeFormularRozpracovan(stav(null), stav(null, '', 'https://example.cz')), true);
+  // Obor bez JPZ začíná s nulovými maximy.
+  const bezJpz = prazdnaStruktura();
+  bezJpz.jpz.cjl_max = 0;
+  bezJpz.jpz.mat_max = 0;
+  assert.equal(jeFormularRozpracovan(stav(null), stav(bezJpz), true), false);
+  assert.equal(jeFormularRozpracovan(stav(null), stav(bezJpz), false), true);
+});
