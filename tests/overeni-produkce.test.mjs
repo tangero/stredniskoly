@@ -16,6 +16,8 @@ test('K4: adresa a očekávaný text z kritéria, bez adresy se automaticky neov
   assert.equal(adresaZKriteria('P1: adresy beze změny - ověření: npm run build'), null);
   assert.equal(adresaZKriteria('K4: test - ověření: test v tests/brana.test.mjs'), null);
   assert.equal(adresaZKriteria('K5: bez ověření'), null);
+  assert.equal(adresaZKriteria('K6: x - ověření: diff v souboru /scripts/brana/brana.mjs'), null);
+  assert.equal(adresaZKriteria('K7: x - ověření: /.github/workflows/testy.yml'), null);
 });
 
 test('výběr zadání: sloučené do main za 14 dní, jen zadání vlastníka nebo asistenta s aspoň jedním webovým kritériem', () => {
@@ -93,4 +95,19 @@ test('chyba spojení se zkusí jednou znovu, opakovaná chyba je nesplnění', a
   const vzdy = async () => { throw new Error('net::ERR_CONNECTION_RESET'); };
   const v = await overKriterium(k, vzdy, WEB);
   assert.match(v.vysledky[390], /^nesplněno \(net::ERR_CONNECTION_RESET\)$/);
+});
+
+test('strop načtení platí i pro opakování po chybě spojení', async () => {
+  const nacitac = vytvorNacitac(async () => ({ status: 200, text: '' }), { spi: async () => {}, strop: 2 });
+  await nacitac('a', 390);
+  await nacitac('b', 390);
+  await assert.rejects(nacitac('c', 390), /strop 2/);
+});
+
+test('vyčerpaný strop není nesplnění', async () => {
+  const nacitac = vytvorNacitac(async () => ({ status: 200, text: '' }), { spi: async () => {}, strop: 1 });
+  const v = await overKriterium({ oznaceni: 'K1', web: { adresa: '/', ocekavany: null } }, nacitac, WEB);
+  assert.equal(v.vysledky[390], 'splněno');
+  assert.equal(v.vysledky[1280], 'neověřeno (strop načtení)');
+  assert.equal(splneno(v), true);
 });
