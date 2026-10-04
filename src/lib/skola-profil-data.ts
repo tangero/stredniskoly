@@ -10,7 +10,7 @@ import { nenabiraSe } from '@/lib/dobihajici-obory';
 import { getDruheKolo, type DruheKoloNabidky } from '@/lib/druhe-kolo';
 import { zobrazeneObdobi, platnostObdobi } from '@/lib/stav-datovych-sad';
 import { createSlug } from '@/lib/utils';
-import { zarazeniObtiznosti, soutezicichUchazecu, type ZarazeniObtiznosti } from '@/lib/obor-profil';
+import { zarazeniObtiznosti, soutezicichUchazecu, nazevOboruZKlice, type ZarazeniObtiznosti } from '@/lib/obor-profil';
 import {
   nazevSkupinyMaturity, proKohoObor, shrnutiMaturity, smerStupne, vzdalenostKm,
   type Poloha, type ShrnutiMaturity,
@@ -117,7 +117,7 @@ export interface ProfilSkolyData {
   web: string | null;
   poloha: (Poloha & { zastavka: string; zastavkaKm: number }) | null;
   okoli: SkolaVOkoli[];
-  soubeh: { rok: number; obory: { nazev: string; uchazecu: number; radky: RadekSoubehu[] }[] } | null;
+  soubeh: { rok: number; obory: { klic: string; nazev: string; uchazecu: number; radky: RadekSoubehu[] }[] } | null;
 }
 
 const MAX_KM_OKOLI = 20;
@@ -333,6 +333,7 @@ export async function getProfilSkoly(
     const soubor = await ctiSoubor<SoubehSoubor>(path.join(process.cwd(), 'public', `soubeh_prihlasek_${rokUchazecu}.json`));
     if (soubor) {
       const nazvyOboru = new Map(programy.map(p => [`${redizo}_${p.id.split('_')[1]}`, p]));
+      const nazvyRejstriku = (await ctiSoubor<{ obory?: Record<string, string> }>(path.join(process.cwd(), 'data', 'msmt_rejstrik', 'nazvy-oboru.json')))?.obory ?? {};
       const oboryS: NonNullable<ProfilSkolyData['soubeh']>['obory'] = [];
       for (const [klic, zaznam] of Object.entries(soubor.data)) {
         if (!klic.startsWith(`${redizo}_`)) continue;
@@ -352,8 +353,8 @@ export async function getProfilSkoly(
             soutezici: s2 ? soutezicichUchazecu(s2) : null,
           };
         }));
-        const nazev = program ? (program.zamereni && program.zamereni !== program.obor ? `${program.obor} - ${program.zamereni}` : program.obor) + (programy.filter(p => p.obor === program.obor).length > 1 ? `, ${program.delka_studia}leté` : '') : klic;
-        oboryS.push({ nazev, uchazecu: zaznam.uchazecu, radky });
+        const nazev = program ? (program.zamereni && program.zamereni !== program.obor ? `${program.obor} - ${program.zamereni}` : program.obor) + (programy.filter(p => p.obor === program.obor).length > 1 ? `, ${program.delka_studia}leté` : '') : nazevOboruZKlice(klic, nazvyRejstriku);
+        oboryS.push({ klic, nazev, uchazecu: zaznam.uchazecu, radky });
       }
       oboryS.sort((x, y) => y.uchazecu - x.uchazecu);
       if (oboryS.length) soubeh = { rok: rokUchazecu, obory: oboryS };

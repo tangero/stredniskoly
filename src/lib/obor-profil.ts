@@ -302,3 +302,13 @@ export function vKraji(krajNazev: string): string {
   const lokal = krajNazev.replace(/ký$/, 'kém');
   return `${/^(S|Z)[^aeiouyáéíóúůý]/i.test(lokal) ? 've' : 'v'} ${lokal} kraji`;
 }
+
+/**
+ * Název oboru ze souběhu přihlášek, když obor není v katalogu: název z rejstříku
+ * podle kódu oboru (část klíče `REDIZO_kód` za prvním `_`), jinak jen kód. Klíč
+ * i s RED IZO se uchazeči nikdy nezobrazí.
+ */
+export function nazevOboruZKlice(klic: string, nazvyOboru: Record<string, string>): string {
+  const kod = klic.split('_').slice(1).join('_');
+  return nazvyOboru[kod] ?? (kod || klic);
+}
