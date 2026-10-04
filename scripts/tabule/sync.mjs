@@ -33,13 +33,13 @@ const DOTAZ = `query($login: String!, $cislo: Int!, $po: String) {
   user(login: $login) { projectV2(number: $cislo) {
     id
     field(name: "Status") { ... on ProjectV2SingleSelectField { id options { id name } } }
-    poznamka: field(name: "Na co čeká") { ... on ProjectV2Field { id } }
+    fields(first: 50) { nodes { ... on ProjectV2FieldCommon { id name } } }
     items(first: 100, after: $po) {
       pageInfo { hasNextPage endCursor }
       nodes {
         id
         fieldValueByName(name: "Status") { ... on ProjectV2ItemFieldSingleSelectValue { name } }
-        poznamka: fieldValueByName(name: "Na co čeká") { ... on ProjectV2ItemFieldTextValue { text } }
+        fieldValues(first: 30) { nodes { ... on ProjectV2ItemFieldTextValue { text field { ... on ProjectV2FieldCommon { name } } } } }
         content {
           __typename
           ... on Issue { number state body repository { nameWithOwner } labels(first: 50) { nodes { name } } }
@@ -60,7 +60,12 @@ async function nactiTabuli() {
     polozky.push(...projekt.items.nodes);
     po = projekt.items.pageInfo.hasNextPage ? projekt.items.pageInfo.endCursor : null;
   } while (po);
-  return { id: projekt.id, pole: projekt.field, polePoznamky: projekt.poznamka?.id || null, polozky };
+  // Pole „Na co čeká“ se hledá v seznamu: field(name:) u chybějícího pole vrací chybu, ne null.
+  const poznamka = (projekt.fields?.nodes || []).find((f) => f?.name === POLE_POZNAMKY);
+  for (const p of polozky) {
+    p.poznamka = { text: (p.fieldValues?.nodes || []).find((v) => v?.field?.name === POLE_POZNAMKY)?.text || '' };
+  }
+  return { id: projekt.id, pole: projekt.field, polePoznamky: poznamka?.id || null, polozky };
 }
 
 /** Stav review asistenta zadání k danému commitu: 'ok', 'nalezy', nebo null (review k němu není). */
