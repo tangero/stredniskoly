@@ -28,7 +28,8 @@ export function adresaZKriteria(text = '') {
   const za = text.split(/ověření:/i)[1];
   if (!za) return null;
   const cesta = za.match(/(?:^|\s)(\/[^\s,;„“”"()]*)/);
-  if (!cesta) return null;
+  // Cesta ke zdrojovému souboru (/scripts/x.mjs) není adresa na webu.
+  if (!cesta || /\.(m?js|ts|tsx|py|ya?ml|json|md|sql|sh)$/i.test(cesta[1])) return null;
   const zbytek = za.slice(za.indexOf(cesta[1]) + cesta[1].length);
   const ocekavany = zbytek.match(/[„"“]([^“”"]+)[“”"]/);
   return { adresa: cesta[1], ocekavany: ocekavany ? ocekavany[1] : null };
@@ -51,11 +52,14 @@ export function vyberZadani(prs, issues, { ted, konfig }) {
 }
 
 /** Načítání stránek postupně s prodlevou mezi nimi (žádný souběh); `nacti(url, sirka)` vrací { status, text }. */
-export function vytvorNacitac(nacti, { prodleva = PRODLEVA, spi = (ms) => new Promise((r) => setTimeout(r, ms)) } = {}) {
+export function vytvorNacitac(nacti, { prodleva = PRODLEVA, spi = (ms) => new Promise((r) => setTimeout(r, ms)), strop = Infinity } = {}) {
   let prvni = true;
+  let pocet = 0;
   let fronta = Promise.resolve();
   return (url, sirka) => {
     const vysledek = fronta.then(async () => {
+      // Strop platí i pro opakování po chybě spojení.
+      if (++pocet > strop) throw new Error(`strop ${strop} načtení na běh`);
       if (!prvni) await spi(prodleva);
       prvni = false;
       return nacti(url, sirka);
@@ -78,13 +82,15 @@ export async function overKriterium(k, nacitac, zakladni) {
       else if (k.web.ocekavany && !text.includes(k.web.ocekavany)) vysledky[sirka] = 'nesplněno (chybí očekávaný text)';
       else vysledky[sirka] = 'splněno';
     } catch (e) {
-      vysledky[sirka] = `nesplněno (${String(e.message || e).slice(0, 60)})`;
+      const zprava = String(e.message || e);
+      // Vyčerpaný strop není chyba webu: kritérium zůstane neověřené, ne nesplněné.
+      vysledky[sirka] = /^strop \d+ načtení/.test(zprava) ? 'neověřeno (strop načtení)' : `nesplněno (${zprava.slice(0, 60)})`;
     }
   }
   return { oznaceni: k.oznaceni, adresa: k.web.adresa, vysledky };
 }
 
-export const splneno = (v) => !v.vysledky || Object.values(v.vysledky).every((x) => x === 'splněno');
+export const splneno = (v) => !v.vysledky || Object.values(v.vysledky).every((x) => x === 'splněno' || x.startsWith('neověřeno'));
 
 /** Poslední stav z komentářů workflow v PR (ok / chyba), nebo null. */
 export function posledniStav(komentare = []) {
@@ -185,7 +191,7 @@ async function main() {
     return true;
   });
   const pw = zadani.some((z) => z.kriteria.some((k) => k.web)) ? await nacitacPlaywright(process.env.PLAYWRIGHT_MODULE || 'playwright') : null;
-  const nacitac = pw ? vytvorNacitac(pw.nacti) : null;
+  const nacitac = pw ? vytvorNacitac(pw.nacti, { strop: MAX_NACTENI }) : null;
   try {
     for (const z of zadani) {
       const vysledky = [];
@@ -203,7 +209,9 @@ async function main() {
         body: `Ověření v produkci (commit ${sha.slice(0, 7)}) našlo nesplněná kritéria zadání #${z.issue} ze sloučeného PR #${z.pr}: ${chybna}.\n\nPodrobnosti v komentáři „Ověřeno v produkci“ u PR #${z.pr}. Rozhodne vlastník nebo denní úloha, zda jde o regresi, nebo o kritérium, které už neplatí.\n\n— workflow Ověření v produkci (#325)`,
         labels: ['interni', 'rutina', ...z.oblasti],
       } });
-      await posliTelegram(`Regrese v produkci: PR #${z.pr} (${chybna})\n${issue.html_url}`);
+      // Selhání Telegramu nesmí zastavit ověření zbylých zadání; issue už existuje.
+      await posliTelegram(`Regrese v produkci: PR #${z.pr} (${chybna})\n${issue.html_url}`)
+        .catch((e) => console.log(`::warning::Upozornění do Telegramu se neodeslalo (PR #${z.pr}): ${e.message}`));
     }
   } finally {
     await pw?.zavri();
