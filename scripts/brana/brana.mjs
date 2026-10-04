@@ -391,8 +391,15 @@ export function vyhodnot({ pr, soubory, issues, konfig, zamrznuti, ted, predchoz
       let ri;
       if (s.platny) ri = 'souhlas';
       else if (i.stitky.some((st) => STITKY_HLASENI.includes(st))) {
-        ri = 'K';
-        blokuje.push(`issue #${i.cislo} pochází z hlášení; ve fázi 1 potřebuje schvaleno (${s.duvod})`);
+        if (schvalenyProjekt(i.rodic, konfig)) {
+          // Připojení hlášení ke schválenému projektu je rozhodnutí o něm (RA39); práci vymezuje rozsah
+          // projektu, text hlášení ji neřídí.
+          ri = 'E';
+          info.push(`hlášení #${i.cislo} patří ke schválenému projektu #${i.rodic.cislo}`);
+        } else {
+          ri = 'K';
+          blokuje.push(`issue #${i.cislo} pochází z hlášení; ve fázi 1 potřebuje schvaleno, nebo připojení ke schválenému projektu (${s.duvod})`);
+        }
       } else if (!ZDROJ.test(i.telo || '')) {
         ri = 'K';
         blokuje.push(`issue #${i.cislo} nemá doklad „Zdroj:“ ani platný souhlas (${s.duvod})`);

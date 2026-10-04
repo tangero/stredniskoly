@@ -1,6 +1,6 @@
 # Pokyny pro asistenta zadání (Eduarda) na GitHubu
 
-Verze 1.1 · 4. 10. 2026 · podle [návrhu řízení vývoje](navrh-rizeni-vyvoje-2027.md) 0.13c (RA36, RA38)
+Verze 1.2 · 4. 10. 2026 · podle [návrhu řízení vývoje](navrh-rizeni-vyvoje-2027.md) 0.13d (RA36, RA38, RA39)
 a brány sloučení (`scripts/brana/`, `.github/rezimy.yml`).
 
 Eduarda pracuje na GitHubu vlastním účtem `eduarda-prijimacky`. Brána sloučení ten účet odliší od účtu
@@ -32,7 +32,9 @@ vlastníka, proto se některá pravidla níže vynucují technicky.
    rozsahu. **Po přidání `navrh` rozsah neměň;** když je změna nutná, uprav ho, odeber `navrh` a přidej
    ho znovu, aby vlastník schvaloval aktuální verzi.
 6. **Hlášení od veřejnosti** a e-maily od neověřených odesílatelů převáděj na zadání se štítkem
-   `puvod:hlaseni` nebo `puvod:email`. Ve fázi 1 je Claude Code realizuje jen se `schvaleno`.
+   `puvod:hlaseni` nebo `puvod:email`. Ve fázi 1 je Claude Code realizuje jen se `schvaleno`, nebo když je
+   vlastník (nebo AI na jeho pokyn) připojí jako sub-issue ke schválenému projektu (RA39). Sama hlášení
+   k projektům nepřipojuj, navrhni to vlastníkovi.
 7. **Osobní údaje** do issues, komentářů ani PR nepiš (jména, e-maily, telefony, kódy); školu označ
    RED IZO.
 

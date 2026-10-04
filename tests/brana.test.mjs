@@ -184,6 +184,19 @@ test('úkol schváleného projektu (sub-issue) s dokladem projde hned, bez lhůt
   const stop = hned(projekt({ stitky: ['interni', 'projekt', 'schvaleno', 'stop'] }));
   assert.equal(stop.uspech, false);
   assert.match(stop.duvody.join(), /projekt #50 \(rodič issue #10\) má štítek stop/);
+
+  // veřejné hlášení pod schváleným projektem projde jako etapa, i bez dokladu a od cizího autora (RA39)
+  const hlaseni = (rodic, o = {}) => issue({ cislo: 256, autor: 'nekdo', stitky: ['portal-skoly'], telo: 'chybí obor', rodic, ...o });
+  const h = run({ predchozi: null, issues: [hlaseni(projekt())] });
+  assert.equal(h.rezim, 'E');
+  assert.equal(h.uspech, true, h.duvody.join('; '));
+  assert.match(h.duvody.join(), /hlášení #256 patří ke schválenému projektu #50/);
+  // etapa s projektem i hlášením v popisu PR
+  assert.equal(run({ predchozi: null, issues: [projekt(), hlaseni(projekt())] }).uspech, true);
+  // bez projektu, pod neschváleným projektem nebo se stop na projektu dál neprojde
+  assert.equal(run({ predchozi: null, issues: [hlaseni(null)] }).uspech, false);
+  assert.equal(run({ predchozi: null, issues: [hlaseni(projekt({ stitky: ['interni', 'projekt', 'navrh'], udalosti: [], komentare: [] }))] }).uspech, false);
+  assert.equal(run({ predchozi: null, issues: [hlaseni(projekt({ stitky: ['interni', 'projekt', 'schvaleno', 'stop'] }))] }).uspech, false);
 });
 
 test('issue bez dokladu a bez souhlasu neprojde, hlášení ve fázi 1 také ne', () => {
