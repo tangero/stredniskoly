@@ -77,6 +77,15 @@ test('K2: řádek za každé sloučené zadání s časy fází a počtem kol op
   assert.equal(Math.round(z109.faze.vPr / DEN), 4);
 });
 
+test('#342: schválení po otevření PR se nepočítá do fáze na schválení a fáze se nepřekrývají', () => {
+  const v = vstup();
+  v.issues[10].schvaleno = pred(5); // PR #100 otevřen před 6 dny, schváleno až po něm
+  const z = spocitejMeritka(v, opt).zadani.find((x) => x.pr === 100);
+  assert.equal(z.faze.naSchvaleni, null);
+  assert.equal(Math.round(z.faze.naRealizaci / DEN), 4);
+  assert.equal(Math.round((z.faze.naRealizaci + z.faze.vPr) / DEN), Math.round(z.celkem / DEN));
+});
+
 test('K1: medián podle režimu a srovnání s předchozími 4 týdny', () => {
   const m = spocitejMeritka(vstup(), opt);
   assert.equal(m.podleRezimu.R.pocet, 2);
