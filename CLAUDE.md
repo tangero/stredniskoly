@@ -30,6 +30,7 @@ schvaluje je Patrick. Stav issue vyjadřují štítky:
 | `projekt` | práce s cílem a etapami; etapy v dohodnutém rozsahu bez lhůty |
 | `puvod:hlaseni`, `puvod:email` | zadání z veřejného hlášení nebo neověřeného e-mailu; jen se `schvaleno` |
 | `zamitnuto` | nerealizovat |
+| `oponentura` | návrh posoudí Kimi K3 (workflow Oponentura, skill `oponentura`), pak se vrátí do `navrh`; **nerealizovat** |
 | `k-overeni` | otevřený PR s protokolem z preview; po sloučení ho z otevřeného issue (etapa projektu) odebere workflow Tabule |
 | `pripominka` | úkol s termínem (řádek `Termín: RRRR-MM-DD` v těle issue nebo pole Termín formuláře); před termínem se nerealizuje |
 | `potrebuje-cloveka` | u PR: smyčka oprav z review skončila (5 kol nebo oprava cesty H2); další `@claude` se nespustí, rozhodne člověk |

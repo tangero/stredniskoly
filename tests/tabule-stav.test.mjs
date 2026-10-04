@@ -11,6 +11,9 @@ test('stav karty podle štítků a PR', () => {
   assert.equal(cilovyStav(i(['interni', 'schvaleno', 'stop'])), STAVY.navrh);
   assert.equal(cilovyStav(i(['interni', 'navrh', 'schvaleno'])), STAVY.schvaleno);
   assert.equal(cilovyStav(i(['interni', 'oponentura'])), STAVY.oponentura);
+  // Oponentura návrhu (#339): karta je v Oponentuře, stop má přednost.
+  assert.equal(cilovyStav(i(['interni', 'navrh', 'oponentura'])), STAVY.oponentura);
+  assert.equal(cilovyStav(i(['interni', 'navrh', 'oponentura', 'stop'])), STAVY.navrh);
   assert.equal(cilovyStav(i(['interni', 'schvaleno'])), STAVY.schvaleno);
   // doklad „Zdroj:“ v interním zadání stačí, v hlášení ne
   assert.equal(cilovyStav({ stav: 'OPEN', stitky: ['interni'], telo: 'Zdroj: vlastník\n\n## Rozsah\nx' }), STAVY.schvaleno);
@@ -50,6 +53,7 @@ test('pole „Na co čeká“ u issue', async () => {
   assert.equal(naCoCeka({ stav: 'CLOSED', stitky: [] }), '');
   assert.equal(n(['trvale']), null);
   assert.equal(n(['interni', 'navrh']), 'čeká na tvé rozhodnutí: schvaleno, nebo zamitnuto');
+  assert.equal(n(['interni', 'navrh', 'oponentura']), 'oponentura, pak k tvému rozhodnutí');
   assert.equal(n(['interni', 'pripominka'], { telo: 'Termín: 2027-01-20' }), 'připomínka, termín 20. 1. 2027');
   assert.equal(n(['interni', 'pripominka'], { telo: 'Termín: 2026-10-01' }), 'připomínka je splatná, čeká na vyhodnocení');
   assert.equal(n(['interni', 'schvaleno'], {}, [{ cislo: 9, naCoCeka: 'chybí protokol z preview' }]), 'PR #9: chybí protokol z preview');

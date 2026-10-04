@@ -1,6 +1,6 @@
 # Řízení vývoje: směr určuje člověk, provedení a přehled zajišťuje AI
 
-Verze 0.13h · 4. 10. 2026 · **část A ke schválení hned, část B k rozhodnutí podle měřítek.**
+Verze 0.13i · 4. 10. 2026 · **část A ke schválení hned, část B k rozhodnutí podle měřítek.**
 Stav zavedení: fáze 0 a 1 hotové (4. 10. 2026): brána sloučení je povinná kontrola v rulesetu bez obejití,
 AI slučuje skriptem a workflow Sloučení automaticky (RA40); fáze 2 čeká (postup v
 [postup-zavedeni-faze-0.md](postup-zavedeni-faze-0.md)).
@@ -27,7 +27,7 @@ a výdaje, posílá týdenní přehled a hlásí jen výjimky.
 **Co tím odpadne:** schvalování drobných zadání, kontrola na preview a merge u zhruba 20 PR týdně,
 odpovídání na dotazy v issues, obnova většiny tokenů.
 
-**Co je potřeba schválit:** část A jako celek (rozhodnutí RA1 až RA42 v oddílu 21). Část B se rozhodne
+**Co je potřeba schválit:** část A jako celek (rozhodnutí RA1 až RA43 v oddílu 21). Část B se rozhodne
 po čtyřech týdnech provozu podle měřítek.
 
 **Zavedení po fázích podle přínosu** (oddíl 20): fáze 1 odstraní merge a kontrolu preview, fáze 2 přidá
@@ -665,6 +665,7 @@ ověří ho měřítka.
 | RA40 | Automatické slučování: workflow Sloučení po každém běhu brány sloučí PR, které brána pustila, skriptem `sloucit.mjs` s tokenem vlastníka; vlastník dostává po sloučení souhrn od asistenta zadání | **ano** (rozhodnutí vlastníka) |
 | RA41 | Cizí servery a stahování zdrojů bez schvalování: AI před prvním dotazem zapíše do issue, odkud a jak stahuje, a pokračuje; politika přístupu (bez přihlášení, `robots.txt`, limity, bez osobních údajů) platí dál; placené zdroje a zdroje se závazkem dál se `schvaleno` | **ano** (rozhodnutí vlastníka) |
 | RA42 | Souhlas vlastníka na PR (`schvaleno` na PR pro aktuální commit) nahradí chybějící protokol z preview, například u stránek za přihlášením nebo když vlastník změnu zkontroloval sám; protokol s „nesplněno“ blokuje dál | **ano** (rozhodnutí vlastníka) |
+| RA43 | Oponentura návrhů modelem Kimi K3 (předplatné Kimi Code vlastníka) na štítek `oponentura` od vlastníka nebo asistenta zadání: smysl, přínos k cílům, náklady proti přínosům a lepší řešení podle skillu `oponentura`; výsledek jde do issue, rozhoduje vlastník | **ano** (rozhodnutí vlastníka) |
 
 # Část B: rozšíření podle měřítek
 
@@ -694,6 +695,8 @@ Po čtyřech týdnech provozu části A:
 
 ## Změny návrhu
 
+- **0.13i** (4. 10. 2026, rozhodnutí vlastníka, zadání #339): oponentura návrhů modelem Kimi K3 na štítek
+  `oponentura` (workflow Oponentura, skill `oponentura`); třetí rodina modelů vedle asistenta zadání a Claude Code (RA43).
 - **0.13h** (4. 10. 2026, rozhodnutí vlastníka, zadání #332): souhlas vlastníka na PR nahradí chybějící
   protokol z preview i chybějící řádky kritérií K a P (RA42); protokol s „nesplněno“ blokuje dál.
 - **0.13g** (4. 10. 2026, zadání #301): smyčka review a oprav (oddíl 9d): oprava nálezů P1 a P2 workflow

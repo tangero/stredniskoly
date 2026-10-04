@@ -14,6 +14,7 @@ dokument popisuje nastavení GitHubu, na kterém stojí.
 | `navrh` | čeká na schválení Patrickem, nerealizovat |
 | `schvaleno` | Claude Code může realizovat; přidává jen Patrick |
 | `zamitnuto` | nerealizovat |
+| `oponentura` | návrh posoudí model Kimi K3 (workflow Oponentura) a štítek sám odebere; mezitím nerealizovat |
 | `k-overeni` | otevřený PR s protokolem z preview (ověřuje AI, vlastník volitelně); po sloučení ho z otevřeného issue (etapa projektu) odebere workflow Tabule |
 | `pripominka` | úkol s termínem; před termínem se nerealizuje |
 | `potrebuje-cloveka` | u PR: smyčka oprav z review skončila (strop 5 kol nebo oprava cesty H2), rozhodne člověk; vypisuje ho týdenní přehled |
@@ -64,7 +65,7 @@ při každé změně štítků, issues a PR, po každém běhu brány sloučení
 |---|---|---|
 | Hlášení | veřejná hlášení, připomínky a issues bez stavového štítku | třídění (AI) |
 | Návrh | `navrh` (bez `schvaleno`) nebo `stop` | **vlastník** |
-| Oponentura | `oponentura`: návrh posuzuje asistent zadání nebo druhý model, teprve pak jde k vlastníkovi | AI |
+| Oponentura | `oponentura` (má přednost i před `navrh`): návrh posuzuje workflow Oponentura, pak jde k vlastníkovi | AI |
 | Schváleno | `schvaleno` nebo doklad `Zdroj:` v interním zadání, žádný otevřený PR | denní úloha podle Směru vývoje |
 | V PR | otevřený PR s `Closes #N` nebo `Souvisí s #N` (CI, review, vypořádání, lhůta) | AI |
 | Čeká na souhlas s merge | otevřený PR, brána chce `schvaleno` | **vlastník** |
@@ -79,6 +80,16 @@ Pole **„Na co čeká“** (text, založí ho skript) vyplní workflow u issues
 review asistenta zadání k aktuálnímu commitu, u schválených issues bez PR „čeká na realizaci“ nebo postup projektu,
 u návrhu „čeká na tvé rozhodnutí“, u připomínky termín a u hlášení projekt, ke kterému patří. Na kartách ho zapneš
 v nastavení pohledu (šipka u názvu pohledu → Fields → Na co čeká).
+
+**Oponentura** (`.github/workflows/oponentura.yml`, #339): štítek `oponentura` od vlastníka nebo asistenta
+zadání spustí Claude Code s modelem Kimi K3 (předplatné Kimi Code vlastníka, rozhraní kompatibilní s Anthropic,
+model `k3-256k`). Model jen čte (Read, Glob, Grep; bez shellu, zápisu a sítě), posoudí issue podle skillu
+`.claude/skills/oponentura` a workflow zapíše komentář `## Oponentura` (verdikt, nálezy P1 až P3, alternativy,
+otázky). Pak štítek odebere a issue bez `navrh` a `schvaleno` vrátí do `navrh`, takže karta jde zpět k vlastníkovi.
+Znovu se spustí odebráním a přidáním štítku nebo ručně (Run workflow, číslo issue). Potřebuje secret
+`KIMI_API_KEY` (klíč z konzole Kimi Code, ne z platform.moonshot.ai) a `PROJECT_TOKEN` na změnu štítků,
+aby se srovnala tabule. Kimi je třetí rodina modelů vedle Grok (asistent zadání) a Claude (Claude Code),
+takže posuzuje návrhy obou nezávisle.
 
 Potřebuje secret `PROJECT_TOKEN`, klasický token se scopes `project` a `public_repo` (fine-grained token
 do projektu na osobním účtu zapisovat neumí). Token má omezenou platnost; expiraci hlídá týdenní přehled.
