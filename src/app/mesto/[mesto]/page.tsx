@@ -200,7 +200,7 @@ export default async function MestoPage({ params }: Props) {
         />
 
         <div className="mx-auto mt-12 max-w-6xl space-y-10 px-4">
-          {okruheMesta && <OkruhyMesta okruhy={okruhy.okruhy} nastavby={okruhy.nastavby} rok={okruheMesta.rok} />}
+          {okruheMesta && <OkruhyMesta okruhy={okruhy.okruhy} nastavby={okruhy.nastavby} rok={okruheMesta.rok} rokObtiznosti={rok} />}
 
           {/* Nejbližší veletrh středních škol ve městě, nejvýš dvě akce podle
               data. Bez potvrzené akce komponenta nevykreslí nic. */}

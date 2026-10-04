@@ -47,7 +47,8 @@ function Radek({ r }: { r: RadekOkruhuMesta }) {
   );
 }
 
-function Okruh({ o, rok }: { o: OkruhMestaKZobrazeni; rok: number }) {
+function Okruh({ o, rokObtiznosti }: { o: OkruhMestaKZobrazeni; rokObtiznosti: number | null }) {
+  const rokText = rokObtiznosti ? ` ${rokObtiznosti}` : '';
   return (
     <details id={`okruh-${o.id}`} className="group scroll-mt-24 border-t border-[#dde4ee] first:border-t-0">
       <summary className="flex min-h-[56px] cursor-pointer list-none gap-3 px-4 py-3.5 hover:bg-[#f5f8fc] focus-visible:outline focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-[#0074e4] md:px-5">
@@ -64,11 +65,11 @@ function Okruh({ o, rok }: { o: OkruhMestaKZobrazeni; rok: number }) {
       </summary>
       <div className="pb-3">
         <table className="w-full border-collapse text-left">
-          <caption className="sr-only">Obory okruhu {o.nazev}: škola a obor, obtížnost přijetí v 1. kole {rok} a počet uchazečů</caption>
+          <caption className="sr-only">Obory okruhu {o.nazev}: škola a obor, obtížnost přijetí v 1. kole{rokText} a počet uchazečů</caption>
           <thead className="hidden bg-[#f4f6f9] md:table-header-group">
             <tr className="text-[13px] font-semibold text-slate-600">
               <th scope="col" className="px-5 py-2 font-semibold">Škola a obor</th>
-              <th scope="col" className="w-[12rem] px-3 py-2 font-semibold">Obtížnost přijetí {rok}</th>
+              <th scope="col" className="w-[12rem] px-3 py-2 font-semibold">Obtížnost přijetí{rokText}</th>
               <th scope="col" className="w-[7rem] px-5 py-2 text-right font-semibold">Uchazečů</th>
             </tr>
           </thead>
@@ -88,7 +89,9 @@ function Okruh({ o, rok }: { o: OkruhMestaKZobrazeni; rok: number }) {
 }
 
 export function OkruhyMesta(
-  { okruhy, nastavby, rok }: { okruhy: OkruhMestaKZobrazeni[]; nastavby: OkruhMestaKZobrazeni[]; rok: number },
+  { okruhy, nastavby, rok, rokObtiznosti }: {
+    okruhy: OkruhMestaKZobrazeni[]; nastavby: OkruhMestaKZobrazeni[]; rok: number; rokObtiznosti: number | null;
+  },
 ) {
   if (okruhy.length === 0 && nastavby.length === 0) return null;
   return (
@@ -100,12 +103,13 @@ export function OkruhyMesta(
         počtu uchazečů, ne podle obtížnosti přijetí.
       </p>
       <p className="mt-2 max-w-[68ch] text-[13px] leading-relaxed text-slate-600">
-        Data o uchazečích 1. kola {rok}, okruhy ze sloučených ročníků přihlášek. Obory na okraji okruhu se mohou mezi
+        Data o uchazečích 1. kola {rok}, okruhy ze sloučených ročníků přihlášek.
+        {rokObtiznosti && rokObtiznosti !== rok ? ` Obtížnost přijetí je z 1. kola ${rokObtiznosti}.` : ''} Obory na okraji okruhu se mohou mezi
         ročníky přesunout do sousedního. Okruh popisuje, jak se uchazeči hlásili, neříká, jak dopadne váš výsledek.
       </p>
       {okruhy.length > 0 && (
         <div className="mt-5 overflow-hidden rounded-[14px] border border-[#dde4ee] bg-white">
-          {okruhy.map(o => <Okruh key={o.id} o={o} rok={rok} />)}
+          {okruhy.map(o => <Okruh key={o.id} o={o} rokObtiznosti={rokObtiznosti} />)}
         </div>
       )}
       {nastavby.length > 0 && (
@@ -115,7 +119,7 @@ export function OkruhyMesta(
             Nástavbové studium pro absolventy učebních oborů. Je to samostatná volba, proto je mimo okruhy výše.
           </p>
           <div className="mt-3 overflow-hidden rounded-[14px] border border-[#dde4ee] bg-white">
-            {nastavby.map(o => <Okruh key={o.id} o={o} rok={rok} />)}
+            {nastavby.map(o => <Okruh key={o.id} o={o} rokObtiznosti={rokObtiznosti} />)}
           </div>
         </div>
       )}
