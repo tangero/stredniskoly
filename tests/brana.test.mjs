@@ -124,6 +124,10 @@ test('kritérium zmíněné mimo oddíl protokolu se nepočítá', () => {
   const veta = `Closes #10\n\nProtokol z preview je uveden níže.\n\n## Co se změnilo\n- K3: přidána karta\n\n## Protokol z preview\nCommit: ${SHA.slice(0, 7)}\n| K1: věta | splněno |\n| K2: odkaz | splněno |\n| P1: sitemap | splněno |`;
   assert.match(run({ issues: [issue({ telo: TELO_K })], pr: pr({ telo: veta, komentare: [] }) }).duvody.join(), /neuvádí kritéria z issue #10: K3$/);
   assert.equal(oddilProtokolu('Protokol z preview níže\n| K1 | ok |'), '');
+  // Starý protokol nad novým: pokrytí se bere z oddílu pro aktuální commit.
+  const dva = `## Protokol z preview\nCommit: ${SHA2.slice(0, 7)}\n| K1: věta | splněno |\n| K2: odkaz | splněno |\n| K3: karta | splněno |\n| P1: sitemap | splněno |\n\n## Protokol z preview\nCommit: ${SHA.slice(0, 7)}\n| K1: věta | splněno |`;
+  const v2 = run({ issues: [issue({ telo: TELO_K })], pr: pr({ komentare: [{ autor: 'tangero', cas: PRED(55), telo: dva }] }) });
+  assert.match(v2.duvody.join(), /neuvádí kritéria z issue #10: K2, K3, P1$/);
   assert.equal(oddilProtokolu('**Protokol z preview**\n| K1 | ok |\n## Jiné\n| K2 | ok |'), '**Protokol z preview**\n| K1 | ok |');
 });
 

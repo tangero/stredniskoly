@@ -88,17 +88,23 @@ export function chybejiciVProtokolu(oznaceni, teloProtokolu = '') {
 /**
  * Oddíl protokolu z preview: od nadpisu „Protokol z preview“ (markdown nadpis, nebo tučný řádek) po další
  * nadpis stejné nebo vyšší úrovně. Zmínka kritéria jinde v textu (třeba v popisu změn PR) ani věta
- * „protokol z preview je níže“ tak ověření nenahradí. Bez nadpisu je oddíl prázdný.
+ * „protokol z preview je níže“ tak ověření nenahradí. Bez nadpisu je oddíl prázdný. S `commit` vrátí
+ * poslední oddíl, který ten commit uvádí.
  */
-export function oddilProtokolu(telo = '') {
+export function oddilProtokolu(telo = '', commit = '') {
   const radky = (telo || '').replace(/\r\n?/g, '\n').split('\n');
-  const start = radky.findIndex((r) => /^\s*(?:#{1,6}\s*|\*\*\s*)Protokol z preview/i.test(r));
-  if (start < 0) return '';
-  const nadpis = radky[start].trim().match(/^#+/);
-  // Tučný nadpis nemá úroveň: oddíl končí prvním markdown nadpisem.
-  const uroven = nadpis ? nadpis[0].length : 6;
-  const konec = radky.findIndex((r, i) => i > start && /^#+\s/.test(r.trim()) && r.trim().match(/^#+/)[0].length <= uroven);
-  return radky.slice(start, konec < 0 ? undefined : konec).join('\n');
+  const oddily = [];
+  radky.forEach((r, start) => {
+    if (!/^\s*(?:#{1,6}\s*|\*\*\s*)Protokol z preview/i.test(r)) return;
+    const nadpis = r.trim().match(/^#+/);
+    // Tučný nadpis nemá úroveň: oddíl končí prvním markdown nadpisem.
+    const uroven = nadpis ? nadpis[0].length : 6;
+    const konec = radky.findIndex((x, i) => i > start && /^#+\s/.test(x.trim()) && x.trim().match(/^#+/)[0].length <= uroven);
+    oddily.push(radky.slice(start, konec < 0 ? undefined : konec).join('\n'));
+  });
+  // Víc protokolů v jednom textu: platí poslední oddíl s aktuálním commitem, ne starší protokol nad ním.
+  if (commit) return oddily.filter((o) => o.includes(commit)).pop() || '';
+  return oddily[0] || '';
 }
 
 /** Oddíl „Rozsah“ z těla issue; bez něj celé tělo. Normalizovaný, aby otisk nezávisel na koncích řádků. */
@@ -294,7 +300,7 @@ export function protokol(pr, konfig, issues = []) {
   // Pokrytí kritérií K a P z uzavíraných zadání; zadání bez označení se posuzují jako dřív.
   const uzavirana = new Set(uzaviranaIssues(pr.telo));
   for (const i of issues.filter((i) => uzavirana.has(i.cislo))) {
-    const chybi = chybejiciVProtokolu(oznaceniKriterii(i.telo), oddilProtokolu(texty[0].telo));
+    const chybi = chybejiciVProtokolu(oznaceniKriterii(i.telo), oddilProtokolu(texty[0].telo, kratke));
     if (chybi.length) return { ok: false, duvod: `protokol z preview neuvádí kritéria z issue #${i.cislo}: ${chybi.join(', ')}` };
   }
   return { ok: true, telo: texty[0].telo };
