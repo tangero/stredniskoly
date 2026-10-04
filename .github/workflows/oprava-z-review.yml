@@ -24,8 +24,10 @@ on:
 
 permissions: {}
 
+# Jen komentáře s @claude sdílejí frontu PR; ostatní komentáře mají vlastní skupinu, aby čekající
+# opravu nenahradily. Dvě čekající žádosti o opravu: platí novější.
 concurrency:
-  group: oprava-z-review-${{ github.event.issue.number }}
+  group: oprava-z-review-${{ github.event.issue.number }}-${{ contains(github.event.comment.body, '@claude') && 'claude' || github.run_id }}
   cancel-in-progress: false
 
 jobs:

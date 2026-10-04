@@ -12,7 +12,7 @@ import { execFileSync } from 'node:child_process';
 import { matchesGlob } from 'node:path';
 import { pathToFileURL } from 'node:url';
 import { BOT, duveryhodny, stopPlati } from './brana.mjs';
-import { REPO, vytvorApi, nactiKonfig, nactiPr } from './data.mjs';
+import { REPO, vytvorApi, nactiKonfig, nactiPr, nactiIssue } from './data.mjs';
 
 export const STITEK_CLOVEK = 'potrebuje-cloveka';
 export const VYCHOZI_MAX_KOL = 5;
@@ -71,6 +71,25 @@ export function zasahH2(soubory, konfig) {
   return soubory.filter((s) => vzory.some((v) => matchesGlob(s, v)));
 }
 
+/**
+ * PR s propojenými issues a jejich rodiči. Na rozdíl od brány chyba při načtení rodiče (jiná než 404)
+ * běh zastaví: neověřené veto zastaveného projektu nesmí pustit opravu.
+ */
+export async function nactiPrSRodici(api, cislo) {
+  const vstup = await nactiPr(api, cislo);
+  for (const i of vstup.issues) {
+    let rodic;
+    try {
+      rodic = await api(`repos/${REPO}/issues/${i.cislo}/parent`);
+    } catch (e) {
+      if (/\b404\b/.test(`${e.message} ${e.stderr || ''}`)) continue;
+      throw new Error(`rodiče issue #${i.cislo} nešlo ověřit, oprava se nespustí: ${e.message}`);
+    }
+    if (rodic?.number && i.rodic?.cislo !== rodic.number) i.rodic = await nactiIssue(api, rodic.number, { sRodicem: false });
+  }
+  return vstup;
+}
+
 function vystup(hodnoty) {
   const radky = Object.entries(hodnoty).map(([k, v]) => `${k}=${String(v ?? '').replace(/\r?\n/g, ' ')}`);
   if (process.env.GITHUB_OUTPUT) fs.appendFileSync(process.env.GITHUB_OUTPUT, `${radky.join('\n')}\n`);
@@ -82,7 +101,7 @@ async function rozhodni(api) {
   const cislo = udalost.issue?.number;
   if (!udalost.issue?.pull_request || !cislo) return vystup({ akce: 'nic', duvod: 'komentář není u PR' });
   const konfig = await nactiKonfig(api);
-  const [{ pr, issues }, p] = await Promise.all([nactiPr(api, cislo), api(`repos/${REPO}/pulls/${cislo}`)]);
+  const [{ pr, issues }, p] = await Promise.all([nactiPrSRodici(api, cislo), api(`repos/${REPO}/pulls/${cislo}`)]);
   const rozhodnuti = rozhodniOpravu({
     komentar: { autor: udalost.comment?.user?.login, telo: udalost.comment?.body || '' },
     pr: { ...pr, hlavaRepo: p.head?.repo?.full_name, zakladnaRepo: p.base?.repo?.full_name },
@@ -95,7 +114,7 @@ async function rozhodni(api) {
 const git = (...args) => execFileSync('git', args, { encoding: 'utf8' }).trim();
 
 async function veto(api, cislo) {
-  const { pr, issues } = await nactiPr(api, Number(cislo));
+  const { pr, issues } = await nactiPrSRodici(api, Number(cislo));
   vystup(vetoTed({ pr, issues, konfig: await nactiKonfig(api) }));
 }
 

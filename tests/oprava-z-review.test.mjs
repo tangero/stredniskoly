@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import yaml from 'js-yaml';
 import { BOT } from '../scripts/brana/brana.mjs';
-import { rozhodniOpravu, pocetKol, zasahH2, vetoTed, cestyZDiffu, ZNACKA_KOLA, STITEK_CLOVEK } from '../scripts/brana/oprava-z-review.mjs';
+import { rozhodniOpravu, pocetKol, zasahH2, vetoTed, cestyZDiffu, nactiPrSRodici, ZNACKA_KOLA, STITEK_CLOVEK } from '../scripts/brana/oprava-z-review.mjs';
 
 const konfig = { rezimy: yaml.load(fs.readFileSync('.github/rezimy.yml', 'utf8')), oblasti: {} };
 const REPO = 'tangero/stredniskoly';
@@ -117,4 +117,25 @@ test('workflow: minimální oprávnění, jen token pro Claude, bez pull_request
   assert.match(obsah, /oprava-z-review\.mjs kontrola/);
   // Žádný krok neslučuje ani nepřidává schvaleno či zamitnuto.
   assert.doesNotMatch(obsah, /gh pr merge|--add-label (schvaleno|zamitnuto)|\/merge/);
+});
+
+test('chyba při ověření rodiče (ne 404) opravu zastaví, 404 znamená bez rodiče', async () => {
+  const zaklad = (rodic) => async (cesta) => {
+    if (cesta.endsWith('/pulls/7')) return { user: { login: 'tangero' }, state: 'open', base: { ref: 'main', sha: 'b' }, head: { sha: 'h' }, draft: false, body: 'Closes #10', labels: [], created_at: '', updated_at: '' };
+    if (/\/issues\/10\/parent$/.test(cesta)) return rodic();
+    if (/\/issues\/10$/.test(cesta)) return { user: { login: 'tangero' }, state: 'open', labels: [], body: '' };
+    if (/\/issues\/9$/.test(cesta)) return { user: { login: 'tangero' }, state: 'open', labels: [{ name: 'projekt' }, { name: 'stop' }], body: '' };
+    if (/check-runs/.test(cesta)) return { check_runs: [] };
+    return [];
+  };
+  await assert.rejects(nactiPrSRodici(zaklad(() => { throw new Error('GET parent: 503'); }), 7), /nešlo ověřit/);
+  const bez = await nactiPrSRodici(zaklad(() => { throw new Error('GET parent: 404 Not Found'); }), 7);
+  assert.equal(bez.issues[0].rodic, null);
+  const s = await nactiPrSRodici(zaklad(() => ({ number: 9 })), 7);
+  assert.equal(vetoTed({ pr: s.pr, issues: s.issues, konfig }).ok, false);
+});
+
+test('workflow: nesouvisející komentář nesdílí frontu s opravou', () => {
+  const w = yaml.load(fs.readFileSync('.github/workflows/oprava-z-review.yml', 'utf8'));
+  assert.match(w.concurrency.group, /contains\(github\.event\.comment\.body, '@claude'\) && 'claude' \|\| github\.run_id/);
 });
