@@ -309,3 +309,25 @@ export function strukturaZPrepisu(p: PrepisProPredvyplneni): StrukturaKriterii {
   };
 }
 
+
+/**
+ * Liší se rozpracovaný formulář od stavu, ve kterém se kombinace otevřela? Záznam bez struktury
+ * se porovnává s prázdným formulářem: prázdná struktura (i varianta oboru bez JPZ s nulovými maximy)
+ * rozpracovaná změna není, dokud ji uživatel nezmění nebo nevyplní popis či odkaz.
+ */
+export function jeFormularRozpracovan(
+  vychozi: { struktura: StrukturaKriterii | null; popis: string; odkaz: string },
+  aktualni: { struktura: StrukturaKriterii | null; popis: string; odkaz: string },
+  oborBezJpz = false,
+): boolean {
+  if (vychozi.popis !== aktualni.popis || vychozi.odkaz !== aktualni.odkaz) return true;
+  if (aktualni.struktura === null) return vychozi.struktura !== null;
+  const text = JSON.stringify(aktualni.struktura);
+  if (vychozi.struktura !== null) return text !== JSON.stringify(vychozi.struktura);
+  const prazdna = prazdnaStruktura();
+  if (text === JSON.stringify(prazdna)) return false;
+  if (!oborBezJpz) return true;
+  prazdna.jpz.cjl_max = 0;
+  prazdna.jpz.mat_max = 0;
+  return text !== JSON.stringify(prazdna);
+}
