@@ -247,15 +247,44 @@ export function protokol(pr, konfig) {
   return { ok: true, telo: texty[0].telo };
 }
 
+const RADEK_COMMIT = /^[\s>*_]*Commit:[\s*_]*`?([0-9a-f]{7,40})\b/im;
+const RADEK_VERDIKT = /^[\s>*_]*Verdikt:[\s*_]*(.*)$/im;
+
+/**
+ * Review asistenta zadání pro aktuální hlavu PR (smyčka review a oprav, #301). Počítá se jen komentář
+ * s nadpisem „Review“ od účtu `asistent` s řádkem `Commit: <sha>` pro hlavu PR; vlastník se nepočítá,
+ * protože přes jeho účet pracuje Claude Code, který PR připravil. Rozhoduje naposledy upravené review
+ * pro tuto hlavu a projde jen verdikt „Bez P1 a P2“.
+ */
+export function review(pr, konfig) {
+  const asistent = konfig.rezimy.asistent;
+  const kratke = pr.hlava.sha.slice(0, 7);
+  const texty = pr.komentare
+    .filter((k) => asistent && k.autor === asistent && /^#{1,6}\s*Review\b/im.test(k.telo))
+    .filter((k) => {
+      const m = k.telo.match(RADEK_COMMIT);
+      return m && pr.hlava.sha.startsWith(m[1].toLowerCase());
+    })
+    .map((k) => ({ ...k, cas: k.upraveno || k.cas }))
+    .sort((a, b) => cas(b.cas) - cas(a.cas));
+  if (!texty.length) return { ok: false, duvod: `chybí review asistenta zadání pro commit ${kratke}` };
+  const verdikt = (texty[0].telo.match(RADEK_VERDIKT)?.[1] || '').replace(/[*_`]/g, '').trim();
+  if (!/^bez\s+P1\s+a\s+P2\b/i.test(verdikt)) {
+    return { ok: false, duvod: `review asistenta zadání pro commit ${kratke} nemá verdikt „Bez P1 a P2“ (${verdikt || 'verdikt chybí'})` };
+  }
+  return { ok: true, telo: texty[0].telo };
+}
+
 /**
  * Otisk všeho, k čemu se vztahuje lhůta na veto: PR, hlava, rozsahy propojených zadání a protokol.
  * Brána ho ukládá do kontroly (external_id) spolu s časem, odkdy lhůta pro tento stav běží; každá
  * změna (nový push, i dříve vytvořeného commitu; úprava rozsahu; nový nebo upravený protokol) lhůtu
  * založí znovu časem vyhodnocení. Čas commitu ani kontrol jiných PR se nepoužívá.
  */
-export function stavLhuty(pr, issues, protokolTelo = '') {
+export function stavLhuty(pr, issues, protokolTelo = '', reviewTelo = '') {
   const rozsahy = issues.map((i) => [i.cislo, otisk(rozsah(i.telo))]).sort((a, b) => a[0] - b[0]);
-  return otisk(JSON.stringify({ pr: pr.cislo, sha: pr.hlava.sha, rozsahy, protokol: protokolTelo }));
+  // Review vstupuje do otisku, jen když existuje: lhůta L běží od review, stav PR bez něj se nemění.
+  return otisk(JSON.stringify({ pr: pr.cislo, sha: pr.hlava.sha, rozsahy, protokol: protokolTelo, ...(reviewTelo ? { review: reviewTelo } : {}) }));
 }
 
 /** Zamrznutí z proměnných ZAMRZNUTI_OD a ZAMRZNUTI_DO (RRRR-MM-DD, obě včetně). */
@@ -305,10 +334,18 @@ export function vyhodnot({ pr, soubory, issues, konfig, zamrznuti, ted, predchoz
     if (!p.ok) blokuje.push(p.duvod);
     else protokolTelo = p.telo;
   }
-  const stav = stavLhuty(pr, issues, protokolTelo);
+  const sPr = souhlasPr(pr, konfig);
+
+  // Review asistenta zadání (#301): ne u změn bez dopadu na web a ne u PR se souhlasem vlastníka na PR.
+  let reviewTelo = '';
+  if (r.review?.vyzadovat && !a.jenBezPreview && !sPr.platny) {
+    const rv = review(pr, konfig);
+    if (!rv.ok) blokuje.push(rv.duvod);
+    else reviewTelo = rv.telo;
+  }
+  const stav = stavLhuty(pr, issues, protokolTelo, reviewTelo);
   const lhutaOd = predchozi?.stav === stav ? predchozi.od : ted;
 
-  const sPr = souhlasPr(pr, konfig);
   const souhlasy = new Map();
   for (const i of issues) {
     const s = souhlasIssue(i, konfig);

@@ -90,3 +90,11 @@ test('dlouhé seznamy čekajících a zastavených položek neodříznou provozn
   // co se nevešlo, je shrnuto výslovným počtem
   assert.match(kratky, /… a dalších \d+ v celém přehledu/);
 });
+
+test('PR se štítkem potrebuje-cloveka je v krátké i dlouhé verzi s odkazem', () => {
+  const { kratky, dlouhy } = sestavPrehled({ ...zaklad, potrebujiCloveka: [{ cislo: 330, titulek: 'PR C' }] });
+  assert.match(kratky, /PR, kde smyčka oprav z review skončila: 1/);
+  assert.match(kratky, /PR potřebuje člověka: #330 PR C\nhttps:\/\/github\.com\/tangero\/stredniskoly\/pull\/330/);
+  assert.match(dlouhy, /PR \[#330\]\(https:\/\/github\.com\/tangero\/stredniskoly\/pull\/330\) PR C: smyčka oprav z review skončila/);
+  assert.doesNotMatch(sestavPrehled(zaklad).kratky, /smyčka oprav/);
+});

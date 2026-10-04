@@ -1,6 +1,6 @@
 // Týdenní přehled pro vlastníka (docs/navrh-rizeni-vyvoje-2027.md, oddíly 2 a 16): co se sloučilo,
 // všechna rozhodnutí štítky `schvaleno`, `zamitnuto` a `stop` za týden i s účtem, který je udělal,
-// co čeká na vlastníka, červené CI na main a expirace tokenů v secrets. Slouží ke zpětné kontrole
+// co čeká na vlastníka (i PR, kde smyčka oprav z review skončila štítkem `potrebuje-cloveka`), červené CI na main a expirace tokenů v secrets. Slouží ke zpětné kontrole
 // rozhodnutí podle RA35: co si vlastník nevybaví, vrátí.
 //
 //   node scripts/prehled/tydenni.mjs --nanecisto   jen vypíše (mimo Actions přes gh)
@@ -84,6 +84,10 @@ export async function nactiData(api, ted, tokeny = {}) {
     .map((i) => ({ cislo: i.number, titulek: i.title, od: i.created_at }));
   const zastavene = (await api(`repos/${REPO}/issues?state=open&labels=stop&per_page=100`))
     .map((i) => ({ cislo: i.number, titulek: i.title }));
+  // Smyčka oprav z review vyčerpala kola nebo narazila na cestu H2 (oprava-z-review.yml).
+  const potrebujiCloveka = (await api(`repos/${REPO}/issues?state=open&labels=potrebuje-cloveka&per_page=100`))
+    .filter((i) => i.pull_request)
+    .map((i) => ({ cislo: i.number, titulek: i.title }));
 
   const cekajiNaSouhlas = [];
   for (const p of await api(`repos/${REPO}/pulls?state=open&per_page=100`)) {
@@ -102,7 +106,7 @@ export async function nactiData(api, ted, tokeny = {}) {
     expirace[nazev] = token ? await expiraceTokenu(token) : 'chybi';
   }
 
-  return { od, ted, slouceno, rozhodnuti, navrhy, zastavene, cekajiNaSouhlas, cervenaMain, expirace };
+  return { od, ted, slouceno, rozhodnuti, navrhy, zastavene, cekajiNaSouhlas, potrebujiCloveka, cervenaMain, expirace };
 }
 
 /** Text přehledu: krátký do Telegramu, dlouhý (markdown) do souhrnu běhu. */
@@ -118,7 +122,9 @@ export function sestavPrehled(d, { vlastnik = 'tangero' } = {}) {
 
   // Telegram dostává prostý text s plnými adresami (bez parse_mode), takže se nemusí nic escapovat.
   const polozka = (znacka, cislo, titulek, pr = false) => `${znacka} #${cislo} ${zkrat(titulek)}\n${adresa(cislo, pr)}`;
+  const potrebujiCloveka = d.potrebujiCloveka || [];
   const cekajici = [
+    ...potrebujiCloveka.map((p) => polozka('PR potřebuje člověka:', p.cislo, p.titulek, true)),
     ...d.navrhy.map((n) => polozka('Návrh:', n.cislo, n.titulek)),
     ...d.cekajiNaSouhlas.map((p) => polozka('PR čeká na schvaleno:', p.cislo, p.titulek, true)),
   ];
@@ -132,6 +138,7 @@ export function sestavPrehled(d, { vlastnik = 'tangero' } = {}) {
     `Sloučeno PR: ${d.slouceno.length}`,
     `Rozhodnutí štítky: ${d.rozhodnuti.length} (zkontroluj v přehledu, co si nevybavíš)`,
     d.navrhy.length ? `Čeká na tebe: ${d.navrhy.length} návrhů, ${d.cekajiNaSouhlas.length} PR bez souhlasu` : `Čeká na tebe: ${d.cekajiNaSouhlas.length} PR bez souhlasu`,
+    potrebujiCloveka.length ? `PR, kde smyčka oprav z review skončila: ${potrebujiCloveka.length}` : '',
     d.cervenaMain.length ? `POZOR, červené CI na main: ${d.cervenaMain.join(', ')}\nhttps://github.com/${REPO}/commits/main` : '',
     ...tokenyPozor.map((t) => `POZOR, token ${t}`),
     ciziSchvaleni.length ? `POZOR, schvaleno z jiného účtu:\n${vypisPolozek(cizi, Infinity, MAX_POLOZEK).join('\n')}` : '',
@@ -160,6 +167,7 @@ export function sestavPrehled(d, { vlastnik = 'tangero' } = {}) {
     '## Čeká na vlastníka',
     ...radky(d.navrhy, (n) => `- návrh ${odkaz(n.cislo)} ${n.titulek} (od ${datum(n.od)})`, 'žádné návrhy'),
     ...radky(d.cekajiNaSouhlas, (p) => `- PR ${odkaz(p.cislo, true)} ${p.titulek}: brána čeká na \`schvaleno\``, 'žádné PR bez souhlasu'),
+    ...radky(potrebujiCloveka, (p) => `- PR ${odkaz(p.cislo, true)} ${p.titulek}: smyčka oprav z review skončila, štítek \`potrebuje-cloveka\``, 'žádné PR se štítkem potrebuje-cloveka'),
     '',
     '## Zastaveno štítkem stop',
     ...radky(d.zastavene, (z) => `- ${odkaz(z.cislo)} ${z.titulek}`, 'nic'),

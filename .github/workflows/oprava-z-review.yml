@@ -1,0 +1,229 @@
+# Oprava z review (#301, docs/navrh-rizeni-vyvoje-2027.md, oddíl 9d): na komentář `@claude` v PR
+# opraví Claude nálezy P1 a P2 z review asistenta zadání ve stejné větvi a do PR napíše, co opravil
+# a co ne. Nejvýš `review.max_kol_oprav` kol na PR (rezimy.yml), pak štítek `potrebuje-cloveka`.
+#
+# Pojistky:
+# - Spustí se jen na komentář vlastníka nebo asistenta zadání u PR, který založil jeden z nich,
+#   a nikdy u PR z forku (rozhoduje scripts/brana/oprava-z-review.mjs z main, kód z PR nespouští).
+# - `stop` na PR nebo propojeném issue a štítek `potrebuje-cloveka` zastaví další kola.
+# - Claude commituje jen lokálně a push nemá v povolených nástrojích. Pushne až krok workflow po kontrole,
+#   že oprava nemění cesty H2 a nepřepsala historii. GITHUB_TOKEN navíc nesmí měnit .github/workflows.
+# - Secrets: jen CLAUDE_CODE_OAUTH_TOKEN (předplatné vlastníka) a GITHUB_TOKEN. Nic neslučuje
+#   a štítky `schvaleno` ani `zamitnuto` nepřidává.
+# - Push přes GITHUB_TOKEN nespustí workflow Testy, proto ho poslední job spustí ručně
+#   (workflow_dispatch, náhled), aby měl nový commit kontroly i náhled.
+name: Oprava z review
+
+on:
+  issue_comment:
+    types: [created]
+
+permissions: {}
+
+concurrency:
+  group: oprava-z-review-${{ github.event.issue.number }}
+  cancel-in-progress: false
+
+jobs:
+  rozhodnuti:
+    name: Rozhodnutí
+    if: github.event.issue.pull_request && contains(github.event.comment.body, '@claude') && github.event.comment.user.type != 'Bot'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: read
+      issues: read
+      pull-requests: read
+    outputs:
+      akce: ${{ steps.rozhodni.outputs.akce }}
+      duvod: ${{ steps.rozhodni.outputs.duvod }}
+      kolo: ${{ steps.rozhodni.outputs.kolo }}
+      max: ${{ steps.rozhodni.outputs.max }}
+      vetev: ${{ steps.rozhodni.outputs.vetev }}
+      sha: ${{ steps.rozhodni.outputs.sha }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          persist-credentials: false
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+
+      - name: Závislosti
+        run: npm ci --ignore-scripts --no-audit --no-fund
+
+      - name: Rozhodnout
+        id: rozhodni
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: node scripts/brana/oprava-z-review.mjs rozhodni
+
+  strop:
+    name: Strop kol
+    needs: rozhodnuti
+    if: needs.rozhodnuti.outputs.akce == 'strop'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      issues: write
+      pull-requests: write
+    steps:
+      - name: Štítek potrebuje-cloveka
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PR: ${{ github.event.issue.number }}
+          DUVOD: ${{ needs.rozhodnuti.outputs.duvod }}
+        run: |
+          gh pr edit "$PR" --repo "$GITHUB_REPOSITORY" --add-label potrebuje-cloveka
+          gh pr comment "$PR" --repo "$GITHUB_REPOSITORY" --body "Smyčka oprav z review skončila: ${DUVOD}. PR dostal štítek \`potrebuje-cloveka\` a další \`@claude\` se nespustí. Zbylé nálezy P1 a P2 musí posoudit člověk.
+
+          — workflow Oprava z review"
+
+  oprava:
+    name: Oprava
+    needs: rozhodnuti
+    if: needs.rozhodnuti.outputs.akce == 'oprava'
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    permissions:
+      contents: write
+      pull-requests: write
+    outputs:
+      push: ${{ steps.push.outcome == 'success' }}
+    env:
+      GH_TOKEN: ${{ github.token }}
+      PR: ${{ github.event.issue.number }}
+      KOLO: ${{ needs.rozhodnuti.outputs.kolo }}
+      MAX: ${{ needs.rozhodnuti.outputs.max }}
+      VETEV: ${{ needs.rozhodnuti.outputs.vetev }}
+      PRED: ${{ needs.rozhodnuti.outputs.sha }}
+    steps:
+      # Značka kola se zapíše hned, aby se kolo počítalo i při selhání dalších kroků.
+      - name: Začátek kola
+        run: |
+          gh pr comment "$PR" --repo "$GITHUB_REPOSITORY" --body "## Oprava z review (kolo ${KOLO}/${MAX})
+
+          Začínám opravu nálezů z komentáře ${{ github.event.comment.html_url }} na commitu \`${PRED:0:7}\`.
+
+          <!-- oprava-z-review:kolo=${KOLO} -->"
+
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ needs.rozhodnuti.outputs.sha }}
+          fetch-depth: 0
+          persist-credentials: false
+
+      # Rozhodovací skript a konfigurace z main, ať je úprava ve větvi PR neovlivní.
+      - name: Skript kontroly z main
+        run: |
+          git fetch --no-tags --depth=1 origin main
+          mkdir -p "$RUNNER_TEMP/main"
+          git archive FETCH_HEAD scripts/brana package.json package-lock.json | tar -x -C "$RUNNER_TEMP/main"
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+
+      - name: Závislosti
+        run: |
+          npm ci --ignore-scripts --no-audit --no-fund
+          (cd "$RUNNER_TEMP/main" && npm ci --ignore-scripts --no-audit --no-fund)
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+      - name: Claude
+        id: claude
+        uses: anthropics/claude-code-action@v1
+        with:
+          claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          github_token: ${{ github.token }}
+          claude_args: >-
+            --max-turns 80
+            --allowedTools "Read,Edit,MultiEdit,Write,Glob,Grep,Bash(git status:*),Bash(git diff:*),Bash(git log:*),Bash(git add:*),Bash(git commit:*),Bash(npm test:*),Bash(npm run test:js:*),Bash(npm run test:mesto:*),Bash(npx tsc:*),Bash(npx eslint:*),Bash(node --experimental-strip-types --test:*)"
+          prompt: |
+            Jsi Claude Code ve workflow „Oprava z review“ repozitáře ${{ github.repository }}, PR #${{ github.event.issue.number }},
+            větev ${{ needs.rozhodnuti.outputs.vetev }}, kolo ${{ needs.rozhodnuti.outputs.kolo }} z ${{ needs.rozhodnuti.outputs.max }}.
+            Pravidla projektu jsou v CLAUDE.md a .claude/claude.md; mluv česky.
+
+            Úkol: oprav ve větvi PR nálezy P1 a P2 z komentáře níže. Nálezy P3 neopravuj, pokud o to komentář výslovně nežádá.
+            - Měň jen to, co nálezy vyžadují; žádné refaktory ani úpravy mimo nálezy.
+            - Neměň soubory z cest `h2` v .github/rezimy.yml (brána, rezimy.yml, labeler.yml, CLAUDE.md, .claude/…)
+              ani nic v .github/workflows. Když nález takovou změnu vyžaduje, neopravuj ho a napiš proč.
+            - Nic neslučuj, nepřidávej ani neodebírej štítky, nepushuj (push udělá workflow po kontrole).
+            - Po opravě spusť testy, které se změny týkají, a změny commitni (conventional commit, česky,
+              na konci řádek „Co-Authored-By: Claude <noreply@anthropic.com>“).
+            - Žádné osobní údaje v kódu, testech ani zprávách.
+
+            Na konci odpověz jen souhrnem v markdownu (bez nadpisu), který workflow vloží do PR:
+            „Opraveno:“ seznam nálezů s tím, co jsi změnil; „Neopraveno:“ seznam nálezů s důvodem; „Testy:“ co jsi spustil a výsledek.
+
+            Komentář s nálezy (od ${{ github.event.comment.user.login }}):
+            ---
+            ${{ github.event.comment.body }}
+            ---
+
+      - name: Kontrola před pushem
+        id: kontrola
+        # Jen po úspěšném běhu Claude: nedokončenou opravu (limit tahů, chyba) workflow nepushne.
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: node "$RUNNER_TEMP/main/scripts/brana/oprava-z-review.mjs" kontrola "$PRED"
+
+      - name: Push
+        id: push
+        if: steps.kontrola.outputs.push == 'true'
+        run: git push "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" "HEAD:refs/heads/${VETEV}"
+
+      - name: Zápis do PR
+        if: always()
+        env:
+          EXEC: ${{ steps.claude.outputs.execution_file }}
+          PUSH: ${{ steps.push.outcome == 'success' }}
+          CLAUDE: ${{ steps.claude.outcome }}
+          DUVOD: ${{ steps.kontrola.outputs.duvod || (steps.push.outcome == 'failure' && 'push selhal (větev se mezitím změnila?)') || '' }}
+          H2: ${{ steps.kontrola.outputs.h2 }}
+        run: |
+          souhrn=""
+          if [ -n "$EXEC" ] && [ -f "$EXEC" ]; then
+            souhrn=$(jq -r '[.[] | select(.type == "result")][-1].result // empty' "$EXEC" 2>/dev/null || true)
+          fi
+          [ -n "$souhrn" ] || souhrn="Claude nevrátil souhrn (podrobnosti v logu běhu)."
+          if [ "$PUSH" = "true" ]; then
+            stav="Commit: \`$(git rev-parse --short=7 HEAD)\` (pushnuto do \`${VETEV}\`)"
+          else
+            stav="Beze změny větve: ${DUVOD:-oprava neproběhla (Claude: ${CLAUDE:-nespuštěn})}"
+          fi
+          {
+            echo "## Oprava z review (kolo ${KOLO}/${MAX}): výsledek"
+            echo
+            echo "$stav"
+            echo
+            echo "$souhrn"
+            echo
+            echo "Běh: ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}"
+            echo
+            echo "— workflow Oprava z review (Claude Code)"
+          } > "$RUNNER_TEMP/vysledek.md"
+          gh pr comment "$PR" --repo "$GITHUB_REPOSITORY" --body-file "$RUNNER_TEMP/vysledek.md"
+          if [ -n "$H2" ]; then
+            gh pr edit "$PR" --repo "$GITHUB_REPOSITORY" --add-label potrebuje-cloveka
+          fi
+
+  testy:
+    name: Spuštění testů
+    needs: [rozhodnuti, oprava]
+    if: needs.oprava.outputs.push == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      actions: write
+    steps:
+      - name: Testy a náhled pro nový commit
+        env:
+          GH_TOKEN: ${{ github.token }}
+          VETEV: ${{ needs.rozhodnuti.outputs.vetev }}
+        run: gh workflow run testy.yml --repo "$GITHUB_REPOSITORY" --ref "$VETEV" -f deployment=preview

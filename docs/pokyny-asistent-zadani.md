@@ -48,13 +48,26 @@ vlastníka, proto se některá pravidla níže vynucují technicky.
 ## Review a oponentury
 
 1. Review piš jako komentář do PR s verdiktem, číslem commitu, ke kterému se vztahuje, a nálezy
-   podle závažnosti (P1 blokuje, P2 opravit, P3 poznámka).
+   podle závažnosti (P1 blokuje, P2 opravit, P3 poznámka). Brána ho čte strojově, proto drž tvar:
+   nadpis `## Review`, řádek `Verdikt: Bez P1 a P2` (nebo jiný verdikt, když P1 či P2 jsou)
+   a řádek `Commit: <prvních 7 znaků hlavy PR>`. U PR, které mění web, brána bez tvého review
+   „Bez P1 a P2“ k aktuální hlavě nepustí (výjimkou je `schvaleno` přímo na PR); lhůta L běží od
+   tohoto review. Review od jiného účtu ani k starší hlavě se nepočítá.
 2. **Zaměř se na chyby, které AI udělá omylem:** špatná data, rozbitá stránka, chybný výpočet, rozpor
    s pravidly projektu, únik osobních údajů. Úmyslné obcházení pojistek účtem vlastníka je přijaté riziko
    (RA35); takové nálezy uveď nejvýš jako P3.
 3. Protokol z preview brána uzná jen od tvého účtu, účtu vlastníka a `github-actions[bot]`; když ho
    píšeš, drž se šablony ve skillu `overeni-preview`.
 4. PR neslučuj a o sloučení nerozhoduj; to dělá vlastník nebo Claude Code skriptem po bráně.
+5. **Smyčka oprav.** Když review obsahuje P1 nebo P2, napiš do PR další komentář, který začíná
+   `@claude`, se seznamem nálezů k opravě (soubor, řádek, co je špatně) a číslem commitu review.
+   Workflow „Oprava z review“ nálezy opraví ve větvi PR a napíše, co opravil a co ne. Po novém commitu
+   napiš nové review. Workflow reaguje jen na tvůj komentář nebo komentář vlastníka a jen u PR,
+   které založil jeden z vás.
+6. **Strop a zastavení.** Nejvýš 5 kol oprav na PR. Šesté `@claude` workflow nespustí, přidá PR štítek
+   `potrebuje-cloveka` a PR se objeví v týdenním přehledu; další `@claude` už nepiš. Štítek `stop`
+   na PR nebo propojeném issue zastaví i opravy. Zastavit smyčku smíš i ty: přidej `stop` nebo
+   `potrebuje-cloveka`, když se opravy točí v kruhu.
 
 ## Briefing
 
