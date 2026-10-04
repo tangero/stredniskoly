@@ -394,7 +394,10 @@ Claude po nasazení preview projde každé kritérium „Hotovo když“ v prohl
 telefonu i počítače a do PR zapíše protokol (kritérium, adresa, splněno / nesplněno / nejde ověřit).
 Komentář začíná nadpisem „Protokol z preview“ a obsahuje řádek `Commit: <prvních 7 znaků hlavy>`;
 brána uzná jen protokol k aktuální hlavě a bez slova „nesplněno“. Mají-li kritéria uzavíraného zadání
-označení K1, K2… a protikritéria P1, P2…, protokol musí mít řádek pro každé z nich (#300). Změny jen v dokumentaci, testech
+označení K1, K2… a protikritéria P1, P2…, protokol musí mít řádek pro každé z nich (#300).
+Protokol píše samostatný ověřovatel (workflow „Ověření na náhledu“, #333), který zná jen kritéria a adresu
+náhledu, ne diff; protokol od relace, která změnu naprogramovala, je jen záloha a nese řádek
+`Ověřovatel: implementace (záloha)`. Změny jen v dokumentaci, testech
 a nastavení (`bez_preview` v `rezimy.yml`) protokol nepotřebují. Chybějící protokol nahradí platný souhlas
 vlastníka na PR (`schvaleno` na PR, vázaný na aktuální commit): vlastník tím potvrzuje, že změnu zkontroloval
 sám, nebo že ji ověřit nejde, například stránky za přihlášením (RA42). Protokol se slovem „nesplněno“ blokuje

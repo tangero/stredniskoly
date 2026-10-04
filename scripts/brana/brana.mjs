@@ -69,12 +69,17 @@ export function uzaviranaIssues(telo = '') {
  * kritérium je zrušené a protokol ho neuvádí; označení se nepřečíslovávají.
  */
 export function oznaceniKriterii(telo = '') {
-  const platna = new Set();
+  return [...new Set(kriteriaZadani(telo).map((k) => k.oznaceni))];
+}
+
+/** Platná kritéria K a P i s textem řádku (bez zaškrtávátka); pro ověřovatele náhledu (#333). */
+export function kriteriaZadani(telo = '') {
+  const kriteria = [];
   for (const radek of (telo || '').replace(/\r\n?/g, '\n').split('\n')) {
     const m = radek.match(RADEK_KRITERIA);
-    if (m && !m[1]) platna.add(m[2]);
+    if (m && !m[1]) kriteria.push({ oznaceni: m[2], text: radek.replace(/^\s*[-*]\s+(?:\[[ xX]\]\s+)?/, '').trim() });
   }
-  return [...platna];
+  return kriteria;
 }
 
 /** Označení, pro která protokol nemá řádek. Řádek tabulky nebo seznamu začíná označením. */
