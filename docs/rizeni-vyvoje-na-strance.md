@@ -7,7 +7,7 @@ podrobný dokument. Tato stránka slouží k rychlé orientaci, a kdyby se s ní
 
 | vstupy | AI průběžně | briefing (po, st, pá v 7:55) | vlastník |
 |---|---|---|---|
-| hlášení z webu, e-maily škol a rodičů, data CERMAT a MŠMT, návštěvnost, CI a nasazení | třídí, realizuje zadání a etapy (hodinová úloha), ověřuje na preview, dělá review (asistent zadání), slučuje automaticky přes bránu, hlídá rozpočet | asistent zadání v Grok Bot: nejvýš 3 nápady AI, zápis rozhodnutí potvrzený jedním „ok“ | rozhoduje štítkem, komentářem nebo na briefingu; zastaví cokoli štítkem `stop` |
+| hlášení z webu, e-maily škol a rodičů, data CERMAT a MŠMT, návštěvnost, CI a nasazení | třídí, realizuje zadání a etapy (pravidelná úloha Claude Code; návrh počítá s denní, vlastník ji 4. 10. 2026 pustil každou hodinu), ověřuje na preview, dělá review (asistent zadání), slučuje automaticky přes bránu, hlídá rozpočet | asistent zadání v Grok Bot: nejvýš 3 nápady AI, zápis rozhodnutí potvrzený jedním „ok“ | rozhoduje štítkem, komentářem nebo na briefingu; zastaví cokoli štítkem `stop` |
 
 Co se nasadilo, posílá asistent zadání po sloučení jako stručný souhrn lidskými slovy. Jednou týdně
 přijde přehled do Telegramu se vším, co AI rozhodla za vlastníka, ke zpětné kontrole. Na tabuli projektu
@@ -15,7 +15,7 @@ ukazuje pole „Na co čeká“ u každé karty jednou větou, kde věc stojí.
 
 ## Kdo co rozhoduje
 
-| běží samo (AI) | AI se souhlasem vlastníka nebo pojistkou | vždy vlastník |
+| běží samo (AI) | AI se souhlasem vlastníka (`schvaleno` na PR nebo zadání); od fáze 2 místo něj druhý klíč a karta | vždy vlastník |
 |---|---|---|
 | rutinní opravy z vlastních dat a kódu, drobná zadání s dokladem `Zdroj:` (po 48 h bez `stop`), etapy a drobné úkoly schválených projektů včetně připojených hlášení (hned), stahování z cizích serverů se zápisem zdroje, ověření na preview, sloučení, přehled | migrace databáze, e-maily odběratelům, portál a osobní údaje, SEO a adresy, závislosti, workflow, registr dat a slovník ukazatelů (`schvaleno` na PR nebo zadání), výdaje do limitu karty | nevyžádané rozesílky (školy, pořadatelé, novináři), rozšíření pravomocí AI (brána, `CLAUDE.md`, oprávnění workflow), právní závazky a placené zdroje, výdaje nad limit, směr a strategické projekty |
 
