@@ -75,10 +75,15 @@ export async function sloucit(api, cislo, { jenVyhodnotit = false, log = console
   if (!zaver.uspech || znovu.pr.hlava.sha !== vstup.pr.hlava.sha) {
     return { slouceno: false, duvod: `Před sloučením se stav změnil: ${zaver.duvody.join('; ')}; nesloučeno.` };
   }
-  await api(`repos/${REPO}/pulls/${cislo}/merge`, {
-    method: 'PUT',
-    body: { sha: vstup.pr.hlava.sha, merge_method: 'merge' },
-  });
+  try {
+    await api(`repos/${REPO}/pulls/${cislo}/merge`, {
+      method: 'PUT',
+      body: { sha: vstup.pr.hlava.sha, merge_method: 'merge' },
+    });
+  } catch (e) {
+    // Typicky konflikt s main (405) nebo nový push (409): PR zůstane otevřený, opraví ho jeho autor.
+    return { slouceno: false, duvod: `GitHub sloučení odmítl: ${String(e.stderr || e.message).trim().split('\n').pop()}` };
+  }
   log(`PR #${cislo} sloučen.`);
   return { slouceno: true };
 }

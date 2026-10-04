@@ -23,10 +23,18 @@ async function main() {
   const api = vytvorApi();
   const cisla = await pripravene(api);
   console.log(cisla.length ? `Brána pustila: ${cisla.map((n) => `#${n}`).join(', ')}` : 'Žádný PR, který by brána pustila.');
+  let chyba = false;
   for (const n of cisla) {
-    const v = await sloucit(api, n);
-    if (!v.slouceno) console.log(`#${n}: ${v.duvod}`);
+    try {
+      const v = await sloucit(api, n);
+      if (!v.slouceno) console.log(`#${n}: ${v.duvod}`);
+    } catch (e) {
+      // Chyba u jednoho PR nesmí zastavit ostatní.
+      chyba = true;
+      console.log(`::error::#${n}: ${e.message}`);
+    }
   }
+  if (chyba) process.exitCode = 1;
 }
 
 if (import.meta.url === pathToFileURL(process.argv[1] || '').href) await main();
