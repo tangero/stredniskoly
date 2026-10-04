@@ -138,7 +138,7 @@ export default async function PortalProfilPage({ searchParams }: Props) {
         <Link href={`/pro-skoly/kriteria?skola=${ja.redizo}`} className="font-semibold text-blue-700 underline">
           Zadat bodování po oborech
         </Link>
-        . Nový formulář je zatím pilotní; údaje v něm se uchazečům nezobrazují.
+        . Uložené bodování se uchazečům zobrazí na stránce oboru u oborů, které na webu vedeme.
       </div>
       <PortalEditForm auth={{ ucet: ja.redizo }} profil={profil} pole={PORTAL_POLE} vychoziEmail={ja.email} />
 
