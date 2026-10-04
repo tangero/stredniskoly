@@ -7,7 +7,11 @@ import { CitySchoolsTable } from '@/components/CitySchoolsTable';
 import { MESTA, getCityStats } from '@/lib/cityData';
 import { zobrazeneObdobi } from '@/lib/stav-datovych-sad';
 import { rokDruhehoKola } from '@/lib/druhe-kolo';
-import { dalsiOboryVeMeste } from '@/lib/kontext-prihlasek';
+import { dalsiOboryVeMeste, kategorieOboru, KATEGORIE_BEZ_JPZ, nactiIndexRejstriku } from '@/lib/kontext-prihlasek';
+import { getOkruheMesta } from '@/lib/okruhy-oboru';
+import { OkruhyVeMeste } from '@/components/OkruhyVeMeste';
+import type { OkruhKZobrazeni, RadekOkruhu } from '@/components/OkruhyVeMeste';
+import type { ZarazeniObtiznosti } from '@/lib/obor-profil';
 import { DalsiOboryVeMeste } from '@/components/DalsiOboryVeMeste';
 import { VeletrhVMeste } from '@/components/veletrhy/VeletrhVMeste';
 import type { CityStats, SchoolTypeStats, NationalTypeStats } from '@/lib/cityData';
@@ -189,6 +193,58 @@ function ExplainerBox({ title, children }: { title: string; children: React.Reac
   );
 }
 
+/** Nástavba: KKOV končí `L/5x`; lycea (`L/0x`) mezi ně nepatří. */
+function jeNastavba(klic: string): boolean {
+  return /-L\/5\d$/.test(klic.split('_')[1] ?? '');
+}
+
+/**
+ * Okruhy města s názvy z rejstříku a obtížností z katalogu. Obtížnost se ukáže, jen když ji mají
+ * všechny nabídky oboru stejnou; u oborů bez jednotné zkoušky žádná není.
+ */
+async function okruhyKZobrazeni(
+  data: Awaited<ReturnType<typeof getOkruheMesta>>,
+  obec: string,
+  schools: CityStats['schools'],
+): Promise<{ okruhy: OkruhKZobrazeni[]; nastavby: OkruhKZobrazeni[] }> {
+  const out = { okruhy: [] as OkruhKZobrazeni[], nastavby: [] as OkruhKZobrazeni[] };
+  if (!data) return out;
+  const { skoly, obory } = await nactiIndexRejstriku();
+  const zarazeni = new Map<string, Set<ZarazeniObtiznosti | null>>();
+  for (const s of schools) {
+    const k = `${s.redizo}_${s.id.split('_')[1] ?? ''}`;
+    zarazeni.set(k, (zarazeni.get(k) ?? new Set()).add(s.zarazeni));
+  }
+  for (const o of data.okruhy) {
+    const radky: RadekOkruhu[] = [];
+    for (const x of o.obory) {
+      const [redizo, kkov] = x.klic.split('_');
+      const skola = skoly[redizo]?.[0];
+      const nazevOboru = obory[kkov];
+      if (!skola || !nazevOboru) continue;
+      const z = zarazeni.get(x.klic);
+      radky.push({
+        klic: x.klic,
+        skola,
+        obor: nazevOboru,
+        obec: x.obec && x.obec !== obec ? x.obec : null,
+        uchazecu: x.uchazecu,
+        zarazeni: z && z.size === 1 ? [...z][0] : null,
+        bezJednoteZkousky: KATEGORIE_BEZ_JPZ.has(kategorieOboru(kkov)),
+      });
+    }
+    if (radky.length < 3) continue;
+    const nastavba = o.obory.every(x => jeNastavba(x.klic));
+    (nastavba ? out.nastavby : out.okruhy).push({
+      id: o.id,
+      uchazecu: o.uchazecu,
+      radky,
+      presun: o.presunNadSumem && o.rokPresunu ? { od: o.rokPresunu[0], do: o.rokPresunu[1] } : null,
+    });
+  }
+  return out;
+}
+
 export default async function MestoPage({ params }: Props) {
   const { mesto: mestoSlug } = await params;
   const mestoMeta = MESTA.find(m => m.slug === mestoSlug);
@@ -211,6 +267,8 @@ export default async function MestoPage({ params }: Props) {
     mestoMeta.nazev,
     new Set(schools.map(s => `${s.redizo}_${s.id.split('_')[1] ?? ''}`)),
   );
+  const okruheMesta = await getOkruheMesta(mestoMeta.nazev);
+  const { okruhy, nastavby } = await okruhyKZobrazeni(okruheMesta, mestoMeta.nazev, schools);
   const pocetSkol = new Set(schools.map(s => s.redizo)).size;
 
   return (
@@ -292,6 +350,9 @@ export default async function MestoPage({ params }: Props) {
           <div id="dalsi-obory" className="scroll-mt-24">
             <DalsiOboryVeMeste obory={dalsi.obory} minUchazecu={dalsi.minUchazecu} />
           </div>
+
+          {/* Okruhy oborů podle souběžných přihlášek; jen města, kde okruhy vycházejí */}
+          {okruheMesta && <OkruhyVeMeste okruhy={okruhy} nastavby={nastavby} rok={okruheMesta.rok} />}
 
           {/* Přehled podle typu školy */}
           <section>
