@@ -40,6 +40,7 @@ export function rozhodniOpravu({ komentar, pr, issues = [], konfig }) {
   if (pr.stav !== 'open') return nic('PR není otevřený');
   if (stopPlati(pr, konfig)) return nic('PR má štítek stop');
   for (const i of issues) if (stopPlati(i, konfig)) return nic(`issue #${i.cislo} má štítek stop`);
+  for (const i of issues) if (i.rodic && stopPlati(i.rodic, konfig)) return nic(`projekt #${i.rodic.cislo} (rodič issue #${i.cislo}) má štítek stop`);
   if (pr.stitky.includes(STITEK_CLOVEK)) return nic(`PR má štítek ${STITEK_CLOVEK}`);
   const kola = pocetKol(pr.komentare);
   if (kola >= max) return { akce: 'strop', duvod: `proběhlo ${kola} z ${max} kol oprav`, max };
@@ -54,6 +55,7 @@ export function vetoTed({ pr, issues = [], konfig }) {
   if (pr.stav !== 'open') return { ok: false, duvod: 'PR není otevřený' };
   if (stopPlati(pr, konfig)) return { ok: false, duvod: 'PR má štítek stop' };
   for (const i of issues) if (stopPlati(i, konfig)) return { ok: false, duvod: `issue #${i.cislo} má štítek stop` };
+  for (const i of issues) if (i.rodic && stopPlati(i.rodic, konfig)) return { ok: false, duvod: `projekt #${i.rodic.cislo} (rodič issue #${i.cislo}) má štítek stop` };
   if (pr.stitky.includes(STITEK_CLOVEK)) return { ok: false, duvod: `PR má štítek ${STITEK_CLOVEK}` };
   return { ok: true, duvod: 'bez veta' };
 }

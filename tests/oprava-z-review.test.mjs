@@ -70,6 +70,10 @@ test('veto těsně před kolem a před pushem', () => {
   assert.equal(vetoTed({ pr: pr({ stitky: [STITEK_CLOVEK] }), konfig }).ok, false);
   assert.equal(vetoTed({ pr: pr({ stav: 'closed' }), konfig }).ok, false);
   assert.match(vetoTed({ pr: pr(), issues: [{ cislo: 10, stitky: ['stop'], udalosti: [] }], konfig }).duvod, /issue #10/);
+  // Zastavený projekt (rodič sub-issue) zastaví i opravy, stejně jako bránu.
+  const sub = { cislo: 11, stitky: ['interni'], udalosti: [], rodic: { cislo: 9, stitky: ['projekt', 'stop'], udalosti: [] } };
+  assert.match(vetoTed({ pr: pr(), issues: [sub], konfig }).duvod, /projekt #9/);
+  assert.match(rozhodni({ issues: [sub] }).duvod, /projekt #9/);
 });
 
 test('přejmenování a neescapované názvy: kontrola H2 vidí obě cesty', () => {
