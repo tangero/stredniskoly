@@ -30,7 +30,7 @@ schvaluje je Patrick. Stav issue vyjadřují štítky:
 | `projekt` | práce s cílem a etapami; etapy v dohodnutém rozsahu bez lhůty |
 | `puvod:hlaseni`, `puvod:email` | zadání z veřejného hlášení nebo neověřeného e-mailu; jen se `schvaleno` |
 | `zamitnuto` | nerealizovat |
-| `k-overeni` | hotovo v PR, čeká na kontrolu na Vercel preview |
+| `k-overeni` | otevřený PR s protokolem z preview; po sloučení ho z otevřeného issue (etapa projektu) odebere workflow Tabule |
 | `pripominka` | úkol s termínem (řádek `Termín: RRRR-MM-DD` v těle issue nebo pole Termín formuláře); před termínem se nerealizuje |
 
 Nastavení GitHubu (formuláře, tabule projektu, ochrana `main`) popisuje `docs/spoluprace-na-githubu.md`.

@@ -14,7 +14,7 @@ dokument popisuje nastavení GitHubu, na kterém stojí.
 | `navrh` | čeká na schválení Patrickem, nerealizovat |
 | `schvaleno` | Claude Code může realizovat; přidává jen Patrick |
 | `zamitnuto` | nerealizovat |
-| `k-overeni` | hotovo v PR, čeká na kontrolu na Vercel preview |
+| `k-overeni` | otevřený PR s protokolem z preview (ověřuje AI, vlastník volitelně); po sloučení ho z otevřeného issue (etapa projektu) odebere workflow Tabule |
 | `pripominka` | úkol s termínem; před termínem se nerealizuje |
 | `bug-report`, `portal-skoly`, `feature-request` | veřejná hlášení (tlačítko na webu, portál škol) |
 
@@ -56,7 +56,7 @@ při každé změně štítků, issues a PR, po každém běhu brány sloučení
 | Hotovo | zavřené issue | |
 
 Workflow navíc při přidání `schvaleno` odebere `navrh` a při odebrání `schvaleno` vrátí otevřené
-interní zadání do `navrh`; řídí se aktuálními štítky issue, ne pořadím doručených událostí. Stavy hledá podle názvu; chybějící stav jen ohlásí varováním v běhu.
+interní zadání do `navrh`; řídí se aktuálními štítky issue, ne pořadím doručených událostí. Po sloučení PR odebere `k-overeni` z propojených issues, která zůstala otevřená (etapy projektu). Stavy hledá podle názvu; chybějící stav jen ohlásí varováním v běhu.
 Karty PR nemění.
 
 Potřebuje secret `PROJECT_TOKEN`, klasický token se scopes `project` a `public_repo` (fine-grained token
