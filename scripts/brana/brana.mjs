@@ -17,8 +17,9 @@ const HODINA = 60 * 60 * 1000;
 const ZDROJ = /^Zdroj:\s*(briefing \d{4}-\d{2}-\d{2}|oprava od školy \d{4}-\d{2}-\d{2}-\d{9}|vlastník)\s*$/im;
 const ODKAZ_NA_ISSUE = /\b(?:close[sd]?|fix(?:e[sd])?|resolve[sd]?|souvisí s|souvisi s)\s*:?\s*#(\d+)/gi;
 const UZAVRENI_ISSUE = /\b(?:close[sd]?|fix(?:e[sd])?|resolve[sd]?)\s*:?\s*#(\d+)/gi;
-// Řádek kritéria v těle zadání: „- [ ] K1: …“, „- P2: …“, „P1: …“ bez odrážky, zrušené „- [ ] ~~K3: …~~“.
-const RADEK_KRITERIA = /^\s*(?:[-*]\s+)?(?:\[[ xX]\]\s+)?(~~)?\s*([KP]\d+(?:\.\d+)*)\s*:/;
+// Řádek kritéria v těle zadání: „- [ ] K1: …“, „- P2: …“, „P1: …“ bez odrážky, tučné „- **P1:** …“,
+// zrušené „- [ ] ~~K3: …~~“.
+const RADEK_KRITERIA = /^\s*(?:[-*]\s+)?(?:\[[ xX]\]\s+)?(~~)?\s*(?:\*\*)?([KP]\d+(?:\.\d+)*)(?:\*\*)?\s*:/;
 
 // Záznamy, které brána sama píše do komentářů (autor BOT). Jinému autorovi nevěří.
 export const ZNACKA = {
@@ -99,7 +100,9 @@ export function oddilProtokolu(telo = '', commit = '') {
     const nadpis = r.trim().match(/^#+/);
     // Tučný nadpis nemá úroveň: oddíl končí prvním markdown nadpisem.
     const uroven = nadpis ? nadpis[0].length : 6;
-    const konec = radky.findIndex((x, i) => i > start && /^#+\s/.test(x.trim()) && x.trim().match(/^#+/)[0].length <= uroven);
+    // Konec: markdown nadpis stejné nebo vyšší úrovně, nebo další nadpis protokolu (i tučný).
+    const konec = radky.findIndex((x, i) => i > start && ((/^#+\s/.test(x.trim()) && x.trim().match(/^#+/)[0].length <= uroven)
+      || /^\s*\*\*\s*Protokol z preview/i.test(x)));
     oddily.push(radky.slice(start, konec < 0 ? undefined : konec).join('\n'));
   });
   // Víc protokolů v jednom textu: platí poslední oddíl s aktuálním commitem, ne starší protokol nad ním.

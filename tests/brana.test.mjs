@@ -129,6 +129,7 @@ test('kritérium zmíněné mimo oddíl protokolu se nepočítá', () => {
   const v2 = run({ issues: [issue({ telo: TELO_K })], pr: pr({ komentare: [{ autor: 'tangero', cas: PRED(55), telo: dva }] }) });
   assert.match(v2.duvody.join(), /neuvádí kritéria z issue #10: K2, K3, P1$/);
   assert.equal(oddilProtokolu('**Protokol z preview**\n| K1 | ok |\n## Jiné\n| K2 | ok |'), '**Protokol z preview**\n| K1 | ok |');
+  assert.equal(oddilProtokolu('**Protokol z preview**\nCommit: aaaaaaa\n| K1 | ok |\n**Protokol z preview**\nCommit: bbbbbbb\n| K2 | ok |', 'aaaaaaa'), '**Protokol z preview**\nCommit: aaaaaaa\n| K1 | ok |');
 });
 
 test('zadání bez označení K a P a etapa se „Souvisí s“ se posuzují jako dřív', () => {
@@ -144,6 +145,7 @@ test('označení kritérií: rozdělení, zrušení a řádek protokolu', () => 
   assert.deepEqual(oznaceniKriterii('Zdroj: vlastník\n- [ ] věta bez označení'), []);
   // Protikritérium podle příkladu z formuláře, bez odrážky.
   assert.deepEqual(oznaceniKriterii('- [ ] K1: a\nP1: adresy v sitemap beze změny - ověření: npm run build'), ['K1', 'P1']);
+  assert.deepEqual(oznaceniKriterii('- **P1:** adresy beze změny\n- [ ] **K2**: b'), ['P1', 'K2']);
   // K1 neplatí za K10 ani K1.2; řádek seznamu i tabulky se počítá.
   assert.deepEqual(chybejiciVProtokolu(['K1', 'K3.1', 'P1'], '| K10 | splněno |\n| K1.2 | splněno |\n- K3.1: splněno\n|P1|splněno|'), ['K1']);
   assert.deepEqual(uzaviranaIssues('Closes #10\nSouvisí s #11\nFixes #12'), [10, 12]);
