@@ -105,8 +105,10 @@ export async function nactiVazby(api) {
       if ((i.labels || []).some((l) => STITKY_HLASENI.includes(l.name))) {
         try {
           rodic = (await api(`repos/${REPO}/issues/${i.number}/parent`))?.number || null;
-        } catch {
-          rodic = null; // 404: bez rodiče
+        } catch (e) {
+          // 404: bez rodiče. Jinou chybu (5xx, limit) jen ohlásit; věta na kartě pak bude méně přesná.
+          if (!/\b404\b/.test(`${e.message} ${e.stderr || ''}`)) console.log(`::warning::Rodiče issue #${i.number} nešlo načíst: ${e.message}`);
+          rodic = null;
         }
       }
       vazby.set(i.number, { rodic, ukoly: i.sub_issues_summary || null });

@@ -8,7 +8,8 @@ name: Sloučení
 
 on:
   workflow_run:
-    workflows: ["Brána sloučení"]
+    # Po bráně, a po testech: brána bývá hotová dřív než povinné testy a sloučení pak GitHub odmítne.
+    workflows: ["Brána sloučení", "Testy"]
     types: [completed]
   workflow_dispatch:
 
