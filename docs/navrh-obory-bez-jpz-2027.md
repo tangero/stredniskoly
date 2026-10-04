@@ -745,3 +745,13 @@ zopakovat jedním příkazem. Níže verdikt ke každé námitce s důkazem:
 
 
 ...[truncated 16692 chars]
+### 16.2 Etapa 1 (data): výstup `src/data/obory-bez-jpz-2026.json`
+
+Skript `scripts/build-obory-bez-jpz.py` (test `tests/test_obory_bez_jpz.py`) čte jen místní zdroje a zapíše
+jediný nový soubor, který web zatím nečte; stávající výstupy webu a filtr `is_valid_flat` se nemění.
+Obsahuje 2 902 denních nezkrácených nabídek bez JPZ (po kategoriích C 200, E 524, H 1 777, J 8, L 31,
+M 216, P 146), 72 nedenních nástaveb L/51 s příznakem `pokracovani`, protějšek z roku 2025 (2 800 spárovaných,
+102 nových), 2. kolo (1 261 spárovaných) a domovy mládeže a internáty podle REDIZO (438 škol; jen název, druh,
+kapacita a obec). `ID_SOF` je v každé nabídce, odkaz na PDF v DiPSy se tedy páruje přes něj, ne přes REDIZO
+(oddíl 16.1, bod 1). Chybějící počet zůstává `null`; `zbyla_mista` se počítá jen tam, kde je kapacita i přijatí.
+Zobrazení, slovníky a registr jsou etapy 3 a 4.
