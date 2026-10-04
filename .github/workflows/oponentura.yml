@@ -65,7 +65,7 @@ jobs:
           mkdir -p .oponentura
           gh api "repos/$GH_REPO/issues/$CISLO" > .oponentura/issue.json
           gh api --paginate "repos/$GH_REPO/issues/$CISLO/comments" | jq -s 'add // []' > .oponentura/komentare.json
-          jq -r '"# #\(.number) \(.title)\n\nAutor: \(.user.login)\nŠtítky: \([.labels[].name] | join(", "))\n\n\(.body // "")"' .oponentura/issue.json > .oponentura/issue.md
+          jq -r '"# Issue #\(.number): \(.title)\n\nAutor: \(.user.login)\nŠtítky: \([.labels[].name] | join(", "))\n\n\(.body // "")"' .oponentura/issue.json > .oponentura/issue.md
           jq -r '.[] | "\n---\n\n**\(.user.login)**, \(.created_at):\n\n\(.body // "")"' .oponentura/komentare.json >> .oponentura/issue.md
           if jq -e '.pull_request' .oponentura/issue.json > /dev/null; then echo "::error::#$CISLO je PR, ne issue."; exit 1; fi
           wc -c .oponentura/issue.md
@@ -74,12 +74,21 @@ jobs:
         with:
           node-version: "22"
 
+      # Připnutá verze bez skriptů závislostí; binárku (volitelná závislost téže verze) propojí jen install.cjs
+      # samotného balíčku. Novou verzi připni až po ověření s Kimi.
       - name: Claude Code
-        run: npm install -g @anthropic-ai/claude-code --no-audit --no-fund
+        env:
+          VERZE: "2.1.289"
+        run: |
+          npm install -g "@anthropic-ai/claude-code@$VERZE" --ignore-scripts --no-audit --no-fund
+          node "$(npm root -g)/@anthropic-ai/claude-code/install.cjs"
+          claude --version
 
       - name: Oponentura (Kimi K3)
         env:
-          ANTHROPIC_BASE_URL: https://api.kimi.ai/coding/
+          # Mezinárodní rozhraní Kimi Code; pro účet z kimi.com (Čína) nastav proměnnou repozitáře
+          # KIMI_BASE_URL na https://api.kimi.com/coding/.
+          ANTHROPIC_BASE_URL: ${{ vars.KIMI_BASE_URL || 'https://api.kimi.ai/coding/' }}
           ANTHROPIC_API_KEY: ${{ secrets.KIMI_API_KEY }}
           ANTHROPIC_MODEL: ${{ env.MODEL }}
           ANTHROPIC_DEFAULT_OPUS_MODEL: ${{ env.MODEL }}

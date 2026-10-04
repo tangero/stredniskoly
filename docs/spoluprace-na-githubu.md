@@ -88,7 +88,9 @@ model `k3-256k`). Model jen čte (Read, Glob, Grep; bez shellu, zápisu a sítě
 otázky). Pak štítek odebere a issue bez `navrh` a `schvaleno` vrátí do `navrh`, takže karta jde zpět k vlastníkovi.
 Znovu se spustí odebráním a přidáním štítku nebo ručně (Run workflow, číslo issue). Potřebuje secret
 `KIMI_API_KEY` (klíč z konzole Kimi Code, ne z platform.moonshot.ai) a `PROJECT_TOKEN` na změnu štítků,
-aby se srovnala tabule. Kimi je třetí rodina modelů vedle Grok (asistent zadání) a Claude (Claude Code),
+aby se srovnala tabule. Výchozí je mezinárodní rozhraní `https://api.kimi.ai/coding/`; účet z kimi.com (Čína)
+potřebuje proměnnou repozitáře `KIMI_BASE_URL` s hodnotou `https://api.kimi.com/coding/`. Verze Claude Code
+je ve workflow připnutá; novější připni až po ověření s Kimi. Kimi je třetí rodina modelů vedle Grok (asistent zadání) a Claude (Claude Code),
 takže posuzuje návrhy obou nezávisle.
 
 Potřebuje secret `PROJECT_TOKEN`, klasický token se scopes `project` a `public_repo` (fine-grained token
