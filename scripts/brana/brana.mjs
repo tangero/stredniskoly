@@ -17,8 +17,8 @@ const HODINA = 60 * 60 * 1000;
 const ZDROJ = /^Zdroj:\s*(briefing \d{4}-\d{2}-\d{2}|oprava od školy \d{4}-\d{2}-\d{2}-\d{9}|vlastník)\s*$/im;
 const ODKAZ_NA_ISSUE = /\b(?:close[sd]?|fix(?:e[sd])?|resolve[sd]?|souvisí s|souvisi s)\s*:?\s*#(\d+)/gi;
 const UZAVRENI_ISSUE = /\b(?:close[sd]?|fix(?:e[sd])?|resolve[sd]?)\s*:?\s*#(\d+)/gi;
-// Řádek kritéria v těle zadání: „- [ ] K1: …“, „- P2: …“, zrušené „- [ ] ~~K3: …~~“.
-const RADEK_KRITERIA = /^\s*[-*]\s+(?:\[[ xX]\]\s+)?(~~)?\s*([KP]\d+(?:\.\d+)*)\s*:/;
+// Řádek kritéria v těle zadání: „- [ ] K1: …“, „- P2: …“, „P1: …“ bez odrážky, zrušené „- [ ] ~~K3: …~~“.
+const RADEK_KRITERIA = /^\s*(?:[-*]\s+)?(?:\[[ xX]\]\s+)?(~~)?\s*([KP]\d+(?:\.\d+)*)\s*:/;
 
 // Záznamy, které brána sama píše do komentářů (autor BOT). Jinému autorovi nevěří.
 export const ZNACKA = {
@@ -86,16 +86,17 @@ export function chybejiciVProtokolu(oznaceni, teloProtokolu = '') {
 }
 
 /**
- * Oddíl protokolu z preview: od řádku s nadpisem „Protokol z preview“ po další nadpis stejné nebo vyšší
- * úrovně. Zmínka kritéria jinde v textu (třeba v popisu změn PR) tak ověření nenahradí.
+ * Oddíl protokolu z preview: od nadpisu „Protokol z preview“ (markdown nadpis, nebo tučný řádek) po další
+ * nadpis stejné nebo vyšší úrovně. Zmínka kritéria jinde v textu (třeba v popisu změn PR) ani věta
+ * „protokol z preview je níže“ tak ověření nenahradí. Bez nadpisu je oddíl prázdný.
  */
 export function oddilProtokolu(telo = '') {
   const radky = (telo || '').replace(/\r\n?/g, '\n').split('\n');
-  const start = radky.findIndex((r) => /Protokol z preview/i.test(r));
+  const start = radky.findIndex((r) => /^\s*(?:#{1,6}\s*|\*\*\s*)Protokol z preview/i.test(r));
   if (start < 0) return '';
   const nadpis = radky[start].trim().match(/^#+/);
-  if (!nadpis) return radky.slice(start).join('\n');
-  const uroven = nadpis[0].length;
+  // Tučný nadpis nemá úroveň: oddíl končí prvním markdown nadpisem.
+  const uroven = nadpis ? nadpis[0].length : 6;
   const konec = radky.findIndex((r, i) => i > start && /^#+\s/.test(r.trim()) && r.trim().match(/^#+/)[0].length <= uroven);
   return radky.slice(start, konec < 0 ? undefined : konec).join('\n');
 }

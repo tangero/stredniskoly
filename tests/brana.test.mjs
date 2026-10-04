@@ -120,7 +120,11 @@ test('kritérium zmíněné mimo oddíl protokolu se nepočítá', () => {
   const v = run({ issues: [issue({ telo: TELO_K })], pr: pr({ telo, komentare: [] }) });
   assert.equal(v.uspech, false);
   assert.match(v.duvody.join(), /neuvádí kritéria z issue #10: K3$/);
-  assert.equal(oddilProtokolu('úvod\n### Protokol z preview\n| K1 | ok |\n#### Snímky\n| K2 | ok |\n## Další\n| K3 | ok |'), '### Protokol z preview\n| K1 | ok |\n#### Snímky\n| K2 | ok |');
+  assert.equal(oddilProtokolu('úvod\n### Protokol z preview\n| K1 | ok |\n#### Snímky\n| K2 | ok |\n## Další\n| K3 | ok |'), '### Protokol z preview\n| K1 | ok |\n#### Snímky\n| K2 | ok |');  // Věta o protokolu před popisem změn oddíl nezačíná; bez nadpisu je oddíl prázdný.
+  const veta = `Closes #10\n\nProtokol z preview je uveden níže.\n\n## Co se změnilo\n- K3: přidána karta\n\n## Protokol z preview\nCommit: ${SHA.slice(0, 7)}\n| K1: věta | splněno |\n| K2: odkaz | splněno |\n| P1: sitemap | splněno |`;
+  assert.match(run({ issues: [issue({ telo: TELO_K })], pr: pr({ telo: veta, komentare: [] }) }).duvody.join(), /neuvádí kritéria z issue #10: K3$/);
+  assert.equal(oddilProtokolu('Protokol z preview níže\n| K1 | ok |'), '');
+  assert.equal(oddilProtokolu('**Protokol z preview**\n| K1 | ok |\n## Jiné\n| K2 | ok |'), '**Protokol z preview**\n| K1 | ok |');
 });
 
 test('zadání bez označení K a P a etapa se „Souvisí s“ se posuzují jako dřív', () => {
@@ -134,6 +138,8 @@ test('označení kritérií: rozdělení, zrušení a řádek protokolu', () => 
   const telo = '- [ ] K1: a\n- [ ] ~~K3: rozdělené~~\n- [ ] K3.1: b\n- [x] K3.2: c\n- P1: d\nText K9: není seznam';
   assert.deepEqual(oznaceniKriterii(telo), ['K1', 'K3.1', 'K3.2', 'P1']);
   assert.deepEqual(oznaceniKriterii('Zdroj: vlastník\n- [ ] věta bez označení'), []);
+  // Protikritérium podle příkladu z formuláře, bez odrážky.
+  assert.deepEqual(oznaceniKriterii('- [ ] K1: a\nP1: adresy v sitemap beze změny - ověření: npm run build'), ['K1', 'P1']);
   // K1 neplatí za K10 ani K1.2; řádek seznamu i tabulky se počítá.
   assert.deepEqual(chybejiciVProtokolu(['K1', 'K3.1', 'P1'], '| K10 | splněno |\n| K1.2 | splněno |\n- K3.1: splněno\n|P1|splněno|'), ['K1']);
   assert.deepEqual(uzaviranaIssues('Closes #10\nSouvisí s #11\nFixes #12'), [10, 12]);
