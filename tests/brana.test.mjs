@@ -4,7 +4,7 @@ import fs from 'node:fs';
 import yaml from 'js-yaml';
 import {
   vyhodnot, rozsah, otisk, propojenaIssues, zaznamSouhlasu, souhlasIssue, rozbor, zamrznuto, ZNACKA, BOT,
-  stavLhuty, externiId, ctiExterniId,
+  stavLhuty, externiId, ctiExterniId, oznaceniKriterii, chybejiciVProtokolu, uzaviranaIssues,
 } from '../scripts/brana/brana.mjs';
 import { oblastiZLabeleru } from '../scripts/brana/data.mjs';
 import { odpovedNaZadost } from '../scripts/brana/sloucit.mjs';
@@ -89,6 +89,46 @@ test('bez protokolu z preview pro aktuální hlavu neprojde', () => {
   assert.equal(stary.uspech, false);
   const nesplneno = run({ pr: pr({ komentare: [protokolKomentar(SHA, 'nesplněno')] }) });
   assert.match(nesplneno.duvody.join(), /nesplněné/);
+});
+
+const TELO_K = `Zdroj: vlastník
+
+### Hotovo když
+
+- [ ] K1: věta na stránce - ověření: náhled
+- [x] K2: odkaz na kalendář - ověření: náhled
+- [ ] K3: karta školy - ověření: náhled
+
+### Nesmí se dotknout / omezení
+
+- P1: adresy v sitemap beze změny - ověření: npm run build`;
+const protokolK = (radky) => ({
+  autor: 'tangero', cas: PRED(55),
+  telo: `## Protokol z preview\nCommit: ${SHA.slice(0, 7)}\n| kritérium | 390 px |\n|---|---|\n${radky.map((r) => `| ${r} | splněno |`).join('\n')}`,
+});
+
+test('protokol musí uvést každé kritérium K a P z uzavíraného zadání', () => {
+  const chybi = run({ issues: [issue({ telo: TELO_K })], pr: pr({ komentare: [protokolK(['K1: věta', 'K2: odkaz', 'P1: sitemap'])] }) });
+  assert.equal(chybi.uspech, false);
+  assert.match(chybi.duvody.join(), /neuvádí kritéria z issue #10: K3$/);
+  const vse = run({ issues: [issue({ telo: TELO_K })], pr: pr({ komentare: [protokolK(['K1: věta', 'K2: odkaz', 'K3: karta', 'P1: sitemap'])] }) });
+  assert.equal(vse.uspech, true, vse.duvody.join('; '));
+});
+
+test('zadání bez označení K a P a etapa se „Souvisí s“ se posuzují jako dřív', () => {
+  const stare = run();
+  assert.equal(stare.uspech, true, stare.duvody.join('; '));
+  const etapa = run({ issues: [issue({ telo: TELO_K })], pr: pr({ telo: 'Souvisí s #10', komentare: [protokolK(['K1: věta'])] }) });
+  assert.doesNotMatch(etapa.duvody.join(), /neuvádí kritéria/);
+});
+
+test('označení kritérií: rozdělení, zrušení a řádek protokolu', () => {
+  const telo = '- [ ] K1: a\n- [ ] ~~K3: rozdělené~~\n- [ ] K3.1: b\n- [x] K3.2: c\n- P1: d\nText K9: není seznam';
+  assert.deepEqual(oznaceniKriterii(telo), ['K1', 'K3.1', 'K3.2', 'P1']);
+  assert.deepEqual(oznaceniKriterii('Zdroj: vlastník\n- [ ] věta bez označení'), []);
+  // K1 neplatí za K10 ani K1.2; řádek seznamu i tabulky se počítá.
+  assert.deepEqual(chybejiciVProtokolu(['K1', 'K3.1', 'P1'], '| K10 | splněno |\n| K1.2 | splněno |\n- K3.1: splněno\n|P1|splněno|'), ['K1']);
+  assert.deepEqual(uzaviranaIssues('Closes #10\nSouvisí s #11\nFixes #12'), [10, 12]);
 });
 
 test('změna jen v dokumentaci protokol nepotřebuje', () => {

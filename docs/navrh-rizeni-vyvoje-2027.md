@@ -360,7 +360,8 @@ v těle projektu a PR je zavírá přes `Closes`.
 Claude po nasazení preview projde každé kritérium „Hotovo když“ v prohlížeči (Playwright) na šířce
 telefonu i počítače a do PR zapíše protokol (kritérium, adresa, splněno / nesplněno / nejde ověřit).
 Komentář začíná nadpisem „Protokol z preview“ a obsahuje řádek `Commit: <prvních 7 znaků hlavy>`;
-brána uzná jen protokol k aktuální hlavě a bez slova „nesplněno“. Změny jen v dokumentaci, testech
+brána uzná jen protokol k aktuální hlavě a bez slova „nesplněno“. Mají-li kritéria uzavíraného zadání
+označení K1, K2… a protikritéria P1, P2…, protokol musí mít řádek pro každé z nich (#300). Změny jen v dokumentaci, testech
 a nastavení (`bez_preview` v `rezimy.yml`) protokol nepotřebují.
 U vizuálních změn přidá snímky před a po jako artefakt běhu nebo v komentáři PR. Protokol je podmínkou brány.
 Předpoklady (fáze 1): secret `VERCEL_AUTOMATION_BYPASS_SECRET`, Playwright a přístup na `*.vercel.app`
