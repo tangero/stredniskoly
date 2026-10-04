@@ -230,7 +230,7 @@ export function PortalKriteriaForm({ redizo, roky, nabidky, ulozena, podklady, p
     <section className="rounded-xl border border-slate-200 bg-white p-4 shadow-sm sm:p-6" aria-labelledby="kriteria-nadpis">
       <h2 id="kriteria-nadpis" className="text-lg font-semibold text-slate-900">Bodování po oborech</h2>
       <p className="mt-2 text-sm text-slate-600">U každého oboru a ročníku zadejte, za co a kolik bodů uchazeč dostane. Pravidla můžou platit pro všechna kola, nebo jen pro konkrétní kolo; pravidlo kola má přednost.</p>
-      <p className="mt-2 text-sm text-slate-600">Toto je pilotní zadávání. Uložené údaje se zatím nezobrazují uchazečům.</p>
+      <p className="mt-2 text-sm text-slate-600">Uložené bodování se uchazečům zobrazí na stránce oboru u oborů, které na webu vedeme.</p>
       {keSparovani.length > 0 && <div role="alert" className="mt-4 rounded-lg border border-amber-300 bg-amber-50 p-3 text-sm text-amber-950">
         <strong>Plánované záznamy vyžadují kontrolu párování s kartami {rokNovy}.</strong>
         <ul className="mt-1 list-disc pl-5">{keSparovani.map((z) => <li key={z.id}>
