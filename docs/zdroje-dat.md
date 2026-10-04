@@ -1,6 +1,6 @@
 # Zdroje dat
 
-Verze 1.27 · 3. 10. 2026 · **Závazný soupis. Před návrhem stránky nebo funkce se prochází celý.**
+Verze 1.28 · 4. 10. 2026 · **Závazný soupis. Před návrhem stránky nebo funkce se prochází celý.**
 
 Tenhle dokument vznikl kvůli konkrétní chybě. Návrh stránky školy jsem sestavil z toho, co web už zobrazoval, místo z toho, co je ve zdrojových souborech. Tři užitečné údaje proto ležely nepoužité v souborech, které jsem měl otevřené: rozpad přihlášek podle priority jako podíl, souběžné přihlášky uchazečů a nejnižší výsledek jednotné zkoušky mezi přijatými. Poslední z nich byl dokonce už spočítaný a uložený v katalogu, zatímco [slovník ukazatelů](slovnik-ukazatelu.md) tvrdil, že ho nemáme.
 
@@ -558,6 +558,7 @@ Zamítnuta je i **krajová míra nezaměstnanosti za skupinu oborů**: odpovíd�
 4. **Chybějící údaj není nula.** U indexu obtížnosti se takhle 386 oborů bez dat tvářilo jako nejsnazší.
 5. **Data uchazečů zaostávají za souhrny.** Web má přihlášky, kapacity a výsledky za rok 2026, ale data uchazečů jen za rok 2025, a to v předběžné verzi. CERMAT data uchazečů za rok 2026 zveřejnil už 20. 5. 2026; nepřevzali jsme je. Cokoli z uchazečů odvozeného je proto zatím za rok 2025. Do 13. 9. 2026 tu stálo, že data za rok 2026 neexistují.
 6. **Malé počty.** 1 586 ze 4 350 oborů má méně než deset přijatých. Minimum a medián jsou tam velmi kolísavé.
+7. **Zkrácený název školy z rejstříku není jedinečný.** Index názvů (`nazvy-oboru.json`, pole `skoly`) nese `zkracenyNazev`, a ten je u 97 škol jen „Gymnázium“, u desítek dalších „Obchodní akademie“ nebo „Střední odborné učiliště“. Řádek seznamu s takovým názvem školu neurčí a seskupení podle názvu slije různé školy. Pro zobrazení se bere název s ulicí z katalogu (`nazev_display`), u školy mimo katalog zkrácený název doplněný o ulici z `identifikace.adresa`; seskupuje se vždy podle REDIZO (`nazevSkolyProRadek` v `src/lib/okruhy-oboru.ts`).
 
 ## 5. Stav datových sad
 
@@ -720,6 +721,7 @@ _Vygenerováno z `public/stav_datovych_sad.json` dne 2026-10-02. Neupravovat ru�
 
 | Verze | Změna |
 |---|---|
+| 1.28 | Oddíl 4: past 7, zkrácený název školy z rejstříku není jedinečný (okruhy a další obory na stránce města ukazovaly „Gymnázium / Gymnázium“). Žádný nový zdroj ani sloupec. |
 | 1.27 | Oddíl 2.10: odvozený soubor `okruhy_oboru_{rok}.json` (okruhy oborů, souhrn po obcích), žádný nový sloupec. |
 | 1.26 | Oddíl 2.2: data uchazečů 1. kola 2024 stažena (revize s REDIZO) pro rozbor okruhů oborů; žádný nový sloupec, web beze změny. |
 | 1.25 | Oddíl 2.14: zprávy z výpisu aktualit se zobrazují na stránce školy s označením zdroje a výhradou ke čtení. |

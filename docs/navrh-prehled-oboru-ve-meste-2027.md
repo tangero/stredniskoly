@@ -76,11 +76,11 @@ Obory se seskupí podle **směru studia**, který vychází ze skupiny kmenovýc
 
 | Směr | Kódy KKOV | Brno | Písek | Tišnov |
 |---|---|---:|---:|---:|
-| Gymnázia | 79-41-K/41, 79-42-K/41, přírodovědné lyceum | 29 | 1 | 1 |
+| Gymnázia | 79-41-K/41, 79-42-K/41, přírodovědné a kombinované lyceum | 31 | 1 | 2 |
 | Víceletá gymnázia (z 5. a 7. třídy) | 79-41-K/61, K/81 a obdobné | 24 | 2 | 1 |
 | Technika a IT | 16, 18, 21–39, technické lyceum | 52 | 8 | 1 |
 | Zdravotnictví, pedagogika a sociální práce | 53, 69-41, 75, zdravotnické a pedagogické lyceum | 29 | 2 | 0 |
-| Ekonomika, obchod a správa | 61–68, 72, ekonomické lyceum | 35 | 2 | 1 |
+| Ekonomika, obchod a správa | 61–68, 72, ekonomické lyceum | 33 | 2 | 0 |
 | Gastronomie, cestovní ruch a služby | 65, 69 kromě 69-41 | 6 | 0 | 0 |
 | Příroda, zemědělství a veterina | 41, 43 | 1 | 2 | 0 |
 | Umění a design | 82 | 1 | 0 | 0 |
@@ -89,7 +89,9 @@ Počty jsou nabídky s jednotnou zkouškou z katalogu 2026. V Brně k nim přibu
 
 **Víceletá gymnázia zvlášť** mají jiného čtenáře: rodiče páťáka nebo sedmáka. Dnes jsou v kartě školy promíchaná se čtyřletým studiem.
 
-Mapa KKOV → směr bude v jednom modulu (`src/lib/smery-studia.ts`), s testem, že žádný kód katalogu nespadne do zbytkové skupiny bez důvodu.
+Mapa KKOV → směr bude v jednom modulu (`src/lib/smery-studia.ts`), s testem, že žádný kód katalogu nespadne do zbytkové skupiny bez důvodu. Lycea se zařazují výčtem kódů, ne odhadem: kombinované lyceum (78-42-M/06) je všeobecné studium a patří ke gymnáziím, ne k ekonomice, kam ho zařadila první verze mapy pro maketu.
+
+**Pruh obtížnosti v rozcestníku.** Maketa nese u každého směru tenký pruh s rozložením obtížnosti přijetí jeho oborů (kolik je velmi těžkých, těžkých a dalších). Je to totéž rozložení, které dnes stránka ukazuje za celé město, jen rozdělené po směrech, a hned je z něj vidět třeba to, že u víceletých gymnázií v Brně bylo 15 z 22 oborů s údajem velmi těžkých. Pruh je rozložení uvnitř směru, **ne pořadí směrů**: rozcestník zůstává v pevném pořadí podle tabulky výše. Obory bez údaje a bez jednotné zkoušky v pruhu nejsou a popisek to říká.
 
 ### 4.2 Řádek oboru: jedna řádka, jeden odkaz
 
@@ -148,13 +150,13 @@ Střední školy — Brno
 Jihomoravský kraj · 58 škol · 177 oborů s jednotnou zkouškou a 90 dalších
 
 Co tu můžete studovat
- [Gymnázia 29] [Víceletá gymnázia 24] [Technika a IT 101]
- [Zdravotnictví, pedagogika, sociální 34] [Ekonomika a správa 39]
+ [Gymnázia 31] [Víceletá gymnázia 24] [Technika a IT 101]
+ [Zdravotnictví, pedagogika, sociální 34] [Ekonomika a správa 37]
  [Gastronomie a služby 15] [Umění a design 19] [Příroda 3] [Praktické školy 3]
 
  ( Vše ) ( S maturitou ) ( S výučním listem )     🔎 Hledat školu nebo obor
 
-▸ Gymnázia · 29 oborů ve 22 školách
+▸ Gymnázia · 31 oborů
 ▾ Technika a IT · 52 oborů s jednotnou zkouškou a 49 bez ní
     Obtížnost přijetí v 1. kole 2026
 
@@ -234,7 +236,12 @@ Podle povinného kroku z [zdrojů dat](zdroje-dat.md); prošel jsem oddíly 1 a�
 2. **Okruhy ze stránky města odebrat** a nechat je na stránce oboru; ze souběžných přihlášek využít jen „kam dál“ u malých a středních měst (4.6). Doporučuji ano. Vrací to část rozhodnutí ze 3. 10. 2026.
 3. **Karty podle typu školy odebrat** (4.5). Doporučuji ano.
 4. **Hranice velikostí** 12 a 60 nabídek (4.3). Doporučuji je převzít a upravit po prvním náhledu.
+6. **Pruh obtížnosti v rozcestníku směrů** (4.1). Doporučuji ano, s pevným pořadím směrů.
 5. **Obec s jedinou školou**: vyhledávání vede rovnou na školu (4.7). Doporučuji ano; práh dvou škol nechat na později.
+
+## 7a. Poznámka mimo rozsah
+
+Odznak „středně těžké“ má na webu šedé pozadí `slate-400` (#94a3b8) s bílým písmem, kontrast 2,6 : 1, pod hranicí 4,5 : 1. Maketa používá `#64748b` (4,8 : 1). Oprava patří do etapy A, ne do opravy řádků okruhů.
 
 ## 8. Postup po schválení
 
