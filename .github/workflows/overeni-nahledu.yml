@@ -11,6 +11,11 @@
 #   s kritérii od týchž autorů (scripts/brana/overeni-nahledu.mjs z main).
 # - Job „Ověření“ má jen čtecí token a secrets CLAUDE_CODE_OAUTH_TOKEN a VERCEL_AUTOMATION_BYPASS_SECRET
 #   (bypass ochrany náhledů; bez něj ověří jen nechráněný náhled). Produkční secrets ani VERCEL_TOKEN ne.
+# - „Nevidí diff“ je dané zadáním a nástroji, ne technicky: repozitář je veřejný, takže kdo má síť,
+#   větev si přečíst může. Ověřovatel má jen Read/Write/Glob/Grep a node, pokyn nečíst GitHub a jen
+#   kritéria a adresu; to je tatáž míra jako u review asistenta zadání.
+# - Adresa náhledu: jen stav „Náhled (Vercel)“ od github-actions[bot] s adresou *.vercel.app, bypass
+#   hlavička jen na tohoto hostitele.
 # - Zápis dělá samostatný job bez kódu ověřovatele; protokol zapíše jen k commitu, který je pořád
 #   hlavou PR, a jen když pokrývá všechna kritéria. Jinak napíše, že ověření nedokončil.
 name: Ověření na náhledu
@@ -120,8 +125,11 @@ jobs:
             Úkol: každé kritérium ověř na náhledu v Chromiu na šířce 390 px (výška 844) a 1280 px (výška 800).
             - Playwright: `import { chromium } from '${{ runner.temp }}/pw/node_modules/playwright/index.mjs'`.
               Skripty si napiš do ${{ runner.temp }} a spusť přes `node`. Když je v prostředí proměnná
-              VERCEL_AUTOMATION_BYPASS_SECRET, pošli ji v hlavičce `x-vercel-protection-bypass`; její hodnotu
-              nikdy nevypisuj.
+              VERCEL_AUTOMATION_BYPASS_SECRET, přidávej ji v hlavičce `x-vercel-protection-bypass` jen k požadavkům
+              na hostitele náhledu (přes `context.route` a kontrolu hostitele), nikdy k jiným hostitelům a nikdy
+              přes `extraHTTPHeaders`. Její hodnotu nikdy nevypisuj.
+            - Procházej jen stránky na hostiteli náhledu. Repozitář na GitHubu ani jiné weby nenačítej: nemáš
+              vidět, co se ve větvi změnilo.
             - Kritérium K je splněné, jen když to na stránce opravdu vidíš. Hledej, co by ho vyvrátilo.
             - Protikritérium P se aktivně snaž porušit: jiné adresy téže oblasti, okrajové hodnoty, mobil.
               Do sloupce „jak ověřeno“ napiš, čím ses o to pokusil.

@@ -2,7 +2,7 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import yaml from 'js-yaml';
-import { rozhodniOvereni, sestavProtokol, OVEROVATEL } from '../scripts/brana/overeni-nahledu.mjs';
+import { rozhodniOvereni, sestavProtokol, adresaNahledu, OVEROVATEL } from '../scripts/brana/overeni-nahledu.mjs';
 import { protokol, BOT } from '../scripts/brana/brana.mjs';
 import { oblastiZLabeleru } from '../scripts/brana/data.mjs';
 
@@ -80,4 +80,15 @@ test('K6: protokol s nesplněným kritériem brána nepustí', () => {
   const v = protokol({ telo: 'Closes #10', autor: 'tangero', hlava: { sha: SHA }, komentare: [{ autor: BOT, cas: '2026-10-04T10:00:00Z', telo: p.telo }] }, konfig, [issue()]);
   assert.equal(v.ok, false);
   assert.match(v.duvod, /nesplněné/);
+});
+
+test('adresa náhledu jen ze stavu od github-actions[bot] na *.vercel.app', () => {
+  const stav = (o) => ({ context: 'Náhled (Vercel)', state: 'success', target_url: 'https://stredniskoly-abc-tangeros-projects.vercel.app', creator: { login: 'github-actions[bot]' }, ...o });
+  assert.equal(adresaNahledu([stav()]), 'https://stredniskoly-abc-tangeros-projects.vercel.app');
+  assert.equal(adresaNahledu([stav({ creator: { login: 'tangero' } })]), null);
+  assert.equal(adresaNahledu([stav({ target_url: 'https://utocnik.example.com' })]), null);
+  assert.equal(adresaNahledu([stav({ target_url: 'https://x.vercel.app.example.com' })]), null);
+  assert.equal(adresaNahledu([stav({ target_url: 'http://x.vercel.app' })]), null);
+  assert.equal(adresaNahledu([stav({ state: 'failure' })]), null);
+  assert.equal(adresaNahledu([]), null);
 });

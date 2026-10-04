@@ -15,6 +15,14 @@ import { REPO, vytvorApi, nactiKonfig, nactiPr } from './data.mjs';
 
 export const KONTEXT_NAHLEDU = 'Náhled (Vercel)';
 export const OVEROVATEL = 'Ověřovatel: samostatný agent bez diffu';
+// Náhled smí vést jen na nasazení Vercelu: ověřovatel na něj posílá bypass ochrany náhledů.
+const ADRESA_NAHLEDU = /^https:\/\/[a-z0-9-]+\.vercel\.app\/?$/;
+
+/** Adresa náhledu ze stavů commitu: jen stav zapsaný workflow Testy (github-actions[bot]) na *.vercel.app. */
+export function adresaNahledu(stavy = []) {
+  const s = stavy.find((x) => x.context === KONTEXT_NAHLEDU && x.state === 'success' && x.creator?.login === 'github-actions[bot]');
+  return s && ADRESA_NAHLEDU.test(s.target_url || '') ? s.target_url.replace(/\/$/, '') : null;
+}
 // Řádky, které do protokolu doplňuje workflow, ne ověřovatel: hlavička, commit, náhled, ověřovatel.
 const VYHRAZENE = /Protokol z preview|^\s*(Commit|Náhled|Ověřovatel)\s*:/im;
 
@@ -75,7 +83,7 @@ async function priprav(api) {
   const otevrene = (await api(`repos/${REPO}/commits/${sha}/pulls`)).filter((p) => p.state === 'open' && p.head?.sha === sha);
   const vstup = otevrene.length === 1 ? await nactiPr(api, otevrene[0].number) : null;
   const stavy = await api(`repos/${REPO}/commits/${sha}/statuses?per_page=100`);
-  const nahled = stavy.find((s) => s.context === KONTEXT_NAHLEDU && s.state === 'success')?.target_url || null;
+  const nahled = adresaNahledu(stavy);
   const r = rozhodniOvereni({
     beh, repo: REPO, pr: vstup?.pr || null, soubory: vstup?.soubory || [], issues: vstup?.issues || [],
     konfig: await nactiKonfig(api), nahled,
