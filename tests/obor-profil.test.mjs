@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import {
   zarazeniObtiznosti, slovniPodil, zOd, stavNabidky, zminitPozadavek, vetaPozadavku,
   poradiVeSkupine, textPoradi, nazevSkupiny, soutezicichUchazecu, vKraji, nazevNabidky,
-  kohortaPozice, MIN_NABIDEK_PRO_KOHORTU,
+  kohortaPozice, MIN_NABIDEK_PRO_KOHORTU, nazevOboruZKlice,
 } from '../src/lib/obor-profil.ts';
 
 const machar8 = { kapacita: 30, prihlasky: 233, prijati: 30, capacity_rejected: 82, conditions_not_met: 85, higher_priority: 36, zarazeni_obtiznosti: 'velmi_tezke' };
@@ -105,4 +105,10 @@ test('kohorta se přebírá z dat a pod třiceti nabídkami ve skupině se nezob
   assert.equal(kohortaPozice({ kohorta_pozice: 'skola_prvni_volby' }, MIN_NABIDEK_PRO_KOHORTU), 'skola_prvni_volby');
   assert.equal(kohortaPozice({ kohorta_pozice: 'skola_prvni_volby' }, MIN_NABIDEK_PRO_KOHORTU - 1), null);
   assert.equal(kohortaPozice({}, 437), null);
+});
+
+test('název oboru ze souběhu: z rejstříku, jinak kód, nikdy klíč s RED IZO', () => {
+  const obory = { '23-68-H/01': 'Mechanik opravář motorových vozidel' };
+  assert.equal(nazevOboruZKlice('600009815_23-68-H/01', obory), 'Mechanik opravář motorových vozidel');
+  assert.equal(nazevOboruZKlice('600009815_99-99-X/99', obory), '99-99-X/99');
 });

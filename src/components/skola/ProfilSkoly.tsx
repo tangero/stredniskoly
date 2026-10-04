@@ -769,7 +769,7 @@ export function ProfilSkoly({ data, skola, odkazy }: ProfilSkolyProps) {
                 <h3 className="text-[19px] font-bold text-[#16325c]">Kam se hlásí stejní uchazeči</h3>
                 <p className="text-[15px] text-slate-600">Obory, které měli na přihlášce i uchazeči oborů této školy. Ukazují skutečné alternativy: polovina z nich nebývá mezi deseti nejbližšími školami.</p>
                 {soubeh.obory.map((o, i) => (
-                  <details key={o.nazev} open={i === 0} className="group rounded-xl bg-slate-50">
+                  <details key={o.klic} open={i === 0} className="group rounded-xl bg-slate-50">
                     <summary className="flex cursor-pointer list-none items-baseline gap-2 px-4 py-3 font-bold text-[#16325c] [&::-webkit-details-marker]:hidden">
                       {o.nazev}<span className="ml-auto text-[13px] font-normal text-slate-500">{cislo(o.uchazecu)} uchazečů</span>
                     </summary>
