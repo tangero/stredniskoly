@@ -95,6 +95,8 @@ export interface IndexRejstriku {
   obory: Record<string, string>;
   /** REDIZO → seznam KKOV, které škola v rejstříku má. */
   nabidky: Record<string, string[]>;
+  /** REDIZO → úplný název, IČO a adresa sídla (jen střední školy a konzervatoře). */
+  identifikace: Record<string, { uplny_nazev: string; ico: string; adresa: string }>;
 }
 
 let indexRejstriku: IndexRejstriku | null = null;
@@ -107,9 +109,11 @@ export async function nactiIndexRejstriku(): Promise<IndexRejstriku> {
       path.join(process.cwd(), 'data', 'msmt_rejstrik', 'nazvy-oboru.json'), 'utf-8',
     );
     const json = JSON.parse(obsah);
-    indexRejstriku = { skoly: json.skoly ?? {}, obory: json.obory ?? {}, nabidky: json.nabidky ?? {} };
+    indexRejstriku = {
+      skoly: json.skoly ?? {}, obory: json.obory ?? {}, nabidky: json.nabidky ?? {}, identifikace: json.identifikace ?? {},
+    };
   } catch {
-    indexRejstriku = { skoly: {}, obory: {}, nabidky: {} };
+    indexRejstriku = { skoly: {}, obory: {}, nabidky: {}, identifikace: {} };
   }
   return indexRejstriku;
 }
