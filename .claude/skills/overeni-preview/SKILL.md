@@ -25,6 +25,29 @@ s `executablePath: '/opt/pw-browsers/chromium'`, nic neinstaluj) na šířce **3
 Když náhled vrátí 401, je zapnutá ochrana náhledů: bez proměnné `VERCEL_AUTOMATION_BYPASS_SECRET`
 v prostředí relace (hlavička `x-vercel-protection-bypass`) ověřit nejde; napiš to do PR jako blokaci.
 
+V cloudovém prostředí Claude Code jde odchozí HTTPS přes proxy, která spojení podepisuje vlastním
+certifikátem. `curl` mu důvěřuje, Chromium ne a `page.goto` skončí `net::ERR_CERT_AUTHORITY_INVALID`.
+Když je nastavená proměnná `HTTPS_PROXY`, spusť proto Chromium s proxy z ní a kontext s
+`ignoreHTTPSErrors: true` (jen pro ověření náhledu). Playwright je nainstalovaný globálně, importuj ho
+z `$(npm root -g)/playwright/index.mjs`:
+
+```js
+import { chromium } from '/opt/node22/lib/node_modules/playwright/index.mjs'; // cesta podle `npm root -g`
+const proxy = process.env.HTTPS_PROXY ? { server: process.env.HTTPS_PROXY } : undefined;
+const prohlizec = await chromium.launch({ executablePath: '/opt/pw-browsers/chromium', proxy });
+const tajemstvi = process.env.VERCEL_AUTOMATION_BYPASS_SECRET;
+const kontext = await prohlizec.newContext({
+  ignoreHTTPSErrors: Boolean(proxy),
+  viewport: { width: 390, height: 844 }, // a znovu s { width: 1280, height: 800 }
+  extraHTTPHeaders: tajemstvi ? { 'x-vercel-protection-bypass': tajemstvi } : {},
+});
+const stranka = await kontext.newPage();
+const odpoved = await stranka.goto(`${nahled}/skola/…`);
+```
+
+Přechodná chyba spojení přes proxy (`net::ERR_TOO_MANY_RETRIES`) se stává; načtení zopakuj, nejvýš dvakrát.
+Teprve opakované selhání je blokace, kterou píšeš do PR.
+
 Zkontroluj i to, co kritéria neuvádějí, ale změna mohla rozbít: konzole bez chyb, stránka bez
 vodorovného posouvání na mobilu, texty podle `docs/slovnik-pojmu.md`.
 
