@@ -12,6 +12,10 @@ test('stav karty podle štítků a PR', () => {
   assert.equal(cilovyStav(i(['interni', 'navrh', 'schvaleno'])), STAVY.schvaleno);
   assert.equal(cilovyStav(i(['interni', 'oponentura'])), STAVY.oponentura);
   assert.equal(cilovyStav(i(['interni', 'schvaleno'])), STAVY.schvaleno);
+  // doklad „Zdroj:“ v interním zadání stačí, v hlášení ne
+  assert.equal(cilovyStav({ stav: 'OPEN', stitky: ['interni'], telo: 'Zdroj: vlastník\n\n## Rozsah\nx' }), STAVY.schvaleno);
+  assert.equal(cilovyStav({ stav: 'OPEN', stitky: ['interni'], telo: 'Zdroj: někdo' }), STAVY.hlaseni);
+  assert.equal(cilovyStav({ stav: 'OPEN', stitky: ['interni', 'bug-report'], telo: 'Zdroj: vlastník' }), STAVY.hlaseni);
   assert.equal(cilovyStav(i(['interni', 'schvaleno', 'k-overeni']), [{ cekaNaSouhlas: false }]), STAVY.vPr);
   assert.equal(cilovyStav(i(['interni', 'schvaleno']), [{ cekaNaSouhlas: false }, { cekaNaSouhlas: true }]), STAVY.cekaNaSouhlas);
   assert.equal(cilovyStav(i(['interni', 'schvaleno'], 'CLOSED')), STAVY.hotovo);

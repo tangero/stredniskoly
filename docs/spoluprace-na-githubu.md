@@ -50,7 +50,7 @@ při každé změně štítků, issues a PR, po každém běhu brány sloučení
 | Hlášení | veřejná hlášení, připomínky a issues bez stavového štítku | třídění (AI) |
 | Návrh | `navrh` (bez `schvaleno`) nebo `stop` | **vlastník** |
 | Oponentura | `oponentura`: návrh posuzuje asistent zadání nebo druhý model, teprve pak jde k vlastníkovi | AI |
-| Schváleno | `schvaleno`, žádný otevřený PR | denní úloha podle Směru vývoje |
+| Schváleno | `schvaleno` nebo doklad `Zdroj:` v interním zadání, žádný otevřený PR | denní úloha podle Směru vývoje |
 | V PR | otevřený PR s `Closes #N` nebo `Souvisí s #N` (CI, review, vypořádání, lhůta) | AI |
 | Čeká na souhlas s merge | otevřený PR, brána chce `schvaleno` | **vlastník** |
 | Hotovo | zavřené issue | |

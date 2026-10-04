@@ -36,7 +36,7 @@ const DOTAZ = `query($login: String!, $cislo: Int!, $po: String) {
       nodes {
         id
         fieldValueByName(name: "Status") { ... on ProjectV2ItemFieldSingleSelectValue { name } }
-        content { __typename ... on Issue { number state repository { nameWithOwner } labels(first: 50) { nodes { name } } } }
+        content { __typename ... on Issue { number state body repository { nameWithOwner } labels(first: 50) { nodes { name } } } }
       }
     }
   } }
@@ -80,7 +80,7 @@ async function main() {
   for (const p of tabule.polozky) {
     const c = p.content;
     if (c?.__typename !== 'Issue' || c.repository.nameWithOwner !== REPO) continue;
-    const cil = cilovyStav({ stav: c.state, stitky: c.labels.nodes.map((l) => l.name) }, prs.get(c.number) || []);
+    const cil = cilovyStav({ stav: c.state, stitky: c.labels.nodes.map((l) => l.name), telo: c.body }, prs.get(c.number) || []);
     const ted = p.fieldValueByName?.name || null;
     if (!cil || cil === ted) continue;
     if (!volby.has(cil)) { chybi.add(cil); continue; }

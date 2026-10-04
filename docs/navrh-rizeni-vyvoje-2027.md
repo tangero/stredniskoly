@@ -1,6 +1,6 @@
 # Řízení vývoje: směr určuje člověk, provedení a přehled zajišťuje AI
 
-Verze 0.13b · 3. 10. 2026 · **část A ke schválení hned, část B k rozhodnutí podle měřítek.**
+Verze 0.13c · 4. 10. 2026 · **část A ke schválení hned, část B k rozhodnutí podle měřítek.**
 Stav zavedení: fáze 0 hotová, brána sloučení je v `main` a zatím nic neblokuje (postup v
 [postup-zavedeni-faze-0.md](postup-zavedeni-faze-0.md)).
 
@@ -26,7 +26,7 @@ a výdaje, posílá týdenní přehled a hlásí jen výjimky.
 **Co tím odpadne:** schvalování drobných zadání, kontrola na preview a merge u zhruba 20 PR týdně,
 odpovídání na dotazy v issues, obnova většiny tokenů.
 
-**Co je potřeba schválit:** část A jako celek (rozhodnutí RA1 až RA37 v oddílu 21). Část B se rozhodne
+**Co je potřeba schválit:** část A jako celek (rozhodnutí RA1 až RA38 v oddílu 21). Část B se rozhodne
 po čtyřech týdnech provozu podle měřítek.
 
 **Zavedení po fázích podle přínosu** (oddíl 20): fáze 1 odstraní merge a kontrolu preview, fáze 2 přidá
@@ -347,8 +347,13 @@ Zastavení rozesílání vypínačem a rollback ve Vercelu nejsou PR a brána je
 8. **Opravy po vydání:** komentář + PR „Souvisí s #N“.
 9. **Druhá verze** je nový projekt.
 
-Žádná nová issues pro úpravu zadání, oponenturu, opravu po merge ani další etapu. Sub-issues se
-nepoužívají; hlášení, která projekt opravuje, se vypíšou v těle projektu a PR je zavírá přes `Closes`.
+Žádná nová issues pro úpravu zadání, oponenturu ani opravu po merge. **Drobné úkoly projektu** (4. 10. 2026,
+rozhodnutí vlastníka): úkol, který vznikl z rozhodnutí vlastníka v rozhovoru s Claude Code nebo asistentem
+zadání, je samostatné issue s dokladem `Zdroj:` připojené jako **sub-issue** projektu. Úkol schváleného
+projektu (rodič `projekt` se souhlasem nebo dokladem, bez `navrh`) brána slučuje v režimu E, bez lhůty
+a bez dalšího `schvaleno`; `stop` na projektu zastaví i jeho úkoly. Důvod: připisování úkolů do rozsahu
+rodiče měnilo jeho otisk a vracelo celý projekt ke schválení. Hlášení, která projekt opravuje, se vypíšou
+v těle projektu a PR je zavírá přes `Closes`.
 
 ## 11. Ověření na preview dělá AI
 
@@ -617,6 +622,7 @@ ověří ho měřítka.
 | RA35 | AI pracuje přes účet vlastníka (od RA36 kromě asistenta zadání); pojistky chrání před chybou a podvrženým vstupem, ne před úmyslem AI; kontrola rozhodnutí zpětně v týdenním přehledu | **ano** (rozhodnutí vlastníka) |
 | RA36 | Asistent zadání pracuje vlastním účtem `eduarda-prijimacky`; brána bere `schvaleno` jen z účtu vlastníka | **ano** (rozhodnutí vlastníka) |
 | RA37 | Směr vývoje veřejně v `docs/smer-vyvoje.md` včetně rozpočtu; změny jen se souhlasem vlastníka | **ano** (rozhodnutí vlastníka) |
+| RA38 | Drobné úkoly projektu jako sub-issues s dokladem `Zdroj:`; úkol schváleného projektu brána pustí v režimu E bez dalšího `schvaleno` (oddíl 10) | **ano** (rozhodnutí vlastníka) |
 
 # Část B: rozšíření podle měřítek
 
@@ -646,6 +652,9 @@ Po čtyřech týdnech provozu části A:
 
 ## Změny návrhu
 
+- **0.13c** (4. 10. 2026, rozhodnutí vlastníka): drobné úkoly projektu jako sub-issues s dokladem `Zdroj:`,
+  úkol schváleného projektu v režimu E bez dalšího schválení (RA38, oddíl 10); `Zdroj: vlastník` i pro rozhodnutí
+  vlastníka z rozhovoru s Claude Code nebo asistentem zadání.
 - **0.13b** (3. 10. 2026, rozhodnutí vlastníka): Směr vývoje veřejně v `docs/smer-vyvoje.md` včetně
   rozpočtu (RA37); soukromý repozitář až ve fázi 2 pro zápisy z briefingů a opravy od škol.
 - **0.13a** (3. 10. 2026, nálezy asistenta zadání): doklad původu a protokol z preview brána uzná jen od

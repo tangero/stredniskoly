@@ -1,6 +1,8 @@
 // Cílový stav karty issue na tabuli projektu „Přijímačky – vývoj webu“ podle štítků a otevřených PR
 // (docs/spoluprace-na-githubu.md, oddíl 3). Čistá logika bez sítě; I/O je v sync.mjs.
 
+import { ZDROJ, STITKY_HLASENI } from '../brana/brana.mjs';
+
 export const STAVY = {
   hlaseni: 'Hlášení',
   navrh: 'Návrh',
@@ -12,7 +14,7 @@ export const STAVY = {
 };
 
 /**
- * @param {{ stav: 'OPEN'|'CLOSED', stitky: string[] }} issue
+ * @param {{ stav: 'OPEN'|'CLOSED', stitky: string[], telo?: string }} issue
  * @param {{ cekaNaSouhlas: boolean }[]} prs otevřené PR, které na issue odkazují
  * @returns {string|null} název stavu, nebo null, když karta na tabuli nepatří (trvale)
  */
@@ -25,7 +27,8 @@ export function cilovyStav(issue, prs = []) {
   if (s.has('stop') || (s.has('navrh') && !s.has('schvaleno'))) return STAVY.navrh;
   if (s.has('oponentura')) return STAVY.oponentura;
   if (prs.length) return prs.some((p) => p.cekaNaSouhlas) ? STAVY.cekaNaSouhlas : STAVY.vPr;
-  if (s.has('schvaleno')) return STAVY.schvaleno;
+  // Interní zadání s dokladem „Zdroj:“ zapisuje rozhodnutí vlastníka; schvaleno nepotřebuje (CLAUDE.md, pravidlo 1).
+  if (s.has('schvaleno') || (s.has('interni') && !STITKY_HLASENI.some((h) => s.has(h)) && ZDROJ.test(issue.telo || ''))) return STAVY.schvaleno;
   return STAVY.hlaseni;
 }
 
