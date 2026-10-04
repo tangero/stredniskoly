@@ -11,9 +11,9 @@ Stav: **platí od 3. 10. 2026**, potvrzeno vlastníkem (PR #293, rozpočet dopln
 
 ## Hodnota pro projekt
 
-Podle těchto hodnot posuzujeme každý nápad, ať přijde od vlastníka, asistenta zadání, nebo z AI. Žádná z nich
-nápad sama nezakazuje: u každého se zváží, které hodnoty posílí, které oslabí a o kolik. Mezi hodnotami rozhoduje
-vlastník (doplněno 4. 10. 2026, #353).
+Podle těchto hodnot posuzujeme každý nápad, ať přijde od vlastníka, asistenta zadání, nebo z AI. Kromě soukromí
+žádná z nich nápad sama nezakazuje: u každého se zváží, které hodnoty posílí, které oslabí a o kolik. Mezi
+hodnotami rozhoduje vlastník (doplněno 4. 10. 2026, #353).
 
 **Základ**
 
@@ -21,18 +21,24 @@ vlastník (doplněno 4. 10. 2026, #353).
   nikomu nepomáhá, nikdo neodkáže, necituje ji a nevrátí se na ni.
 - **Správnost a důvěryhodnost.** Jeden chybný údaj před rodiči stojí víc než většina přínosů. Kvůli důvěryhodnosti
   na nás odkazují kraje, komory a média a cituje nás AI.
+- **Soukromí uchazečů a rodin.** Osobní údaje uchazečů ani rodičů nezveřejňujeme a sbíráme jen to, co nutně
+  potřebujeme. Pracujeme s daty o dětech a repozitář je veřejný. Jako jediná hodnota se nezvažuje proti
+  ostatním: je to zákonná povinnost.
 - **Férovost vůči školám.** Školy, zřizovatelé i rodiny předpokládají, že školy ukazujeme podle dat. Každá změna
   toho, jak se škola zobrazuje (placená, partnerská, redakční), se posuzuje i očima škol, kterých se netýká.
 
 **Dosah**
 
 - **Návštěvnost v sezóně.** Rodiny vybírají a podávají přihlášky v zimě a výsledky čekají na jaře; únor měl
-  6,4× víc návštěv než srpen. Rozhoduje, zda je zastihneme, když volí. _Signál: Matomo, Search Console._
+  6,4× víc návštěv než srpen (Matomo, 11. 2. až 11. 9. 2026). Rozhoduje, zda je zastihneme, když volí.
+  _Signál: Matomo, Search Console._
+- **Dostupnost v sezóně.** Když web spadne v týdnu podávání přihlášek nebo výsledků, škodí víc než jakákoli
+  chybějící funkce. _Signál: zatím chybí, potřebuje monitoring dostupnosti._
 - **Odkazy z důvěryhodných domén.** Kraje, komory, výstaviště, školy a média. Jsou nejsilnějším signálem pro
   vyhledávače a zároveň veřejným potvrzením, že nám někdo věří. _Signál: odkazující domény v Search Console._
 - **Zmínky v médiích.** Přinášejí čtenáře, odkazy i důvěru. Novinář cituje zdroj, který mu dá ověřená data
   v převzatelném tvaru. _Signál: zmínky se zdrojem, stažení balíčků Pro novináře._
-- **Citace v odpovědích AI.** Rodiny se čím dál častěji ptají AI asistentů; z nich už dnes přichází 8,4 % návštěv.
+- **Citace v odpovědích AI.** Rodiny se čím dál častěji ptají AI asistentů; z nich přišlo 8,4 % návštěv (Matomo, 11. 2. až 11. 9. 2026).
   Citovaným zdrojem se stává web s přesnými daty a čitelnou metodikou. _Signál: návštěvy z AI asistentů
   v Matomu, měsíční kontrola typických dotazů._
 
@@ -68,6 +74,12 @@ vlastník (doplněno 4. 10. 2026, #353).
 - Signály slouží k orientaci a cílová čísla k nim nestanovujeme: jakmile se počet odkazů stane cílem, začne se
   honit počet a hodnota se ztratí.
 - AI hodnoty vyčísluje a navrhuje, vlastník mezi nimi volí.
+- Při drobném střetu, kdy vlastník není k dispozici (rychlost proti přesnosti, nová funkce proti opravě), má
+  přednost Základ, pak Vztahy, Dosah, Postavení na trhu a nakonec Hospodaření. Střet a volbu AI zapíše do PR
+  nebo issue; co je sporné, jde na briefing.
+- Jednou ročně po sezóně, v červnu, AI projde funkce s nejmenším užitím a navrhne, které zrušit nebo zjednodušit.
+  Posuzuje je podle všech hodnot, protože malá návštěvnost neznamená malý přínos: stránka pro novináře
+  přináší hlavně odkazy a citace.
 
 ## Cíle k datu
 
@@ -76,7 +88,6 @@ vlastník (doplněno 4. 10. 2026, #353).
 | 2027-01-15 | Kritéria přijetí 2027 na stránkách oborů, jakmile je školy zveřejní | podíl oborů s kritérii |
 | 2027-02-01 | Simulátor a stránky oborů připravené na podávání přihlášek, včetně oborů bez JPZ (#244) | obory bez JPZ zobrazené; simulátor bez chyb v týdnu před termínem |
 | 2027-05-14 | Výsledky 1. kola a nabídka 2. kola na webu do 24 h od zveřejnění | čas od zveřejnění zdroje po nasazení |
-| … | | |
 
 ## Pořadí priorit
 
@@ -84,12 +95,10 @@ vlastník (doplněno 4. 10. 2026, #353).
 2. Obory bez JPZ a nedenní formy (#244).
 3. Okruhy oborů ve městě (#277).
 4. Provoz a náklady (log drain #234, cache, ISR).
-5. …
 
 ## Co teď neděláme
 
 - Nové velké stránky mimo priority výše, dokud nejsou hotové cíle k 2027-02-01.
-- …
 
 ## Rozpočet
 
@@ -116,4 +125,4 @@ repozitáře `ZAMRZNUTI_OD` a `ZAMRZNUTI_DO` (jedno období najednou).
 
 ## Mimořádné pokyny
 
-- …
+Žádné.
