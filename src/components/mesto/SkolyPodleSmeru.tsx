@@ -362,23 +362,24 @@ function SkolaView({ skola, rok }: { skola: KartaSkoly; rok: number | null }) {
   const zrizovatel = skola.zrizovatel ? ZRIZOVATEL_TEXT[skola.zrizovatel] : null;
   return (
     <tbody className="border-t border-[#dde4ee] first-of-type:border-t-0">
-      <tr className="bg-[#f7f9fc]">
-        <th scope="colgroup" colSpan={4} className="px-4 pb-2 pt-3.5 text-left font-normal md:px-5">
-          <span className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
-            <span className="text-[17px] font-bold leading-snug text-[#16325c]">
-              {skola.href ? (
-                <Link href={skola.href} className="hover:text-[#0062c4] hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0074e4]">
-                  {skola.nazev}
-                </Link>
-              ) : skola.nazev}
-            </span>
-            {zrizovatel && (
-              <span className="whitespace-nowrap rounded-full border border-[#b9893a] bg-[#fdf6e9] px-2.5 py-0.5 text-[13px] font-medium text-[#7a4e0c]">
-                {zrizovatel}
-              </span>
-            )}
+      {/* Název školy přes sloupce Obor a Délka, zřizovatel ve sloupci obtížnosti: štítky jsou pod sebou na jedné linii. */}
+      <tr className="block bg-[#f7f9fc] px-4 pb-2 pt-3.5 md:table-row md:p-0">
+        <th scope="colgroup" colSpan={2} className="block text-left font-normal md:table-cell md:px-5 md:pb-2.5 md:pt-3.5 md:align-middle">
+          <span className="text-[17px] font-bold leading-snug text-[#16325c]">
+            {skola.href ? (
+              <Link href={skola.href} className="hover:text-[#0062c4] hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0074e4]">
+                {skola.nazev}
+              </Link>
+            ) : skola.nazev}
           </span>
         </th>
+        <td colSpan={2} className={`${zrizovatel ? 'mt-1.5 block' : 'hidden'} md:mt-0 md:table-cell md:px-3 md:pb-2.5 md:pt-3.5 md:align-middle`}>
+          {zrizovatel && (
+            <span className="inline-block whitespace-nowrap rounded-full border border-[#b9893a] bg-[#fdf6e9] px-2.5 py-0.5 text-[13px] font-medium text-[#7a4e0c]">
+              {zrizovatel}
+            </span>
+          )}
+        </td>
       </tr>
       {skola.radky.map(r => (
         <RadekView key={r.id} r={r} rok={rok} />
