@@ -1,0 +1,44 @@
+# Automatické slučování (docs/navrh-rizeni-vyvoje-2027.md, oddíl 9, RA40): po každém doběhnutí brány
+# sloučí PR, které brána pustila, stejným skriptem jako AI v relaci (scripts/brana/sloucit.mjs).
+# Vypíná ho `slucovani_ai: false` v .github/rezimy.yml; veto je štítek `stop`.
+#
+# PROJECT_TOKEN (klasický token vlastníka, scope public_repo): komentář s žádostí o vyhodnocení musí
+# spustit workflow brány, a to komentář od GITHUB_TOKEN neudělá. Kód z PR se nespouští (checkout main).
+name: Sloučení
+
+on:
+  workflow_run:
+    workflows: ["Brána sloučení"]
+    types: [completed]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+# Jedna fronta: čekající běh nahradí novější, ten projde všechny otevřené PR znovu.
+concurrency:
+  group: slouceni
+
+jobs:
+  slucit:
+    name: Sloučit PR, které brána pustila
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          persist-credentials: false
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+
+      - name: Závislosti
+        run: npm ci --ignore-scripts --no-audit --no-fund
+
+      - name: Sloučit
+        env:
+          GITHUB_TOKEN: ${{ secrets.PROJECT_TOKEN }}
+        run: node scripts/brana/slucit-pripravene.mjs

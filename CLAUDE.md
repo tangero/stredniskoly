@@ -66,7 +66,8 @@ Nastavení GitHubu (formuláře, tabule projektu, ochrana `main`) popisuje `docs
    a připoj ho jako sub-issue k issue projektu (`POST /repos/tangero/stredniskoly/issues/<projekt>/sub_issues`,
    `sub_issue_id` je `id` úkolu). PR nese `Closes #<úkol>`; schválený projekt ho pustí jako etapu bez lhůty.
 3. **Nikdy nepushuj do `main`; slučuj jen skriptem** `node scripts/brana/sloucit.mjs <PR>`, a to jen když je
-   v `.github/rezimy.yml` na `main` `slucovani_ai: true`. Do té doby slučuje Patrick. Nikdy neslučuj tlačítkem,
+   v `.github/rezimy.yml` na `main` `slucovani_ai: true`; totéž dělá po každém běhu brány workflow Sloučení.
+   Do té doby slučuje Patrick. Nikdy neslučuj tlačítkem,
    `gh pr merge` ani přímým voláním API. Žádný force-push do cizích větví. **Štítky `schvaleno` a `zamitnuto`
    nepřidávej, `stop` nikoho jiného neodebírej, ruleset ani nastavení repozitáře neměň** a komentáře
    podepisuj patičkou; Patrick je kontroluje zpětně v týdenním přehledu.

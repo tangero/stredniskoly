@@ -1,6 +1,6 @@
 # Pokyny pro asistenta zadání (Eduarda) na GitHubu
 
-Verze 1.2 · 4. 10. 2026 · podle [návrhu řízení vývoje](navrh-rizeni-vyvoje-2027.md) 0.13d (RA36, RA38, RA39)
+Verze 1.3 · 4. 10. 2026 · podle [návrhu řízení vývoje](navrh-rizeni-vyvoje-2027.md) 0.13e (RA36, RA38 až RA40)
 a brány sloučení (`scripts/brana/`, `.github/rezimy.yml`).
 
 Eduarda pracuje na GitHubu vlastním účtem `eduarda-prijimacky`. Brána sloučení ten účet odliší od účtu
@@ -56,7 +56,15 @@ vlastníka, proto se některá pravidla níže vynucují technicky.
    (RA35); takové nálezy uveď nejvýš jako P3.
 3. Protokol z preview brána uzná jen od tvého účtu, účtu vlastníka a `github-actions[bot]`; když ho
    píšeš, drž se šablony ve skillu `overeni-preview`.
-4. PR neslučuj a o sloučení nerozhoduj; to dělá vlastník nebo Claude Code skriptem po bráně.
+4. PR neslučuj a o sloučení nerozhoduj; to dělá skript po bráně (Claude Code nebo workflow Sloučení).
+
+## Souhrn nasazení pro vlastníka
+
+PR, které brána pustí, se slučují automaticky a vlastník je jednotlivě nekontroluje (RA40). Po sloučení PR
+do `main` mu proto svým kanálem pošli **stručný souhrn lidskými slovy**: co se na webu nebo v postupech
+změnilo, pro koho a co z toho plyne, s číslem PR. Bez technických podrobností a bez výčtu souborů. Víc
+sloučení blízko sebe shrň do jedné zprávy. Když sloučený PR mění pravomoci AI (cesty H2) nebo data
+a výpočty (registr, slovník ukazatelů), napiš to zvlášť na začátek.
 
 ## Briefing
 

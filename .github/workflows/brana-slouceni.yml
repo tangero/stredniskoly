@@ -32,8 +32,10 @@ permissions:
   issues: write
   pull-requests: write
 
+# Fronta po PR nebo issue. Běh po přidání `schvaleno` nebo `navrh` má vlastní skupinu: jen on zapisuje
+# souhlas nebo otisk a souběžná událost téhož issue by ho ve frontě zrušila (4. 10. 2026 na #277).
 concurrency:
-  group: brana-${{ github.event.pull_request.number || github.event.issue.number || 'vse' }}
+  group: brana-${{ (github.event.action == 'labeled' && (github.event.label.name == 'schvaleno' || github.event.label.name == 'navrh')) && github.run_id || github.event.pull_request.number || github.event.issue.number || 'vse' }}
 
 jobs:
   vyhodnotit:

@@ -51,6 +51,10 @@ Jen `node scripts/brana/sloucit.mjs <PR>` a jen když je v `rezimy.yml` na `main
 Skript vyhodnotí PR, komentářem si vyžádá nové vyhodnocení na serveru, počká na odpověď na tuto žádost,
 znovu ověří `stop` a commit a sloučí s pevným `sha`. Selhání skriptu nepřebíjej jiným způsobem sloučení.
 
+Totéž dělá automaticky workflow **Sloučení** (`.github/workflows/slouceni.yml`, RA40): po každém doběhnutí
+brány sloučí všechny otevřené PR, jejichž poslední kontrola prošla. Ruční spuštění skriptu je potřeba jen
+tehdy, když nechceš čekat na další běh brány.
+
 ## Šablona popisu PR
 
 ```
