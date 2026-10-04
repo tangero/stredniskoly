@@ -1,7 +1,8 @@
 # Řízení vývoje: směr určuje člověk, provedení a přehled zajišťuje AI
 
 Verze 0.13f · 4. 10. 2026 · **část A ke schválení hned, část B k rozhodnutí podle měřítek.**
-Stav zavedení: fáze 0 hotová, brána sloučení je v `main` a zatím nic neblokuje (postup v
+Stav zavedení: fáze 0 a 1 hotové (4. 10. 2026): brána sloučení je povinná kontrola v rulesetu bez obejití,
+AI slučuje skriptem a workflow Sloučení automaticky (RA40); fáze 2 čeká (postup v
 [postup-zavedeni-faze-0.md](postup-zavedeni-faze-0.md)).
 
 ## Shrnutí pro rozhodnutí
