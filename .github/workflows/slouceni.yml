@@ -23,6 +23,8 @@ concurrency:
 jobs:
   slucit:
     name: Sloučit PR, které brána pustila
+    # Po neúspěšném běhu (třeba spadlé testy) není co slučovat.
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
     runs-on: ubuntu-latest
     timeout-minutes: 30
     steps:

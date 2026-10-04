@@ -10,8 +10,8 @@ import { sloucit, posledniKontrola } from './sloucit.mjs';
 
 /**
  * Čísla otevřených PR do main (bez draftů), která brána naposledy pustila a GitHub je dovolí sloučit.
- * Vynechá PR s konfliktem nebo s nedoběhlými povinnými kontrolami (`mergeable_state` jiný než `clean`
- * a `unstable`; brána bývá hotová dřív než testy) a PR, jejichž poslední kontrola už odpovídala na žádost
+ * Vynechá PR s konfliktem nebo s nedoběhlými povinnými kontrolami (`mergeable_state` jiný než `clean`,
+ * `unstable` a `has_hooks`; brána bývá hotová dřív než testy) a PR, jejichž poslední kontrola už odpovídala na žádost
  * před sloučením: pokus na tomto commitu proběhl a GitHub ho odmítl. Bez toho by každá žádost spustila
  * bránu a ta nový pokus, dokola.
  */
