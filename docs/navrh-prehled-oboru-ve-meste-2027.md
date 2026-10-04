@@ -79,13 +79,13 @@ Obory se seskupí podle **směru studia**, který vychází ze skupiny kmenovýc
 | Gymnázia | 79-41-K/41, 79-42-K/41, přírodovědné lyceum | 29 | 1 | 1 |
 | Víceletá gymnázia (z 5. a 7. třídy) | 79-41-K/61, K/81 a obdobné | 24 | 2 | 1 |
 | Technika a IT | 16, 18, 21–39, technické lyceum | 52 | 8 | 1 |
-| Zdravotnictví, pedagogika a sociální práce | 53, 75, zdravotnické a pedagogické lyceum | 25 | 2 | 0 |
+| Zdravotnictví, pedagogika a sociální práce | 53, 69-41, 75, zdravotnické a pedagogické lyceum | 29 | 2 | 0 |
 | Ekonomika, obchod a správa | 61–68, 72, ekonomické lyceum | 35 | 2 | 1 |
-| Gastronomie, cestovní ruch a služby | 65, 69 | 10 | 0 | 0 |
+| Gastronomie, cestovní ruch a služby | 65, 69 kromě 69-41 | 6 | 0 | 0 |
 | Příroda, zemědělství a veterina | 41, 43 | 1 | 2 | 0 |
 | Umění a design | 82 | 1 | 0 | 0 |
 
-Počty jsou nabídky s jednotnou zkouškou z katalogu 2026. V Brně k nim přibude 90 oborů z dnešního oddílu Další obory ve městě: 49 v technice, 18 v umění (hlavně konzervatoře), 9 v gastronomii a službách, 5 ve zdravotnictví a sociální práci, 4 v ekonomice, 2 v přírodě a 3 praktické školy. **Praktické školy** (78-62-C) se do žádného směru nehodí a dostanou vlastní malou skupinu na konci. **Učební obory a další obory bez jednotné zkoušky** se zařadí do týchž směrů jako řádky se značkou „výuční list“ a bez obtížnosti přijetí (údaj pro ně neexistuje). Oddíl „Další obory ve městě“ tím zanikne jako samostatná příloha: elektromechanik bude mezi technikou, kuchař mezi gastronomií.
+Počty jsou nabídky s jednotnou zkouškou z katalogu 2026. V Brně k nim přibude 90 oborů z dnešního oddílu Další obory ve městě: 49 v technice, 18 v umění (hlavně konzervatoře), 9 v gastronomii a službách, 5 ve zdravotnictví a sociální práci, 4 v ekonomice, 2 v přírodě a 3 praktické školy. Masér sportovní a rekondiční (69-41) patří ke zdravotnictví, ne ke službám: v brněnském okruhu stojí vedle zdravotnických škol. **Praktické školy** (78-62-C) se do žádného směru nehodí a dostanou vlastní malou skupinu na konci. **Učební obory a další obory bez jednotné zkoušky** se zařadí do týchž směrů jako řádky se značkou „výuční list“ a bez obtížnosti přijetí (údaj pro ně neexistuje). Oddíl „Další obory ve městě“ tím zanikne jako samostatná příloha: elektromechanik bude mezi technikou, kuchař mezi gastronomií.
 
 **Víceletá gymnázia zvlášť** mají jiného čtenáře: rodiče páťáka nebo sedmáka. Dnes jsou v kartě školy promíchaná se čtyřletým studiem.
 
@@ -149,12 +149,12 @@ Jihomoravský kraj · 58 škol · 177 oborů s jednotnou zkouškou a 90 dalšíc
 
 Co tu můžete studovat
  [Gymnázia 29] [Víceletá gymnázia 24] [Technika a IT 101]
- [Zdravotnictví, pedagogika, sociální 30] [Ekonomika a správa 39]
- [Gastronomie a služby 19] [Umění a design 19] [Příroda 3] [Praktické školy 3]
+ [Zdravotnictví, pedagogika, sociální 34] [Ekonomika a správa 39]
+ [Gastronomie a služby 15] [Umění a design 19] [Příroda 3] [Praktické školy 3]
 
  ( Vše ) ( S maturitou ) ( S výučním listem )     🔎 Hledat školu nebo obor
 
-▸ Gymnázia · 29 oborů ve 21 školách
+▸ Gymnázia · 29 oborů ve 22 školách
 ▾ Technika a IT · 52 oborů s jednotnou zkouškou a 49 bez ní
     Obtížnost přijetí v 1. kole 2026
 
@@ -169,7 +169,7 @@ Co tu můžete studovat
       Instalatér                          výuční list               →
       Tesař                               výuční list               →
     …
-▸ Zdravotnictví, pedagogika a sociální práce · 25 oborů v 16 školách
+▸ Zdravotnictví, pedagogika a sociální práce · 29 oborů s jednotnou zkouškou a 5 bez ní
 ```
 
 Hodnoty odznaků a míst ve výřezu jsou ilustrační, skutečné dá katalog. Počty v rozcestníku jsou skutečné: obory s jednotnou zkouškou z katalogu 2026 a obory z oddílu Další obory ve městě (78 bez jednotné zkoušky a 12 mimo přehled).
