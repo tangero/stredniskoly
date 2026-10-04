@@ -25,7 +25,8 @@ a každou hodinu. Výsledek zapíše jako kontrolu „Brána sloučení“ na ak
 a PR jiného autora (fork, Dependabot) projde jen se `schvaleno` na PR.
 
 Vždy: `stop` blokuje, při zamrznutí projde jen `incident` v rozsahu rutiny, u změn webu musí být
-protokol z preview k aktuálnímu commitu (skill `overeni-preview`).
+protokol z preview k aktuálnímu commitu (skill `overeni-preview`). Chybějící protokol nahradí jen platný
+souhlas vlastníka na PR (`schvaleno` na PR pro aktuální commit, RA42); protokol s „nesplněno“ blokuje i tak.
 
 **Review asistenta zadání** (oddíl 9d): u změn webu brána navíc chce pro aktuální hlavu komentář
 `## Review` od účtu `asistent` s řádky `Verdikt: Bez P1 a P2` a `Commit: <sha7>`; neplatí s `schvaleno`

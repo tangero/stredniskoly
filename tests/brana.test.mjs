@@ -125,6 +125,24 @@ test('zadání bez označení K a P a etapa se „Souvisí s“ se posuzují jak
   assert.doesNotMatch(etapa.duvody.join(), /neuvádí kritéria/);
 });
 
+test('souhlas vlastníka na PR nahradí chybějící protokol, nesplněné kritérium ne (RA42)', () => {
+  const souhlas = (komentare, sha = SHA) => pr({
+    stitky: ['schvaleno'], udalosti: [schvalenoUdalost(PRED(2))],
+    komentare: [...komentare, { autor: BOT, cas: PRED(2), telo: ZNACKA.souhlasPr(sha) }],
+  });
+  const bez = run({ pr: souhlas([]) });
+  assert.equal(bez.uspech, true, bez.duvody.join('; '));
+  assert.match(bez.duvody.join(), /chybí protokol z preview pro commit aaaaaaa: nahrazuje souhlas vlastníka na PR/);
+  const kriteria = run({ issues: [issue({ telo: TELO_K })], pr: souhlas([protokolK(['K1: věta'])]) });
+  assert.equal(kriteria.uspech, true, kriteria.duvody.join('; '));
+  const nesplneno = run({ pr: souhlas([protokolKomentar(SHA, 'nesplněno')]) });
+  assert.equal(nesplneno.uspech, false);
+  assert.match(nesplneno.duvody.join(), /nesplněné/);
+  const staraHlava = run({ pr: souhlas([], SHA2) });
+  assert.equal(staraHlava.uspech, false);
+  assert.match(staraHlava.duvody.join(), /chybí protokol/);
+});
+
 test('označení kritérií: rozdělení, zrušení a řádek protokolu', () => {
   const telo = '- [ ] K1: a\n- [ ] ~~K3: rozdělené~~\n- [ ] K3.1: b\n- [x] K3.2: c\n- P1: d\nText K9: není seznam';
   assert.deepEqual(oznaceniKriterii(telo), ['K1', 'K3.1', 'K3.2', 'P1']);
