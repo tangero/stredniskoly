@@ -8,7 +8,7 @@ import { MESTA, getCityStats } from '@/lib/cityData';
 import { zobrazeneObdobi } from '@/lib/stav-datovych-sad';
 import { rokDruhehoKola } from '@/lib/druhe-kolo';
 import { dalsiOboryVeMeste, kategorieOboru, KATEGORIE_BEZ_JPZ, nactiIndexRejstriku } from '@/lib/kontext-prihlasek';
-import { getOkruheMesta, popisOboruOkruhu, type ZaznamKataloguProOkruh } from '@/lib/okruhy-oboru';
+import { getOkruheMesta, nazevSkolyProRadek, popisOboruOkruhu, type ZaznamKataloguProOkruh } from '@/lib/okruhy-oboru';
 import { getSchoolAnalysis, getSchoolsData } from '@/lib/data';
 import { adresaPrehledu } from '@/lib/adresa-oboru.mjs';
 import { klicOboru, rocnikyKatalogu } from '@/lib/school-key';
@@ -205,10 +205,15 @@ function jeNastavba(klic: string): boolean {
  * Katalog pro popis řádků okruhu: záznamy oboru (REDIZO_KKOV) z nejnovějšího ročníku, ve kterém se
  * obor vyskytuje, a název školy s ulicí podle REDIZO. Ročníky určuje registr (`rocnikyKatalogu`).
  */
-async function katalogProOkruhy(): Promise<{
-  obory: Map<string, ZaznamKataloguProOkruh[]>;
-  skoly: Map<string, string>;
-}> {
+type KatalogProOkruhy = { obory: Map<string, ZaznamKataloguProOkruh[]>; skoly: Map<string, string> };
+let katalogProOkruhyCache: Promise<KatalogProOkruhy> | null = null;
+
+function katalogProOkruhy(): Promise<KatalogProOkruhy> {
+  katalogProOkruhyCache ??= sestavKatalogProOkruhy();
+  return katalogProOkruhyCache;
+}
+
+async function sestavKatalogProOkruhy(): Promise<KatalogProOkruhy> {
   const data = await getSchoolsData() as unknown as Record<string, Array<Record<string, unknown>>>;
   const obory = new Map<string, ZaznamKataloguProOkruh[]>();
   const skoly = new Map<string, string>();
@@ -316,6 +321,14 @@ export default async function MestoPage({ params }: Props) {
     mestoMeta.nazev,
     new Set(schools.map(s => `${s.redizo}_${s.id.split('_')[1] ?? ''}`)),
   );
+  // Zkrácený název z rejstříku je u řady škol stejný („Gymnázium“); seznam by je slil do jedné.
+  const [rejstrik, katalogNazvu] = await Promise.all([nactiIndexRejstriku(), katalogProOkruhy()]);
+  const dalsiObory = dalsi.obory.map(o => ({
+    ...o,
+    skola: nazevSkolyProRadek(o.redizo, katalogNazvu.skoly, {
+      skola: o.skola, adresa: rejstrik.identifikace[o.redizo]?.adresa,
+    }) ?? o.skola,
+  }));
   const okruheMesta = await getOkruheMesta(mestoMeta.nazev);
   const { okruhy, nastavby } = await okruhyKZobrazeni(okruheMesta, mestoMeta.nazev, schools);
   const pocetSkol = new Set(schools.map(s => s.redizo)).size;
@@ -397,7 +410,7 @@ export default async function MestoPage({ params }: Props) {
 
           {/* Obory, které hlavní přehled nevede */}
           <div id="dalsi-obory" className="scroll-mt-24">
-            <DalsiOboryVeMeste obory={dalsi.obory} minUchazecu={dalsi.minUchazecu} />
+            <DalsiOboryVeMeste obory={dalsiObory} minUchazecu={dalsi.minUchazecu} />
           </div>
 
           {/* Okruhy oborů podle souběžných přihlášek; jen města, kde okruhy vycházejí */}

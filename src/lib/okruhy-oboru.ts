@@ -171,6 +171,22 @@ export function uliceZAdresy(adresa: string | undefined): string | null {
 }
 
 /**
+ * Název školy pro řádek seznamu: z katalogu s ulicí, jinak zkrácený název z rejstříku doplněný o ulici
+ * sídla. Zkrácený název sám nestačí, u 97 škol je to jen „Gymnázium“.
+ */
+export function nazevSkolyProRadek(
+  redizo: string,
+  nazvySkolKatalogu: Map<string, string>,
+  rejstrik: { skola?: string; adresa?: string },
+): string | null {
+  const zKatalogu = nazvySkolKatalogu.get(redizo);
+  if (zKatalogu) return zKatalogu;
+  if (!rejstrik.skola) return null;
+  const ulice = uliceZAdresy(rejstrik.adresa);
+  return ulice && !rejstrik.skola.includes(ulice) ? `${rejstrik.skola}, ${ulice}` : rejstrik.skola;
+}
+
+/**
  * Jak řádek okruhu pojmenuje školu a obor. Zkrácený název z rejstříku je u 97 škol jen „Gymnázium“
  * a název oboru 79-41-K/41 také, takže řádek „Gymnázium / Gymnázium“ nic neřekl. Název školy se proto
  * bere z katalogu (s ulicí), a to i pro obor mimo katalog, když katalog zná jiný obor téže školy;
@@ -183,11 +199,8 @@ export function popisOboruOkruhu(
   nazvySkolKatalogu: Map<string, string>,
   rejstrik: { skola?: string; adresa?: string; obor?: string },
 ): PopisOboruOkruhu | null {
-  const redizo = klic.split('_')[0];
   const zaznamy = katalog.get(klic) ?? [];
-  const ulice = uliceZAdresy(rejstrik.adresa);
-  const skola = nazvySkolKatalogu.get(redizo)
-    ?? (rejstrik.skola ? (ulice && !rejstrik.skola.includes(ulice) ? `${rejstrik.skola}, ${ulice}` : rejstrik.skola) : null);
+  const skola = nazevSkolyProRadek(klic.split('_')[0], nazvySkolKatalogu, rejstrik);
   const obor = zaznamy[0]?.obor || rejstrik.obor;
   if (!skola || !obor) return null;
   const casti: string[] = [];
