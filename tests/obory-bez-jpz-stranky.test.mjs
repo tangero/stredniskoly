@@ -1,0 +1,140 @@
+/**
+ * Etapa 3a fáze 2 oborů bez jednotné zkoušky (issue #244): stránka učebního oboru a obory na stránce školy.
+ *
+ * Hlídá to, co by build ani typy neshodily: že se nezměnila žádná dnešní adresa oboru se zkouškou, že
+ * sitemapa a aplikace skládají tytéž adresy, že obtížnost přijetí platí jen nad prahem a ne u C, E, J, P
+ * a že na stránce učebního oboru není žádný údaj postavený na bodech.
+ */
+import fs from 'node:fs';
+import { test } from 'node:test';
+import assert from 'node:assert/strict';
+import React from 'react';
+import { renderToStaticMarkup } from 'react-dom/server';
+import { text } from './_zavadec.mjs';
+import { getProgramsByRedizo, getProgramyBezJpz, getSchoolPageType, getSchoolsByRedizo } from '../src/lib/data.ts';
+import { obtiznostBezJpz, rokBezJpz } from '../src/lib/obory-bez-jpz.ts';
+import { adresySkolyMapa, obsazeneAdresy } from '../src/lib/adresa-oboru.mjs';
+import { buildSitemapPaths } from '../scripts/generate-sitemap.mjs';
+import { getProfilUcebnihoOboru } from '../src/lib/ucebni-obor-profil-data.ts';
+import { ProfilUcebnihoOboru } from '../src/components/obor/ProfilUcebnihoOboru.tsx';
+import { getProfilSkoly } from '../src/lib/skola-profil-data.ts';
+import { ZARAZENI_POPISEK } from '../src/lib/obor-profil.ts';
+
+const DATA = JSON.parse(fs.readFileSync('src/data/obory-bez-jpz-2026.json', 'utf8'));
+const ANALYZA = JSON.parse(fs.readFileSync('public/school_analysis.json', 'utf8'));
+const VE_KATALOGU = new Set(Object.keys(ANALYZA).map(k => k.split('_')[0]));
+const SKOLY = [...new Set(DATA.nabidky.map(n => n.redizo))].filter(r => VE_KATALOGU.has(r)).sort();
+
+async function programySkoly(redizo) {
+  const skola = (await getSchoolsByRedizo(redizo))[0];
+  const jpz = await getProgramsByRedizo(redizo);
+  return { skola, jpz, bez: await getProgramyBezJpz(redizo, skola.nazev, jpz) };
+}
+
+test('ročník nabídek bez JPZ je ten, který web zobrazuje', async () => {
+  const registr = JSON.parse(fs.readFileSync('public/stav_datovych_sad.json', 'utf8'));
+  assert.equal(String(await rokBezJpz()), registr.sady['cermat-prihlasky'].zobrazeno.obdobi);
+});
+
+test('nabídky bez JPZ škol na webu mají vlastní adresu a žádnou nepřebírají od oborů se zkouškou', async () => {
+  let pocet = 0;
+  for (const redizo of SKOLY) {
+    const { skola, jpz, bez } = await programySkoly(redizo);
+    const obsazene = obsazeneAdresy(redizo, skola.nazev, jpz);
+    const adresy = bez.map(p => p.adresa);
+    assert.equal(new Set(adresy).size, adresy.length, `${redizo}: dvě nabídky na téže adrese`);
+    for (const a of adresy) assert.ok(!obsazene.has(a), `${redizo}: ${a} patří oboru se zkouškou`);
+    pocet += bez.length;
+  }
+  assert.equal(pocet, DATA.nabidky.filter(n => VE_KATALOGU.has(n.redizo)).length);
+});
+
+test('adresy oborů se zkouškou vedou na tytéž nabídky jako dřív, adresy učebních oborů na učební obor', async () => {
+  for (const redizo of SKOLY.filter((_, i) => i % 9 === 0)) {
+    const { skola, jpz, bez } = await programySkoly(redizo);
+    for (const [adresa, p] of adresySkolyMapa(redizo, skola.nazev, jpz)) {
+      const t = await getSchoolPageType(adresa);
+      assert.equal(t.program?.id, p.id, adresa);
+      assert.equal(t.program?.bezJpz, undefined, adresa);
+    }
+    for (const p of bez) {
+      const t = await getSchoolPageType(p.adresa);
+      assert.equal(t.program?.id, p.id, p.adresa);
+      assert.equal(t.presmerovatNa, undefined, p.adresa);
+    }
+  }
+});
+
+test('sitemapa nese přesně adresy učebních oborů, které aplikace rozpozná', async () => {
+  const schools = JSON.parse(fs.readFileSync('public/schools_data.json', 'utf8'));
+  const sBez = new Set(buildSitemapPaths(ANALYZA, schools, '2026', { schools: {} }, [2026], DATA));
+  const bez = new Set(buildSitemapPaths(ANALYZA, schools, '2026', { schools: {} }, [2026]));
+  const pridane = [...sBez].filter(x => !bez.has(x)).map(x => x.replace('/skola/', '')).sort();
+  const aplikace = [];
+  for (const redizo of SKOLY) aplikace.push(...(await programySkoly(redizo)).bez.map(p => p.adresa));
+  assert.deepEqual(pridane, aplikace.sort());
+  assert.ok([...bez].every(x => sBez.has(x)), 'sitemapa ztratila adresu');
+  // Jiný ročník souboru se do sitemapy nedostane.
+  assert.equal(buildSitemapPaths(ANALYZA, schools, '2026', { schools: {} }, [2026], { ...DATA, rok: 2025 }).length, bez.size);
+});
+
+test('obtížnost přijetí slovy jen nad prahem 10 soutěžících, i pro místo pro všechny, a nikdy u C, E, J a P', () => {
+  const n = (kategorie, prijati, nepr_kapacita, zarazeni_obtiznosti) => ({ kategorie, prijati, nepr_kapacita, zarazeni_obtiznosti });
+  assert.equal(obtiznostBezJpz(n('H', 9, 0, 'kapacita_nerozhodovala')), null);
+  assert.equal(obtiznostBezJpz(n('H', 10, 0, 'kapacita_nerozhodovala')), 'kapacita_nerozhodovala');
+  assert.equal(obtiznostBezJpz(n('H', 20, 30, 'tezke')), 'tezke');
+  assert.equal(obtiznostBezJpz(n('M', 20, 30, 'tezke')), 'tezke');
+  for (const k of ['C', 'E', 'J', 'P']) assert.equal(obtiznostBezJpz(n(k, 20, 30, 'tezke')), null, k);
+  assert.equal(obtiznostBezJpz(n('H', null, 3, 'tezke')), null);
+  // Rozdělení učebních oborů H, jak ho stránky ukážou (návrh, oddíl 3.6 a 10.1).
+  const h = {};
+  for (const x of DATA.nabidky.filter(x => x.kategorie === 'H')) { const z = obtiznostBezJpz(x); if (z) h[z] = (h[z] ?? 0) + 1; }
+  assert.deepEqual(h, { kapacita_nerozhodovala: 574, vetsina_uspela: 302, stredne_tezke: 164, tezke: 78, velmi_tezke: 17 });
+});
+
+async function vykresli(predikat) {
+  const n = DATA.nabidky.find(x => VE_KATALOGU.has(x.redizo) && predikat(x));
+  const { skola, jpz, bez } = await programySkoly(n.redizo);
+  const program = bez.find(p => p.id === n.id);
+  const data = await getProfilUcebnihoOboru(program, [...jpz, ...bez]);
+  // Veletrh ve městě je asynchronní komponenta serveru; statické vykreslení ji neumí, obec proto prázdná.
+  return { n, html: text(renderToStaticMarkup(React.createElement(ProfilUcebnihoOboru, { data, adresa: skola.adresa, obec: '', skolaHref: '/skola/x' }))) };
+}
+
+const BODY = /\b(bod[ůy]?|percentil\w*|průměr\w* JPZ)\b/i;
+
+test('stránka učebního oboru: pět otázek, zbylá místa jako první údaj, žádné body', async () => {
+  const { n, html } = await vykresli(x => x.kategorie === 'H' && x.zbyla_mista >= 5 && x.kolo_2 !== null);
+  for (const nadpis of ['Je tam místo', 'Stojí o obor někdo', 'Kam se hlásí ostatní', 'Co přijde potom', 'Jak se tam dostat']) assert.match(html, new RegExp(nadpis));
+  assert.match(html, new RegExp(`Po 1\\. kole \\d{4} zbylo ${n.zbyla_mista} míst`));
+  assert.match(html, /učební obor\s*, tedy obor s výučním listem/);
+  assert.match(html, /výučním listem\s*, tedy dokladem o vyučení v oboru/);
+  assert.doesNotMatch(html.replace('Body tu nejsou', ''), BODY);
+});
+
+test('obor E ani konzervatoř nemají obtížnost přijetí; konzervatoř nemá otázku Co přijde potom', async () => {
+  for (const [kat, extra] of [['E', /učební obor/], ['P', /talentovou zkouškou/]]) {
+    // Konzervatoř je ve školách na webu jediná (ostatní přibudou s novými školami v etapě 3b), bez prahu.
+    const { html } = await vykresli(x => x.kategorie === kat && (kat === 'P' || (x.prijati !== null && x.nepr_kapacita !== null && x.prijati + x.nepr_kapacita >= 10)));
+    for (const popisek of Object.values(ZARAZENI_POPISEK)) assert.doesNotMatch(html, new RegExp(`bylo ${popisek} se sem dostat`), `${kat}: ${popisek}`);
+    assert.doesNotMatch(html, /místo pro všechny, kdo splnili/);
+    assert.match(html, extra);
+    assert.doesNotMatch(html.replace('Body tu nejsou', ''), BODY, kat);
+    if (kat === 'P') assert.doesNotMatch(html, /Co přijde potom/);
+  }
+});
+
+test('stránka školy řadí učební obory s ostatními podle názvu a dává jim adresu', async () => {
+  const redizo = '600014231';
+  const { skola, jpz, bez } = await programySkoly(redizo);
+  assert.ok(bez.length > 0);
+  const profil = await getProfilSkoly(redizo, skola.nazev, jpz, new Set(jpz.map(p => p.id)), bez);
+  const nazvy = profil.obory.map(o => o.nazev);
+  assert.deepEqual(nazvy, [...nazvy].sort((a, b) => a.localeCompare(b, 'cs')));
+  const ucebni = profil.obory.filter(o => o.bezJpz);
+  assert.equal(ucebni.length, bez.length);
+  assert.ok(ucebni.every(o => o.href.startsWith(`/skola/${redizo}-`) && o.cjPrijati === null && o.umisteniPrijatych === null));
+  // Obory se zkouškou mají tytéž odkazy jako bez učebních oborů.
+  const bezUcebnich = await getProfilSkoly(redizo, skola.nazev, jpz, new Set(jpz.map(p => p.id)));
+  assert.deepEqual(profil.obory.filter(o => !o.bezJpz).map(o => o.href).sort(), bezUcebnich.obory.map(o => o.href).sort());
+});

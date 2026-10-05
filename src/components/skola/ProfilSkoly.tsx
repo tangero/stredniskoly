@@ -142,7 +142,10 @@ function Zdroj({ children }: { children: ReactNode }) {
 }
 
 function RadekOboru({ o, rok }: { o: OborSkoly; rok: number | null }) {
-  const nadpis = o.zarazeni ? NADPIS_OBTIZNOSTI[o.zarazeni] : o.prijati !== null ? `Přijato ${cislo(o.prijati)}` : 'Údaje o přijímání nemáme';
+  // Učební obor a ostatní obory bez jednotné zkoušky: prvním údajem jsou zbylá místa po 1. kole (issue #244).
+  const nadpis = o.bezJpz && o.bezJpz.zbylaMista !== null && o.kapacita !== null
+    ? (o.bezJpz.zbylaMista > 0 ? `Zbylá místa po 1. kole: ${cislo(o.bezJpz.zbylaMista)} ${zOd(o.kapacita)} ${cislo(o.kapacita)}` : 'Po 1. kole obsazeno')
+    : o.zarazeni ? NADPIS_OBTIZNOSTI[o.zarazeni] : o.prijati !== null ? `Přijato ${cislo(o.prijati)}` : 'Údaje o přijímání nemáme';
   // Každá karta je vlastní mřížka, takže sloupec `auto` by v každé vyšel jinak široký podle obsahu
   // a karty by se rozjely. Poslední sloupec má proto pevnou míru a akce v něm jsou v obou stavech
   // stejně široké (viz kompaktní podoba UlozitObor).
@@ -153,7 +156,7 @@ function RadekOboru({ o, rok }: { o: OborSkoly; rok: number | null }) {
           <Link href={o.href} className="hover:text-[#0074e4]">{o.nazev}{o.delka ? `, ${o.delka}leté` : ''}</Link>
         </h3>
         <p className="text-[15px] text-slate-600">
-          pro žáky {o.proKoho} · {delkaSlovy(o.delka)}{o.kapacita !== null ? ` · ${cislo(o.kapacita)} míst` : ''}
+          {o.bezJpz ? `${o.bezJpz.druh} · ` : ''}pro žáky {o.proKoho} · {delkaSlovy(o.delka)}{o.kapacita !== null ? ` · ${cislo(o.kapacita)} míst` : ''}
         </p>
         {(o.novy || o.drivejsiNazev) && (
           <p className="mt-1 text-[13px] text-slate-500">
@@ -173,6 +176,7 @@ function RadekOboru({ o, rok }: { o: OborSkoly; rok: number | null }) {
           {o.soutezici && o.zarazeni && o.zarazeni !== 'kapacita_nerozhodovala'
             ? `přijato ${cislo(o.prijati ?? 0)} ${zOd(o.soutezici)} ${cislo(o.soutezici)} soutěžících uchazečů`
             : o.prijati !== null && o.kapacita !== null ? `přijato ${cislo(o.prijati)} na ${cislo(o.kapacita)} míst` : ''}
+          {o.bezJpz && o.zarazeni ? ` · ${ZARAZENI_POPISEK[o.zarazeni]}` : ''}
           {o.predchoziRok && o.zarazeniPredchozi ? ` · v roce ${o.predchoziRok} ${ZARAZENI_POPISEK[o.zarazeniPredchozi]}` : ''}
           {o.tlak !== null ? ` · tlak prvních voleb ${cislo(o.tlak, 1)}×` : ''}
         </span>
@@ -190,7 +194,8 @@ function RadekOboru({ o, rok }: { o: OborSkoly; rok: number | null }) {
       </div>
       <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-[15px] font-semibold">
         <Link href={o.href} className="text-[#0074e4] hover:underline">Detail oboru</Link>
-        <UlozitObor programId={o.id} kompaktni />
+        {/* Simulátor nabídky bez JPZ zatím nezná (etapa 5). */}
+        {!o.bezJpz && <UlozitObor programId={o.id} kompaktni />}
       </div>
     </article>
   );
@@ -358,6 +363,9 @@ export function ProfilSkoly({ data, skola, odkazy }: ProfilSkolyProps) {
         {vypsane.length > 0 ? (
           <>
             <p className="text-[15px] text-slate-600">Obtížnost přijetí popisuje, kolik soutěžících uchazečů se v 1. kole dostalo; soutěžící uchazeči jsou ti, kdo splnili požadavky školy a nedostali se na obor, který měli na přihlášce výš. Každý obor má vlastní přijímání, za školu se nesčítá.</p>
+            {vypsane.some(o => o.bezJpz) && (
+              <p className="text-[15px] text-slate-600">U učebních oborů, tedy oborů s výučním listem, a ostatních oborů bez jednotné přijímací zkoušky body nejsou, protože se zkouška nekoná; prvním údajem je, kolik míst zbylo po 1. kole.</p>
+            )}
             <div className="space-y-2.5">{vypsane.map(o => <RadekOboru key={o.id} o={o} rok={rok} />)}</div>
           </>
         ) : (

@@ -1,6 +1,6 @@
 # Slovník pojmů
 
-Verze 1.41 · 5. 10. 2026 · **Závazný pro všechny texty na webu.** Nový pojem se na stránce nepoužije bez zápisu sem.
+Verze 1.42 · 5. 10. 2026 · **Závazný pro všechny texty na webu.** Nový pojem se na stránce nepoužije bez zápisu sem.
 
 Slovník pojmů říká, **jakými slovy mluvíme k rodičům a uchazečům**, aby tatáž věc nezněla na každé stránce jinak. Doplňuje [slovník ukazatelů](slovnik-ukazatelu.md), který říká, **jak se veličina jmenuje v datech a jak se počítá**. Kde se oba liší, platí: v datech, kódu a API název ze slovníku ukazatelů, v textu stránky pojem odsud.
 
@@ -40,7 +40,12 @@ Slovník pojmů říká, **jakými slovy mluvíme k rodičům a uchazečům**, a
 | **1. kolo**, **2. kolo** | kola přijímacího řízení podle harmonogramu MŠMT | u 2. kola: „když se obor v 1. kole nenaplní, škola může vypsat 2. kolo“ | druhé kolo bez čísla ročníku |
 | **místa**, **kapacita** | počet míst, které škola pro obor v kole vypsala | není potřeba | volná místa (jen u 2. kola) |
 | **obor se už nenabírá** | obor vedený v rejstříku jako dobíhající a v zobrazeném ročníku nevypsaný | „škola tenhle obor dokončuje se stávajícími žáky a nové uchazeče do něj nepřijímá“ | zrušený obor, zaniklý obor (dokud to neuvádí škola); jakékoli varování u oboru, který škola v ročníku **vypsala** — mezi vypsanými je dobíhajících nula |
-| **obor bez jednotné zkoušky** | obor, u kterého se jednotná přijímací zkouška nekoná: kategorie C, E, H, J a P, například učební obory s výučním listem; přehled je zatím nezahrnuje | v tabulce stačí značka „bez jednotné zkoušky“, pod tabulkou: „Obory bez jednotné zkoušky, například učební obory s výučním listem, a několik dalších oborů přehled zatím nezahrnuje a nemají u nás vlastní stránku.“ Věta mluví i o oborech mimo přehled, protože jedna poznámka vysvětluje obě značky | obor bez JPZ, obor bez přijímaček, nematuritní obor (není totéž) |
+| **obor bez jednotné zkoušky** | obor, u kterého se jednotná přijímací zkouška nekoná: kategorie C, E, H, J a P a umělecké obory s talentovou zkouškou; od etapy 3a (issue #244) mají obory škol, které web vede, vlastní stránku | v tabulce značka „bez jednotné zkoušky“; na stránce učebního oboru „Body tu nejsou, protože se jednotná přijímací zkouška nekoná“; pod tabulkou oborů na přihlášce „Obory bez odkazu u nás zatím vlastní stránku nemají.“ | obor bez JPZ, obor bez přijímaček, nematuritní obor (není totéž) |
+| **učební obor** | obor s výučním listem, kategorie H, případně E | „učební obor, tedy obor s výučním listem“ | učňák, učňovský obor |
+| **výuční list** | doklad o vyučení v oboru, kterým končí učební obor | „výuční list, tedy doklad o vyučení v oboru“ | výučák, učňák |
+| **zbylá místa po 1. kole** | *Zbylá místa po 1. kole* ze slovníku ukazatelů: kapacita míst minus přijatí v 1. kole | „Po 1. kole zbylo 5 míst ze 14“, v řádku „Zbylá místa po 1. kole: 5 ze 14“ | volná místa bez kola (to slovo patří 2. kolu) |
+| **nástavba** (kam dál po výučním listu) | studium pro absolventy učebního oboru, po kterém se skládá maturita | „nástavba, po které se skládá maturita“ | pokračování, navazující studium (obecné) |
+| **obor bez maturity i výučního listu** | dvouletý obor kategorie J zakončený závěrečnou zkouškou a vysvědčením; nenazývá se učební obor, protože výuční list nedává | „dvouletý obor zakončený závěrečnou zkouškou a vysvědčením, bez maturity i výučního listu“ | učební obor (není), krátký obor |
 | **mimo přehled** | obor, který přehled nezahrnuje z jiného důvodu než kvůli chybějící jednotné zkoušce (například jiná forma studia nebo talentový obor) | jen jako značka v tabulce, vysvětlení nese poznámka pod tabulkou | neznámý obor; **bez údajů** (to je jiný stav: u oboru mimo přehled důvod známe) |
 | **bez údajů** | o oboru na přihlášce nevíme nic: nevede ho katalog a není ani v soupisu oborů mimo přehled, takže o něm neumíme říct ani to, proč ho přehled nezahrnuje | jen jako značka v tabulce; nikdy se nedoplňuje domněnkou, proč obor chybí | mimo přehled, bez jednotné zkoušky (obojí tvrdí důvod, který neznáme) |
 | **nabídka oborů** | obory a počet míst, které školy pro dané přijímací řízení vypíšou; školy je zveřejňují spolu s kritérii přijetí, agregovaná data CERMATu k nim vycházejí až o několik měsíců později | „nabídka oborů pro rok …, tedy obory a počet míst“; termín zveřejnění vždy s rokem a s tím, že ho školy zveřejňují s kritérii | seznam oborů, otevírané obory (bez roku), vyhlášení nabídky (školy vyhlašují kritéria) |
@@ -149,6 +154,7 @@ Slovník pojmů říká, **jakými slovy mluvíme k rodičům a uchazečům**, a
 
 | Verze | Změna |
 |---|---|
+| 1.42 | Pojmy pro stránku učebního oboru (issue #244, etapa 3a): **učební obor**, **výuční list**, **zbylá místa po 1. kole**, **nástavba**, **obor bez maturity i výučního listu**; **obor bez jednotné zkoušky** už neříká, že ho přehled nezahrnuje, a má novou větu pod tabulkou. |
 | 1.41 | Pojem **na pomezí okruhů** pro obory s nízkou jistotou zařazení do okruhu (5. 10. 2026, #366). |
 | 1.40 | Pojem **směr studia** pro členění stránky města ([přehled oborů ve městě](navrh-prehled-oboru-ve-meste-2027.md), 4. 10. 2026). Okruhy oborů se na stránce města přestávají zobrazovat, zůstávají na stránce oboru. |
 | 1.39 | Nadpis **„Které další obory v okolí uchazeči také volí“** (rozhodnutí vlastníka 3. 10. 2026); „v okolí“ podle přihlášek, ne podle vzdálenosti; „podobné obory“ se nepoužívá. |

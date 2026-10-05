@@ -245,3 +245,56 @@ export function nabidkySeStrankou(nabidky, znaZakladniKlic) {
     return zamereniProAdresu(n.zamereni) ? true : !seZamerenim.has(k) || !n.nevypsano_2026;
   });
 }
+
+/**
+ * Adresy nabídek bez jednotné zkoušky (issue #244, etapa 3a) jako mapa adresa → nabídka.
+ *
+ * Skládají se stejně jako adresy ostatních nabídek (`adresySkolyMapa`), jen nad vlastním seznamem,
+ * aby se **žádná dnešní adresa oboru se zkouškou nezměnila**: kdyby učební obory vstoupily do téhož
+ * výpočtu, mohly by ostatním nabídkám přidat délku studia nebo pořadí. Adresa, kterou už drží
+ * nabídka se zkouškou (`obsazene`), dostane pořadové číslo. Zaměření shodné s názvem oboru
+ * („Zahradník“ se zaměřením „zahradník“, u učebních oborů časté) do adresy nepatří.
+ *
+ * @param {string} redizo
+ * @param {string} nazevSkoly
+ * @param {NabidkaProAdresu[]} nabidky
+ * @param {Set<string>} obsazene
+ * @returns {Map<string, NabidkaProAdresu>}
+ */
+export function adresyBezJpzMapa(redizo, nazevSkoly, nabidky, obsazene) {
+  const proAdresu = nabidky.map(n => ({
+    nabidka: n,
+    tvar: { ...n, zamereni: slugify(n.zamereni ?? '', 40) === slugify(n.obor ?? '', 40) ? undefined : n.zamereni },
+  }));
+  /** @type {Map<string, NabidkaProAdresu>} */
+  const vysledek = new Map();
+  const mapa = adresySkolyMapa(redizo, nazevSkoly, proAdresu.map(x => x.tvar));
+  const puvodni = new Map(proAdresu.map(x => [x.tvar, x.nabidka]));
+  for (const adresa of [...mapa.keys()].sort()) {
+    let a = adresa;
+    for (let i = 2; obsazene.has(a) || vysledek.has(a); i++) a = `${adresa}-${i}`;
+    vysledek.set(a, puvodni.get(mapa.get(adresa)));
+  }
+  return vysledek;
+}
+
+/**
+ * Adresy, které nabídka bez JPZ převzít nesmí: přehled školy, adresy nabídek se zkouškou a jejich
+ * základní adresy bez zaměření a s délkou, které se dnes přesměrovávají (docs/adresa-oboru-2027.md).
+ * Sdílí ji aplikace (`getProgramyBezJpz`) i sitemapa, aby obě skládaly tytéž adresy.
+ *
+ * @param {string} redizo
+ * @param {string} nazevSkoly
+ * @param {NabidkaProAdresu[]} nabidkyJpz
+ * @returns {Set<string>}
+ */
+export function obsazeneAdresy(redizo, nazevSkoly, nabidkyJpz) {
+  return new Set([
+    adresaPrehledu(redizo, nazevSkoly),
+    ...adresySkolyMapa(redizo, nazevSkoly, nabidkyJpz).keys(),
+    ...nabidkyJpz.flatMap(n => [
+      `${redizo}-${createSlug(nazevSkoly, n.obor)}`,
+      `${redizo}-${createSlug(nazevSkoly, n.obor, undefined, n.delka_studia)}`,
+    ]),
+  ]);
+}
