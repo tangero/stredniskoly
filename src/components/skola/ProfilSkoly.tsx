@@ -167,7 +167,8 @@ function RadekOboru({ o, rok }: { o: OborSkoly; rok: number | null }) {
       </div>
       <div className="grid gap-1.5">
         <span className="text-[18px] font-bold text-[#16325c]">{nadpis}</span>
-        {o.soutezici && o.zarazeni && o.zarazeni !== 'kapacita_nerozhodovala' ? (
+        {/* Proužek podílu přijatých ze soutěžících by u učebního oboru pod zbylými místy vypadal jako zaplněnost míst. */}
+        {!o.bezJpz && o.soutezici && o.zarazeni && o.zarazeni !== 'kapacita_nerozhodovala' ? (
           <div className="flex h-2.5 max-w-xs overflow-hidden rounded bg-[#e3e9f1]" role="img" aria-label={`${o.prijati} přijatých ${zOd(o.soutezici)} ${o.soutezici} soutěžících uchazečů`}>
             <span className="bg-[#0074e4]" style={{ width: `${(100 * (o.prijati ?? 0)) / o.soutezici}%` }} />
           </div>
@@ -185,6 +186,9 @@ function RadekOboru({ o, rok }: { o: OborSkoly; rok: number | null }) {
             {o.prihlasky !== null ? `${cislo(o.prihlasky)} přihlášek` : ''}
             {o.cjPrijati !== null && o.maPrijati !== null ? ` · přijatí průměrně čeština ${cislo(o.cjPrijati, 1)} a matematika ${cislo(o.maPrijati, 1)} z 50 bodů` : ''}
           </span>
+        )}
+        {o.bezJpz?.kolo2 && o.bezJpz.kolo2.kapacita !== null && (
+          <span className="text-[13px] text-slate-600">2. kolo {rok}: {cislo(o.bezJpz.kolo2.kapacita)} míst{o.bezJpz.kolo2.prijati !== null ? `, přijato ${cislo(o.bezJpz.kolo2.prijati)}` : ''}</span>
         )}
         {o.druheKolo && (
           <span className="text-[13px] text-slate-600" title={[vetyDruhehoKola(o.druheKolo).hlavni, ...vetyDruhehoKola(o.druheKolo).doplnky].join(' ')}>
