@@ -1,6 +1,6 @@
 # Slovník pojmů
 
-Verze 1.41 · 5. 10. 2026 · **Závazný pro všechny texty na webu.** Nový pojem se na stránce nepoužije bez zápisu sem.
+Verze 1.42 · 5. 10. 2026 · **Závazný pro všechny texty na webu.** Nový pojem se na stránce nepoužije bez zápisu sem.
 
 Slovník pojmů říká, **jakými slovy mluvíme k rodičům a uchazečům**, aby tatáž věc nezněla na každé stránce jinak. Doplňuje [slovník ukazatelů](slovnik-ukazatelu.md), který říká, **jak se veličina jmenuje v datech a jak se počítá**. Kde se oba liší, platí: v datech, kódu a API název ze slovníku ukazatelů, v textu stránky pojem odsud.
 
@@ -149,6 +149,7 @@ Slovník pojmů říká, **jakými slovy mluvíme k rodičům a uchazečům**, a
 
 | Verze | Změna |
 |---|---|
+| 1.42 | Značka **Doplnila škola** platí i v oddílu portálových údajů na stránce školy a v exportu `.json` (`doplnila_skola`); dřív tam stálo „potvrdila škola“ (#370). **Potvrdila škola** zůstává jen u ručních oprav od školy. Maturitní skupina CERMAT „SOŠ zdravotnické“ (SZD) se v textu jmenuje **praktická sestra** u všech škol. |
 | 1.41 | Pojem **na pomezí okruhů** pro obory s nízkou jistotou zařazení do okruhu (5. 10. 2026, #366). |
 | 1.40 | Pojem **směr studia** pro členění stránky města ([přehled oborů ve městě](navrh-prehled-oboru-ve-meste-2027.md), 4. 10. 2026). Okruhy oborů se na stránce města přestávají zobrazovat, zůstávají na stránce oboru. |
 | 1.39 | Nadpis **„Které další obory v okolí uchazeči také volí“** (rozhodnutí vlastníka 3. 10. 2026); „v okolí“ podle přihlášek, ne podle vzdálenosti; „podobné obory“ se nepoužívá. |

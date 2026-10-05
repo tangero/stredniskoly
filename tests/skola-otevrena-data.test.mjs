@@ -26,7 +26,7 @@ test('JSON nese období z registru, původ údajů od školy a nesčítá přihl
   assert.equal('celkem_prihlasek' in d, false);
   assert.equal(d.obory[0].obtiznost_prijeti, 'velmi_tezke');
   assert.equal(d.obory[0].vypsano_v_roce, 2026);
-  assert.deepEqual(d.udaje_od_skoly.map(x => [x.pole, x.puvod]), [['dny_otevrenych_dveri', 'potvrdila_skola'], ['popis_skoly', 'text_skoly']]);
+  assert.deepEqual(d.udaje_od_skoly.map(x => [x.pole, x.puvod]), [['dny_otevrenych_dveri', 'doplnila_skola'], ['popis_skoly', 'text_skoly']]);
   assert.equal(d.maturita.skupiny_oboru[0].roky[0].zarazeni_proti_skupine, 'above');
   assert.equal(d.obory[1].druhe_kolo.kapacita, 7);
   assert.equal(d.obory[1].druhe_kolo.predchozi_rok.stav, 'bez_2_kola');

@@ -46,7 +46,7 @@ export function sestavOtevrenaData(skola: SkolaZakladni, d: ProfilSkolyData, obd
   const u = d.portal?.udaje ?? {};
   const udajeSkoly = Object.entries(u)
     .filter(([, v]) => v?.hodnota?.trim())
-    .map(([pole, v]) => ({ pole, hodnota: v!.hodnota, potvrzeno_dne: v!.potvrzeno_dne, puvod: pole === 'popis_skoly' ? 'text_skoly' : 'potvrdila_skola' }));
+    .map(([pole, v]) => ({ pole, hodnota: v!.hodnota, potvrzeno_dne: v!.potvrzeno_dne, puvod: pole === 'popis_skoly' ? 'text_skoly' : 'doplnila_skola' }));
   const vypsane = d.obory.filter(o => o.vypsano);
   const i = d.inspis;
 
