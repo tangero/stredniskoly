@@ -1,0 +1,64 @@
+# Problém pro nový projekt (#358): vlastník nebo asistent zadání popíše, čeho chceme dosáhnout, bez hotového
+# řešení. Štítek `oponentura` pak spustí workflow Oponentura: průzkum, nezávislé návrhy více modelů, posouzení
+# z pohledu hodnot projektu a person a syntézu variant (skill `oponentura`). Pro `gh` je tělo se stejnými
+# oddíly v .github/INTERNAL_TEMPLATES/problem.md.
+name: Problém pro nový projekt (jen pro tým)
+description: Čeho chceme dosáhnout; řešení navrhnou a porovnají AI modely v oponentuře.
+title: "[Problém] "
+labels: ["interni", "navrh"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        > [!WARNING]
+        > **Repozitář je veřejný, issue uvidí kdokoli.** Žádná jména, e-maily, telefony ani přístupové údaje. Školu označte RED IZO, osobu rolí.
+        >
+        > Popište problém, ne řešení. Vlastní nápad patří do posledního pole a posoudí se jako jeden z kandidátů. Oponenturu spustí štítek `oponentura`.
+  - type: textarea
+    id: zisk
+    attributes:
+      label: Co chceme získat
+      description: Kterým hodnotám z oddílu „Hodnota pro projekt“ ve Směru vývoje to má pomoci (užitek pro rodiny, odkazy, média, AI, návštěvnost, vztahy, příjmy…) a proč právě teď.
+    validations:
+      required: true
+  - type: textarea
+    id: pro_koho
+    attributes:
+      label: Pro koho a co mu to řeší
+      description: Rodina a uchazeč, škola, pořadatel, novinář… Jakou otázku nebo potíž dnes mají.
+    validations:
+      required: true
+  - type: textarea
+    id: uspech
+    attributes:
+      label: Podle čeho poznáme úspěch
+      description: Signály, které budeme sledovat (Matomo, Search Console, odkazy, ohlasy). Cílová čísla nestanovujeme.
+    validations:
+      required: true
+  - type: textarea
+    id: mantinely
+    attributes:
+      label: Mantinely
+      description: Termín, rozpočet, co nechceme, čeho se nesmí dotknout.
+    validations:
+      required: true
+  - type: textarea
+    id: vime
+    attributes:
+      label: Co už víme nebo tušíme
+      description: Zkušenost, data, odkazy na dokumenty a issues. Označte, co je ověřené a co domněnka.
+  - type: textarea
+    id: pohledy
+    attributes:
+      label: Pohledy k posouzení
+      description: Čí očima se mají návrhy posoudit. Výchozí persony ze Směru vývoje můžete doplnit.
+      value: |
+        - My: co potřebujeme prosadit (Hodnota pro projekt)
+        - Rodina a uchazeč
+        - Ředitel školy
+        - Novinář, kraj nebo pořadatel
+  - type: textarea
+    id: napad
+    attributes:
+      label: Nápad na řešení
+      description: Nepovinné. Posoudí se jako jeden z kandidátů vedle návrhů AI, ne jako hotová věc.
