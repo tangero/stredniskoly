@@ -38,7 +38,7 @@ test('Markdown vychází ze stejného objektu', () => {
   assert.match(md, /## Co tu lze studovat \(1\. kolo 2026\)/);
   assert.match(md, /velmi těžké se dostat \(přijato 30 ze 112 soutěžících uchazečů\)/);
   assert.match(md, /\| 2026 \| 31 ze 31 \| 78,4 % \| 71,8 % \| nad středem podobných škol \| 48 % \|/);
-  assert.match(md, /\*\*Dny otevřených dveří\*\* \(potvrdila škola 2026-11-03\): 18\. 11\. 2026/);
+  assert.match(md, /\*\*Dny otevřených dveří\*\* \(doplnila škola 2026-11-03\): 18\. 11\. 2026/);
   assert.match(md, /- \*\*2\. kolo:\*\* Ve 2\. kole 2026 škola vypsala 7 míst\. Přišlo 13 přihlášek a přijati byli 2\..*V roce 2025 škola 2\. kolo nevypsala\./);
   assert.doesNotMatch(md, /Celkem přihlášek|2025 \(přihlášky na místo\)|Index poptávky/);
 });
