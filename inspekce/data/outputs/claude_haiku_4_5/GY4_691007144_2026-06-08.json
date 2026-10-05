@@ -1,0 +1,110 @@
+{
+  "report_id": "GY4_691007144_2026-06-08",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-10-05T12:18:29.135448+00:00",
+  "run_finished_utc": "2026-10-05T12:18:51.128450+00:00",
+  "raw_file": "GY4_691007144_2026-06-08.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY4_691007144_2026-06-08",
+    "school_profile": {
+      "school_type": "Technické gymnázium se základní školou a mateřskou školou, soukromá s.r.o.",
+      "inspection_period": "8. 6. 2026 – 11. 6. 2026",
+      "school_change_summary": "Orientační inspekce zaměřená na ověření odstranění nedostatků z listopadu 2025. Škola realizovala opatření v personální oblasti, profesním rozvoji a kontrolní činnosti, ale přetrvávají problémy se stabilitou pedagogického sboru."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Podpora žáků v obtížích",
+          "detail": "Škola systematicky identifikuje a podporuje žáky ohrožené neúspěchem prostřednictvím doučování a intervencí.",
+          "evidence": "Přijatá opatření mají prokazatelný a přímý dopad na naplňování vzdělávacích potřeb těchto žáků."
+        },
+        {
+          "tag": "Zlepšení školního klimatu",
+          "detail": "V základní škole došlo k posunu v nastavování a dodržování pravidel, což zlepšilo organizaci výuky a komunikaci.",
+          "evidence": "Pravidla jsou jasně formulována a viditelně prezentována, pozitivní změna se projevuje v lepší spolupráci žáků."
+        },
+        {
+          "tag": "Formativní hodnocení",
+          "detail": "Sebehodnocení a vzájemné hodnocení žáků se využívají více a plní svou podpůrnou funkci.",
+          "evidence": "Žáci dokázali hodnotit vlastní práci i práci spolužáků a zdůvodňovali své závěry."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Nestabilita pedagogů",
+          "detail": "Vysoká fluktuace učitelů v základní škole a nekvalifikovaný sbor v mateřské škole negativně ovlivňují kvalitu vzdělávání.",
+          "evidence": "Přijatá opatření dosud nevedla k stabilizaci pedagogického sboru, v mateřské škole není žádný kvalifikovaný pedagog."
+        },
+        {
+          "tag": "Omezená individualizace",
+          "detail": "Diferenciace a individualizace výuky se uplatňují jen ojediněle, zejména chybí úkoly pro nadané žáky.",
+          "evidence": "Žákům nejsou dostatečně nabízeny úkoly různé obtížnosti ani příležitosti k volbě aktivit podle jejich potřeb."
+        },
+        {
+          "tag": "Nekompletní preventivní systém",
+          "detail": "Prevence rizikového chování není systematicky nastavena, probíhá převážně prostřednictvím třídnických chvilek.",
+          "evidence": "Odborné intervence s pedagogicko-psychologickou poradnou nebyly systematicky rozšířeny do dalších kolektivů."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak škola řeší vysokou fluktuaci pedagogů a jak podporuje nové učitele v jejich adaptaci?",
+        "Jaké konkrétní kroky podniká pro kvalifikaci pedagogů v mateřské škole, kde není žádný kvalifikovaný pedagog?",
+        "Jak škola individualizuje výuku pro nadané a rychleji pracující žáky?"
+      ],
+      "who_school_fits": [
+        "Žáci, kteří potřebují podporu a doučování – škola má systematický přístup k jejich identifikaci a pomoci",
+        "Rodiny hledající menší soukromou školu s osobnějším přístupem",
+        "Děti, které prospívají v prostředí s jasně nastavenými pravidly a strukturou"
+      ],
+      "who_should_be_cautious": [
+        "Nadaní a rychleji pracující žáci – chybí jim dostatečná nabídka úloh odpovídající jejich schopnostem",
+        "Rodiny, které očekávají stabilní tým pedagogů – vysoká fluktuace může ovlivnit kontinuitu vzdělávání",
+        "Rodiče dětí v mateřské škole – pedagogický sbor není kvalifikovaný a chybí podpora pro nejmenší děti"
+      ],
+      "plain_czech_summary": "Technické gymnázium se základní a mateřskou školou v Českých Budějovicích realizuje opatření na zlepšení. Pozitiva: lepší školní klima, podpora slabších žáků, zlepšené hodnocení. Problémy: učitelé často odcházejí, v mateřské škole chybí kvalifikovaní pedagogové, nadaní žáci nemají dostatek výzev. Škola se snaží, ale personální nestabilita zůstává hlavní výzvou. Vhodná pro děti potřebující podporu, méně pro nadané."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Nedostupné v textu",
+        "key_numbers": [
+          "V jedné třídě prvního ročníku střední školy se vzdělávalo 21 žáků"
+        ],
+        "evidence": "Zpráva se zaměřuje na orientační inspekci základní a mateřské školy, maturitní výsledky nejsou uvedeny."
+      },
+      "absence": {
+        "trend": "Nedostupné v textu",
+        "key_numbers": [],
+        "evidence": "Absence nejsou v textu zmíněny."
+      },
+      "support_services": [
+        "Doučování a intervence pro žáky ohrožené školním neúspěchem",
+        "Asistenti pedagoga efektivně využíváni",
+        "Odborně vedené intervence ve spolupráci s pedagogicko-psychologickou poradnou",
+        "Školní metodika prevence (nově obsazena)",
+        "Podpůrná opatření v souladu s doporučeními školských poradenských zařízení"
+      ],
+      "safety_climate": [
+        "Pozitivní posun v nastavování a dodržování pravidel ve třídách základní školy",
+        "Pravidla jsou jasně formulována a viditelně prezentována",
+        "Zlepšení organizace výuky a komunikace mezi učiteli a žáky",
+        "Rozdíly v důslednosti práce s pravidly mezi třídami a pedagogy přetrvávají",
+        "Preventivní systém není dosud dostatečně komplexní a systematicky nastavený"
+      ],
+      "partnerships_practice": [
+        "Spolupráce s pedagogicko-psychologickou poradnou na odborně vedených intervencích",
+        "Poskytování doporučení pro práci s třídními kolektivy"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je detailní a srozumitelná, ale zaměřuje se primárně na mateřskou a základní školu. Informace o gymnáziu jsou minimální. Některé pasáže jsou odborné, ale hlavní zjištění jsou jasná.",
+      "uncertainty_notes": [
+        "Maturitní výsledky a trendy nejsou v textu uvedeny – nelze posoudit kvalitu gymnázia",
+        "Absence údajů o školní docházce a absence žáků",
+        "Krátká doba od realizace opatření neumožňuje objektivní posouzení jejich účinnosti"
+      ]
+    }
+  }
+}

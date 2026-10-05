@@ -1,0 +1,106 @@
+```json
+{
+  "report_id": "GY4_691019193_2026-06-12",
+  "school_profile": {
+    "school_type": "Čtyřleté gymnázium s moderním konceptem mezioborového učení a projektové výuky",
+    "inspection_period": "12. 6. 2026 a 15.–16. 6. 2026",
+    "school_change_summary": "Nově založená škola (od 1. 9. 2025) s inovativním přístupem. K 30. 9. 2025 měla 41 žáků ve všech ročnících. Vzdělávání probíhá v pronajatých prostorech v centru Prahy na Spálené ulici."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Inovativní koncept",
+        "detail": "Škola propojuje teoretickou výuku s praxí prostřednictvím projektů a mezioborového učení v pěti profilových směrech (humanitní, přírodovědný, geopolitický, technologický, umělecký).",
+        "evidence": "ŠVP cíleně propojuje vzdělávací obsahy s akademickými znalostmi žáků v praxi, např. mezioborové projekty, stáže, specifický předmět vyjednávání a byznys."
+      },
+      {
+        "tag": "Kvalitní pedagogický tým",
+        "detail": "Převážně kvalifikovaný sbor 21 pedagogů s předchozí zkušeností, včetně rodilých mluvčích a odborníků z praxe, s podporou vedení pro sdílení zkušeností.",
+        "evidence": "Tandemová výuka, kolegiální hospitace, profesní portfolia a tematické semináře zajišťují profesní růst učitelů."
+      },
+      {
+        "tag": "Podpora individuálního rozvoje",
+        "detail": "Různorodé nástroje formativního hodnocení a poradenské služby umožňují sledovat pokrok každého žáka podle jeho potřeb a nadání.",
+        "evidence": "Slovní hodnocení, kriteriální hodnocení, sebereflexe, portfolia; školní psycholog; individuální úpravy pro talentované sportovce a žáky se zdravotními obtížemi."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Nejednotná kvalita výuky",
+        "detail": "V některých hodinách chybí dostatečné využívání didaktické techniky, účinná zpětná vazba a kritická práce s informačními zdroji.",
+        "evidence": "Zaznamenány méně účelná časová organizace, neadresný řízený rozhovor s nerovnoměrným zapojením žáků, nižší míra využívání didaktické techniky."
+      },
+      {
+        "tag": "Jazyková kultura",
+        "detail": "V části vyučování byla zaznamenána nižší míra jazykové kultury, včetně používání nespisovné češtiny některými učiteli a žáky.",
+        "evidence": "Inspektoři doporučují více dbát na jazykovou kulturu ve výuce a používat spisovný jazykový projev při prezentaci úkolů."
+      },
+      {
+        "tag": "Příprava na maturitu",
+        "detail": "Chybí systematické ověřování výstupů formou cvičného testování v předmětech společné části maturitní zkoušky.",
+        "evidence": "Doporučení: ověřovat výstupy vzdělávání formou cvičného testování v předmětech společné části maturitní zkoušky."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně probíhá tandemová výuka a jak se podílí na kvalitě vzdělávání?",
+      "Jaké jsou konkrétní výstupy projektů a jak se hodnotí jejich kvalita?",
+      "Jak se škola připravuje na maturitní zkoušku a jaké jsou výsledky žáků 4. ročníku?"
+    ],
+    "who_school_fits": [
+      "Žáci se zájmem o praktické aplikace znalostí a projektové učení",
+      "Talentovaní sportovci a žáci se zdravotními obtížemi, kterým škola nabízí individuální úpravy",
+      "Žáci s ambicí rozvíjet jazykové dovednosti (CLIL metoda, výběr druhého/třetího jazyka)"
+    ],
+    "who_should_be_cautious": [
+      "Žáci, kteří potřebují tradiční frontální výuku a jasně strukturované učení bez experimentování",
+      "Rodiny, které očekávají vysokou míru standardizace a jednotnosti v přístupu všech učitelů",
+      "Žáci se slabší samostatností, kteří potřebují více struktury a jasných pravidel (inspekce zaznamenala rozdílnou důslednost při jejich vyžadování)"
+    ],
+    "plain_czech_summary": "Gymnázium Laury Bassi je nová škola s moderním konceptem zaměřeným na projektové učení a praktické aplikace znalostí. Má kvalitní pedagogický tým a individuální přístup k žákům. Inspekce ocenila inovativní koncept a podporu osobnostního rozvoje. Upozornila však na nejednotnou kvalitu výuky v některých hodinách, nižší jazykovou kulturu a potřebu lepší přípravy na maturitu. Škola je vhodná pro aktivní žáky, kteří se chtějí učit prakticky a v projektech."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Pozitivní – žáci 4. ročníku vykonali v jarním zkušebním období 2026 úspěšně maturitní zkoušku",
+      "key_numbers": [
+        "41 žáků celkem (k 30. 9. 2025)",
+        "Žáci ve všech 4 ročnících",
+        "Úspěšné absolvování zkoušky v jarním období 2026"
+      ],
+      "evidence": "Žáci 4. ročníku vykonali v jarním zkušebním období 2026 úspěšně maturitní zkoušku. Chybí však systematické cvičné testování v předmětech společné části."
+    },
+    "absence": {
+      "trend": "Výborný – minimální absence a výchovné problémy",
+      "key_numbers": [
+        "Nula neomluvených absencí v 1. pololetí 2025/2026",
+        "Minimální výchovná opatření",
+        "Žádné snížení stupně z chování"
+      ],
+      "evidence": "V 1. pololetí školního roku 2025/2026 byla výchovná opatření uplatněna minimálně, nebyla evidována žádná neomluvená absence nebo hodnocení žáka sníženým stupněm z chování."
+    },
+    "support_services": [
+      "Výchovné poradenství a primární prevence se strategiemi konzultací, doučování a výukové platformy",
+      "Školní psycholog zajišťující individuální konzultace, metodické vedení a wellbeing žáků/učitelů",
+      "Personální zajištění poradenských služeb v úzké spolupráci s pedagogy, včetně proškolení v krizové intervenci"
+    ],
+    "safety_climate": [
+      "Bezpečné prostředí s respektem k individualitám žáků a prostorem pro vyjádření vlastního názoru",
+      "Elektronické zabezpečení vstupních prostor školy",
+      "Společné pobytové/adaptační aktivity a celoškolní akce podporující prosociální vazby"
+    ],
+    "partnerships_practice": [
+      "Partnerské vztahy s vysokými školami, podnikatelským a neziskovým sektorem obohacující vzdělávací proces",
+      "Zapojení externích odborníků do výuky",
+      "Stáže a praktické činnosti propojující teorii s praxí"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je detailní a obsahuje konkrétní příklady, ale místy je psána úředním jazykem. Hlavní zjištění jsou jasná a srozumitelná pro rodiče, konkrétní doporučení jsou však formulována spíše pro školu než pro rodiče.",
+    "uncertainty_notes": [
+      "Nejsou dostupné konkrétní výsledky maturitní zkoušky (procenta úspěšnosti, průměrné známky) – pouze zmínka o úspěšném absolvování",
+      "Počet žáků s potřebou podpůrných opatření je velmi malý (4 žáci), takže není jasné, jak se škola vypořádá s větším počtem žáků se speciálními potřebami",
+      "Zpráva neobsahuje informace o výsledcích přijímacích zkoušek nebo srovnání s jinými gymnázii"
+    ]
+  }
+}
+```

@@ -1,6 +1,6 @@
 {
  "verze": 1,
- "aktualizovano": "2026-10-02",
+ "aktualizovano": "2026-10-05",
  "popis": "Registr stavu datových sad. Pro každou sadu říká, které období web zobrazuje, odkud je, jaké období čekáme a kdy, co se stane se starými daty po přepnutí a které ukazatele ze slovníku na sadě stojí. Postup a pravidla: docs/zdroje-dat.md, oddíl Stav datových sad. Měnit jen přes scripts/stav-datovych-sad.py.",
  "pravidla": {
   "jistota": "znamo = datum doložené zdrojem; odhad = odvozeno z předchozího období, uveď zdůvodnění; neznamo = nelze odhadnout",
@@ -622,10 +622,10 @@
    "cyklus": "prubezne",
    "pouziti": "web",
    "zobrazeno": {
-    "obdobi": "2026-05-29",
+    "obdobi": "2026-06-16",
     "soubor": "data/inspection_extractions.json",
-    "sha256": "a7f232145f05f0c14067e18e27b57d71931e300fee27b3ca835ff26dac812b33",
-    "prepnuto": "2026-10-02"
+    "sha256": "4636a62edafdf4243dac02087722e22796489347a95fe662d9b09748b2e3d4f2",
+    "prepnuto": "2026-10-05"
    },
    "ocekavano": {
     "obdobi": null,
@@ -633,7 +633,7 @@
     "jistota": "odhad",
     "zduvodneni": "Nové inspekce přibývají průběžně; shrnutí obnovuje týdenní workflow CSI Weekly Refresh."
    },
-   "obnovit_nejpozdeji": "2026-11-06",
+   "obnovit_nejpozdeji": "2026-11-09",
    "po_prepnuti": "Starší zpráva téže školy zůstává sbalená pod novější.",
    "vystupy": [],
    "ukazatele": [],
@@ -661,6 +661,12 @@
      "obdobi": "2026-05-29",
      "soubor": "data/inspection_extractions.json",
      "sha256": "513e0394d2067988b166e8e82b91bd73980076b071642c20dcf96386b3de22c6",
+     "prepnuto": "2026-10-02"
+    },
+    {
+     "obdobi": "2026-05-29",
+     "soubor": "data/inspection_extractions.json",
+     "sha256": "a7f232145f05f0c14067e18e27b57d71931e300fee27b3ca835ff26dac812b33",
      "prepnuto": "2026-10-02"
     }
    ]
@@ -1153,6 +1159,13 @@
    "z": "2026-05-29",
    "na": "2026-05-29",
    "doklad": "workflow https://github.com/tangero/stredniskoly/actions/runs/37058725545"
+  },
+  {
+   "datum": "2026-10-05",
+   "sada": "csi-extrakce",
+   "z": "2026-05-29",
+   "na": "2026-06-16",
+   "doklad": "workflow https://github.com/tangero/stredniskoly/actions/runs/37308302358"
   }
  ]
 }

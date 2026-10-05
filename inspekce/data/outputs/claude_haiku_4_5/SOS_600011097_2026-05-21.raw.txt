@@ -1,0 +1,107 @@
+```json
+{
+  "report_id": "SOS_600011097_2026-05-21",
+  "school_profile": {
+    "school_type": "Střední odborná škola s dálkovou formou vzdělávání, 5 oborů (Ekonomika a podnikání, Veřejnosprávní činnost, Provozní technika, Provozní elektrotechnika, Podnikání)",
+    "inspection_period": "21.–28. května 2026",
+    "school_change_summary": "Škola se zaměřuje na vzdělávání dospělých s cílem získat střední vzdělání s maturitní zkouškou. Zefektivnila se metodická podpora pedagogů a kvalita vzdělávacího procesu, pedagogové pracují účelně se vzdělávacím cílem a poskytují zpětnou vazbu. Přetrvává nízká míra diferenciace úkolů."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Podpora dospělých v učení",
+        "detail": "Škola má reálnou koncepci zaměřenou na vzdělávání dospělých s individuálním přístupem a flexibilní organizací.",
+        "evidence": "Naplňováním reálné koncepce se daří podporovat vzdělávání dospělých, které je primárním cílem školy."
+      },
+      {
+        "tag": "Pozitivní klima a přístup",
+        "detail": "Vstřícný přístup pedagogů vytváří příznivé vzdělávací prostředí s otevřenou komunikací a partnerským vztahem.",
+        "evidence": "Vstřícný přístup pedagogů k žákům přispívá k pozitivnímu vzdělávacímu prostředí, potvrzují pedagogové i žáci."
+      },
+      {
+        "tag": "Efektivní příprava na maturitu",
+        "detail": "Škola realizuje intenzivní přípravné kurzy, maturitní generálky a motivační studijní řád.",
+        "evidence": "V oborech Podnikání a Provozní technika výrazně lepší výsledky než celorepublikový průměr (Provozní technika 0 % neúspěšnosti)."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Slabá diferenciace výuky",
+        "detail": "Všichni žáci plní stejné úkoly bez přizpůsobení jejich individuálním potřebám a schopnostem.",
+        "evidence": "Všichni žáci plnili většinou stejné úkoly shodné náročnosti, což neumožňovalo diferenciaci podle individuálních vzdělávacích potřeb."
+      },
+      {
+        "tag": "Nerozvíjení kritického myšlení",
+        "detail": "Práce s různými informačními zdroji a rozvoj kritického myšlení jsou zařazovány jen ojediněle.",
+        "evidence": "Práci s různými informačními zdroji zařadili jen někteří učitelé, rozvoj kritického myšlení žáků byl podporován jen ojediněle."
+      },
+      {
+        "tag": "Vysoká absence v dálkovém studiu",
+        "detail": "Neochota zaměstnavatelů uvolňovat žáky na výuku způsobuje zvýšenou absenci a přerušování studia.",
+        "evidence": "Neochota zaměstnavatelů uvolňovat žáky na výuku se projevuje ve zvýšené absenci v této formě studia."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola přizpůsobuje výuku individuálním potřebám jednotlivých žáků, když všichni plní stejné úkoly?",
+      "Jaká opatření škola nabízí pro žáky, kteří mají problémy se slaďováním práce a studia?",
+      "Jak se škola vypořádává s vysokou absencí a jak to ovlivňuje výsledky maturitní zkoušky?"
+    ],
+    "who_school_fits": [
+      "Dospělí, kteří chtějí získat střední vzdělání s maturitní zkouškou v dálkové formě",
+      "Žáci, kteří si cení individuálního přístupu a podporující atmosféry",
+      "Studenti oborů Provozní technika a Podnikání, kde jsou výsledky maturit výrazně lepší než průměr"
+    ],
+    "who_should_be_cautious": [
+      "Žáci, kteří potřebují silnou diferenciaci a přizpůsobení výuky svému tempu a schopnostem",
+      "Studenti, kteří se chtějí rozvíjet v kritickém myšlení a práci s různými zdroji informací",
+      "Pracující dospělí, jejichž zaměstnavatelé nejsou ochotni je uvolňovat na výuku"
+    ],
+    "plain_czech_summary": "Střední odborná škola LIVA je soukromá škola zaměřená na dálkové vzdělávání dospělých. Její silnou stránkou je podporující atmosféra, individuální přístup a efektivní příprava na maturitu – zejména v oborech Provozní technika a Podnikání dosahuje lepších výsledků než celorepublikový průměr. Slabinou je nízká diferenciace výuky (všichni žáci plní stejné úkoly) a nedostatečný rozvoj kritického myšlení. Problémem je také vysoká absence způsobená neochotou zaměstnavatelů uvolňovat zaměstnance na výuku."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Smíšený – některé obory výrazně lepší než průměr, jiné horší",
+      "key_numbers": [
+        "Provozní technika 2024: 0 % neúspěšnosti (ČR průměr 23,8 % společná část)",
+        "Podnikání 2024: 6,7 % neúspěšnosti (ČR průměr 15,9 % profilová část)",
+        "Ekonomika a podnikání 2024: 40 % neúspěšnosti (ČR průměr 8,7 % společná část)"
+      ],
+      "evidence": "Ve zkušebním období 2024 všichni žáci, kteří konali maturitní zkoušku, uspěli. Vysoká neúspěšnost v Ekonomice a podnikání není způsobena neprospěchem, ale přerušením studia."
+    },
+    "absence": {
+      "trend": "Zvýšená absence v dálkovém studiu",
+      "key_numbers": [
+        "Absence je průběžně monitorována",
+        "Část žáků studium v průběhu závěrečného ročníku přeruší nebo ukončí"
+      ],
+      "evidence": "Neochota zaměstnavatelů uvolňovat žáky na výuku se projevuje ve zvýšené absenci, kterou škola průběžně monitoruje a přijímá opatření."
+    },
+    "support_services": [
+      "Individuální a skupinové konzultace pro žáky ohrožené školním neúspěchem",
+      "Intenzivní přípravné kurzy z předmětů společné části maturitní zkoušky",
+      "Maturitní generálka organizovaná každoročně v jarním období",
+      "Individuální kariérové poradenství a podpora při volbě dalšího vzdělávání",
+      "Výchovné poradenství efektivně propojené s prevencí rizikového chování"
+    ],
+    "safety_climate": [
+      "Minimální výskyt rizikového chování žáků",
+      "Příznivá a podporující atmosféra se dlouhodobě odráží v nízkém výskytu problémů",
+      "Otevřená komunikace a partnerský přístup k žákům potvrzují pedagogové i žáci"
+    ],
+    "partnerships_practice": [
+      "Spolupráce se školskými poradenskými zařízeními pro žáky se speciálními vzdělávacími potřebami",
+      "Systematické kariérové poradenství s možností směrování na další odborná pracoviště",
+      "Sdílení výukových materiálů v digitálním výukovém prostředí"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je srozumitelná a obsahuje konkrétní data. Silné a slabé stránky jsou jasně identifikovány. Některé pasáže jsou však více úřednické (např. popis metodické podpory), ale celkově je text pro rodiče interpretovatelný.",
+    "uncertainty_notes": [
+      "Není jasné, jak přesně se liší výsledky mezi jednotlivými lety (2024 vs. 2025) a co je příčinou kolísání – zda je to kvalita výuky nebo složení skupiny žáků.",
+      "Zpráva nespecifikuje, kolik procent žáků studium přeruší – pouze uvádí, že to ovlivňuje hrubou neúspěšnost.",
+      "Není jasné, jaké konkrétní opatření škola přijala ke zmírnění absence a jak jsou účinná."
+    ]
+  }
+}
+```

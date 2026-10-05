@@ -1,0 +1,104 @@
+```json
+{
+  "report_id": "GY8_600013120_2026-06-03",
+  "school_profile": {
+    "school_type": "Soukromé osmileté gymnázium (obor 79-41-K/81)",
+    "inspection_period": "3. až 5. června 2026",
+    "school_change_summary": "Od srpna 2024 změna právní formy na zapsaný ústav, od září 2024 zvýšení kapacity ze 180 na 196 žáků. Rozšíření prostor o dvě učebny cizích jazyků a posluchárnu."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Výborné výsledky maturit",
+        "detail": "Škola dlouhodobě dosahuje lepších výsledků maturitních zkoušek ve srovnání s ostatními gymnázii na úrovni ČR.",
+        "evidence": "\"již řadu let dosahuje škola ve srovnění s ostatními gymnázii lepší výsledky na úrovni ČR\""
+      },
+      {
+        "tag": "Bezpečné a podporující prostředí",
+        "detail": "Komunitní klima školy podporuje kvalitu vzdělávání a bezpečnost žáků s otevřenou komunikací mezi všemi účastníky.",
+        "evidence": "\"Příznivé a bezpečné komunitní klima školy podporované otevřenou komunikací mezi účastníky vzdělávání\""
+      },
+      {
+        "tag": "Bohatá nabídka aktivit",
+        "detail": "Škola nabízí širokou škálu volitelných předmětů, zájmových kroužků, sportovních kurzů a jazykových pobytů.",
+        "evidence": "\"Vzdělávání žáků obohacuje širokou škálou nabídek na volitelné předměty\""
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Nejasný vzdělávací program",
+        "detail": "Školní vzdělávací program není přehledný a srozumitelný, učitelé s ním téměř nepracují.",
+        "evidence": "\"Školní vzdělávací program není přehledný, a proto není srozumitelný, jeho aktuální zpracování nemotivuje učitele k jeho využívání\""
+      },
+      {
+        "tag": "Chybějící individualizace výuky",
+        "detail": "Diferenciace učiva se uplatňuje pouze výjimečně, učitelé vedou výuku stejným tempem pro všechny.",
+        "evidence": "\"Diferenciace učiva byla ve sledované výuce uplatňována pouze výjimečně a nebyla systematická\""
+      },
+      {
+        "tag": "Slabá zpětná vazba žákům",
+        "detail": "Závěry hodin jsou často realizovány učitelem bez dostatečného času, sebehodnocení žáků se objevuje ojediněle.",
+        "evidence": "\"Menší provázanost mezi průběhem výuky a jejím závěrečným vyhodnocením částečně omezovala získání účelné formativní zpětné vazby\""
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola podporuje žáky s různými učebními potřebami a schopnostmi?",
+      "Jaké jsou plány školy na zlepšení přehlednosti a praktického využívání školního vzdělávacího programu?",
+      "Jak se škola připravuje na maturitní zkoušky a jaké jsou průměrné výsledky v jednotlivých předmětech?"
+    ],
+    "who_school_fits": [
+      "Žáci s dobrými studijními výsledky a motivací k učení, kterým vyhovuje komunitní přístup",
+      "Sportovně nadaní žáci, kterým škola částečně upravuje rozvrh hodin",
+      "Žáci zajímající se o jazyky, kterým škola nabízí intenzivní výuku a jazykové pobyty"
+    ],
+    "who_should_be_cautious": [
+      "Žáci s výraznějšími vzdělávacími potřebami, kterým chybí systematická individualizace výuky",
+      "Rodiny, které potřebují jasně definovaný a srozumitelný vzdělávací program",
+      "Žáci, kteří potřebují více individuální zpětné vazby a sebehodnocení v průběhu učení"
+    ],
+    "plain_czech_summary": "Letohradské soukromé gymnázium je stabilní školou s příznivým klimatem a výborným výsledky maturit. Silnými stránkami jsou bezpečné prostředí, kvalitní výuka jazyků a bohatá nabídka aktivit. Škola však potřebuje zlepšit přehlednost svého vzdělávacího programu a více se zaměřit na individualizaci výuky pro žáky s různými potřebami. Závěry hodin by měly obsahovat více sebehodnocení žáků."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Dlouhodobě pozitivní",
+      "key_numbers": [
+        "Lepší výsledky než průměr gymnázií na úrovni ČR",
+        "Všichni žáci oktávy dosahují výborných výsledků"
+      ],
+      "evidence": "\"Výborných výsledků dosahují žáci oktávy také u maturitních zkoušek, již řadu let dosahuje škola ve srovnění s ostatními gymnázii lepší výsledky na úrovni ČR\""
+    },
+    "absence": {
+      "trend": "Nízká",
+      "key_numbers": [
+        "Okolo 60 zameškaných hodin na žáka za pololetí",
+        "Přibližně dva týdny nepřítomnosti za pololetí"
+      ],
+      "evidence": "\"v posledních třech uzavřených pololetích se její míra pohybovala okolo 60 zameškaných hodin na žáka (asi dva týdny nepřítomnosti)\""
+    },
+    "support_services": [
+      "Poradenské služby zajišťovány dvěma vyučujícími a externí psycholožkou",
+      "Podpůrná opatření poskytována 11 žákům podle doporučení školského poradenského zařízení",
+      "Adaptační kurzy pro třídní kolektivy a sportovní kurzy"
+    ],
+    "safety_climate": [
+      "Dlouhodobě velmi nízký výskyt patologických jevů",
+      "Žádný žák nebyl hodnocen sníženým stupněm z chování",
+      "Školní parlament funguje jako autonomní poradní orgán od školního roku 2025/2026"
+    ],
+    "partnerships_practice": [
+      "Spolupráce se širokým portfoliem partnerů včetně univerzit a odborných firem",
+      "Partnerství s městem Letohrad",
+      "Účast v operačních programech OP JAKI a II Inovativní vzdělávání pro gymnázium od roku 2023"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je detailní a obsahuje konkrétní příklady, ale některé pasáže jsou složitě strukturované. Hlavní zjištění jsou jasně oddělena v sekcích Silné stránky a Slabé stránky.",
+    "uncertainty_notes": [
+      "Není jasné, jak konkrétně se diferenciace bude v budoucnu zlepšovat - chybí konkrétní plán",
+      "Není specifikováno, jaké konkrétní dokumenty nejsou zveřejněny na webu",
+      "Není jasné, jak se bude školní vzdělávací program konkrétně upravovat"
+    ]
+  }
+}
+```

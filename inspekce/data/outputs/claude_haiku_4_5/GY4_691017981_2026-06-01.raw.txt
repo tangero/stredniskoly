@@ -1,0 +1,105 @@
+```json
+{
+  "report_id": "GY4_691017981_2026-06-01",
+  "school_profile": {
+    "school_type": "Čtyřleté gymnázium s všeobecným vzděláním, od 2026/2027 rozšíření o Ekonomické lyceum",
+    "inspection_period": "1. 6. 2026 – 3. 6. 2026",
+    "school_change_summary": "Nová škola fungující od září 2025 s jasnou koncepcí. Ředitelka úspěšně rozvíjí vzdělávací program zaměřený na jazykové vzdělání, ekonomickou oblast a mezipředmětové propojení. Od příštího roku se přestěhuje do nových prostor a rozšíří nabídku."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Digitální vzdělávání",
+        "detail": "Jednotná elektronická platforma efektivně podporuje výuku, zpětnou vazbu a komunikaci všech aktérů vzdělávání.",
+        "evidence": "Škola využívá „systémově nastavené jednotné digitální platformy" s „širokým spektrem sdílených výukových materiálů"."
+      },
+      {
+        "tag": "Jazykové vzdělání",
+        "detail": "Kvalitní výuka cizích jazyků s důrazem na řečové dovednosti a metodu CLIL v dalších předmětech.",
+        "evidence": "Výuka anglického jazyka probíhá „převážně v cílovém jazyce" s „rovnoměrným procvičováním písemného i mluveného projevu"."
+      },
+      {
+        "tag": "Podpora žáků",
+        "detail": "Komplexní systém péče o žáky se speciálními potřebami, doučování a individuální přístup.",
+        "evidence": "Škola poskytuje „individuální přístup ve výuce, konzultace i doučování" a „možnost opravy výstupů některých předmětů"."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Slabá infrastruktura pro přírodovědné předměty",
+        "detail": "Škola nemá vlastní laboratoře, přírodovědné pomůcky jsou omezené, cvičení zajišťuje externí laboratoř.",
+        "evidence": "Škola „nedisponuje odbornými učebnami či laboratořemi, přírodovědné didaktické pomůcky jsou omezené"."
+      },
+      {
+        "tag": "Nejednotná kvalita výuky",
+        "detail": "V části hodin chybí aktivizující metody, diferenciace podle schopností žáků a efektivní závěry lekcí.",
+        "evidence": "V některých hodinách se projevuje „jednotvárnost výuky, nižší dynamika" a „méně často vhodně diferencovaná výuka"."
+      },
+      {
+        "tag": "Přetížená ředitelka",
+        "detail": "Ředitelka kumuluje příliš mnoho funkcí (ředitelka, metodička prevence, třídní učitelka), což ovlivňuje kvalitu řízení.",
+        "evidence": "Ředitelka „vykonává souběžně funkci školního metodika prevence a třídní učitelky" a „kumulace funkcí má vliv na kvalitu řídicích procesů"."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně probíhá diferenciace výuky pro nadané žáky a jak se zajišťuje jejich plný rozvoj?",
+      "Jaké jsou plány na zlepšení vybavení pro přírodovědné předměty a kdy se realizují?",
+      "Jak se škola vypořádá s vysokou absencí některých žáků a jaká opatření jsou zavedena?"
+    ],
+    "who_school_fits": [
+      "Žáci se zájmem o jazykové vzdělání a mezinárodní spolupráci (Erasmus výměny)",
+      "Studenti s potřebou individuální podpory a doučování – škola má funkční systém péče",
+      "Žáci zajímající se o ekonomii a praktické uplatnění znalostí v reálné praxi"
+    ],
+    "who_should_be_cautious": [
+      "Žáci se zájmem o experimentální práci v přírodovědách – omezené laboratorní vybavení",
+      "Studenti vyžadující konzistentně vysokou kvalitu výuky – v některých hodinách jsou metodické nedostatky",
+      "Rodiny, které potřebují stabilní vedení – ředitelka je přetížena kumulací funkcí"
+    ],
+    "plain_czech_summary": "GAELY je nová gymnázia v Praze s jasnou vizí a moderním přístupem. Silné stránky: kvalitní jazykové vzdělání, digitální platforma, péče o žáky se speciálními potřebami. Slabiny: omezené vybavení pro přírodovědné předměty, nejednotná kvalita výuky v některých hodinách, přetížená ředitelka. Škola se rozrůstá a od příštího roku se přestěhuje. Vhodná pro jazykově nadané žáky a ty, kteří potřebují individuální podporu."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Nelze určit – škola funguje teprve od září 2025, první maturita bude v 2029",
+      "key_numbers": [
+        "59 žáků ve dvou třídách prvního ročníku k termínu inspekce",
+        "Všichni žáci prospěli v prvním pololetí 2025/2026",
+        "Čtvrtina žáků prospěla s vyznamenáním"
+      ],
+      "evidence": "Škola je nová, „vykonává od 1. 9. 2025 činnost střední školy". Z prvního pololetí: „prospěli všichni žáci, čtvrtina z nich s vyznamenáním"."
+    },
+    "absence": {
+      "trend": "Problematická – některé žáky mají výrazně vyšší omluvené absence",
+      "key_numbers": [
+        "Vyšší omluvená absence některých žáků (nesouvisející se zdravotními důvody)",
+        "Neomluvenou absenci řeší výchovná opatření podle školního řádu"
+      ],
+      "evidence": "Inspekce zjistila „výrazně vyšší omluvené absence některých žáků (nesouvisející se zdravotními důvody) je řešena na opakovaných jednáních se zákonnými zástupci"."
+    },
+    "support_services": [
+      "Výchovná poradkyně, metodička prevence a externí školní koučka",
+      "Individuální doučování a konzultace pro žáky ohrožené studijním neúspěchem",
+      "Adaptační aktivity, prevence návykových látek, kyberbezpečnosti a monitoring třídních vztahů"
+    ],
+    "safety_climate": [
+      "Čipový systém a zabezpečený vstup do budovy",
+      "Funkční preventivní strategie řešící výchovně vzdělávací obtíže",
+      "Kázeňská opatření uplatňována podle závažnosti – převážně za nevhodné chování ve výuce a pozdní příchody"
+    ],
+    "partnerships_practice": [
+      "Spolupráce s vysokými školami (sídlí v pronajatých prostorech partnerské vysoké školy)",
+      "Erasmus výměnné pobyty a zahraniční zájezdy",
+      "Partnerství se sociálními partnery pro odborné přednášky, kariérní dny a sportovní aktivity"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je detailní a srozumitelná, ale obsahuje některé úřednické formulace a je velmi obsáhlá. Klíčové informace pro rodiče jsou jasné, ale vyžadují pozorné čtení.",
+    "uncertainty_notes": [
+      "Konkrétní výsledky maturit nejsou dostupné – škola je příliš nová",
+      "Dlouhodobý trend kvality výuky nelze posoudit – funguje teprve od září 2025",
+      "Přesný počet žáků s speciálními potřebami (14 %) a s odlišným mateřským jazykem (20 %) je uveden, ale jejich konkrétní výsledky nejsou detailně rozvedeny"
+    ]
+  }
+}
+```
