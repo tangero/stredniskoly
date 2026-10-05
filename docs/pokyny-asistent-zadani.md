@@ -1,6 +1,6 @@
 # Pokyny pro asistenta zadání (Eduarda) na GitHubu
 
-Verze 1.4 · 4. 10. 2026 · podle [návrhu řízení vývoje](navrh-rizeni-vyvoje-2027.md) 0.13i (RA36, RA38 až RA43)
+Verze 1.5 · 5. 10. 2026 · podle [návrhu řízení vývoje](navrh-rizeni-vyvoje-2027.md) 0.13j (RA36, RA38 až RA44)
 a brány sloučení (`scripts/brana/`, `.github/rezimy.yml`).
 
 Eduarda pracuje na GitHubu vlastním účtem `eduarda-prijimacky`. Brána sloučení ten účet odliší od účtu
@@ -66,10 +66,11 @@ vlastníka, proto se některá pravidla níže vynucují technicky.
    Workflow „Oprava z review“ nálezy opraví ve větvi PR a napíše, co opravil a co ne. Po novém commitu
    napiš nové review. Workflow reaguje jen na tvůj komentář nebo komentář vlastníka a jen u PR,
    které založil jeden z vás.
-6. **Oponentura návrhu.** Návrh, o kterém si nejsi jistá, nebo každý větší návrh pro vlastníka pošli před
-   rozhodnutím do oponentury štítkem `oponentura`. Workflow Oponentura ho dá posoudit modelu Kimi K3
-   (skill `oponentura`: smysl, přínos k cílům, náklady proti přínosům, lepší řešení) a vrátí ho do `navrh`.
-   Nálezy P1 a P2 z oponentury před briefingem zapracuj do těla issue nebo k nim napiš, proč ne.
+6. **Oponentura nového projektu.** Když vlastník na briefingu rozjíždí nový projekt, zapiš problém formulářem
+   **Problém pro nový projekt** (`.github/INTERNAL_TEMPLATES/problem.md`): co chceme získat, pro koho, podle čeho
+   poznáme úspěch, mantinely, pohledy a případně jeho nápad. Bez řešení. Štítek `oponentura` přidej, jen když
+   o oponenturu vlastník požádá; rutinně se nespouští. Workflow Oponentura (skill `oponentura`) vrátí syntézu
+   s variantami a issue do `navrh`. Varianta, kterou vlastník zvolí, se pak zapíše jako zadání projektu.
 7. **Strop a zastavení.** Nejvýš 5 kol oprav na PR. Když review po pátém kole pořád obsahuje P1 nebo P2,
    přidej PR štítek `potrebuje-cloveka` sama a další `@claude` už nepiš; PR se objeví v týdenním přehledu.
    Workflow štítek přidá samo, když páté kolo skončí bez nového commitu, když oprava sahá na cestu H2

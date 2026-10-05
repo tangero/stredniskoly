@@ -14,7 +14,7 @@ dokument popisuje nastavení GitHubu, na kterém stojí.
 | `navrh` | čeká na schválení Patrickem, nerealizovat |
 | `schvaleno` | Claude Code může realizovat; přidává jen Patrick |
 | `zamitnuto` | nerealizovat |
-| `oponentura` | návrh posoudí model Kimi K3 (workflow Oponentura) a štítek sám odebere; mezitím nerealizovat |
+| `oponentura` | problém pro nový projekt projde oponenturou (workflow Oponentura) a štítek se sám odebere; mezitím nerealizovat |
 | `k-overeni` | otevřený PR s protokolem z preview (ověřuje AI, vlastník volitelně); po sloučení ho z otevřeného issue (etapa projektu) odebere workflow Tabule |
 | `pripominka` | úkol s termínem; před termínem se nerealizuje |
 | `potrebuje-cloveka` | u PR: smyčka oprav z review skončila (strop 5 kol nebo oprava cesty H2), rozhodne člověk; vypisuje ho týdenní přehled |
@@ -81,17 +81,20 @@ review asistenta zadání k aktuálnímu commitu, u schválených issues bez PR 
 u návrhu „čeká na tvé rozhodnutí“, u připomínky termín a u hlášení projekt, ke kterému patří. Na kartách ho zapneš
 v nastavení pohledu (šipka u názvu pohledu → Fields → Na co čeká).
 
-**Oponentura** (`.github/workflows/oponentura.yml`, #339): štítek `oponentura` od vlastníka nebo asistenta
-zadání spustí Claude Code s modelem Kimi K3 (předplatné Kimi Code vlastníka, rozhraní kompatibilní s Anthropic,
-model `k3-256k`). Model jen čte (Read, Glob, Grep; bez shellu, zápisu a sítě), posoudí issue podle skillu
-`.claude/skills/oponentura` a workflow zapíše komentář `## Oponentura` (verdikt, nálezy P1 až P3, alternativy,
-otázky). Pak štítek odebere a issue bez `navrh` a `schvaleno` vrátí do `navrh`, takže karta jde zpět k vlastníkovi.
-Znovu se spustí odebráním a přidáním štítku nebo ručně (Run workflow, číslo issue). Potřebuje secret
-`KIMI_API_KEY` (klíč z konzole Kimi Code, ne z platform.moonshot.ai) a `PROJECT_TOKEN` na změnu štítků,
-aby se srovnala tabule. Výchozí je mezinárodní rozhraní `https://api.kimi.ai/coding/`; účet z kimi.com (Čína)
-potřebuje proměnnou repozitáře `KIMI_BASE_URL` s hodnotou `https://api.kimi.com/coding/`. Verze Claude Code
-je ve workflow připnutá; novější připni až po ověření s Kimi. Kimi je třetí rodina modelů vedle Grok (asistent zadání) a Claude (Claude Code),
-takže posuzuje návrhy obou nezávisle.
+**Oponentura** (`.github/workflows/oponentura.yml`, skill `.claude/skills/oponentura`, #358): slouží při rozjezdu
+nového projektu, rutinně se nespouští. Vlastník nebo asistent zadání popíše problém formulářem **Problém pro nový
+projekt** (`.github/ISSUE_TEMPLATE/problem.yml`, pro `gh` `.github/INTERNAL_TEMPLATES/problem.md`): co chceme
+získat, pro koho, podle čeho poznáme úspěch, mantinely, pohledy k posouzení a nepovinný nápad. Štítek `oponentura`
+od vlastníka nebo asistenta pak spustí čtyři fáze: průzkum (Claude Code, smí na web), návrhy naslepo (Claude
+a Kimi K3 zvlášť, bez znalosti nápadu z issue), anonymní kritika kandidátů z pohledu hodnot projektu a person
+a syntéza (Kimi, náhradně Claude). Komentář `## Oponentura` nese doporučení, 2 až 3 varianty, pohledy person,
+rozhodující test a otázky; průzkum, kandidáti i kritiky jsou pod ním sbalené. Pak workflow odebere štítek
+a issue bez `navrh` a `schvaleno` vrátí do `navrh`. Issue bez šablony se zpracuje taky (problém odvodí průzkum).
+Běh trvá desítky minut. Modely mají jen čtení (průzkum navíc web), každý krok dostane jen svůj klíč.
+Secrets: `CLAUDE_CODE_OAUTH_TOKEN`, `KIMI_API_KEY` (klíč z konzole Kimi Code, ne z platform.moonshot.ai)
+a `PROJECT_TOKEN` na změnu štítků. Výchozí rozhraní Kimi je `https://api.kimi.ai/coding/`; účet z kimi.com
+(Čína) potřebuje proměnnou repozitáře `KIMI_BASE_URL` s hodnotou `https://api.kimi.com/coding/`. Verze Claude
+Code je ve workflow připnutá; novější připni až po ověření s Kimi.
 
 Potřebuje secret `PROJECT_TOKEN`, klasický token se scopes `project` a `public_repo` (fine-grained token
 do projektu na osobním účtu zapisovat neumí). Token má omezenou platnost; expiraci hlídá týdenní přehled.
