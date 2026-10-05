@@ -1,7 +1,7 @@
 import type { CitySchoolRow } from '@/lib/cityData';
 import type { DalsiOborVeMeste } from '@/lib/kontext-prihlasek';
 import { adresaPrehledu } from '@/lib/adresa-oboru.mjs';
-import { nazevSkolyProRadek, popisOboruOkruhu, uliceZAdresy, type OkruhMesta, type ZaznamKataloguProOkruh } from '@/lib/okruhy-oboru';
+import { naPomeziOkruhu, nazevSkolyProRadek, popisOboruOkruhu, uliceZAdresy, type OkruhMesta, type ZaznamKataloguProOkruh } from '@/lib/okruhy-oboru';
 import type { ZarazeniObtiznosti } from '@/lib/obor-profil';
 import { KATEGORIE_BEZ_JPZ, kategorieOboru } from '@/lib/kontext-prihlasek';
 import { jeNastavba, jeVyucniList, smerOboru, SMERY_STUDIA } from '@/lib/smery-studia';
@@ -204,6 +204,8 @@ export interface RadekOkruhuMesta {
   /** Zaměření téhož oboru mají různou obtížnost přijetí, jedno slovo by lhalo. */
   lisiSe: boolean;
   bezJednotneZkousky: boolean;
+  /** *Jistota zařazení do okruhu* pod prahem: obor je na pomezí okruhů (#366). */
+  naPomezi: boolean;
   /** Stránka oboru, když klíč vede na jedinou nabídku ve městě; jinak přehled školy; jinak nic. */
   href: string | null;
 }
@@ -328,6 +330,7 @@ export function sestavOkruhyMesta(
         zarazeni: zarazeni === 'lisi_se' ? null : zarazeni,
         lisiSe: zarazeni === 'lisi_se',
         bezJednotneZkousky: KATEGORIE_BEZ_JPZ.has(kategorieOboru(kkov)),
+        naPomezi: naPomeziOkruhu(x.jistota),
         href: mistni.length === 1 && mistni[0].adresaOboru
           ? `/skola/${mistni[0].adresaOboru}`
           : kanonicky ? `/skola/${adresaPrehledu(redizo, kanonicky)}` : null,
