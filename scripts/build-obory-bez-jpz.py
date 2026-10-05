@@ -8,7 +8,7 @@ Stávající výstupy webu (`applications_2026.json`, `cermat_results_*.json`, `
 
 Rozsah (návrh `docs/navrh-obory-bez-jpz-2027.md`, oddíl 1 a 10.6):
 - denní nezkrácené nabídky bez JPZ (POVINNOST JPZ není 1),
-- nedenní nezkrácené nástavby L/51 (konají JPZ, bez výsledků bodů) s příznakem `pokracovani` (jen „kam dál po výučním listu“),
+- nedenní nezkrácené nástavby L/5x (68× L/51 a 4× L/52; konají JPZ, bez výsledků bodů) s příznakem `pokracovani` (jen „kam dál po výučním listu“),
 - protějšek z roku 2025 (stejné párování jako u oborů se zkouškou, `match_obory_2025_2026.py`),
 - 2. kolo 2026 (klíč `build-druhe-kolo.py`),
 - domovy mládeže a internáty (druh H22, H21) podle REDIZO; bez osobních údajů.
@@ -83,7 +83,7 @@ def je_nezkracene(r: dict) -> bool:
 
 
 def vybrat_nabidky(radky: list[dict]) -> tuple[list[dict], list[dict]]:
-    """(denní nezkrácené bez JPZ, nedenní nezkrácené nástavby L/51).
+    """(denní nezkrácené bez JPZ, nedenní nezkrácené nástavby L/5x: 68× L/51 a 4× L/52).
 
     Nástavby se JPZ konají (POVINNOST JPZ je 1), do rozsahu patří jako „kam dál po výučním listu“.
     """
