@@ -1,0 +1,107 @@
+```json
+{
+  "report_id": "NAS_600008487_2026-06-04",
+  "school_profile": {
+    "school_type": "Střední průmyslová škola a Střední odborné učiliště",
+    "inspection_period": "4.–9. června 2026",
+    "school_change_summary": "Počet oborů zůstal na 18. Nárůst žáků na 798 (o 49 více). Škola pokračuje v modernizaci prostor a posilování spolupráce s firmami."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Propojení teorie s praxí",
+        "detail": "Kvalitní spolupráce se firmami, kde probíhá praktická výuka a někteří učitelé vedou vzdělávací kurzy pro zaměstnance.",
+        "evidence": "Firmy podporují žáky finančními odměnami a věcnými dary za výsledky v soutěžích."
+      },
+      {
+        "tag": "Moderní vybavení",
+        "detail": "Průběžná modernizace učeben včetně nové multifunkční učebny a speciální učebny pro stavbu komunikačních sítí.",
+        "evidence": "Žáci se zapojují do různých fází realizace nových prostor."
+      },
+      {
+        "tag": "Praktická výuka",
+        "detail": "Učitelé v praktickém vyučování účelně propojují teorii s reálnou praxí a poskytují podrobnou zpětnou vazbu.",
+        "evidence": "Žáci prokazují odpovídající úroveň odborných dovedností a dbají na kvalitu provedení práce."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Slabé výsledky maturit",
+        "detail": "Některé obory mají vysokou neúspěšnost u maturitní zkoušky, zejména v českém jazyce a cizích jazycích.",
+        "evidence": "Obory s možností výučního listu mají neúspěšnost 38–39 %, Mechanik elektrotechnik 25–57 %."
+      },
+      {
+        "tag": "Pasivní výuka v teorii",
+        "detail": "Většina teoretických hodin má převahu činností učitele, chybí aktivita žáků a diferenciace učiva.",
+        "evidence": "Chybí vzájemné hodnocení, sebehodnocení a kooperativní formy práce."
+      },
+      {
+        "tag": "Nízká motivace k maturitě",
+        "detail": "Žáci oborů s možností výučního listu ve 3. ročníku se nechtějí motivovat k pokračování na 4. ročník.",
+        "evidence": "Přetrvává nízká motivace k úspěšnému složení maturitní zkoušky."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola připravuje žáky na maturitní zkoušku z českého jazyka, kde mají největší problémy?",
+      "Jaké jsou možnosti individuálního přístupu a doučování pro žáky ohrožené neúspěchem?",
+      "Jak škola motivuje žáky oborů s výučním listem, aby pokračovali na 4. ročník a skončili maturitou?"
+    ],
+    "who_school_fits": [
+      "Žáci zaměření na praktické obory (elektrotechnika, truhlářství, kadeřnictví) s kvalitní výukou v dílnách.",
+      "Studenti, kteří si cení moderního vybavení a spolupráce se skutečnými firmami.",
+      "Žáci z okolí, kterým vyhovuje ubytování v domově mládeže (169 míst)."
+    ],
+    "who_should_be_cautious": [
+      "Rodiče žáků oborů s výučním listem, pokud chtějí, aby jejich dítě určitě skončilo maturitou.",
+      "Studenti, kteří potřebují aktivní a interaktivní teoretickou výuku s vysokou mírou zapojení.",
+      "Žáci slabší v češtině a cizích jazycích – zde jsou největší problémy s maturitou."
+    ],
+    "plain_czech_summary": "SPŠ a SOU Pelhřimov je solidní střední škola se 798 žáky a 18 obory. Silná je praktická výuka a spolupráce s firmami. Slabinou jsou výsledky maturit, zejména v češtině a cizích jazycích. Teoretické hodiny jsou často pasivní, chybí aktivita žáků. Problém je také nízká motivace žáků oborů s výučním listem k pokračování na 4. ročník. Škola se snaží situaci zlepšovat, ale dosud bez velkého efektu."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Kolísavý s problémy v některých oborech",
+      "key_numbers": [
+        "Podnikání: neúspěšnost 66,7 % (2023) → 33,3 % (2025)",
+        "Obory s výučním listem: neúspěšnost 38–39 %",
+        "Mechanik elektrotechnik: 25–57 % úspěšnosti"
+      ],
+      "evidence": "Největší překážkou je didaktický test z českého jazyka. Nová koncepce testování od 1. do 4. ročníku byla zavedena, ale efektivnost se ještě nevyhodnocuje."
+    },
+    "absence": {
+      "trend": "Stabilní bez výkyvů",
+      "key_numbers": [
+        "64 hodin na žáka (2023/24)",
+        "66 hodin na žáka (2024/25)",
+        "65 hodin na žáka (2025/26)"
+      ],
+      "evidence": "Snížení hranice tolerované absence z 30 na 25 % bylo vhodné. Dodržování pravidel je důsledně kontrolováno."
+    },
+    "support_services": [
+      "86 žáků s podpůrnými opatřeními 2. nebo 3. stupně",
+      "34 žáků s odlišným mateřským jazykem",
+      "Konzultace s vyučujícími o 25 žácích ohrožených školním neúspěchem",
+      "Spolupráce s psychocentrem, linkou bezpečí a Fokus Vysočina"
+    ],
+    "safety_climate": [
+      "Budovy zabezpečeny proti vstupu cizích osob",
+      "Řešení rizikového chování (záškoláctví, sebepoškozování) v zárodku",
+      "Domov mládeže s pestrými aktivitami a dostatkem prostoru pro přípravu i volný čas"
+    ],
+    "partnerships_practice": [
+      "Kvalitní spolupráce s partnerskými firmami na praktické výuce",
+      "Pedagogové vedou vzdělávací kurzy pro zaměstnance firem",
+      "Firmy podporují žáky finančními odměnami a věcnými dary za výsledky"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je jasně strukturovaná s konkrétními čísly a příklady. Silné a slabé stránky jsou jasně vymezeny. Chybí však více konkrétních doporučení pro rodiče.",
+    "uncertainty_notes": [
+      "Efektivnost nové koncepce testování z češtiny se ještě nevyhodnocuje – není jasné, zda bude fungovat.",
+      "Není specifikováno, jak přesně se škola snaží motivovat žáky k maturitě – jen obecně se zmiňuje.",
+      "Chybí informace o tom, kolik žáků školu nedokončí bez maturity."
+    ]
+  }
+}
+```

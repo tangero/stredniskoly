@@ -1,0 +1,119 @@
+{
+  "report_id": "GY6_600011682_2026-06-08",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-10-05T12:18:07.933776+00:00",
+  "run_finished_utc": "2026-10-05T12:18:37.828968+00:00",
+  "raw_file": "GY6_600011682_2026-06-08.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY6_600011682_2026-06-08",
+    "school_profile": {
+      "school_type": "Gymnázium, Střední odborná škola a Vyšší odborná škola",
+      "inspection_period": "8.–9. 6. a 11. 6. 2026",
+      "school_change_summary": "Škola zaznamenala významný nárůst počtu žáků z 289 (2019) na 504 (2026). Došlo k modernizaci budov, laboratoří, digitální infrastruktury a vytvoření studentské kavárny. Vedení školy systematicky rozvíjí vzdělávací nabídku a partnerství."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Kvalitní vedení a strategie",
+          "detail": "Ředitel od roku 2018 vytvořil jasnou vizi a koncepci rozvoje na období 2024–2030 s konkrétními cíly v oblasti vzdělávání, personálu a materiálního vybavení.",
+          "evidence": "Koncepce vychází z SWOT analýzy a podnětů pedagogů, zřizovatele i školské rady; záměry jsou průběžně vyhodnocovány."
+        },
+        {
+          "tag": "Výborné materiální podmínky",
+          "detail": "Škola má velmi dobré fyzické zázemí s moderními laboratořemi, digitální infrastrukturou a podnětným prostředím pro učení.",
+          "evidence": "Zrekonstruovány tři laboratoře s nejmodernějším vybavením, nová IT technika, studentská kavárna, meteostanice."
+        },
+        {
+          "tag": "Úspěchy žáků v soutěžích",
+          "detail": "Žáci dosahují výborných výsledků v národních a mezinárodních soutěžích, včetně 2. místa v celosvětovém finále Microsoft Office Specialist.",
+          "evidence": "1. místo v soutěži 'Vím proč!', 3. místo v Office Arena 2023 a 2025, medailová ocenění školního časopisu GEČKO."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Slabší výuka na střední odborné škole",
+          "detail": "Na střední odborné škole chybí dostatečná diferenciace úloh podle schopností žáků a málo se využívají různé formy hodnocení.",
+          "evidence": "Diferenciace obsahu byla uplatňována spíše výjimečně; sebehodnocení žáků bylo zařazováno pouze výjimečně."
+        },
+        {
+          "tag": "Zhoršené výsledky v češtině",
+          "detail": "Žáci oboru Ekonomika a podnikání měli ve školním roce 2024/2025 horší výsledky v maturitě z českého jazyka.",
+          "evidence": "Výsledky se zhoršily; škola zavedla doučování a dvouhodinový seminář z češtiny jako nápravné opatření."
+        },
+        {
+          "tag": "Rizikové chování některých žáků",
+          "detail": "Škola řeší kouření, elektronické cigarety, kratom, vysokou absenci a ojedinělé extremistické projevy.",
+          "evidence": "Mezi nejčastěji řešené projevy patří užívání tabákových výrobků, elektronických cigaret a kratomu, vysoká absence."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola podporuje nadané žáky a jaké jsou podmínky pro individuální vzdělávací plány?",
+        "Jaké jsou výsledky maturit v jednotlivých oborech za poslední tři roky a jak se škola vypořádala se zhoršením výsledků v češtině?",
+        "Jak funguje spolupráce mezi gymnáziem a střední odbornou školou a jaké jsou rozdíly v přístupu k výuce?"
+      ],
+      "who_school_fits": [
+        "Žáci s vyšší motivací a schopnostmi, kteří chtějí kvalitní vzdělání s moderním vybavením a podporou nadání.",
+        "Studenti zajímající se o praktické obory (ekonomika, podnikání) s propojením na reálnou praxi v institucích.",
+        "Žáci, kteří oceňují pestrou nabídku zájmových kroužků, sportovních aktivit a mezinárodních projektů (Erasmus+)."
+      ],
+      "who_should_be_cautious": [
+        "Žáci se slabšími výsledky v češtině by měli zvážit obor Ekonomika a podnikání, kde se výsledky v maturitě zhoršily.",
+        "Žáci, kteří potřebují individualizovaný přístup a diferenciaci úloh, mohou mít na střední odborné škole méně podpory.",
+        "Žáci se sklonem k rizikovému chování (kouření, absence) by měli počítat s aktivním dohledem a preventivními opatřeními."
+      ],
+      "plain_czech_summary": "Gymnázium v Novém Bydžově je moderní, dobře vedená škola s výborným vybavením a rostoucím počtem žáků. Gymnázia mají kvalitní výuku s aktivním zapojením žáků. Střední odborná škola má praktický přístup, ale výuka je méně individualizovaná. Škola úspěšně podporuje nadané žáky a má bohatou nabídku aktivit. Vedení systematicky řeší problémy a investuje do rozvoje. Vhodná pro motivované žáky, kteří chtějí kvalitní vzdělání."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Stabilní s jedním problémem",
+        "key_numbers": [
+          "Gymnázia 79-41-K/61 a 79-41-K/41: stabilně dobrá úroveň, srovnatelná s obdobnými školami",
+          "Ekonomika a podnikání 63-41-M/01: zhoršení v češtině ve školním roce 2024/2025",
+          "VOŠ Účetnictví a daně: zlepšení, 100% úspěšnost v roce 2024/2025"
+        ],
+        "evidence": "Žáci gymnázií dosahují dlouhodobě stabilních výsledků. Obor Ekonomika měl problémy s češtinou, škola zavedla doučování a seminář."
+      },
+      "absence": {
+        "trend": "Aktivně sledována a řešena",
+        "key_numbers": [
+          "Kritérium: absence do 25 % za pololetí",
+          "Vysoká absence a neomluvená docházka jsou mezi nejčastěji řešenými problémy",
+          "Škola přijímá vhodná opatření při zvýšeném výskytu"
+        ],
+        "evidence": "Škola aktivně sleduje oblast absence žáků a při jejím zvýšeném výskytu přijímá vhodná opatření."
+      },
+      "support_services": [
+        "Školní psycholožka poskytuje individuální konzultace a krizovou intervenci",
+        "Výchovní a kariéroví poradci na obou pracovištích",
+        "Doučování a individuální konzultace pro žáky v neúspěchu",
+        "Vícedenní adaptační kurzy pro prvňáky",
+        "Prevence rizikového chování zaměřená na návykové látky, kyberšikanu, duševní zdraví"
+      ],
+      "safety_climate": [
+        "Domov mládeže poskytuje bezpečné a podnětné prostředí bez závažnějších kázeňských problémů",
+        "Klima DM je příznivé, bez významných projevů rizikového chování",
+        "Výchovatelé poskytují individuální podporu při studiu",
+        "Úzká spolupráce se školou a školním poradenským pracovištěm"
+      ],
+      "partnerships_practice": [
+        "Spolupráce s Univerzitou Karlovou (FTVS Praha) – odborné přednášky, sportovní akce",
+        "Spolupráce s Univerzitou Hradec Králové – pedagogické praxe, badatelské dny",
+        "Program Erasmus+ – zahraniční mobility pro žáky a pedagogy",
+        "Partnerství se slovenským gymnáziem v Brezně",
+        "Odborné praxe a stáže v renomovaných institucích",
+        "Vzdělávací programy pro základní a mateřské školy"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je detailní a srozumitelná, s jasným oddělením silných a slabých stránek. Konkrétní čísla a příklady usnadňují pochopení. Mírně snižuje srozumitelnost pro rodiče technický jazyk v některých pasážích.",
+      "uncertainty_notes": [
+        "Zpráva nespecifikuje přesné procento žáků s problémy v chování nebo absencí – údaje jsou kvalitativní.",
+        "Není jasné, jak se liší výsledky mezi jednotlivými třídami v rámci stejného oboru.",
+        "Doporučení inspekce (např. interní testování) nejsou zatím implementována – není znám časový plán."
+      ]
+    }
+  }
+}

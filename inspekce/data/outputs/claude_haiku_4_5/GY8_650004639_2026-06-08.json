@@ -1,0 +1,111 @@
+{
+  "report_id": "GY8_650004639_2026-06-08",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-10-05T12:18:03.573906+00:00",
+  "run_finished_utc": "2026-10-05T12:18:29.134321+00:00",
+  "raw_file": "GY8_650004639_2026-06-08.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY8_650004639_2026-06-08",
+    "school_profile": {
+      "school_type": "Německá škola v Praze s.r.o. - zahraniční škola, základní škola a gymnázium",
+      "inspection_period": "8. 6. 2026 - 10. 6. 2026",
+      "school_change_summary": "Od 1. 9. 2025 škola rozšířila činnost o základní vzdělávání a školní družinu. Jde o součást sítě 140 německých zahraničních škol podporovaných Německem. Vzdělávání probíhá v dvojjazyčném česko-německém prostředí s propojením českého a německého kurikula."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Výjimečné prostorové vybavení",
+          "detail": "Kampus nabízí rozmanité prostory včetně auditorií, sportovišť, knihovny a relaxačních zón s bezbariérový přístupem.",
+          "evidence": "Škola disponuje tělocvičnou, gymnastickým sálem, víceúčelovými sportovišti, knihovnou s obsáhlým fondem a prostory pro zklidnění."
+        },
+        {
+          "tag": "Kvalitní pedagogický tým",
+          "detail": "7 kvalifikovaných pedagogů včetně 4 rodilých mluvčích němčiny zajišťujících výuku v německém jazyce.",
+          "evidence": "Všichni pedagogové jsou kvalifikovaní, včetně vychovatelky školní družiny. Další vzdělávání je systémově nastaveno."
+        },
+        {
+          "tag": "Partnerství a projekty",
+          "detail": "Škola spolupracuje s vysokými školami, německými institucemi v Praze a pořádá projektové týdny podporující vrstevnické učení.",
+          "evidence": "Spolupráce s Goethe Institutem, festivaly, berlínské divadlo, pedagogické praxe studentů německých univerzit."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Slabá kontrola pedagogického procesu",
+          "detail": "Hospitační činnost vedení není dostatečně zaměřená a neposkytuje učitelům konkrétní doporučení k jejich práci.",
+          "evidence": "Hospitační činnost 'neposkytovala učitelům dostatečnou zpětnou vazbu resp. konkrétní doporučení' a 'nezachycuje všechna specifika vzdělávání na prvním stupni'."
+        },
+        {
+          "tag": "Nejednotný systém hodnocení výsledků",
+          "detail": "Chybí jednotný postup pro vyhodnocování výsledků ve všech předmětech, což znesnadňuje včasné identifikování problémů.",
+          "evidence": "Škola 'nemá nastaven jednotný systém sledování a vyhodnocování výsledků vzdělávání žáků ve všech předmětech'."
+        },
+        {
+          "tag": "Nedostatečné závěry hodin",
+          "detail": "Učitelé často vynechávají shrnutí učiva a vyhodnocení naplnění vzdělávacích cílů na konci hodin.",
+          "evidence": "Hodiny 'postrádaly shrnutí učiva a systematické vyhodnocení naplnění vzdělávacího cíle' z důvodu 'nižší efektivity časového plánování'."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně probíhá výuka v německém jazyce a jak se zajišťuje, aby žáci bez předchozích znalostí němčiny nebyli přetíženi?",
+        "Jaký je poměr mezi českým a německým jazykem v jednotlivých předmětech a jak se to mění v průběhu základní školy?",
+        "Jak škola řeší podporu žáků, jejichž mateřským jazykem není čeština ani němčina?"
+      ],
+      "who_school_fits": [
+        "Rodiny s ambicí bilingvního vzdělávání a zájmem o německou kulturu a jazyk",
+        "Žáci, kterým vyhovuje menší třída (22 žáků ve dvou třídách) s individuálním přístupem",
+        "Děti, které se dobře adaptují na nové prostředí a mají zájem o projektové učení a mezinárodní spolupráci"
+      ],
+      "who_should_be_cautious": [
+        "Rodiny, které si nejsou jisté, zda jejich dítě zvládne intenzivní bilingvní vzdělávání bez předchozích znalostí",
+        "Žáci se speciálními vzdělávacími potřebami - škola zatím nemá zkušenosti s jejich podporou",
+        "Rodiny, které preferují tradiční české vzdělávání bez prvků německého kurikula"
+      ],
+      "plain_czech_summary": "Německá škola v Praze je nová základní škola s výjimečným vybavením a kvalitním pedagogickým týmem. Nabízí bilingvní česko-německé vzdělávání v malých třídách s individuálním přístupem. Silnými stránkami jsou prostorové vybavení, kvalifikovaní učitelé a partnerství s německými institucemi. Slabší je kontrola kvality výuky, jednotnost hodnocení a podpora žáků s odlišným mateřským jazykem. Škola je vhodná pro rodiny zajímající se o německou kulturu a jazykové vzdělávání."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Nelze hodnotit - zpráva se týká pouze základní školy, která zahájila činnost v září 2025",
+        "key_numbers": [
+          "Základní škola vzdělávala v době inspekce pouze žáky prvního ročníku",
+          "Celkem 22 žáků ve dvou třídách základní školy"
+        ],
+        "evidence": "ZŠ zahájila činnost v září 2025, v době inspekce vzdělávala pouze první ročník."
+      },
+      "absence": {
+        "trend": "Není v textu zmíněna",
+        "key_numbers": [],
+        "evidence": "Inspekční zpráva neobsahuje údaje o absenci žáků."
+      },
+      "support_services": [
+        "Výchovná poradkyně a školní metodička prevence",
+        "Jazyková asistentka pro německý jazyk",
+        "Od 2. pololetí systém podpory pro žáky s odlišným mateřským jazykem, kteří nedostatečně ovládají češtinu",
+        "Komunitní kruhy zaměřené na prevenci rizikového chování"
+      ],
+      "safety_climate": [
+        "Elektronicky zabezpečený vstup do budovy s vrátnicí obsluhovanou školním personálem",
+        "Elektronický systém v družině s identifikací osob vyzvedávajících žáky pomocí identifikačního čipu",
+        "Vzdělávání probíhalo v 'klidném a vstřícném prostředí založeném na vzájemném respektu'",
+        "Žáci respektovali nastavená pravidla, nevhodné chování bylo pedagogy vhodně usměrňováno"
+      ],
+      "partnerships_practice": [
+        "Spolupráce s vysokými školami - umožňuje pedagogickou praxi studentům německých univerzit",
+        "Partnerství s německými institucemi v Praze: Goethe Institut, festival německého filmu, berlínské divadlo",
+        "Sportovní akce pořádané ve spolupráci s dalšími pražskými základními školami",
+        "Součást sítě přibližně 140 německých zahraničních škol podporovaných Spolkovou republikou Německo"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je detailní a obsahuje konkrétní fakta, ale některé pasáže jsou složitě strukturované. Klíčové informace pro rodiče jsou jasné, ale vyžadují pozorné čtení.",
+      "uncertainty_notes": [
+        "Zpráva se týká pouze prvního roku fungování základní školy - dlouhodobé trendy nelze posoudit",
+        "Nejsou dostupné údaje o výsledcích maturit, protože gymnázium není součástí inspekce",
+        "Konkrétní počty žáků se speciálními potřebami nejsou uvedeny (v čase inspekce nula)"
+      ]
+    }
+  }
+}

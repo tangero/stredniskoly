@@ -1,0 +1,110 @@
+```json
+{
+  "report_id": "GY4_600006662_2026-05-26",
+  "school_profile": {
+    "school_type": "Střední pedagogická škola Futurum - soukromá škola s.r.o. Nabízí obory: Předškolní a mimoškolní pedagogika, Pedagogické lyceum, Gymnázium a nově Lyceum (humanitní a společenské vědy) v denní i dálkové formě.",
+    "inspection_period": "26. května až 28. května 2026",
+    "school_change_summary": "Od září 2025 škola otevřela nový čtyřletý obor Lyceum v režimu pokusného ověřování. V roce 2025 se rozšířila o pracoviště v ulici Spálená v centru Prahy. Vedení systematicky zlepšuje materiálně technické podmínky."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Moderní vybavení a prostředí",
+        "detail": "Škola sídlí v nově renovované budově v centru Prahy s multimediálními učebnami, virtuální realitou, relaxační učebnou a nejmodernější technologiemi.",
+        "evidence": "Tři podlaží budovy s dostatečným prostorem, notebooky, multimediální učebny, učebny pro virtuální realitu a dramatickou výchovu."
+      },
+      {
+        "tag": "Jazykové vzdělání na vysoké úrovni",
+        "detail": "Systémová podpora výuky cizích jazyků od prvního ročníku s možností přípravy na mezinárodní certifikáty a rodilými mluvčími.",
+        "evidence": "Druhý cizí jazyk (německý, španělský nebo francouzský) od prvního ročníku, konverzační kroužky podle pokročilosti, příprava na mezinárodní jazykové certifikáty."
+      },
+      {
+        "tag": "Bohatá mimoškolní nabídka a projekty",
+        "detail": "Četné zájmové kroužky, exkurze, zahraniční výjezdy, sportovní kurzy a programy jako FUTURUM Talks podporují osobnostní rozvoj.",
+        "evidence": "Divadelní, debatní, jazykové kroužky, tvůrčí psaní, historický klub, lyžařský, plavecký a turistický kurz, tematické poznávací výjezdy."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Nedostatečná diferenciace výuky",
+        "detail": "V některých hodinách chybí přizpůsobení výuky žákům s vyšším tempem práce nebo nadaným žákům.",
+        "evidence": "Nižší míra diferenciace vzdělávacích strategií vzhledem k žákům s větším zájmem, rychlejším tempem nebo lepšími jazykovými dovednostmi."
+      },
+      {
+        "tag": "Omezená aktivita žáků v některých hodinách",
+        "detail": "Ne všechny vyučovací hodiny plně podporují aktivní zapojení žáků a efektivní využití vzdělávacího potenciálu.",
+        "evidence": "Menší pestrost forem a metod výuky, menší spoluúčast žáků, nižší míra pozornosti při prezentacích spolužáků, méně efektivní časové rozložení hodin."
+      },
+      {
+        "tag": "Slabší rozvoj kritického myšlení",
+        "detail": "V části hodin chybí dostatečná podpora samostatného vyhledávání informací a kritického myšlení žáků.",
+        "evidence": "Nedostatečné uplatňování pedagogických postupů vedoucích k samostatnému využívání různých informačních zdrojů a rozvoji kritického myšlení."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola diferencuje výuku pro nadané žáky nebo žáky s rychlejším tempem práce?",
+      "Jaké jsou zkušenosti s absencí a jak škola řeší problém zameškaných hodin?",
+      "Jak se škola vypořádává se studijním neúspěchem a jakou podporu nabízí ohrožovaným žákům?"
+    ],
+    "who_school_fits": [
+      "Žáci se zájmem o humanitní a společenské vědy, kteří hledají alternativu ke klasickému gymnáziu",
+      "Jazykově nadaní žáci, kterým vyhovuje intenzivní jazykové vzdělání s možností certifikací",
+      "Kreativní a aktivní žáci, kteří chtějí projektové vyučování, exkurze a mimoškolní aktivity"
+    ],
+    "who_should_be_cautious": [
+      "Žáci, kteří potřebují individualizovanou výuku a diferenciaci - inspekce zjistila, že tato oblast není dostatečně rozvinuta",
+      "Žáci s nižší motivací nebo studijními problémy - škola řeší absence a studijní neúspěch, ale je to mezi nejčastěji řešené problémy",
+      "Žáci, kteří preferují tradičnější přístup - škola klade důraz na projekty, aktivní učení a inovativní metody"
+    ],
+    "plain_czech_summary": "Futurum je moderní soukromá škola v centru Prahy s výborným vybavením a silným zaměřením na jazykové vzdělání. Nabízí nový obor Lyceum zaměřený na humanitní vědy. Silné stránky: motivující prostředí, kvalitní učitelé, bohatá mimoškolní nabídka, jazykové certifikáty. Slabiny: v některých hodinách chybí dostatečná diferenciace pro nadané žáky a aktivní zapojení všech studentů. Inspekce doporučuje více individualizované přístupy a podporu kritického myšlení."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Nelze hodnotit - obor Lyceum byl otevřen až v září 2025, inspekce proběhla v květnu 2026, tedy v prvním roce provozu",
+      "key_numbers": [
+        "60 žáků ve dvou třídách prvního ročníku",
+        "Obor Lyceum v režimu pokusného ověřování MŠMT"
+      ],
+      "evidence": "Vzhledem ke krátké době realizace oboru vzdělání Lyceum je možné hodnotit pouze průběžné výsledky vzdělávání žáků, ty byly v době inspekční činnosti příznivé."
+    },
+    "absence": {
+      "trend": "Absence a její pozdní omlouvání patří mezi nejčastěji řešené problémy školy",
+      "key_numbers": [
+        "Zameškaná absence a její pozdní omlouvání - mezi nejčastěji řešené problémy"
+      ],
+      "evidence": "Mezi nejčastěji řešené problémy školy patří např. studijní neúspěch, zameškaná absence a její pozdní omlouvání."
+    },
+    "support_services": [
+      "Školní psycholožka - podpora zdravých vztahů, komunikace a duševní pohody",
+      "Speciální pedagožka - podpora žáků se speciálními potřebami",
+      "Výchovná poradkyně - individuální přístup k žákům s rizikem studijního neúspěchu",
+      "Metodička prevence/kariérová poradkyně - kariérové poradenství a prevence sociálně patologických jevů",
+      "Rodilí mluvčí - podpora jazykového vzdělání"
+    ],
+    "safety_climate": [
+      "Vstupní elektronický docházkovací systém s identifikačními kartami reguluje pohyb osob v budově",
+      "Příznivá pracovní atmosféra s vstřícným, podporujícím a empatickým přístupem pedagogů",
+      "Respektující komunikace a partnerský přístup pedagogů a žáků",
+      "Práce školní psycholožky zaměřená na podporu zdravých vztahů",
+      "Adaptační kurz pro začlenění žáků do nových třídních kolektivů",
+      "Komunikační kruhy jednotlivých tříd s vedením školy"
+    ],
+    "partnerships_practice": [
+      "Partnerská škola v Drážďanech - realizace výuky a sdílení edukativních zkušeností",
+      "Univerzita Karlova - podpora nadaných žáků a vzdělávacích programů",
+      "Sokol - pronajatá místa pro tělovýchovné aktivity",
+      "Školní jídelny a vysokoškolská menza - stravování žáků",
+      "Neziskové organizace - součinnost při realizaci vzdělávacích programů a primární prevenci"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je psána srozumitelně s konkrétními příklady. Silné a slabé stránky jsou jasně vymezeny. Některé pasáže jsou však poměrně dlouhé a obsahují odborný jazyk, který by mohl být pro laické rodiče méně přístupný.",
+    "uncertainty_notes": [
+      "Konkrétní výsledky maturit nejsou dostupné - obor Lyceum je příliš nový (od září 2025)",
+      "Počet žáků s problémy (absence, studijní neúspěch) není kvantifikován - není jasné, zda jde o ojedinělé případy nebo systémový problém",
+      "Inspekce nespecifikuje, v kolika procentech hodin byla zjištěna nedostatečná diferenciace - není jasné, zda jde o izolované případy nebo rozšířený problém"
+    ]
+  }
+}
+```

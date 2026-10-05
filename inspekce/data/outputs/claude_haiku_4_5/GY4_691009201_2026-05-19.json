@@ -1,0 +1,119 @@
+{
+  "report_id": "GY4_691009201_2026-05-19",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-10-05T12:20:41.793021+00:00",
+  "run_finished_utc": "2026-10-05T12:21:06.706415+00:00",
+  "raw_file": "GY4_691009201_2026-05-19.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY4_691009201_2026-05-19",
+    "school_profile": {
+      "school_type": "Střední škola a základní škola s družinou, příspěvková organizace",
+      "inspection_period": "19.–21. května a 26. května 2026",
+      "school_change_summary": "Od loňské inspekce škola zahájila vzdělávání v oboru Gymnázium (od 2024/2025), počet žáků výrazně vzrostl. Nová ředitelka od prosince 2024. Zlepšily se prostory a vybavení, ale snížila se kvalifikovanost pedagogů."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Spolupráce se vysokými školami",
+          "detail": "Střední škola má efektivní partnerství s vysokými školami a odbornými institucemi, které rozšiřují vzdělávací příležitosti.",
+          "evidence": "Systematická spolupráce s vysokými školami umožňuje žákům rozšiřovat poznatky a seznamovat se s budoucím studijním směřováním."
+        },
+        {
+          "tag": "Tandemová výuka na střední škole",
+          "detail": "Dva učitelé ve třídě s jasně vymezenými rolemi zajišťují lepší individuální podporu a aktivizaci žáků.",
+          "evidence": "Tandemová výuka přispívá k plynulé organizaci a vytváří příznivější podmínky pro individualizovanou podporu."
+        },
+        {
+          "tag": "Zahraniční spolupráce a projekty",
+          "detail": "Škola aktivně rozvíjí mezinárodní partnerství a projektové činnosti, které podporují jazykové a sociální kompetence.",
+          "evidence": "Mezinárodní spolupráce zahrnuje partnerské projekty a zahraniční výjezdy podporující jazykový rozvoj a kulturní rozhled."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Vysoká absence na gymnáziu",
+          "detail": "Žáci oboru Gymnázium mají výrazně vyšší absenci než běžné normy – průměrně 195 hodin za rok.",
+          "evidence": "V uzavřeném školním roce 2024/2025 činila absence přibližně 195 zameškaných hodin na žáka."
+        },
+        {
+          "tag": "Nižší kvalifikace pedagogů",
+          "detail": "Ze 40 učitelů jich 14 nemá příslušnou odbornou kvalifikaci, což může ovlivnit kvalitu výuky.",
+          "evidence": "Ze 40 učitelů včetně ředitelky je 14 bez příslušné odborné kvalifikace, tři si ji studiem doplňují."
+        },
+        {
+          "tag": "Slabší diferenciace výuky",
+          "detail": "Výuka není dostatečně přizpůsobena různým potřebám žáků, chybí úlohy s různou náročností.",
+          "evidence": "Žáci neměli možnost výběru z úloh s odlišnou kognitivní náročností, nízká úroveň diferenciace přetrvává."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak škola řeší vysokou absenci žáků gymnázia a jaká opatření zavádí?",
+        "Jaký je plán na zvýšení kvalifikace pedagogů bez příslušného vzdělání?",
+        "Jak se liší přístup k nadaným žákům a žákům se speciálními potřebami?"
+      ],
+      "who_school_fits": [
+        "Žáci se zájmem o mezinárodní spolupráci a zahraniční zkušenosti – škola má aktivní program zahraničních výjezdů.",
+        "Studenti, kteří chtějí vysokoškolské vzdělání – střední škola má partnerství s vysokými školami.",
+        "Žáci na základní škole, kteří potřebují individuální podporu – kvalitní poradenské služby a asistenti pedagoga."
+      ],
+      "who_should_be_cautious": [
+        "Rodiče žáků gymnázia by měli vědět o vysoké absenci – průměrně 195 hodin za rok je problém.",
+        "Žáci s nižšími schopnostmi v matematice a přírodovědě – zde jsou slabší výsledky.",
+        "Rodiny, které vyžadují vysokou kvalifikaci všech pedagogů – 35 % učitelů nemá příslušné vzdělání."
+      ],
+      "plain_czech_summary": "Škola se dynamicky rozvíjí pod vedením nové ředitelky. Silné stránky: kvalitní spolupráce se vysokými školami, zajímavé projekty a zahraniční program. Slabiny: vysoká absence na gymnáziu (195 hodin ročně), nižší kvalifikace části pedagogů a nedostatečná přizpůsobení výuky různým potřebám žáků. Základní škola funguje lépe než střední. Doporučujeme se zeptat na řešení absence a kvalifikaci učitelů."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Velmi dobrý – všichni žáci prospěli, tři čtvrtiny s vyznamenáním",
+        "key_numbers": [
+          "100 % žáků prospělo",
+          "~75 % žáků s vyznamenáním",
+          "Slabší výsledky v matematice a přírodovědě"
+        ],
+        "evidence": "Ve všech sledovaných obdobích prospěli všichni žáci. Přibližně tři čtvrtiny žáků prospěly s vyznamenáním."
+      },
+      "absence": {
+        "trend": "Problematická na gymnáziu, normální na základní škole",
+        "key_numbers": [
+          "Gymnázium 2024/2025: ~195 hodin/žáka/rok",
+          "Gymnázium 2025/2026 (1. pololetí): ~92 hodin/žáka",
+          "Základní škola: bez zmínky o problémech"
+        ],
+        "evidence": "V uzavřeném školním roce 2024/2025 činila absence přibližně 195 zameškaných hodin na žáka, v 1. pololetí 2025/2026 dosáhla přibližně 92 hodin."
+      },
+      "support_services": [
+        "Výchovná poradkyně – systematicky realizuje hospitační činnost a poskytuje zpětnou vazbu",
+        "Školní metodička prevence – zajišťuje preventivní programy",
+        "Kariérová poradkyně – podporuje volbu budoucího směřování",
+        "Sociální pedagožka – řeší osobní obtíže žáků",
+        "Asistenti pedagoga – 4 kvalifikovaní pracovníci podporují individuální vzdělávání"
+      ],
+      "safety_climate": [
+        "Pedagogický dohled řádně vykonáván, vstupy do budovy zabezpečeny",
+        "Míra úrazovosti srovnatelná se školami obdobného typu",
+        "Motivační pochvaly převažují nad kázeňskými opatřeními",
+        "Snížená známka z chování nebyla zaznamenána",
+        "Ojedinělé případy rizikového chování řešeny bezodkladně"
+      ],
+      "partnerships_practice": [
+        "Partnerství s vysokými školami – workshopy, přednášky, exkurze",
+        "Místní akční skupina – sdílení pedagogických zkušeností a soutěže",
+        "Charitativní akce a komunální aktivity – rozvoj občanské angažovanosti",
+        "Mezinárodní program – zahraniční výjezdy a partnerské projekty",
+        "Externí odborné, kulturní a akademické instituce – rozšiřování vzdělávacích zkušeností"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je detailní a srozumitelná, ale místy obsahuje odborný jazyk. Hlavní zjištění jsou jasná, ale rodiče by potřebovali více konkrétních čísel o prospěchu a absenci.",
+      "uncertainty_notes": [
+        "Absence na gymnáziu se v průběhu roku snížila – není jasné, zda se situace stabilizovala nebo jde jen o dočasné zlepšení.",
+        "Kvalifikace pedagogů – není specifikováno, v kterých předmětech chybí kvalifikace a jak to ovlivňuje výuku.",
+        "Diferenciace výuky – není jasné, jak moc toto ovlivňuje výsledky jednotlivých skupin žáků."
+      ]
+    }
+  }
+}

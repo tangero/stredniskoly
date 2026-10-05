@@ -1,0 +1,111 @@
+{
+  "report_id": "LYC_691005265_2026-06-02",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-10-05T12:19:13.803899+00:00",
+  "run_finished_utc": "2026-10-05T12:19:37.426785+00:00",
+  "raw_file": "LYC_691005265_2026-06-02.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "LYC_691005265_2026-06-02",
+    "school_profile": {
+      "school_type": "Střední škola (Technické lyceum a Přírodovědné lyceum) - součást komplexu s mateřskou a základní školou",
+      "inspection_period": "2. až 3. června 2026",
+      "school_change_summary": "Střední škola zahájila činnost 1. 9. 2025. V době inspekce se vzdělávalo 12 žáků ve dvou třídách prvního ročníku (10% naplněnost kapacity)."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Individuální přístup",
+          "detail": "Pedagogové efektivně zohledňují potřeby jednotlivých žáků a jejich vzdělávací pokrok.",
+          "evidence": "Vyučující se průběžně zajímali o učební pokrok, v případě potřeby pomáhali a opakovaně vysvětlovali postupy."
+        },
+        {
+          "tag": "Kvalitní materiální vybavení",
+          "detail": "Škola má rekonstruovanou budovu s laboratořemi pro chemii a biologii, digitální technologie a přilehlou zahradu.",
+          "evidence": "Během výuky bylo patrné aktivní a účelné využívání školních digitálních technologií jak vyučujícími, tak žáky."
+        },
+        {
+          "tag": "Bezpečné prostředí",
+          "detail": "Škola prokazatelně poučuje žáky o bezpečnosti, školní úrazy se nevyskytly, kontrola vstupu je zajištěna.",
+          "evidence": "Školní úrazy se k termínu inspekční činnosti ve střední škole nevyskytly. Kontrola vstupu byla zabezpečena personálně."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Slabá komunikační dovednost",
+          "detail": "Žáci nejsou dostatečně vedeni k obsahově náročnější komunikaci a argumentaci.",
+          "evidence": "Příležitostí ke zlepšení je podněcování žáků k obsahově náročnější komunikaci včetně schopnosti patřičné argumentace."
+        },
+        {
+          "tag": "Nízké výsledky v některých předmětech",
+          "detail": "Horší prospěch zaznamenán ve španělském jazyce, matematice, fyzice a dějepisu.",
+          "evidence": "Horší prospěch byl zaznamenán ve španělském jazyce, matematice, příp. fyzice a dějepisu."
+        },
+        {
+          "tag": "Velmi nová škola",
+          "detail": "Střední škola funguje teprve od září 2025, nelze zatím objektivně vyhodnotit dlouhodobé trendy.",
+          "evidence": "Vzhledem k časově krátkému působení školy nelze z výsledků žáků vyvozovat objektivní závěry."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola plánuje zlepšit komunikační dovednosti žáků a jejich schopnost argumentace?",
+        "Jaké jsou plány na zvýšení naplněnosti tříd? Jak se bude vyvíjet počet žáků v příštích letech?",
+        "Jak škola řeší slabší výsledky v matematice a cizích jazycích? Nabízí nějakou dodatečnou podporu?"
+      ],
+      "who_school_fits": [
+        "Žáci, kterým vyhovuje individuální přístup a menší třídy s osobnější péčí",
+        "Studenti zajímající se o přírodní vědy nebo techniku, kteří ocení praktické laboratoře a exkurze",
+        "Rodiny preferující soukromou školu s Montessori tradicí a dlouhodobou historií v regionu"
+      ],
+      "who_should_be_cautious": [
+        "Žáci, kteří potřebují silnější podporu v matematice a cizích jazycích - škola je teprve v počátcích",
+        "Studenti, kteří se chtějí připravovat na maturitu s dlouhodobě prověřenými metodami - škola nemá dosud historii maturitních výsledků",
+        "Rodiny, které hledají velkou školu s bohatou nabídkou volitelných předmětů a aktivit - kapacita je zatím velmi nízká"
+      ],
+      "plain_czech_summary": "Montessori střední škola v Králově Dvoře je nová, funguje od září 2025. Inspekce chválí individuální přístup pedagogů, kvalitní vybavení a bezpečné prostředí. Slabší jsou výsledky v matematice, cizích jazycích a komunikačních dovednostech žáků. Škola má zatím jen 12 žáků v prvním ročníku. Jde o perspektivní projekt s dobrými podmínkami, ale bez dlouhodobé historie výsledků."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Nelze vyhodnotit - škola teprve funguje",
+        "key_numbers": [
+          "12 žáků v prvním ročníku (10% naplněnost)",
+          "6 žáků v Technickém lyceu, 6 v Přírodovědném lyceu",
+          "Všichni žáci prospěli v 1. pololetí 2025/2026"
+        ],
+        "evidence": "Vzhledem k časově krátkému působení školy nelze z výsledků žáků za dosud neuzavřené hodnocené období vyvozovat objektivní závěry."
+      },
+      "absence": {
+        "trend": "Není v textu zmíněno",
+        "key_numbers": [],
+        "evidence": "Zpráva se nezabývá absencí žáků."
+      },
+      "support_services": [
+        "Školní metodička prevence a výchovný poradce zajišťují poradenské služby v dostatečném rozsahu",
+        "Podpora žáka se speciálními vzdělávacími potřebami zahrnuje respektování doporučení pro jeho vzdělávání",
+        "Prevence rizikového chování zahrnuje aktivity na prevenci návykových látek, šikany a kyberbezpečnosti"
+      ],
+      "safety_climate": [
+        "Škola prokazatelně poučuje žáky o zásadách bezpečnosti a ochrany zdraví",
+        "Školní úrazy se k termínu inspekce nevyskytly",
+        "Kontrola vstupu a pohyb cizích osob je zabezpečen personálně",
+        "Formy rizikového chování nebyly identifikovány"
+      ],
+      "partnerships_practice": [
+        "Spolupráce s vnějšími partnery se začíná účinně rozvíjet v rámci projektové činnosti",
+        "Spolupráce s neziskovými organizacemi a ostatními školami v regionu",
+        "Realizované aktivity orientovány na ekologii, odpadové hospodářství a revitalizaci krajiny",
+        "Organizovány motivační exkurze a přednášky se zaměřením na studijní obory"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je srozumitelná a obsahuje konkrétní pozorování. Hlavní omezení je, že škola je velmi nová (funguje teprve 9 měsíců), takže mnoho údajů nelze objektivně vyhodnotit. Nejasnosti se týkají budoucího vývoje a dlouhodobých trendů.",
+      "uncertainty_notes": [
+        "Nelze vyhodnotit maturitní výsledky - škola teprve funguje, první maturita bude v roce 2028",
+        "Velmi nízká naplněnost (10%) - není jasné, zda se počet žáků zvýší nebo zůstane nízký",
+        "Slabší výsledky v některých předmětech mohou být způsobeny počátečními problémy adaptace, ne systémovými chybami"
+      ]
+    }
+  }
+}

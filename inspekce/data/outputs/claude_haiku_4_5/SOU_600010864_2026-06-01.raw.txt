@@ -1,0 +1,107 @@
+```json
+{
+  "report_id": "SOU_600010864_2026-06-01",
+  "school_profile": {
+    "school_type": "Soukromé střední odborné učiliště (SOU) s obory: Podnikání (maturita), Kosmetické služby (maturita), Kadeřník (výuční list)",
+    "inspection_period": "1. 6. až 12. 6. 2026",
+    "school_change_summary": "Počet žáků se zvýšil, pedagogický sbor se stabilizoval, zlepšila se úspěšnost v maturitě zejména v oboru Podnikání. Přetrvává nízká míra individualizace ve výuce."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Propojení s praxí",
+        "detail": "Škola aktivně spolupracuje se sociálními partnery, což propojuje vzdělávání s reálným pracovním prostředím a zvyšuje šance absolventů na trhu práce.",
+        "evidence": "Spolupráce realizována prostřednictvím odborného výcviku, praxí na pracovištích zaměstnavatelů a účastí odborníků z praxe ve výuce."
+      },
+      {
+        "tag": "Pozitivní třídní klima",
+        "detail": "Pedagogové pracují s třídami profesionálně a partnersky, což vytváří příznivé prostředí pro učení.",
+        "evidence": "Pravidelné třídnické hodiny mají preventivní charakter, pedagogové sledují klima třídy a reagují na problémy."
+      },
+      {
+        "tag": "Úspěchy v maturitě",
+        "detail": "V oboru Podnikání dosahuje škola lepších výsledků než republikový průměr.",
+        "evidence": "Rok 2025: neúspěšnost 25 % (ČR 28,3%), profilová část 12,5 % (ČR 15%)."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Slabá individualizace",
+        "detail": "Výuka není dostatečně přizpůsobena různým potřebám žáků, diferenciace se omezuje na různé množství úkolů.",
+        "evidence": "Inspektoři zjistili, že žáci jen výjimečně volí míru obtížnosti či způsob řešení úloh."
+      },
+      {
+        "tag": "Chybí kritické myšlení",
+        "detail": "Pedagogové nepravidelně učí žáky pracovat s informacemi a rozvíjet kritické myšlení.",
+        "evidence": "Napříč předměty chyběla práce s informačními zdroji a systematická podpora kritického myšlení."
+      },
+      {
+        "tag": "Slabší výsledky v Kosmetických službách",
+        "detail": "V tomto oboru jsou maturitní výsledky pod průměrem ČR, ovlivněno nízkým počtem přihlášených.",
+        "evidence": "Rok 2025: neúspěšnost 23,1 % (ČR 14,1%), rok 2024: 25 % (ČR 13,3%)."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola individualizuje výuku pro žáky s různými potřebami a tempem učení?",
+      "Jaké konkrétní metody používáte k rozvoji kritického myšlení a práce s informacemi?",
+      "Jak se škola připravuje na zlepšení výsledků v oboru Kosmetické služby?"
+    ],
+    "who_school_fits": [
+      "Žáci, kteří chtějí praktické vzdělání propojené s reálnou praxí a kontakty s budoucími zaměstnavateli",
+      "Studenti oboru Podnikání, kde škola dosahuje nadprůměrných výsledků v maturitě",
+      "Žáci, kterým vyhovuje stabilní pedagogický sbor a pozitivní třídní klima"
+    ],
+    "who_should_be_cautious": [
+      "Žáci, kteří potřebují silnou individualizaci a přizpůsobení tempa – škola v tom má rezervy",
+      "Studenti oboru Kosmetické služby – výsledky maturit jsou pod průměrem",
+      "Žáci, kteří se chtějí naučit samostatně pracovat s informacemi a kriticky myslet – tyto dovednosti nejsou dostatečně rozvíjeny"
+    ],
+    "plain_czech_summary": "Soukromé SOU INDUSTRIA v Litoměřicích je stabilní školou s dobrými kontakty na praxi a pozitivním klimatem. Silnou stránkou je propojení vzdělávání s reálným pracovním prostředím a úspěchy v maturitě oboru Podnikání. Slabinou je nedostatečná individualizace výuky a rozvoj kritického myšlení. Škola se snaží zlepšovat, ale v těchto oblastech má ještě rezervy. Vhodná pro prakticky zaměřené žáky, kteří si cení kontaktů s budoucími zaměstnavateli."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Zlepšující se, zejména v oboru Podnikání; slabší v oboru Kosmetické služby",
+      "key_numbers": [
+        "Podnikání 2025: 25 % neúspěšnost (ČR 28,3 %), profilová část 12,5 % (ČR 15 %)",
+        "Kosmetické služby 2025: 23,1 % neúspěšnost (ČR 14,1 %)",
+        "Závěrečné zkoušky 2024/2025: neprospěl pouze jeden žák"
+      ],
+      "evidence": "Škola dosahuje lepších výsledků než ČR v oboru Podnikání, v Kosmetických službách zaostává. Výcvik nanečisto a propojení teorie s praxí zvyšují úspěšnost."
+    },
+    "absence": {
+      "trend": "Monitorovaná a řešená",
+      "key_numbers": [
+        "Škola důsledně sleduje docházku žáků ohrožených školním neúspěchem"
+      ],
+      "evidence": "V oblasti kariérového poradenství poskytuje efektivní podporu. Opatření na snižování vysoké absence se postupně daří naplňovat."
+    },
+    "support_services": [
+      "Výchovná poradkyně, metodička prevence a speciální pedagožka v jedné osobě",
+      "Individuální konzultace pro žáky ohrožené neúspěchem (využívány sporadicky)",
+      "Kariérové poradenství při volbě dalšího studia a uplatnění na trhu práce",
+      "Speciální vzdělávací opatření pro 15 žáků se speciálními potřebami"
+    ],
+    "safety_climate": [
+      "Škola systematicky buduje pozitivní, respektující a bezpečné klima založené na partnerských vztazích",
+      "Důraz na prevenci rizikového chování a podporu duševního zdraví",
+      "Pravidelné třídnické hodiny s preventivním charakterem",
+      "Pedagogové systematicky sledují klima třídy a reagují na signály problémů"
+    ],
+    "partnerships_practice": [
+      "Odborný výcvik a odborné praxe žáků na pracovištích zaměstnavatelů",
+      "Účast odborníků z praxe ve výuce",
+      "Zapojení partnerů do odborných soutěží",
+      "Sociální partneři poskytují zpětnou vazbu k požadavkům trhu práce"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je psána srozumitelně s konkrétními čísly a příklady. Silné a slabé stránky jsou jasně vymezeny. Některé pasáže jsou více úřednické, ale celkově je obsah pro rodiče pochopitelný.",
+    "uncertainty_notes": [
+      "Není jasné, jak konkrétně škola individualizuje výuku – inspektoři konstatují, že se to nedělá dostatečně, ale nespecifikují, co by mělo být",
+      "Počet žáků v oboru Kosmetické služby je velmi nízký (4-13 přihlášených), což může zkreslovat statistiku – není jasné, zda je to problém školy nebo nízké poptávky",
+      "Není uvedeno, jak často se žáci účastní individuálních konzultací a proč je jejich využívání sporádické"
+    ]
+  }
+}
+```
