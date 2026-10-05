@@ -1,9 +1,14 @@
 ---
 name: overeni-preview
-description: Ověření PR v tangero/stredniskoly na náhledu ve Vercelu (Playwright, mobil i počítač) a zápis protokolu z preview, který vyžaduje brána sloučení. Použij u každého PR, který mění web (cokoli mimo docs, testy, .github, .claude a scripts/brana).
+description: Dobrovolné ověření PR v tangero/stredniskoly na náhledu ve Vercelu (Playwright, mobil i počítač) a zápis protokolu z preview. Brána protokol nevyžaduje (RA45), blokuje jen protokol s „nesplněno“. Použij, když chceš změnu webu ověřit před sloučením.
 ---
 
 # Ověření na preview a protokol
+
+**Od 5. 10. 2026 (RA45, #383) je protokol dobrovolný.** Brána ho nevyžaduje; blokuje jen protokol k aktuálnímu
+commitu, který hlásí „nesplněno“. Vlastník místo protokolu dostane po nasazení do Telegramu oddíl „Pro vlastníka“
+z popisu PR s adresami na webu. Ověřovatel náhledu (níže) dál běží jako pojistka: když najde nesplněné kritérium,
+PR zastaví.
 
 ## 0. Kdo ověřuje
 

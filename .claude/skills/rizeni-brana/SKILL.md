@@ -21,12 +21,15 @@ a každou hodinu. Výsledek zapíše jako kontrolu „Brána sloučení“ na ak
 | H2 | brána, `rezimy.yml`, `labeler.yml`, `CLAUDE.md`, workflow se změnou oprávnění nebo secrets | `schvaleno` přímo na PR, platí pro jeden commit |
 
 **Autoři (repozitář je veřejný):** doklad `Zdroj:` platí jen v issue od vlastníka nebo asistenta zadání
-(`vlastnik`, `asistent` v `rezimy.yml`), protokol z preview jen od nich nebo `github-actions[bot]`
+(`vlastnik`, `asistent` v `rezimy.yml`), protokol z preview (dobrovolný) jen od nich nebo `github-actions[bot]`
 a PR jiného autora (fork, Dependabot) projde jen se `schvaleno` na PR.
 
-Vždy: `stop` blokuje, při zamrznutí projde jen `incident` v rozsahu rutiny, u změn webu musí být
-protokol z preview k aktuálnímu commitu (skill `overeni-preview`). Chybějící protokol nahradí jen platný
-souhlas vlastníka na PR (`schvaleno` na PR pro aktuální commit, RA42); protokol s „nesplněno“ blokuje i tak.
+**Automatické obnovy dat** (RA46): PR bez zadání od účtu vlastníka, ne z forku, z větve v `datove_obnovy`
+(`rezimy.yml`), který mění jen cesty povolené pro tu větev, projde v režimu R bez souhlasu a bez review.
+
+Vždy: `stop` blokuje, při zamrznutí projde jen `incident` v rozsahu rutiny. Protokol z preview se nevyžaduje
+(RA45, nahrazuje RA42); blokuje jen protokol k aktuálnímu commitu, který hlásí „nesplněno“. Vlastník místo
+protokolu dostane po nasazení do Telegramu oddíl „Pro vlastníka“ z popisu PR s adresami na webu.
 
 **Review asistenta zadání** (oddíl 9d): u změn webu brána navíc chce pro aktuální hlavu komentář
 `## Review` od účtu `asistent` s řádky `Verdikt: Bez P1 a P2` a `Commit: <sha7>`; neplatí s `schvaleno`
@@ -70,7 +73,18 @@ Closes #N
 ## Co se změnilo
 - …
 
-## Jak ověřit na náhledu
+## Pro vlastníka
+Místo krátkého divného jména „Gymnazium“ uvidíš u školy celý oficiální název, například
+„Gymnázium, Praha 2, Litoměřická“.
+Adresa: /mesto/praha
+```
+
+Oddíl **Pro vlastníka** je u PR se zadáním, které mění web, povinný: bez něj brána PR nepustí. Po nasazení jde
+vlastníkovi do Telegramu. Piš ho z pohledu návštěvníka webu: co na stránce uvidí jinak, jednou až třemi větami,
+bez názvů souborů, funkcí a technických slov. Na zvláštní řádek dej adresu (nebo adresy) na webu, kde změnu uvidí.
+
+```
+## Jak ověřit na náhledu (nepovinné)
 1. Otevři <adresa náhledu>/skola/<slug> …
 2. Očekávaný výsledek: …
 

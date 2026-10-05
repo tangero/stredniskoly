@@ -63,8 +63,11 @@ vlastníka, proto se některá pravidla níže vynucují technicky.
 2. **Zaměř se na chyby, které AI udělá omylem:** špatná data, rozbitá stránka, chybný výpočet, rozpor
    s pravidly projektu, únik osobních údajů. Úmyslné obcházení pojistek účtem vlastníka je přijaté riziko
    (RA35); takové nálezy uveď nejvýš jako P3.
-3. Protokol z preview brána uzná jen od tvého účtu, účtu vlastníka a `github-actions[bot]`; když ho
-   píšeš, drž se šablony ve skillu `overeni-preview`.
+3. Protokol z preview se nevyžaduje (RA45). Když ho přesto píšeš, drž se šablony ve skillu `overeni-preview`;
+   brána ho uzná jen od tvého účtu, účtu vlastníka a `github-actions[bot]` a blokuje jen protokol s „nesplněno“.
+   V review kontroluj i oddíl „Pro vlastníka“: jde po nasazení vlastníkovi do Telegramu, má popsat z pohledu
+   návštěvníka, co na stránce uvidí jinak, bez technických slov, a mít adresu, kde to uvidí. Technický nebo
+   neurčitý text je nález P2.
 4. PR neslučuj a o sloučení nerozhoduj; to dělá skript po bráně (Claude Code nebo workflow Sloučení).
 5. **Smyčka oprav.** Když review obsahuje P1 nebo P2, napiš do PR další komentář, který začíná
    `@claude`, se seznamem nálezů k opravě (soubor, řádek, co je špatně) a číslem commitu review.
@@ -83,10 +86,18 @@ vlastníka, proto se některá pravidla níže vynucují technicky.
    na PR nebo propojeném issue zastaví i opravy. Zastavit smyčku smíš i ty: přidej `stop` nebo
    `potrebuje-cloveka`, když se opravy točí v kruhu.
 
+## Otázky a odpovědi vlastníka
+
+Když Claude Code v issue čeká na odpověď vlastníka, má issue štítek `otazka` a vlastník otázku dostal do Telegramu.
+Když ti vlastník odpoví na briefingu, zapiš jeho odpověď do issue komentářem s nadpisem `## Odpověď vlastníka`;
+štítek pak sám zmizí a práce pokračuje. Když se ptáš ty, přidej štítek `otazka` stejně.
+
 ## Souhrn nasazení pro vlastníka
 
-PR, které brána pustí, se slučují automaticky a vlastník je jednotlivě nekontroluje (RA40). Po sloučení PR
-do `main` mu proto svým kanálem pošli **stručný souhrn lidskými slovy**: co se na webu nebo v postupech
+PR, které brána pustí, se slučují automaticky a vlastník je jednotlivě nekontroluje (RA40). Změny webu mu po
+nasazení oznamuje workflow Ověření v produkci do Telegramu (oddíl „Pro vlastníka“ s adresou, RA45); ty znovu
+neoznamuj. Ostatní sloučení (pravidla, workflow, data bez změny webu) mu svým kanálem pošli jako **stručný souhrn
+lidskými slovy**: co se na webu nebo v postupech
 změnilo, pro koho a co z toho plyne, s číslem PR. Bez technických podrobností a bez výčtu souborů. Víc
 sloučení blízko sebe shrň do jedné zprávy. Když sloučený PR mění pravomoci AI (cesty H2) nebo data
 a výpočty (registr, slovník ukazatelů), napiš to zvlášť na začátek.
