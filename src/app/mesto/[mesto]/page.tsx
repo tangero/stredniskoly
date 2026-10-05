@@ -76,7 +76,7 @@ export default async function MestoPage({ params }: Props) {
   ]);
 
   const skoly = sestavKartySkol(schools, dalsi.obory, {
-    nazvyKatalogu, kanonickeNazvy, adresySidel: rejstrik.identifikace,
+    nazvyKatalogu, kanonickeNazvy, adresySidel: rejstrik.identifikace, obec: mestoMeta.nazev,
     zrizovatele: zrizovatelPodleRedizo(await getSchoolsData() as unknown as Record<string, unknown>),
   });
   const pocetNabidek = skoly.flatMap(k => k.radky).filter(r => r.druh === 'jpz').length;
