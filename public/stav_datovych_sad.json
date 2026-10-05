@@ -575,23 +575,18 @@
    "cyklus": "prubezne",
    "pouziti": "web",
    "zobrazeno": {
-    "obdobi": "2026-09-07",
-    "soubor": "data/csi_snapshots",
-    "prepnuto": "2026-09-13",
-    "z_dostupne": {
-     "obdobi": "2026-09-07",
-     "soubor": "PR #54, větev codex/csi-weekly-refresh",
-     "zjisteno": "2026-09-13",
-     "poznamka": "Týdenní workflow data připravuje; pull request byl otevřený od 13. 4. 2026, převzato přímo z větve 13. 9. 2026."
-    }
+    "obdobi": "2026-10-05",
+    "soubor": "data/csi_snapshots/csi_inspections_2026-10-05T12-16-15-633Z.json",
+    "sha256": "edbc0b542d3192562fa010cfa0eb3d92f4aa8aa9aa9d6f4496824759220596c2",
+    "prepnuto": "2026-10-05"
    },
    "ocekavano": {
     "obdobi": null,
-    "kdy": null,
+    "kdy": "2026-10",
     "jistota": "neznamo",
     "zduvodneni": "Inspekce přibývají průběžně; týdenní workflow připravuje snímky do pull requestů."
    },
-   "obnovit_nejpozdeji": "2026-09-21",
+   "obnovit_nejpozdeji": "2026-10-19",
    "po_prepnuti": "Starší snímky zůstávají v data/csi_snapshots s manifestem.",
    "vystupy": [
     "public/csi_inspections.json"
@@ -613,6 +608,17 @@
      "obdobi": "2026-02-11",
      "soubor": "data/csi_snapshots",
      "zdroj": "https://opendata.csicr.cz/Transformation/Download/139"
+    },
+    {
+     "obdobi": "2026-09-07",
+     "soubor": "data/csi_snapshots",
+     "prepnuto": "2026-09-13",
+     "z_dostupne": {
+      "obdobi": "2026-09-07",
+      "soubor": "PR #54, větev codex/csi-weekly-refresh",
+      "zjisteno": "2026-09-13",
+      "poznamka": "Týdenní workflow data připravuje; pull request byl otevřený od 13. 4. 2026, převzato přímo z větve 13. 9. 2026."
+     }
     }
    ]
   },
@@ -1166,6 +1172,13 @@
    "z": "2026-05-29",
    "na": "2026-06-16",
    "doklad": "workflow https://github.com/tangero/stredniskoly/actions/runs/37308302358"
+  },
+  {
+   "datum": "2026-10-05",
+   "sada": "csi-inspekce",
+   "z": "2026-09-07",
+   "na": "2026-10-05",
+   "doklad": "PR #379, týdenní workflow CSI Weekly Refresh 2026-10-05, commit fb977a3"
   }
  ]
 }
