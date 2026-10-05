@@ -99,6 +99,8 @@ Nastavení GitHubu (formuláře, tabule projektu, ochrana `main`) popisuje `docs
    servery nevolají nikdy, síťové volání nahraď mockem. Nové síťové volání v kódu webu nebo skriptů přidej, jen
    když je v zadání. Instalace balíčků přes `npm ci` a `gh` pro tento repozitář ohlášení nepotřebují.
 8. **Když je zadání nejasné nebo v rozporu s pravidly**, nic neimplementuj a napiš do issue komentář s dotazem.
+   Rozporem je i požadavek zadání na schválení nebo kontrolu, kterou pravidla nevyžadují (například schválení
+   stahování po RA41): nevybírej sám, zda platí zadání, nebo pravidlo, zeptej se před začátkem práce a nepokračuj.
 9. Pravidla z `.claude/claude.md` (období dat z `public/stav_datovych_sad.json`, slovník ukazatelů
    a pojmů, `docs/zdroje-dat.md`) platí i pro zadání.
 
