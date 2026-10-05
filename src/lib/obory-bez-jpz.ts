@@ -135,8 +135,8 @@ export function obtiznostBezJpz(n: Pick<NabidkaBezJpz, 'kategorie' | 'prijati' |
 /** Pojmenování oboru podle kategorie (slovník pojmů): učební obor, obor E, konzervatoř… */
 export function druhOboruBezJpz(kategorie: KategorieBezJpz): string {
   switch (kategorie) {
-    case 'H': return 'učební obor';
-    case 'E': return 'učební obor (E)';
+    case 'H':
+    case 'E': return 'učební obor';
     case 'P': return 'konzervatoř';
     case 'C': return 'praktická škola';
     case 'J': return 'obor bez maturity i výučního listu';

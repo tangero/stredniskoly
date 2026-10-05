@@ -716,10 +716,12 @@ export async function oborBezJpzProKlic(klic: string): Promise<{
   href: string; zarazeni: ReturnType<typeof obtiznostBezJpz>; prijati: number | null; soutezici: number | null;
 } | null> {
   const [redizo, kkov] = klic.split('_');
+  // Levná kontrola nejdřív: `getProgramsByRedizo` čte celý katalog, volá se jen u školy s učebním oborem.
+  if (!(await nabidkyBezJpzSkoly(redizo)).some(n => n.kkov === kkov)) return null;
   const skoly = await getSchoolsByRedizo(redizo);
   if (skoly.length === 0) return null;
   const nazev = skoly[0].nazev;
-  const programy = (await getProgramyBezJpz(redizo, nazev, await getProgramsByRedizo(redizo))).filter(p => p.bezJpz?.kkov === kkov);
+  const programy = (await programyBezJpzSkoly(redizo, nazev)).filter(p => p.bezJpz?.kkov === kkov);
   if (programy.length === 0) return null;
   if (programy.length > 1) return { href: `/skola/${adresaPrehledu(redizo, nazev)}#obory`, zarazeni: null, prijati: null, soutezici: null };
   const n = programy[0].bezJpz!;
@@ -727,6 +729,14 @@ export async function oborBezJpzProKlic(klic: string): Promise<{
     href: `/skola/${programy[0].adresa}`, zarazeni: obtiznostBezJpz(n), prijati: n.prijati,
     soutezici: n.prijati !== null && n.nepr_kapacita !== null ? n.prijati + n.nepr_kapacita : null,
   };
+}
+
+/** Data jsou statická, výsledek pro školu se proto pamatuje (tabulky oborů na přihlášce ho čtou opakovaně). */
+const bezJpzCache = new Map<string, Promise<SchoolProgram[]>>();
+function programyBezJpzSkoly(redizo: string, nazev: string): Promise<SchoolProgram[]> {
+  const klic = `${redizo}|${nazev}`;
+  if (!bezJpzCache.has(klic)) bezJpzCache.set(klic, getProgramsByRedizo(redizo).then(jpz => getProgramyBezJpz(redizo, nazev, jpz)));
+  return bezJpzCache.get(klic)!;
 }
 
 /**

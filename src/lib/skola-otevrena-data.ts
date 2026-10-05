@@ -70,6 +70,9 @@ export function sestavOtevrenaData(skola: SkolaZakladni, d: ProfilSkolyData, obd
       url: `${WEB}${o.href}`,
       delka_studia: o.delka,
       pro_koho: o.proKoho,
+      druh_oboru: o.bezJpz?.druh ?? null,
+      bez_jednotne_zkousky: o.bezJpz ? true : null,
+      zbyla_mista_po_1_kole: o.bezJpz?.zbylaMista ?? null,
       srovnatelna_skupina: o.skupina,
       vypsano_v_roce: o.vypsano ? d.rok : null,
       kapacita: o.kapacita,
@@ -183,6 +186,7 @@ export function otevrenaDataMarkdown(o: OtevrenaDataSkoly): string {
     r.push(`- **Pro koho:** žáci ${ob.pro_koho}`);
     if (!ob.vypsano_v_roce) r.push('- **V posledním 1. kole bez jednoznačné shody s nabídkou**; ověřte u školy');
     if (ob.kapacita != null) r.push(`- **Místa:** ${cislo(ob.kapacita)}`);
+    if (ob.zbyla_mista_po_1_kole != null && ob.kapacita != null) r.push(`- **Zbylá místa po 1. kole:** ${cislo(ob.zbyla_mista_po_1_kole)} ${zOd(ob.kapacita)} ${cislo(ob.kapacita)}`);
     if (ob.obtiznost_prijeti_text) {
       r.push(`- **Obtížnost přijetí:** ${ob.obtiznost_prijeti_text}${ob.soutezici_uchazeci && ob.obtiznost_prijeti !== 'kapacita_nerozhodovala' ? ` (přijato ${cislo(ob.prijati ?? 0)} ${zOd(ob.soutezici_uchazeci)} ${cislo(ob.soutezici_uchazeci)} soutěžících uchazečů)` : ''}`);
     }

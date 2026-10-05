@@ -19,6 +19,9 @@ import { getProfilUcebnihoOboru } from '../src/lib/ucebni-obor-profil-data.ts';
 import { ProfilUcebnihoOboru } from '../src/components/obor/ProfilUcebnihoOboru.tsx';
 import { getProfilSkoly } from '../src/lib/skola-profil-data.ts';
 import { ZARAZENI_POPISEK } from '../src/lib/obor-profil.ts';
+import nextConfig from '../next.config.ts';
+// Pod tsx přijde konfigurace jako jmenný prostor modulu, pod node --experimental-strip-types přímo.
+const config = nextConfig.default ?? nextConfig;
 
 const DATA = JSON.parse(fs.readFileSync('src/data/obory-bez-jpz-2026.json', 'utf8'));
 const ANALYZA = JSON.parse(fs.readFileSync('public/school_analysis.json', 'utf8'));
@@ -137,4 +140,10 @@ test('stránka školy řadí učební obory s ostatními podle názvu a dává j
   // Obory se zkouškou mají tytéž odkazy jako bez učebních oborů.
   const bezUcebnich = await getProfilSkoly(redizo, skola.nazev, jpz, new Set(jpz.map(p => p.id)));
   assert.deepEqual(profil.obory.filter(o => !o.bezJpz).map(o => o.href).sort(), bezUcebnich.obory.map(o => o.href).sort());
+});
+
+test('trasy, které čtou nabídky bez JPZ za běhu, mají soubor přibalený (jinak by se učební obory na Vercelu tiše přesměrovaly)', () => {
+  for (const trasa of ['/skola/[slug]', '/api/skola/[slug]/json', '/api/skola/[slug]/md']) {
+    assert.ok((config.outputFileTracingIncludes?.[trasa] ?? []).includes('./src/data/obory-bez-jpz-2026.json'), trasa);
+  }
 });
