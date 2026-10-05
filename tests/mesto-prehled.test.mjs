@@ -467,6 +467,15 @@ test('jména okruhů se neopakují v Praze, Ostravě ani Brně (okruhy i nástav
   }
 });
 
+test('jména okruhů se neopakují v žádném městě s okruhy', async () => {
+  for (const { nazev: mesto } of MESTA) {
+    if (!(await getOkruheMesta(mesto))) continue;
+    const { okruhy, nastavby } = await okruhyMesta(mesto);
+    const jmena = [...okruhy, ...nastavby].map(o => o.nazev);
+    assert.equal(new Set(jmena).size, jmena.length, `${mesto}: ${jmena.filter((x, i) => jmena.indexOf(x) !== i).join(' | ')}`);
+  }
+});
+
 test('část obce okruhu: převažující podle uchazečů místních oborů, druhá od čtvrtiny', () => {
   const casti = new Map([['1', 'Praha 4'], ['2', 'Praha 10'], ['3', 'Praha 6']]);
   const r = (red, uchazecu, obec = null) => ({ klic: `${red}_79-41-K/81`, uchazecu, obec });
@@ -487,4 +496,7 @@ test('Ostrava: okruhy umění se liší převažujícím oborem, ekonomika skupi
   assert.ok(jmena.includes('Ekonomika, obchod a správa: podnikání'), jmena.join(' | '));
   assert.equal(jmena.filter(n => n.startsWith('Umění a design')).length, 2, jmena.join(' | '));
   assert.ok(!jmena.some(n => n.includes('Moravská Ostrava')), jmena.join(' | '));
+  const konzervatore = [...okruhy, ...nastavby].find(o => String(o.id) === '70001');
+  assert.ok(konzervatore?.nazev.includes('hudebně dramatické umění'), [...okruhy, ...nastavby].map(o => `${o.id}:${o.nazev}`).join(' | '));
+  for (const j of ['Brno', 'Opava', 'Praha']) assert.ok(!jmena.some(n => n.includes(j)), `${j}: ${jmena.join(' | ')}`);
 });

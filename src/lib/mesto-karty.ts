@@ -293,7 +293,8 @@ export function sestavOkruhyMesta(
   }
   // Stejné jméno dvou okruhů ve městě čtenáři nic neřekne (na stránce stojí okruhy i nástavby vedle
   // sebe, proto se shody hledají v obou seznamech dohromady). Postupně se doplní: převažující skupina
-  // oborů z číselníku, převažující část obce (#364) a nakonec převažující obor okruhu.
+  // oborů z číselníku, převažující část obce (#364), převažující obor okruhu a nakonec okolí (obec mimo
+  // město); okolí je poslední, aby okruh přes jiné město (konzervatoře) nedostal cizí obec za „okolí“.
   const vsechny = [...out.okruhy, ...out.nastavby];
   const upresni = (doplnek: (o: OkruhMestaKZobrazeni) => string | null, oddelovac: string) => {
     const pocty = new Map<string, number>();
@@ -318,8 +319,8 @@ export function sestavOkruhyMesta(
     .split(', ').filter(cast => cast && !o.nazev.toLocaleLowerCase('cs').includes(cast)).join(', ') || null;
   upresni(o => nove(o, upresneniOkruhu(o.radky.map(r => ({ klic: r.klic, uchazecu: r.uchazecu })))), ': ');
   if (podklad.castiObce) upresni(o => castOkruhu(o.radky, podklad.castiObce!), ' · ');
-  upresni(o => nove(o, okoliOkruhu(o.radky)), ' · ');
   upresni(o => nove(o, prevazujiciObor(o.radky)), ' · ');
+  upresni(o => nove(o, okoliOkruhu(o.radky)), ' · ');
   return out;
 }
 
