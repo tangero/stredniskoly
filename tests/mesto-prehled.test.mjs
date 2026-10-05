@@ -17,7 +17,7 @@ import { ZARAZENI_POPISEK } from '../src/lib/obor-profil.ts';
 import { dalsiOboryVeMeste, nactiIndexRejstriku } from '../src/lib/kontext-prihlasek.ts';
 import { getSchoolAnalysis, getProgramsByRedizo, getSchoolsData } from '../src/lib/data.ts';
 import { zrizovatelPodleRedizo } from '../src/lib/simulator-filter.ts';
-import { sestavKartySkol, sestavOkruhyMesta, nazevOkruhu, velikostMesta } from '../src/lib/mesto-karty.ts';
+import { sestavKartySkol, sestavOkruhyMesta, nazevOkruhu, velikostMesta, maZkratku, ocistenyUplnyNazev, nazevSkolyKZobrazeni } from '../src/lib/mesto-karty.ts';
 import { getOkruheMesta, getOkruhOboru } from '../src/lib/okruhy-oboru.ts';
 import { OkruhyMesta, OkruhOboruObsah } from '../src/components/mesto/OkruhyMesta.tsx';
 import { smerOboru, SMERY_STUDIA } from '../src/lib/smery-studia.ts';
@@ -143,7 +143,7 @@ async function kartyMesta(mesto) {
   const nazvyKatalogu = new Map(stats.schools.map(r => [r.redizo, r.nazev_display]));
   const { identifikace } = await nactiIndexRejstriku();
   const zrizovatele = zrizovatelPodleRedizo(await getSchoolsData());
-  const karty = sestavKartySkol(stats.schools, dalsi.obory, { nazvyKatalogu, kanonickeNazvy, adresySidel: identifikace, zrizovatele });
+  const karty = sestavKartySkol(stats.schools, dalsi.obory, { nazvyKatalogu, kanonickeNazvy, adresySidel: identifikace, zrizovatele, obec: mesto });
   return { stats, dalsi, karty };
 }
 
@@ -452,4 +452,42 @@ test('stránka oboru: okruh zkrácený na deset oborů, tento obor vždy a zvýr
   assert.match(text(html), new RegExp(`ještě ${velky.radky.length - 11} `));
   assert.match(html, new RegExp(`href="/mesto/brno#okruh-${velky.id}"`));
   assert.match(text(html), /měli je často zároveň na přihlášce/);
+});
+
+// ---------------------------------------------------------------------------
+// Plné názvy škol z rejstříku místo zkratek (#363)
+// ---------------------------------------------------------------------------
+
+test('zkratka v názvu školy: slovo s tečkou a Gy, ne iniciály ani právní forma', () => {
+  assert.equal(maZkratku('Bezpečnost. práv. akad. Brno, s.r.o., SŠ'), true);
+  assert.equal(maZkratku('Církev.střední zdravotnická škola s.r.o.'), true);
+  assert.equal(maZkratku('AKADEMIA Gy, ZŠ a MŠ, s.r.o.'), true);
+  assert.equal(maZkratku('Gymnázium J. V. Jirsíka'), false);
+  assert.equal(maZkratku('Střední škola EDUCHEM, a.s.'), false);
+  assert.equal(maZkratku('Gymnázium'), false);
+});
+
+test('úplný název z rejstříku bez právní formy, obce a adresy', () => {
+  assert.equal(ocistenyUplnyNazev('Gymnázium a Střední průmyslová škola elektrotechniky a informatiky, Frenštát pod Radhoštěm, příspěvková organizace', 'Frenštát pod Radhoštěm'),
+    'Gymnázium a Střední průmyslová škola elektrotechniky a informatiky');
+  assert.equal(ocistenyUplnyNazev('Obchodní akademie a Jazyková škola s právem státní jazykové zkoušky, Šumperk, Hlavní třída 31', 'Šumperk'),
+    'Obchodní akademie a Jazyková škola s právem státní jazykové zkoušky');
+  assert.equal(ocistenyUplnyNazev('Gymnázium Dr. Karla Polesného Znojmo', 'Znojmo'), 'Gymnázium Dr. Karla Polesného');
+  assert.equal(ocistenyUplnyNazev('Bezpečnostně právní akademie Brno, s.r.o., střední škola', 'Brno'), 'Bezpečnostně právní akademie Brno, střední škola');
+});
+
+test('název k zobrazení: úplný jen u zkratky, vždy s ulicí', () => {
+  assert.equal(nazevSkolyKZobrazeni('Bezpečnost. práv. akad. Brno, s.r.o., SŠ', 'Zoubkova 149', 'Brno', 'Bezpečnostně právní akademie Brno, s.r.o., střední škola'),
+    'Bezpečnostně právní akademie Brno, střední škola, Zoubkova');
+  assert.equal(nazevSkolyKZobrazeni('Gymnázium', 'Křenová 304', 'Brno', 'Gymnázium, Brno, Křenová 36'), 'Gymnázium, Křenová');
+  assert.equal(nazevSkolyKZobrazeni('Církev.střední zdravotnická škola s.r.o.', 'Grohova 112', 'Brno', undefined), 'Církev.střední zdravotnická škola, Grohova');
+});
+
+test('stránka Brna: školy z připomínky nesou plný název', async () => {
+  const { karty } = await kartyMesta('Brno');
+  const nazev = red => karty.find(k => k.redizo === red)?.nazev;
+  assert.equal(nazev('600013715'), 'Bezpečnostně právní akademie Brno, střední škola, Zoubkova');
+  assert.equal(nazev('600019900'), 'Církevní střední zdravotnická škola, Grohova');
+  assert.equal(nazev('600024938'), 'AKADEMIA Gymnázium, Základní škola a Mateřská škola, Rašelinová');
+  assert.equal(nazev('600013464'), 'Gymnázium, Křenová');
 });

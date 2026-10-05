@@ -20,9 +20,11 @@ export interface PodkladKaret {
   /** REDIZO → název ze school_analysis.json; z něj se skládá adresa přehledu školy. */
   kanonickeNazvy: Map<string, string>;
   /** REDIZO → adresa sídla z rejstříku, pro školy mimo katalog. */
-  adresySidel: Record<string, { adresa: string }>;
+  adresySidel: Record<string, { adresa: string; uplny_nazev?: string }>;
   /** REDIZO → zřizovatel z katalogu kteréhokoli ročníku (`zrizovatelPodleRedizo`), pro školy mimo katalog ročníku. */
   zrizovatele?: Map<string, string>;
+  /** Obec stránky; z úplného názvu školy z rejstříku se odstraní koncová část s obcí. */
+  obec?: string;
 }
 
 /**
@@ -31,6 +33,57 @@ export interface PodkladKaret {
  * nese plnější tvar („Cyrilometodějské gymnázium, SPedŠ a MŠ Brno“); úplný zkrácený název
  * „Gymnázium“ odliší teprve ulice.
  */
+/** Právní forma na konci názvu nebo jeho části. */
+const PRAVNI_FORMA = /,?\s*(příspěvková organizace|školská právnická osoba|spol\.\s*s\s*r\.\s*o\.|s\.\s*r\.\s*o\.?|a\.\s*s\.|o\.\s*p\.\s*s\.|z\.\s*ú\.|z\.\s*s\.)\s*$/i;
+
+function bezPravniFormy(text: string): string {
+  let t = text.trim();
+  for (let i = 0; i < 4 && PRAVNI_FORMA.test(t); i++) t = t.replace(PRAVNI_FORMA, '').trim();
+  return t.replace(/,\s*$/, '');
+}
+
+/**
+ * Zkratka v katalogovém názvu školy, kterou rodina nemusí rozluštit: slovo o aspoň dvou písmenech
+ * zakončené tečkou („Bezpečnost. práv. akad.“, „Církev.střední“, „Obch.akademie“) nebo „Gy“ a „G“
+ * jako gymnázium. Iniciály jmen („J. V. Jirsíka“) a právní formy se nepočítají.
+ */
+export function maZkratku(nazev: string): boolean {
+  const t = bezPravniFormy(nazev);
+  return /[\p{L}]{2,}\./u.test(t) || /(^|[\s,])(Gy|G)(?=[\s,]|$)/u.test(t);
+}
+
+/**
+ * Úplný název z rejstříku škol MŠMT očištěný pro zobrazení: bez právní formy a bez koncových částí
+ * s obcí nebo adresou („…, Frenštát pod Radhoštěm, příspěvková organizace“, „…, Šumperk, Hlavní třída 31“).
+ */
+export function ocistenyUplnyNazev(uplny: string, obec: string): string {
+  const obecMala = obec.toLocaleLowerCase('cs').split(/\s+/)[0] ?? '';
+  const casti = bezPravniFormy(uplny).split(/,\s*/).map(bezPravniFormy).filter(Boolean);
+  const adresni = (c: string) => {
+    const m = c.toLocaleLowerCase('cs');
+    return /\d/.test(c) || (obecMala.length > 0 && m.startsWith(obecMala));
+  };
+  while (casti.length > 1 && adresni(casti[casti.length - 1])) casti.pop();
+  // Obec přilepená na konec názvu („Gymnázium Dr. Karla Polesného Znojmo“); ulice ji zastoupí.
+  const posledni = casti.length - 1;
+  if (obec && casti[posledni].endsWith(` ${obec}`) && casti[posledni].length > obec.length + 1) {
+    casti[posledni] = casti[posledni].slice(0, -(obec.length + 1)).trim();
+  }
+  return casti.join(', ');
+}
+
+/**
+ * Název školy k zobrazení: u katalogového názvu se zkratkou úplný název z rejstříku (issue #363),
+ * jinak katalogový; obojí s ulicí přes `nazevSUlici`. Data přihlášek a výsledků CERMAT nesou tytéž
+ * zkratky jako katalog, delší tvar má jen rejstřík.
+ */
+export function nazevSkolyKZobrazeni(
+  nazev: string, ulice: string | null | undefined, obec: string, uplny: string | null | undefined,
+): string {
+  const plny = uplny && maZkratku(nazev) ? ocistenyUplnyNazev(uplny, obec) : '';
+  return nazevSUlici(plny && plny.length >= bezPravniFormy(nazev).length ? plny : nazev, ulice);
+}
+
 export function nazevSUlici(nazev: string, ulice: string | null | undefined): string {
   // Právní forma (s.r.o., o.p.s., z.ú.) rodině nepomůže školu poznat a název jen prodlouží.
   const bezFormy = nazev.replace(/,?\s*(s\.\s*r\.\s*o\.|o\.\s*p\.\s*s\.|z\.\s*ú\.|z\.\s*s\.)(?=,|$)/g, '').trim();
@@ -103,7 +156,8 @@ export function sestavKartySkol(
       href: r.adresaOboru ? `/skola/${r.adresaOboru}` : null,
       nevypsano: r.chybiVRocniku,
     };
-    karta(r.redizo, nazevSUlici(r.nazev || r.nazev_display, r.ulice), r.zrizovatel).radky.push(radek);
+    const nazev = nazevSkolyKZobrazeni(r.nazev || r.nazev_display, r.ulice, podklad.obec ?? '', podklad.adresySidel[r.redizo]?.uplny_nazev);
+    karta(r.redizo, nazev, r.zrizovatel).radky.push(radek);
   }
   for (const o of dalsi) {
     const kkov = o.klic.split('_')[1] ?? '';
