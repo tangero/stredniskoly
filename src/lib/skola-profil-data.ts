@@ -10,6 +10,8 @@ import { nenabiraSe } from '@/lib/dobihajici-obory';
 import { getDruheKolo, type DruheKoloNabidky } from '@/lib/druhe-kolo';
 import { zobrazeneObdobi, platnostObdobi } from '@/lib/stav-datovych-sad';
 import { createSlug } from '@/lib/utils';
+import opravyNabidky from '@/data/opravy-nabidky-skol.json';
+import { nazevSZamerenim, type OpravaNabidky } from '@/lib/opravy-nabidky';
 import { zarazeniObtiznosti, soutezicichUchazecu, nazevOboruZKlice, type ZarazeniObtiznosti } from '@/lib/obor-profil';
 import {
   nazevSkupinyMaturity, proKohoObor, shrnutiMaturity, smerStupne, vzdalenostKm,
@@ -249,7 +251,7 @@ export async function getProfilSkoly(
     pocetNazvu.set(k, (pocetNazvu.get(k) ?? 0) + 1);
   }
   const obory: OborSkoly[] = await Promise.all(programy.map(async p => {
-    const zakladNazvu = p.zamereni && p.zamereni !== p.obor ? `${p.obor} - ${p.zamereni}` : p.obor;
+    const zakladNazvu = nazevSZamerenim(opravyNabidky.opravy as OpravaNabidky[], redizo, kkovZId(p.id), p.obor, p.zamereni);
     const duplicitni = (pocetNazvu.get(p.zamereni ? `${p.obor} - ${p.zamereni}` : p.obor) ?? 0) > 1;
     const [s, druheKolo] = await Promise.all([getSouhrnNabidky(p.id), getDruheKolo(p.id, p.zamereni)]);
     const a = s?.aktualni;
