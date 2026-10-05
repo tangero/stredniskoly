@@ -24,6 +24,15 @@ test('Opava: obor dostane zaměření od školy', () => {
   );
 });
 
+test('přepínač oborů na stránce školy bere opravený název, adresu počítá z původního zaměření', () => {
+  const zdroj = readFileSync(new URL('../src/app/skola/[slug]/page.tsx', import.meta.url), 'utf8');
+  const start = zdroj.indexOf('const nazevProTab');
+  const tab = zdroj.slice(start, zdroj.indexOf('return {', zdroj.indexOf('const programsForTabs')));
+  assert.match(tab, /const baseName = nazevProTab\(p\)/);
+  assert.doesNotMatch(tab, /const baseName = p\.zamereni/);
+  assert.match(tab, /createSlug\(school\.nazev, p\.obor, p\.zamereni\)/);
+});
+
 test('Ostrava: označení oboru L0+H se nezobrazuje jako zaměření', () => {
   assert.equal(zobrazeneZamereni(opravy, '600171299', '69-41-L/02', '69-53-H/01 Rekondiční a sportovní masér'), '');
   assert.equal(nazevSZamerenim(opravy, '600171299', '69-41-L/02', 'Masér sportovní a rekondiční', '69-53-H/01 Rekondiční a sportovní masér'), 'Masér sportovní a rekondiční');

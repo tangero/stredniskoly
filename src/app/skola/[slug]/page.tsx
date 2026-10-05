@@ -242,17 +242,24 @@ export default async function SchoolDetailPage({ params }: Props) {
 
   // Připravit data pro ProgramTabs
   // Zjistit duplicitní názvy oborů (různá délka studia, ale stejný název)
+  // Zobrazený název bere ruční opravu zaměření; adresa (slug) se dál počítá z původního zaměření.
+  const nazevProTab = (p: (typeof detailedPrograms)[number]) =>
+    nazevSZamerenim(opravyNabidky.opravy as OpravaNabidky[], redizo, p.id.split('_')[1] ?? '', p.obor, p.zamereni);
   const oborCounts = new Map<string, number>();
+  const slugCounts = new Map<string, number>();
   for (const p of detailedPrograms) {
-    const baseName = p.zamereni ? `${p.obor} - ${p.zamereni}` : p.obor;
+    const baseName = nazevProTab(p);
     oborCounts.set(baseName, (oborCounts.get(baseName) || 0) + 1);
+    const puvodniNazev = p.zamereni ? `${p.obor} - ${p.zamereni}` : p.obor;
+    slugCounts.set(puvodniNazev, (slugCounts.get(puvodniNazev) || 0) + 1);
   }
 
   const programsForTabs = detailedPrograms.map(p => {
-    const baseName = p.zamereni ? `${p.obor} - ${p.zamereni}` : p.obor;
+    const baseName = nazevProTab(p);
+    const puvodniNazev = p.zamereni ? `${p.obor} - ${p.zamereni}` : p.obor;
     // Pokud je více oborů se stejným názvem, přidat délku studia
-    const hasDuplicateName = (oborCounts.get(baseName) || 0) > 1;
-    const displayName = hasDuplicateName ? `${baseName} (${p.delka_studia}leté)` : baseName;
+    const hasDuplicateName = (slugCounts.get(puvodniNazev) || 0) > 1;
+    const displayName = (oborCounts.get(baseName) || 0) > 1 ? `${baseName} (${p.delka_studia}leté)` : baseName;
 
     // Pro duplicitní názvy přidat délku studia do slugu
     const programSlug = p.zamereni
