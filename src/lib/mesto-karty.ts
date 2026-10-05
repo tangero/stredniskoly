@@ -172,6 +172,8 @@ export interface PodkladOkruhu {
    * jedna hodnota, když ji mají všechna zaměření stejnou, jinak „lisi_se“.
    */
   obtiznost?: Map<string, ZarazeniObtiznosti | null | 'lisi_se'>;
+  /** REDIZO → část obce města („Praha 6“, „Poruba“); rozliší okruhy se stejným jménem (#364). */
+  castiObce?: Map<string, string>;
   rejstrik: {
     skoly: Record<string, [string, string]>;
     obory: Record<string, string>;
@@ -289,18 +291,50 @@ export function sestavOkruhyMesta(
     };
     (o.obory.every(x => jeNastavba(x.klic.split('_')[1] ?? '')) ? out.nastavby : out.okruhy).push(zaznam);
   }
-  // Stejné jméno dvou okruhů ve městě čtenáři nic neřekne: doplní se převažující skupina oborů.
-  for (const seznam of [out.okruhy, out.nastavby]) {
+  // Stejné jméno dvou okruhů ve městě čtenáři nic neřekne (na stránce stojí okruhy i nástavby vedle
+  // sebe, proto se shody hledají v obou seznamech dohromady). Postupně se doplní: převažující skupina
+  // oborů z číselníku, převažující část obce (#364) a nakonec převažující obor okruhu.
+  const vsechny = [...out.okruhy, ...out.nastavby];
+  const upresni = (doplnek: (o: OkruhMestaKZobrazeni) => string | null, oddelovac: string) => {
     const pocty = new Map<string, number>();
-    for (const o of seznam) pocty.set(o.nazev, (pocty.get(o.nazev) ?? 0) + 1);
-    for (const o of seznam) {
+    for (const o of vsechny) pocty.set(o.nazev, (pocty.get(o.nazev) ?? 0) + 1);
+    for (const o of vsechny) {
       if ((pocty.get(o.nazev) ?? 0) < 2) continue;
-      // Upřesnění, které jen opakuje slovo ze jména („Gymnázia: gymnázia“), se vynechá; takové okruhy
-      // odliší druhý řádek s největšími školami (v Praze jsou to okruhy různých částí města).
-      const u = upresneniOkruhu(o.radky.map(r => ({ klic: r.klic, uchazecu: r.uchazecu })))
-        .split(', ').filter(cast => cast && !o.nazev.toLocaleLowerCase('cs').includes(cast)).join(', ');
-      if (u) o.nazev = `${o.nazev}: ${u}`;
+      const d = doplnek(o);
+      if (d) o.nazev = `${o.nazev}${oddelovac}${d}`;
     }
-  }
+  };
+  // Upřesnění, které jen opakuje slovo ze jména („Gymnázia: gymnázia“), se vynechá.
+  const nove = (o: OkruhMestaKZobrazeni, text: string) => text
+    .split(', ').filter(cast => cast && !o.nazev.toLocaleLowerCase('cs').includes(cast)).join(', ') || null;
+  upresni(o => nove(o, upresneniOkruhu(o.radky.map(r => ({ klic: r.klic, uchazecu: r.uchazecu })))), ': ');
+  if (podklad.castiObce) upresni(o => castOkruhu(o.radky, podklad.castiObce!), ' · ');
+  upresni(o => nove(o, prevazujiciObor(o.radky)), ' · ');
   return out;
+}
+
+/** Převažující obor okruhu podle uchazečů, malým písmenem („hudebně dramatické umění“). */
+function prevazujiciObor(radky: { obor: string; uchazecu: number }[]): string {
+  const vahy = new Map<string, number>();
+  for (const r of radky) vahy.set(r.obor, (vahy.get(r.obor) ?? 0) + r.uchazecu);
+  const prvni = [...vahy.entries()].sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0], 'cs'))[0]?.[0] ?? '';
+  return prvni.charAt(0).toLocaleLowerCase('cs') + prvni.slice(1);
+}
+
+/** Převažující část obce okruhu podle uchazečů místních oborů; druhá, když má aspoň čtvrtinu. */
+export function castOkruhu(radky: { klic: string; obec: string | null; uchazecu: number }[], casti: Map<string, string>): string | null {
+  const vahy = new Map<string, number>();
+  let celkem = 0;
+  for (const r of radky) {
+    if (r.obec) continue; // obor z jiné obce
+    const cast = casti.get(r.klic.split('_')[0]);
+    if (!cast) continue;
+    vahy.set(cast, (vahy.get(cast) ?? 0) + r.uchazecu);
+    celkem += r.uchazecu;
+  }
+  const poradi = [...vahy.entries()].sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0], 'cs'));
+  if (!poradi.length) return null;
+  const vybrane = [poradi[0][0]];
+  if (poradi[1] && poradi[1][1] / celkem >= 0.25) vybrane.push(poradi[1][0]);
+  return vybrane.join(', ');
 }

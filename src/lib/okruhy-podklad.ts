@@ -10,6 +10,7 @@ import { souhrnyPodleRedizo } from '@/lib/souhrny-kolo1';
 import { zarazeniObtiznosti, type ZarazeniObtiznosti } from '@/lib/obor-profil';
 import { nazevSUlici } from '@/lib/mesto-karty';
 import type { ZaznamKataloguProOkruh } from '@/lib/okruhy-oboru';
+import { nactiIndexRejstriku } from '@/lib/kontext-prihlasek';
 
 /** Název školy s ulicí podle REDIZO z katalogu (`nazevSUlici`), ročníky podle registru (`rocnikyKatalogu`). */
 export async function nazvySkolKatalogu(): Promise<Map<string, string>> {
@@ -79,6 +80,41 @@ export async function kanonickeNazvySkol(): Promise<Map<string, string>> {
   for (const s of Object.values(await getSchoolAnalysis())) {
     const redizo = s.id.split('_')[0];
     if (!out.has(redizo)) out.set(redizo, s.nazev);
+  }
+  return out;
+}
+
+/**
+ * REDIZO → část obce pro rozlišení okruhů se stejným jménem (#364). Praha: obvod z katalogu
+ * (`mestska_cast`), jinak „Praha N“ z adresy sídla v rejstříku; ostatní města: část obce z adresy
+ * sídla („…, 708 00 Ostrava – Poruba“). Adresa sídla se použije jen tehdy, když obec v ní je
+ * město stránky (PORG Ostrava má sídlo v Praze 8).
+ */
+export async function castiObce(obec: string): Promise<Map<string, string>> {
+  const data = await getSchoolsData() as unknown as Record<string, Array<Record<string, unknown>>>;
+  const { identifikace } = await nactiIndexRejstriku();
+  const out = new Map<string, string>();
+  for (const rocnik of rocnikyKatalogu(Object.keys(data), await zobrazeneObdobi('cermat-vysledky'))) {
+    for (const z of data[rocnik] ?? []) {
+      const redizo = String(z.redizo ?? '');
+      if (!redizo || out.has(redizo) || z.obec !== obec) continue;
+      const mc = typeof z.mestska_cast === 'string' ? z.mestska_cast : '';
+      if (obec === 'Praha' && /^Praha \d+$/.test(mc)) { out.set(redizo, mc); continue; }
+      const m = (identifikace[redizo]?.adresa ?? '').match(/\d{3} \d{2} (.+)$/);
+      if (!m) continue;
+      const [hlavni, cast] = m[1].split(' – ');
+      if (obec === 'Praha' && /^Praha \d+$/.test(hlavni)) out.set(redizo, hlavni);
+      else if (hlavni === obec && cast) out.set(redizo, cast);
+    }
+  }
+  // Školy mimo katalog (konzervatoře, učební a umělecké obory bez jednotné zkoušky) jen z adresy sídla.
+  for (const [redizo, { adresa }] of Object.entries(identifikace)) {
+    if (out.has(redizo)) continue;
+    const m = (adresa ?? '').match(/\d{3} \d{2} (.+)$/);
+    if (!m) continue;
+    const [hlavni, cast] = m[1].split(' – ');
+    if (obec === 'Praha' && /^Praha \d+$/.test(hlavni)) out.set(redizo, hlavni);
+    else if (hlavni === obec && cast) out.set(redizo, cast);
   }
   return out;
 }

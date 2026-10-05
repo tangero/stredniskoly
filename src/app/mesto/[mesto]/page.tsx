@@ -8,7 +8,7 @@ import { zobrazeneObdobi } from '@/lib/stav-datovych-sad';
 import { dalsiOboryVeMeste, nactiIndexRejstriku } from '@/lib/kontext-prihlasek';
 import { getSchoolsData } from '@/lib/data';
 import { getOkruheMesta } from '@/lib/okruhy-oboru';
-import { katalogOboru, kanonickeNazvySkol, nazvySkolKatalogu, obtiznostOboru } from '@/lib/okruhy-podklad';
+import { castiObce, katalogOboru, kanonickeNazvySkol, nazvySkolKatalogu, obtiznostOboru } from '@/lib/okruhy-podklad';
 import { OkruhyMesta } from '@/components/mesto/OkruhyMesta';
 import { sestavKartySkol, sestavOkruhyMesta, velikostMesta } from '@/lib/mesto-karty';
 import { SkolyPodleSmeru } from '@/components/mesto/SkolyPodleSmeru';
@@ -88,6 +88,7 @@ export default async function MestoPage({ params }: Props) {
     ? sestavOkruhyMesta(okruheMesta.okruhy, mestoMeta.nazev, schools, {
       katalog: await katalogOboru(), nazvyKatalogu, kanonickeNazvy, rejstrik,
       obtiznost: await obtiznostOboru(okruheMesta.okruhy.flatMap(o => o.obory.map(x => x.klic))),
+      castiObce: await castiObce(mestoMeta.nazev),
     })
     : { okruhy: [], nastavby: [] };
   const maOkruhy = okruhy.okruhy.length + okruhy.nastavby.length > 0;
