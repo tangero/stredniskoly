@@ -1,3 +1,4 @@
+import { zobrazeneObdobi } from '@/lib/stav-datovych-sad';
 import { promises as fs } from 'fs';
 import path from 'path';
 
@@ -122,7 +123,7 @@ export interface Pokryti {
 
 export async function pokryti(): Promise<Pokryti> {
   const [souhrny, katalog, csi, inspis, extrakce, feedy] = await Promise.all([
-    readJson<{ nabidky: Record<string, { redizo: string; kraj_nazev?: string }> }>(
+    readJson<{ nabidky: Record<string, { redizo: string; kraj_nazev?: string; roky?: Record<string, unknown> }> }>(
       PUBLIC_DIR, 'souhrny_kolo1.json',
     ),
     readJson<Record<string, unknown[]>>(PUBLIC_DIR, 'schools_data.json'),
@@ -132,7 +133,10 @@ export async function pokryti(): Promise<Pokryti> {
     readJson<{ skoly?: unknown }>(PUBLIC_DIR, 'skoly_feedy.json'),
   ]);
 
-  const nabidky = Object.values(souhrny.nabidky ?? {});
+  // Jen nabídky zobrazeného ročníku: souhrny nesou i starší ročníky (2024–2026) a nabídka, která
+  // je jen ve starším, stránku nemá. Součet přes ročníky by „oborů s vlastní stránkou“ nadsadil.
+  const obdobi = await zobrazeneObdobi('cermat-vysledky');
+  const nabidky = Object.values(souhrny.nabidky ?? {}).filter(n => !obdobi || n.roky?.[obdobi] !== undefined);
   return {
     nabidek: nabidky.length,
     skol: new Set(nabidky.map((n) => n.redizo)).size,

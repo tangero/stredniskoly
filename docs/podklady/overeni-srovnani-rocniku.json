@@ -1,6 +1,12 @@
 {
  "zdroj_skriptu": "scripts/build-souhrny-kolo1.py",
  "rocniky": {
+  "2024": {
+   "soubor": "PZ2024_kolo1_skolobory_vysledky.xlsx",
+   "url": "https://data.cermat.cz/files/files/JPZ/agregovana_data_skoly/PZ2024_kolo1_skolobory_vysledky.xlsx",
+   "sha256": "7d7411a17cc9bdc6db7f6aa160cc83e6b6116ea7dac79230054b35f691f27840",
+   "nabidek": 2939
+  },
   "2025": {
    "soubor": "PZ2025_kolo1_skolobory_vysledky.xlsx",
    "url": "https://data.cermat.cz/files/files/JPZ/agregovana_data_skoly/PZ2025_kolo1_skolobory_vysledky.xlsx",
@@ -15,6 +21,13 @@
   }
  },
  "parovani": {
+  "2024-2025": {
+   "nabidek_novy_rocnik": 3059,
+   "sparovano": 2749,
+   "shoda_klice": 2158,
+   "jedna_ku_jedne": 591,
+   "bez_predchoziho_rocniku": 310
+  },
   "2025-2026": {
    "nabidek_novy_rocnik": 3091,
    "sparovano": 2934,
@@ -26,6 +39,56 @@
   }
  },
  "stabilita": {
+  "2024-2025": {
+   "kapacita": {
+    "n": 2749,
+    "ctvrtiny_zmeny": [
+     0.0,
+     0,
+     0.0
+    ]
+   },
+   "index_poptavky": {
+    "n": 2747,
+    "ctvrtiny_zmeny": [
+     -0.37,
+     0.1,
+     0.56
+    ]
+   },
+   "tlak_prvnich_voleb": {
+    "n": 2747,
+    "ctvrtiny_zmeny": [
+     -0.2,
+     0.01,
+     0.24
+    ]
+   },
+   "cj_ma_prijati": {
+    "n": 2727,
+    "ctvrtiny_zmeny": [
+     -9.87,
+     -5.87,
+     -2.09
+    ]
+   },
+   "prumerne_umisteni_prijatych": {
+    "n": 2727,
+    "ctvrtiny_zmeny": [
+     -3.6,
+     1.0,
+     6.2
+    ]
+   },
+   "podil_prvnich_voleb_pb": {
+    "n": 2747,
+    "ctvrtiny_zmeny": [
+     -6.15,
+     -0.16,
+     5.49
+    ]
+   }
+  },
   "2025-2026": {
    "kapacita": {
     "n": 2934,
@@ -85,16 +148,31 @@
   },
   "min_prijaty_percentil_2025_souhrn_proti_datum_uchazecu": {
    "n": 2278,
-   "do_2_bodu": 2039,
+   "do_2_bodu": 2046,
    "median_rozdilu": 1.3
   },
   "min_prijaty_percentil_2026_souhrn_proti_datum_uchazecu": {
    "n": 2286,
-   "do_2_bodu": 2182,
+   "do_2_bodu": 2208,
    "median_rozdilu": 0.5
   }
  },
  "podil_prijatych_ze_soutezicich": {
+  "2024": {
+   "zarazeni": {
+    "kapacita_nerozhodovala": 1225,
+    "tezke": 351,
+    "stredne_tezke": 458,
+    "velmi_tezke": 212,
+    "vetsina_uspela": 690,
+    "null": 3
+   },
+   "ctvrtiny_podilu_u_nabidek_s_odmitnutymi": [
+    0.43,
+    0.61,
+    0.76
+   ]
+  },
   "2025": {
    "zarazeni": {
     "kapacita_nerozhodovala": 1281,
@@ -124,6 +202,13 @@
     0.78
    ]
   },
+  "2024-2025": {
+   "n_aspon_20_soutezicich_v_obou_letech": 1848,
+   "korelace": 0.702,
+   "median_abs_zmeny_pb": 10.0,
+   "stejne_zarazeni_pct": 47.8,
+   "nejvys_o_stupen_pct": 88.6
+  },
   "2025-2026": {
    "n_aspon_20_soutezicich_v_obou_letech": 1913,
    "korelace": 0.727,
@@ -133,6 +218,12 @@
   }
  },
  "kohorta_pozice": {
+  "2024": {
+   "zalozni_volba": 961,
+   "smisena_pozice": 999,
+   "skola_prvni_volby": 976,
+   "null": 3
+  },
   "2025": {
    "zalozni_volba": 993,
    "smisena_pozice": 1052,
@@ -143,6 +234,10 @@
    "smisena_pozice": 1061,
    "zalozni_volba": 1008,
    "skola_prvni_volby": 1022
+  },
+  "2024-2025": {
+   "n": 2747,
+   "stejna_kohorta_pct": 62.3
   },
   "2025-2026": {
    "n": 2933,

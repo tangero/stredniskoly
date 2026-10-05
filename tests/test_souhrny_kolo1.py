@@ -160,3 +160,25 @@ class TestKohortaPozice(unittest.TestCase):
         souhrny.doplnit_kohorty(nabidky)
         self.assertIsNone(nabidky["a"]["kohorta_pozice"])
         self.assertIsNone(nabidky["a"]["percentil_podilu_prvnich_voleb"])
+
+
+class TestRocnikySouhrnu(unittest.TestCase):
+    """Souhrny nesou ročníky 2024 až 2026 (issue #277, rozhodnutí vlastníka 3. 10. 2026, bod 4).
+
+    Generátor bere všechny ročníky, jejichž soubor leží v data/. Ruční běh bez souboru 2024
+    by rok tiše zahodil; tenhle test to zachytí, protože otisky jsou ze stažených souborů CERMATu.
+    """
+
+    OTISKY = {
+        "2024": "7d7411a17cc9bdc6db7f6aa160cc83e6b6116ea7dac79230054b35f691f27840",
+        "2025": "b4016252e34db63aeac538f9983bada503fb79770ac565c63f4a5a230b96bdaf",
+        "2026": "a003441f4beed6fb9c181aa00f9d1a59a9c206ff10f113ad807740e68d5511d5",
+    }
+
+    def test_rocniky_a_otisky(self):
+        import json
+        meta = json.loads((KOREN / "public" / "souhrny_kolo1.json").read_text())["meta"]
+        for rok, otisk in self.OTISKY.items():
+            self.assertIn(rok, meta["rocniky"], f"souhrny nemají ročník {rok}")
+            self.assertEqual(meta["rocniky"][rok]["sha256"], otisk, f"ročník {rok} je z jiné revize souboru")
+        self.assertIn("2024-2025", meta["parovani"])
