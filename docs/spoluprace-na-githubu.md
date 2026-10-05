@@ -136,6 +136,11 @@ Před merge se dělá review přes `codex review --base origin/main`, nejvýš 1
 - **Dependabot alerts** zapnuté (1. 10. 2026: 0 nálezů). Automatické PR s aktualizacemi závislostí
   vypnuté: závislosti se mimo zadání nemění (`CLAUDE.md`, pravidlo 6).
 - **Secret scanning** a **push protection** zapnuté: GitHub odmítne push s rozpoznaným klíčem.
+- **Cloudová rutina Claude Code** potřebuje pro `npm test` balíček `openpyxl` (CI si ho instaluje ve workflow
+  `Testy`). Setup script prostředí má obsahovat `pip install openpyxl`; bez něj se 8 testových modulů nenačte
+  (`ModuleNotFoundError`), což je chyba prostředí, ne kódu. `npm run test:mesto` workflow `Testy` spouští od kroku
+  „Testy přehledu města“; pod novějším tsx musí testy tras nastavovat pool přes `createRequire`
+  (viz komentář v `tests/veletrhy-api-trasy.test.mjs`).
 - **Saved replies** jsou osobní pro každý účet (Settings → Saved replies), přes API se nastavit nedají.
 
 ## 6. Otevřené
