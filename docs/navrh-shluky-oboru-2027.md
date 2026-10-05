@@ -1,6 +1,6 @@
 # Okruhy oborů ve městě: shluky podle souběžných přihlášek
 
-Verze 1.2 · 3. 10. 2026 · **Návrh etapy 1 zadání [#277](https://github.com/tangero/stredniskoly/issues/277) s rozhodnutími vlastníka z 3. 10. 2026 (oddíl 9).** Web se nemění. Realizace (etapa 2) se doplní do zadání. Verze 1.2 přidává okruhy bez hranic měst (oddíl 6a), protože uchazeči se nehlásí jen do svého města.
+Verze 1.3 · 5. 10. 2026 · **Návrh etapy 1 zadání [#277](https://github.com/tangero/stredniskoly/issues/277) s rozhodnutími vlastníka z 3. 10. 2026 (oddíl 9); realizováno, stav v oddílu 9a.** Verze 1.2 přidává okruhy bez hranic měst (oddíl 6a), protože uchazeči se nehlásí jen do svého města.
 
 Rozbor reprodukuje `python3 scripts/rozbor-shluky-oboru.py`. Výstup je v [podkladu](podklady/shluky-oboru-2026-10-03.json), který neobsahuje řádky o jednotlivých uchazečích ani počty pod 10.
 
@@ -400,6 +400,16 @@ Otevřené pro etapu 2:
 
 - **Která města dostanou okruhy na stránce města:** návrh je 3 okruhy s aspoň 3 ukotvenými obory v posledním ročníku. Seznam se předloží před nasazením.
 - **Ukotvení:** práh 10 společných uchazečů s oborem ve městě. Ověřit na dalších městech, zda nevyřazuje skutečné sousedy.
+
+## 9a. Stav realizace a uzavření otevřených otázek (5. 10. 2026)
+
+Realizováno v PR #294 (data), #305 (souhrn po obcích na stránce oboru), #317 a #351 (okruhy na stránce města), #352 (okruh oboru na stránce oboru) a v přestavbě stránky města (#337, #338, #346, #348); podrobnosti v [přehledu oborů ve městě](navrh-prehled-oboru-ve-meste-2027.md), oddíly 11 a 12. Odchylka od bodu 7: okruh se pojmenuje automaticky ze směrů studia, které v něm převažují, protože jména tří škol čtenáři nic neříkala.
+
+**Souhrny 1. kola 2024 (rozhodnutí 4)** jsou převzaté do `public/souhrny_kolo1.json` (2 939 nabídek, párování 2024 → 2025 u 2 749). Dopad na web byl změřen na vzorku 49 stránek před a po: web čte jen zobrazený ročník a nejbližší starší, takže se rok 2024 na stránkách oborů, škol, měst a krajů neprojeví; změnily se jen počty na stránce o projektu, které nově počítají jen zobrazený ročník (dřív sčítaly nabídky všech ročníků v souhrnech). Rok 2024 je podklad pro delší řady (grafy vývoje) a rozbory.
+
+**Města s okruhy:** práh 3 okruhy s aspoň 3 ukotvenými obory splní 86 ze 102 měst (rozhodnutí 3. 10. 2026).
+
+**Ukotvení (práh 10 společných uchazečů):** změřeno 5. 10. 2026 nad 86 městy. Okruhy nesou 2 397 místních oborů, 1 192 ukotvených z okolí a 2 039 neukotvených. Neukotvené jsou z velké části celostátně žádané obory (osmiletá gymnázia v Praze v okruhu Mělníka, policejní školy v Holešově v okruhu Frýdku-Místku). 1 331 jich je z obce, odkud má město jiné obory ukotvené (například obor IT v Boskovicích pro Blansko): souvislost s obory města doložilo méně než 10 uchazečů, což je i hranice pravidel zveřejnění. **Práh zůstává**; slabě doložený soused se do okruhu nepřidává záměrně.
 
 ## 10. Co rozbor neříká
 

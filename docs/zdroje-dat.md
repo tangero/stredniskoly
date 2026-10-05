@@ -1,6 +1,6 @@
 # Zdroje dat
 
-Verze 1.28 · 4. 10. 2026 · **Závazný soupis. Před návrhem stránky nebo funkce se prochází celý.**
+Verze 1.29 · 5. 10. 2026 · **Závazný soupis. Před návrhem stránky nebo funkce se prochází celý.**
 
 Tenhle dokument vznikl kvůli konkrétní chybě. Návrh stránky školy jsem sestavil z toho, co web už zobrazoval, místo z toho, co je ve zdrojových souborech. Tři užitečné údaje proto ležely nepoužité v souborech, které jsem měl otevřené: rozpad přihlášek podle priority jako podíl, souběžné přihlášky uchazečů a nejnižší výsledek jednotné zkoušky mezi přijatými. Poslední z nich byl dokonce už spočítaný a uložený v katalogu, zatímco [slovník ukazatelů](slovnik-ukazatelu.md) tvrdil, že ho nemáme.
 
@@ -247,7 +247,7 @@ Otázka rodiče je jediná: **jak dlouho bude dítě dojíždět**. Odpovídáme
 | `cermat_results_2026.json` | CERMAT výsledky 2026 a 2025 | `refresh_cermat_data.py` | nese otisk zdroje |
 | `kontext_prihlasek_{rok}.json` | data uchazečů, index názvů z rejstříku škol MŠMT | `build-kontext-prihlasek.py` | výsledek uchazečů o obor, obory výš a níž na přihlášce, odvozená hranice úspěšnosti; linka přepočítává s pásmy a souběhem; pole `mimo_prehled` nese název školy, obce a oboru u oborů, které katalog nevede (z `scripts/nazvy_oboru.py`, stejně jako souběžné přihlášky), a příznak kategorie bez jednotné zkoušky (C, E, H, J, P) |
 | `skoly_web.json` | rejstřík CSV, `WWW` | `build-skoly-web.py` | odkaz na web školy |
-| `souhrny_kolo1.json` | CERMAT souhrny 1. kola všech ročníků v `data/` | `build-souhrny-kolo1.py` | nabídky po ročnících, párování ročníků (i podle mapy nabídek ročníku), rozdělení tlaku prvních voleb ve srovnatelných skupinách; doklad `docs/podklady/overeni-srovnani-rocniku.json` |
+| `souhrny_kolo1.json` | CERMAT souhrny 1. kola všech ročníků v `data/`, od 5. 10. 2026 ročníky 2024–2026 (test `tests/test_souhrny_kolo1.py` hlídá ročníky a otisky, ruční běh bez souboru 2024 by ho zahodil) | `build-souhrny-kolo1.py` | nabídky po ročnících; web čte zobrazený ročník a nejbližší starší, 2024 je podklad pro delší řady; párování ročníků (i podle mapy nabídek ročníku), rozdělení tlaku prvních voleb ve srovnatelných skupinách; doklad `docs/podklady/overeni-srovnani-rocniku.json` |
 | `school_analysis.json` | starší zpracování | nedohledaný | obsahuje `obtiznost` bez doloženého výpočtu |
 | `maturita_skoly.json` | CERMAT maturita, jaro, `redizo` a `redizo_smo16` | `build-maturita-skoly.py` přes datovou linku | společná část, čeština a matematika po letech od 2021; zařazení proti skupině oborů; meze zveřejnění jako kódy kvality; vzniká přes datovou linku od 14. 9. 2026 (PR #92), web ho čte na stránce školy |
 | `soubeh_prihlasek_2025.json` | data uchazečů 2025 | `build-soubeh-prihlasek.py` | souběžné přihlášky; popis školy z katalogu přes `scripts/nazvy_oboru.py` — ročníky od nejnovějšího, uvnitř ročníku první v pořadí souboru (viz poznámka níže) |
@@ -721,6 +721,7 @@ _Vygenerováno z `public/stav_datovych_sad.json` dne 2026-10-02. Neupravovat ru�
 
 | Verze | Změna |
 |---|---|
+| 1.29 | Oddíl 2.10: souhrny 1. kola nesou i ročník 2024 (`PZ2024_kolo1_skolobory_vysledky.xlsx`, rozhodnutí vlastníka 3. 10. 2026 v #277). Žádný nový sloupec. |
 | 1.28 | Oddíl 4: past 7, zkrácený název školy z rejstříku není jedinečný (okruhy a další obory na stránce města ukazovaly „Gymnázium / Gymnázium“). Žádný nový zdroj ani sloupec. |
 | 1.27 | Oddíl 2.10: odvozený soubor `okruhy_oboru_{rok}.json` (okruhy oborů, souhrn po obcích), žádný nový sloupec. |
 | 1.26 | Oddíl 2.2: data uchazečů 1. kola 2024 stažena (revize s REDIZO) pro rozbor okruhů oborů; žádný nový sloupec, web beze změny. |
