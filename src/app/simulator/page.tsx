@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import { Suspense } from 'react';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
+import { MereniClarity } from '@/components/MereniClarity';
 import { SimulatorClient } from './SimulatorClient';
 import { rokPasemPrijeti } from '@/lib/pasma-prijeti';
 import { nactiPrevodTestu } from '@/lib/prevod-testu';
@@ -44,7 +45,9 @@ export default async function SimulatorPage() {
   const [rokPasem, prevod, obdobiKriterii] = await Promise.all([rokPasemPrijeti(), nactiPrevodTestu(), zobrazeneObdobi('dipsy-kriteria')]);
   const rokKriterii = obdobiKriterii && /^\d{4}$/.test(obdobiKriterii) ? Number(obdobiKriterii) : null;
   return (
-    <div className="min-h-screen flex flex-col bg-slate-50">
+    // Clarity měří jen simulátor (#329); veškerý text a pole stránky se v záznamu maskují.
+    <div className="min-h-screen flex flex-col bg-slate-50" data-clarity-mask="true">
+      <MereniClarity />
       <Header />
 
       <main className="flex-1">

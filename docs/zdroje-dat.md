@@ -1,6 +1,6 @@
 # Zdroje dat
 
-Verze 1.30 · 5. 10. 2026 · **Závazný soupis. Před návrhem stránky nebo funkce se prochází celý.**
+Verze 1.32 · 5. 10. 2026 · **Závazný soupis. Před návrhem stránky nebo funkce se prochází celý.**
 
 Tenhle dokument vznikl kvůli konkrétní chybě. Návrh stránky školy jsem sestavil z toho, co web už zobrazoval, místo z toho, co je ve zdrojových souborech. Tři užitečné údaje proto ležely nepoužité v souborech, které jsem měl otevřené: rozpad přihlášek podle priority jako podíl, souběžné přihlášky uchazečů a nejnižší výsledek jednotné zkoušky mezi přijatými. Poslední z nich byl dokonce už spočítaný a uložený v katalogu, zatímco [slovník ukazatelů](slovnik-ukazatelu.md) tvrdil, že ho nemáme.
 
@@ -40,6 +40,7 @@ Ukazatel se pak zavádí podle [slovníku ukazatelů](slovnik-ukazatelu.md). Ten
 | Veletrhy a přehlídky středních škol | vlastní rešerše pořadatelů, `docs/prijimacky-veletrhy-poradatele-2026.xlsx` → tabulka `veletrh_akce` (od 26. 9. 2026, snímek `src/data/veletrhy-2027.json`) | 25 pořadatelů a vlastní rešerše rozepsané na 95 akcí, sezóna podzim 2026 | identifikátor akce | ručně, jednou ročně; průběžně z nahlášení |
 | RSS/Atom feedy školních webů | weby škol, sklízeč `scripts/sklizec-novinek.py` | 533 z 1 093 škol s feedem | REDIZO + GUID položky | automaticky 2× denně |
 | Hranice krajů, RÚIAN | ČÚZK, SHP za celý stát (`services.cuzk.gov.cz/shp/stat/epsg-5514/1.zip`), vrstva `VUSC_P`, CC BY 4.0 → `src/data/mapa-kraju.json` | 14 krajů | kód NUTS 3 (`CZ0xx`) | ručně, při změně hranic |
+| Microsoft Clarity, souhrny simulátoru | Clarity Data Export API (`www.clarity.ms/export-data/api/v1/project-live-insights`), měřicí skript jen na `/simulator` | jen stránka simulátoru, od 5. 10. 2026 | adresa stránky × dimenze | denně skriptem `scripts/clarity-export.mjs` do soukromého repozitáře signálů (#326); web z něj nic nezobrazuje |
 
 **Co v repozitáři není.** Zdroj patří do soupisu i tehdy, když jeho soubor na disku neleží. Takových je několik:
 
@@ -497,6 +498,26 @@ Zváženo a zamítnuto: **barva kraje podle počtu akcí** (kartogram) a **poče
 
 V registru je jako sada `ruian-kraje`.
 
+### 2.18 Microsoft Clarity, souhrny chování na simulátoru
+
+Měření chování na stránce simulátoru (#329): heatmapy kliknutí a posouvání a souhrnné ukazatele. Skript se načítá jen na `/simulator` (`src/components/MereniClarity.tsx`), bez cookies (signál `consentv2` s `denied`) a s maskovaným textem i poli. Záznamy relací, cesty a návratnost bez cookies nefungují a nepoužíváme je. Souhrny stahuje `scripts/clarity-export.mjs` (3 dotazy denně, limit API 10, data nejvýš za 3 dny) a ukládá je mimo veřejný repozitář; skript zápis do něj odmítne. Web z těchto dat nic nezobrazuje, proto nejsou v registru datových sad ani ve slovníku ukazatelů. Vyhodnocení užitku po sezóně: připomínka s termínem 2027-05-31.
+
+Odpověď API je seznam ukazatelů (`metricName`) a u každého pole `information` s řádky podle zvolené dimenze (`dimension1` = `URL`, `Device`, `Browser`). Ověřeno dotazem 5. 10. 2026.
+
+| Ukazatel (`metricName`) | Obsah | Otázka | Používáme |
+|---|---|---|---|
+| `Traffic` | počet relací a zobrazení, podíl botů | kolik lidí simulátor používá | ano, jako základ pro ostatní podíly |
+| `ScrollDepth` | průměrná hloubka posunutí stránky | dočtou lidé k výsledkům a výhradám? | ano |
+| `EngagementTime` | aktivní a celkový čas na stránce | ne jako cíl; jen k rozlišení odchodu po načtení | ano, jen v souhrnu |
+| `RageClickCount` | opakovaná rychlá kliknutí na totéž místo | kde se uživatel zasekl | ano |
+| `DeadClickCount` | kliknutí bez odezvy | co vypadá jako ovládací prvek a není | ano |
+| `QuickbackClick` | rychlý návrat po kliknutí | odkaz, který vedl jinam, než čekali | ano |
+| `ErrorClickCount` | kliknutí, po kterém nastala chyba skriptu | rozbitá funkce | ano |
+| `ScriptErrorCount` | chyby skriptu na stránce | rozbitá funkce | ano |
+| `ExcessiveScroll` | posouvání sem a tam | hledání na dlouhé stránce | ano |
+
+Heatmapy a mrtvá kliknutí po prvcích jsou jen v rozhraní Clarity, API je nevrací. Zváženo a zamítnuto: **záznamy relací** (bez cookies nefungují a jsou zbytečně podrobné), **dimenze `OS`, `Country/Region`, `Source`, `Medium`, `Campaign`, `Channel`, `Referrer`** (návštěvnost podle zdroje a země už dává Matomo, třetí dimenze by spotřebovala limit dotazů bez nové otázky).
+
 ## 3. Sloupce, které nepoužíváme
 
 Tohle je hlavní důvod existence dokumentu. Seřazeno podle toho, kolik by to dalo rodiči.
@@ -721,6 +742,7 @@ _Vygenerováno z `public/stav_datovych_sad.json` dne 2026-10-02. Neupravovat ru�
 
 | Verze | Změna |
 |---|---|
+| 1.32 | Nový zdroj 2.18 Microsoft Clarity, souhrny chování na simulátoru (#329); web z něj nic nezobrazuje. |
 | 1.30 | Oddíl 4, past 7: úplný název školy z rejstříku pro zobrazení u názvů se zkratkou (#363); oddíl 2.4 `identifikace.uplny_nazev` nově i pro web. |
 | 1.29 | Oddíl 2.10: souhrny 1. kola nesou i ročník 2024 (`PZ2024_kolo1_skolobory_vysledky.xlsx`, rozhodnutí vlastníka 3. 10. 2026 v #277). Žádný nový sloupec. |
 | 1.28 | Oddíl 4: past 7, zkrácený název školy z rejstříku není jedinečný (okruhy a další obory na stránce města ukazovaly „Gymnázium / Gymnázium“). Žádný nový zdroj ani sloupec. |
