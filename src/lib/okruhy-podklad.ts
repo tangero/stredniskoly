@@ -11,7 +11,6 @@ import { zarazeniObtiznosti, type ZarazeniObtiznosti } from '@/lib/obor-profil';
 import { nazevSkolyKZobrazeni } from '@/lib/mesto-karty';
 import { nactiIndexRejstriku } from '@/lib/kontext-prihlasek';
 import type { ZaznamKataloguProOkruh } from '@/lib/okruhy-oboru';
-import { nactiIndexRejstriku } from '@/lib/kontext-prihlasek';
 
 /** Název školy s ulicí podle REDIZO z katalogu (`nazevSUlici`), ročníky podle registru (`rocnikyKatalogu`). */
 export async function nazvySkolKatalogu(): Promise<Map<string, string>> {
