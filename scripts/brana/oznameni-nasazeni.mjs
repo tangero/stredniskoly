@@ -1,13 +1,13 @@
 // Oznámení vlastníkovi po nasazení (#383, RA45): protokol z preview se nevyžaduje, místo něj vlastník po nasazení
 // main dostane do Telegramu ke každému sloučenému PR se změnou webu veřejnou adresu, kde změnu uvidí, a dvě až tři
-// věty, o co jde (oddíl „Pro vlastníka“ v popisu PR, náhradně „Co se změnilo“). Každý PR jednou: po odeslání dostane
+// věty lidskými slovy, co návštěvník uvidí jinak (oddíl „Pro vlastníka“ v popisu PR). Každý PR jednou: po odeslání dostane
 // komentář se značkou. Spouští ho workflow Ověření v produkci po úspěšném nasazení main. Bez modelu.
 //
 //   node scripts/brana/oznameni-nasazeni.mjs [--nanecisto]
 
 import fs from 'node:fs';
 import { pathToFileURL } from 'node:url';
-import { BOT, rozbor } from './brana.mjs';
+import { BOT, proVlastnika, rozbor } from './brana.mjs';
 import { REPO, oblastiZLabeleru, vytvorApi } from './data.mjs';
 
 const DEN = 24 * 60 * 60 * 1000;
@@ -26,19 +26,15 @@ export function oddil(telo = '', nazev) {
 
 const ocisti = (t) => t.replace(/`/g, '').replace(/\*\*/g, '').replace(/\[([^\]]+)\]\([^)]+\)/g, '$1').replace(/\s+/g, ' ').trim();
 
-/** Dvě až tři věty pro vlastníka: oddíl „Pro vlastníka“ bez řádků s adresami, jinak první dvě odrážky „Co se změnilo“. */
+/**
+ * Lidské vysvětlení pro vlastníka: oddíl „Pro vlastníka“ bez řádků s adresami. Technický popis („Co se změnilo“)
+ * se jako náhrada nepoužívá; PR bez oddílu se oznámí jen názvem.
+ */
 export function textProVlastnika(telo = '') {
-  const pro = oddil(telo, 'Pro vlastníka');
-  if (pro) {
-    const vety = pro.split('\n').filter((r) => !/^\s*[-*]?\s*(adresa|zkontroluj|kde)\s*:/i.test(r) && !/^\s*[-*]?\s*(https?:\/\/|\/)\S*\s*$/.test(r));
-    const t = ocisti(vety.join(' '));
-    if (t) return t.length > 600 ? `${t.slice(0, 597)}…` : t;
-  }
-  const odrazky = oddil(telo, 'Co se změnilo').split('\n').filter((r) => /^\s*[-*]\s+/.test(r)).slice(0, 2)
-    .map((r) => ocisti(r.replace(/^\s*[-*]\s+/, '')));
-  // PR bez oddílů (automatické exporty): první odstavec popisu.
-  const t = odrazky.join(' ') || ocisti(telo.split(/\n\s*\n/).find((o) => o.trim() && !/^\s*(#|Closes|Souvisí)/i.test(o)) || '');
-  return t.length > 400 ? `${t.slice(0, 397)}…` : t;
+  const vety = proVlastnika(telo).split('\n')
+    .filter((r) => !/^\s*[-*]?\s*(adresa|adresy|zkontroluj|kde)\s*:/i.test(r) && !/^\s*[-*]?\s*(https?:\/\/|\/)\S*\s*$/.test(r));
+  const t = ocisti(vety.join(' '));
+  return t.length > 600 ? `${t.slice(0, 597)}…` : t;
 }
 
 /**
@@ -76,7 +72,7 @@ export const oznameno = (komentare = []) => komentare.some((k) => k.autor === BO
 export function zprava(polozky, { zakladni, sha }) {
   const casti = polozky.map((p) => {
     const adresy = p.cesty.length ? p.cesty.map((c) => `${zakladni}${c}`).join('\n') : `${zakladni} (adresu PR neuvádí)`;
-    return `#${p.cislo} ${p.titulek}\n${p.text || 'Popis v PR chybí.'}\nZkontroluj:\n${adresy}`;
+    return `#${p.cislo} ${p.titulek}\n${p.text || 'Popis pro vlastníka v PR chybí.'}\nZkontroluj:\n${adresy}`;
   });
   const hlava = polozky.length === 1 ? 'Nasazeno na web:' : `Nasazeno na web (${polozky.length} změny):`;
   const pata = `Commit ${sha.slice(0, 7)}. Když se ti změna nelíbí, řekni Eduardě nebo Claude Code „vrátit #číslo“.`;

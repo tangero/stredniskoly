@@ -270,6 +270,12 @@ export function rozbor(soubory, konfig) {
  * Poslední protokol z preview pro aktuální hlavu PR (oddíl 11). Repozitář je veřejný, proto se počítá
  * jen protokol od vlastníka, asistenta zadání nebo github-actions[bot]; tělo PR jen u důvěryhodného autora.
  */
+/** Text oddílu `## Pro vlastníka` z popisu PR, prázdný, když oddíl chybí nebo je prázdný. */
+export function proVlastnika(telo = '') {
+  const m = telo.match(/^##[ \t]+Pro vlastníka[^\n]*\n([\s\S]*?)(?=^##[ \t]|(?![\s\S]))/im);
+  return m ? m[1].replace(/<!--[\s\S]*?-->/g, '').trim() : '';
+}
+
 export function protokol(pr, konfig, issues = []) {
   const smi = (autor) => autor === BOT || duveryhodny(autor, konfig);
   const kratke = pr.hlava.sha.slice(0, 7);
@@ -379,6 +385,8 @@ export function vyhodnot({ pr, soubory, issues, konfig, zamrznuti, ted, predchoz
     // (oznameni-nasazeni.mjs). Blokuje jen protokol k aktuální hlavě, který hlásí nesplněné kritérium.
     if (p.ok) protokolTelo = p.telo;
     else if (p.nesplneno) blokuje.push(p.duvod);
+    // Vlastník dostane po nasazení oddíl „Pro vlastníka“ do Telegramu; PR se zadáním ho musí mít (RA45).
+    if (issues.length && !proVlastnika(pr.telo)) blokuje.push('popis PR nemá oddíl „Pro vlastníka“ (1 až 3 věty, co návštěvník na webu uvidí jinak, a adresa)');
   }
 
   // Review asistenta zadání (#301): ne u změn bez dopadu na web a ne u PR se souhlasem vlastníka na PR.

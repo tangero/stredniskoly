@@ -71,10 +71,17 @@ Closes #N
 - …
 
 ## Pro vlastníka
-Dvě až tři věty lidskými slovy: co se na webu změnilo a co má vlastník zkontrolovat (jen u změn webu).
-Adresa: /mesto/brno
+Místo krátkého divného jména „Gymnazium“ uvidíš u školy celý oficiální název, například
+„Gymnázium, Praha 2, Litoměřická“.
+Adresa: /mesto/praha
+```
 
-## Jak ověřit na náhledu
+Oddíl **Pro vlastníka** je u PR se zadáním, které mění web, povinný: bez něj brána PR nepustí. Po nasazení jde
+vlastníkovi do Telegramu. Piš ho z pohledu návštěvníka webu: co na stránce uvidí jinak, jednou až třemi větami,
+bez názvů souborů, funkcí a technických slov. Na zvláštní řádek dej adresu (nebo adresy) na webu, kde změnu uvidí.
+
+```
+## Jak ověřit na náhledu (nepovinné)
 1. Otevři <adresa náhledu>/skola/<slug> …
 2. Očekávaný výsledek: …
 

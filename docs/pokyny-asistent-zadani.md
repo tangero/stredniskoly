@@ -65,8 +65,9 @@ vlastníka, proto se některá pravidla níže vynucují technicky.
    (RA35); takové nálezy uveď nejvýš jako P3.
 3. Protokol z preview se nevyžaduje (RA45). Když ho přesto píšeš, drž se šablony ve skillu `overeni-preview`;
    brána ho uzná jen od tvého účtu, účtu vlastníka a `github-actions[bot]` a blokuje jen protokol s „nesplněno“.
-   V review kontroluj i oddíl „Pro vlastníka“: jde po nasazení vlastníkovi do Telegramu, má být srozumitelný
-   a mít adresu, kde změnu uvidí.
+   V review kontroluj i oddíl „Pro vlastníka“: jde po nasazení vlastníkovi do Telegramu, má popsat z pohledu
+   návštěvníka, co na stránce uvidí jinak, bez technických slov, a mít adresu, kde to uvidí. Technický nebo
+   neurčitý text je nález P2.
 4. PR neslučuj a o sloučení nerozhoduj; to dělá skript po bráně (Claude Code nebo workflow Sloučení).
 5. **Smyčka oprav.** Když review obsahuje P1 nebo P2, napiš do PR další komentář, který začíná
    `@claude`, se seznamem nálezů k opravě (soubor, řádek, co je špatně) a číslem commitu review.

@@ -26,8 +26,9 @@ const protokolKomentar = (sha = SHA, vysledek = 'splněno', kdy = PRED(55)) => (
 const reviewKomentar = (sha = SHA, verdikt = 'Bez P1 a P2', o = {}) => ({
   autor: 'eduarda-prijimacky', cas: PRED(56), telo: `## Review\n\n**Verdikt:** ${verdikt}  \n**Commit:** \`${sha.slice(0, 7)}\`\n\nNálezy: žádné`, ...o,
 });
+const TELO_PR = 'Closes #10\n\n## Pro vlastníka\nNa stránce školy uvidíš nový odstavec o 2. kole.\nAdresa: /skola/600013464-x\n';
 const pr = (o = {}) => ({
-  cislo: 5, autor: 'tangero', stav: 'open', zakladna: 'main', draft: false, telo: 'Closes #10', stitky: [],
+  cislo: 5, autor: 'tangero', stav: 'open', zakladna: 'main', draft: false, telo: TELO_PR, stitky: [],
   vytvoreno: PRED(72), hlava: { sha: SHA }, komentare: [reviewKomentar(), protokolKomentar()], udalosti: [], ...o,
 });
 const soubor = (nazev, radky = 10, o = {}) => ({ nazev, stav: 'modified', pridano: radky, odebrano: 0, patch: '', ...o });
@@ -621,4 +622,15 @@ test('automatické slučování bere jen PR, které brána naposledy pustila, be
     return { check_runs: kontroly[sha] || [] };
   };
   assert.deepEqual(await pripravene(api), [1]);
+});
+
+test('PR se zadáním a změnou webu potřebuje oddíl Pro vlastníka (RA45)', () => {
+  const bez = run({ pr: pr({ telo: 'Closes #10\n\n## Co se změnilo\n- x' }) });
+  assert.equal(bez.uspech, false);
+  assert.match(bez.duvody.join(), /Pro vlastníka/);
+  const prazdny = run({ pr: pr({ telo: 'Closes #10\n\n## Pro vlastníka\n<!-- doplnit -->\n\n## Kontroly' }) });
+  assert.match(prazdny.duvody.join(), /Pro vlastníka/);
+  assert.equal(run({ pr: pr() }).uspech, true);
+  // Změna jen v dokumentaci oddíl nepotřebuje.
+  assert.equal(run({ pr: pr({ telo: 'Closes #10' }), soubory: [soubor('docs/x.md')] }).uspech, true);
 });

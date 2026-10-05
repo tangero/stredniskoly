@@ -28,11 +28,11 @@ test('oddíl podle nadpisu až po další nadpis', () => {
   assert.equal(oddil(TELO, 'Neexistuje'), '');
 });
 
-test('text pro vlastníka: oddíl Pro vlastníka bez řádku s adresou, jinak dvě odrážky, jinak první odstavec', () => {
+test('text pro vlastníka jen z oddílu Pro vlastníka, bez řádku s adresou; technický popis se nepoužije', () => {
   assert.equal(textProVlastnika(TELO), 'Na stránce města je nový oddíl s okruhy oborů. Zkontroluj, že se dá rozbalit.');
   const bez = TELO.replace(/## Pro vlastníka[\s\S]*?(?=## Jak)/, '');
-  assert.equal(textProVlastnika(bez), 'src/x.tsx: nový blok okruhů. Druhá odrážka.');
-  assert.equal(textProVlastnika('Automatický export tabulky.\n\nDalší odstavec.'), 'Automatický export tabulky.');
+  assert.equal(textProVlastnika(bez), '');
+  assert.equal(textProVlastnika('Automatický export tabulky.'), '');
 });
 
 test('cesty na webu z Pro vlastníka a Jak ověřit, bez souborů a API, nejvýš tři', () => {
@@ -60,6 +60,6 @@ test('zpráva: adresy na produkci, bez adresy upozornění, commit a návod na v
   ], { zakladni: 'https://www.prijimackynaskolu.cz', sha: 'abcdef1234567' });
   assert.match(text, /^Nasazeno na web \(2 změny\):/);
   assert.match(text, /#7 Okruhy\nNový oddíl\.\nZkontroluj:\nhttps:\/\/www\.prijimackynaskolu\.cz\/mesto\/brno/);
-  assert.match(text, /#8 Export\nPopis v PR chybí\.\nZkontroluj:\nhttps:\/\/www\.prijimackynaskolu\.cz \(adresu PR neuvádí\)/);
+  assert.match(text, /#8 Export\nPopis pro vlastníka v PR chybí\.\nZkontroluj:\nhttps:\/\/www\.prijimackynaskolu\.cz \(adresu PR neuvádí\)/);
   assert.match(text, /Commit abcdef1\. .*vrátit #číslo/);
 });

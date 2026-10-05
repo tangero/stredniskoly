@@ -60,8 +60,10 @@ Nastavení GitHubu (formuláře, tabule projektu, ochrana `main`) popisuje `docs
    data), dělá Patrick.
 2. **Jedno issue = jedna větev = jeden PR.** Větev `zadani/<N>-<kratky-popis>` z aktuální `main`.
    Popis PR obsahuje `Closes #N`. Po otevření PR přidej issue štítek `k-overeni`. U změn webu napiš do popisu
-   PR oddíl `## Pro vlastníka`: dvě až tři věty lidskými slovy, co se změnilo a co má vlastník zkontrolovat,
-   a adresy na webu, kde změnu uvidí. Po nasazení mu je workflow Ověření v produkci pošle do Telegramu.
+   PR oddíl `## Pro vlastníka`: jedna až tři věty z pohledu návštěvníka, co na stránce uvidí jinak, bez
+   technických slov (například „Místo krátkého divného jména Gymnazium uvidíš celý oficiální název školy“),
+   a adresy na webu, kde změnu uvidí; bez něj brána PR nepustí. Po nasazení mu je workflow Ověření
+   v produkci pošle do Telegramu.
    Protokol z preview se nevyžaduje (RA45); ověření na náhledu je dobrovolné (skill `overeni-preview`).
    Výjimka: když issue nebo vlastník projektu určí dodávku **po etapách**, má každá etapa vlastní větev
    (`zadani/<N>-etapa-<M>-<kratky-popis>`) a PR, který na issue odkazuje („Souvisí s #N“); `Closes #N` nese
