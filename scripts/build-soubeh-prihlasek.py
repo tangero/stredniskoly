@@ -17,7 +17,7 @@ from pathlib import Path
 import openpyxl
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from nazvy_oboru import nazvy_oboru  # noqa: E402
+from nazvy_oboru import nabidky_bez_jpz, nazvy_oboru  # noqa: E402
 from slouceni_prihlasek import volby_uchazece  # noqa: E402
 
 KOREN = Path(__file__).resolve().parent.parent
@@ -62,7 +62,7 @@ def nacti_volby() -> tuple[collections.Counter, collections.Counter, dict]:
 
 def main() -> None:
     uchazecu, poradi, soubeh = nacti_volby()
-    mapa = nazvy_oboru()
+    mapa = nazvy_oboru(bez_jpz=nabidky_bez_jpz(ROK))
 
     vystup: dict[str, dict] = {}
     for klic, pocet in uchazecu.items():

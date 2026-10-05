@@ -5,6 +5,9 @@ Hlavní zdroj je katalog JPZ (public/schools_data.json), doplňkový index rejst
 hlásí i na obory bez jednotné zkoušky, například učební obory kategorie H, a ty v katalogu
 nejsou. Používají generátory souběžných přihlášek a kontextu přihlášek.
 
+Nabídky bez jednotné zkoušky (src/data/obory-bez-jpz-{rok}.json, fáze 2 / etapa 1 issue #244) dodají
+klíčům k rejstříku `id` budoucí stránky a příznak `bez_jpz`; popis školy a oboru zůstává z rejstříku.
+
 Index je v gitu, takže ho má i datová linka v CI. Chybějící nebo zastaralý index je chyba:
 generátor by jinak přepsal známé názvy prázdnými hodnotami.
 """
@@ -54,8 +57,25 @@ def nacti_index(cesta: Path | None = None, registr: Path | None = None) -> dict:
     return index
 
 
-def nazvy_oboru(index: dict | None = None, katalog: dict | None = None, zobrazeny: str | None = None) -> dict[str, dict]:
-    """Mapa REDIZO_KKOV → škola, obec, obor, id stránky a příznak `jpz` (obor je v katalogu JPZ)."""
+def nabidky_bez_jpz(rok: int | str, cesta: Path | None = None) -> list[dict]:
+    """Denní nabídky bez jednotné zkoušky za ročník dat uchazečů, v pořadí souboru etapy 1.
+
+    Soubor ročníku, který etapa 1 nevydala (například 2025), dává prázdný seznam: starší výstupy
+    se tak nemění. Nedenní nástavby se do souběhu ani kontextu nepočítají, proto je nečteme.
+    """
+    cesta = cesta or KOREN / "src" / "data" / f"obory-bez-jpz-{rok}.json"
+    if not cesta.exists():
+        return []
+    return json.loads(cesta.read_text(encoding="utf-8"))["nabidky"]
+
+
+def nazvy_oboru(index: dict | None = None, katalog: dict | None = None, zobrazeny: str | None = None,
+                bez_jpz: list[dict] | None = None) -> dict[str, dict]:
+    """Mapa REDIZO_KKOV → škola, obec, obor, id stránky a příznaky `jpz` (obor je v katalogu JPZ)
+    a `bez_jpz` (nabídka bez jednotné zkoušky ze souboru etapy 1, `id` je id její stránky).
+
+    `bez_jpz` jsou nabídky z `nabidky_bez_jpz()`; bez nich mapa vypadá jako před etapou 2.
+    """
     if katalog is None:
         katalog = json.loads((KOREN / "public" / "schools_data.json").read_text(encoding="utf-8"))
     if zobrazeny is None:
@@ -90,4 +110,15 @@ def nazvy_oboru(index: dict | None = None, katalog: dict | None = None, zobrazen
         for kod in kody:
             mapa.setdefault(f"{redizo}_{kod}", {"skola": nazev, "obec": obec, "obor": index["obory"][kod],
                                                 "id": None, "jpz": False})
+
+    # Klíč REDIZO_KKOV nenese zaměření: při víc nabídkách téhož klíče vyhrává první v pořadí souboru,
+    # stejně jako u katalogu JPZ. Záznamy z katalogu JPZ mají přednost a zůstávají beze změny.
+    for n in bez_jpz or []:
+        klic = f"{n['redizo']}_{n['kkov']}"
+        if klic not in mapa:  # rejstřík škol nabídku nezná: popis zůstane prázdný jako dosud, web se nemění (etapa 3)
+            mapa[klic] = {"skola": None, "obec": None, "obor": None, "id": None, "jpz": False}
+        z = mapa[klic]
+        if z["jpz"] or z.get("bez_jpz"):
+            continue
+        z["id"], z["bez_jpz"] = n["id"], True
     return mapa

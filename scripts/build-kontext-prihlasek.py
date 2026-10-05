@@ -13,7 +13,9 @@ zkoušky), nesou v poli `mimo_prehled` název školy, obce a oboru z rejstříku
 Meze (slovník ukazatelů):
   - obor s méně než 10 uchazeči se nezapisuje,
   - obory výš a níž na přihlášce jen s aspoň 10 společnými uchazeči,
-  - odvozená hranice jen při aspoň 5 nesplněných s výsledkem jednotné zkoušky a 5 soutěžících uchazečích.
+  - odvozená hranice jen při aspoň 5 nesplněných s výsledkem jednotné zkoušky a 5 soutěžících uchazečích,
+    a ne u oborů bez jednotné zkoušky (kategorie C, E, H, J, P a nabídky ze souboru etapy 1): výsledek zkoušky
+    tam nerozhoduje o přijetí (docs/navrh-obory-bez-jpz-2027.md, oddíl 10.2).
 
     python3 scripts/build-kontext-prihlasek.py --rok 2025 --zdroj data/PZ2025_kolo1_uchazeci_prihlasky_vysledky.xlsx
 """
@@ -28,7 +30,7 @@ from pathlib import Path
 import openpyxl
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from nazvy_oboru import bez_jednotne_zkousky, nazvy_oboru  # noqa: E402
+from nazvy_oboru import bez_jednotne_zkousky, nabidky_bez_jpz, nazvy_oboru  # noqa: E402
 from slouceni_prihlasek import PRIJAT, volby_uchazece, vysledek_uchazece  # noqa: E402
 
 KOREN = Path(__file__).resolve().parent.parent
@@ -59,6 +61,15 @@ def odvozena_hranice(soutezici: list[tuple], nesplnili: list[tuple]) -> dict | N
     return {"typ": "nevysvetleno_vysledkem_jpz"}
 
 
+def je_bez_jpz(klic: str, nazvy: dict[str, dict]) -> bool:
+    """Obor bez jednotné zkoušky: kategorie C, E, H, J, P podle kódu, nebo nabídka ze souboru etapy 1 (i umělecké M, L).
+
+    Klíč, který katalog JPZ vede (`jpz`), je obor se zkouškou, i když ho soubor etapy 1 uvádí také.
+    """
+    popis = nazvy.get(klic) or {}
+    return not popis.get("jpz") and (bez_jednotne_zkousky(klic) or bool(popis.get("bez_jpz")))
+
+
 def mimo_prehled(data: dict[str, dict], nazvy: dict[str, dict]) -> dict[str, dict]:
     """Popis oborů výš a níž na přihlášce, které katalog JPZ nevede (název z rejstříku, nebo žádný)."""
     klice = {k for z in data.values() for k, _ in z["obory_vys"] + z["obory_niz"]}
@@ -70,6 +81,8 @@ def mimo_prehled(data: dict[str, dict], nazvy: dict[str, dict]) -> dict[str, dic
         popis = popis or {}
         vystup[k] = {"skola": popis.get("skola"), "obec": popis.get("obec"), "obor": popis.get("obor"),
                      "bez_jednotne_zkousky": bez_jednotne_zkousky(k)}
+        if popis.get("id"):  # nabídka bez jednotné zkoušky, kterou etapa 1 vede (stránka vznikne v etapě 3)
+            vystup[k]["id"] = popis["id"]
     return vystup
 
 
@@ -83,6 +96,7 @@ def main() -> None:
     zdroj = a.zdroj or KOREN / "data" / f"PZ{rok}_kolo1_uchazeci_prihlasky_vysledky.xlsx"
     vystup = a.vystup or KOREN / "public" / f"kontext_prihlasek_{rok}.json"
 
+    nazvy = nazvy_oboru(bez_jpz=nabidky_bez_jpz(rok))
     wb = openpyxl.load_workbook(zdroj, read_only=True)
     radky = wb.worksheets[0].iter_rows(values_only=True)
     ix = {n: i for i, n in enumerate(next(radky))}
@@ -126,7 +140,7 @@ def main() -> None:
             "obory_vys": [[k, n] for k, n in o["vys"].most_common(MAX_OBORU) if n >= MIN_SPOLECNYCH],
             "obory_niz": [[k, n] for k, n in o["niz"].most_common(MAX_OBORU) if n >= MIN_SPOLECNYCH],
         }
-        hranice = odvozena_hranice(o["soutezici"], o["nesplnili"])
+        hranice = None if je_bez_jpz(obor, nazvy) else odvozena_hranice(o["soutezici"], o["nesplnili"])
         if hranice:
             zaznam["odvozena_hranice"] = hranice
         data[obor] = zaznam
@@ -135,7 +149,7 @@ def main() -> None:
         "rok": rok, "kolo": 1, "zdroj": zdroj.name, "generator": "scripts/build-kontext-prihlasek.py",
         "meze": {"min_uchazecu": MIN_UCHAZECU, "min_spolecnych": MIN_SPOLECNYCH, "min_pro_hranici": MIN_PRO_HRANICI},
         "data": data,
-        "mimo_prehled": mimo_prehled(data, nazvy_oboru()),
+        "mimo_prehled": mimo_prehled(data, nazvy),
     }, ensure_ascii=False, separators=(",", ":")) + "\n", encoding="utf-8")
     print(f"zapsáno {len(data)} oborů do {vystup}")
 

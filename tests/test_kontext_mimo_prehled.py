@@ -249,5 +249,106 @@ class TestIndexVMape(ZakladKatalogu):
                 nazvy_oboru.nacti_index(index, registr)
 
 
+class TestNabidkyBezJpz(ZakladKatalogu):
+    """Vazba klíčů bez jednotné zkoušky na stránky (fáze 2 / etapa 2, issue #244)."""
+
+    KATALOG = TestIndexVMape.KATALOG
+
+    @staticmethod
+    def bez(kkov, id_suffix="", redizo="600000001", obec="Zkušebnice"):
+        return {"redizo": redizo, "kkov": kkov, "id": f"{redizo}_{kkov}{id_suffix}", "obec": obec, "obor": "Obor"}
+
+    def mapa_bez(self, bez, katalog=None):
+        return nazvy_oboru.nazvy_oboru(index=INDEX_TEST, katalog=katalog or self.KATALOG, zobrazeny="2026", bez_jpz=bez)
+
+    def test_nabidka_z_rejstriku_dostane_id_a_priznak_a_nazev_zustane(self):
+        z = self.mapa_bez([self.bez("65-51-H/01")])["600000001_65-51-H/01"]
+        self.assertEqual(z, {"skola": "Zkušební hotelová škola", "obec": "Zkušebnice", "obor": "Kuchař - číšník",
+                             "id": "600000001_65-51-H/01", "jpz": False, "bez_jpz": True})
+
+    def test_pri_vice_nabidkach_klice_vyhrava_prvni_v_souboru(self):
+        z = self.mapa_bez([self.bez("65-51-H/01"), self.bez("65-51-H/01", "_jine")])["600000001_65-51-H/01"]
+        self.assertEqual(z["id"], "600000001_65-51-H/01")
+
+    def test_katalog_jpz_ma_prednost_a_zustane_beze_zmeny(self):
+        bez = self.mapa_bez([self.bez("65-42-M/01", "_bez")])["600000001_65-42-M/01"]
+        self.assertEqual(bez, self.mapa_bez([])["600000001_65-42-M/01"])
+        self.assertTrue(bez["jpz"])
+        self.assertNotIn("bez_jpz", bez)
+
+    def test_nabidka_neznama_rejstriku_dostane_id_bez_popisu(self):
+        z = self.mapa_bez([self.bez("69-54-E/01", redizo="600099999")])["600099999_69-54-E/01"]
+        self.assertEqual(z, {"skola": None, "obec": None, "obor": None, "id": "600099999_69-54-E/01",
+                             "jpz": False, "bez_jpz": True})
+
+    def test_bez_nabidek_je_mapa_stejna_jako_pred_etapou_2(self):
+        self.assertEqual(self.mapa_bez(None), self.mapa_bez([]))
+        self.assertTrue(all(z["id"] is None for z in self.mapa_bez([]).values() if not z["jpz"]))
+
+    def test_rocnik_bez_souboru_etapy_1_dava_prazdny_seznam(self):
+        self.assertEqual(nazvy_oboru.nabidky_bez_jpz(1999), [])
+
+    def test_soubor_etapy_1_se_cte_jen_pro_svuj_rocnik(self):
+        nabidky = nazvy_oboru.nabidky_bez_jpz(2026)
+        self.assertTrue(nabidky)
+        self.assertTrue(all(n["kategorie"] in "CEHJPLM" for n in nabidky))
+
+    def test_mimo_prehled_nese_id_nabidky_bez_jpz(self):
+        nazvy = self.mapa_bez([self.bez("65-51-H/01")])
+        vystup = kontext.mimo_prehled({"x": zaznam(niz=["600000001_65-51-H/01", "600000001_99-99-H/01"])}, nazvy)
+        self.assertEqual(vystup["600000001_65-51-H/01"]["id"], "600000001_65-51-H/01")
+        self.assertTrue(vystup["600000001_65-51-H/01"]["bez_jednotne_zkousky"])
+        self.assertNotIn("id", vystup["600000001_99-99-H/01"])
+
+    def test_odvozena_hranice_se_u_oboru_bez_jpz_nepocita(self):
+        nazvy = self.mapa_bez([self.bez("65-51-H/01"), self.bez("82-41-M/01", redizo="600000002")])
+        nazvy["600000001_65-42-M/01"]["jpz"] = True
+        self.assertTrue(kontext.je_bez_jpz("600000001_65-51-H/01", nazvy))     # kategorie H
+        self.assertTrue(kontext.je_bez_jpz("600000002_82-41-M/01", nazvy))     # umělecké M ze souboru etapy 1
+        self.assertTrue(kontext.je_bez_jpz("600000003_33-56-E/01", nazvy))     # kategorie podle kódu, i bez nabídky
+        self.assertFalse(kontext.je_bez_jpz("600000001_65-42-M/01", nazvy))    # obor se zkouškou
+        self.assertFalse(kontext.je_bez_jpz("600000004_79-41-K/41", nazvy))    # neznámý klíč, kategorie K
+
+
+def _vystupy_repozitare():
+    registr = json.loads((KOREN / "public" / "stav_datovych_sad.json").read_text(encoding="utf-8"))
+    rok = registr["sady"]["cermat-uchazeci-kolo1"]["zobrazeno"]["obdobi"]
+    nacti = lambda n: json.loads((KOREN / "public" / f"{n}_prihlasek_{rok}.json").read_text(encoding="utf-8"))
+    bez = nazvy_oboru.nabidky_bez_jpz(rok)
+    return nacti("soubeh"), nacti("kontext"), bez
+
+
+class TestVystupyRepozitare(unittest.TestCase):
+    """Commitnuté výstupy generátorů odpovídají souboru etapy 1 (K1 až K3 issue #344)."""
+
+    @classmethod
+    def setUpClass(cls):
+        cls.soubeh, cls.kontext, cls.bez = _vystupy_repozitare()
+        cls.id_bez = {n["id"] for n in cls.bez}
+
+    def test_k1_kazda_polozka_soubehu_ma_id_stranky(self):
+        bez_id = [p["klic"] for v in self.soubeh["data"].values() for p in v["soubeh"] if p["id"] is None]
+        self.assertEqual(bez_id, [])
+
+    def test_polozka_bez_zkousky_miri_na_nabidku_etapy_1(self):
+        kl = {f"{n['redizo']}_{n['kkov']}" for n in self.bez}
+        for v in self.soubeh["data"].values():
+            for p in v["soubeh"]:
+                if not p["jpz"]:
+                    self.assertIn(p["klic"], kl)
+                    self.assertIn(p["id"], self.id_bez)
+
+    def test_k2_mimo_prehled_nese_id_a_priznak(self):
+        for k, z in self.kontext["mimo_prehled"].items():
+            self.assertIn(z["id"], self.id_bez, k)
+            self.assertIn("bez_jednotne_zkousky", z)
+
+    def test_k3_obor_bez_jpz_nema_odvozenou_hranici(self):
+        kl = {f"{n['redizo']}_{n['kkov']}" for n in self.bez}
+        for k, z in self.kontext["data"].items():
+            if k in kl or nazvy_oboru.bez_jednotne_zkousky(k):
+                self.assertNotIn("odvozena_hranice", z, k)
+
+
 if __name__ == "__main__":
     unittest.main()
