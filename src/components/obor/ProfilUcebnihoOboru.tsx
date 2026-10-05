@@ -113,7 +113,10 @@ export function ProfilUcebnihoOboru({ data, adresa, obec, skolaHref }: Props) {
             {maPocty && (
               <p className="text-[17px] leading-relaxed text-slate-800">
                 {!bezObtiznosti && zarazeni === 'kapacita_nerozhodovala' && <>V 1. kole bylo místo pro všechny, kdo splnili požadavky školy. </>}
-                {!bezObtiznosti && zarazeni && zarazeni !== 'kapacita_nerozhodovala' && soutezici !== null && (
+                {!bezObtiznosti && zarazeni === 'vetsina_uspela' && soutezici !== null && (
+                  <>V 1. kole {rok} se dostala většina soutěžících uchazečů, ale ne všichni: {zOd(soutezici) === 'ze' ? 'ze' : 'z'} <b>{cislo(soutezici)} soutěžících uchazečů</b>, {VYSVETLENI_SOUTEZICICH}, se dostalo {cislo(n.prijati!)}. </>
+                )}
+                {!bezObtiznosti && zarazeni && zarazeni !== 'kapacita_nerozhodovala' && zarazeni !== 'vetsina_uspela' && soutezici !== null && (
                   <>V 1. kole bylo {ZARAZENI_POPISEK[zarazeni]} se sem dostat: {zOd(soutezici) === 'ze' ? 'ze' : 'z'} <b>{cislo(soutezici)} soutěžících uchazečů</b>, {VYSVETLENI_SOUTEZICICH}, se dostalo {cislo(n.prijati!)}. </>
                 )}
                 {!bezObtiznosti && !zarazeni && <>Soutěžících uchazečů bylo méně než deset, obtížnost přijetí se proto neuvádí. </>}

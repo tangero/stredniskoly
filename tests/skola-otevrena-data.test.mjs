@@ -56,3 +56,14 @@ test('opravený počet žáků nese původ od školy, ne z exportu InspIS (#220)
   assert.equal('opravy_od_skoly' in bez.profil_inspis, false);
   assert.match(otevrenaDataMarkdown(bez), /- \*\*Žáků:\*\* 456 \(nejvýš 550\)\n/);
 });
+
+test('zbylá místa po 1. kole bez JPZ se neukazují záporná: JSON ořízne na 0, Markdown napíše obsazeno', () => {
+  const p = { ...profil, obory: [obor({ id: 'u', nazev: 'Obor bez JPZ', kapacita: 39, bezJpz: { druh: 'ucebni_obor_h', zbylaMista: -2 } }), obor({ id: 'v', nazev: 'Jiný obor bez JPZ', kapacita: 14, bezJpz: { druh: 'ucebni_obor_h', zbylaMista: 5 } })] };
+  const d = sestavOtevrenaData(skola, p, { vysledky: 2026, uchazeci: 2025, maturita: '2026' });
+  assert.equal(d.obory[0].zbyla_mista_po_1_kole, 0);
+  assert.equal(d.obory[1].zbyla_mista_po_1_kole, 5);
+  const md = otevrenaDataMarkdown(d);
+  assert.match(md, /Po 1\. kole obsazeno/);
+  assert.doesNotMatch(md, /-2/);
+  assert.match(md, /Zbylá místa po 1\. kole:\*\* 5 ze? 14/);
+});

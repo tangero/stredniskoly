@@ -115,6 +115,12 @@ test('stránka učebního oboru: pět otázek, zbylá místa jako první údaj, 
   assert.doesNotMatch(html.replace('Body tu nejsou', ''), BODY);
 });
 
+test('stupeň vetsina_uspela se na stránce učebního oboru vykreslí souvislou větou', async () => {
+  const { html } = await vykresli(x => x.kategorie === 'H' && obtiznostBezJpz(x) === 'vetsina_uspela');
+  assert.match(html, /V 1\. kole \d{4} se dostala většina soutěžících uchazečů, ale ne všichni: z/);
+  assert.doesNotMatch(html, /bylo se dostala/);
+});
+
 test('obor E ani konzervatoř nemají obtížnost přijetí; konzervatoř nemá otázku Co přijde potom', async () => {
   for (const [kat, extra] of [['E', /učební obor/], ['P', /talentovou zkouškou/]]) {
     // Konzervatoř je ve školách na webu jediná (ostatní přibudou s novými školami v etapě 3b), bez prahu.
