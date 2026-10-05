@@ -12,7 +12,11 @@ import assert from 'node:assert/strict';
 import { NextRequest } from 'next/server';
 import { POST, overVstup, jeDatumPlatne, jeUrlPlatna } from '../src/app/api/veletrhy/nahlasit/route.ts';
 import { readFileSync } from 'node:fs';
-import { nastavPoolProTesty } from '../src/lib/novinky-db.ts';
+import { createRequire } from 'node:module';
+
+// Trasa se pod novějším tsx načte jako CommonJS a má vlastní kopii modulu
+// novinky-db; pool se proto nastavuje přes `require`, tedy v téže kopii.
+const { nastavPoolProTesty } = createRequire(import.meta.url)('../src/lib/novinky-db.ts');
 
 /**
  * Databáze, která si pamatuje, co do ní přišlo. Test se nikdy nesmí

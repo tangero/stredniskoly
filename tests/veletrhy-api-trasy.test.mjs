@@ -9,7 +9,7 @@ import { test, before } from 'node:test';
 import assert from 'node:assert/strict';
 import { PGlite } from '@electric-sql/pglite';
 import { NextRequest } from 'next/server';
-import { nastavPoolProTesty } from '../src/lib/novinky-db.ts';
+import { createRequire } from 'node:module';
 import { MIGRACE_VELETRHU } from '../src/lib/veletrhy-schema.ts';
 import { seed } from '../src/lib/veletrhy-sklad.ts';
 import { snimekAkci, SEZONA, zobrazitelneAkce } from '../src/lib/veletrhy.ts';
@@ -22,6 +22,11 @@ import * as navrhy from '../src/app/api/veletrhy/navrhy/route.ts';
 import * as detailNavrhu from '../src/app/api/veletrhy/navrhy/[id]/route.ts';
 import * as stahnout from '../src/app/api/veletrhy/navrhy/[id]/stahnout/route.ts';
 import * as rozhodnuti from '../src/app/admin/veletrhy/akce/route.ts';
+
+// Trasy se pod novějším tsx načtou jako CommonJS a mají vlastní kopii modulu
+// novinky-db; import z testu (ESM) by nastavil pool jiné kopii a trasy by sáhly
+// na skutečný Neon. Proto se pool nastavuje přes `require`, tedy v téže kopii.
+const { nastavPoolProTesty } = createRequire(import.meta.url)('../src/lib/novinky-db.ts');
 
 const TOKEN = 'eda-token-0123456789abcdef0123456789abcdef';
 const BASE = 'https://www.prijimackynaskolu.cz';
