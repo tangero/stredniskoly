@@ -31,7 +31,7 @@ schvaluje je Patrick. Stav issue vyjadřují štítky:
 | `puvod:hlaseni`, `puvod:email` | zadání z veřejného hlášení nebo neověřeného e-mailu; jen se `schvaleno` |
 | `zamitnuto` | nerealizovat |
 | `oponentura` | problém pro nový projekt projde oponenturou (průzkum, návrhy Claude a Kimi naslepo, kritika, syntéza; workflow Oponentura, skill `oponentura`), pak se vrátí do `navrh`; **nerealizovat** |
-| `k-overeni` | otevřený PR s protokolem z preview; po sloučení ho z otevřeného issue (etapa projektu) odebere workflow Tabule |
+| `k-overeni` | k issue je otevřený PR; po sloučení ho z otevřeného issue (etapa projektu) odebere workflow Tabule |
 | `pripominka` | úkol s termínem (řádek `Termín: RRRR-MM-DD` v těle issue nebo pole Termín formuláře); před termínem se nerealizuje |
 | `potrebuje-cloveka` | u PR: smyčka oprav z review skončila (5 kol nebo oprava cesty H2); další `@claude` se nespustí, rozhodne člověk |
 
@@ -59,8 +59,10 @@ Nastavení GitHubu (formuláře, tabule projektu, ochrana `main`) popisuje `docs
    komentář v issue se zjištěními a doporučením; rozhodnutí, které z něj plyne (vypínač, registr,
    data), dělá Patrick.
 2. **Jedno issue = jedna větev = jeden PR.** Větev `zadani/<N>-<kratky-popis>` z aktuální `main`.
-   Popis PR obsahuje `Closes #N`. Po otevření PR přidej issue štítek `k-overeni`. U změn webu ověř PR na
-   náhledu a zapiš do PR protokol (skill `overeni-preview`); bez něj brána PR nepustí.
+   Popis PR obsahuje `Closes #N`. Po otevření PR přidej issue štítek `k-overeni`. U změn webu napiš do popisu
+   PR oddíl `## Pro vlastníka`: dvě až tři věty lidskými slovy, co se změnilo a co má vlastník zkontrolovat,
+   a adresy na webu, kde změnu uvidí. Po nasazení mu je workflow Ověření v produkci pošle do Telegramu.
+   Protokol z preview se nevyžaduje (RA45); ověření na náhledu je dobrovolné (skill `overeni-preview`).
    Výjimka: když issue nebo vlastník projektu určí dodávku **po etapách**, má každá etapa vlastní větev
    (`zadani/<N>-etapa-<M>-<kratky-popis>`) a PR, který na issue odkazuje („Souvisí s #N“); `Closes #N` nese
    jen PR poslední etapy. Titulek PR podle issue (například „Fáze 2 / etapa M: …“).
@@ -132,4 +134,4 @@ do PR výslovně i s výpisem chyby. Selhání nezamlčuj a kontroly nevypínej.
 ### Popis PR
 
 Podle šablony ve skillu `rizeni-brana` (`.claude/skills/rizeni-brana/SKILL.md`): `Closes #N`, co se změnilo,
-jak ověřit na náhledu, kontroly, mimo rozsah. Protokol z preview patří do komentáře PR.
+pro vlastníka (u změn webu), jak ověřit, kontroly, mimo rozsah.

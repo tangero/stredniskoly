@@ -84,13 +84,13 @@ test('stop na PR nebo na issue blokuje vždy, i incident a souhlas', () => {
   assert.equal(incident.uspech, false);
 });
 
-test('bez protokolu z preview pro aktuální hlavu neprojde', () => {
-  const bez = run({ pr: pr({ komentare: [] }) });
-  assert.equal(bez.uspech, false);
-  assert.match(bez.duvody.join(), /chybí protokol/);
-  const stary = run({ pr: pr({ komentare: [protokolKomentar(SHA2)] }) });
-  assert.equal(stary.uspech, false);
-  const nesplneno = run({ pr: pr({ komentare: [protokolKomentar(SHA, 'nesplněno')] }) });
+test('bez protokolu z preview PR projde, nesplněné kritérium k aktuální hlavě blokuje (RA45)', () => {
+  const bez = run({ pr: pr({ komentare: [reviewKomentar()] }) });
+  assert.equal(bez.uspech, true, bez.duvody.join('; '));
+  const stary = run({ pr: pr({ komentare: [reviewKomentar(), protokolKomentar(SHA2, 'nesplněno')] }) });
+  assert.equal(stary.uspech, true, stary.duvody.join('; '));
+  const nesplneno = run({ pr: pr({ komentare: [reviewKomentar(), protokolKomentar(SHA, 'nesplněno')] }) });
+  assert.equal(nesplneno.uspech, false);
   assert.match(nesplneno.duvody.join(), /nesplněné/);
 });
 
@@ -110,12 +110,9 @@ const protokolK = (radky) => ({
   telo: `## Protokol z preview\nCommit: ${SHA.slice(0, 7)}\n| kritérium | 390 px |\n|---|---|\n${radky.map((r) => `| ${r} | splněno |`).join('\n')}`,
 });
 
-test('protokol musí uvést každé kritérium K a P z uzavíraného zadání', () => {
+test('protokol bez řádků kritérií K a P nic neblokuje (RA45)', () => {
   const chybi = run({ issues: [issue({ telo: TELO_K })], pr: pr({ komentare: [protokolK(['K1: věta', 'K2: odkaz', 'P1: sitemap']), reviewKomentar(SHA, 'Bez P1 a P2')] }) });
-  assert.equal(chybi.uspech, false);
-  assert.match(chybi.duvody.join(), /neuvádí kritéria z issue #10: K3$/);
-  const vse = run({ issues: [issue({ telo: TELO_K })], pr: pr({ komentare: [protokolK(['K1: věta', 'K2: odkaz', 'K3: karta', 'P1: sitemap']), reviewKomentar(SHA, 'Bez P1 a P2')] }) });
-  assert.equal(vse.uspech, true, vse.duvody.join('; '));
+  assert.equal(chybi.uspech, true, chybi.duvody.join('; '));
 });
 
 test('zadání bez označení K a P a etapa se „Souvisí s“ se posuzují jako dřív', () => {
@@ -125,22 +122,13 @@ test('zadání bez označení K a P a etapa se „Souvisí s“ se posuzují jak
   assert.doesNotMatch(etapa.duvody.join(), /neuvádí kritéria/);
 });
 
-test('souhlas vlastníka na PR nahradí chybějící protokol, nesplněné kritérium ne (RA42)', () => {
-  const souhlas = (komentare, sha = SHA) => pr({
+test('ani souhlas vlastníka na PR neobejde nesplněné kritérium v protokolu', () => {
+  const v = run({ pr: pr({
     stitky: ['schvaleno'], udalosti: [schvalenoUdalost(PRED(2))],
-    komentare: [...komentare, { autor: BOT, cas: PRED(2), telo: ZNACKA.souhlasPr(sha) }],
-  });
-  const bez = run({ pr: souhlas([]) });
-  assert.equal(bez.uspech, true, bez.duvody.join('; '));
-  assert.match(bez.duvody.join(), /chybí protokol z preview pro commit aaaaaaa: nahrazuje souhlas vlastníka na PR/);
-  const kriteria = run({ issues: [issue({ telo: TELO_K })], pr: souhlas([protokolK(['K1: věta'])]) });
-  assert.equal(kriteria.uspech, true, kriteria.duvody.join('; '));
-  const nesplneno = run({ pr: souhlas([protokolKomentar(SHA, 'nesplněno')]) });
-  assert.equal(nesplneno.uspech, false);
-  assert.match(nesplneno.duvody.join(), /nesplněné/);
-  const staraHlava = run({ pr: souhlas([], SHA2) });
-  assert.equal(staraHlava.uspech, false);
-  assert.match(staraHlava.duvody.join(), /chybí protokol/);
+    komentare: [protokolKomentar(SHA, 'nesplněno'), { autor: BOT, cas: PRED(2), telo: ZNACKA.souhlasPr(SHA) }],
+  }) });
+  assert.equal(v.uspech, false);
+  assert.match(v.duvody.join(), /nesplněné/);
 });
 
 test('označení kritérií: rozdělení, zrušení a řádek protokolu', () => {
@@ -322,7 +310,7 @@ test('K: migrace projde se souhlasem na issue', () => {
   assert.equal(se.uspech, true, se.duvody.join('; '));
 });
 
-test('přesun stránky do dokumentace potřebuje protokol', () => {
+test('přesun stránky do dokumentace je změna webu (review, ne protokol)', () => {
   const presun = soubor('docs/removed-page.md', 0, { stav: 'renamed', puvodni: 'src/app/skoly/page.tsx' });
   const a = rozbor([presun], konfig);
   assert.equal(a.jenBezPreview, false);
@@ -332,7 +320,8 @@ test('přesun stránky do dokumentace potřebuje protokol', () => {
     issues: [issue({ stitky: ['interni', 'schvaleno'], udalosti: [schvalenoUdalost(PRED(5))], komentare: [souhlasZaznam(TELO_ISSUE, PRED(5))] })],
   });
   assert.equal(v.uspech, false);
-  assert.match(v.duvody.join(), /chybí protokol/);
+  assert.match(v.duvody.join(), /review/);
+  assert.doesNotMatch(v.duvody.join(), /protokol/);
 });
 
 test('smazaná stránka je K (adresy)', () => {
@@ -512,16 +501,12 @@ test('veřejný repozitář: doklad „Zdroj:“ v cizím issue se nepočítá',
   assert.equal(run({ pr: pr({ stitky: ['rutina'] }), issues: [issue({ autor: 'nekdo-z-internetu', stitky: ['interni', 'rutina'] })] }).uspech, false);
 });
 
-test('veřejný repozitář: protokol z preview od cizího účtu se nepočítá', () => {
-  const cizi = { ...protokolKomentar(), autor: 'nekdo-z-internetu' };
-  const v = run({ pr: pr({ komentare: [cizi] }) });
-  assert.equal(v.uspech, false);
-  assert.match(v.duvody.join(), /chybí protokol/);
-  assert.equal(run({ pr: pr({ komentare: [reviewKomentar(), { ...protokolKomentar(), autor: 'eduarda-prijimacky' }] }) }).uspech, true);
-  assert.equal(run({ pr: pr({ komentare: [reviewKomentar(), { ...protokolKomentar(), autor: BOT }] }) }).uspech, true);
-  // Protokol v těle cizího PR také ne.
-  const telo = `Closes #10\n\n## Protokol z preview\nCommit: ${SHA.slice(0, 7)}`;
-  assert.match(run({ pr: pr({ autor: 'nekdo-z-internetu', telo, komentare: [] }) }).duvody.join(), /chybí protokol/);
+test('veřejný repozitář: nesplněný protokol od cizího účtu nic neblokuje', () => {
+  const cizi = { ...protokolKomentar(SHA, 'nesplněno'), autor: 'nekdo-z-internetu' };
+  const v = run({ pr: pr({ komentare: [reviewKomentar(), cizi] }) });
+  assert.equal(v.uspech, true, v.duvody.join('; '));
+  const vlastni = { ...protokolKomentar(SHA, 'nesplněno'), autor: 'eduarda-prijimacky' };
+  assert.equal(run({ pr: pr({ komentare: [reviewKomentar(), vlastni] }) }).uspech, false);
 });
 
 test('veřejný repozitář: PR jiného autora potřebuje souhlas na PR, i se schváleným issue', () => {

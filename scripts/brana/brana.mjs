@@ -375,10 +375,10 @@ export function vyhodnot({ pr, soubory, issues, konfig, zamrznuti, ted, predchoz
   let protokolTelo = '';
   if (!a.jenBezPreview) {
     const p = protokol(pr, konfig, issues);
+    // Protokol z preview se nevyžaduje (RA45): vlastník dostane po nasazení oznámení s adresou
+    // (oznameni-nasazeni.mjs). Blokuje jen protokol k aktuální hlavě, který hlásí nesplněné kritérium.
     if (p.ok) protokolTelo = p.telo;
-    // Souhlas vlastníka na PR (vázaný na hlavu) nahradí chybějící protokol (RA42); nesplněné kritérium ne.
-    else if (sPr.platny && !p.nesplneno) info.push(`${p.duvod}: nahrazuje souhlas vlastníka na PR`);
-    else blokuje.push(p.duvod);
+    else if (p.nesplneno) blokuje.push(p.duvod);
   }
 
   // Review asistenta zadání (#301): ne u změn bez dopadu na web a ne u PR se souhlasem vlastníka na PR.
