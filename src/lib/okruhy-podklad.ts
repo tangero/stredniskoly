@@ -8,17 +8,21 @@ import { zobrazeneObdobi } from '@/lib/stav-datovych-sad';
 import { klicOboru, rocnikyKatalogu } from '@/lib/school-key';
 import { souhrnyPodleRedizo } from '@/lib/souhrny-kolo1';
 import { zarazeniObtiznosti, type ZarazeniObtiznosti } from '@/lib/obor-profil';
-import { nazevSUlici } from '@/lib/mesto-karty';
+import { nazevSkolyKZobrazeni } from '@/lib/mesto-karty';
+import { nactiIndexRejstriku } from '@/lib/kontext-prihlasek';
 import type { ZaznamKataloguProOkruh } from '@/lib/okruhy-oboru';
 
 /** Název školy s ulicí podle REDIZO z katalogu (`nazevSUlici`), ročníky podle registru (`rocnikyKatalogu`). */
 export async function nazvySkolKatalogu(): Promise<Map<string, string>> {
   const data = await getSchoolsData() as unknown as Record<string, Array<Record<string, unknown>>>;
   const skoly = new Map<string, string>();
+  const { identifikace } = await nactiIndexRejstriku();
   for (const rocnik of rocnikyKatalogu(Object.keys(data), await zobrazeneObdobi('cermat-vysledky'))) {
     for (const z of data[rocnik] ?? []) {
       const redizo = String(z.redizo ?? '');
-      const nazev = z.nazev ? nazevSUlici(String(z.nazev), String(z.ulice ?? '')) : String(z.nazev_display ?? '');
+      const nazev = z.nazev
+        ? nazevSkolyKZobrazeni(String(z.nazev), String(z.ulice ?? ''), String(z.obec ?? ''), identifikace[redizo]?.uplny_nazev)
+        : String(z.nazev_display ?? '');
       if (redizo && nazev && !skoly.has(redizo)) skoly.set(redizo, nazev);
     }
   }
