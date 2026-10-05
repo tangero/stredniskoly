@@ -27,19 +27,13 @@ export interface PodkladKaret {
   obec?: string;
 }
 
-/**
- * Název školy na kartě: plný název z katalogu (`nazev`) a ulice z adresy nabídky bez čísla popisného.
- * Pole `nazev_display` je u části škol zkrácené („Cyrilomet.gymnázium a SOŠ pedagog. Brno“), `nazev`
- * nese plnější tvar („Cyrilometodějské gymnázium, SPedŠ a MŠ Brno“); úplný zkrácený název
- * „Gymnázium“ odliší teprve ulice.
- */
 /** Právní forma na konci názvu nebo jeho části. */
-const PRAVNI_FORMA = /,?\s*(příspěvková organizace|školská právnická osoba|spol\.\s*s\s*r\.\s*o\.|s\.\s*r\.\s*o\.?|a\.\s*s\.|o\.\s*p\.\s*s\.|z\.\s*ú\.|z\.\s*s\.)\s*$/i;
+const PRAVNI_FORMA = /[\s,\-–]*(příspěvková\s+organizace|školská právnická osoba|spol\.\s*s\s*r\.\s*o\.|s\.\s*r\.\s*o\.?|a\.\s*s\.|o\.\s*p\.\s*s\.|z\.\s*ú\.|z\.\s*s\.)\s*$/i;
 
 function bezPravniFormy(text: string): string {
   let t = text.trim();
   for (let i = 0; i < 4 && PRAVNI_FORMA.test(t); i++) t = t.replace(PRAVNI_FORMA, '').trim();
-  return t.replace(/,\s*$/, '');
+  return t.replace(/[\s,\-–]+$/, '');
 }
 
 /**
@@ -81,9 +75,17 @@ export function nazevSkolyKZobrazeni(
   nazev: string, ulice: string | null | undefined, obec: string, uplny: string | null | undefined,
 ): string {
   const plny = uplny && maZkratku(nazev) ? ocistenyUplnyNazev(uplny, obec) : '';
-  return nazevSUlici(plny && plny.length >= bezPravniFormy(nazev).length ? plny : nazev, ulice);
+  const katalogovy = bezPravniFormy(nazev.replace(/,?\s*přísp\.\s*org(aniz\.|anizace)?\.?\s*$/i, ''));
+  const bezObce = obec && katalogovy.endsWith(` ${obec}`) ? katalogovy.slice(0, -(obec.length + 1)) : katalogovy;
+  return nazevSUlici(plny && plny.length >= bezObce.length ? plny : nazev, ulice);
 }
 
+/**
+ * Název školy na kartě: plný název z katalogu (`nazev`) a ulice z adresy nabídky bez čísla popisného.
+ * Pole `nazev_display` je u části škol zkrácené („Cyrilomet.gymnázium a SOŠ pedagog. Brno“), `nazev`
+ * nese plnější tvar („Cyrilometodějské gymnázium, SPedŠ a MŠ Brno“); úplný zkrácený název
+ * „Gymnázium“ odliší teprve ulice.
+ */
 export function nazevSUlici(nazev: string, ulice: string | null | undefined): string {
   // Právní forma (s.r.o., o.p.s., z.ú.) rodině nepomůže školu poznat a název jen prodlouží.
   const bezFormy = nazev.replace(/,?\s*(s\.\s*r\.\s*o\.|o\.\s*p\.\s*s\.|z\.\s*ú\.|z\.\s*s\.)(?=,|$)/g, '').trim();

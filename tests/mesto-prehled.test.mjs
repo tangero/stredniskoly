@@ -474,6 +474,10 @@ test('úplný název z rejstříku bez právní formy, obce a adresy', () => {
     'Obchodní akademie a Jazyková škola s právem státní jazykové zkoušky');
   assert.equal(ocistenyUplnyNazev('Gymnázium Dr. Karla Polesného Znojmo', 'Znojmo'), 'Gymnázium Dr. Karla Polesného');
   assert.equal(ocistenyUplnyNazev('Bezpečnostně právní akademie Brno, s.r.o., střední škola', 'Brno'), 'Bezpečnostně právní akademie Brno, střední škola');
+  assert.equal(ocistenyUplnyNazev('Gymnázium a jazyková škola s právem státní jazykové zkoušky Břeclav, příspěvková  organizace, Sady 28. října', 'Břeclav'),
+    'Gymnázium a jazyková škola s právem státní jazykové zkoušky');
+  assert.equal(ocistenyUplnyNazev('Masarykova obchodní a zemědělská akademie Rakovník, střední odborná škola - příspěvková organizace', 'Rakovník'),
+    'Masarykova obchodní a zemědělská akademie Rakovník, střední odborná škola');
 });
 
 test('název k zobrazení: úplný jen u zkratky, vždy s ulicí', () => {
