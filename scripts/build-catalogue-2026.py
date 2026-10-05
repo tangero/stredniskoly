@@ -19,6 +19,12 @@ Pravidla:
 - Nabídka, kterou škola letos nevypsala, se do ročníku přenáší z roku 2025
   s příznakem `nevypsano_2026` a s vlastním polem `rok`, aby stránka nezanikla
   a přitom nevydávala loňská čísla za letošní.
+- Ročník 2025 katalogu nese u některých nabídek vedle denního studia i dálkové,
+  distanční nebo kombinované se stejným id (starší zpracování formu
+  nefiltrovalo). Z takových zdvojení se přenese jediný záznam: ten, který je
+  podle souhrnu CERMAT 2025 denní nezkrácený (`is_valid_flat`); když denní není
+  žádný, ten, jehož počet míst odpovídá stránce (`school_analysis.json`), jinak
+  první v pořadí souboru. Id v ročníku 2026 je tak jedinečné (issue #365).
 
 Použití:
     python3 scripts/build-catalogue-2026.py
@@ -26,6 +32,7 @@ Použití:
 import json
 import re
 import unicodedata
+from collections import Counter
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -33,6 +40,8 @@ KATALOG = ROOT / "public/schools_data.json"
 PRIHLASKY = ROOT / "public/applications_2026.json"
 VYSLEDKY = ROOT / "public/cermat_results_2026.json"
 MAPA = ROOT / "public/offer_mapping_2026.json"
+ANALYZA = ROOT / "public/school_analysis.json"
+ZDROJ_2025 = ROOT / "data/PZ2025_kolo1_skolobory_vysledky.xlsx"
 
 # Údaje o škole, které přihlášky nenesou a nelze je spočítat
 Z_LONSKA = ("nazev_display", "okres", "orp", "mestska_cast", "zrizovatel")
@@ -59,6 +68,40 @@ def normalizuj_klic(ident: str) -> str:
 def adresa(z):
     casti = [z.get("ulice") or "", z.get("obec") or "", z.get("psc") or ""]
     return ", ".join(c for c in casti if c)
+
+
+_denni_2025 = None
+_kapacita_stranky = None
+
+
+def denni_2025():
+    """(REDIZO, KKOV, kapacita, přihlášky) → je řádek souhrnu 2025 denní nezkrácený."""
+    global _denni_2025
+    if _denni_2025 is None:
+        if not ZDROJ_2025.exists():
+            raise SystemExit(f"zdvojené záznamy 2025 nejde rozhodnout bez {ZDROJ_2025} (data.cermat.cz)")
+        import sys
+        sys.path.insert(0, str(ROOT / "scripts"))
+        from import_cermat_results import is_valid_flat, load_flat_xlsx
+        _denni_2025 = {}
+        for r in load_flat_xlsx(ZDROJ_2025):
+            klic = (str(r.get("REDIZO")), r.get("KKOV"), r.get("KAPACITA"), r.get("PŘIHLÁŠKY CELKEM"))
+            _denni_2025[klic] = _denni_2025.get(klic, False) or is_valid_flat(r)
+    return _denni_2025
+
+
+def vyber_prenaseny(zaznamy, ident):
+    """Jeden ze zdvojených záznamů 2025 téhož id: denní, jinak shodný se stránkou, jinak první."""
+    global _kapacita_stranky
+    kkov = ident.split("_")[1] if "_" in ident else ""
+    denni = [z for z in zaznamy
+             if denni_2025().get((z["redizo"], kkov, z.get("kapacita"), z.get("prihlasky")))]
+    if denni:
+        return denni[0]
+    if _kapacita_stranky is None:
+        _kapacita_stranky = {v["id"]: v.get("kapacita") for v in json.loads(ANALYZA.read_text()).values()}
+    stranka = [z for z in zaznamy if _kapacita_stranky.get(ident) == z.get("kapacita")]
+    return (stranka or zaznamy)[0]
 
 
 def main():
@@ -147,10 +190,15 @@ def main():
         rok2026.append(zaznam)
 
     # Nabídky, které škola letos nevypsala: stránka zůstává, čísla zůstávají loňská
-    prenesene = 0
+    kandidati = {}
     for z in rok2025:
-        if z["id"] in pouzite_2025:
-            continue
+        if z["id"] not in pouzite_2025:
+            kandidati.setdefault(z["id"], []).append(z)
+    prenesene = 0
+    vyrazene = 0
+    for ident, zaznamy in kandidati.items():
+        z = vyber_prenaseny(zaznamy, ident) if len(zaznamy) > 1 else zaznamy[0]
+        vyrazene += len(zaznamy) - 1
         zaznam = dict(z)
         zaznam["nevypsano_2026"] = True
         rok2026.append(zaznam)
@@ -163,6 +211,10 @@ def main():
     print(f"Ročník 2026: {len(rok2026)} záznamů")
     print(f"  z toho letošních nabídek: {len(prihlasky)}")
     print(f"  přenesených z roku 2025 (letos nevypsáno): {prenesene}")
+    print(f"  vyřazených zdvojení téhož id (nedenní forma): {vyrazene}")
+    zdvojena = [i for i, n in Counter(z["id"] for z in rok2026).items() if n > 1]
+    if zdvojena:
+        raise SystemExit(f"zdvojená id v ročníku 2026: {zdvojena[:5]}")
     print(f"  s výsledky 2026: {sum(1 for z in rok2026 if z.get('prumer_body') is not None)}")
     print(f"Stránek z roku 2025 bez záznamu v roce 2026: {len(chybi)}")
     if chybi:

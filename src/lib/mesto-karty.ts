@@ -84,7 +84,8 @@ export function sestavKartySkol(
     }
     return k;
   };
-  // Katalog může nést tutéž nabídku dvakrát se stejným id (2026: SŠ KNIH v Brně); řádek jen jednou.
+  // Pojistka: tatáž nabídka se stejným id jen jednou. Zdvojení z přenosu ročníku 2025 (SŠ KNIH)
+  // opravil generátor katalogu (#365) a hlídá je tests/test_katalog_2026.py.
   const videne = new Set<string>();
   for (const r of nabidky) {
     if (videne.has(r.id)) continue;

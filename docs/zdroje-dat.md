@@ -1,6 +1,6 @@
 # Zdroje dat
 
-Verze 1.29 · 5. 10. 2026 · **Závazný soupis. Před návrhem stránky nebo funkce se prochází celý.**
+Verze 1.30 · 5. 10. 2026 · **Závazný soupis. Před návrhem stránky nebo funkce se prochází celý.**
 
 Tenhle dokument vznikl kvůli konkrétní chybě. Návrh stránky školy jsem sestavil z toho, co web už zobrazoval, místo z toho, co je ve zdrojových souborech. Tři užitečné údaje proto ležely nepoužité v souborech, které jsem měl otevřené: rozpad přihlášek podle priority jako podíl, souběžné přihlášky uchazečů a nejnižší výsledek jednotné zkoušky mezi přijatými. Poslední z nich byl dokonce už spočítaný a uložený v katalogu, zatímco [slovník ukazatelů](slovnik-ukazatelu.md) tvrdil, že ho nemáme.
 
@@ -558,6 +558,7 @@ Zamítnuta je i **krajová míra nezaměstnanosti za skupinu oborů**: odpovíd�
 4. **Chybějící údaj není nula.** U indexu obtížnosti se takhle 386 oborů bez dat tvářilo jako nejsnazší.
 5. **Data uchazečů zaostávají za souhrny.** Web má přihlášky, kapacity a výsledky za rok 2026, ale data uchazečů jen za rok 2025, a to v předběžné verzi. CERMAT data uchazečů za rok 2026 zveřejnil už 20. 5. 2026; nepřevzali jsme je. Cokoli z uchazečů odvozeného je proto zatím za rok 2025. Do 13. 9. 2026 tu stálo, že data za rok 2026 neexistují.
 6. **Malé počty.** 1 586 ze 4 350 oborů má méně než deset přijatých. Minimum a medián jsou tam velmi kolísavé.
+8. **Katalog ročníku 2025 nese i nedenní formy se stejným id.** Starší zpracování ročníku 2025 v `schools_data.json` nefiltrovalo formu studia, takže u 29 id stojí vedle denního i dálkové, distanční nebo kombinované studium (v ročníku 2024 u 31 id). Generátor ročníku 2026 (`build-catalogue-2026.py`) od 5. 10. 2026 přenáší ze zdvojení jen denní záznam podle souhrnu CERMAT 2025 (#365). **Známý dluh:** dalších 22 přenesených „nevypsaných“ nabídek 2026 je nedenních bez zdvojení a visí na nich stránky; ročníky 2024 a 2025 zdvojení dál nesou a web je obchází přes `uniqueSchoolIndex`.
 7. **Zkrácený název školy z rejstříku není jedinečný.** Index názvů (`nazvy-oboru.json`, pole `skoly`) nese `zkracenyNazev`, a ten je u 97 škol jen „Gymnázium“, u desítek dalších „Obchodní akademie“ nebo „Střední odborné učiliště“. Řádek seznamu s takovým názvem školu neurčí a seskupení podle názvu slije různé školy. Pro zobrazení se bere název s ulicí z katalogu (`nazev_display`), u školy mimo katalog zkrácený název doplněný o ulici z `identifikace.adresa`; seskupuje se vždy podle REDIZO (`nazevSkolyProRadek` v `src/lib/okruhy-oboru.ts`).
 
 ## 5. Stav datových sad
@@ -721,6 +722,7 @@ _Vygenerováno z `public/stav_datovych_sad.json` dne 2026-10-02. Neupravovat ru�
 
 | Verze | Změna |
 |---|---|
+| 1.30 | Oddíl 4: past 8, nedenní formy se stejným id v katalogu 2025 a jejich přenos do ročníku 2026 (#365). |
 | 1.29 | Oddíl 2.10: souhrny 1. kola nesou i ročník 2024 (`PZ2024_kolo1_skolobory_vysledky.xlsx`, rozhodnutí vlastníka 3. 10. 2026 v #277). Žádný nový sloupec. |
 | 1.28 | Oddíl 4: past 7, zkrácený název školy z rejstříku není jedinečný (okruhy a další obory na stránce města ukazovaly „Gymnázium / Gymnázium“). Žádný nový zdroj ani sloupec. |
 | 1.27 | Oddíl 2.10: odvozený soubor `okruhy_oboru_{rok}.json` (okruhy oborů, souhrn po obcích), žádný nový sloupec. |
