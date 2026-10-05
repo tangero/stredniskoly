@@ -31,7 +31,8 @@ schvaluje je Patrick. Stav issue vyjadřují štítky:
 | `puvod:hlaseni`, `puvod:email` | zadání z veřejného hlášení nebo neověřeného e-mailu; jen se `schvaleno` |
 | `zamitnuto` | nerealizovat |
 | `oponentura` | problém pro nový projekt projde oponenturou (průzkum, návrhy Claude a Kimi naslepo, kritika, syntéza; workflow Oponentura, skill `oponentura`), pak se vrátí do `navrh`; **nerealizovat** |
-| `k-overeni` | otevřený PR s protokolem z preview; po sloučení ho z otevřeného issue (etapa projektu) odebere workflow Tabule |
+| `otazka` | AI se v issue ptá vlastníka (pravidlo 8); otázka mu jde do Telegramu, štítek zmizí po jeho odpovědi |
+| `k-overeni` | k issue je otevřený PR; po sloučení ho z otevřeného issue (etapa projektu) odebere workflow Tabule |
 | `pripominka` | úkol s termínem (řádek `Termín: RRRR-MM-DD` v těle issue nebo pole Termín formuláře); před termínem se nerealizuje |
 | `potrebuje-cloveka` | u PR: smyčka oprav z review skončila (5 kol nebo oprava cesty H2); další `@claude` se nespustí, rozhodne člověk |
 
@@ -59,8 +60,12 @@ Nastavení GitHubu (formuláře, tabule projektu, ochrana `main`) popisuje `docs
    komentář v issue se zjištěními a doporučením; rozhodnutí, které z něj plyne (vypínač, registr,
    data), dělá Patrick.
 2. **Jedno issue = jedna větev = jeden PR.** Větev `zadani/<N>-<kratky-popis>` z aktuální `main`.
-   Popis PR obsahuje `Closes #N`. Po otevření PR přidej issue štítek `k-overeni`. U změn webu ověř PR na
-   náhledu a zapiš do PR protokol (skill `overeni-preview`); bez něj brána PR nepustí.
+   Popis PR obsahuje `Closes #N`. Po otevření PR přidej issue štítek `k-overeni`. U změn webu napiš do popisu
+   PR oddíl `## Pro vlastníka`: jedna až tři věty z pohledu návštěvníka, co na stránce uvidí jinak, bez
+   technických slov (například „Místo krátkého divného jména Gymnazium uvidíš celý oficiální název školy“),
+   a adresy na webu, kde změnu uvidí; bez něj brána PR nepustí. Po nasazení mu je workflow Ověření
+   v produkci pošle do Telegramu.
+   Protokol z preview se nevyžaduje (RA45); ověření na náhledu je dobrovolné (skill `overeni-preview`).
    Výjimka: když issue nebo vlastník projektu určí dodávku **po etapách**, má každá etapa vlastní větev
    (`zadani/<N>-etapa-<M>-<kratky-popis>`) a PR, který na issue odkazuje („Souvisí s #N“); `Closes #N` nese
    jen PR poslední etapy. Titulek PR podle issue (například „Fáze 2 / etapa M: …“).
@@ -98,7 +103,10 @@ Nastavení GitHubu (formuláře, tabule projektu, ochrana `main`) popisuje `docs
    chybách přestaň a napiš do issue); osobní údaje nestahuj ani neukládej (pravidlo 4). V testech se cizí
    servery nevolají nikdy, síťové volání nahraď mockem. Nové síťové volání v kódu webu nebo skriptů přidej, jen
    když je v zadání. Instalace balíčků přes `npm ci` a `gh` pro tento repozitář ohlášení nepotřebují.
-8. **Když je zadání nejasné nebo v rozporu s pravidly**, nic neimplementuj a napiš do issue komentář s dotazem.
+8. **Když je zadání nejasné nebo v rozporu s pravidly**, nejasnou část neimplementuj, napiš do issue komentář
+   s dotazem a přidej štítek `otazka` (otázka jde vlastníkovi do Telegramu, protože z jeho účtu mu GitHub nic
+   neoznámí). Jasnou část zadání, která na nejasné nezávisí, realizuj hned. Odpověď vlastníka (jeho komentář,
+   nebo zápis jeho odpovědi s nadpisem „Odpověď vlastníka“) štítek odebere; pak pokračuj.
    Rozporem je i požadavek zadání na schválení nebo kontrolu, kterou pravidla nevyžadují (například schválení
    stahování po RA41): nevybírej sám, zda platí zadání, nebo pravidlo, zeptej se před začátkem práce a nepokračuj.
 9. Pravidla z `.claude/claude.md` (období dat z `public/stav_datovych_sad.json`, slovník ukazatelů
@@ -132,4 +140,4 @@ do PR výslovně i s výpisem chyby. Selhání nezamlčuj a kontroly nevypínej.
 ### Popis PR
 
 Podle šablony ve skillu `rizeni-brana` (`.claude/skills/rizeni-brana/SKILL.md`): `Closes #N`, co se změnilo,
-jak ověřit na náhledu, kontroly, mimo rozsah. Protokol z preview patří do komentáře PR.
+pro vlastníka (u změn webu), jak ověřit, kontroly, mimo rozsah.

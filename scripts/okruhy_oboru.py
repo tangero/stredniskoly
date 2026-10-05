@@ -238,6 +238,41 @@ def okruhy_v_oblastech(volby_r, vsechny: set[str], oblast: dict[str, int]):
         cast.setdefault(u, -1 - len(cast))
     return cast, n
 
+BOOTSTRAP = 100     # opakování převzorkování uchazečů pro jistotu zařazení (issue #366)
+
+
+def jistota_zarazeni(volby_r, vsechny: set[str], oblast: dict[str, int], cast: dict[str, int],
+                     opakovani: int = BOOTSTRAP, seed: int = 366) -> dict[str, float]:
+    """Jistota zařazení oboru do okruhu (slovník ukazatelů): podíl převzorkování, ve kterých obor zůstane
+    s většinou svých původních sousedů z okruhu.
+
+    Uchazeči zobrazeného roku se losují s vracením (bootstrap), oblasti přihlášek zůstávají pevné a okruhy
+    se v nich spočítají znovu stejně jako ostrý výpočet. Obor „zůstal“, když s ním v novém okruhu stojí
+    aspoň polovina oborů, se kterými sdílel původní okruh. Pevné semínko dělá výsledek deterministickým.
+    Obor bez sousedů v okruhu nebo chybějící ve vzorku se nepočítá.
+    """
+    rng = random.Random(seed)
+    clenove: dict[int, set[str]] = collections.defaultdict(set)
+    for k, c in cast.items():
+        clenove[c].add(k)
+    zustal: collections.Counter = collections.Counter()
+    pocet: collections.Counter = collections.Counter()
+    for _ in range(opakovani):
+        vzorek = rng.choices(volby_r, k=len(volby_r))
+        c2, _n = okruhy_v_oblastech(vzorek, vsechny, oblast)
+        podle: dict[int, set[str]] = collections.defaultdict(set)
+        for k, x in c2.items():
+            podle[x].add(k)
+        for k, c in cast.items():
+            sousede = clenove[c] - {k}
+            if not sousede or k not in c2:
+                continue
+            pocet[k] += 1
+            if 2 * len(sousede & podle[c2[k]]) >= len(sousede):
+                zustal[k] += 1
+    return {k: round(zustal[k] / pocet[k], 2) for k in pocet}
+
+
 def uzavrenost(volby_r, oblast) -> float:
     """Podíl dvojic oborů na jedné přihlášce, které leží v téže oblasti."""
     v = t = 0

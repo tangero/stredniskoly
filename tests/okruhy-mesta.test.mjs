@@ -16,7 +16,7 @@ function load(relative) {
   new Function('require', 'module', 'exports', outputText)((s) => (s.startsWith('@/') ? {} : require(s)), modul, modul.exports);
   return modul.exports;
 }
-const { vyberOkruhu, popisOboruOkruhu, uliceZAdresy } = load('src/lib/okruhy-oboru.ts');
+const { vyberOkruhu, popisOboruOkruhu, uliceZAdresy, naPomeziOkruhu, PRAH_POMEZI } = load('src/lib/okruhy-oboru.ts');
 
 const obor = (klic, uchazecu) => ({ klic, obec: 'Brno', uchazecu, ukotven: true });
 const okruh = (id, uchazecu, obory, presun) => ({ id, uchazecu, obory, presun_zajmu_v_okruhu: presun });
@@ -83,3 +83,14 @@ test('ulice z adresy rejstříku', () => {
   assert.equal(uliceZAdresy(undefined), null);
 });
 
+
+test('na pomezí okruhů jen pod prahem jistoty zařazení; chybějící údaj nic netvrdí (#366)', () => {
+  assert.equal(PRAH_POMEZI, 0.5);
+  assert.equal(naPomeziOkruhu(0.49), true);
+  assert.equal(naPomeziOkruhu(0.05), true);
+  assert.equal(naPomeziOkruhu(0.5), false);
+  assert.equal(naPomeziOkruhu(1), false);
+  assert.equal(naPomeziOkruhu(null), false);
+  assert.equal(naPomeziOkruhu(undefined), false);
+  assert.equal(naPomeziOkruhu(Number.NaN), false);
+});

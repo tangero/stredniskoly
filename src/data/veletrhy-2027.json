@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-09-29",
+  "checkedAt": "2026-10-01",
   "sezona": "2027",
   "zdroj": "docs/prijimacky-veletrhy-poradatele-2026.xlsx",
   "poznamka": "Rozpis pořadatelů na jednotlivé akce. Zobrazuje se jen akce s terminPotvrzen: true. Popis viz docs/veletrhy-skol-2027.md.",
@@ -529,7 +529,7 @@
     {
       "id": "trh-vzdelavani-trinec-2026",
       "nazev": "Trh vzdělávání a uplatnění Třinec",
-      "poradatel": "Úřad práce ČR a město Třinec",
+      "poradatel": "Statutární město Třinec",
       "mesto": "Třinec",
       "krajKod": "CZ080",
       "misto": "Hala STaRS Třinec",
@@ -537,11 +537,10 @@
       "end": "2026-10-15",
       "datum": "15. října 2026",
       "cas": "10:00–16:00",
-      "terminPotvrzen": false,
-      "url": "https://sps-karvina.cz/den-otevrenych-dveri/",
-      "zdrojOvereni": "sps-karvina.cz",
-      "overeno": "2026-09-24",
-      "cekaNa": "Termín 15. 10. 2026 zatím jen na webu vystavující SPŠ Karviná a v kalendáři kampaně MSK Řemeslo má respekt; Úřad práce ani město ho nezveřejnily."
+      "terminPotvrzen": true,
+      "url": "https://www.trinecko.cz/trinec-se-chysta-na-trh-vzdelavani-a-uplatneni",
+      "zdrojOvereni": "trinecko.cz (článek města s odkazem na PNS)",
+      "overeno": "2026-10-01"
     },
     {
       "id": "schola-bohemia-pardubice-2026",

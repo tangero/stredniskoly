@@ -102,3 +102,37 @@ class BuildOkruhyOboruTest(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+@unittest.skipUnless(MA_OPENPYXL, "chybí knihovna openpyxl")
+class JistotaZarazeniTest(unittest.TestCase):
+    """Jistota zařazení do okruhu (#366): rozsah 0–1, pevné semínko, jádro okruhu jisté."""
+
+    @staticmethod
+    def data():
+        # Dvě jasné skupiny smyšlených oborů a jeden obor mezi nimi.
+        volby = []
+        for skupina in (("A_1", "A_2", "A_3"), ("B_1", "B_2", "B_3")):
+            for i in range(60):
+                volby.append(uchazec(*[skupina[(i + j) % 3] for j in range(2)]))
+        volby += [uchazec("X_1", "A_1") for _ in range(15)] + [uchazec("X_1", "B_1") for _ in range(15)]
+        vsechny = {"A_1", "A_2", "A_3", "B_1", "B_2", "B_3", "X_1"}
+        return volby, vsechny, {k: 1 for k in vsechny}
+
+    def test_rozsah_deterministicky_vypocet_a_jadro(self):
+        ok = gen.sys.modules["okruhy_oboru"]
+        volby, vsechny, oblast = self.data()
+        cast, _ = ok.okruhy_v_oblastech(volby, vsechny, oblast)
+        prvni = ok.jistota_zarazeni(volby, vsechny, oblast, cast, opakovani=20, seed=7)
+        druhy = ok.jistota_zarazeni(volby, vsechny, oblast, cast, opakovani=20, seed=7)
+        self.assertEqual(prvni, druhy)
+        self.assertTrue(all(0 <= v <= 1 for v in prvni.values()))
+        for k in ("A_2", "A_3", "B_2", "B_3"):
+            self.assertGreaterEqual(prvni[k], 0.9, k)
+
+    def test_obor_bez_sousedu_v_okruhu_se_nepocita(self):
+        ok = gen.sys.modules["okruhy_oboru"]
+        volby, vsechny, oblast = self.data()
+        cast = {"A_1": 1, "A_2": 1, "B_1": 2}
+        jistota = ok.jistota_zarazeni(volby, vsechny, oblast, cast, opakovani=3, seed=1)
+        self.assertNotIn("B_1", jistota)

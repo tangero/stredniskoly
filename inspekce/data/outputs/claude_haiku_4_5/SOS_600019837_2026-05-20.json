@@ -1,0 +1,115 @@
+{
+  "report_id": "SOS_600019837_2026-05-20",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-10-05T12:20:31.751060+00:00",
+  "run_finished_utc": "2026-10-05T12:20:59.731355+00:00",
+  "raw_file": "SOS_600019837_2026-05-20.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_600019837_2026-05-20",
+    "school_profile": {
+      "school_type": "Vyšší odborná škola a střední škola zdravotnická a sociální",
+      "inspection_period": "20. až 22. května 2026",
+      "school_change_summary": "Škola rozšířila nabídku oborů, zvýšil se počet žáků (262 ve 11 třídách) a studentů VOŠ (44 ve 3 skupinách). Od roku 2022 participuje na pokusném ověřování stupňovitého propojení oborů v zdravotnictví. Zaznamenáno částečné zhoršení školního klimatu."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Výborná praxe",
+          "detail": "Žáci získávají zkušenosti na nadstandardním počtu pracovišť nemocnice a sociálních zařízení s podporou mentorů a staničních sester.",
+          "evidence": "\"Nadstandardní je velmi široké spektrum pracovišť nemocnice umožňující žákům oboru praktická sestra získat zkušenosti\""
+        },
+        {
+          "tag": "Silné partnerství",
+          "detail": "Dlouhodobé výborné vztahy s nemocnicí a zdravotnickými zařízeními podporují kvalitu praktického vzdělávání.",
+          "evidence": "\"Mimořádně přínosné jsou pokračující dlouhodobé výborné vztahy s nemocnicí a dalšími zdravotnickými i sociálními zařízeními\""
+        },
+        {
+          "tag": "Poradenské služby",
+          "detail": "Škola nabízí komplexní podporu včetně výchovné poradkyně, metodičky prevence, kariérového poradenství a školní psycholožky.",
+          "evidence": "\"Nabídka školního poradenského pracoviště, které zajišťuje účinnou podporu žákům, je vhodně doplněna kariérovým poradenstvím a činností školní psycholožky\""
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Nejasná pravidla",
+          "detail": "Školní řád a vnitřní směrnice jsou méně přehledné a srozumitelné pro žáky, studenty i pedagogy.",
+          "evidence": "\"Pravidla pro řízení školy jsou nastavena, ale obsahově jsou vnitřní směrnice méně přehledné a pro žáky, studenty i pedagogy méně srozumitelné\""
+        },
+        {
+          "tag": "Zhoršené klima",
+          "detail": "Od poslední inspekce se částečně zhoršilo klima ve škole, někteří účastníci vzdělávání mají obavy o bezpečné prostředí.",
+          "evidence": "\"Od poslední inspekční činnosti bylo zaznamenáno částečné zhoršení klimatu ve škole\""
+        },
+        {
+          "tag": "Slabá individualizace",
+          "detail": "Výuka není dostatečně přizpůsobena individuálním potřebám a nadání žáků, chybí diferenciace úkolů.",
+          "evidence": "\"Ve většině hodin také nebyla zaznamenána diferenciace náročnosti zadávaných úkolů, která by zohledňovala možnosti, zájem a nadání žáků\""
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak škola řeší zhoršené klima a jaká konkrétní opatření zavádí pro zlepšení bezpečnosti a komunikace?",
+        "Jaké jsou konkrétní možnosti individuální podpory pro žáky s různými schopnostmi a potřebami?",
+        "Jak se škola vypořádává s omezeným prostorem v některých učebnách (např. první pomoc) a jaké má plány na zlepšení?"
+      ],
+      "who_school_fits": [
+        "Žáci s jasným zaměřením na zdravotnické nebo sociální obory, kteří chtějí kvalitní praktickou přípravu",
+        "Studenti, kteří oceňují úzkou spolupráci se zdravotnickými zařízeními a reálnou praxi",
+        "Žáci se zájmem o dobrovolnictví a sociální angažovanost"
+      ],
+      "who_should_be_cautious": [
+        "Žáci, kteří potřebují jasně strukturovaná a srozumitelná pravidla a řád",
+        "Studenti vyžadující intenzivní individuální přístup a diferenciovanou výuku",
+        "Žáci citliví na školní klima a atmosféru, vzhledem k zaznamenaným problémům"
+      ],
+      "plain_czech_summary": "Zdravotnická a sociální škola v Ústí nad Orlicí nabízí kvalitní praktickou přípravu díky výborným vztahům s nemocnicí a sociálními zařízeními. Žáci získávají zkušenosti na mnoha pracovištích a mají podporu školního psychologa. Škola se však potýká se zhoršeným klimatem, nejasným řádem a nedostatečnou individualizací výuky. Některé učebny jsou prostorově omezené. Vhodná pro motivované žáky zaměřené na zdravotnictví a sociální práci."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Kolísavý s výraznějšími problémy v některých rocích",
+        "key_numbers": [
+          "Obor Praktická sestra 2024: 0% neúspěšnosti, 2025: více než 2x vyšší než průměr ČR",
+          "Obor Sociální činnost: několikrát vyšší neúspěšnost než v ČR (ale jen 9-11 žáků ročně)",
+          "Ošetřovatel (nový obor): 22 z 25 žáků úspěšně (88%)"
+        ],
+        "evidence": "\"V roce 2024 byla neúspěšnost žáků oboru vzdělání 53-41-M/03 Praktická sestra nulová. V roce 2025 byla více než dvakrát vyšší ve srovnění se školami vyučujícími daný obor vzdělání v ČR\""
+      },
+      "absence": {
+        "trend": "Nízká absence, škola efektivně eliminuje záškoláctví",
+        "key_numbers": [
+          "Průměr 50-70 zameškaných hodin na žáka za pololetí",
+          "Odpovídá 2-3 týdnům nepřítomnosti",
+          "Minimální potřeba kázeňských opatření"
+        ],
+        "evidence": "\"Vykazovaná absence žáků ve výuce byla spíše nižší, většinou se její míra pohybovala mezi 50 až 70 zameškanými hodinami na žáka za pololetí. Škole se daří eliminovat ve velké míře potenciální hrozby záškoláctví\""
+      },
+      "support_services": [
+        "Výchovná poradkyně a metodička prevence se specializačním studiem",
+        "Kariérové poradenství pro střední i vyšší odbornou školu",
+        "Školní psycholožka přítomná 2 dny v týdnu s možností spolupráce s třídními učiteli"
+      ],
+      "safety_climate": [
+        "Částečné zhoršení klimatu od poslední inspekce",
+        "Rozdílná hodnocení kvality komunikace mezi účastníky vzdělávání",
+        "Obavy některých žáků, studentů a učitelů o bezpečné prostředí",
+        "Omezené prostorové možnosti v některých učebnách (např. první pomoc) představují bezpečnostní riziko"
+      ],
+      "partnerships_practice": [
+        "Dlouhodobá spolupráce s nemocnicí včetně skupiny mentorů a staničních sester",
+        "Bohaté portfolio sociálních zařízení pro praktickou výuku",
+        "Odborníci z praxe vyučují na střední i vyšší odborné škole",
+        "Žáci vedou preventivní programy pro mateřské, základní a speciální školy"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je srozumitelná a dobře strukturovaná. Obsahuje konkrétní příklady a citace. Některé pasáže jsou však technicky náročnější (např. popis oborů vzdělání), ale pro rodiče jsou klíčové informace jasně odděleny.",
+      "uncertainty_notes": [
+        "Příčiny zhoršení klimatu nejsou v textu konkrétně specifikovány - lze jen usuzovat z kontextu",
+        "Není jasné, zda se problémy s maturitou v roce 2025 týkají pouze jazykové zkoušky nebo i dalších předmětů",
+        "Rozsah a konkrétní dopad omezených prostor na bezpečnost není detailně popsán"
+      ]
+    }
+  }
+}

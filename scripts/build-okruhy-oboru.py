@@ -32,7 +32,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from nazvy_oboru import nazvy_oboru  # noqa: E402
 from okruhy_oboru import (  # noqa: E402
-    GAMMA, MIN, VAHA, dopocitatelne, graf_oboru, nacti_volby, oblasti_prihlasek, okruhy_v_oblastech,
+    BOOTSTRAP, GAMMA, MIN, VAHA, dopocitatelne, graf_oboru, jistota_zarazeni, nacti_volby, oblasti_prihlasek, okruhy_v_oblastech,
     podil_nad_mezi, prednost, prvni_ve_shluku, sum_zaklad, tv, unika, zaokrouhli,
 )
 
@@ -128,7 +128,7 @@ def obce_oboru(volby_r, uchazecu: dict[str, int], mapa: dict, kontext: dict, sou
 
 
 def popis_mesta(mesto: str, volby, rok: int, predchozi: int | None, cast: dict, n: dict, mapa: dict,
-                hrany: dict, rng) -> dict:
+                hrany: dict, rng, jistota: dict | None = None) -> dict:
     vyber = {k for k in cast if mapa.get(k, {}).get("obec") == mesto}
     pred = prednost(volby[rok], cast)
     pred_minule = prednost(volby[predchozi], cast) if predchozi else {}
@@ -149,6 +149,8 @@ def popis_mesta(mesto: str, volby, rok: int, predchozi: int | None, cast: dict, 
                 "podil_prvnich_voleb_v_okruhu": round(prvni[k] / unik[c], 2) if prvni[k] >= MIN else None,
                 "prednost_v_okruhu": round(pr["vys"] / (pr["vys"] + pr["niz"]), 2) if pr["vys"] + pr["niz"] >= MIN else None,
                 "prednost_predchozi": round(prm["vys"] / (prm["vys"] + prm["niz"]), 2) if prm["vys"] + prm["niz"] >= MIN else None,
+                # Jistota zařazení (slovník ukazatelů, #366): podíl převzorkování, kde obor zůstal s okruhem.
+                "jistota": (jistota or {}).get(k),
             })
         okruh = {"id": c, "oboru": len(cl), "uchazecu": zaokrouhli(unik[c]), "obory": obory,
                  "jedne_skoly": len({k.split("_")[0] for k in cl}) == 1,
@@ -266,6 +268,7 @@ def main() -> None:
     cast, n = okruhy_v_oblastech(volby[rok], vsechny, oblast)
     hrany = graf_oboru(volby[rok], vsechny, "pocet")[0]  # hrana = aspoň 10 společných uchazečů
     rng = random.Random(277)
+    jistota = jistota_zarazeni(volby[rok], vsechny, oblast, cast)
 
     vystup = {
         "rok": rok,
@@ -273,7 +276,9 @@ def main() -> None:
         "zdroj": [s.name for _, s in roky],
         "popis": "Okruhy oborů a souběžné přihlášky podle obce (docs/navrh-shluky-oboru-2027.md, slovník ukazatelů).",
         "varianta": {"vaha": VAHA, "gamma": GAMMA, "oblasti_z_roku": [r for r, _ in roky],
-                     "oblasti_modularita": st["modularita"]},
+                     "oblasti_modularita": st["modularita"],
+                     "jistota": {"opakovani": BOOTSTRAP, "seed": 366,
+                                 "definice": "podíl převzorkování uchazečů, ve kterých obor zůstal s aspoň polovinou původních sousedů z okruhu"}},
         "meze": {"min_uchazecu": MIN, "min_oboru_okruhu": MIN_OBORU_OKRUHU, "min_uchazecu_okruhu": MIN_UCHAZECU_OKRUHU,
                  "prah_okruhu_mesta": PRAH_OKRUHU_MESTA, "prah_ukotvenych": PRAH_UKOTVENYCH},
         # souhrn po obcích u všech oborů s aspoň 10 uchazeči, i těch, které index názvů nezná (okruhy jen nad ním)
@@ -282,7 +287,7 @@ def main() -> None:
         "mesta": {},
     }
     for mesto in mesta_prehledu():
-        vystup["mesta"][mesto] = zverejnit(popis_mesta(mesto, volby, rok, predchozi, cast, n, mapa, hrany, rng))
+        vystup["mesta"][mesto] = zverejnit(popis_mesta(mesto, volby, rok, predchozi, cast, n, mapa, hrany, rng, jistota))
     # příslušnost k okruhu jen u zveřejněných okruhů; skrytý okruh nesmí prosáknout přes obor (review PR #294)
     zverejnene = {o["id"] for m in vystup["mesta"].values() for o in m["okruhy"]}
     for k, v in vystup["obory"].items():

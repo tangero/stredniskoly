@@ -1,6 +1,6 @@
 # Zdroje dat
 
-Verze 1.30 · 5. 10. 2026 · **Závazný soupis. Před návrhem stránky nebo funkce se prochází celý.**
+Verze 1.33 · 5. 10. 2026 · **Závazný soupis. Před návrhem stránky nebo funkce se prochází celý.**
 
 Tenhle dokument vznikl kvůli konkrétní chybě. Návrh stránky školy jsem sestavil z toho, co web už zobrazoval, místo z toho, co je ve zdrojových souborech. Tři užitečné údaje proto ležely nepoužité v souborech, které jsem měl otevřené: rozpad přihlášek podle priority jako podíl, souběžné přihlášky uchazečů a nejnižší výsledek jednotné zkoušky mezi přijatými. Poslední z nich byl dokonce už spočítaný a uložený v katalogu, zatímco [slovník ukazatelů](slovnik-ukazatelu.md) tvrdil, že ho nemáme.
 
@@ -40,6 +40,7 @@ Ukazatel se pak zavádí podle [slovníku ukazatelů](slovnik-ukazatelu.md). Ten
 | Veletrhy a přehlídky středních škol | vlastní rešerše pořadatelů, `docs/prijimacky-veletrhy-poradatele-2026.xlsx` → tabulka `veletrh_akce` (od 26. 9. 2026, snímek `src/data/veletrhy-2027.json`) | 25 pořadatelů a vlastní rešerše rozepsané na 95 akcí, sezóna podzim 2026 | identifikátor akce | ručně, jednou ročně; průběžně z nahlášení |
 | RSS/Atom feedy školních webů | weby škol, sklízeč `scripts/sklizec-novinek.py` | 533 z 1 093 škol s feedem | REDIZO + GUID položky | automaticky 2× denně |
 | Hranice krajů, RÚIAN | ČÚZK, SHP za celý stát (`services.cuzk.gov.cz/shp/stat/epsg-5514/1.zip`), vrstva `VUSC_P`, CC BY 4.0 → `src/data/mapa-kraju.json` | 14 krajů | kód NUTS 3 (`CZ0xx`) | ručně, při změně hranic |
+| Microsoft Clarity, souhrny simulátoru | Clarity Data Export API (`www.clarity.ms/export-data/api/v1/project-live-insights`), měřicí skript jen na `/simulator` | jen stránka simulátoru, od 5. 10. 2026 | adresa stránky × dimenze | denně skriptem `scripts/clarity-export.mjs` do soukromého repozitáře signálů (#326); web z něj nic nezobrazuje |
 
 **Co v repozitáři není.** Zdroj patří do soupisu i tehdy, když jeho soubor na disku neleží. Takových je několik:
 
@@ -424,7 +425,7 @@ Sada zatím **není v registru stavu datových sad**: registr vede období, kter
 
 Pravidlo „kontakty na web nepatří“ z verze 1.13 tím není zrušeno, ale zúženo: týká se **zobrazení na stránce**, ne zdrojového sešitu. Dohledané kontakty, které jsou podrobnější a zahrnují i přímé mobily, leží mimo repozitář v `data/veletrhy/poradatele-kontakty.json` (v `.gitignore`).
 
-**Past: ověřenost pořadatele a ověřenost termínu jsou dvě různé věci.** Sloupec `overeno` má `ano` u 14 řádků, ale znamená „ověřili jsme, že tuhle akci tato organizace pořádá“, ne „tohle datum platí“. Královéhradecká komora má `overeno = ano` a v termínech „2026 TBD (2025: Trutnov 10.–11. 10.; …)“. Odvozený soubor proto nese vlastní příznak `terminPotvrzen` a **zobrazuje se jen akce, která ho má**. Z 96 záznamů jich je 79; zbylých 17 nese pole `cekaNa` s důvodem.
+**Past: ověřenost pořadatele a ověřenost termínu jsou dvě různé věci.** Sloupec `overeno` má `ano` u 14 řádků, ale znamená „ověřili jsme, že tuhle akci tato organizace pořádá“, ne „tohle datum platí“. Královéhradecká komora má `overeno = ano` a v termínech „2026 TBD (2025: Trutnov 10.–11. 10.; …)“. Odvozený soubor proto nese vlastní příznak `terminPotvrzen` a **zobrazuje se jen akce, která ho má**. Z 96 záznamů jich je 80; zbylých 16 nese pole `cekaNa` s důvodem.
 
 **Pokrytí není úplné a netvrdí se, že je.** Po rešerši 24. 9. 2026 má rozpis 95 záznamů, z toho 77 zobrazitelných, a **všech čtrnáct krajů** aspoň jednu zobrazitelnou akci. Mezery zůstávají tam, kde pořadatel letošní termín ještě nezveřejnil (Ústí nad Labem, Louny, Pelhřimov, Klatovy a další, všechny vedené jako čekající s loňským termínem v `cekaNa`). Stránka to říká výslovně a nabízí formulář pro nahlášení chybějící akce.
 
@@ -497,6 +498,26 @@ Zváženo a zamítnuto: **barva kraje podle počtu akcí** (kartogram) a **poče
 
 V registru je jako sada `ruian-kraje`.
 
+### 2.18 Microsoft Clarity, souhrny chování na simulátoru
+
+Měření chování na stránce simulátoru (#329): heatmapy kliknutí a posouvání a souhrnné ukazatele. Skript se načítá jen na `/simulator` (`src/components/MereniClarity.tsx`), bez cookies (signál `consentv2` s `denied`) a s maskovaným textem i poli. Záznamy relací, cesty a návratnost bez cookies nefungují a nepoužíváme je. Souhrny stahuje `scripts/clarity-export.mjs` (3 dotazy denně, limit API 10, data nejvýš za 3 dny) a ukládá je mimo veřejný repozitář; skript zápis do něj odmítne. Web z těchto dat nic nezobrazuje, proto nejsou v registru datových sad ani ve slovníku ukazatelů. Vyhodnocení užitku po sezóně: připomínka s termínem 2027-05-31.
+
+Odpověď API je seznam ukazatelů (`metricName`) a u každého pole `information` s řádky podle zvolené dimenze (`dimension1` = `URL`, `Device`, `Browser`). Ověřeno dotazem 5. 10. 2026.
+
+| Ukazatel (`metricName`) | Obsah | Otázka | Používáme |
+|---|---|---|---|
+| `Traffic` | počet relací a zobrazení, podíl botů | kolik lidí simulátor používá | ano, jako základ pro ostatní podíly |
+| `ScrollDepth` | průměrná hloubka posunutí stránky | dočtou lidé k výsledkům a výhradám? | ano |
+| `EngagementTime` | aktivní a celkový čas na stránce | ne jako cíl; jen k rozlišení odchodu po načtení | ano, jen v souhrnu |
+| `RageClickCount` | opakovaná rychlá kliknutí na totéž místo | kde se uživatel zasekl | ano |
+| `DeadClickCount` | kliknutí bez odezvy | co vypadá jako ovládací prvek a není | ano |
+| `QuickbackClick` | rychlý návrat po kliknutí | odkaz, který vedl jinam, než čekali | ano |
+| `ErrorClickCount` | kliknutí, po kterém nastala chyba skriptu | rozbitá funkce | ano |
+| `ScriptErrorCount` | chyby skriptu na stránce | rozbitá funkce | ano |
+| `ExcessiveScroll` | posouvání sem a tam | hledání na dlouhé stránce | ano |
+
+Heatmapy a mrtvá kliknutí po prvcích jsou jen v rozhraní Clarity, API je nevrací. Zváženo a zamítnuto: **záznamy relací** (bez cookies nefungují a jsou zbytečně podrobné), **dimenze `OS`, `Country/Region`, `Source`, `Medium`, `Campaign`, `Channel`, `Referrer`** (návštěvnost podle zdroje a země už dává Matomo, třetí dimenze by spotřebovala limit dotazů bez nové otázky).
+
 ## 3. Sloupce, které nepoužíváme
 
 Tohle je hlavní důvod existence dokumentu. Seřazeno podle toho, kolik by to dalo rodiči.
@@ -527,7 +548,7 @@ Tohle je hlavní důvod existence dokumentu. Seřazeno podle toho, kolik by to d
 | Ředitel a délka jeho funkce | rejstřík, `reditel` | stabilita vedení | sporná vypovídací hodnota |
 | Kdo na veletrhu vystavuje | **v žádném zdroji není** | „Bude tam škola, která mě zajímá?“ Jediný podklad, podle kterého by šlo poctivě upozornit na veletrh na stránce školy | seznamy vystavovatelů zveřejňují pořadatelé nestejně, část až týden před akcí, část vůbec. Chce se získat od pořadatelů jako součást mediálního partnerství, viz [veletrhy](veletrhy-skol-2027.md) § 7 |
 | Kontakty na pořadatele veletrhů | veletrhy, `kontaktni_osoba`, `email`, `telefon`; dohledané kontakty v `data/veletrhy/poradatele-kontakty.json` | žádná | na web nepatří ze stejného důvodu jako kontakt na školu. Soubor s dohledanými kontakty (9 organizací, 15 osob) je v `.gitignore` a čte se jen lokálně při obesílání — jsou to jména, služební e-maily a mobily konkrétních lidí |
-| Nepotvrzené termíny veletrhů | veletrhy, 17 z 96 záznamů | „Koná se u nás vůbec něco?“ — všech 14 krajů má k 24. 9. 2026 zobrazitelnou akci, přehled ale není úplný | termín 2026 není potvrzený, u části jde o loňské datum. Zobrazit by znamenalo zopakovat chybu pole `dny_otevrenych_dveri` z § 2.8. Záznamy nesou `cekaNa` s tím, co chybí |
+| Nepotvrzené termíny veletrhů | veletrhy, 16 z 96 záznamů | „Koná se u nás vůbec něco?“ — všech 14 krajů má k 24. 9. 2026 zobrazitelnou akci, přehled ale není úplný | termín 2026 není potvrzený, u části jde o loňské datum. Zobrazit by znamenalo zopakovat chybu pole `dny_otevrenych_dveri` z § 2.8. Záznamy nesou `cekaNa` s tím, co chybí |
 
 **Dobíhající obor neříká, co se od něj čekalo.** Do 17. 9. 2026 tu stálo, že příznak poslouží jako varování „škola tenhle obor zavírá“ před podáním přihlášky. Měření to vyvrátilo: proti snímku rejstříku k 30. 6. 2026 je **nula z 3 091 nabídek** 1. kola 2026 vedena jako dobíhající. Hrubý join na REDIZO a KKOV dá 29 zásahů, ale **všech 29 je falešných** — pokaždé dobíhá jiná forma nebo délka téhož oboru, typicky dálková nástavba vedle denní. Závěr platí i při nejširší definici druhu školy. Reprodukuje `python3 scripts/dobihajici-obory.py`, doklad `docs/podklady/dobihajici-obory.json`.
 
@@ -649,7 +670,7 @@ Plné převzetí bez člověka se nedoporučuje: CERMAT soubory přepisuje i mě
 
 <!-- stav-datovych-sad:od -->
 
-_Vygenerováno z `public/stav_datovych_sad.json` dne 2026-10-02. Neupravovat ručně._
+_Vygenerováno z `public/stav_datovych_sad.json` dne 2026-10-05. Neupravovat ručně._
 
 | Sada | Použití | Zobrazujeme | Odkud | Zveřejněno, nepřevzato | Čekáme | Kdy | Po přepnutí |
 |---|---|---|---|---|---|---|---|
@@ -664,8 +685,8 @@ _Vygenerováno z `public/stav_datovych_sad.json` dne 2026-10-02. Neupravovat ru�
 | `msmt-rejstrik-snimky` | web | 2026-06-30 | `data/msmt_rejstrik/rssz-2026-06-30.jsonld` | 2025-06-30, 2025-09-30 | 2026-09-30 | 2026-10, odhad | Starší snímky zůstávají pro návaznost oborů mezi roky. |
 | `msmt-rejstrik-csv` | web | 2026-02-11 | `data/Rejstrik_skol/SkolyAMista.csv` | — | — | neznámo | Nahrazuje se celý. |
 | `msmt-akko` | analýza | 2026-03-08 | `data/AKKO-Kmenové_obory vzdělání (KKOV 5místné).csv` | — | — | neznámo | Nahrazuje se celý. |
-| `csi-inspekce` | web | 2026-09-07 | `data/csi_snapshots` | — | — | neznámo | Starší snímky zůstávají v data/csi_snapshots s manifestem. |
-| `csi-extrakce` | web | 2026-05-29 | `data/inspection_extractions.json` | — | — | 2026-11, odhad | Starší zpráva téže školy zůstává sbalená pod novější. |
+| `csi-inspekce` | web | 2026-10-05 | `data/csi_snapshots/csi_inspections_2026-10-05T12-16-15-633Z.json` | — | — | 2026-10neznámo | Starší snímky zůstávají v data/csi_snapshots s manifestem. |
+| `csi-extrakce` | web | 2026-06-16 | `data/inspection_extractions.json` | — | — | 2026-11, odhad | Starší zpráva téže školy zůstává sbalená pod novější. |
 | `csi-inspis` | web | 2026-02-11 | `data/inspis_school_profiles.json` | — | — | neznámo | Nahrazuje se celý. |
 | `doprava-gtfs` | web | 2026-02-07 | `data/PID_GTFS.zip` | — | — | neznámo | Nahrazuje se celý. |
 | `katalog-historie` | web | 2025 | `public/schools_data.json` | — | — | neznámo | Nepřepíná se. |
@@ -685,7 +706,7 @@ _Vygenerováno z `public/stav_datovych_sad.json` dne 2026-10-02. Neupravovat ru�
 | `cermat-kapacity` | jen detekce | HTTP HEAD: před zveřejněním 404, po revizi nové Last-Modified; katalogová stránka vypisuje dostupné roky. | Chybí udržovaný importér pro fázi před výsledky. scripts/import_cermat_2026_real.py je podle docs/aktualizace-kalendar-data-2027.md zastaralý; scripts/refresh_cermat_data.py čte až soubor výsledků. | Napsat importér kapacit a přihlášek pro jarní fázi, pak revize importu a přepnutí. |
 | `cermat-prihlasky` | jen detekce | HTTP HEAD: před zveřejněním 404, po revizi nové Last-Modified; katalogová stránka vypisuje dostupné roky. | Chybí udržovaný importér pro fázi před výsledky. scripts/import_cermat_2026_real.py je podle docs/aktualizace-kalendar-data-2027.md zastaralý; scripts/refresh_cermat_data.py čte až soubor výsledků. | Napsat importér kapacit a přihlášek pro jarní fázi, pak revize importu a přepnutí. |
 | `cermat-vysledky` | příprava | HTTP HEAD a katalogová stránka, stejně jako u kapacit. | scripts/refresh_cermat_data.py --input-dir s výsledky aktuálního a předchozího roku; kontroluje hlavičky, kolize, rozsah skóre a součet priorit a ukládá sha256 a datum platnosti. | Stáhnout oba soubory, spustit import a testy, zrevidovat rozdíly počtů a přepnout. |
-| `cermat-uchazeci-kolo1` | příprava | HTTP HEAD a katalogová stránka Datové soubory. | scripts/build-pasma-prijeti.py, scripts/build-soubeh-prihlasek.py, scripts/build-kontext-prihlasek.py, po pásmech scripts/build-simulator-pasma.py (index simulátoru, čte i kritéria a katalog); doklad stability mezi ročníky scripts/validate-pasma-prijeti.py --rocniky STARY-NOVY. Výstupy nesou rok v názvu, registr ho drží zástupným {obdobi}, ne napevno. Pozor: scripts/enrich_schools_data.py čte sloupce podle pozice a s textovým příznakem přijetí by počítal chybně; datová linka ho nespouští a katalogové minimum se na webu nezobrazuje. | Převzetí mění čísla v dokladech tezí a na webu, proto revize výsledků validace před přepnutím. |
+| `cermat-uchazeci-kolo1` | příprava | HTTP HEAD a katalogová stránka Datové soubory. | scripts/build-pasma-prijeti.py, scripts/build-soubeh-prihlasek.py, scripts/build-kontext-prihlasek.py, po pásmech scripts/build-simulator-pasma.py (index simulátoru, čte i kritéria a katalog), po kontextu a souběhu scripts/build-okruhy-oboru.py (okruhy oborů a souběžné přihlášky podle obce, issue #277; oblasti přihlášek ze sloučených dat zobrazeného roku a dvou let před ním, linka je k novému souboru stáhne); doklad stability mezi ročníky scripts/validate-pasma-prijeti.py --rocniky STARY-NOVY. Výstupy nesou rok v názvu, registr ho drží zástupným {obdobi}, ne napevno. Pozor: scripts/enrich_schools_data.py čte sloupce podle pozice a s textovým příznakem přijetí by počítal chybně; datová linka ho nespouští a katalogové minimum se na webu nezobrazuje. | Převzetí mění čísla v dokladech tezí a na webu, proto revize výsledků validace před přepnutím. |
 | `cermat-uchazeci-kolo2` | jen detekce | HTTP HEAD. | scripts/build-pro-novinare.py (balíček uchazečů a souhrn pro /pro-novinare); vstup se ověřuje otiskem proti zobrazenému období. | Stáhnout soubor do data/, přepnout období příkazem prepni se --soubor (zapíše otisk), přegenerovat balíčky pro novináře a zkontrolovat čísla na /pro-novinare. |
 | `cermat-polozkova-jpz` | jen detekce | HTTP HEAD pro šest testů. | Jen dokladový výpočet v scripts/validate-pasma-prijeti.py. | Není na webu, převzetí podle potřeby analýzy. |
 | `cermat-maturita` | příprava | HTTP HEAD a katalogová stránka. | scripts/build-maturita-skoly.py; v datové lince zpracovatel cermat-maturita stáhne k jarnímu souboru tři předchozí jarní ročníky a doplní je do stávajícího výstupu. Stav po podzimu (jap) se nepřebírá. | Schválit úlohu, zkontrolovat počty v pull requestu, přepnout období v registru. |
@@ -722,7 +743,8 @@ _Vygenerováno z `public/stav_datovych_sad.json` dne 2026-10-02. Neupravovat ru�
 
 | Verze | Změna |
 |---|---|
-| 1.31 | Oddíl 4: past 8, nedenní formy se stejným id v katalogu 2025 a jejich přenos do ročníku 2026 (#365). |
+| 1.33 | Oddíl 4: past 8, nedenní formy se stejným id v katalogu 2025 a jejich přenos do ročníku 2026 (#365). |
+| 1.32 | Nový zdroj 2.18 Microsoft Clarity, souhrny chování na simulátoru (#329); web z něj nic nezobrazuje. |
 | 1.30 | Oddíl 4, past 7: úplný název školy z rejstříku pro zobrazení u názvů se zkratkou (#363); oddíl 2.4 `identifikace.uplny_nazev` nově i pro web. |
 | 1.29 | Oddíl 2.10: souhrny 1. kola nesou i ročník 2024 (`PZ2024_kolo1_skolobory_vysledky.xlsx`, rozhodnutí vlastníka 3. 10. 2026 v #277). Žádný nový sloupec. |
 | 1.28 | Oddíl 4: past 7, zkrácený název školy z rejstříku není jedinečný (okruhy a další obory na stránce města ukazovaly „Gymnázium / Gymnázium“). Žádný nový zdroj ani sloupec. |

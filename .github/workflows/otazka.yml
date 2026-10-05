@@ -1,0 +1,65 @@
+# Otázka vlastníkovi (#385, scripts/brana/otazka.mjs): AI se v issue ptá z účtu vlastníka (pravidlo 8), takže mu
+# GitHub nic neoznámí. Po přidání štítku `otazka` pošle otázku do Telegramu; po odpovědi vlastníka (komentář bez
+# patičky AI, nebo zápis s nadpisem „Odpověď vlastníka“) štítek odebere a tabule se srovná.
+#
+# Pojistky: otázku posílá jen štítek od vlastníka nebo asistenta zadání; kód z PR se nespouští (checkout main),
+# skript nemá závislosti. Secrets: Telegram jen pro zprávu, PROJECT_TOKEN jen pro odebrání štítku (aby se spustila
+# Tabule). Nic jiného nemění.
+name: Otázka vlastníkovi
+
+on:
+  issues:
+    types: [labeled]
+  issue_comment:
+    types: [created]
+
+permissions: {}
+
+concurrency:
+  group: otazka-${{ github.event.issue.number }}
+  cancel-in-progress: false
+
+jobs:
+  otazka:
+    name: Otázka vlastníkovi
+    if: >-
+      !github.event.issue.pull_request && (
+        (github.event_name == 'issues' && github.event.label.name == 'otazka') ||
+        (github.event_name == 'issue_comment' && contains(github.event.issue.labels.*.name, 'otazka')))
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: read
+      issues: read
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          persist-credentials: false
+
+      - name: Účty z rezimy.yml
+        run: |
+          echo "VLASTNIK=$(yq -r '.vlastnik' .github/rezimy.yml)" >> "$GITHUB_ENV"
+          echo "ASISTENT=$(yq -r '.asistent' .github/rezimy.yml)" >> "$GITHUB_ENV"
+
+      - name: Otázka do Telegramu
+        if: github.event_name == 'issues'
+        env:
+          UDALOST: stitek
+          CISLO: ${{ github.event.issue.number }}
+          AKTER: ${{ github.event.sender.login }}
+          GITHUB_TOKEN: ${{ github.token }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: node scripts/brana/otazka.mjs
+
+      - name: Odpověď odebere štítek
+        if: github.event_name == 'issue_comment'
+        env:
+          UDALOST: komentar
+          CISLO: ${{ github.event.issue.number }}
+          KOMENTAR_AUTOR: ${{ github.event.comment.user.login }}
+          KOMENTAR_TELO: ${{ github.event.comment.body }}
+          GITHUB_TOKEN: ${{ github.token }}
+          STITKY_TOKEN: ${{ secrets.PROJECT_TOKEN }}
+        run: node scripts/brana/otazka.mjs

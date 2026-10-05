@@ -1,6 +1,7 @@
 # Ověření kritérií zadání v produkci (#325, docs/navrh-rizeni-vyvoje-2027.md, oddíly 11 a 16): po nasazení
 # main a jednou týdně projde zadání sloučená za 14 dní a jejich kritéria s adresou na webu zkontroluje na
-# https://www.prijimackynaskolu.cz (scripts/brana/overeni-produkce.mjs). Bez modelu, jen skript.
+# https://www.prijimackynaskolu.cz (scripts/brana/overeni-produkce.mjs). Bez modelu, jen skript. Po nasazení main
+# navíc pošle vlastníkovi do Telegramu nasazené změny webu s adresou a vysvětlením (scripts/brana/oznameni-nasazeni.mjs).
 #
 # Pojistky:
 # - Spouští se z main (workflow_run po Testech na main, plán, ruční spuštění); kód větví se nespouští.
@@ -68,3 +69,14 @@ jobs:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
         run: node scripts/brana/overeni-produkce.mjs
+
+      # Oznámení vlastníkovi (#383, RA45): nasazené změny webu s adresou a vysvětlením do Telegramu, každý PR jednou.
+      # Jen po nasazení main; selhání ověření kritérií oznámení nezastaví.
+      - name: Oznámit nasazení vlastníkovi
+        if: github.event_name == 'workflow_run' && !cancelled()
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          PRODUKCE_SHA: ${{ github.event.workflow_run.head_sha }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: node scripts/brana/oznameni-nasazeni.mjs
