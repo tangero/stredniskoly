@@ -475,6 +475,9 @@ test('část obce okruhu: převažující podle uchazečů místních oborů, dr
   // Obor z jiné obce se nepočítá.
   assert.equal(castOkruhu([r('2', 900, 'Beroun'), r('1', 10)], casti), 'Praha 4');
   assert.equal(castOkruhu([r('9', 100)], casti), null);
+  // Okruh po celém městě (žádná část nemá 40 %, první dvě ani 60 %) část obce nedostane.
+  const rozptyl = new Map([...'abcdefg'].map(c => [c, `Praha ${c}`]));
+  assert.equal(castOkruhu([...'abcdefg'].map(c => r(c, 100)), rozptyl), null);
 });
 
 test('Ostrava: okruhy umění se liší převažujícím oborem, ekonomika skupinou oborů', async () => {
@@ -482,5 +485,6 @@ test('Ostrava: okruhy umění se liší převažujícím oborem, ekonomika skupi
   const jmena = [...okruhy, ...nastavby].map(o => o.nazev);
   assert.ok(jmena.includes('Ekonomika, obchod a správa: právo a veřejná správa'), jmena.join(' | '));
   assert.ok(jmena.includes('Ekonomika, obchod a správa: podnikání'), jmena.join(' | '));
-  assert.equal(jmena.filter(n => n.startsWith('Umění a design · Moravská Ostrava')).length, 2);
+  assert.equal(jmena.filter(n => n.startsWith('Umění a design')).length, 2, jmena.join(' | '));
+  assert.ok(!jmena.some(n => n.includes('Moravská Ostrava')), jmena.join(' | '));
 });
