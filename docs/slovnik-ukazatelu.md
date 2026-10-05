@@ -1,6 +1,6 @@
 # Slovník ukazatelů
 
-Verze 1.57 · 4. 10. 2026 · **Závazný soupis. Nový ukazatel se nezavádí bez zápisu sem.**
+Verze 1.58 · 5. 10. 2026 · **Závazný soupis. Nový ukazatel se nezavádí bez zápisu sem.**
 
 Každý ukazatel má jeden název, jednu definici a jeden způsob výpočtu. Když se veličina objeví na webu, v datech, v API nebo v dokumentaci, používá se jméno z tohoto soupisu. Když se způsob výpočtu změní, změní se tady a zároveň se přepíše verze.
 
@@ -83,6 +83,15 @@ Stabilita: okruhy let 2024, 2025 a 2026 uvnitř oblastí se na oborech v okruzí
 Obor z jiné obce se na stránce města v okruhu ukáže, jen když je **ukotvený**: má s některým oborem okruhu ve městě aspoň 10 společných uchazečů (pole `ukotven_k_mistu`). Jinak ho do okruhu mohl přivést jen řetěz slabších vazeb. Ročník 2024 je z dat uchazečů stažených 3. 10. 2026 se souhlasem vlastníka (issue #277).
 
 **Neříká nic o kvalitě ani o obtížnosti** oborů v okruhu. Neříká, že obory jsou si obsahově podobné: spojuje je to, že se na ně hlásili titíž uchazeči. **Není to pevná kategorie**: obory na okraji okruhu se mezi ročníky přesouvají do sousedního. Za okruh se nezveřejňuje nic pod 10 uchazeči a všechny počty a podíly okruhu se posuzují společně, aby nešlo dopočítat skrytý malý obor (*Podíl prvních voleb v okruhu*).
+
+### Jistota zařazení do okruhu
+Jak pevně obor patří do svého *Okruhu oborů*: `počet převzorkování, ve kterých obor zůstal s aspoň polovinou oborů, se kterými sdílí okruh ÷ počet převzorkování`. Uchazeči zobrazeného roku se 100× losují s vracením (bootstrap), oblasti přihlášek zůstávají pevné a okruhy se v nich spočítají stejně jako ostrý výpočet. Pevné semínko (366) dělá výsledek deterministickým. Pole `jistota` u oboru okruhu v `public/okruhy_oboru_{rok}.json` (`mesta.{město}.okruhy[].obory[]`), výpočet `jistota_zarazeni` ve `scripts/okruhy_oboru.py` (issue #366, podnět uživatele s bootstrapem v síti brněnských oborů). Jednotka: podíl 0 až 1. Obor bez sousedů v okruhu se nepočítá.
+
+Rok 2026, obory zveřejněných okruhů (2 957): pod 0,5 je 13 %, pod 0,6 21 %, pod 0,9 54 %. Dva výpočty s jiným semínkem se liší v mediánu o 0,02 (p95 o 0,11) a na stejné straně hranice 0,6 skončí 95 % oborů (u hranice 0,5 se shoda neměřila).
+
+Na webu se zobrazuje jen pod **0,5** jako „na pomezí okruhů“: obor ve většině převzorkování skončil s většinou jiných oborů než ve svém okruhu. Nad touto hranicí se nic neukazuje. Nezveřejňuje počty, takže zveřejnění žádnou skupinu pod 10 uchazeči neprozradí.
+
+**Neříká, že obor do okruhu nepatří** ani do kterého jiného patří, a nic o kvalitě ani obtížnosti oboru. Říká jen, jak citlivé je zařazení na náhodu v tom, kdo se v daném ročníku hlásil. Neříká nic o vývoji mezi ročníky (to popisuje *Přesun zájmu v okruhu*).
 
 ### Oblast přihlášek
 Spádová oblast odhadnutá z přihlášek: skupina oborů v celé zemi, mezi kterými se uchazeči hlásí. Louvain (normovaná váha, γ = 1,0, nejlepší ze 30 běhů) nad grafem, ve kterém se přihlášky všech dostupných ročníků (dnes 2024–2026) sčítají; uzel a hrana aspoň 10 uchazečů jako u *Okruhu oborů*. Pole `oblast` jen uvnitř výpočtu, v podkladu varianty pod `bez_hranic.varianty_oblasti`. Jednotka: příslušnost oboru k oblasti.
@@ -823,6 +832,7 @@ Například „Vyvážený obor“. Způsob zařazení není dohledaný. Platí 
 
 | Verze | Změna |
 |---|---|
+| 1.58 | Nový ukazatel *Jistota zařazení do okruhu* (5. 10. 2026, issue #366): bootstrap uchazečů, 100 opakování, na webu jen pod 0,5 jako „na pomezí okruhů“. |
 | 1.57 | *Souběžné přihlášky podle obce*: zveřejněné počty společných uchazečů se berou z obou stran dvojice oborů (review PR #294). Kontrola hotového výstupu stejným směrem. |
 | 1.56 | Generátor pro web `scripts/build-okruhy-oboru.py` a soubor `public/okruhy_oboru_{rok}.json` (etapa 2a, #277); *Souběžné přihlášky podle obce* se posuzují i proti počtům z kontextu a souběhu přihlášek. Výpočet beze změny. |
 | 1.55 | Okruhy bez hranic měst (3. 10. 2026, rozhodnutí vlastníka, issue #277): nová *Oblast přihlášek* a *Souběžné přihlášky podle obce*; *Okruh oborů* se hledá uvnitř oblasti přihlášek, ukotvení oborů z okolí; *Podíl okruhu na uchazečích města* přejmenován na *Podíl okruhu na uchazečích oblasti*. |

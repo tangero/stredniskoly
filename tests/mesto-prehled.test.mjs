@@ -7,6 +7,7 @@
  * Spuštění: node --test tests/mesto-prehled.test.mjs
  */
 
+import fs from 'node:fs';
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import React from 'react';
@@ -499,6 +500,25 @@ test('Ostrava: okruhy umění se liší převažujícím oborem, ekonomika skupi
   const konzervatore = [...okruhy, ...nastavby].find(o => String(o.id) === '70001');
   assert.ok(konzervatore?.nazev.includes('hudebně dramatické umění'), [...okruhy, ...nastavby].map(o => `${o.id}:${o.nazev}`).join(' | '));
   for (const j of ['Brno', 'Opava', 'Praha']) assert.ok(!jmena.some(n => n.includes(j)), `${j}: ${jmena.join(' | ')}`);
+});
+
+// ---------------------------------------------------------------------------
+// Jistota zařazení do okruhu (#366)
+// ---------------------------------------------------------------------------
+
+test('jistota zařazení je v souboru u všech oborů okruhů v rozsahu 0–1', () => {
+  const data = JSON.parse(fs.readFileSync('public/okruhy_oboru_2026.json', 'utf8'));
+  const hodnoty = Object.values(data.mesta).flatMap(m => m.okruhy.flatMap(o => o.obory.map(x => x.jistota)));
+  assert.ok(hodnoty.length > 1000);
+  assert.ok(hodnoty.every(v => typeof v === 'number' && v >= 0 && v <= 1));
+});
+
+test('Brno: štítek na pomezí okruhů jen u oborů s jistotou pod 0,5', async () => {
+  const { data, okruhy, nastavby } = await okruhyMesta('Brno');
+  const jistota = new Map(data.okruhy.flatMap(o => o.obory.map(x => [x.klic, x.jistota])));
+  const radky = [...okruhy, ...nastavby].flatMap(o => o.radky);
+  assert.ok(radky.some(r => r.naPomezi) && radky.some(r => !r.naPomezi));
+  for (const r of radky) assert.equal(r.naPomezi, jistota.get(r.klic) < 0.5, r.klic);
 });
 
 // ---------------------------------------------------------------------------
