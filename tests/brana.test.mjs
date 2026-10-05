@@ -634,3 +634,20 @@ test('PR se zadáním a změnou webu potřebuje oddíl Pro vlastníka (RA45)', (
   // Změna jen v dokumentaci oddíl nepotřebuje.
   assert.equal(run({ pr: pr({ telo: 'Closes #10' }), soubory: [soubor('docs/x.md')] }).uspech, true);
 });
+
+test('automatická obnova dat projde bez souhlasu a review, jen z povolené větve a s povolenými cestami (RA46)', () => {
+  const data = [soubor('src/data/veletrhy-2027.json', 200), soubor('public/stav_datovych_sad.json', 4), soubor('docs/zdroje-dat.md', 2)];
+  const obnova = (o = {}) => pr({ telo: 'Automatický export.', komentare: [], vetev: 'auto/veletrhy-snimek', zForku: false, ...o });
+  const v = run({ pr: obnova(), issues: [], soubory: data });
+  assert.equal(v.uspech, true, v.duvody.join('; '));
+  assert.equal(v.rezim, 'R');
+  assert.match(v.duvody.join(), /automatická obnova dat/);
+  // Cesta mimo povolené, jiná větev, fork, cizí autor nebo propojené zadání: posuzuje se jako dřív.
+  assert.equal(run({ pr: obnova(), issues: [], soubory: [...data, soubor('src/app/page.tsx')] }).uspech, false);
+  assert.equal(run({ pr: obnova({ vetev: 'zadani/1-x' }), issues: [], soubory: data }).uspech, false);
+  assert.equal(run({ pr: obnova({ zForku: true }), issues: [], soubory: data }).uspech, false);
+  assert.equal(run({ pr: obnova({ autor: 'eduarda-prijimacky' }), issues: [], soubory: data }).uspech, false);
+  const csi = [soubor('data/csi_manifest.json'), soubor('data/csi_snapshots/csi_2026-10-05.json'), soubor('inspekce/data/outputs/m/GY4_1.json')];
+  assert.equal(run({ pr: obnova({ vetev: 'codex/csi-weekly-refresh' }), issues: [], soubory: csi }).uspech, true);
+  assert.equal(run({ pr: obnova({ vetev: 'codex/csi-weekly-refresh' }), issues: [], soubory: data.slice(0, 1) }).uspech, false);
+});

@@ -169,6 +169,8 @@ export async function nactiPr(api, cislo) {
       vytvoreno: p.created_at,
       upraveno: p.updated_at,
       hlava: { sha: p.head.sha },
+      vetev: p.head.ref,
+      zForku: p.head.repo?.full_name !== p.base.repo?.full_name,
       komentare: await komentare(api, cislo),
       udalosti: await udalosti(api, cislo),
     },

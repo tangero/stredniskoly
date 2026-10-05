@@ -86,6 +86,12 @@ vlastníka, proto se některá pravidla níže vynucují technicky.
    na PR nebo propojeném issue zastaví i opravy. Zastavit smyčku smíš i ty: přidej `stop` nebo
    `potrebuje-cloveka`, když se opravy točí v kruhu.
 
+## Otázky a odpovědi vlastníka
+
+Když Claude Code v issue čeká na odpověď vlastníka, má issue štítek `otazka` a vlastník otázku dostal do Telegramu.
+Když ti vlastník odpoví na briefingu, zapiš jeho odpověď do issue komentářem s nadpisem `## Odpověď vlastníka`;
+štítek pak sám zmizí a práce pokračuje. Když se ptáš ty, přidej štítek `otazka` stejně.
+
 ## Souhrn nasazení pro vlastníka
 
 PR, které brána pustí, se slučují automaticky a vlastník je jednotlivě nekontroluje (RA40). Změny webu mu po

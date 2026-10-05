@@ -14,6 +14,7 @@ dokument popisuje nastavení GitHubu, na kterém stojí.
 | `navrh` | čeká na schválení Patrickem, nerealizovat |
 | `schvaleno` | Claude Code může realizovat; přidává jen Patrick |
 | `zamitnuto` | nerealizovat |
+| `otazka` | AI se ptá vlastníka; otázka mu jde do Telegramu (workflow Otázka vlastníkovi), štítek zmizí po jeho odpovědi |
 | `oponentura` | problém pro nový projekt projde oponenturou (workflow Oponentura) a štítek se sám odebere; mezitím nerealizovat |
 | `k-overeni` | otevřený PR s protokolem z preview (ověřuje AI, vlastník volitelně); po sloučení ho z otevřeného issue (etapa projektu) odebere workflow Tabule |
 | `pripominka` | úkol s termínem; před termínem se nerealizuje |
@@ -64,7 +65,7 @@ při každé změně štítků, issues a PR, po každém běhu brány sloučení
 | stav | podle čeho | kdo je na tahu |
 |---|---|---|
 | Hlášení | veřejná hlášení, připomínky a issues bez stavového štítku | třídění (AI) |
-| Návrh | `navrh` (bez `schvaleno`) nebo `stop` | **vlastník** |
+| Návrh | `navrh` (bez `schvaleno`), `stop` nebo `otazka` (AI čeká na odpověď) | **vlastník** |
 | Oponentura | `oponentura` (má přednost i před `navrh`): návrh posuzuje workflow Oponentura, pak jde k vlastníkovi | AI |
 | Schváleno | `schvaleno` nebo doklad `Zdroj:` v interním zadání, žádný otevřený PR | denní úloha podle Směru vývoje |
 | V PR | otevřený PR s `Closes #N` nebo `Souvisí s #N` (CI, review, vypořádání, lhůta) | AI |
@@ -95,6 +96,15 @@ Secrets: `CLAUDE_CODE_OAUTH_TOKEN`, `KIMI_API_KEY` (klíč z konzole Kimi Code, 
 a `PROJECT_TOKEN` na změnu štítků. Výchozí rozhraní Kimi je `https://api.kimi.ai/coding/`; účet z kimi.com
 (Čína) potřebuje proměnnou repozitáře `KIMI_BASE_URL` s hodnotou `https://api.kimi.com/coding/`. Verze Claude
 Code je ve workflow připnutá; novější připni až po ověření s Kimi.
+
+**Otázka vlastníkovi** (`.github/workflows/otazka.yml`, `scripts/brana/otazka.mjs`, #385): AI píše z účtu vlastníka,
+takže mu GitHub o jejích otázkách nic neoznámí. Když se ptá, přidá štítek `otazka`; workflow pošle poslední
+komentář AI do Telegramu s odkazem. Komentář vlastníka bez patičky AI, nebo zápis jeho odpovědi s nadpisem
+„Odpověď vlastníka“ (od něj nebo od asistenta zadání), štítek odebere (přes `PROJECT_TOKEN`, aby se srovnala tabule).
+
+**Automatické obnovy dat** (RA46): PR z větví `auto/veletrhy-snimek` a `codex/csi-weekly-refresh`, které mění jen
+cesty uvedené u větve v `datove_obnovy` v `rezimy.yml`, brána pustí v režimu R bez souhlasu a review; po CI se
+sloučí samy. Změna jiné cesty se posuzuje jako dřív.
 
 Potřebuje secret `PROJECT_TOKEN`, klasický token se scopes `project` a `public_repo` (fine-grained token
 do projektu na osobním účtu zapisovat neumí). Token má omezenou platnost; expiraci hlídá týdenní přehled.

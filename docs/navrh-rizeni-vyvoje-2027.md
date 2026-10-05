@@ -1,6 +1,6 @@
 # Řízení vývoje: směr určuje člověk, provedení a přehled zajišťuje AI
 
-Verze 0.13k · 5. 10. 2026 · **část A ke schválení hned, část B k rozhodnutí podle měřítek.**
+Verze 0.13l · 5. 10. 2026 · **část A ke schválení hned, část B k rozhodnutí podle měřítek.**
 Stav zavedení: fáze 0 a 1 hotové (4. 10. 2026): brána sloučení je povinná kontrola v rulesetu bez obejití,
 AI slučuje skriptem a workflow Sloučení automaticky (RA40); fáze 2 čeká (postup v
 [postup-zavedeni-faze-0.md](postup-zavedeni-faze-0.md)).
@@ -27,7 +27,7 @@ a výdaje, posílá týdenní přehled a hlásí jen výjimky.
 **Co tím odpadne:** schvalování drobných zadání, kontrola na preview a merge u zhruba 20 PR týdně,
 odpovídání na dotazy v issues, obnova většiny tokenů.
 
-**Co je potřeba schválit:** část A jako celek (rozhodnutí RA1 až RA45 v oddílu 21). Část B se rozhodne
+**Co je potřeba schválit:** část A jako celek (rozhodnutí RA1 až RA46 v oddílu 21). Část B se rozhodne
 po čtyřech týdnech provozu podle měřítek.
 
 **Zavedení po fázích podle přínosu** (oddíl 20): fáze 1 odstraní merge a kontrolu preview, fáze 2 přidá
@@ -676,6 +676,7 @@ ověří ho měřítka.
 | RA43 | Oponentura návrhů modelem Kimi K3 (předplatné Kimi Code vlastníka) na štítek `oponentura` od vlastníka nebo asistenta zadání: smysl, přínos k cílům, náklady proti přínosům a lepší řešení podle skillu `oponentura`; výsledek jde do issue, rozhoduje vlastník | **ano** (rozhodnutí vlastníka) |
 | RA44 | Oponentura jen při rozjezdu nového projektu, ručně štítkem `oponentura`: vlastník popíše problém bez řešení, Claude Code ho prozkoumá (i na webu), Claude a Kimi K3 nezávisle navrhnou řešení, navzájem je anonymně posoudí z pohledu hodnot projektu a person a syntéza předloží 2 až 3 varianty s rozhodujícím testem; vlastník vybere. Nahrazuje jednokrokovou oponenturu z RA43 | **ano** (rozhodnutí vlastníka) |
 | RA45 | Protokol z preview se nevyžaduje: PR se změnou webu se slučuje automaticky po bráně (CI, review); vlastník po nasazení dostane do Telegramu oddíl „Pro vlastníka“ z popisu PR (2 až 3 věty) s adresami na webu, každý PR jednou. Blokuje jen protokol s „nesplněno“. Nahrazuje RA42 | **ano** (rozhodnutí vlastníka) |
+| RA46 | Otázky AI na vlastníka chodí do Telegramu (štítek `otazka`, tabule je ukazuje jako jeho tah); jasnou část zadání AI realizuje a ptá se jen na nejasnou. Automatické obnovy dat (PR bez zadání z větví v `datove_obnovy`, jen povolené cesty, od účtu vlastníka, ne z forku) se slučují v režimu R bez souhlasu a review | **ano** (rozhodnutí vlastníka) |
 
 # Část B: rozšíření podle měřítek
 
@@ -705,6 +706,8 @@ Po čtyřech týdnech provozu části A:
 
 ## Změny návrhu
 
+- **0.13l** (5. 10. 2026, rozhodnutí vlastníka, zadání #385): otázky vlastníkovi do Telegramu se štítkem `otazka`, realizace
+  jasné části zadání, automatické sloučení datových obnov (RA46).
 - **0.13k** (5. 10. 2026, rozhodnutí vlastníka, zadání #383): protokol z preview se ruší jako podmínka brány, místo něj
   oznámení po nasazení do Telegramu s adresou a vysvětlením (RA45).
 - **0.13j** (5. 10. 2026, rozhodnutí vlastníka, zadání #358): oponentura nového projektu ve fázích problém, průzkum,

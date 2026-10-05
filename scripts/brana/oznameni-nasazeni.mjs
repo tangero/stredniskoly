@@ -7,7 +7,7 @@
 
 import fs from 'node:fs';
 import { pathToFileURL } from 'node:url';
-import { BOT, proVlastnika, rozbor } from './brana.mjs';
+import { BOT, datovaObnova, proVlastnika, rozbor } from './brana.mjs';
 import { REPO, oblastiZLabeleru, vytvorApi } from './data.mjs';
 
 const DEN = 24 * 60 * 60 * 1000;
@@ -15,6 +15,7 @@ export const OKNO = 3 * DEN;
 // PR sloučené před zavedením oznámení se zpětně neoznamují.
 export const OD = Date.parse('2026-10-05T00:00:00Z');
 export const MAX_ADRES = 3;
+export const TEXT_OBNOVY = 'Pravidelná automatická obnova dat. Vzhled webu se nemění, mohou se změnit jen údaje.';
 export const ZNACKA = (sha) => `<!-- oznameni-nasazeni sha=${sha} -->`;
 const CTI_ZNACKU = /<!-- oznameni-nasazeni sha=[0-9a-f]{7,40} -->/;
 
@@ -104,7 +105,10 @@ async function main() {
   if (!nanecisto && (!process.env.TELEGRAM_BOT_TOKEN || !process.env.TELEGRAM_CHAT_ID)) return console.log('Telegram není nastavený, oznámení neposílám.');
 
   const zavrene = await api(`repos/${REPO}/pulls?state=closed&base=main&sort=updated&direction=desc&per_page=100`);
-  const prs = zavrene.map((p) => ({ cislo: p.number, titulek: p.title, telo: p.body || '', slouceno: p.merged_at, zakladna: p.base.ref, merge: p.merge_commit_sha }));
+  const prs = zavrene.map((p) => ({
+    cislo: p.number, titulek: p.title, telo: p.body || '', slouceno: p.merged_at, zakladna: p.base.ref, merge: p.merge_commit_sha,
+    vetev: p.head.ref, autor: p.user?.login, zForku: p.head.repo?.full_name !== p.base.repo?.full_name,
+  }));
   const polozky = [];
   for (const p of kandidati(prs, { ted })) {
     const komentare = (await api(`repos/${REPO}/issues/${p.cislo}/comments?per_page=100`)).map((k) => ({ autor: k.user?.login, telo: k.body || '' }));
@@ -113,7 +117,8 @@ async function main() {
     if (!srovnani || !['ahead', 'identical'].includes(srovnani.status)) continue;
     const soubory = (await api(`repos/${REPO}/pulls/${p.cislo}/files?per_page=100`)).map((s) => ({ nazev: s.filename, puvodni: s.previous_filename, stav: s.status, pridano: s.additions, odebrano: s.deletions }));
     if (rozbor(soubory, konfig).jenBezPreview) continue;
-    polozky.push({ ...p, text: textProVlastnika(p.telo), cesty: cestyNaWebu(p.telo) });
+    const text = datovaObnova(p, soubory, konfig) ? TEXT_OBNOVY : textProVlastnika(p.telo);
+    polozky.push({ ...p, text, cesty: cestyNaWebu(p.telo) });
   }
   if (!polozky.length) return console.log('Žádná nová nasazená změna webu k oznámení.');
   const text = zprava(polozky, { zakladni, sha });

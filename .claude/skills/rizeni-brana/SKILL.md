@@ -24,6 +24,9 @@ a každou hodinu. Výsledek zapíše jako kontrolu „Brána sloučení“ na ak
 (`vlastnik`, `asistent` v `rezimy.yml`), protokol z preview (dobrovolný) jen od nich nebo `github-actions[bot]`
 a PR jiného autora (fork, Dependabot) projde jen se `schvaleno` na PR.
 
+**Automatické obnovy dat** (RA46): PR bez zadání od účtu vlastníka, ne z forku, z větve v `datove_obnovy`
+(`rezimy.yml`), který mění jen cesty povolené pro tu větev, projde v režimu R bez souhlasu a bez review.
+
 Vždy: `stop` blokuje, při zamrznutí projde jen `incident` v rozsahu rutiny. Protokol z preview se nevyžaduje
 (RA45, nahrazuje RA42); blokuje jen protokol k aktuálnímu commitu, který hlásí „nesplněno“. Vlastník místo
 protokolu dostane po nasazení do Telegramu oddíl „Pro vlastníka“ z popisu PR s adresami na webu.
