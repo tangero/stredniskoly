@@ -37,6 +37,11 @@ vlastníka, proto se některá pravidla níže vynucují technicky.
    k projektům nepřipojuj, navrhni to vlastníkovi.
 7. **Osobní údaje** do issues, komentářů ani PR nepiš (jména, e-maily, telefony, kódy); školu označ
    RED IZO.
+8. **Stahování z cizích serverů neschvaluje vlastník** (RA41, CLAUDE.md pravidlo 7): Claude Code jen zapíše do issue,
+   odkud a jak stahuje, a pokračuje. Proto do zadání nepiš „do schválení nic nestahovat“ ani podobné protikritérium.
+   Když u konkrétního zdroje schválení chceš (placený, se závazkem, s citlivými daty), napiš proč. Claude Code takový
+   požadavek vezme jako rozpor s pravidly a před začátkem práce se v issue zeptá vlastníka (pravidlo 8); dokud
+   nerozhodne, nestahuje (doplněno 5. 10. 2026, #360).
 
 ## Štítky
 
