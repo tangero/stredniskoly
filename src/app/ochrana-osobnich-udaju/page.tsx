@@ -22,7 +22,7 @@ export const metadata = {
     'Jaké údaje web Přijímačky na školu zpracovává, proč, jak dlouho je drží a jak svá práva uplatnit.',
 };
 
-const POSLEDNI_ZMENA = '18. 9. 2026';
+const POSLEDNI_ZMENA = '5. 10. 2026';
 
 export default function OchranaOsobnichUdajuPage() {
   return (
@@ -162,7 +162,17 @@ export default function OchranaOsobnichUdajuPage() {
               <li>
                 <strong>Clicky</strong> — měření návštěvnosti webu vedle Matoma; jde o zpracovatele
                 ve Spojených státech, takže součástí zpracování je přenos do třetí země na základě
-                standardních smluvních klauzulí.
+                standardních smluvních klauzulí,
+              </li>
+              <li>
+                <strong>Vercel Analytics</strong> — souhrnné počty zobrazení stránek a rychlost webu
+                bez cookies; zpracovatelem je Vercel ve Spojených státech, přenos do třetí země na
+                základě standardních smluvních klauzulí,
+              </li>
+              <li>
+                <strong>Microsoft Clarity</strong> — jen na stránce simulátoru: kam se kliká a jak daleko
+                se stránka posouvá; zpracovatelem je Microsoft ve Spojených státech, přenos do třetí
+                země na základě standardních smluvních klauzulí.
               </li>
             </ul>
             <p className="text-slate-700 mt-3">
@@ -178,9 +188,18 @@ export default function OchranaOsobnichUdajuPage() {
 
             <h2 className="text-2xl font-bold mt-8 mb-3">Měření návštěvnosti</h2>
             <p className="text-slate-700">
-              Návštěvnost webu měříme v Matomu na serveru Hlídače státu, ne u zahraničních služeb.
-              Potvrzovací a odhlašovací stránky odběru se neměří vůbec, aby se do měření nedostala
-              adresa ani odkaz z e-mailu.
+              Návštěvnost webu měříme hlavně v Matomu na serveru Hlídače státu. Vedle něj běží Clicky
+              a Vercel Analytics se souhrnnými počty návštěv. Potvrzovací a odhlašovací stránky odběru
+              se neměří vůbec, aby se do měření nedostala adresa ani odkaz z e-mailu.
+            </p>
+            <p className="text-slate-700 mt-3">
+              Na stránce simulátoru navíc používáme Microsoft Clarity, abychom viděli, kde se v něm
+              lidé zaseknou: kam klikají, kde klikají opakovaně bez odezvy a jak daleko stránku
+              posouvají. Clarity nenastavuje cookies (výslovně jí sdělujeme, že souhlas s ukládáním
+              nemáme), veškerý text a vyplněná pole stránky se v záznamu maskují a na jiných
+              stránkách webu se nespouští. Zpracováváme to z oprávněného zájmu na tom, aby simulátor
+              fungoval srozumitelně. Údaje o zařízení a o pohybu po stránce přitom zpracovává
+              Microsoft ve Spojených státech.
             </p>
 
             <h2 className="text-2xl font-bold mt-8 mb-3">Vaše práva</h2>

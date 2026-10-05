@@ -219,7 +219,7 @@ export default function BugReportButton() {
                   )}
                 </div>
 
-                <form onSubmit={handleSubmit}>
+                <form onSubmit={handleSubmit} data-clarity-mask="true">
                 {/* Honeypot field - hidden from normal users */}
                 <div style={{ position: 'absolute', left: '-9999px' }} aria-hidden="true">
                   <input
