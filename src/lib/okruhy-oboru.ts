@@ -76,6 +76,19 @@ export interface OborOkruhu {
   obec: string;
   /** Počet uchazečů oboru v okruhu; řadí se podle něj, nikdy podle obtížnosti ani přednosti. */
   uchazecu: number;
+  /** *Jistota zařazení do okruhu* (slovník ukazatelů), podíl 0 až 1; chybí u starších souborů. */
+  jistota?: number | null;
+}
+
+/**
+ * Práh *Jistoty zařazení do okruhu*, pod kterým stránka u oboru řekne „na pomezí okruhů“ (#366):
+ * obor ve většině převzorkování skončil s většinou jiných oborů. Rozbor v slovníku ukazatelů.
+ */
+export const PRAH_POMEZI = 0.5;
+
+/** Obor je na pomezí okruhů, jen když jistotu známe a je pod prahem; chybějící údaj nic netvrdí. */
+export function naPomeziOkruhu(jistota: number | null | undefined): boolean {
+  return typeof jistota === 'number' && Number.isFinite(jistota) && jistota < PRAH_POMEZI;
 }
 
 export interface OkruhMesta {
@@ -98,7 +111,7 @@ interface ZaznamMesta {
   okruhy?: {
     id: number;
     uchazecu: number;
-    obory: { klic: string; obec: string; uchazecu: number; ukotven?: boolean }[];
+    obory: { klic: string; obec: string; uchazecu: number; ukotven?: boolean; jistota?: number | null }[];
     presun_zajmu_v_okruhu?: { roky?: number[]; nad_sumem?: boolean };
   }[];
 }

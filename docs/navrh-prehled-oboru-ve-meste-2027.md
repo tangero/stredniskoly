@@ -292,6 +292,12 @@ Etapa 3 okruhy ze stránky města odebrala s odůvodněním, že zůstávají na
 
 Stránka oboru měla v bloku „Které další obory v okolí uchazeči také volí“ jen podíl uchazečů podle obcí. Nově nejdřív ukáže okruh, do kterého obor patří: jméno okruhu stejné jako na stránce města, deset největších oborů okruhu (tento obor vždy, zvýrazněný „tento obor“), obtížnost přijetí a počet uchazečů, větu o přesunu zájmu a odkaz na celý okruh na stránce města. Podíl podle obcí zůstává pod tím jako „Ve kterých obcích se uchazeči hlásí také“. Řádky jsou kompaktní (škola, obor, odznak, uchazeči) kvůli úzkému sloupci stránky oboru. Podklad okruhů (katalog, názvy, obtížnost ze souhrnů) je ve sdíleném `src/lib/okruhy-podklad.ts`, takže obě stránky skládají okruh stejně; příslušnost oboru bere `getOkruhOboru` z `obory.{klic}.okruh`. Řádky na stránce oboru vedou na přehled školy (odkaz přímo na obor by vyžadoval katalog měst všech okolních obcí).
 
+## 14. Obory na pomezí okruhů (5. 10. 2026, #366)
+
+Generátor okruhů u každého oboru okruhu spočítá *Jistotu zařazení do okruhu* (slovník ukazatelů): uchazeči zobrazeného roku se 100× převzorkují s vracením, okruhy se v pevných oblastech přihlášek spočítají znovu a měří se, jak často obor zůstane s aspoň polovinou svých původních sousedů. Semínko je pevné, složení okruhů se nemění. Rozbor ročníku 2026: pod 0,5 je 13 % oborů zveřejněných okruhů, dva výpočty s jiným semínkem dají 95 % oborů na stejnou stranu hranice 0,6 (u 0,5 se shoda neměřila). Pod prahem 0,5 nese řádek na stránce města i oboru štítek **na pomezí okruhů** a blok okruhu ho jednou větou vysvětlí; nad prahem se nic neukazuje. V Brně je na pomezí 32 řádků ve 12 ze 14 okruhů, typicky pedagogická lycea a obory, na které se hlásí uchazeči zdravotnických i ekonomických škol.
+
+Výpočet trvá asi 9 minut navíc ke generátoru; přegeneruje se s ním při každém novém ročníku.
+
 ## Historie
 
 | Verze | Datum | Změna |

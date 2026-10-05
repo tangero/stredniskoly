@@ -19,6 +19,26 @@ function Sipka() {
   );
 }
 
+/** Štítek oboru s nízkou *Jistotou zařazení do okruhu* (#366); vysvětlí ho věta pod tabulkou okruhu. */
+function Pomezi() {
+  return (
+    <span className="ml-2 inline-block whitespace-nowrap rounded-full border border-[#e3cf9a] bg-[#fdf6e3] px-2 align-baseline text-[12px] font-medium leading-[18px] text-[#6b5414]">
+      na pomezí okruhů
+    </span>
+  );
+}
+
+/** Vysvětlení pojmu *na pomezí okruhů* (slovník pojmů), jen v bloku, kde se štítek objeví. */
+function VysvetleniPomezi({ className }: { className: string }) {
+  return (
+    <p className={className}>
+      <b className="font-semibold text-slate-700">Na pomezí okruhů:</b> zařazení oboru do okruhu je nejisté. Při
+      opakovaném výpočtu z náhodně vybraných uchazečů obor většinou vyšel ve skupině s jinými obory. Nic to neříká
+      o oboru samotném, jen že se na něj hlásí uchazeči z více okruhů.
+    </p>
+  );
+}
+
 /** `kompaktni`: řádek na dva řádky i na počítači, pro úzký sloupec stránky oboru. */
 function Radek({ r, tento = false, kompaktni = false }: { r: RadekOkruhuMesta; tento?: boolean; kompaktni?: boolean }) {
   const druhy = [r.obor, r.doplnek, r.obec].filter(Boolean).join(' · ');
@@ -37,7 +57,10 @@ function Radek({ r, tento = false, kompaktni = false }: { r: RadekOkruhuMesta; t
           <span className="text-[15px] font-semibold leading-snug text-slate-800">{r.skola}</span>
         )}
         {tento && <span className="ml-2 rounded-full bg-[#0074e4] px-2 py-0.5 align-middle text-[12px] font-semibold text-white">tento obor</span>}
-        <span className="mt-0.5 block text-[13px] leading-snug text-slate-600">{druhy}</span>
+        <span className="mt-0.5 block text-[13px] leading-snug text-slate-600">
+          {druhy}
+          {r.naPomezi && <Pomezi />}
+        </span>
       </td>
       <td className={`mt-1.5 ${md('md:mt-0 md:px-3 md:py-3 md:align-top')}`}>
         {r.zarazeni ? <OdznakObtiznosti zarazeni={r.zarazeni} /> : (
@@ -83,6 +106,9 @@ function Okruh({ o, rokObtiznosti }: { o: OkruhMestaKZobrazeni; rokObtiznosti: n
             {o.radky.map(r => <Radek key={r.klic} r={r} />)}
           </tbody>
         </table>
+        {o.radky.some(r => r.naPomezi) && (
+          <VysvetleniPomezi className="mx-4 mt-3 max-w-[68ch] text-[13px] leading-relaxed text-slate-600 md:mx-5" />
+        )}
         {o.presun && (
           <p className="mx-4 mt-3 max-w-[68ch] text-[13px] leading-relaxed text-slate-600 md:mx-5">
             Zájem se mezi obory tohoto okruhu mezi ročníky {o.presun.od} a {o.presun.do} přesouvá. Obor, kam se v jednom
@@ -162,6 +188,7 @@ export function OkruhOboruObsah({ okruh, klic, rokObtiznosti, obec, hrefMesta }:
           </tbody>
         </table>
       </div>
+      {ukazane.some(r => r.naPomezi) && <VysvetleniPomezi className="text-[14px] leading-relaxed text-slate-600" />}
       {zbyva > 0 && (
         <p className="text-[14px] text-slate-600">
           V okruhu je ještě {zbyva} {zbyva === 1 ? 'další obor' : zbyva <= 4 ? 'další obory' : 'dalších oborů'} s menším počtem uchazečů.
