@@ -64,6 +64,8 @@ test('stránky školy a oboru: odmaskovaný obsah, měření oddílů, typ strá
   assert.match(stranka, /<MereniClarity typStranky="skola" oddily \/>/);
   assert.match(stranka, /<MereniClarity typStranky="obor" nabidka=\{nabidkaOboru\} oddily \/>/);
   assert.equal((stranka.match(/data-clarity-unmask="true"/g) || []).length, 2);
+  // stránka učebního oboru (bez JPZ) posílá štítek nabidka = bez_jpz, a to přednostně před nevypsanou nabídkou
+  assert.match(stranka, /const nabidkaOboru = program\.bezJpz \? 'bez_jpz' : program\.nevypsano_2026 \? 'nevypsany' : 'vypsany';/);
   // formuláře uvnitř odmaskovaného obsahu zůstávají maskované
   assert.match(fs.readFileSync('src/components/novinky/OdberBlok.tsx', 'utf8'), /data-clarity-mask="true"/);
   assert.match(fs.readFileSync('src/components/obor/ProfilOboru.tsx', 'utf8'), /aria-labelledby="kde-stojim" data-clarity-mask="true"/);
@@ -83,7 +85,7 @@ test('oddíly a důkazy mají stálý identifikátor odvozený z id a nadpisu', 
   }
   // dokumentace vyjmenovává identifikátory oddílů
   const doc = fs.readFileSync('docs/zdroje-dat.md', 'utf8');
-  for (const id of ['prijeti', 'pomoc', 'studium', 'obory', 'vede', 'jaka', 'kde']) assert.match(doc, new RegExp('`' + id + '`'));
+  for (const id of ['prijeti', 'pomoc', 'studium', 'obory', 'vede', 'jaka', 'kde', 'misto', 'zajem', 'ostatni', 'potom', 'cesta']) assert.match(doc, new RegExp('`' + id + '`'));
 });
 
 test('Clarity dostane signál bez souhlasu a při odchodu ze simulátoru se zastaví', () => {

@@ -335,7 +335,7 @@ export default async function SchoolDetailPage({ params }: Props) {
   const ucebni = program.bezJpz ? await getProfilUcebnihoOboru(program, [...detailedPrograms, ...programyBezJpz]) : null;
   // Nabídka bez JPZ nemá starší podobu stránky; bez dat zobrazeného ročníku neexistuje.
   if (program.bezJpz && !ucebni) notFound();
-  const nabidkaOboru = program.nevypsano_2026 ? 'nevypsany' : 'vypsany';
+  const nabidkaOboru = program.bezJpz ? 'bez_jpz' : program.nevypsano_2026 ? 'nevypsany' : 'vypsany';
   if (profil || ucebni) {
     const webSkoly = profil?.web ?? ucebni?.web ?? null;
     const krajNazev = krajNames[school.kraj_kod] || school.kraj;
