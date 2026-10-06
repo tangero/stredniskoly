@@ -81,6 +81,7 @@ test('jak často nad středem podobných škol a názvy skupin', () => {
   assert.equal(jakCastoNadStredem([{ letNad: 0, letSeZarazenim: 3 }]), 'v žádném hodnocení');
   assert.equal(jakCastoNadStredem([{ letNad: 0, letSeZarazenim: 0 }]), null);
   assert.equal(nazevSkupinyMaturity('GY8', 'GYMNÁZIUM 8LETÉ'), 'osmileté gymnázium');
+  assert.equal(nazevSkupinyMaturity('SZD', 'SOŠ ZDRAVOTNICKÉ'), 'praktická sestra');
   assert.equal(nazevSkupinyMaturity('SEK', 'EKONOMICKÉ OBORY'), 'ekonomické obory');
 });
 

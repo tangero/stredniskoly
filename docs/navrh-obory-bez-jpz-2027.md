@@ -1,6 +1,6 @@
 # Obory bez jednotné zkoušky a nedenní formy: průzkum zdrojů a návrh
 
-Verze 1.2 · 2. 10. 2026 · Fáze 1 k issue #209 (pouze průzkum a návrh, web se nemění).
+Verze 1.3 · 5. 10. 2026 · Fáze 1 k issue #209 (pouze průzkum a návrh, web se nemění).
 Fáze 2 (implementace) vznikne jako samostatné zadání po schválení návrhu.
 Verze 1.1 vypořádává oponenturu (`docs/podklady/oponentura-obory-bez-jpz-2026-10-01.md`);
 vypořádání je v oddílu 17, oddíly 10 a 11 jsou přepsané. Verze 1.1 byla schválena
@@ -739,6 +739,7 @@ zopakovat jedním příkazem. Níže verdikt ke každé námitce s důkazem:
 
 | Verze | Změna |
 |---|---|
+| 1.3 | Etapa 3a (oddíl 16.3): stránka učebního oboru a obory na stránce školy u škol, které web vede; rozdělení etapy 3 na 3a, 3b a 3c. |
 | 1.2 | Odpovědi z etapy 0 fáze 2 (#244, oddíl 16.1): párování 2025 ↔ 2026 (96 %) a 1. ↔ 2. kola, konzervatoře s výhradou, kategorie J zahrnuta, šest skupin souhrnu míst; pojem pro kategorii J. Otázky 1 a 7 změřeny po schválení dotazů na cizí servery (DiPSy, rešerše). |
 | 1.1 | Vypořádání oponentury (oddíl 17): přepsané oddíly 10 a 11, nová měření 3.5–3.7 a 5.1, oprava chyby o nástavbách, rozhodnutí o C/E, dva nové ukazatele, domovy mládeže. |
 | 1.0 | První návrh (fáze 1, issue #209). |
@@ -755,3 +756,21 @@ M 216, P 146), 72 nedenních nástaveb L/5x (L/51 a čtyři L/52) s příznakem 
 kapacita a obec). `ID_SOF` je v každé nabídce, odkaz na PDF v DiPSy se tedy páruje přes něj, ne přes REDIZO
 (oddíl 16.1, bod 1). Chybějící počet zůstává `null`; `zbyla_mista` se počítá jen tam, kde je kapacita i přijatí. `id` nástavby nese na konci formu (dist, dal, komb), protože jedna škola má stejný KKOV ve více formách.
 Zobrazení, slovníky a registr jsou etapy 3 a 4.
+
+### 16.3 Etapa 3a: stránka učebního oboru a obory na stránce školy (5. 10. 2026)
+
+Rozhodnutí vlastníka 5. 10. 2026 (komentář v #244): nabídky bez JPZ se zapojí do stejného seznamu nabídek školy
+jako ostatní (varianta A), etapa 3 se dělí na 3a (stránka učebního oboru u škol, které web vede), 3b (nové školy,
+ubytování, sitemap nových škol) a 3c (město, kraj, vyhledávání, značky); slovníky a registr jdou s každou z nich.
+
+Etapa 3a zapojuje 2 105 nabídek bez JPZ u 433 škol, které katalog vede. Seznam je jeden (`getProgramyBezJpz`
+v `src/lib/data.ts`), ale čtou ho zatím jen stránka školy, stránka oboru a sitemapa; stránka města, kraje a vyhledávání
+nabídky bez JPZ dostanou až v 3c, aby se tam neobjevily bez filtrů a souhrnu míst. Adresy nabídek bez JPZ vznikají
+vlastní mapou (`adresyBezJpzMapa`), takže **žádná dnešní adresa oboru se zkouškou se nezměnila** (hlídá test).
+Stránka učebního oboru odpovídá na pět otázek z oddílu 11 v pořadí místo, zájem, ostatní, potom, cesta; otázka
+„Co přijde potom“ je jen u H a E. Obtížnost slovy se ukazuje nad prahem 10 soutěžících včetně stupně „místo pro
+všechny“ (574/302/164/78/17 u H, jak uvádí oddíl 3.6), u C, E, J a P vůbec.
+
+Zatím mimo: odkaz na PDF podmínek přijetí konkrétní nabídky v DiPSy (veřejná stálá adresa karty nabídky není
+ověřená; stránka odkazuje na web školy a na DiPSy obecně), kohorta podle pozice na přihlášce a pořadí v kraji
+(potřebují skupiny kategorie × dvojčíslí KKOV), maturita u uměleckých M a L (oddíl 10.4) a simulátor (etapa 5).

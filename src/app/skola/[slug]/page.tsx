@@ -4,13 +4,15 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound, permanentRedirect } from 'next/navigation';
 import { Header } from '@/components/Header';
+import opravyNabidky from '@/data/opravy-nabidky-skol.json';
+import { nazevSZamerenim, type OpravaNabidky } from '@/lib/opravy-nabidky';
 import { Footer } from '@/components/Footer';
 import { ProgramTabs } from '@/components/ProgramTabs';
 import { InspectionSummary } from '@/components/InspectionSummary';
 import { SchoolPortalSection } from '@/components/school-profile/SchoolPortalSection';
 import { potvrzenyProfil } from '@/lib/portal-profil-verejne';
 import { spravceProfilu } from '@/lib/portal-verejne';
-import { getSchoolPageType, getSchoolOverview, getExtendedStatsForProgram, getProgramsByRedizo, SchoolProgram, getCSIDataByRedizo, getExtractionsByRedizo, get2026DataByRedizo, type School2026Data, getSchoolResultsByRedizo } from '@/lib/data';
+import { getSchoolPageType, getSchoolOverview, getExtendedStatsForProgram, getProgramsByRedizo, SchoolProgram, getCSIDataByRedizo, getExtractionsByRedizo, get2026DataByRedizo, type School2026Data, getSchoolResultsByRedizo, getProgramyBezJpz } from '@/lib/data';
 import { Applications2026Banner } from '@/components/Applications2026Banner';
 import { SchoolResults2026 } from '@/components/SchoolResults2026';
 import { VibecordingPromo } from '@/components/VibecordingPromo';
@@ -26,6 +28,9 @@ import { getProfilSkoly } from '@/lib/skola-profil-data';
 import { ProfilSkoly } from '@/components/skola/ProfilSkoly';
 import { getProfilOboru } from '@/lib/obor-profil-data';
 import { ProfilOboru } from '@/components/obor/ProfilOboru';
+import { ProfilUcebnihoOboru } from '@/components/obor/ProfilUcebnihoOboru';
+import { getProfilUcebnihoOboru } from '@/lib/ucebni-obor-profil-data';
+import { druhOboruBezJpz } from '@/lib/obory-bez-jpz';
 import { VeletrhVMeste } from '@/components/veletrhy/VeletrhVMeste';
 import { UlozitObor } from '@/components/obor/UlozitObor';
 import { createSlug } from '@/lib/utils';
@@ -97,9 +102,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const overviewSlugMeta = `${pageInfo.redizo}-${createSlug(school.nazev)}`;
 
   const program = pageInfo.program;
-  const oborNazev = program?.zamereni ? `${program.obor} - ${program.zamereni}` : program?.obor ?? school.obor;
+  const oborNazev = program ? nazevSZamerenim(opravyNabidky.opravy as OpravaNabidky[], pageInfo.redizo, program.id.split('_')[1] ?? '', program.obor, program.zamereni) : school.obor;
   const title = `${school.nazev} - ${oborNazev}`;
-  const description = `Přijímací zkoušky ${school.nazev}: ${oborNazev}. Historické výsledky a přihlášky. ${school.obec}, ${krajNames[school.kraj_kod] || school.kraj}`;
+  const description = program?.bezJpz
+    ? `${school.nazev}: ${oborNazev}, ${druhOboruBezJpz(program.bezJpz.kategorie)}. Místa po 1. kole, přihlášky, kam se hlásí ostatní a kam dál. ${school.obec}, ${krajNames[school.kraj_kod] || school.kraj}`
+    : `Přijímací zkoušky ${school.nazev}: ${oborNazev}. Historické výsledky a přihlášky. ${school.obec}, ${krajNames[school.kraj_kod] || school.kraj}`;
 
   return {
     title,
@@ -187,7 +194,7 @@ export default async function SchoolDetailPage({ params }: Props) {
       const vypsane = new Set(programy.filter(p => match2026ToProgram(nabidky2026, p)).map(p => p.id));
       const prehled = `/skola/${redizo}-${createSlug(overview.nazev)}`;
       const [profil, uplnyNazev] = await Promise.all([
-        getProfilSkoly(redizo, overview.nazev, programy, vypsane),
+        getProfilSkoly(redizo, overview.nazev, programy, vypsane, await getProgramyBezJpz(redizo, overview.nazev, overview.programs)),
         uplnyNazevZRejstriku(redizo),
       ]);
       return (
@@ -240,17 +247,24 @@ export default async function SchoolDetailPage({ params }: Props) {
 
   // Připravit data pro ProgramTabs
   // Zjistit duplicitní názvy oborů (různá délka studia, ale stejný název)
+  // Zobrazený název bere ruční opravu zaměření; adresa (slug) se dál počítá z původního zaměření.
+  const nazevProTab = (p: (typeof detailedPrograms)[number]) =>
+    nazevSZamerenim(opravyNabidky.opravy as OpravaNabidky[], redizo, p.id.split('_')[1] ?? '', p.obor, p.zamereni);
   const oborCounts = new Map<string, number>();
+  const slugCounts = new Map<string, number>();
   for (const p of detailedPrograms) {
-    const baseName = p.zamereni ? `${p.obor} - ${p.zamereni}` : p.obor;
+    const baseName = nazevProTab(p);
     oborCounts.set(baseName, (oborCounts.get(baseName) || 0) + 1);
+    const puvodniNazev = p.zamereni ? `${p.obor} - ${p.zamereni}` : p.obor;
+    slugCounts.set(puvodniNazev, (slugCounts.get(puvodniNazev) || 0) + 1);
   }
 
   const programsForTabs = detailedPrograms.map(p => {
-    const baseName = p.zamereni ? `${p.obor} - ${p.zamereni}` : p.obor;
+    const baseName = nazevProTab(p);
+    const puvodniNazev = p.zamereni ? `${p.obor} - ${p.zamereni}` : p.obor;
     // Pokud je více oborů se stejným názvem, přidat délku studia
-    const hasDuplicateName = (oborCounts.get(baseName) || 0) > 1;
-    const displayName = hasDuplicateName ? `${baseName} (${p.delka_studia}leté)` : baseName;
+    const hasDuplicateName = (slugCounts.get(puvodniNazev) || 0) > 1;
+    const displayName = (oborCounts.get(baseName) || 0) > 1 ? `${baseName} (${p.delka_studia}leté)` : baseName;
 
     // Pro duplicitní názvy přidat délku studia do slugu
     const programSlug = p.zamereni
@@ -278,6 +292,24 @@ export default async function SchoolDetailPage({ params }: Props) {
     };
   });
 
+  // Nabídky bez JPZ (issue #244, etapa 3a) mají adresu z vlastní mapy; do počítání stejných názvů
+  // oborů se zkouškou nevstupují, aby se jejich záložky ani adresy nezměnily.
+  const programyBezJpz = await getProgramyBezJpz(redizo, school.nazev, detailedPrograms);
+  const pocetBezJpz = new Map<string, number>();
+  for (const p of programyBezJpz) {
+    const k = p.zamereni ? `${p.obor} - ${p.zamereni}` : p.obor;
+    pocetBezJpz.set(k, (pocetBezJpz.get(k) || 0) + 1);
+  }
+  for (const p of programyBezJpz) {
+    const baseName = p.zamereni ? `${p.obor} - ${p.zamereni}` : p.obor;
+    programsForTabs.push({
+      id: p.id, nazev: p.nazev,
+      obor: (pocetBezJpz.get(baseName) || 0) > 1 ? `${baseName} (${p.delka_studia}leté)` : baseName,
+      zakladniNazev: baseName, typ: p.typ, delka_studia: p.delka_studia, min_body: 0, kapacita: p.kapacita,
+      slug: p.adresa!, hasZamereni: !!p.zamereni, is_new_2026: undefined, prev_zamereni_name: undefined,
+    });
+  }
+
   // Loňské zaměření, které škola letos nevypsala, vedle letošní nabídky téhož oboru bez zaměření:
   // rodič přišel starou adresou a letošní čísla s proužkem jsou na stránce letošní nabídky.
   const zakladOboru = program.id.split('_').slice(0, 2).join('_');
@@ -287,7 +319,7 @@ export default async function SchoolDetailPage({ params }: Props) {
 
   // Slug pro přehled školy
   const overviewSlug = `${redizo}-${createSlug(school.nazev)}`;
-  const displayOborName = program.zamereni && program.zamereni !== program.obor ? `${program.obor} - ${program.zamereni}` : program.obor;
+  const displayOborName = nazevSZamerenim(opravyNabidky.opravy as OpravaNabidky[], redizo, program.id.split('_')[1] ?? '', program.obor, program.zamereni);
 
   // JSON-LD strukturovaná data
   const jsonLd = {
@@ -306,8 +338,12 @@ export default async function SchoolDetailPage({ params }: Props) {
 
   // Nová stránka oboru ve třech otázkách (docs/vrstvy-stranky-oboru-2027.md).
   // Bez souhrnu 1. kola v zobrazeném ročníku zůstává starší podoba níže.
-  const profil = await getProfilOboru(program.id, program.zamereni, redizo);
-  if (profil) {
+  const profil = program.bezJpz ? null : await getProfilOboru(program.id, program.zamereni, redizo);
+  const ucebni = program.bezJpz ? await getProfilUcebnihoOboru(program, [...detailedPrograms, ...programyBezJpz]) : null;
+  // Nabídka bez JPZ nemá starší podobu stránky; bez dat zobrazeného ročníku neexistuje.
+  if (program.bezJpz && !ucebni) notFound();
+  if (profil || ucebni) {
+    const webSkoly = profil?.web ?? ucebni?.web ?? null;
     const krajNazev = krajNames[school.kraj_kod] || school.kraj;
     return (
       <div className="min-h-screen flex flex-col">
@@ -336,15 +372,17 @@ export default async function SchoolDetailPage({ params }: Props) {
                   <ul className="mt-4 flex flex-wrap gap-2 text-[14px] text-slate-700">
                     <li className="rounded-full bg-slate-100 px-3 py-1">{school.obec}, {krajNazev}</li>
                     {school.zrizovatel && <li className="rounded-full bg-slate-100 px-3 py-1">zřizovatel: {school.zrizovatel}</li>}
-                    {school.prev_zamereni_name && profil.predchoziRok && (
+                    {program.bezJpz && <li className="rounded-full bg-slate-100 px-3 py-1">{druhOboruBezJpz(program.bezJpz.kategorie)}</li>}
+                    {school.prev_zamereni_name && profil?.predchoziRok && (
                       <li className="rounded-full bg-slate-100 px-3 py-1">v roce {profil.predchoziRok} jako „{school.prev_zamereni_name}“</li>
                     )}
                   </ul>
                 </div>
                 <div className="flex flex-col items-start gap-3">
-                  <UlozitObor programId={program.id} />
+                  {/* Simulátor nabídky bez JPZ zatím nezná (etapa 5), uložení by v něm nic neukázalo. */}
+                  {!program.bezJpz && <UlozitObor programId={program.id} />}
                   <div className="flex flex-wrap gap-x-4 gap-y-1 text-[15px] font-semibold">
-                    <Link href="/simulator" className="text-[#0074e4] hover:underline">Porovnat v simulátoru</Link>
+                    {!program.bezJpz && <Link href="/simulator" className="text-[#0074e4] hover:underline">Porovnat v simulátoru</Link>}
                     <Link href={`/skola/${overviewSlug}`} className="text-[#0074e4] hover:underline">Přehled školy</Link>
                   </div>
                 </div>
@@ -365,7 +403,8 @@ export default async function SchoolDetailPage({ params }: Props) {
             </div>
           )}
 
-          <ProfilOboru data={profil} inspekceHref={extractions.length > 0 ? `/skola/${overviewSlug}/inspekce` : null} skolaHref={`/skola/${overviewSlug}`} obec={school.obec} />
+          {profil && <ProfilOboru data={profil} inspekceHref={extractions.length > 0 ? `/skola/${overviewSlug}/inspekce` : null} skolaHref={`/skola/${overviewSlug}`} obec={school.obec} />}
+          {ucebni && <ProfilUcebnihoOboru data={ucebni} adresa={school.adresa_plna || school.adresa} obec={school.obec} skolaHref={`/skola/${overviewSlug}`} />}
 
           <div className="mx-auto max-w-6xl space-y-6 px-4 pb-12">
             <SchoolPortalSection zaznam={portalZaznam} spravce={spravceProfiluSkoly} />
@@ -378,7 +417,7 @@ export default async function SchoolDetailPage({ params }: Props) {
                   <dt className="text-slate-500">Okres</dt><dd className="text-slate-900">{school.okres}</dd>
                   <dt className="text-slate-500">Kraj</dt><dd className="text-slate-900">{krajNazev}</dd>
                   <dt className="text-slate-500">Zřizovatel</dt><dd className="text-slate-900">{school.zrizovatel}</dd>
-                  {profil.web && (<><dt className="text-slate-500">Web</dt><dd><a href={profil.web} rel="noopener noreferrer" className="break-all font-semibold text-[#0074e4] hover:underline">{profil.web.replace(/^https?:\/\//, '').replace(/\/$/, '')}</a></dd></>)}
+                  {webSkoly && (<><dt className="text-slate-500">Web</dt><dd><a href={webSkoly} rel="noopener noreferrer" className="break-all font-semibold text-[#0074e4] hover:underline">{webSkoly.replace(/^https?:\/\//, '').replace(/\/$/, '')}</a></dd></>)}
                 </dl>
               </div>
               <div className="space-y-3 text-[15px] leading-relaxed text-slate-600">
@@ -575,7 +614,7 @@ export default async function SchoolDetailPage({ params }: Props) {
           <div className="bg-blue-50 border-l-4 border-blue-500 p-6 rounded-r-xl mb-8">
             <h3 className="font-semibold text-blue-800 mb-2">Co to znamená?</h3>
             <p className="text-blue-700">
-              {program.rok ? `V roce ${program.rok} bylo` : 'Bylo'} na tento obor podáno {program.prihlasky} přihlášek při kapacitě {program.kapacita} míst.
+              {program.rok ? `V 1. kole ${program.rok} bylo` : 'V 1. kole bylo'} na tento obor podáno {program.prihlasky} přihlášek při kapacitě {program.kapacita} míst.
               Počet přihlášek zahrnuje všechny priority. Popisuje poptávku v daném ročníku, nikoli osobní pravděpodobnost přijetí.
               Kritéria pro rok 2027 ověřte u školy.
             </p>
@@ -592,7 +631,7 @@ export default async function SchoolDetailPage({ params }: Props) {
               když ve městě potvrzená akce není. Fakt o městě, ne o škole. */}
           <VeletrhVMeste obec={school.obec} variant="skola" className="mb-8" />
 
-          {/* Údaje potvrzené školou (Portál pro školy) */}
+          {/* Údaje doplněné školou (Portál pro školy) */}
           <SchoolPortalSection zaznam={portalZaznam} spravce={spravceProfiluSkoly} />
 
           {/* Adresa */}
