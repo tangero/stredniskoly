@@ -213,6 +213,8 @@ export async function getSchoolPageType(slug: string): Promise<{
     if (slug === prehled) return { type: 'overview', redizo, school: mimo, program: null };
     const nabidka = (await getProgramyBezJpz(redizo, mimo.nazev, [])).find(p => p.adresa === slug);
     if (nabidka) return { type: 'program', redizo, school: mimo, program: nabidka };
+    const stara = await staraAdresaBezJpz(redizo, mimo.nazev, [], slug);
+    if (stara) return { type: 'program', redizo, school: mimo, program: null, presmerovatNa: `/skola/${stara}` };
     return { type: 'overview', redizo, school: mimo, program: null, presmerovatNa: `/skola/${prehled}` };
   }
 
@@ -253,6 +255,8 @@ export async function getSchoolPageType(slug: string): Promise<{
   // Nabídky bez JPZ (etapa 3a) mají adresy z vlastní mapy, která dnešní adresy nemění.
   const bezJpz = (await getProgramyBezJpz(redizo, firstSchool.nazev, programs)).find(p => p.adresa === slug);
   if (bezJpz) return { type: 'program', redizo, school: firstSchool, program: bezJpz };
+  const staraBezJpz = await staraAdresaBezJpz(redizo, firstSchool.nazev, programs, slug);
+  if (staraBezJpz) return { type: 'program', redizo, school: firstSchool, program: null, presmerovatNa: `/skola/${staraBezJpz}` };
   const slugNabidky = (program: SchoolProgram) => {
     for (const [adresa, n] of adresyNabidek) if (n === program) return adresa;
     return overviewSlug;
@@ -762,6 +766,19 @@ function programyBezJpzSkoly(redizo: string, nazev: string): Promise<SchoolProgr
   const klic = `${redizo}|${nazev}`;
   if (!bezJpzCache.has(klic)) bezJpzCache.set(klic, getProgramsByRedizo(redizo).then(jpz => getProgramyBezJpz(redizo, nazev, jpz)));
   return bezJpzCache.get(klic)!;
+}
+
+/**
+ * Adresa nabídky bez JPZ, kterou dřív vedla stránka (etapa 3a: zaměření s kódem oboru) a dnešní ji nenese.
+ * Vrací dnešní adresu téže nabídky (podle `id`), jinak null.
+ */
+async function staraAdresaBezJpz(redizo: string, nazevSkoly: string, programyJpz: SchoolProgram[], slug: string): Promise<string | null> {
+  const nabidky = await nabidkyBezJpzSkoly(redizo);
+  if (nabidky.length === 0) return null;
+  const vstup = nabidky.map(n => ({ id: n.id, obor: n.obor, zamereni: n.zamereni || undefined, delka_studia: n.delka ?? 0, nabidka: n }));
+  const stara = (adresyBezJpzMapa(redizo, nazevSkoly, vstup, obsazeneAdresy(redizo, nazevSkoly, programyJpz), true) as Map<string, typeof vstup[number]>).get(slug);
+  if (!stara) return null;
+  return (await getProgramyBezJpz(redizo, nazevSkoly, programyJpz)).find(p => p.id === stara.id)?.adresa ?? null;
 }
 
 /**

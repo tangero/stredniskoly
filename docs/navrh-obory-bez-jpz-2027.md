@@ -794,8 +794,9 @@ ukazuje u každé školy, ke které nemáme shrnutí inspekční zprávy, nejen 
 a internáty z rejstříku, druh H21 a H22) je v oddílu „Kde je“ u všech 438 škol, které je pod svým REDIZO vedou.
 
 CERMAT u konzervatoří a části učebních oborů píše do zaměření kód oboru („Hudba – 82-44-M/01 Dirigování“,
-„Housle (82-44-M/01)“); název i adresa ho vynechávají (`zamereniBezKodu`), takže se změnilo 11 adres učebních oborů
-ze 3a, které ještě nebyly nasazené.
+„Housle (82-44-M/01)“); název i adresa ho vynechávají (`zamereniBezKodu`), takže se změnilo 15 adres učebních oborů
+ze 3a, které už jsou nasazené. Staré adresy se přesměrují na adresu téže nabídky (`getSchoolPageType`,
+`staraAdresaBezJpz`), takže žádný odkaz nepřestane fungovat.
 
 ### 16.5 Skupiny oborů na stránce školy (6. 10. 2026, #393)
 

@@ -13,7 +13,7 @@ import { renderToStaticMarkup } from 'react-dom/server';
 import { text } from './_zavadec.mjs';
 import { getProgramsByRedizo, getProgramyBezJpz, getSchoolOverview, getSchoolPageType, getSchoolsByRedizo, skolaMimoKatalog } from '../src/lib/data.ts';
 import { obtiznostBezJpz, rokBezJpz } from '../src/lib/obory-bez-jpz.ts';
-import { adresaPrehledu, adresySkolyMapa, obsazeneAdresy, zamereniBezKodu } from '../src/lib/adresa-oboru.mjs';
+import { adresaPrehledu, adresyBezJpzMapa, adresySkolyMapa, obsazeneAdresy, zamereniBezKodu } from '../src/lib/adresa-oboru.mjs';
 import { buildSitemapPaths } from '../scripts/generate-sitemap.mjs';
 import { getProfilUcebnihoOboru } from '../src/lib/ucebni-obor-profil-data.ts';
 import { ProfilUcebnihoOboru } from '../src/components/obor/ProfilUcebnihoOboru.tsx';
@@ -205,6 +205,25 @@ test('kód oboru v zaměření se do názvu ani adresy nedostane', () => {
   assert.equal(zamereniBezKodu('82-45-M/01, 82-45-P/01; Sólový zpěv – klasický'), 'Sólový zpěv – klasický');
   // Žádné zaměření bez JPZ po vyčištění kód oboru nenese.
   assert.ok(DATA.nabidky.every(n => !/\d{2}-\d{2}-[A-Z]/.test(zamereniBezKodu(n.zamereni))));
+});
+
+test('adresy učebních oborů ze 3a, které změnilo vynechání kódu oboru, se přesměrují na adresu téže nabídky', async () => {
+  const zmenene = [];
+  for (const redizo of SKOLY) {
+    const { skola, jpz, bez } = await programySkoly(redizo);
+    const vstup = DATA.nabidky.filter(n => n.redizo === redizo)
+      .map(n => ({ id: n.id, obor: n.obor, zamereni: n.zamereni || undefined, delka_studia: n.delka ?? 0, nabidka: n }));
+    const stare = adresyBezJpzMapa(redizo, skola.nazev, vstup, obsazeneAdresy(redizo, skola.nazev, jpz), true);
+    const dnesni = new Map(bez.map(p => [p.id, p.adresa]));
+    for (const [adresa, v] of stare) {
+      if (dnesni.get(v.id) === adresa) continue;
+      zmenene.push(adresa);
+      const t = await getSchoolPageType(adresa);
+      assert.equal(t.presmerovatNa, `/skola/${dnesni.get(v.id)}`, adresa);
+    }
+  }
+  assert.equal(zmenene.length, 15);
+  assert.deepEqual([...new Set(zmenene.map(a => a.split('-')[0]))].sort(), ['600016242', '600017133', '600170853', '610250574']);
 });
 
 test('stránka školy nese domovy mládeže a internáty z rejstříku', async () => {
