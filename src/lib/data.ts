@@ -10,7 +10,7 @@ import { School, SchoolAnalysis, SchoolData, SchoolsData, SchoolDetail, krajName
 import { InspisDataset, SchoolInspisData } from '@/types/inspis';
 import { createSlug, createKrajSlug, extractRedizo } from './utils';
 import { adresaPrehledu, adresyBezJpzMapa, adresySkolyMapa, obsazeneAdresy, zamereniBezKodu } from './adresa-oboru.mjs';
-import { nabidkyBezJpzSkoly, obtiznostBezJpz, skolaBezJpz, type NabidkaBezJpz } from './obory-bez-jpz';
+import { nabidkyBezJpzSkoly, nabidkyBezJpzVObci, obtiznostBezJpz, skolaBezJpz, type NabidkaBezJpz } from './obory-bez-jpz';
 import { sortSchoolsByPopularity } from './popularity';
 
 const dataDir = path.join(process.cwd(), 'public');
@@ -758,6 +758,46 @@ export async function oborBezJpzProKlic(klic: string): Promise<{
     href: `/skola/${programy[0].adresa}`, zarazeni: obtiznostBezJpz(n), prijati: n.prijati,
     soutezici: n.prijati !== null && n.nepr_kapacita !== null ? n.prijati + n.nepr_kapacita : null,
   };
+}
+
+/** Odkazy a obtížnost oborů bez JPZ pro řádky okruhů (stránka města i oboru), po klíči REDIZO_KKOV. */
+export async function bezJpzProKlice(klice: string[]): Promise<Map<string, { href: string; zarazeni: ReturnType<typeof obtiznostBezJpz> }>> {
+  const out = new Map<string, { href: string; zarazeni: ReturnType<typeof obtiznostBezJpz> }>();
+  for (const k of [...new Set(klice)]) {
+    const r = await oborBezJpzProKlic(k);
+    if (r) out.set(k, { href: r.href, zarazeni: r.zarazeni });
+  }
+  return out;
+}
+
+/**
+ * Nabídky bez JPZ v obci pro stránku města (issue #244, etapa 3c-1): program s adresou stránky oboru,
+ * název školy a odkaz na její přehled. Školy z katalogu i školy mimo něj (etapa 3b).
+ */
+export interface NabidkaBezJpzVeMeste {
+  program: SchoolProgram;
+  redizo: string;
+  nazevSkoly: string;
+  hrefSkoly: string;
+  zrizovatel: string;
+  ulice: string | null;
+}
+
+export async function getNabidkyBezJpzVeMeste(obec: string): Promise<NabidkaBezJpzVeMeste[]> {
+  const nabidky = await nabidkyBezJpzVObci(obec);
+  const out: NabidkaBezJpzVeMeste[] = [];
+  for (const redizo of [...new Set(nabidky.map(n => n.redizo))].sort()) {
+    const skola = (await getSchoolsByRedizo(redizo))[0] ?? await skolaMimoKatalog(redizo);
+    if (!skola) continue;
+    const ids = new Set(nabidky.filter(n => n.redizo === redizo).map(n => n.id));
+    for (const program of (await programyBezJpzSkoly(redizo, skola.nazev)).filter(p => ids.has(p.id))) {
+      out.push({
+        program, redizo, nazevSkoly: skola.nazev, hrefSkoly: `/skola/${adresaPrehledu(redizo, skola.nazev)}`,
+        zrizovatel: skola.zrizovatel, ulice: (await skolaBezJpz(redizo))?.ulice ?? null,
+      });
+    }
+  }
+  return out;
 }
 
 /** Data jsou statická, výsledek pro školu se proto pamatuje (tabulky oborů na přihlášce ho čtou opakovaně). */

@@ -1,6 +1,6 @@
 # Obory bez jednotné zkoušky a nedenní formy: průzkum zdrojů a návrh
 
-Verze 1.6 · 6. 10. 2026 · Fáze 1 k issue #209 (pouze průzkum a návrh, web se nemění).
+Verze 1.7 · 6. 10. 2026 · Fáze 1 k issue #209 (pouze průzkum a návrh, web se nemění).
 Fáze 2 (implementace) vznikne jako samostatné zadání po schválení návrhu.
 Verze 1.1 vypořádává oponenturu (`docs/podklady/oponentura-obory-bez-jpz-2026-10-01.md`);
 vypořádání je v oddílu 17, oddíly 10 a 11 jsou přepsané. Verze 1.1 byla schválena
@@ -739,6 +739,7 @@ zopakovat jedním příkazem. Níže verdikt ke každé námitce s důkazem:
 
 | Verze | Změna |
 |---|---|
+| 1.7 | Etapa 3c-1, stránka města (oddíl 16.6). |
 | 1.6 | Etapa 3c-2, přehled kraje (oddíl 16.7). |
 | 1.5 | Skupiny oborů na stránce školy v pevném pořadí (oddíl 16.5, rozhodnutí vlastníka, #393). |
 | 1.4 | Etapa 3b (oddíl 16.4): 221 škol mimo katalog z rejstříku, ubytování, seznam inspekcí bez shrnutí, zaměření bez kódu oboru. |
@@ -807,6 +808,20 @@ nemátlo, že se mění podle školy. Tím se pro stránku školy mění pravidl
 nahoře, učební obor dole“): skupina S maturitou stojí první vždy. Pravidlo dál platí pro řazení na stránce města
 a kraje, kde se učební obory řadí s ostatními (etapa 3c). Volba skupiny se pamatuje v prohlížeči a platí i na další
 škole; škola s jedinou skupinou přepínač nemá.
+
+### 16.6 Etapa 3c-1: stránka města (6. 10. 2026)
+
+Etapa 3c se dělí na 3c-1 (stránka města), 3c-2 (kraj a /regiony) a 3c-3 (vyhledávání a API). Na stránce města
+mají nabídky bez JPZ, i u škol, které katalog nevede, vlastní řádek s místy a odkazem na stránku oboru; místo
+obtížnosti přijetí řádek bez ní ukáže zbylá místa po 1. kole. Obtížnost platí podle oddílu 10.1 (práh 10
+soutěžících, nic u C, E, J, P). Z „dalších oborů“ z přihlášek se tyto nabídky vynechají, zůstanou jen obory mimo
+přehled. Filtr Vzdělání používá skupiny z oddílu 16.5 v pevném pořadí a sdílí uloženou volbu se stránkou školy.
+Záhlaví města počítá obory po skupinách. Okruhy oborů na stránce města i oboru odkazují učební obory na jejich
+stránku a nesou jejich obtížnost. Velikost města (která určuje, které filtry se ukážou) počítá všechny obory
+s čísly, ne jen obory se zkouškou.
+
+Otevřené u vlastníka (komentář v #244 z 6. 10. 2026): zda „katalog“ znamená datovou vrstvu, ne soubory, a zda souhrn
+*Místa podle druhu studia* přejde na čtyři skupiny přepínače. Souhrn proto v 3c-1 není.
 
 ### 16.7 Etapa 3c-2: přehled kraje (6. 10. 2026)
 

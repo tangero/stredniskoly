@@ -20,7 +20,8 @@ const UDALOST = 'skupina-oboru-zmena';
 /** Volba v rámci stránky, když úložiště prohlížeče nejde použít. */
 const vPameti = () => (window as unknown as { __skupinaOboru?: string }).__skupinaOboru ?? null;
 
-function odebirat(zmena: () => void) {
+/** Sdílené se stránkou města (filtr Vzdělání): volba platí na škole i ve městě. */
+export function odebiratSkupinu(zmena: () => void) {
   window.addEventListener(UDALOST, zmena);
   window.addEventListener('storage', zmena);
   return () => {
@@ -29,7 +30,7 @@ function odebirat(zmena: () => void) {
   };
 }
 
-function ctiUlozenou(): string | null {
+export function ctiSkupinu(): string | null {
   try {
     return window.localStorage.getItem(KLIC) ?? vPameti();
   } catch {
@@ -39,7 +40,7 @@ function ctiUlozenou(): string | null {
 }
 
 /** Uloží volbu do prohlížeče, a když to nejde, aspoň do paměti stránky; pak dá vědět přepínačům. */
-function ulozVolbu(id: string) {
+export function ulozSkupinu(id: string) {
   (window as unknown as { __skupinaOboru?: string }).__skupinaOboru = id;
   try {
     window.localStorage.setItem(KLIC, id);
@@ -51,7 +52,7 @@ function ulozVolbu(id: string) {
 
 export function SkupinyOboru({ skupiny }: { skupiny: SkupinaOboru[] }) {
   // Server a první vykreslení v prohlížeči ukážou „Vše“; uložená volba se projeví hned po hydrataci.
-  const ulozena = useSyncExternalStore(odebirat, ctiUlozenou, () => null);
+  const ulozena = useSyncExternalStore(odebiratSkupinu, ctiSkupinu, () => null);
   // Skupinu, kterou tahle škola nemá, nelze vybrat; ukážou se všechny obory.
   const vybrana = ulozena && skupiny.some(s => s.id === ulozena) ? ulozena : 'vse';
 
@@ -66,7 +67,7 @@ export function SkupinyOboru({ skupiny }: { skupiny: SkupinaOboru[] }) {
             key={t.id}
             type="button"
             aria-pressed={vybrana === t.id}
-            onClick={() => ulozVolbu(t.id)}
+            onClick={() => ulozSkupinu(t.id)}
             className={`inline-flex h-10 items-center gap-1.5 rounded-full border px-4 text-[15px] font-semibold transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0074e4] ${vybrana === t.id ? 'border-[#16325c] bg-[#16325c] text-white' : 'border-slate-300 bg-white text-[#16325c] hover:border-[#16325c]'}`}
           >
             {t.nazev}

@@ -4,7 +4,9 @@ import { adresaPrehledu } from '@/lib/adresa-oboru.mjs';
 import { naPomeziOkruhu, nazevSkolyProRadek, popisOboruOkruhu, uliceZAdresy, type OkruhMesta, type ZaznamKataloguProOkruh } from '@/lib/okruhy-oboru';
 import type { ZarazeniObtiznosti } from '@/lib/obor-profil';
 import { KATEGORIE_BEZ_JPZ, kategorieOboru } from '@/lib/kontext-prihlasek';
-import { jeNastavba, jeVyucniList, smerOboru, SMERY_STUDIA } from '@/lib/smery-studia';
+import { druhVzdelani, jeNastavba, jeVyucniList, smerOboru, SMERY_STUDIA } from '@/lib/smery-studia';
+import type { NabidkaBezJpzVeMeste } from '@/lib/data';
+import { obtiznostBezJpz } from '@/lib/obory-bez-jpz';
 import { druhZrizovatele } from '@/lib/simulator-filter';
 import type { KartaSkoly, RadekKarty, VelikostMesta } from '@/components/mesto/SkolyPodleSmeru';
 
@@ -124,6 +126,8 @@ export function sestavKartySkol(
   nabidky: CitySchoolRow[],
   dalsi: DalsiOborVeMeste[],
   podklad: PodkladKaret,
+  /** Nabídky bez jednotné zkoušky ve městě (issue #244, etapa 3c-1), i u škol mimo katalog. */
+  bezJpz: NabidkaBezJpzVeMeste[] = [],
 ): KartaSkoly[] {
   const karty = new Map<string, KartaSkoly>();
   const karta = (redizo: string, nazev: string, zrizovatel: string | null | undefined): KartaSkoly => {
@@ -157,11 +161,44 @@ export function sestavKartySkol(
       mista: r.kapacita2026 ?? r.kapacita2025,
       href: r.adresaOboru ? `/skola/${r.adresaOboru}` : null,
       nevypsano: r.chybiVRocniku,
+      vzdelani: druhVzdelani(kkov),
+      zbylaMista: null,
     };
     const nazev = nazevSkolyKZobrazeni(r.nazev || r.nazev_display, r.ulice, podklad.obec ?? '', podklad.adresySidel[r.redizo]?.uplny_nazev);
     karta(r.redizo, nazev, r.zrizovatel).radky.push(radek);
   }
+  // Nabídky bez JPZ s vlastní stránkou, místy a zbylými místy; z „dalších oborů“ se pak vynechají.
+  const sBezJpz = new Set<string>();
+  for (const x of bezJpz) {
+    const p = x.program;
+    const n = p.bezJpz!;
+    sBezJpz.add(`${x.redizo}_${n.kkov}`);
+    const vyucni = jeVyucniList(n.kkov);
+    const zamereni = p.zamereni ?? '';
+    const delka = [p.delka_studia ? `${p.delka_studia}leté` : '', vyucni ? 'výuční list' : ''].filter(Boolean).join(', ');
+    const nazev = podklad.nazvyKatalogu.get(x.redizo)
+      ?? nazevSkolyKZobrazeni(x.nazevSkoly.split(',')[0], x.ulice, podklad.obec ?? '', podklad.adresySidel[x.redizo]?.uplny_nazev);
+    const k = karta(x.redizo, nazev, x.zrizovatel);
+    if (!k.href) k.href = x.hrefSkoly;
+    k.radky.push({
+      id: p.id,
+      obor: p.obor,
+      doplnek: [delka, zamereni].filter(Boolean).join(' · '),
+      delka,
+      zamereni,
+      smer: smerOboru(n.kkov),
+      druh: vyucni ? 'vyucni' : 'bez_zkousky',
+      // Obtížnost jen nad prahem 10 soutěžících a ne u C, E, J, P (návrh oborů bez JPZ, oddíl 10.1).
+      zarazeni: obtiznostBezJpz(n),
+      mista: n.kapacita,
+      href: p.adresa ? `/skola/${p.adresa}` : null,
+      nevypsano: false,
+      vzdelani: druhVzdelani(n.kkov),
+      zbylaMista: n.zbyla_mista === null ? null : Math.max(0, n.zbyla_mista),
+    });
+  }
   for (const o of dalsi) {
+    if (sBezJpz.has(o.klic)) continue;
     const kkov = o.klic.split('_')[1] ?? '';
     const vyucni = jeVyucniList(kkov);
     const nazev = nazevSkolyProRadek(o.redizo, podklad.nazvyKatalogu, {
@@ -180,6 +217,8 @@ export function sestavKartySkol(
       mista: null,
       href: null,
       nevypsano: false,
+      vzdelani: druhVzdelani(kkov),
+      zbylaMista: null,
     });
   }
   return [...karty.values()].sort((a, b) => a.nazev.localeCompare(b.nazev, 'cs'));
@@ -230,6 +269,8 @@ export interface PodkladOkruhu {
    * jedna hodnota, když ji mají všechna zaměření stejnou, jinak „lisi_se“.
    */
   obtiznost?: Map<string, ZarazeniObtiznosti | null | 'lisi_se'>;
+  /** Učební obory a ostatní obory bez JPZ po klíči REDIZO_KKOV: odkaz na stránku a obtížnost (#244, 3c-1). */
+  bezJpz?: Map<string, { href: string; zarazeni: ZarazeniObtiznosti | null }>;
   rejstrik: {
     skoly: Record<string, [string, string]>;
     obory: Record<string, string>;
@@ -316,7 +357,8 @@ export function sestavOkruhyMesta(
       const mistni = [...new Map((podleKlice.get(x.klic) ?? []).map(r => [r.id, r])).values()];
       const zMest = new Set(mistni.map(r => r.zarazeni));
       const zSouhrnu = podklad.obtiznost?.get(x.klic);
-      const zarazeni: ZarazeniObtiznosti | null | 'lisi_se' = zSouhrnu !== undefined
+      const bezJpz = podklad.bezJpz?.get(x.klic);
+      const zarazeni: ZarazeniObtiznosti | null | 'lisi_se' = bezJpz ? bezJpz.zarazeni : zSouhrnu !== undefined
         ? zSouhrnu
         : zMest.size === 1 ? [...zMest][0] : zMest.size > 1 ? 'lisi_se' : null;
       const kanonicky = podklad.kanonickeNazvy.get(redizo);
@@ -331,7 +373,7 @@ export function sestavOkruhyMesta(
         lisiSe: zarazeni === 'lisi_se',
         bezJednotneZkousky: KATEGORIE_BEZ_JPZ.has(kategorieOboru(kkov)),
         naPomezi: naPomeziOkruhu(x.jistota),
-        href: mistni.length === 1 && mistni[0].adresaOboru
+        href: bezJpz ? bezJpz.href : mistni.length === 1 && mistni[0].adresaOboru
           ? `/skola/${mistni[0].adresaOboru}`
           : kanonicky ? `/skola/${adresaPrehledu(redizo, kanonicky)}` : null,
       });

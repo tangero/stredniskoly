@@ -1,10 +1,11 @@
 'use client';
 
-import { useId, useMemo, useState, type ReactNode } from 'react';
+import { useId, useMemo, useState, useSyncExternalStore, type ReactNode } from 'react';
 import Link from 'next/link';
 import { OdznakObtiznosti } from '@/components/nabidka/Odznaky';
 import { cislo, ZARAZENI_POPISEK, PORADI_OBTIZNOSTI, type ZarazeniObtiznosti } from '@/lib/obor-profil';
-import { SMERY_STUDIA, type SmerStudia } from '@/lib/smery-studia';
+import { DRUHY_VZDELANI, SMERY_STUDIA, type DruhVzdelani, type SmerStudia } from '@/lib/smery-studia';
+import { ctiSkupinu, odebiratSkupinu, ulozSkupinu } from '@/components/skola/SkupinyOboru';
 import type { DruhZrizovatele } from '@/lib/simulator-filter';
 
 /**
@@ -32,6 +33,10 @@ export interface RadekKarty {
   href: string | null;
   /** Nabídka v zobrazeném ročníku chybí, údaje jsou starší. */
   nevypsano: boolean;
+  /** Čím studium končí (issue #393): skupina pro filtr Vzdělání, stejná jako na stránce školy. */
+  vzdelani: DruhVzdelani;
+  /** Zbylá místa po 1. kole u nabídek bez jednotné zkoušky (issue #244, 3c-1); u ostatních null. */
+  zbylaMista: number | null;
 }
 
 export interface KartaSkoly {
@@ -46,7 +51,6 @@ export interface KartaSkoly {
 
 export type VelikostMesta = 'male' | 'stredni' | 'velke';
 
-type Doklad = 'vse' | 'maturita' | 'vyucni';
 
 const pocetOboru = (n: number) => `${cislo(n)} ${n === 1 ? 'obor' : n >= 2 && n <= 4 ? 'obory' : 'oborů'}`;
 const pocetMist = (n: number) => `${cislo(n)} ${n === 1 ? 'místo' : n >= 2 && n <= 4 ? 'místa' : 'míst'}`;
@@ -66,6 +70,8 @@ const ZRIZOVATEL_VOLBA: [DruhZrizovatele | 'vse', string][] = [
 ];
 
 function textBezUdaje(r: RadekKarty): string {
+  // Nabídka bez jednotné zkoušky s čísly: místo obtížnosti zbylá místa po 1. kole (slovník ukazatelů).
+  if (r.zbylaMista !== null) return r.zbylaMista > 0 ? `zbylá místa po 1. kole: ${cislo(r.zbylaMista)}` : 'po 1. kole obsazeno';
   if (r.druh === 'mimo') return 'mimo náš přehled';
   if (r.druh !== 'jpz') return 'bez jednotné zkoušky';
   return 'bez údaje';
@@ -93,6 +99,11 @@ function Vyber({ id, value, onChange, children }: { id: string; value: string; o
   );
 }
 
+/** Uložená skupina platí jen tam, kde je přepínač vidět a skupinu město má; jinak „vse“. */
+export function vybranaSkupina(ulozena: string | null, ukazDoklad: boolean, dostupne: string[]): DruhVzdelani | 'vse' {
+  return ukazDoklad && ulozena && dostupne.includes(ulozena) ? ulozena as DruhVzdelani : 'vse';
+}
+
 export function SkolyPodleSmeru({
   skoly, rok, velikost, hlavicka,
 }: {
@@ -104,7 +115,6 @@ export function SkolyPodleSmeru({
   hlavicka: ReactNode;
 }) {
   const [smer, setSmer] = useState<SmerStudia | 'vse'>('vse');
-  const [doklad, setDoklad] = useState<Doklad>('vse');
   const [obtiznost, setObtiznost] = useState<ZarazeniObtiznosti | 'vse'>('vse');
   const [zrizovatel, setZrizovatel] = useState<DruhZrizovatele | 'vse'>('vse');
   const [hledat, setHledat] = useState('');
@@ -126,10 +136,15 @@ export function SkolyPodleSmeru({
     { id: 'vse', nazev: 'Všechny směry', pocet: vsechnyRadky.length },
     ...smery.map(s => ({ id: s.id, nazev: s.kratce, pocet: s.pocet })),
   ];
-  const maVyucni = vsechnyRadky.some(r => r.druh === 'vyucni');
-  const maMaturitni = vsechnyRadky.some(r => r.druh === 'jpz');
+  // Skupiny vzdělání v pevném pořadí (issue #393); volba se sdílí se stránkou školy.
+  const skupinyVzdelani = DRUHY_VZDELANI
+    .map(d => ({ ...d, pocet: vsechnyRadky.filter(r => r.vzdelani === d.id).length }))
+    .filter(d => d.pocet > 0);
+  const ulozenaSkupina = useSyncExternalStore(odebiratSkupinu, ctiSkupinu, () => null);
+  const ukazDoklad = velikost !== 'male' && skupinyVzdelani.length > 1;
+  const doklad = vybranaSkupina(ulozenaSkupina, ukazDoklad, skupinyVzdelani.map(d => d.id));
+  const setDoklad = (k: DruhVzdelani | 'vse') => ulozSkupinu(k);
   const ukazCipy = velikost !== 'male' && smery.length > 1;
-  const ukazDoklad = velikost !== 'male' && maVyucni && maMaturitni;
   const ukazObtiznost = velikost !== 'male' && vsechnyRadky.some(r => r.zarazeni);
   const ukazZrizovatele = velikost !== 'male' && skoly.some(s => s.zrizovatel && s.zrizovatel !== 'verejna');
   const ukazHledani = velikost === 'velke';
@@ -138,8 +153,7 @@ export function SkolyPodleSmeru({
   const dotaz = hledat.trim().toLocaleLowerCase('cs');
   const sedi = (r: RadekKarty, skola: KartaSkoly) => {
     if (smer !== 'vse' && r.smer !== smer) return false;
-    if (doklad === 'maturita' && r.druh !== 'jpz') return false;
-    if (doklad === 'vyucni' && r.druh !== 'vyucni') return false;
+    if (doklad !== 'vse' && r.vzdelani !== doklad) return false;
     if (obtiznost !== 'vse' && r.zarazeni !== obtiznost) return false;
     if (zrizovatel !== 'vse' && skola.zrizovatel !== zrizovatel) return false;
     if (dotaz && !`${skola.nazev} ${r.obor} ${r.doplnek}`.toLocaleLowerCase('cs').includes(dotaz)) return false;
@@ -209,20 +223,20 @@ export function SkolyPodleSmeru({
           // Každý prvek: popisek ve stejné výšce a ovládání vysoké 44 px, aby řada držela jednu linku.
           <div className="mb-3 flex flex-wrap items-end gap-x-4 gap-y-3 md:mb-4">
             {ukazDoklad && (
-              <div className="flex flex-col gap-1.5">
+              <div className="flex min-w-0 max-w-full flex-col gap-1.5">
                 <span id={idDoklad} className={POPISEK}>Vzdělání</span>
-                <div role="group" aria-labelledby={idDoklad} className="inline-flex h-11 items-center rounded-full bg-[#e6ecf3] p-1">
-                  {([['vse', 'Vše'], ['maturita', 'S maturitou'], ['vyucni', 'S výučním listem']] as [Doklad, string][]).map(([k, l]) => (
+                <div role="group" aria-labelledby={idDoklad} className="inline-flex h-11 max-w-full items-center overflow-x-auto rounded-full bg-[#e6ecf3] p-1 [scrollbar-width:none]">
+                  {([['vse', 'Vše', vsechnyRadky.length], ...skupinyVzdelani.map(d => [d.id, d.nazev, d.pocet])] as [DruhVzdelani | 'vse', string, number][]).map(([k, l, n]) => (
                     <button
                       key={k}
                       type="button"
                       aria-pressed={doklad === k}
                       onClick={() => setDoklad(k)}
-                      className={`h-9 rounded-full px-4 text-[15px] font-semibold transition-colors duration-150 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0074e4] ${
+                      className={`h-9 shrink-0 whitespace-nowrap rounded-full px-4 text-[15px] font-semibold transition-colors duration-150 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0074e4] ${
                         doklad === k ? 'bg-white text-[#16325c] shadow-[0_1px_3px_rgba(22,50,92,0.18)]' : 'text-slate-700 hover:text-[#16325c]'
                       }`}
                     >
-                      {l}
+                      {l} <span className="tabular-nums font-normal text-slate-500">{n}</span>
                     </button>
                   ))}
                 </div>
