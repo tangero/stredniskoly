@@ -17,7 +17,8 @@ import { dalsiOboryVeMeste, nactiIndexRejstriku } from '../src/lib/kontext-prihl
 import { sestavKartySkol } from '../src/lib/mesto-karty.ts';
 import { zrizovatelPodleRedizo } from '../src/lib/simulator-filter.ts';
 import { nazvySkolKatalogu, kanonickeNazvySkol } from '../src/lib/okruhy-podklad.ts';
-import { obtiznostBezJpz, rokBezJpz } from '../src/lib/obory-bez-jpz.ts';
+import { obtiznostBezJpz, rokBezJpz, typBezJpz } from '../src/lib/obory-bez-jpz.ts';
+import { getKrajPrehled } from '../src/lib/krajData.ts';
 import { adresaPrehledu, adresyBezJpzMapa, adresySkolyMapa, obsazeneAdresy, zamereniBezKodu } from '../src/lib/adresa-oboru.mjs';
 import { buildSitemapPaths } from '../scripts/generate-sitemap.mjs';
 import { getProfilUcebnihoOboru } from '../src/lib/ucebni-obor-profil-data.ts';
@@ -277,4 +278,29 @@ test('město: škola, kterou katalog nevede, má kartu s názvem a odkazem na p�
   assert.match(k.nazev, /^Pražská konzervatoř/);
   assert.equal(k.href, '/skola/600004538-prazska-konzervator-na-rejdisti');
   assert.ok(k.radky.every(r => r.href && r.vzdelani === 'ostatni'));
+});
+
+// ---------------------------------------------------------------------------
+// Etapa 3c-2: přehled kraje
+// ---------------------------------------------------------------------------
+
+test('kraj: všechny denní nabídky bez JPZ v kraji jsou v přehledu, bez kohorty a pořadí, i školy mimo katalog', async () => {
+  const kraj = 'CZ064';
+  const prehled = await getKrajPrehled(kraj);
+  const nabidky = prehled.skoly.flatMap(s => s.nabidky);
+  const bez = nabidky.filter(n => ['UCEBNI', 'UMELECKY', 'KONZ', 'PRAKT'].includes(n.skupina));
+  const ocekavane = DATA.nabidky.filter(n => DATA.skoly[n.redizo]?.kraj_kod === kraj);
+  assert.equal(bez.length, ocekavane.length);
+  assert.ok(bez.every(n => n.kohorta === null && n.poradiZajem === null && n.poradiVysledky === null));
+  for (const n of bez) {
+    const b = ocekavane.find(x => x.id === n.klic);
+    assert.equal(n.skupina, typBezJpz(b.kategorie));
+    assert.equal(n.zarazeni, obtiznostBezJpz(b), n.klic);
+  }
+  // Nedenní nástavby do přehledu nepatří.
+  assert.ok(!nabidky.some(n => DATA.nastavby.some(x => x.id === n.klic)));
+  // Škola, kterou katalog nevede, má kartu s adresou přehledu.
+  const nove = prehled.skoly.filter(s => !VE_KATALOGU.has(s.redizo));
+  assert.ok(nove.length > 0);
+  for (const s of nove) assert.equal(s.slug, adresaPrehledu(s.redizo, DATA.skoly[s.redizo].nazev));
 });

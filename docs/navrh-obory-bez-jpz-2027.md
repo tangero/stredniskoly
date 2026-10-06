@@ -1,6 +1,6 @@
 # Obory bez jednotné zkoušky a nedenní formy: průzkum zdrojů a návrh
 
-Verze 1.6 · 6. 10. 2026 · Fáze 1 k issue #209 (pouze průzkum a návrh, web se nemění).
+Verze 1.7 · 6. 10. 2026 · Fáze 1 k issue #209 (pouze průzkum a návrh, web se nemění).
 Fáze 2 (implementace) vznikne jako samostatné zadání po schválení návrhu.
 Verze 1.1 vypořádává oponenturu (`docs/podklady/oponentura-obory-bez-jpz-2026-10-01.md`);
 vypořádání je v oddílu 17, oddíly 10 a 11 jsou přepsané. Verze 1.1 byla schválena
@@ -739,7 +739,8 @@ zopakovat jedním příkazem. Níže verdikt ke každé námitce s důkazem:
 
 | Verze | Změna |
 |---|---|
-| 1.6 | Etapa 3c-1, stránka města (oddíl 16.6). |
+| 1.7 | Etapa 3c-1, stránka města (oddíl 16.6). |
+| 1.6 | Etapa 3c-2, přehled kraje (oddíl 16.7). |
 | 1.5 | Skupiny oborů na stránce školy v pevném pořadí (oddíl 16.5, rozhodnutí vlastníka, #393). |
 | 1.4 | Etapa 3b (oddíl 16.4): 221 škol mimo katalog z rejstříku, ubytování, seznam inspekcí bez shrnutí, zaměření bez kódu oboru. |
 | 1.3 | Etapa 3a (oddíl 16.3): stránka učebního oboru a obory na stránce školy u škol, které web vede; rozdělení etapy 3 na 3a, 3b a 3c. |
@@ -821,3 +822,11 @@ s čísly, ne jen obory se zkouškou.
 
 Otevřené u vlastníka (komentář v #244 z 6. 10. 2026): zda „katalog“ znamená datovou vrstvu, ne soubory, a zda souhrn
 *Místa podle druhu studia* přejde na čtyři skupiny přepínače. Souhrn proto v 3c-1 není.
+
+### 16.7 Etapa 3c-2: přehled kraje (6. 10. 2026)
+
+Přehled kraje a souhrn na /regiony nesou i nabídky bez JPZ, vybrané podle kraje sídla školy z rejstříku (pole
+`skoly`), včetně škol mimo katalog s kartou z rejstříku. Mají vlastní typ ve filtru (Učební obor, Umělecký obor
+s talentovou zkouškou, Konzervatoř, Praktická škola a obor J), obtížnost podle oddílu 10.1, bez pozice na přihlášce
+(kohorty) a bez pořadí v kraji: srovnatelné skupiny ze souhrnů 1. kola pro ně nejsou a řazení podle pořadí se
+u těchto typů vypne. Nedenní nástavby v přehledu nejsou. Text nad tabulkou už netvrdí, že učební obory chybí.
