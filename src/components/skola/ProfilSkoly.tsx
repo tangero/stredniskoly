@@ -13,6 +13,8 @@ import { formatDatumCz } from '@/lib/portal-skol';
 import type { NovejsiInspekce } from '@/lib/inspekce-aktualnost';
 import { SkupinaVKraji } from '@/components/obor/grafy';
 import { UlozitObor } from '@/components/obor/UlozitObor';
+import { SkupinyOboru } from '@/components/skola/SkupinyOboru';
+import { DRUHY_VZDELANI, druhVzdelani } from '@/lib/smery-studia';
 import { VibecordingPromo } from '@/components/VibecordingPromo';
 import { SchemaOkoli } from '@/components/skola/SchemaOkoli';
 import { NovinkySkoly, ZeZivotaSkoly } from '@/components/skola/NovinkySkoly';
@@ -372,7 +374,24 @@ export function ProfilSkoly({ data, skola, odkazy }: ProfilSkolyProps) {
             {vypsane.some(o => o.bezJpz) && (
               <p className="text-[15px] text-slate-600">U učebních oborů, tedy oborů s výučním listem, a ostatních oborů bez jednotné přijímací zkoušky body nejsou, protože se zkouška nekoná; prvním údajem je, kolik míst zbylo po 1. kole.</p>
             )}
-            <div className="space-y-2.5">{vypsane.map(o => <RadekOboru key={o.id} o={o} rok={rok} />)}</div>
+            {(() => {
+              // Skupiny podle toho, čím studium končí, v pevném pořadí (issue #393); jen u školy s víc skupinami.
+              const skupiny = DRUHY_VZDELANI
+                .map(d => ({ ...d, obory: vypsane.filter(x => druhVzdelani(x.id.split('_')[1] ?? '') === d.id) }))
+                .filter(d => d.obory.length > 0);
+              const radky = (seznam: OborSkoly[]) => <div className="space-y-2.5">{seznam.map(o => <RadekOboru key={o.id} o={o} rok={rok} />)}</div>;
+              if (skupiny.length < 2) return radky(vypsane);
+              return (
+                <SkupinyOboru skupiny={skupiny.map(d => {
+                  const mista = d.obory.reduce((n, x) => n + (x.kapacita ?? 0), 0);
+                  return {
+                    id: d.id, nazev: d.nazev, pocet: d.obory.length,
+                    souhrn: `${pocetOboru(d.obory.length)}${mista > 0 ? ` · ${pocetMist(mista, cislo)}` : ''}`,
+                    obsah: radky(d.obory),
+                  };
+                })} />
+              );
+            })()}
           </>
         ) : (
           <Karta><p className="text-slate-700">Škola v 1. kole {rok} nevypsala obor s jednotnou přijímací zkouškou, který bychom měli v datech.</p></Karta>
