@@ -11,8 +11,8 @@ import { MIN_SOUTEZICICH_PRO_ZARAZENI, type ZarazeniObtiznosti } from '@/lib/obo
  * nástavby jako „kam dál“ a domovy mládeže. Ukazatele počítá Python stejně jako souhrny 1. kola;
  * tady se jen vybírají a uplatňují se pravidla zobrazení.
  *
- * V etapě 3a čtou nabídky jen stránka školy a stránka oboru, a jen u škol, které už na webu jsou.
- * Stránka města, kraje a vyhledávání je dostanou v etapě 3c, nové školy v etapě 3b.
+ * Nabídky čtou stránka školy a stránka oboru (etapa 3a), od etapy 3b i u škol, které katalog nevede:
+ * jejich identitu nese pole `skoly`. Stránka města, kraje a vyhledávání je dostanou v etapě 3c.
  */
 
 export type KategorieBezJpz = 'H' | 'E' | 'C' | 'J' | 'M' | 'L' | 'P';
@@ -55,11 +55,27 @@ export interface NabidkaBezJpz {
 
 export interface DomovMladeze { druh: string; izo: string; kapacita: number | null; nazev: string; obec: string }
 
+/** Identita školy z rejstříku MŠMT (etapa 3b), ve tvaru polí katalogu; bez osobních údajů. */
+export interface SkolaBezJpz {
+  nazev: string;
+  zkraceny_nazev: string;
+  uplny_nazev: string;
+  adresa: string;
+  ulice: string | null;
+  obec: string;
+  mestska_cast: string | null;
+  okres: string | null;
+  kraj_kod: string | null;
+  kraj: string;
+  zrizovatel: string;
+}
+
 interface SouborBezJpz {
   rok: number;
   nabidky: NabidkaBezJpz[];
   nastavby: NabidkaBezJpz[];
   domovy: Record<string, DomovMladeze[]>;
+  skoly?: Record<string, SkolaBezJpz>;
 }
 
 let cache: Promise<SouborBezJpz | null> | null = null;
@@ -111,6 +127,20 @@ export async function nastavbyNedenni(redizo: string, kraj: string, dvojcisli: s
     skoly: data.nastavby.filter(n => n.redizo === redizo),
     kraj: data.nastavby.filter(n => n.redizo !== redizo && n.kraj === kraj && n.kkov.startsWith(dvojcisli)),
   };
+}
+
+/** Identita školy s nabídkami bez JPZ z rejstříku; null, když škola žádnou denní nabídku bez JPZ nemá. */
+export async function skolaBezJpz(redizo: string): Promise<SkolaBezJpz | null> {
+  const data = await nacti();
+  if (!data?.skoly?.[redizo] || !data.nabidky.some(n => n.redizo === redizo)) return null;
+  return data.skoly[redizo];
+}
+
+/** Školy, které nabízejí jen obory bez JPZ, a proto je katalog nevede (etapa 3b); REDIZO podle `jeVKatalogu`. */
+export async function skolyMimoKatalog(jeVKatalogu: (redizo: string) => boolean): Promise<string[]> {
+  const data = await nacti();
+  if (!data?.skoly) return [];
+  return [...new Set(data.nabidky.map(n => n.redizo))].filter(r => !jeVKatalogu(r) && data.skoly![r]).sort();
 }
 
 export async function domovyMladeze(redizo: string): Promise<DomovMladeze[]> {

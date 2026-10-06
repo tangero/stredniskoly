@@ -11,9 +11,9 @@ import assert from 'node:assert/strict';
 import React from 'react';
 import { renderToStaticMarkup } from 'react-dom/server';
 import { text } from './_zavadec.mjs';
-import { getProgramsByRedizo, getProgramyBezJpz, getSchoolPageType, getSchoolsByRedizo } from '../src/lib/data.ts';
+import { getProgramsByRedizo, getProgramyBezJpz, getSchoolOverview, getSchoolPageType, getSchoolsByRedizo, skolaMimoKatalog } from '../src/lib/data.ts';
 import { obtiznostBezJpz, rokBezJpz } from '../src/lib/obory-bez-jpz.ts';
-import { adresySkolyMapa, obsazeneAdresy } from '../src/lib/adresa-oboru.mjs';
+import { adresaPrehledu, adresyBezJpzMapa, adresySkolyMapa, obsazeneAdresy, zamereniBezKodu } from '../src/lib/adresa-oboru.mjs';
 import { buildSitemapPaths } from '../scripts/generate-sitemap.mjs';
 import { getProfilUcebnihoOboru } from '../src/lib/ucebni-obor-profil-data.ts';
 import { ProfilUcebnihoOboru } from '../src/components/obor/ProfilUcebnihoOboru.tsx';
@@ -27,6 +27,7 @@ const DATA = JSON.parse(fs.readFileSync('src/data/obory-bez-jpz-2026.json', 'utf
 const ANALYZA = JSON.parse(fs.readFileSync('public/school_analysis.json', 'utf8'));
 const VE_KATALOGU = new Set(Object.keys(ANALYZA).map(k => k.split('_')[0]));
 const SKOLY = [...new Set(DATA.nabidky.map(n => n.redizo))].filter(r => VE_KATALOGU.has(r)).sort();
+const NOVE = [...new Set(DATA.nabidky.map(n => n.redizo))].filter(r => !VE_KATALOGU.has(r)).sort();
 
 async function programySkoly(redizo) {
   const skola = (await getSchoolsByRedizo(redizo))[0];
@@ -75,6 +76,11 @@ test('sitemapa nese přesně adresy učebních oborů, které aplikace rozpozná
   const pridane = [...sBez].filter(x => !bez.has(x)).map(x => x.replace('/skola/', '')).sort();
   const aplikace = [];
   for (const redizo of SKOLY) aplikace.push(...(await programySkoly(redizo)).bez.map(p => p.adresa));
+  // Nové školy (etapa 3b): přehled a stránky nabídek.
+  for (const redizo of NOVE) {
+    const skola = await skolaMimoKatalog(redizo);
+    aplikace.push(adresaPrehledu(redizo, skola.nazev), ...(await getProgramyBezJpz(redizo, skola.nazev, [])).map(p => p.adresa));
+  }
   assert.deepEqual(pridane, aplikace.sort());
   assert.ok([...bez].every(x => sBez.has(x)), 'sitemapa ztratila adresu');
   // Jiný ročník souboru se do sitemapy nedostane.
@@ -152,4 +158,77 @@ test('trasy, které čtou nabídky bez JPZ za běhu, mají soubor přibalený (j
   for (const trasa of ['/skola/[slug]', '/api/skola/[slug]/json', '/api/skola/[slug]/md']) {
     assert.ok((config.outputFileTracingIncludes?.[trasa] ?? []).includes('./src/data/obory-bez-jpz-2026.json'), trasa);
   }
+});
+
+// ---------------------------------------------------------------------------
+// Etapa 3b: školy jen s obory bez JPZ, které katalog nevede
+// ---------------------------------------------------------------------------
+
+test('všech 221 nových škol má přehled a stránky nabídek, které aplikace rozpozná', async () => {
+  assert.equal(NOVE.length, 221);
+  for (const redizo of NOVE) {
+    const skola = await skolaMimoKatalog(redizo);
+    assert.ok(skola?.nazev && skola.obec && skola.kraj_kod && skola.zrizovatel && skola.okres, redizo);
+    const prehled = await getSchoolPageType(adresaPrehledu(redizo, skola.nazev));
+    assert.equal(prehled.type, 'overview', redizo);
+    assert.equal(prehled.presmerovatNa, undefined, redizo);
+    assert.ok(await getSchoolOverview(redizo), redizo);
+  }
+  for (const redizo of NOVE.filter((_, i) => i % 7 === 0)) {
+    const skola = await skolaMimoKatalog(redizo);
+    for (const p of await getProgramyBezJpz(redizo, skola.nazev, [])) {
+      const t = await getSchoolPageType(p.adresa);
+      assert.equal(t.program?.id, p.id, p.adresa);
+    }
+  }
+});
+
+test('škola bez nabídky bez JPZ záznam mimo katalog nedostane; škola v katalogu se čte z katalogu', async () => {
+  assert.equal(await skolaMimoKatalog('000000000'), null);
+  // Škola, kterou katalog vede, má přehled ze školy katalogu, ne ze záznamu rejstříku.
+  const t = await getSchoolPageType('600014231-stredni-skola-edvarda-benese-breclav-nabr-komenskeho');
+  assert.equal(t.school?.id.endsWith('_'), false);
+});
+
+test('identita nových škol z rejstříku nenese osobní údaje', () => {
+  const text = JSON.stringify(DATA.skoly).toLowerCase();
+  for (const zakazano of ['reditel', 'ředitel', '@', 'email', 'datumnarozeni']) assert.ok(!text.includes(zakazano), zakazano);
+});
+
+test('kód oboru v zaměření se do názvu ani adresy nedostane', () => {
+  assert.equal(zamereniBezKodu('82-44-M/01 Skladba'), 'Skladba');
+  assert.equal(zamereniBezKodu('82-46-P/01, 82-46-M/01'), '');
+  assert.equal(zamereniBezKodu('zahradník'), 'zahradník');
+  assert.equal(zamereniBezKodu('hra na pozoun 82-44-M,P/01'), 'hra na pozoun');
+  assert.equal(zamereniBezKodu('Housle (82-44-M/01)'), 'Housle');
+  assert.equal(zamereniBezKodu('Odborné zaměření činohra (82-47-M/01)'), 'Odborné zaměření činohra');
+  assert.equal(zamereniBezKodu('82-45-M/01, 82-45-P/01; Sólový zpěv – klasický'), 'Sólový zpěv – klasický');
+  // Žádné zaměření bez JPZ po vyčištění kód oboru nenese.
+  assert.ok(DATA.nabidky.every(n => !/\d{2}-\d{2}-[A-Z]/.test(zamereniBezKodu(n.zamereni))));
+});
+
+test('adresy učebních oborů ze 3a, které změnilo vynechání kódu oboru, se přesměrují na adresu téže nabídky', async () => {
+  const zmenene = [];
+  for (const redizo of SKOLY) {
+    const { skola, jpz, bez } = await programySkoly(redizo);
+    const vstup = DATA.nabidky.filter(n => n.redizo === redizo)
+      .map(n => ({ id: n.id, obor: n.obor, zamereni: n.zamereni || undefined, delka_studia: n.delka ?? 0, nabidka: n }));
+    const stare = adresyBezJpzMapa(redizo, skola.nazev, vstup, obsazeneAdresy(redizo, skola.nazev, jpz), true);
+    const dnesni = new Map(bez.map(p => [p.id, p.adresa]));
+    for (const [adresa, v] of stare) {
+      if (dnesni.get(v.id) === adresa) continue;
+      zmenene.push(adresa);
+      const t = await getSchoolPageType(adresa);
+      assert.equal(t.presmerovatNa, `/skola/${dnesni.get(v.id)}`, adresa);
+    }
+  }
+  assert.equal(zmenene.length, 15);
+  assert.deepEqual([...new Set(zmenene.map(a => a.split('-')[0]))].sort(), ['600016242', '600017133', '600170853', '610250574']);
+});
+
+test('stránka školy nese domovy mládeže a internáty z rejstříku', async () => {
+  const redizo = '600014231';
+  const { skola, jpz, bez } = await programySkoly(redizo);
+  const profil = await getProfilSkoly(redizo, skola.nazev, jpz, new Set(jpz.map(p => p.id)), bez);
+  assert.deepEqual(profil.domovy.map(d => d.druh), ['H22']);
 });

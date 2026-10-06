@@ -258,6 +258,60 @@ def domovy_mladeze(cesta: Path) -> dict[str, list[dict]]:
     return dict(sorted(vystup.items()))
 
 
+ZRIZOVATEL = {"5": "soukromé", "6": "církevní"}   # ostatní typy (1, 2, 3, 7) katalog vede jako veřejné / státní
+KATALOG = ROOT / "public/schools_data.json"
+
+
+def ulice_s_cislem(a: dict) -> str:
+    """„Koněvova 100“, „Na rejdišti 77/1“, bez ulice „č.p. 12“; stejný tvar, jaký nese katalog."""
+    cislo_d, cislo_o = a.get("cisloDomovni"), a.get("cisloOrientacni")
+    cisla = f"{cislo_d}/{cislo_o}{a.get('dodatekOrientacnihoCisla') or ''}" if cislo_d and cislo_o else str(cislo_d or "")
+    if a.get("ulice"):
+        return f"{a['ulice']} {cisla}".strip()
+    return f"č.p. {cisla}" if cisla else ""
+
+
+def okresy_z_katalogu(rejstrik: dict) -> dict[str, str]:
+    """Název okresu podle kódu z rejstříku, odvozený ze škol, které vede katalog (většina, bez prázdných)."""
+    pocty: dict[str, Counter] = {}
+    for r in json.loads(KATALOG.read_text(encoding="utf-8")).get("2026", []):
+        z = rejstrik.get(str(r.get("redizo")))
+        if z and r.get("okres"):
+            pocty.setdefault((z.get("adresa") or {}).get("okres"), Counter())[r["okres"]] += 1
+    return {k: c.most_common(1)[0][0] for k, c in pocty.items() if k}
+
+
+def skoly_nabidek(cesta: Path, redizo: set[str]) -> dict[str, dict]:
+    """Identita škol s nabídkami bez JPZ z rejstříku (etapa 3b): název, adresa, okres, kraj, druh zřizovatele.
+
+    Jméno ředitele, e-maily ani zřizovatele jako osobu nečte (oddíl 12 návrhu, pravidlo 4)."""
+    rejstrik = {str(z.get("redIzo")): z for z in json.loads(cesta.read_text(encoding="utf-8"))["list"]}
+    okresy = okresy_z_katalogu(rejstrik)
+    vystup: dict[str, dict] = {}
+    for r in sorted(redizo):
+        z = rejstrik.get(r)
+        if not z:
+            continue
+        a = z.get("adresa") or {}
+        ulice = ulice_s_cislem(a)
+        psc = str(a.get("psc") or "").replace(" ", "")
+        okres_kod = a.get("okres") or ""
+        vystup[r] = {
+            "nazev": f"{z.get('zkracenyNazev')}, {a.get('ulice') or a.get('obec')}",
+            "zkraceny_nazev": z.get("zkracenyNazev"),
+            "uplny_nazev": z.get("uplnyNazev"),
+            "adresa": ", ".join(x for x in (ulice, a.get("obec"), psc) if x),
+            "ulice": a.get("ulice"),
+            "obec": a.get("obec"),
+            "mestska_cast": a.get("cisloObvoduPrahy"),
+            "okres": okresy.get(okres_kod),
+            "kraj_kod": okres_kod[:5] or None,
+            "kraj": z.get("kraj"),
+            "zrizovatel": ZRIZOVATEL.get(str(z.get("typZrizovatele")), "veřejné / státní"),
+        }
+    return vystup
+
+
 def otisk(soubor: Path) -> str:
     return hashlib.sha256(soubor.read_bytes()).hexdigest()
 
@@ -284,8 +338,9 @@ def sestavit() -> dict:
         n["kolo_2"] = None
 
     domovy = domovy_mladeze(REJSTRIK)
+    skoly = skoly_nabidek(REJSTRIK, {n["redizo"] for n in nabidky + nabidky_nastavby})
     return {
-        "popis": "Nabídky bez jednotné přijímací zkoušky (issue #244). Web je čte od etapy 3a: stránka učebního oboru a seznam oborů školy.",
+        "popis": "Nabídky bez jednotné přijímací zkoušky (issue #244). Web je čte od etapy 3a (stránka učebního oboru, obory školy), od 3b i školy, které katalog nevede (pole skoly).",
         "rok": 2026,
         "zdroje": {p.name: otisk(p) for p in (KOLO1_2026, KOLO1_2025, KOLO2_2026, REJSTRIK)},
         "souhrn": {
@@ -299,6 +354,7 @@ def sestavit() -> dict:
         "nabidky": nabidky,
         "nastavby": nabidky_nastavby,
         "domovy": domovy,
+        "skoly": skoly,
     }
 
 

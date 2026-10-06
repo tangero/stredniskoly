@@ -142,6 +142,8 @@ function Zdroj({ children }: { children: ReactNode }) {
   return <p className="text-[13px] leading-relaxed text-slate-500">{children}</p>;
 }
 
+const sklon = (n: number, a: string, b: string, c: string) => (n === 1 ? a : n >= 2 && n <= 4 ? b : c);
+
 function RadekOboru({ o, rok }: { o: OborSkoly; rok: number | null }) {
   // Učební obor a ostatní obory bez jednotné zkoušky: prvním údajem jsou zbylá místa po 1. kole (issue #244).
   const nadpis = o.bezJpz && o.bezJpz.zbylaMista !== null && o.kapacita !== null
@@ -157,7 +159,7 @@ function RadekOboru({ o, rok }: { o: OborSkoly; rok: number | null }) {
           <Link href={o.href} className="hover:text-[#0074e4]">{o.nazev}{o.delka ? `, ${o.delka}leté` : ''}</Link>
         </h3>
         <p className="text-[15px] text-slate-600">
-          {o.bezJpz ? `${o.bezJpz.druh} · ` : ''}pro žáky {o.proKoho} · {delkaSlovy(o.delka)}{o.kapacita !== null ? ` · ${cislo(o.kapacita)} míst` : ''}
+          {o.bezJpz ? `${o.bezJpz.druh} · ` : ''}pro žáky {o.proKoho} · {delkaSlovy(o.delka)}{o.kapacita !== null ? ` · ${pocetMist(o.kapacita, cislo)}` : ''}
         </p>
         {(o.novy || o.drivejsiNazev) && (
           <p className="mt-1 text-[13px] text-slate-500">
@@ -177,19 +179,19 @@ function RadekOboru({ o, rok }: { o: OborSkoly; rok: number | null }) {
         <span className="text-[14px] text-slate-600 tabular-nums">
           {o.soutezici && o.zarazeni && o.zarazeni !== 'kapacita_nerozhodovala'
             ? `přijato ${cislo(o.prijati ?? 0)} ${zOd(o.soutezici)} ${cislo(o.soutezici)} soutěžících uchazečů`
-            : o.prijati !== null && o.kapacita !== null ? `přijato ${cislo(o.prijati)} na ${cislo(o.kapacita)} míst` : ''}
+            : o.prijati !== null && o.kapacita !== null ? `přijato ${cislo(o.prijati)} na ${pocetMist(o.kapacita, cislo)}` : ''}
           {o.bezJpz && o.zarazeni ? ` · ${ZARAZENI_POPISEK[o.zarazeni]}` : ''}
           {o.predchoziRok && o.zarazeniPredchozi ? ` · v roce ${o.predchoziRok} ${ZARAZENI_POPISEK[o.zarazeniPredchozi]}` : ''}
           {o.tlak !== null ? ` · tlak prvních voleb ${cislo(o.tlak, 1)}×` : ''}
         </span>
         {(o.prihlasky !== null || o.cjPrijati !== null) && (
           <span className="text-[13px] text-slate-500 tabular-nums">
-            {o.prihlasky !== null ? `${cislo(o.prihlasky)} přihlášek v 1. kole` : ''}
+            {o.prihlasky !== null ? `${cislo(o.prihlasky)} ${sklon(o.prihlasky, 'přihláška', 'přihlášky', 'přihlášek')} v 1. kole` : ''}
             {o.cjPrijati !== null && o.maPrijati !== null ? ` · přijatí průměrně čeština ${cislo(o.cjPrijati, 1)} a matematika ${cislo(o.maPrijati, 1)} z 50 bodů` : ''}
           </span>
         )}
         {o.bezJpz?.kolo2 && o.bezJpz.kolo2.kapacita !== null && (
-          <span className="text-[13px] text-slate-600">2. kolo {rok}: {cislo(o.bezJpz.kolo2.kapacita)} míst{o.bezJpz.kolo2.prijati !== null ? `, přijato ${cislo(o.bezJpz.kolo2.prijati)}` : ''}</span>
+          <span className="text-[13px] text-slate-600">2. kolo {rok}: {pocetMist(o.bezJpz.kolo2.kapacita, cislo)}{o.bezJpz.kolo2.prijati !== null ? `, přijato ${cislo(o.bezJpz.kolo2.prijati)}` : ''}</span>
         )}
         {o.druheKolo && (
           <span className="text-[13px] text-slate-600" title={[vetyDruhehoKola(o.druheKolo).hlavni, ...vetyDruhehoKola(o.druheKolo).doplnky].join(' ')}>
@@ -440,8 +442,22 @@ export function ProfilSkoly({ data, skola, odkazy }: ProfilSkolyProps) {
 
       {/* 2 · Jak si škola vede */}
       <Oddil id="vede" nadpis="Jak si škola vede" stitek={[maturita ? `maturita ${maturita.roky.at(-Math.min(4, maturita.roky.length))}–${maturita.roky.at(-1)}` : null, stitekInspekce].filter(Boolean).join(' · ') || undefined}>
-        {!maturita && !inspekce && (
-          <Karta><p className="text-slate-700">Maturitní výsledky ani shrnutí inspekce pro tuto školu zatím nemáme.{data.inspekceSeznam?.lastInspectionDate ? ` Poslední inspekce proběhla ${formatDatumCz(data.inspekceSeznam.lastInspectionDate.slice(0, 10))}.` : ''}</p></Karta>
+        {!maturita && !inspekce && !(data.inspekceSeznam && data.inspekceSeznam.inspections.length > 0) && (
+          <Karta><p className="text-slate-700">Maturitní výsledky ani shrnutí inspekce pro tuto školu zatím nemáme.</p></Karta>
+        )}
+        {/* Bez shrnutí inspekční zprávy aspoň seznam inspekcí ČŠI (návrh oborů bez JPZ, oddíl 11; #244, etapa 3b). */}
+        {!inspekce && data.inspekceSeznam && data.inspekceSeznam.inspections.length > 0 && (
+          <Karta>
+            <h3 className="mb-2 text-[16px] font-bold text-[#16325c]">Inspekce ve škole</h3>
+            <p className="mb-2 text-[14px] text-slate-700">
+              {maturita ? 'Shrnutí inspekční zprávy pro tuto školu zatím nemáme; zprávy České školní inspekce jsou veřejné.' : 'Maturitní výsledky ani shrnutí inspekční zprávy pro tuto školu zatím nemáme. Zprávy České školní inspekce jsou veřejné.'}
+            </p>
+            <ul className="space-y-1 text-[14px] text-slate-700">
+              {data.inspekceSeznam.inspections.slice(0, 4).map(i => (
+                <li key={i.dateFrom}>{formatDatumCz(i.dateFrom.slice(0, 10))} · <a href={i.reportUrl} rel="noopener noreferrer" className="font-semibold text-[#0074e4] hover:underline">zpráva ČŠI</a></li>
+              ))}
+            </ul>
+          </Karta>
         )}
         {maturita && (() => {
           const posledniRok = maturita.roky.at(-1)!;
@@ -748,6 +764,9 @@ export function ProfilSkoly({ data, skola, odkazy }: ProfilSkolyProps) {
                   <div><dt className="text-[13px] text-slate-500">V blízkosti školy</dt><dd>{[...(inspis?.v_blizkosti_skoly ?? []), ...(inspis?.mista_volny_cas ?? []).map(m => `ve škole ${m}`)].filter(x => x !== 'jiné').join(' · ')} <Puvod typ="archiv" /></dd></div>
                 ) : null}
                 {pole('stravovani') && <div><dt className="text-[13px] text-slate-500">Stravování</dt><dd>{pole('stravovani')!.hodnota} <Puvod typ={znacka('stravovani')} /></dd></div>}
+                {data.domovy.length > 0 && (
+                  <div><dt className="text-[13px] text-slate-500">Domov mládeže a internát</dt><dd>{data.domovy.map(d => `${d.nazev}${d.obec && d.obec !== skola.obec ? `, ${d.obec}` : ''}${d.kapacita ? ` (${pocetMist(d.kapacita, cislo)})` : ''}`).join(' · ')} <span className="text-[12px] text-slate-500">· rejstřík škol MŠMT</span></dd></div>
+                )}
                 {(pole('ubytovani') || pole('ubytovani_poznamka')) && (
                   <div><dt className="text-[13px] text-slate-500">Ubytování</dt><dd>{pole('ubytovani') ? (pole('ubytovani')!.hodnota === 'ano' ? 'ano' : 'ne') : ''}{pole('ubytovani_poznamka') ? `${pole('ubytovani') ? ', ' : ''}${pole('ubytovani_poznamka')!.hodnota}` : ''} <Puvod typ={znacka('ubytovani', 'ubytovani_poznamka')} /></dd></div>
                 )}
@@ -790,10 +809,11 @@ export function ProfilSkoly({ data, skola, odkazy }: ProfilSkolyProps) {
                       <table className="w-full text-[14px] tabular-nums">
                         <thead><tr className="text-left text-[12px] text-slate-500"><th className="py-1.5 pr-2">Škola a obor</th><th className="px-2 text-right">Společných</th><th className="px-2 text-right">Vzdálenost</th><th className="pl-2">Obtížnost přijetí {soubeh.rok}</th></tr></thead>
                         <tbody>
-                          {o.radky.map(r => {
+                          {o.radky.map((r, i) => {
                             const cisloSkoly = [...poradiSoubehu.entries()].find(([red]) => r.href?.startsWith(`/skola/${red}-`))?.[1];
                             return (
-                              <tr key={`${r.nazev}-${r.obor}`} className="border-t border-slate-200 align-top">
+                              // Dvě školy se stejným zkráceným názvem a oborem (konzervatoře z různých měst) se liší obcí a pořadím.
+                              <tr key={`${r.nazev}-${r.obec}-${r.obor}-${i}`} className="border-t border-slate-200 align-top">
                                 <td className="py-2 pr-2">
                                   {cisloSkoly && !r.tataSkola ? <span className="mr-1.5 inline-grid h-5 w-5 place-items-center rounded-full bg-[#0074e4] text-[11px] font-bold text-white">{cisloSkoly}</span> : null}
                                   {r.tataSkola ? <b>Tato škola</b> : r.href ? <Link href={r.href} className="font-semibold text-slate-900 hover:text-[#0074e4]">{r.nazev}</Link> : <b>{r.nazev}</b>}

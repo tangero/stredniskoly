@@ -259,12 +259,17 @@ export function nabidkySeStrankou(nabidky, znaZakladniKlic) {
  * @param {string} nazevSkoly
  * @param {NabidkaProAdresu[]} nabidky
  * @param {Set<string>} obsazene
+ * @param {boolean} [sKodemOboru] adresy tak, jak je počítala etapa 3a (zaměření s kódem oboru); slouží jen
+ *   k rozpoznání starých adres, které se přesměrují na dnešní
  * @returns {Map<string, NabidkaProAdresu>}
  */
-export function adresyBezJpzMapa(redizo, nazevSkoly, nabidky, obsazene) {
+export function adresyBezJpzMapa(redizo, nazevSkoly, nabidky, obsazene, sKodemOboru = false) {
   const proAdresu = nabidky.map(n => ({
     nabidka: n,
-    tvar: { ...n, zamereni: slugify(n.zamereni ?? '', 40) === slugify(n.obor ?? '', 40) ? undefined : n.zamereni },
+    tvar: (() => {
+      const z = sKodemOboru ? String(n.zamereni ?? '') : zamereniBezKodu(n.zamereni);
+      return { ...n, zamereni: !z || slugify(z, 40) === slugify(n.obor ?? '', 40) ? undefined : z };
+    })(),
   }));
   /** @type {Map<string, NabidkaProAdresu>} */
   const vysledek = new Map();
@@ -297,4 +302,22 @@ export function obsazeneAdresy(redizo, nazevSkoly, nabidkyJpz) {
       `${redizo}-${createSlug(nazevSkoly, n.obor, undefined, n.delka_studia)}`,
     ]),
   ]);
+}
+
+/**
+ * Zaměření bez úvodních kódů oborů: CERMAT u konzervatoří a části učebních oborů píše do zaměření kód
+ * („82-44-M/01 Skladba“, „82-46-P/01, 82-46-M/01“). Pro název i adresu se kód vynechá (issue #244, 3b).
+ *
+ * @param {string|undefined|null} zamereni
+ * @returns {string}
+ */
+export function zamereniBezKodu(zamereni) {
+  return String(zamereni ?? '')
+    // „(82-44-M,P/01)“, „82-44-M/01, 82-44-P/01“, „Housle (82-44-M/01)“, „Truhlář - 33-56-H/01“
+    .replace(/\(?\s*\d{2}-\d{2}-[A-Z](?:,\s*[A-Z])*\/\d{2}\s*\)?/g, ' ')
+    .replace(/\s+([.,;])/g, '$1')
+    .replace(/([,;])(?:\s*[,;])+/g, '$1')
+    .replace(/^[\s,;.\-–]+|[\s,;\-–]+$/g, '')
+    .replace(/\s{2,}/g, ' ')
+    .trim();
 }
