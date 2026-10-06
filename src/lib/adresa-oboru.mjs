@@ -259,13 +259,15 @@ export function nabidkySeStrankou(nabidky, znaZakladniKlic) {
  * @param {string} nazevSkoly
  * @param {NabidkaProAdresu[]} nabidky
  * @param {Set<string>} obsazene
+ * @param {boolean} [sKodemOboru] adresy tak, jak je počítala etapa 3a (zaměření s kódem oboru); slouží jen
+ *   k rozpoznání starých adres, které se přesměrují na dnešní
  * @returns {Map<string, NabidkaProAdresu>}
  */
-export function adresyBezJpzMapa(redizo, nazevSkoly, nabidky, obsazene) {
+export function adresyBezJpzMapa(redizo, nazevSkoly, nabidky, obsazene, sKodemOboru = false) {
   const proAdresu = nabidky.map(n => ({
     nabidka: n,
     tvar: (() => {
-      const z = zamereniBezKodu(n.zamereni);
+      const z = sKodemOboru ? String(n.zamereni ?? '') : zamereniBezKodu(n.zamereni);
       return { ...n, zamereni: !z || slugify(z, 40) === slugify(n.obor ?? '', 40) ? undefined : z };
     })(),
   }));
