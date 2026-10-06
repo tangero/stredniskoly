@@ -1,6 +1,6 @@
 # Obory bez jednotné zkoušky a nedenní formy: průzkum zdrojů a návrh
 
-Verze 1.4 · 6. 10. 2026 · Fáze 1 k issue #209 (pouze průzkum a návrh, web se nemění).
+Verze 1.5 · 6. 10. 2026 · Fáze 1 k issue #209 (pouze průzkum a návrh, web se nemění).
 Fáze 2 (implementace) vznikne jako samostatné zadání po schválení návrhu.
 Verze 1.1 vypořádává oponenturu (`docs/podklady/oponentura-obory-bez-jpz-2026-10-01.md`);
 vypořádání je v oddílu 17, oddíly 10 a 11 jsou přepsané. Verze 1.1 byla schválena
@@ -739,6 +739,7 @@ zopakovat jedním příkazem. Níže verdikt ke každé námitce s důkazem:
 
 | Verze | Změna |
 |---|---|
+| 1.5 | Skupiny oborů na stránce školy v pevném pořadí (oddíl 16.5, rozhodnutí vlastníka, #393). |
 | 1.4 | Etapa 3b (oddíl 16.4): 221 škol mimo katalog z rejstříku, ubytování, seznam inspekcí bez shrnutí, zaměření bez kódu oboru. |
 | 1.3 | Etapa 3a (oddíl 16.3): stránka učebního oboru a obory na stránce školy u škol, které web vede; rozdělení etapy 3 na 3a, 3b a 3c. |
 | 1.2 | Odpovědi z etapy 0 fáze 2 (#244, oddíl 16.1): párování 2025 ↔ 2026 (96 %) a 1. ↔ 2. kola, konzervatoře s výhradou, kategorie J zahrnuta, šest skupin souhrnu míst; pojem pro kategorii J. Otázky 1 a 7 změřeny po schválení dotazů na cizí servery (DiPSy, rešerše). |
@@ -796,3 +797,12 @@ CERMAT u konzervatoří a části učebních oborů píše do zaměření kód o
 „Housle (82-44-M/01)“); název i adresa ho vynechávají (`zamereniBezKodu`), takže se změnilo 15 adres učebních oborů
 ze 3a, které už jsou nasazené. Staré adresy se přesměrují na adresu téže nabídky (`getSchoolPageType`,
 `staraAdresaBezJpz`), takže žádný odkaz nepřestane fungovat.
+
+### 16.5 Skupiny oborů na stránce školy (6. 10. 2026, #393)
+
+Rozhodnutí vlastníka 6. 10. 2026: obory na stránce školy se dělí do skupin podle toho, čím studium končí (S maturitou,
+S výučním listem, Po vyučení, Ostatní), s přepínačem nad seznamem. **Pořadí skupin je vždy stejné**, aby rodinu
+nemátlo, že se mění podle školy. Tím se pro stránku školy mění pravidlo z oddílu 11 („nevytvářet hierarchii maturita
+nahoře, učební obor dole“): skupina S maturitou stojí první vždy. Pravidlo dál platí pro řazení na stránce města
+a kraje, kde se učební obory řadí s ostatními (etapa 3c). Volba skupiny se pamatuje v prohlížeči a platí i na další
+škole; škola s jedinou skupinou přepínač nemá.
