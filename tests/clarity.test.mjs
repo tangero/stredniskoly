@@ -100,3 +100,50 @@ test('formuláře s e-mailem jsou v Clarity maskované, CSP Clarity pouští', (
   assert.match(csp, /"script-src [^"]*https:\/\/\*\.clarity\.ms/);
   assert.match(csp, /"connect-src [^"]*https:\/\/\*\.clarity\.ms[^"]*https:\/\/c\.bing\.com/);
 });
+
+test('oddíl vysoký 5× okno pošle oddil_videt po 3 s, jednou (mock IntersectionObserver)', async () => {
+  const { sledujViditelnost, prahyPozorovani, PRAH_VIDITELNOSTI_MS } = await import('../src/lib/mereni-oddilu.ts');
+  const okno = 800;
+  const puvodni = { io: globalThis.IntersectionObserver, h: globalThis.innerHeight, st: globalThis.setTimeout, ct: globalThis.clearTimeout };
+  const pozorovatele = [];
+  const casovace = new Map();
+  let dalsi = 1;
+  globalThis.innerHeight = okno;
+  globalThis.setTimeout = (fn, ms) => { casovace.set(dalsi, { fn, ms }); return dalsi++; };
+  globalThis.clearTimeout = id => { casovace.delete(id); };
+  globalThis.IntersectionObserver = class {
+    constructor(cb, opts) { this.cb = cb; this.opts = opts; pozorovatele.push(this); }
+    observe() {}
+    unobserve() {}
+    disconnect() {}
+  };
+  try {
+    const prvek = { dataset: { oddil: 'obory' }, getBoundingClientRect: () => ({ height: okno * 5 }) };
+    const poslano = [];
+    const konec = sledujViditelnost([prvek], id => poslano.push(id));
+    const io = pozorovatele[0];
+    // polovina okna je 0,1 výšky prvku; ten musí být mezi prahy, jinak se vyhodnocení nikdy nespustí
+    assert.ok(io.opts.threshold.some(p => Math.abs(p - 0.1) < 1e-9));
+    assert.ok(prahyPozorovani(okno * 5, okno).some(p => Math.abs(p - 0.1) < 1e-9));
+    // vidět je 0,3 okna: nic se neodpočítává
+    io.cb([{ target: prvek, isIntersecting: true, intersectionRatio: 0.05, intersectionRect: { height: okno * 0.3 } }]);
+    assert.equal(casovace.size, 0);
+    // vidět je celé okno (podíl prvku 0,2): spustí se jeden 3s časovač
+    const zaznam = { target: prvek, isIntersecting: true, intersectionRatio: 0.2, intersectionRect: { height: okno } };
+    io.cb([zaznam]);
+    io.cb([zaznam]);
+    assert.equal(casovace.size, 1);
+    const [{ fn, ms }] = casovace.values();
+    assert.equal(ms, PRAH_VIDITELNOSTI_MS);
+    fn();
+    assert.deepEqual(poslano, ['obory']);
+    io.cb([zaznam]);
+    assert.deepEqual(poslano, ['obory']);
+    konec();
+  } finally {
+    globalThis.IntersectionObserver = puvodni.io;
+    globalThis.innerHeight = puvodni.h;
+    globalThis.setTimeout = puvodni.st;
+    globalThis.clearTimeout = puvodni.ct;
+  }
+});

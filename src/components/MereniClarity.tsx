@@ -2,7 +2,7 @@
 
 import { useEffect } from 'react';
 import {
-  PRAH_PODILU, PRAH_VIDITELNOSTI_MS, UDALOST_ROZBALEN, UDALOST_VIDET,
+  sledujViditelnost, UDALOST_ROZBALEN, UDALOST_VIDET,
   type StavNabidky, type TypStranky,
 } from '@/lib/mereni-oddilu';
 
@@ -56,33 +56,13 @@ export function MereniClarity({ typStranky, nabidka, oddily = false }: Props = {
     if (!oddily) return;
     const w = window as unknown as { clarity?: Clarity };
     const poslat = (udalost: string, id: string) => w.clarity?.('event', `${udalost}:${id}`);
-    const videno = new Set<string>();
     const rozbaleno = new Set<string>();
-    const casovace = new Map<Element, number>();
 
     // Oddíl delší než dvě obrazovky nikdy není z poloviny vidět, proto stačí i polovina výšky okna.
-    const dostatecneVidet = (e: IntersectionObserverEntry) =>
-      e.isIntersecting && (e.intersectionRatio >= PRAH_PODILU || e.intersectionRect.height >= window.innerHeight * PRAH_PODILU);
-
-    const io = typeof IntersectionObserver === 'undefined' ? null : new IntersectionObserver(zaznamy => {
-      for (const z of zaznamy) {
-        const id = (z.target as HTMLElement).dataset.oddil;
-        if (!id || videno.has(id)) continue;
-        if (dostatecneVidet(z)) {
-          if (casovace.has(z.target)) continue;
-          casovace.set(z.target, window.setTimeout(() => {
-            casovace.delete(z.target);
-            videno.add(id);
-            poslat(UDALOST_VIDET, id);
-            io?.unobserve(z.target);
-          }, PRAH_VIDITELNOSTI_MS));
-        } else if (casovace.has(z.target)) {
-          window.clearTimeout(casovace.get(z.target));
-          casovace.delete(z.target);
-        }
-      }
-    }, { threshold: [0, 0.25, 0.5, 0.75, 1] });
-    document.querySelectorAll('[data-oddil]').forEach(el => io?.observe(el));
+    const konecViditelnosti = sledujViditelnost(
+      Array.from(document.querySelectorAll('[data-oddil]')),
+      id => poslat(UDALOST_VIDET, id),
+    );
 
     // Klik na souhrn zavřeného důkazu (myší i klávesnicí) = rozbalení; úvodní stav `open` se nepočítá.
     const naKlik = (ev: Event) => {
@@ -98,8 +78,7 @@ export function MereniClarity({ typStranky, nabidka, oddily = false }: Props = {
 
     return () => {
       document.removeEventListener('click', naKlik, true);
-      casovace.forEach(t => window.clearTimeout(t));
-      io?.disconnect();
+      konecViditelnosti();
     };
   }, [oddily]);
 
