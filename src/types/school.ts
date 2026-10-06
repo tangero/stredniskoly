@@ -242,3 +242,11 @@ export interface InspectionExtraction {
     school_change_summary?: string;
   };
 }
+
+/**
+ * Položka vyhledávání (`SchoolSearch`): jen pole, která vyhledávání čte. Data jdou do prohlížeče na titulce,
+ * /regiony a /skoly, proto úsporný tvar místo celého záznamu katalogu (etapa 3c-3, issue #244).
+ */
+export type PolozkaHledani = Pick<School, 'id' | 'nazev' | 'obor' | 'obec' | 'kraj' | 'kraj_kod' | 'okres' | 'adresa' | 'typ' | 'delka_studia'>
+  & Partial<Pick<School, 'nazev_display' | 'zamereni' | 'adresa_stranky'>>
+  & { /** Druh oboru bez jednotné zkoušky („učební obor“, „konzervatoř“…); u oborů se zkouškou chybí. */ druh_oboru?: string };

@@ -11,7 +11,7 @@ import assert from 'node:assert/strict';
 import React from 'react';
 import { renderToStaticMarkup } from 'react-dom/server';
 import { text } from './_zavadec.mjs';
-import { getNabidkyBezJpzVeMeste, getProgramsByRedizo, getProgramyBezJpz, getSchoolOverview, getSchoolPageType, getSchoolsByRedizo, getSchoolsData, skolaMimoKatalog } from '../src/lib/data.ts';
+import { getAllSchoolsForSearch, getNabidkyBezJpzVeMeste, getPolozkyHledani, getProgramsByRedizo, getProgramyBezJpz, getSchoolOverview, getSchoolPageType, getSchoolsByRedizo, getSchoolsData, skolaMimoKatalog } from '../src/lib/data.ts';
 import { getCityStats } from '../src/lib/cityData.ts';
 import { dalsiOboryVeMeste, nactiIndexRejstriku } from '../src/lib/kontext-prihlasek.ts';
 import { sestavKartySkol } from '../src/lib/mesto-karty.ts';
@@ -237,6 +237,25 @@ test('stránka školy nese domovy mládeže a internáty z rejstříku', async (
   const { skola, jpz, bez } = await programySkoly(redizo);
   const profil = await getProfilSkoly(redizo, skola.nazev, jpz, new Set(jpz.map(p => p.id)), bez);
   assert.deepEqual(profil.domovy.map(d => d.druh), ['H22']);
+});
+
+// ---------------------------------------------------------------------------
+// Etapa 3c-3: vyhledávání
+// ---------------------------------------------------------------------------
+
+test('vyhledávání nese všechny denní nabídky bez JPZ s adresou, kterou aplikace rozpozná, a obory se zkouškou beze změny', async () => {
+  const polozky = await getPolozkyHledani();
+  const bez = polozky.filter(p => p.druh_oboru);
+  assert.equal(bez.length, DATA.nabidky.length);
+  for (const p of bez.filter((_, i) => i % 50 === 0)) {
+    const t = await getSchoolPageType(p.adresa_stranky);
+    assert.equal(t.program?.id, p.id, p.adresa_stranky);
+  }
+  const jpz = polozky.filter(p => !p.druh_oboru);
+  const dnes = await getAllSchoolsForSearch();
+  assert.deepEqual(jpz.map(p => [p.id, p.adresa_stranky ?? null]), dnes.map(s => [s.id, s.adresa_stranky ?? null]));
+  // Úsporný tvar: do prohlížeče nejdou bodová ani výsledková pole.
+  assert.ok(polozky.every(p => !('min_body' in p) && !('prumer_body' in p) && !('priority_counts' in p)));
 });
 
 // ---------------------------------------------------------------------------

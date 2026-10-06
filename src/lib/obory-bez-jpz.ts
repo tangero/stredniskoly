@@ -104,6 +104,11 @@ export async function rokBezJpz(): Promise<number | null> {
   return (await nacti())?.rok ?? null;
 }
 
+/** Všechny denní nabídky bez JPZ zobrazeného ročníku (pro vyhledávání). */
+export async function vsechnyNabidkyBezJpz(): Promise<NabidkaBezJpz[]> {
+  return (await nacti())?.nabidky ?? [];
+}
+
 /** Denní nabídky bez JPZ v obci (podle obce nabídky v datech CERMAT, jako katalog); bez nedenních nástaveb. */
 export async function nabidkyBezJpzVObci(obec: string): Promise<NabidkaBezJpz[]> {
   const data = await nacti();

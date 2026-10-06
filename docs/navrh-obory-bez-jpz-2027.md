@@ -1,6 +1,6 @@
 # Obory bez jednotné zkoušky a nedenní formy: průzkum zdrojů a návrh
 
-Verze 1.7 · 6. 10. 2026 · Fáze 1 k issue #209 (pouze průzkum a návrh, web se nemění).
+Verze 1.8 · 6. 10. 2026 · Fáze 1 k issue #209 (pouze průzkum a návrh, web se nemění).
 Fáze 2 (implementace) vznikne jako samostatné zadání po schválení návrhu.
 Verze 1.1 vypořádává oponenturu (`docs/podklady/oponentura-obory-bez-jpz-2026-10-01.md`);
 vypořádání je v oddílu 17, oddíly 10 a 11 jsou přepsané. Verze 1.1 byla schválena
@@ -739,6 +739,7 @@ zopakovat jedním příkazem. Níže verdikt ke každé námitce s důkazem:
 
 | Verze | Změna |
 |---|---|
+| 1.8 | Etapa 3c-3, vyhledávání (oddíl 16.8). |
 | 1.7 | Etapa 3c-1, stránka města (oddíl 16.6). |
 | 1.6 | Etapa 3c-2, přehled kraje (oddíl 16.7). |
 | 1.5 | Skupiny oborů na stránce školy v pevném pořadí (oddíl 16.5, rozhodnutí vlastníka, #393). |
@@ -830,3 +831,12 @@ Přehled kraje a souhrn na /regiony nesou i nabídky bez JPZ, vybrané podle kra
 s talentovou zkouškou, Konzervatoř, Praktická škola a obor J), obtížnost podle oddílu 10.1, bez pozice na přihlášce
 (kohorty) a bez pořadí v kraji: srovnatelné skupiny ze souhrnů 1. kola pro ně nejsou a řazení podle pořadí se
 u těchto typů vypne. Nedenní nástavby v přehledu nejsou. Text nad tabulkou už netvrdí, že učební obory chybí.
+
+### 16.8 Etapa 3c-3: vyhledávání (6. 10. 2026)
+
+Vyhledávání na titulce, /regiony a /skoly i hledání v záhlaví (API `/api/schools/search`, jen textový dotaz) najdou
+všechny denní nabídky bez JPZ s odkazem na stránku oboru a druhem oboru („učební obor“, „konzervatoř“…). Data
+vyhledávání jdou do prohlížeče v úsporném tvaru jen s poli, která vyhledávání čte (`PolozkaHledani`), takže stránky
+jsou i s 2 902 položkami navíc menší než dřív (titulka 3,24 MB proti 3,37 MB). Katalog simulátoru
+(`simulatorCatalog=1`) a dotaz podle id se nemění; simulátor nabídky bez JPZ dostane v etapě 5. Žebříček
+nejžádanějších oborů na /skoly zůstává jen u oborů se zkouškou.

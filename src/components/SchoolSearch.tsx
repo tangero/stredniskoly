@@ -2,11 +2,11 @@
 
 import { useState, useMemo, useRef, useEffect } from 'react';
 import Link from 'next/link';
-import { School } from '@/types/school';
+import type { PolozkaHledani } from '@/types/school';
 import { MESTA } from '@/lib/mesta.mjs';
 
 interface SchoolSearchProps {
-  schools: School[];
+  schools: PolozkaHledani[];
   kraje: { kod: string; nazev: string; slug: string }[];
 }
 
@@ -325,6 +325,7 @@ export function SchoolSearch({ schools, kraje }: SchoolSearchProps) {
                       {school.typ?.startsWith('GY') && school.delka_studia && (
                         <span className="text-slate-400"> ({school.delka_studia}leté)</span>
                       )}
+                      {school.druh_oboru && <span className="text-slate-400"> · {school.druh_oboru}</span>}
                     </div>
                     <div className="text-xs text-slate-400 mt-0.5">
                       {school.adresa ? highlightMatch(school.adresa, query) : <>{school.obec} • {school.kraj}</>}

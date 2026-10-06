@@ -6,11 +6,11 @@ import { subjectScore, unavailableAdmissionScores } from './historical-scores';
 import { normalizeSchoolKey, uniqueSchoolIndex, vypsanaNabidkaBezZamereni } from './school-key';
 import { promises as fs } from 'fs';
 import path from 'path';
-import { School, SchoolAnalysis, SchoolData, SchoolsData, SchoolDetail, krajNames, CSIDataset, CSISchoolData, InspectionExtraction } from '@/types/school';
+import { School, type PolozkaHledani, SchoolAnalysis, SchoolData, SchoolsData, SchoolDetail, krajNames, CSIDataset, CSISchoolData, InspectionExtraction } from '@/types/school';
 import { InspisDataset, SchoolInspisData } from '@/types/inspis';
 import { createSlug, createKrajSlug, extractRedizo } from './utils';
 import { adresaPrehledu, adresyBezJpzMapa, adresySkolyMapa, obsazeneAdresy, zamereniBezKodu } from './adresa-oboru.mjs';
-import { nabidkyBezJpzSkoly, nabidkyBezJpzVObci, obtiznostBezJpz, skolaBezJpz, type NabidkaBezJpz } from './obory-bez-jpz';
+import { druhOboruBezJpz, nabidkyBezJpzSkoly, nabidkyBezJpzVObci, obtiznostBezJpz, skolaBezJpz, vsechnyNabidkyBezJpz, type NabidkaBezJpz } from './obory-bez-jpz';
 import { sortSchoolsByPopularity } from './popularity';
 
 const dataDir = path.join(process.cwd(), 'public');
@@ -340,6 +340,38 @@ export async function getSchoolPageType(slug: string): Promise<{
     return { type: 'overview', redizo, school: firstSchool, program: null, presmerovatNa: `/skola/${overviewSlug}` };
   }
   return { type: 'overview', redizo, school: firstSchool, program: null };
+}
+
+export type { PolozkaHledani } from '@/types/school';
+
+let polozkyHledaniCache: PolozkaHledani[] | null = null;
+
+/** Obory se zkouškou z katalogu a nabídky bez JPZ (i škol mimo katalog) s adresou stránky oboru. */
+export async function getPolozkyHledani(): Promise<PolozkaHledani[]> {
+  if (polozkyHledaniCache) return polozkyHledaniCache;
+  const usporne = (s: School): PolozkaHledani => ({
+    id: s.id, nazev: s.nazev, obor: s.obor, obec: s.obec, kraj: s.kraj, kraj_kod: s.kraj_kod, okres: s.okres,
+    adresa: s.adresa, typ: s.typ, delka_studia: s.delka_studia,
+    ...(s.nazev_display ? { nazev_display: s.nazev_display } : {}),
+    ...(s.zamereni ? { zamereni: s.zamereni } : {}),
+    ...(s.adresa_stranky ? { adresa_stranky: s.adresa_stranky } : {}),
+  });
+  const vysledek = (await getAllSchoolsForSearch()).map(usporne);
+  const redizo = [...new Set((await vsechnyNabidkyBezJpz()).map(n => n.redizo))].sort();
+  for (const r of redizo) {
+    const skola = (await getSchoolsByRedizo(r))[0] ?? await skolaMimoKatalog(r);
+    if (!skola) continue;
+    for (const p of await programyBezJpzSkoly(r, skola.nazev)) {
+      vysledek.push({
+        ...usporne(skola), id: p.id, obor: p.obor, typ: p.typ, delka_studia: p.delka_studia,
+        nazev_display: skola.nazev_display || skola.nazev,
+        ...(p.zamereni ? { zamereni: p.zamereni } : { zamereni: undefined }),
+        adresa_stranky: p.adresa, druh_oboru: druhOboruBezJpz(p.bezJpz!.kategorie),
+      });
+    }
+  }
+  polozkyHledaniCache = vysledek;
+  return vysledek;
 }
 
 /**
