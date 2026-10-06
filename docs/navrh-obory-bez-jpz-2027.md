@@ -1,6 +1,6 @@
 # Obory bez jednotné zkoušky a nedenní formy: průzkum zdrojů a návrh
 
-Verze 1.3 · 5. 10. 2026 · Fáze 1 k issue #209 (pouze průzkum a návrh, web se nemění).
+Verze 1.4 · 6. 10. 2026 · Fáze 1 k issue #209 (pouze průzkum a návrh, web se nemění).
 Fáze 2 (implementace) vznikne jako samostatné zadání po schválení návrhu.
 Verze 1.1 vypořádává oponenturu (`docs/podklady/oponentura-obory-bez-jpz-2026-10-01.md`);
 vypořádání je v oddílu 17, oddíly 10 a 11 jsou přepsané. Verze 1.1 byla schválena
@@ -739,6 +739,7 @@ zopakovat jedním příkazem. Níže verdikt ke každé námitce s důkazem:
 
 | Verze | Změna |
 |---|---|
+| 1.4 | Etapa 3b (oddíl 16.4): 221 škol mimo katalog z rejstříku, ubytování, seznam inspekcí bez shrnutí, zaměření bez kódu oboru. |
 | 1.3 | Etapa 3a (oddíl 16.3): stránka učebního oboru a obory na stránce školy u škol, které web vede; rozdělení etapy 3 na 3a, 3b a 3c. |
 | 1.2 | Odpovědi z etapy 0 fáze 2 (#244, oddíl 16.1): párování 2025 ↔ 2026 (96 %) a 1. ↔ 2. kola, konzervatoře s výhradou, kategorie J zahrnuta, šest skupin souhrnu míst; pojem pro kategorii J. Otázky 1 a 7 změřeny po schválení dotazů na cizí servery (DiPSy, rešerše). |
 | 1.1 | Vypořádání oponentury (oddíl 17): přepsané oddíly 10 a 11, nová měření 3.5–3.7 a 5.1, oprava chyby o nástavbách, rozhodnutí o C/E, dva nové ukazatele, domovy mládeže. |
@@ -774,3 +775,23 @@ všechny“ (574/302/164/78/17 u H, jak uvádí oddíl 3.6), u C, E, J a P vůbe
 Zatím mimo: odkaz na PDF podmínek přijetí konkrétní nabídky v DiPSy (veřejná stálá adresa karty nabídky není
 ověřená; stránka odkazuje na web školy a na DiPSy obecně), kohorta podle pozice na přihlášce a pořadí v kraji
 (potřebují skupiny kategorie × dvojčíslí KKOV), maturita u uměleckých M a L (oddíl 10.4) a simulátor (etapa 5).
+
+### 16.4 Etapa 3b: školy, které katalog nevede, a ubytování (6. 10. 2026)
+
+221 škol nabízí jen obory bez jednotné zkoušky, a katalog je proto nevede (návrh odhadoval 227; rozdíl dělají školy,
+které mezitím katalog dostal, a nástavby). Jejich identitu přidal `scripts/build-obory-bez-jpz.py` do pole `skoly`
+souboru `src/data/obory-bez-jpz-2026.json` z rejstříku škol MŠMT: zkrácený a úplný název, adresa, městská část,
+okres, kraj a druh zřizovatele. Název školy se skládá jako v katalogu („zkrácený název, ulice“), okres a druh
+zřizovatele se převádějí z kódů rejstříku podle škol, které katalog i rejstřík vedou (okres většinou hlasů, bez
+prázdných; typ zřizovatele 5 soukromá, 6 církevní, ostatní veřejná). Jméno ředitele, e-maily ani zřizovatele jako
+osobu skript nečte.
+
+Nové školy mají přehled (obory, maturita tam, kde ji CERMAT vede, seznam inspekcí ČŠI, profil InspIS, portál,
+veletrhy, souběžné přihlášky) a stránky všech nabídek. Polohu (souřadnice) rejstřík nemá, proto u nich chybí
+nejbližší zastávka a školy v okolí; adresa vede na Mapy.cz a na nástroj Dojezd do škol. Seznam inspekcí se nově
+ukazuje u každé školy, ke které nemáme shrnutí inspekční zprávy, nejen u nových. Blok ubytování (domovy mládeže
+a internáty z rejstříku, druh H21 a H22) je v oddílu „Kde je“ u všech 438 škol, které je pod svým REDIZO vedou.
+
+CERMAT u konzervatoří a části učebních oborů píše do zaměření kód oboru („Hudba – 82-44-M/01 Dirigování“,
+„Housle (82-44-M/01)“); název i adresa ho vynechávají (`zamereniBezKodu`), takže se změnilo 11 adres učebních oborů
+ze 3a, které ještě nebyly nasazené.

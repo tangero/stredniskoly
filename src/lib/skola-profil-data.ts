@@ -10,7 +10,7 @@ import { nenabiraSe } from '@/lib/dobihajici-obory';
 import { getDruheKolo, type DruheKoloNabidky } from '@/lib/druhe-kolo';
 import { zobrazeneObdobi, platnostObdobi } from '@/lib/stav-datovych-sad';
 import { createSlug } from '@/lib/utils';
-import { druhOboruBezJpz, obtiznostBezJpz } from '@/lib/obory-bez-jpz';
+import { domovyMladeze, druhOboruBezJpz, obtiznostBezJpz, type DomovMladeze } from '@/lib/obory-bez-jpz';
 import { zarazeniObtiznosti, soutezicichUchazecu, nazevOboruZKlice, type ZarazeniObtiznosti } from '@/lib/obor-profil';
 import {
   nazevSkupinyMaturity, proKohoObor, shrnutiMaturity, smerStupne, vzdalenostKm,
@@ -100,6 +100,8 @@ export interface RadekSoubehu {
 
 export interface ProfilSkolyData {
   redizo: string;
+  /** Domovy mládeže a internáty, které rejstřík škol MŠMT vede pod REDIZO školy (issue #244, etapa 3b). */
+  domovy: DomovMladeze[];
   rok: number | null;
   platnostDat: string | null;
   obory: OborSkoly[];
@@ -423,6 +425,7 @@ export async function getProfilSkoly(
       novejsi: novejsiInspekce(csi, posledni.date),
     } : null,
     inspekceSeznam: csi,
+    domovy: await domovyMladeze(redizo),
     inspis,
     portal,
     web,

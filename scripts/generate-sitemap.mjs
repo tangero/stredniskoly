@@ -103,6 +103,15 @@ function buildSchoolSlugs(analysisData, schoolsData, rocnik, oboryBezJpz = null)
     }
   }
 
+  // Školy jen s obory bez JPZ, které katalog nevede (etapa 3b): přehled a stránky jejich nabídek.
+  for (const [redizo, bezJpz] of bezJpzPodleRedizo) {
+    const skola = oboryBezJpz.skoly?.[redizo];
+    if (nazvy.has(redizo) || !skola) continue;
+    slugs.add(adresaPrehledu(redizo, skola.nazev));
+    const vstup = bezJpz.map(n => ({ id: n.id, obor: n.obor, zamereni: n.zamereni || undefined, delka_studia: n.delka ?? 0 }));
+    for (const adresa of adresyBezJpzMapa(redizo, skola.nazev, vstup, obsazeneAdresy(redizo, skola.nazev, [])).keys()) slugs.add(adresa);
+  }
+
   return Array.from(slugs).sort((a, b) => a.localeCompare(b, 'cs'));
 }
 
