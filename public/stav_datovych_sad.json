@@ -32,7 +32,8 @@
    "po_prepnuti": "Srovnání ročníků na stránce oboru.",
    "vystupy": [
     "public/schools_data.json",
-    "public/souhrny_kolo1.json"
+    "public/souhrny_kolo1.json",
+    "src/data/obory-bez-jpz-2026.json"
    ],
    "ukazatele": [
     "Kapacita míst"
@@ -72,7 +73,8 @@
    "vystupy": [
     "public/applications_2026.json",
     "public/schools_data.json",
-    "public/souhrny_kolo1.json"
+    "public/souhrny_kolo1.json",
+    "src/data/obory-bez-jpz-2026.json"
    ],
    "kontrola_obdobi": {
     "soubor": "public/applications_2026.json",
@@ -122,7 +124,8 @@
     "public/applications_2026.json",
     "public/schools_data.json",
     "public/souhrny_kolo1.json",
-    "public/pro-novinare/obory-1-kolo-{obdobi}.xlsx"
+    "public/pro-novinare/obory-1-kolo-{obdobi}.xlsx",
+    "src/data/obory-bez-jpz-2026.json"
    ],
    "kontrola_obdobi": {
     "soubor": "public/cermat_results_meta.json",
@@ -130,6 +133,7 @@
    },
    "ukazatele": [
     "Přijatí",
+    "Zbylá místa po 1. kole",
     "Nepřijatí kvůli kapacitě",
     "Nepřijatí pro nesplnění podmínek",
     "Přijati na vyšší prioritu",
@@ -473,7 +477,8 @@
     "public/soubeh_prihlasek_2025.json",
     "public/dobihajici_obory.json",
     "data/msmt_rejstrik/nazvy-oboru.json",
-    "public/pro-novinare/konzervatore.xlsx"
+    "public/pro-novinare/konzervatore.xlsx",
+    "src/data/obory-bez-jpz-2026.json"
    ],
    "ukazatele": [
     "Konzervatoře v rejstříku"
@@ -822,7 +827,8 @@
    "po_prepnuti": "Předchozí rok zůstává ve výstupu a na stránce slouží k větě, zda škola 2. kolo vypsala i tehdy.",
    "vystupy": [
     "public/druhe_kolo.json",
-    "public/pro-novinare/druhe-kolo-{obdobi}.xlsx"
+    "public/pro-novinare/druhe-kolo-{obdobi}.xlsx",
+    "src/data/obory-bez-jpz-2026.json"
    ],
    "ukazatele": [
     "Kapacita 2. kola",

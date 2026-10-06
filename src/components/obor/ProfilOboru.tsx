@@ -31,7 +31,7 @@ interface ProfilOboruProps {
 }
 
 
-function Otazka({ id, cislo: poradi, nadpis, rok, uvod, children }: { id: string; cislo: number; nadpis: string; rok?: string; uvod?: ReactNode; children: ReactNode }) {
+export function Otazka({ id, cislo: poradi, nadpis, rok, uvod, children }: { id: string; cislo: number; nadpis: string; rok?: string; uvod?: ReactNode; children: ReactNode }) {
   return (
     <section id={id} data-oddil={id} className="scroll-mt-20 border-b border-slate-200 py-10 last:border-b-0">
       <div className="mb-6 flex flex-wrap items-baseline justify-between gap-3">
@@ -47,11 +47,11 @@ function Otazka({ id, cislo: poradi, nadpis, rok, uvod, children }: { id: string
   );
 }
 
-function Odpoved({ children }: { children: ReactNode }) {
+export function Odpoved({ children }: { children: ReactNode }) {
   return <div className="space-y-4 rounded-2xl bg-white p-6 shadow-[0_1px_0_#dbe3ec,0_12px_32px_-24px_rgba(22,50,92,0.35)] ">{children}</div>;
 }
 
-function Dukaz({ nadpis, rok, otevreny = false, children }: { nadpis: string; rok: string; otevreny?: boolean; children: ReactNode }) {
+export function Dukaz({ nadpis, rok, otevreny = false, children }: { nadpis: string; rok: string; otevreny?: boolean; children: ReactNode }) {
   return (
     <details open={otevreny} data-oddil={idDukazu(nadpis)} className="group rounded-2xl bg-white shadow-[0_1px_0_#dbe3ec]">
       <summary className="flex cursor-pointer list-none items-baseline gap-3 px-5 py-4 [&::-webkit-details-marker]:hidden">
@@ -64,11 +64,11 @@ function Dukaz({ nadpis, rok, otevreny = false, children }: { nadpis: string; ro
   );
 }
 
-function Proc({ children }: { children: ReactNode }) {
+export function Proc({ children }: { children: ReactNode }) {
   return <p className="text-[15px] leading-relaxed text-slate-600">{children}</p>;
 }
 
-function Zdroj({ children }: { children: ReactNode }) {
+export function Zdroj({ children }: { children: ReactNode }) {
   return <p className="text-[13px] leading-relaxed text-slate-500">{children}</p>;
 }
 
@@ -103,7 +103,7 @@ function body(n: number): string {
 }
 
 /** Jedno velké číslo s popiskem; bez hodnoty se nevykreslí. */
-function VelkeCislo({ hodnota, jednotka, popisek, detail }: { hodnota: number | undefined; jednotka: string; popisek: string; detail?: ReactNode }) {
+export function VelkeCislo({ hodnota, jednotka, popisek, detail }: { hodnota: number | undefined; jednotka: string; popisek: string; detail?: ReactNode }) {
   if (hodnota === undefined) return null;
   return (
     <div className="rounded-2xl bg-white p-5 shadow-[0_1px_0_#dbe3ec,0_12px_32px_-24px_rgba(22,50,92,0.35)]">
@@ -302,6 +302,39 @@ function Maturita({ m, skolaHref }: { m: MaturitaOboru; skolaHref: string }) {
       </p>
       {odkaz}
     </div>
+  );
+}
+
+/** Obory výš a níž na přihlášce s obtížností přijetí; sdílí ji stránka učebního oboru (issue #244). */
+export function TabulkaOboruNaPrihlasce({ kontext }: { kontext: NonNullable<ProfilOboruData['kontext']> }) {
+  return (
+    <>
+      <div className="overflow-x-auto">
+        <table className="w-full text-[15px]">
+          <thead><tr className="text-left text-[13px] text-slate-500"><th className="py-2 pr-3 font-semibold">Obor</th><th className="py-2 px-3 text-right font-semibold">Společných uchazečů</th><th className="py-2 pl-3 font-semibold">Obtížnost přijetí</th></tr></thead>
+          {([['Měli výš na přihlášce', kontext.vys], ['Měli níž na přihlášce', kontext.niz]] as const).map(([nadpis, obory]) => obory.length > 0 && (
+            <tbody key={nadpis}>
+              <tr><th colSpan={3} className="pt-4 pb-1 text-left text-[13px] font-semibold uppercase tracking-wide text-slate-500">{nadpis}</th></tr>
+              {obory.map(o => (
+                <tr key={o.klic} className="border-t border-slate-100 align-top">
+                  <td className="py-2 pr-3">
+                    {o.href ? <Link href={o.href} className="font-semibold text-slate-900 hover:text-[#0074e4]">{o.skola}</Link> : <span className="font-semibold">{o.skola}</span>}
+                    <span className="block text-[13px] text-slate-500">{[o.obec, o.obor, o.delka ? `${o.delka}leté` : ''].filter(Boolean).join(' · ')}</span>
+                  </td>
+                  <td className="py-2 px-3 text-right tabular-nums">{cislo(o.uchazecu)}</td>
+                  <td className="py-2 pl-3">
+                    <span className="inline-block whitespace-nowrap rounded-full bg-slate-100 px-2.5 py-0.5 text-[13px] font-semibold text-slate-800">{popisekObtiznosti(o)}</span>
+                    {o.zarazeni && o.mimoPrehled ? <span className="block text-[12px] text-slate-500">{popisekObtiznosti({ zarazeni: null, mimoPrehled: o.mimoPrehled })}</span> : null}
+                    {o.soutezici ? <span className="block text-[12px] text-slate-500">{cislo(o.prijati ?? 0)} {zOd(o.soutezici)} {cislo(o.soutezici)}</span> : null}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          ))}
+        </table>
+      </div>
+      <Zdroj>Jen obory s aspoň 10 společnými uchazeči. Pořadí na přihlášce říká, kam kdo chtěl víc, ne jak je obor těžký: tatáž škola bývá u různých uchazečů výš i níž.{[...kontext.vys, ...kontext.niz].some(o => o.mimoPrehled && !o.href) && ' Obory bez odkazu u nás zatím vlastní stránku nemají.'}</Zdroj>
+    </>
   );
 }
 
@@ -547,31 +580,7 @@ export function ProfilOboru({ data, inspekceHref, skolaHref, obec }: ProfilOboru
             {kontext && (kontext.vys.length > 0 || kontext.niz.length > 0) && (
               <Dukaz nadpis="Obory výš a níž na přihlášce" rok={`1. kolo ${kontext.rok}`} otevreny>
                 <Proc>Obory, které měli uchazeči na přihlášce před tímto oborem a za ním, a jak těžké bylo se na ně dostat. Tento obor v roce {kontext.rok}: {data.zarazeniPredchozi && predchoziRok === kontext.rok ? ZARAZENI_POPISEK[data.zarazeniPredchozi] : zarazeni ? ZARAZENI_POPISEK[zarazeni] : '—'}.</Proc>
-                <div className="overflow-x-auto">
-                  <table className="w-full text-[15px]">
-                    <thead><tr className="text-left text-[13px] text-slate-500"><th className="py-2 pr-3 font-semibold">Obor</th><th className="py-2 px-3 text-right font-semibold">Společných uchazečů</th><th className="py-2 pl-3 font-semibold">Obtížnost přijetí</th></tr></thead>
-                    {([['Měli výš na přihlášce', kontext.vys], ['Měli níž na přihlášce', kontext.niz]] as const).map(([nadpis, obory]) => obory.length > 0 && (
-                      <tbody key={nadpis}>
-                        <tr><th colSpan={3} className="pt-4 pb-1 text-left text-[13px] font-semibold uppercase tracking-wide text-slate-500">{nadpis}</th></tr>
-                        {obory.map(o => (
-                          <tr key={o.klic} className="border-t border-slate-100 align-top">
-                            <td className="py-2 pr-3">
-                              {o.href ? <Link href={o.href} className="font-semibold text-slate-900 hover:text-[#0074e4]">{o.skola}</Link> : <span className="font-semibold">{o.skola}</span>}
-                              <span className="block text-[13px] text-slate-500">{[o.obec, o.obor, o.delka ? `${o.delka}leté` : ''].filter(Boolean).join(' · ')}</span>
-                            </td>
-                            <td className="py-2 px-3 text-right tabular-nums">{cislo(o.uchazecu)}</td>
-                            <td className="py-2 pl-3">
-                              <span className="inline-block whitespace-nowrap rounded-full bg-slate-100 px-2.5 py-0.5 text-[13px] font-semibold text-slate-800">{popisekObtiznosti(o)}</span>
-                              {o.zarazeni && o.mimoPrehled ? <span className="block text-[12px] text-slate-500">{popisekObtiznosti({ zarazeni: null, mimoPrehled: o.mimoPrehled })}</span> : null}
-                              {o.soutezici ? <span className="block text-[12px] text-slate-500">{cislo(o.prijati ?? 0)} {zOd(o.soutezici)} {cislo(o.soutezici)}</span> : null}
-                            </td>
-                          </tr>
-                        ))}
-                      </tbody>
-                    ))}
-                  </table>
-                </div>
-                <Zdroj>Jen obory s aspoň 10 společnými uchazeči. Pořadí na přihlášce říká, kam kdo chtěl víc, ne jak je obor těžký: tatáž škola bývá u různých uchazečů výš i níž.{[...kontext.vys, ...kontext.niz].some(o => o.mimoPrehled) && ' Obory bez jednotné zkoušky, například učební obory s výučním listem, a několik dalších oborů přehled zatím nezahrnuje a nemají u nás vlastní stránku.'}</Zdroj>
+                <TabulkaOboruNaPrihlasce kontext={kontext} />
               </Dukaz>
             )}
             {(data.okruh || data.soubezneObce) && (

@@ -66,7 +66,7 @@ function Kriteria({ k }: { k: KriteriaOboru }) {
   const zdroj = odSkoly ? 'podle údajů školy' : 'podle PDF';
   const puvod = vsechnySkola ? (
     <p className="text-slate-600">
-      Podle údajů školy, které škola sama zadala a potvrdila.
+      Podle údajů školy, které škola sama zadala.
       {p.odkaz && /^https?:\/\//i.test(p.odkaz) && <> <a href={p.odkaz} className="text-blue-700 underline" rel="noopener noreferrer" target="_blank">Kritéria na webu školy</a>.</>}
     </p>
   ) : (

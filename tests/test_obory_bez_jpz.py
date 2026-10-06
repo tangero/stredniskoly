@@ -117,6 +117,24 @@ class Vystup(unittest.TestCase):
         for zakazano in ("percentil", "skor", "reditel", "email"):
             self.assertNotIn(zakazano, text.lower())
 
+    def test_ukazatele_jako_souhrny_kola(self):
+        """Etapa 3a: tlak a podíl prvních voleb, přihlášky na místo a obtížnost stejným výpočtem jako souhrny."""
+        self.assertEqual(self.d["rok"], 2026)
+        for n in self.d["nabidky"]:
+            prvni, prihl, kap = n["prihlasky_priorita"][0], n["prihlasky"], n["kapacita"]
+            if prvni is not None and kap:
+                self.assertEqual(n["tlak_prvnich_voleb"], round(prvni / kap, 3))
+            if prvni is not None and prihl:
+                self.assertEqual(n["podil_prvnich_voleb"], round(prvni / prihl, 3))
+            p, k = n["prijati"], n["nepr_kapacita"]
+            if p is None or k is None:
+                self.assertIsNone(n["zarazeni_obtiznosti"])
+            elif k == 0:
+                self.assertEqual(n["zarazeni_obtiznosti"], "kapacita_nerozhodovala")
+            else:
+                self.assertIn(n["zarazeni_obtiznosti"], {"vetsina_uspela", "stredne_tezke", "tezke", "velmi_tezke"})
+                self.assertEqual(n["podil_prijatych_ze_soutezicich"], round(p / (p + k), 3))
+
 
 if __name__ == "__main__":
     unittest.main()

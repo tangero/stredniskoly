@@ -241,6 +241,8 @@ export const STAV_POPISEK: Record<StavProtiSkupine, string> = {
 
 const SKUPINY_MATURITY: Record<string, string> = {
   GY8: 'osmileté gymnázium', GY6: 'šestileté gymnázium', GY4: 'čtyřleté gymnázium', LYC: 'lyceum',
+  // CERMAT jmenuje skupinu „SOŠ zdravotnické“; rodiče hledají obor (#370, rozhodnutí vlastníka: u všech škol).
+  SZD: 'praktická sestra',
 };
 
 /** Název skupiny oborů pro text stránky: „osmileté gymnázium“; ostatní skupiny podle CERMATu malými písmeny. */
