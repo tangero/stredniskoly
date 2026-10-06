@@ -1,6 +1,6 @@
 # Obory bez jednotné zkoušky a nedenní formy: průzkum zdrojů a návrh
 
-Verze 1.8 · 6. 10. 2026 · Fáze 1 k issue #209 (pouze průzkum a návrh, web se nemění).
+Verze 1.9 · 6. 10. 2026 · Fáze 1 k issue #209 (pouze průzkum a návrh, web se nemění).
 Fáze 2 (implementace) vznikne jako samostatné zadání po schválení návrhu.
 Verze 1.1 vypořádává oponenturu (`docs/podklady/oponentura-obory-bez-jpz-2026-10-01.md`);
 vypořádání je v oddílu 17, oddíly 10 a 11 jsou přepsané. Verze 1.1 byla schválena
@@ -536,9 +536,9 @@ Dva nové ukazatele (návrh znění pro slovník):
   tam, kde jsou oba sloupce vyplněné (u 53 nabídek bez čísel se neukazuje).
   Neříká, zda škola vypíše 2. kolo — to říká až oddíl 2. kola.
 - **Místa podle druhu studia**: rozdělení součtu `KAPACITA` za město a kraj
-  do šesti skupin podle kategorie KKOV (verze 1.2, oddíl 16.1): gymnázia (K),
-  maturitní obory (M a L včetně uměleckých), konzervatoře (P), učební obory (H),
-  obory E a ostatní obory bez maturity i výučního listu (C, J). Zdroj: CERMAT 1. kolo.
+  do skupin podle kategorie KKOV. Původně šest skupin (verze 1.2, oddíl 16.1);
+  zavedeno se čtyřmi skupinami přepínače S maturitou, S výučním listem,
+  Po vyučení a Ostatní (rozhodnutí vlastníka 6. 10. 2026, oddíl 16.9). Zdroj: CERMAT 1. kolo.
   Jednotka: místa a podíly. Součet míst za území se smí, na rozdíl od přihlášek;
   jeden uchazeč se v něm nepočítá víckrát, protože místa nejsou přihlášky.
 
@@ -739,6 +739,7 @@ zopakovat jedním příkazem. Níže verdikt ke každé námitce s důkazem:
 
 | Verze | Změna |
 |---|---|
+| 1.9 | Etapa 3c-4, Místa podle druhu studia se čtyřmi skupinami přepínače (oddíly 14 a 16.9). |
 | 1.8 | Etapa 3c-3, vyhledávání (oddíl 16.8). |
 | 1.7 | Etapa 3c-1, stránka města (oddíl 16.6). |
 | 1.6 | Etapa 3c-2, přehled kraje (oddíl 16.7). |
@@ -840,3 +841,13 @@ vyhledávání jdou do prohlížeče v úsporném tvaru jen s poli, která vyhle
 jsou i s 2 902 položkami navíc menší než dřív (titulka 3,24 MB proti 3,37 MB). Katalog simulátoru
 (`simulatorCatalog=1`) a dotaz podle id se nemění; simulátor nabídky bez JPZ dostane v etapě 5. Žebříček
 nejžádanějších oborů na /skoly zůstává jen u oborů se zkouškou.
+
+### 16.9 Etapa 3c-4: Místa podle druhu studia (6. 10. 2026)
+
+Záhlaví stránky města a kraje ukazuje, kolik míst školy v území vypsaly v 1. kole zobrazeného ročníku, ve
+čtyřech skupinách přepínače v pevném pořadí (S maturitou, S výučním listem, Po vyučení, Ostatní), s počtem
+míst a podílem. Vlastník 6. 10. 2026 rozhodl o čtyřech skupinách místo šesti z oddílu 14, aby souhrn mluvil
+stejnými slovy jako přepínač na stránce školy a filtr na stránce města. Zápis ve slovníku ukazatelů (verze
+1.60) a v registru u sady `cermat-kapacity`. Jihomoravský kraj: 16 697 míst, z toho 10 832 s maturitou,
+4 798 s výučním listem, 780 po vyučení a 287 ostatních. Obory bez kapacity se nesčítají a záhlaví je
+uvede počtem. Pruh je jen ilustrace (pro čtečku skrytý), čísla nese seznam.
