@@ -99,6 +99,11 @@ function Vyber({ id, value, onChange, children }: { id: string; value: string; o
   );
 }
 
+/** Uložená skupina platí jen tam, kde je přepínač vidět a skupinu město má; jinak „vse“. */
+export function vybranaSkupina(ulozena: string | null, ukazDoklad: boolean, dostupne: string[]): DruhVzdelani | 'vse' {
+  return ukazDoklad && ulozena && dostupne.includes(ulozena) ? ulozena as DruhVzdelani : 'vse';
+}
+
 export function SkolyPodleSmeru({
   skoly, rok, velikost, hlavicka,
 }: {
@@ -136,10 +141,10 @@ export function SkolyPodleSmeru({
     .map(d => ({ ...d, pocet: vsechnyRadky.filter(r => r.vzdelani === d.id).length }))
     .filter(d => d.pocet > 0);
   const ulozenaSkupina = useSyncExternalStore(odebiratSkupinu, ctiSkupinu, () => null);
-  const doklad: DruhVzdelani | 'vse' = skupinyVzdelani.some(d => d.id === ulozenaSkupina) ? ulozenaSkupina as DruhVzdelani : 'vse';
+  const ukazDoklad = velikost !== 'male' && skupinyVzdelani.length > 1;
+  const doklad = vybranaSkupina(ulozenaSkupina, ukazDoklad, skupinyVzdelani.map(d => d.id));
   const setDoklad = (k: DruhVzdelani | 'vse') => ulozSkupinu(k);
   const ukazCipy = velikost !== 'male' && smery.length > 1;
-  const ukazDoklad = velikost !== 'male' && skupinyVzdelani.length > 1;
   const ukazObtiznost = velikost !== 'male' && vsechnyRadky.some(r => r.zarazeni);
   const ukazZrizovatele = velikost !== 'male' && skoly.some(s => s.zrizovatel && s.zrizovatel !== 'verejna');
   const ukazHledani = velikost === 'velke';
