@@ -140,11 +140,34 @@ def zaznam(r: dict, imp, pokracovani: bool) -> dict:
 
 
 def minule_cisla(r: dict) -> dict:
-    return {
+    z = {
         "kapacita": cislo(r["KAPACITA"]),
         "prihlasky": cislo(r["PŘIHLÁŠKY CELKEM"]),
         "prijati": cislo(r["PŘIJATÍ"]),
         "prihlasky_priorita": priority(r, "PŘIHLÁŠKY"),
+    }
+    z["podil_prvnich_voleb"] = podil(z["prihlasky_priorita"][0], z["prihlasky"])
+    return z
+
+
+def podil(citatel: int | None, jmenovatel: int | None) -> float | None:
+    """Podíl na tři desetinná místa jako v souhrnech 1. kola; bez jmenovatele nic."""
+    return round(citatel / jmenovatel, 3) if jmenovatel and citatel is not None else None
+
+
+def ukazatele(n: dict, souhrny) -> dict:
+    """Ukazatele 1. kola stejným výpočtem jako `scripts/build-souhrny-kolo1.py` (slovník ukazatelů, 10.1
+    návrhu oborů bez JPZ): tlak a podíl prvních voleb, přihlášky na místo, podíl přijatých ze soutěžících
+    a obtížnost přijetí slovy. Web je jen zobrazuje (práh 10 soutěžících a výjimky C, E, J, P)."""
+    prijati, nevesli = n["prijati"], n["nepr_kapacita"]
+    prvni = n["prihlasky_priorita"][0]
+    return {
+        "tlak_prvnich_voleb": podil(prvni, n["kapacita"]),
+        "podil_prvnich_voleb": podil(prvni, n["prihlasky"]),
+        "index_poptavky": podil(n["prihlasky"], n["kapacita"]),
+        "podil_prijatych_ze_soutezicich": podil(prijati, prijati + nevesli)
+        if prijati is not None and nevesli is not None else None,
+        "zarazeni_obtiznosti": souhrny.zarazeni_obtiznosti({"prijati": prijati, "capacity_rejected": nevesli}),
     }
 
 
@@ -243,11 +266,14 @@ def sestavit() -> dict:
     imp = _modul("import_cermat_2026_real.py", "import_cermat_2026_real")
     par = _modul("match_obory_2025_2026.py", "match_obory_2025_2026")
     dk = _modul("build-druhe-kolo.py", "build_druhe_kolo")
+    souhrny = _modul("build-souhrny-kolo1.py", "build_souhrny_kolo1")
 
     kolo1 = nacti(KOLO1_2026)
     denni, nastavby = vybrat_nabidky(kolo1)
     nabidky = [zaznam(r, imp, False) for r in denni]
     nabidky_nastavby = [zaznam(r, imp, True) for r in nastavby]
+    for n in nabidky + nabidky_nastavby:
+        n.update(ukazatele(n, souhrny))
 
     r25_denni, _ = vybrat_nabidky(nacti(KOLO1_2025))
     parovani = spojit_s_rokem_2025(nabidky, r25_denni, imp, par)
@@ -259,7 +285,8 @@ def sestavit() -> dict:
 
     domovy = domovy_mladeze(REJSTRIK)
     return {
-        "popis": "Nabídky bez jednotné přijímací zkoušky pro etapu 3 fáze 2 (issue #244). Web je zatím nečte.",
+        "popis": "Nabídky bez jednotné přijímací zkoušky (issue #244). Web je čte od etapy 3a: stránka učebního oboru a seznam oborů školy.",
+        "rok": 2026,
         "zdroje": {p.name: otisk(p) for p in (KOLO1_2026, KOLO1_2025, KOLO2_2026, REJSTRIK)},
         "souhrn": {
             "denni_nezkracene": len(nabidky),

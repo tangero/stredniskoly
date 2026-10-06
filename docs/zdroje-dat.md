@@ -1,6 +1,6 @@
 # Zdroje dat
 
-Verze 1.32 · 5. 10. 2026 · **Závazný soupis. Před návrhem stránky nebo funkce se prochází celý.**
+Verze 1.33 · 5. 10. 2026 · **Závazný soupis. Před návrhem stránky nebo funkce se prochází celý.**
 
 Tenhle dokument vznikl kvůli konkrétní chybě. Návrh stránky školy jsem sestavil z toho, co web už zobrazoval, místo z toho, co je ve zdrojových souborech. Tři užitečné údaje proto ležely nepoužité v souborech, které jsem měl otevřené: rozpad přihlášek podle priority jako podíl, souběžné přihlášky uchazečů a nejnižší výsledek jednotné zkoušky mezi přijatými. Poslední z nich byl dokonce už spočítaný a uložený v katalogu, zatímco [slovník ukazatelů](slovnik-ukazatelu.md) tvrdil, že ho nemáme.
 
@@ -255,6 +255,7 @@ Otázka rodiče je jediná: **jak dlouho bude dítě dojíždět**. Odpovídáme
 | `soubeh_prihlasek_2025.json` | data uchazečů 2025 | `build-soubeh-prihlasek.py` | souběžné přihlášky; popis školy z katalogu přes `scripts/nazvy_oboru.py` — ročníky od nejnovějšího, uvnitř ročníku první v pořadí souboru (viz poznámka níže) |
 | `pasma_prijeti_2025.json` | data uchazečů 2025 | `build-pasma-prijeti.py` | podíl přijatých podle bodového pásma a hranice |
 | `okruhy_oboru_{rok}.json` | data uchazečů zobrazeného roku a dvou let před ním, index názvů z rejstříku, kontext a souběh přihlášek téhož roku | `build-okruhy-oboru.py` (výpočet ve `scripts/okruhy_oboru.py`) | okruhy oborů měst přehledu s ukotvením a souběžné přihlášky podle obce u každého oboru (issue #277, [návrh](navrh-shluky-oboru-2027.md)); žádný nový sloupec zdroje; zveřejněné počty se posuzují společně s počty z kontextu a souběhu, aby nešlo dopočítat skupinu pod 10 |
+| `src/data/obory-bez-jpz-2026.json` (mimo `public/`) | CERMAT souhrny 1. kola 2026 a 2025, souhrn 2. kola 2026, rejstřík škol MŠMT (snímek 2026-06-30, druh zařízení H21 a H22) | `build-obory-bez-jpz.py` (issue #244) | nabídky bez jednotné zkoušky: 2 902 denních nezkrácených (H, E, C, J, umělecké M a L, P) a 72 nedenních nástaveb jako „kam dál“, protějšek 2025, 2. kolo, domovy mládeže. Od etapy 3a ho web čte na stránce učebního oboru a v oborech na stránce školy, jen u škol, které katalog vede, a jen když jeho `rok` je zobrazený ročník (`cermat-prihlasky`). Ukazatele (tlak a podíl prvních voleb, přihlášky na místo, podíl přijatých ze soutěžících, obtížnost přijetí slovy) počítá skript stejně jako souhrny; sloupce výsledků jednotné zkoušky (oddíl 2.1, 45–86) jsou u těchto nabídek prázdné a nepoužívají se. Žádný nový sloupec zdroje proti oddílům 2.1 a 2.4 |
 | `csi_inspections.json` | seznam ČŠI | `process-csi-data.js` | |
 | `navaznost_notes.json` | rešerše návaznosti | `build-navaznost-notes.py` | ruční poznámky v `school_notes.json` mají přednost |
 | `offer_mapping_2026.json` | párování nabídek | `build-offer-mapping-2026.py` | nabídka 2026 → loňský klíč katalogu; kromě heuristik přebírá ručně ověřené páry z `docs/podklady/overene-pary-nabidek-2026.csv` (sloupce `id_2026`, `katalog_id`, `doklad`); čte ji katalog 2026, souhrny 1. kola i hledání souhrnu na stránce |
@@ -755,6 +756,7 @@ _Vygenerováno z `public/stav_datovych_sad.json` dne 2026-10-05. Neupravovat ru�
 
 | Verze | Změna |
 |---|---|
+| 1.33 | Oddíl 2.10: odvozený soubor `src/data/obory-bez-jpz-2026.json`, který od etapy 3a (issue #244) čte web; žádný nový sloupec zdroje. |
 | 1.32 | Nový zdroj 2.18 Microsoft Clarity, souhrny chování na simulátoru (#329); web z něj nic nezobrazuje. |
 | 1.30 | Oddíl 4, past 7: úplný název školy z rejstříku pro zobrazení u názvů se zkratkou (#363); oddíl 2.4 `identifikace.uplny_nazev` nově i pro web. |
 | 1.29 | Oddíl 2.10: souhrny 1. kola nesou i ročník 2024 (`PZ2024_kolo1_skolobory_vysledky.xlsx`, rozhodnutí vlastníka 3. 10. 2026 v #277). Žádný nový sloupec. |
