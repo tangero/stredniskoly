@@ -592,7 +592,7 @@ export default async function SchoolDetailPage({ params }: Props) {
               když ve městě potvrzená akce není. Fakt o městě, ne o škole. */}
           <VeletrhVMeste obec={school.obec} variant="skola" className="mb-8" />
 
-          {/* Údaje potvrzené školou (Portál pro školy) */}
+          {/* Údaje doplněné školou (Portál pro školy) */}
           <SchoolPortalSection zaznam={portalZaznam} spravce={spravceProfiluSkoly} />
 
           {/* Adresa */}

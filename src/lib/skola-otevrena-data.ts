@@ -46,7 +46,7 @@ export function sestavOtevrenaData(skola: SkolaZakladni, d: ProfilSkolyData, obd
   const u = d.portal?.udaje ?? {};
   const udajeSkoly = Object.entries(u)
     .filter(([, v]) => v?.hodnota?.trim())
-    .map(([pole, v]) => ({ pole, hodnota: v!.hodnota, potvrzeno_dne: v!.potvrzeno_dne, puvod: pole === 'popis_skoly' ? 'text_skoly' : 'potvrdila_skola' }));
+    .map(([pole, v]) => ({ pole, hodnota: v!.hodnota, potvrzeno_dne: v!.potvrzeno_dne, puvod: pole === 'popis_skoly' ? 'text_skoly' : 'doplnila_skola' }));
   const vypsane = d.obory.filter(o => o.vypsano);
   const i = d.inspis;
 
@@ -211,7 +211,7 @@ export function otevrenaDataMarkdown(o: OtevrenaDataSkoly): string {
 
   if (o.udaje_od_skoly.length) {
     r.push('## Údaje od školy', '');
-    for (const x of o.udaje_od_skoly) r.push(`- **${POPISKY_POLI[x.pole] ?? x.pole}** (${x.puvod === 'text_skoly' ? 'text školy' : 'potvrdila škola'} ${x.potvrzeno_dne}): ${x.hodnota.replace(/\n+/g, ' ')}`);
+    for (const x of o.udaje_od_skoly) r.push(`- **${POPISKY_POLI[x.pole] ?? x.pole}** (${x.puvod === 'text_skoly' ? 'text školy' : x.puvod === 'doplnila_skola' ? 'doplnila škola' : 'potvrdila škola'} ${x.potvrzeno_dne}): ${x.hodnota.replace(/\n+/g, ' ')}`);
     r.push('');
   }
 
