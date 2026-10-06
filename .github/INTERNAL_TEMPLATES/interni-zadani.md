@@ -40,6 +40,20 @@ Založení:
 - Produkční data v Neonu beze změny (migrace: žádná).
 - Cizí servery: žádné (jinak uvést server, endpointy, rychlost, data a důvod; před prvním dotazem zapsat do issue, odkud se stahuje, schválení netřeba; CLAUDE.md pravidlo 7).
 
+### Přínos a vyhodnocení
+
+<!-- Nepovinné; u nové funkce nebo změny webu vyplň, jinak oddíl smaž. Čtyři druhy kritérií, použij ty, které dávají smysl:
+     správnost (dělá funkce, co tvrdí, změřitelně z vlastních dat), použití (kolik lidí funkci použije a co udělají dál,
+     události v Matomu), vnímání (krátká otázka na stránce, jen když je opravdu potřeba), předpoklad (přínos, který
+     změřit neumíme; s podmínkou, kdy funkci zjednodušit nebo zrušit). Řádek Termín vytvoří připomínku (štítek pripominka). -->
+
+- Správnost: …
+- Použití: …
+- Vnímání: …
+- Předpoklad a podmínka zjednodušení nebo zrušení: …
+
+Termín: RRRR-MM-DD
+
 ### Otevřené otázky
 
 <!-- Co zatím nevíte a ovlivní řešení (CLAUDE.md, pravidlo 8). Nevíte-li nic, oddíl smažte. -->

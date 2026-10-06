@@ -42,6 +42,24 @@ zpracování issues: štítek `pripominka` a termín v těle, buď z pole formul
 
 První připomínka: #240, vyhodnocení sklizně výpisů aktualit k 8. 10. 2026.
 
+## 2b. Kritéria přínosu a jejich vyhodnocení
+
+Zadání nové funkce nebo změny webu může mít v těle oddíl „Přínos a vyhodnocení“ (pole formuláře, zadání #326).
+Druhy kritérií:
+
+- **správnost**: dělá funkce, co tvrdí, změřitelně z vlastních dat (například o kolik se liší výsledek s funkcí a bez ní);
+- **použití**: kolik lidí funkci použije a co udělají dál (události v Matomu);
+- **vnímání**: krátká otázka na stránce, jen když je to opravdu potřeba;
+- **předpoklad**: přínos, který změřit neumíme; zapíše se jako předpoklad s podmínkou, kdy funkci zjednodušit nebo zrušit.
+
+Postup:
+
+1. Řádek `Termín: RRRR-MM-DD` v oddílu je termín vyhodnocení. Ke sloučení zadání založí Claude Code (nebo asistent
+   zadání) připomínku (štítek `pripominka`, řádek `Termín:`, odkaz na zadání), zpracuje se podle oddílu 2.
+2. Od termínu Claude Code vyhodnocení provede a zapíše komentářem do zadání: co se měřilo, jaká čísla vyšla,
+   které kritérium splněno a které ne. Čísla, která nemá z čeho vzít (chybí signál), označí jako nezměřená.
+3. Rozhodnutí z vyhodnocení (ponechat, zjednodušit, zrušit) dělá Patrick. Do jeho rozhodnutí funkci nerušíme.
+
 ## 2a. Ruční zásahy
 
 Když vlastník ručně odblokuje něco, co měla zvládnout automatika (zaseknutý náhled, restart běhu,
