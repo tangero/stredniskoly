@@ -109,6 +109,21 @@ export async function vsechnyNabidkyBezJpz(): Promise<NabidkaBezJpz[]> {
   return (await nacti())?.nabidky ?? [];
 }
 
+/** Denní nabídky bez JPZ v obci (podle obce nabídky v datech CERMAT, jako katalog); bez nedenních nástaveb. */
+export async function nabidkyBezJpzVObci(obec: string): Promise<NabidkaBezJpz[]> {
+  const data = await nacti();
+  return data ? data.nabidky.filter(n => n.obec === obec) : [];
+}
+
+/** Denní nabídky bez JPZ v kraji (podle kraje sídla školy z rejstříku), s identitou školy; etapa 3c-2. */
+export async function nabidkyBezJpzVKraji(krajKod: string): Promise<{ nabidka: NabidkaBezJpz; skola: SkolaBezJpz }[]> {
+  const data = await nacti();
+  if (!data?.skoly) return [];
+  return data.nabidky
+    .filter(n => data.skoly![n.redizo]?.kraj_kod === krajKod)
+    .map(n => ({ nabidka: n, skola: data.skoly![n.redizo] }));
+}
+
 /** Denní nabídky bez JPZ jedné školy (bez nedenních nástaveb). */
 export async function nabidkyBezJpzSkoly(redizo: string): Promise<NabidkaBezJpz[]> {
   const data = await nacti();
@@ -150,6 +165,17 @@ export async function skolyMimoKatalog(jeVKatalogu: (redizo: string) => boolean)
 
 export async function domovyMladeze(redizo: string): Promise<DomovMladeze[]> {
   return (await nacti())?.domovy[redizo] ?? [];
+}
+
+/**
+ * Typ nabídky bez JPZ pro přehled kraje (srovnatelná skupina, filtr „typ“): učební obor (H, E), umělecký obor
+ * s talentovou zkouškou (M, L), konzervatoř (P), praktická škola a obor J (C, J). Pořadí v kraji se u nich nepočítá.
+ */
+export function typBezJpz(kategorie: KategorieBezJpz): 'UCEBNI' | 'UMELECKY' | 'KONZ' | 'PRAKT' {
+  if (kategorie === 'H' || kategorie === 'E') return 'UCEBNI';
+  if (kategorie === 'P') return 'KONZ';
+  if (kategorie === 'C' || kategorie === 'J') return 'PRAKT';
+  return 'UMELECKY';
 }
 
 /** Obory, u kterých se odznak ani filtr obtížnosti nezobrazují (návrh 10.1, oddíl 16.1). */

@@ -22,7 +22,7 @@ import { sestavKartySkol, sestavOkruhyMesta, nazevOkruhu, velikostMesta, maZkrat
 import { getOkruheMesta, getOkruhOboru } from '../src/lib/okruhy-oboru.ts';
 import { OkruhyMesta, OkruhOboruObsah } from '../src/components/mesto/OkruhyMesta.tsx';
 import { smerOboru, SMERY_STUDIA } from '../src/lib/smery-studia.ts';
-import { SkolyPodleSmeru } from '../src/components/mesto/SkolyPodleSmeru.tsx';
+import { SkolyPodleSmeru, vybranaSkupina } from '../src/components/mesto/SkolyPodleSmeru.tsx';
 
 /** Města napříč velikostmi; celá stovka by test protáhla bez užitku. */
 const VZOREK = ['Praha', 'Pardubice', 'Karlovy Vary', 'Chrudim'];
@@ -514,4 +514,17 @@ test('stránka Brna: školy z připomínky nesou plný název', async () => {
   assert.equal(nazev('600019900'), 'Církevní střední zdravotnická škola, Grohova');
   assert.equal(nazev('600024938'), 'AKADEMIA Gymnázium, Základní škola a Mateřská škola, Rašelinová');
   assert.equal(nazev('600013464'), 'Gymnázium, Křenová');
+});
+
+test('uložená skupina vzdělání se v malém městě nepoužije jako skrytý filtr', async () => {
+  const { karty } = await kartyMesta('Litomyšl');
+  const skupiny = [...new Set(karty.flatMap(k => k.radky.map(r => r.vzdelani)))];
+  assert.ok(skupiny.length > 1, 'Litomyšl má mít více skupin vzdělání');
+  const volba = skupiny[0];
+  // Malé město: přepínač není vidět, uložená volba se ignoruje a platí „vse“.
+  assert.equal(vybranaSkupina(volba, false, skupiny), 'vse');
+  // Město s přepínačem volbu respektuje; neznámou skupinu ne.
+  assert.equal(vybranaSkupina(volba, true, skupiny), volba);
+  assert.equal(vybranaSkupina('neexistuje', true, skupiny), 'vse');
+  assert.equal(vybranaSkupina(null, true, skupiny), 'vse');
 });

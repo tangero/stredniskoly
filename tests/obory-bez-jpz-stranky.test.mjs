@@ -11,8 +11,14 @@ import assert from 'node:assert/strict';
 import React from 'react';
 import { renderToStaticMarkup } from 'react-dom/server';
 import { text } from './_zavadec.mjs';
-import { getAllSchoolsForSearch, getPolozkyHledani, getProgramsByRedizo, getProgramyBezJpz, getSchoolOverview, getSchoolPageType, getSchoolsByRedizo, skolaMimoKatalog } from '../src/lib/data.ts';
-import { obtiznostBezJpz, rokBezJpz } from '../src/lib/obory-bez-jpz.ts';
+import { getAllSchoolsForSearch, getNabidkyBezJpzVeMeste, getPolozkyHledani, getProgramsByRedizo, getProgramyBezJpz, getSchoolOverview, getSchoolPageType, getSchoolsByRedizo, getSchoolsData, skolaMimoKatalog } from '../src/lib/data.ts';
+import { getCityStats } from '../src/lib/cityData.ts';
+import { dalsiOboryVeMeste, nactiIndexRejstriku } from '../src/lib/kontext-prihlasek.ts';
+import { sestavKartySkol } from '../src/lib/mesto-karty.ts';
+import { zrizovatelPodleRedizo } from '../src/lib/simulator-filter.ts';
+import { nazvySkolKatalogu, kanonickeNazvySkol } from '../src/lib/okruhy-podklad.ts';
+import { obtiznostBezJpz, rokBezJpz, typBezJpz } from '../src/lib/obory-bez-jpz.ts';
+import { getKrajPrehled } from '../src/lib/krajData.ts';
 import { adresaPrehledu, adresyBezJpzMapa, adresySkolyMapa, obsazeneAdresy, zamereniBezKodu } from '../src/lib/adresa-oboru.mjs';
 import { buildSitemapPaths } from '../scripts/generate-sitemap.mjs';
 import { getProfilUcebnihoOboru } from '../src/lib/ucebni-obor-profil-data.ts';
@@ -250,4 +256,70 @@ test('vyhledávání nese všechny denní nabídky bez JPZ s adresou, kterou apl
   assert.deepEqual(jpz.map(p => [p.id, p.adresa_stranky ?? null]), dnes.map(s => [s.id, s.adresa_stranky ?? null]));
   // Úsporný tvar: do prohlížeče nejdou bodová ani výsledková pole.
   assert.ok(polozky.every(p => !('min_body' in p) && !('prumer_body' in p) && !('priority_counts' in p)));
+});
+
+// ---------------------------------------------------------------------------
+// Etapa 3c-1: stránka města
+// ---------------------------------------------------------------------------
+
+async function kartyMesta(mesto) {
+  const stats = await getCityStats(mesto);
+  const dalsi = await dalsiOboryVeMeste(mesto, new Set(stats.schools.map(r => `${r.redizo}_${r.id.split('_')[1] ?? ''}`)));
+  const [nazvyKatalogu, kanonickeNazvy, { identifikace }] = await Promise.all([nazvySkolKatalogu(), kanonickeNazvySkol(), nactiIndexRejstriku()]);
+  const bezJpz = await getNabidkyBezJpzVeMeste(mesto);
+  const karty = sestavKartySkol(stats.schools, dalsi.obory, {
+    nazvyKatalogu, kanonickeNazvy, adresySidel: identifikace, zrizovatele: zrizovatelPodleRedizo(await getSchoolsData()), obec: mesto,
+  }, bezJpz);
+  return { karty, bezJpz, radky: karty.flatMap(k => k.radky) };
+}
+
+test('město: nabídky bez JPZ mají řádek s místy, odkazem a skupinou, a z dalších oborů zmizí', async () => {
+  const { radky, bezJpz } = await kartyMesta('Brno');
+  assert.equal(bezJpz.length, DATA.nabidky.filter(n => n.obec === 'Brno').length);
+  const ids = radky.map(r => r.id);
+  assert.equal(new Set(ids).size, ids.length, 'řádek dvakrát');
+  const klice = new Set(bezJpz.map(x => `${x.redizo}_${x.program.bezJpz.kkov}`));
+  assert.ok(!radky.some(r => r.druh !== 'jpz' && r.zbylaMista === null && klice.has(r.id)), 'učební obor zůstal i mezi dalšími obory');
+  const ucebni = radky.filter(r => r.zbylaMista !== null);
+  assert.ok(ucebni.length > 50);
+  assert.ok(ucebni.every(r => r.href?.startsWith('/skola/') && r.mista !== null && r.zbylaMista >= 0));
+  assert.ok(ucebni.filter(r => r.vzdelani === 'vyucni').length > 20);
+  // Obory E, praktické školy a konzervatoře obtížnost nemají.
+  const bezObtiznosti = bezJpz.filter(x => ['C', 'E', 'J', 'P'].includes(x.program.bezJpz.kategorie)).map(x => x.program.id);
+  assert.ok(bezObtiznosti.length > 0);
+  for (const id of bezObtiznosti) assert.equal(radky.find(r => r.id === id).zarazeni, null, id);
+});
+
+test('město: škola, kterou katalog nevede, má kartu s názvem a odkazem na přehled', async () => {
+  const { karty } = await kartyMesta('Praha');
+  const k = karty.find(x => x.redizo === '600004538');
+  assert.ok(k, 'Pražská konzervatoř chybí');
+  assert.match(k.nazev, /^Pražská konzervatoř/);
+  assert.equal(k.href, '/skola/600004538-prazska-konzervator-na-rejdisti');
+  assert.ok(k.radky.every(r => r.href && r.vzdelani === 'ostatni'));
+});
+
+// ---------------------------------------------------------------------------
+// Etapa 3c-2: přehled kraje
+// ---------------------------------------------------------------------------
+
+test('kraj: všechny denní nabídky bez JPZ v kraji jsou v přehledu, bez kohorty a pořadí, i školy mimo katalog', async () => {
+  const kraj = 'CZ064';
+  const prehled = await getKrajPrehled(kraj);
+  const nabidky = prehled.skoly.flatMap(s => s.nabidky);
+  const bez = nabidky.filter(n => ['UCEBNI', 'UMELECKY', 'KONZ', 'PRAKT'].includes(n.skupina));
+  const ocekavane = DATA.nabidky.filter(n => DATA.skoly[n.redizo]?.kraj_kod === kraj);
+  assert.equal(bez.length, ocekavane.length);
+  assert.ok(bez.every(n => n.kohorta === null && n.poradiZajem === null && n.poradiVysledky === null));
+  for (const n of bez) {
+    const b = ocekavane.find(x => x.id === n.klic);
+    assert.equal(n.skupina, typBezJpz(b.kategorie));
+    assert.equal(n.zarazeni, obtiznostBezJpz(b), n.klic);
+  }
+  // Nedenní nástavby do přehledu nepatří.
+  assert.ok(!nabidky.some(n => DATA.nastavby.some(x => x.id === n.klic)));
+  // Škola, kterou katalog nevede, má kartu s adresou přehledu.
+  const nove = prehled.skoly.filter(s => !VE_KATALOGU.has(s.redizo));
+  assert.ok(nove.length > 0);
+  for (const s of nove) assert.equal(s.slug, adresaPrehledu(s.redizo, DATA.skoly[s.redizo].nazev));
 });
