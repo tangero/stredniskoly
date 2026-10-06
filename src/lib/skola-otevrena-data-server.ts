@@ -1,4 +1,4 @@
-import { getSchoolPageType, getSchoolOverview, get2026DataByRedizo } from '@/lib/data';
+import { getSchoolPageType, getSchoolOverview, get2026DataByRedizo, getProgramyBezJpz } from '@/lib/data';
 import { normalizeSchoolKey, uniqueSchoolIndex } from '@/lib/school-key';
 import { getProfilSkoly } from '@/lib/skola-profil-data';
 import { zobrazeneObdobi } from '@/lib/stav-datovych-sad';
@@ -19,7 +19,8 @@ export async function nactiOtevrenaDataSkoly(slug: string): Promise<OtevrenaData
   const index = uniqueSchoolIndex(nabidky2026, row => row.id);
   const programy = [...overview.programs].sort((a, b) => a.obor.localeCompare(b.obor, 'cs') || b.delka_studia - a.delka_studia || a.id.localeCompare(b.id));
   const vypsane = new Set(programy.filter(p => index.get(normalizeSchoolKey(p.id))).map(p => p.id));
-  const profil = await getProfilSkoly(redizo, overview.nazev, programy, vypsane);
+  // Učební obory jako na stránce školy (issue #244, etapa 3a), aby export tvrdil tentýž seznam oborů.
+  const profil = await getProfilSkoly(redizo, overview.nazev, programy, vypsane, await getProgramyBezJpz(redizo, overview.nazev, overview.programs));
   return sestavOtevrenaData(
     {
       nazev: overview.nazev, redizo, slug: `${redizo}-${createSlug(overview.nazev)}`,
