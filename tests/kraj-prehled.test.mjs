@@ -38,7 +38,8 @@ test('přehled nevynechá ani nezdvojí žádnou nabídku ze souhrnů kraje', as
   const rok = String(await zobrazeneObdobi('cermat-vysledky'));
   for (const { kod, p } of await vsechnyKraje()) {
     const ocekavane = Object.entries(souhrny.nabidky).filter(([, n]) => n.kraj === kod && n.roky[rok]).map(([k]) => k).sort();
-    const zobrazene = p.skoly.flatMap(s => s.nabidky.map(n => n.klic)).sort();
+    // Nabídky bez jednotné zkoušky (#244, etapa 3c-2) souhrny 1. kola nevedou; hlídá je tests/obory-bez-jpz-stranky.test.mjs.
+    const zobrazene = p.skoly.flatMap(s => s.nabidky.filter(n => !['UCEBNI', 'UMELECKY', 'KONZ', 'PRAKT'].includes(n.skupina)).map(n => n.klic)).sort();
     assert.deepEqual(zobrazene, ocekavane, `kraj ${kod}`);
   }
 });
