@@ -26,6 +26,7 @@ import { getProfilSkoly } from '@/lib/skola-profil-data';
 import { ProfilSkoly } from '@/components/skola/ProfilSkoly';
 import { getProfilOboru } from '@/lib/obor-profil-data';
 import { ProfilOboru } from '@/components/obor/ProfilOboru';
+import { MereniClarity } from '@/components/MereniClarity';
 import { VeletrhVMeste } from '@/components/veletrhy/VeletrhVMeste';
 import { UlozitObor } from '@/components/obor/UlozitObor';
 import { createSlug } from '@/lib/utils';
@@ -193,7 +194,8 @@ export default async function SchoolDetailPage({ params }: Props) {
       return (
         <div className="min-h-screen flex flex-col">
           <Header />
-          <main className="flex-1">
+          <main className="flex-1" data-clarity-unmask="true">
+            <MereniClarity typStranky="skola" oddily />
             <ProfilSkoly
               data={profil}
               skola={{
@@ -308,13 +310,15 @@ export default async function SchoolDetailPage({ params }: Props) {
   // Bez souhrnu 1. kola v zobrazeném ročníku zůstává starší podoba níže.
   const profil = await getProfilOboru(program.id, program.zamereni, redizo);
   if (profil) {
+    const nabidkaOboru = program.nevypsano_2026 ? 'nevypsany' : 'vypsany';
     const krajNazev = krajNames[school.kraj_kod] || school.kraj;
     return (
       <div className="min-h-screen flex flex-col">
         <Header />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
-        <main className="flex-1 bg-[#f4f7fb]">
+        <main className="flex-1 bg-[#f4f7fb]" data-clarity-unmask="true">
+          <MereniClarity typStranky="obor" nabidka={nabidkaOboru} oddily />
           <div className="border-b border-slate-200 bg-white">
             <div className="mx-auto max-w-6xl px-4 pb-8 pt-4">
               <nav className="text-[14px] text-slate-500" aria-label="Drobečková navigace">

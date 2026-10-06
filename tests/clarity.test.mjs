@@ -47,15 +47,43 @@ test('export: výstup jen mimo veřejný repozitář', () => {
   assert.equal(mimoRepozitar('../stredniskoly-rizeni/clarity.json'), true);
 });
 
-test('Clarity se zapojuje jen na stránce simulátoru, ne v layoutu', () => {
+test('Clarity se zapojuje jen na simulátoru a stránce školy a oboru, ne v layoutu', () => {
   const layout = fs.readFileSync('src/app/layout.tsx', 'utf8');
   assert.doesNotMatch(layout, /clarity/i);
   const stranky = fs.readdirSync('src/app', { recursive: true })
     .filter(f => /\.(tsx|ts)$/.test(f))
-    .filter(f => /MereniClarity/.test(fs.readFileSync(path.join('src/app', f), 'utf8')));
-  assert.deepEqual(stranky, [path.join('simulator', 'page.tsx')]);
+    .filter(f => /MereniClarity/.test(fs.readFileSync(path.join('src/app', f), 'utf8')))
+    .sort();
+  assert.deepEqual(stranky, [path.join('simulator', 'page.tsx'), path.join('skola', '[slug]', 'page.tsx')]);
   const simulator = fs.readFileSync('src/app/simulator/page.tsx', 'utf8');
   assert.match(simulator, /data-clarity-mask="true"/);
+});
+
+test('stránky školy a oboru: odmaskovaný obsah, měření oddílů, typ stránky', () => {
+  const stranka = fs.readFileSync('src/app/skola/[slug]/page.tsx', 'utf8');
+  assert.match(stranka, /<MereniClarity typStranky="skola" oddily \/>/);
+  assert.match(stranka, /<MereniClarity typStranky="obor" nabidka=\{nabidkaOboru\} oddily \/>/);
+  assert.equal((stranka.match(/data-clarity-unmask="true"/g) || []).length, 2);
+  // formuláře uvnitř odmaskovaného obsahu zůstávají maskované
+  assert.match(fs.readFileSync('src/components/novinky/OdberBlok.tsx', 'utf8'), /data-clarity-mask="true"/);
+  assert.match(fs.readFileSync('src/components/obor/ProfilOboru.tsx', 'utf8'), /aria-labelledby="kde-stojim" data-clarity-mask="true"/);
+});
+
+test('oddíly a důkazy mají stálý identifikátor odvozený z id a nadpisu', async () => {
+  const { idDukazu } = await import('../src/lib/mereni-oddilu.ts');
+  assert.equal(idDukazu('Kolik soutěžících uchazečů se dostalo'), 'dukaz-kolik-soutezicich-uchazecu-se-dostalo');
+  assert.equal(idDukazu('2. kolo'), 'dukaz-2-kolo');
+  for (const f of ['src/components/obor/ProfilOboru.tsx', 'src/components/skola/ProfilSkoly.tsx']) {
+    const zdroj = fs.readFileSync(f, 'utf8');
+    assert.match(zdroj, /<section id=\{id\} data-oddil=\{id\}/, f);
+    assert.match(zdroj, /<details open=\{otevreny\} data-oddil=\{idDukazu\(nadpis\)\}/, f);
+    // nadpis důkazu je vždy pevný text, ne výraz: jinak by identifikátor závisel na datech
+    const dukazy = [...zdroj.matchAll(/<Dukaz nadpis=(\S)/g)].map(m => m[1]);
+    assert.ok(dukazy.length > 0 && dukazy.every(z => z === '"'), f);
+  }
+  // dokumentace vyjmenovává identifikátory oddílů
+  const doc = fs.readFileSync('docs/zdroje-dat.md', 'utf8');
+  for (const id of ['prijeti', 'pomoc', 'studium', 'obory', 'vede', 'jaka', 'kde']) assert.match(doc, new RegExp('`' + id + '`'));
 });
 
 test('Clarity dostane signál bez souhlasu a při odchodu ze simulátoru se zastaví', () => {

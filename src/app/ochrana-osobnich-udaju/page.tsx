@@ -170,8 +170,8 @@ export default function OchranaOsobnichUdajuPage() {
                 základě standardních smluvních klauzulí,
               </li>
               <li>
-                <strong>Microsoft Clarity</strong> — jen na stránce simulátoru: kam se kliká a jak daleko
-                se stránka posouvá; zpracovatelem je Microsoft ve Spojených státech, přenos do třetí
+                <strong>Microsoft Clarity</strong> — jen na stránce simulátoru a na stránkách škol a oborů: kam se
+                kliká, jak daleko se stránka posouvá a které její oddíly se zobrazily a rozbalily; zpracovatelem je Microsoft ve Spojených státech, přenos do třetí
                 země na základě standardních smluvních klauzulí.
               </li>
             </ul>
@@ -193,12 +193,16 @@ export default function OchranaOsobnichUdajuPage() {
               se neměří vůbec, aby se do měření nedostala adresa ani odkaz z e-mailu.
             </p>
             <p className="text-slate-700 mt-3">
-              Na stránce simulátoru navíc používáme Microsoft Clarity, abychom viděli, kde se v něm
-              lidé zaseknou: kam klikají, kde klikají opakovaně bez odezvy a jak daleko stránku
-              posouvají. Clarity nenastavuje cookies (výslovně jí sdělujeme, že souhlas s ukládáním
-              nemáme), veškerý text a vyplněná pole stránky se v záznamu maskují a na jiných
-              stránkách webu se nespouští. Zpracováváme to z oprávněného zájmu na tom, aby simulátor
-              fungoval srozumitelně. Údaje o zařízení a o pohybu po stránce přitom zpracovává
+              Na stránce simulátoru a na stránkách škol a oborů navíc používáme Microsoft Clarity,
+              abychom viděli, kde se lidé zaseknou a které údaje čtou: kam klikají, kde klikají
+              opakovaně bez odezvy, jak daleko stránku posouvají a které její oddíly se zobrazily
+              a rozbalily (měříme jen název oddílu, ne to, kdo ho četl). Clarity nenastavuje cookies
+              (výslovně jí sdělujeme, že souhlas s ukládáním nemáme). V simulátoru se veškerý text
+              a vyplněná pole v záznamu maskují; stránky škol a oborů obsahují jen veřejná data, jejich
+              text se proto neskrývá, ale formuláře (zadání výsledků testu, odběr novinek) zůstávají
+              maskované. Na jiných stránkách webu se Clarity nespouští. Zpracováváme to z oprávněného
+              zájmu na tom, aby simulátor a stránky škol a oborů fungovaly srozumitelně a obsahovaly
+              údaje, které rodiny opravdu čtou. Údaje o zařízení a o pohybu po stránce přitom zpracovává
               Microsoft ve Spojených státech.
             </p>
 

@@ -40,7 +40,7 @@ Ukazatel se pak zavádí podle [slovníku ukazatelů](slovnik-ukazatelu.md). Ten
 | Veletrhy a přehlídky středních škol | vlastní rešerše pořadatelů, `docs/prijimacky-veletrhy-poradatele-2026.xlsx` → tabulka `veletrh_akce` (od 26. 9. 2026, snímek `src/data/veletrhy-2027.json`) | 25 pořadatelů a vlastní rešerše rozepsané na 95 akcí, sezóna podzim 2026 | identifikátor akce | ručně, jednou ročně; průběžně z nahlášení |
 | RSS/Atom feedy školních webů | weby škol, sklízeč `scripts/sklizec-novinek.py` | 533 z 1 093 škol s feedem | REDIZO + GUID položky | automaticky 2× denně |
 | Hranice krajů, RÚIAN | ČÚZK, SHP za celý stát (`services.cuzk.gov.cz/shp/stat/epsg-5514/1.zip`), vrstva `VUSC_P`, CC BY 4.0 → `src/data/mapa-kraju.json` | 14 krajů | kód NUTS 3 (`CZ0xx`) | ručně, při změně hranic |
-| Microsoft Clarity, souhrny simulátoru | Clarity Data Export API (`www.clarity.ms/export-data/api/v1/project-live-insights`), měřicí skript jen na `/simulator` | jen stránka simulátoru, od 5. 10. 2026 | adresa stránky × dimenze | denně skriptem `scripts/clarity-export.mjs` do soukromého repozitáře signálů (#326); web z něj nic nezobrazuje |
+| Microsoft Clarity, souhrny simulátoru | Clarity Data Export API (`www.clarity.ms/export-data/api/v1/project-live-insights`), měřicí skript jen na `/simulator` a stránkách škol a oborů | jen stránka simulátoru, od 5. 10. 2026 | adresa stránky × dimenze | denně skriptem `scripts/clarity-export.mjs` do soukromého repozitáře signálů (#326); web z něj nic nezobrazuje |
 
 **Co v repozitáři není.** Zdroj patří do soupisu i tehdy, když jeho soubor na disku neleží. Takových je několik:
 
@@ -500,7 +500,11 @@ V registru je jako sada `ruian-kraje`.
 
 ### 2.18 Microsoft Clarity, souhrny chování na simulátoru
 
-Měření chování na stránce simulátoru (#329): heatmapy kliknutí a posouvání a souhrnné ukazatele. Skript se načítá jen na `/simulator` (`src/components/MereniClarity.tsx`), bez cookies (signál `consentv2` s `denied`) a s maskovaným textem i poli. Záznamy relací, cesty a návratnost bez cookies nefungují a nepoužíváme je. Souhrny stahuje `scripts/clarity-export.mjs` (3 dotazy denně, limit API 10, data nejvýš za 3 dny) a ukládá je mimo veřejný repozitář; skript zápis do něj odmítne. Web z těchto dat nic nezobrazuje, proto nejsou v registru datových sad ani ve slovníku ukazatelů. Vyhodnocení užitku po sezóně: připomínka s termínem 2027-05-31.
+Měření chování na stránce simulátoru (#329) a na stránkách škol a oborů (#386): heatmapy kliknutí a posouvání, souhrnné ukazatele a čtení oddílů. Skript se načítá jen na `/simulator`, na stránce školy a na stránce oboru (`src/components/MereniClarity.tsx`), bez cookies (signál `consentv2` s `denied`). Simulátor má text i pole maskované; stránky škol a oborů nesou jen veřejná data, jejich hlavní obsah je odmaskovaný (`data-clarity-unmask`), formuláře v něm (zadání výsledků testu, odběr novinek) zůstávají maskované (`data-clarity-mask`). Stará podoba stránky oboru bez souhrnu 1. kola se neměří.
+
+**Čtení oddílů (#386).** Prvky s `data-oddil` posílají události Clarity: `oddil_videt:<id>` (oddíl nebo důkaz aspoň 3 s z poloviny vidět, nebo z poloviny výšky okna, je-li delší; jednou za zobrazení stránky) a `oddil_rozbalen:<id>` (klik na souhrn zavřeného důkazu, jednou za zobrazení). Štítky `typ_stranky` (`skola`, `obor`) a `nabidka` (`vypsany`, `nevypsany`; `bez_jpz` až bude stránka oboru bez JPZ) slouží k filtrování. Do událostí jde jen identifikátor oddílu. Stálé identifikátory: oddíly oboru `prijeti`, `pomoc`, `studium`; oddíly školy `obory`, `vede`, `jaka`, `kde`; důkaz je `dukaz-` a nadpis bez diakritiky malými písmeny s pomlčkami (`idDukazu` v `src/lib/mereni-oddilu.ts`), například `dukaz-kolik-soutezicich-uchazecu-se-dostalo`, `dukaz-ktere-dalsi-obory-v-okoli-uchazeci-take-voli`, `dukaz-podrobne-po-letech`. Změna nadpisu důkazu změní jeho identifikátor, takže se řada přeruší; test hlídá, že každý důkaz a oddíl identifikátor má.
+
+**Jak číst souhrn oddílů.** Export API (`scripts/clarity-export.mjs`) události po oddílech nevrací; čtou se v rozhraní Clarity: Dashboard nebo Heatmaps → filtr Custom events (`oddil_videt:…`, `oddil_rozbalen:…`) a Custom tags (`typ_stranky`, `nabidka`). Podíl čtení oddílu = relace s `oddil_videt:<id>` / relace s typem stránky; podíl rozbalení = `oddil_rozbalen:<id>` / `oddil_videt:<id>`. Práh 3 s a polovina oddílu je předpoklad, po měsíci provozu se upraví podle rozložení. Vyhodnocení: připomínka #381 (2027-05-31), rozšířená i na stránky škol a oborů. Záznamy relací, cesty a návratnost bez cookies nefungují a nepoužíváme je. Souhrny stahuje `scripts/clarity-export.mjs` (3 dotazy denně, limit API 10, data nejvýš za 3 dny) a ukládá je mimo veřejný repozitář; skript zápis do něj odmítne. Web z těchto dat nic nezobrazuje, proto nejsou v registru datových sad ani ve slovníku ukazatelů. Vyhodnocení užitku po sezóně: připomínka s termínem 2027-05-31.
 
 Odpověď API je seznam ukazatelů (`metricName`) a u každého pole `information` s řádky podle zvolené dimenze (`dimension1` = `URL`, `Device`, `Browser`). Ověřeno dotazem 5. 10. 2026.
 
@@ -742,6 +746,7 @@ _Vygenerováno z `public/stav_datovych_sad.json` dne 2026-10-05. Neupravovat ru�
 
 | Verze | Změna |
 |---|---|
+| 1.33 | Oddíl 2.18: Clarity i na stránkách škol a oborů, události čtení a rozbalení oddílů (#386); web z nich nic nezobrazuje. |
 | 1.32 | Nový zdroj 2.18 Microsoft Clarity, souhrny chování na simulátoru (#329); web z něj nic nezobrazuje. |
 | 1.30 | Oddíl 4, past 7: úplný název školy z rejstříku pro zobrazení u názvů se zkratkou (#363); oddíl 2.4 `identifikace.uplny_nazev` nově i pro web. |
 | 1.29 | Oddíl 2.10: souhrny 1. kola nesou i ročník 2024 (`PZ2024_kolo1_skolobory_vysledky.xlsx`, rozhodnutí vlastníka 3. 10. 2026 v #277). Žádný nový sloupec. |

@@ -66,7 +66,7 @@ export async function OdberBlok({ zdroj, varianta = 'karta', nadpis, samostatna 
   return (
     // scroll-mt kvůli odkazu z pruhu pod hlavičkou: bez něj by kotva
     // skončila těsně pod horním okrajem a nadpis by byl uříznutý.
-    <div id={id} className={`${obal} scroll-mt-24`}>
+    <div id={id} data-clarity-mask="true" className={`${obal} scroll-mt-24`}>
       {nadpis && (
         <h3 className={`mb-2 font-bold ${naTmavem ? 'text-white' : 'text-slate-900'}`}>{nadpis}</h3>
       )}

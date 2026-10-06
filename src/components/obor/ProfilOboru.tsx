@@ -3,6 +3,7 @@ import type { ReactNode } from 'react';
 import type { ProfilOboruData, PoradiVKraji } from '@/lib/obor-profil-data';
 import { koho, type MaturitaOboru } from '@/lib/obor-maturita';
 import { MIN_PRIJATYCH_PRO_HRANICI } from '@/lib/pasma-prijeti';
+import { idDukazu } from '@/lib/mereni-oddilu';
 import { vetyDruhehoKola, VYSVETLENI_DRUHEHO_KOLA } from '@/lib/druhe-kolo-vyklad';
 import {
   ZARAZENI_POPISEK, cislo, popisekObtiznosti, slovniPodil, vKraji, soutezicichUchazecu, textPoradi, vetaPozadavku, zOd, zminitPozadavek,
@@ -32,7 +33,7 @@ interface ProfilOboruProps {
 
 function Otazka({ id, cislo: poradi, nadpis, rok, uvod, children }: { id: string; cislo: number; nadpis: string; rok?: string; uvod?: ReactNode; children: ReactNode }) {
   return (
-    <section id={id} className="scroll-mt-20 border-b border-slate-200 py-10 last:border-b-0">
+    <section id={id} data-oddil={id} className="scroll-mt-20 border-b border-slate-200 py-10 last:border-b-0">
       <div className="mb-6 flex flex-wrap items-baseline justify-between gap-3">
         <h2 className="flex items-center gap-3 text-2xl font-bold text-[#16325c] md:text-[28px]">
           <span aria-hidden="true" className="grid h-8 w-8 shrink-0 place-items-center rounded-full bg-[#16325c] text-base text-white">{poradi}</span>
@@ -52,7 +53,7 @@ function Odpoved({ children }: { children: ReactNode }) {
 
 function Dukaz({ nadpis, rok, otevreny = false, children }: { nadpis: string; rok: string; otevreny?: boolean; children: ReactNode }) {
   return (
-    <details open={otevreny} className="group rounded-2xl bg-white shadow-[0_1px_0_#dbe3ec]">
+    <details open={otevreny} data-oddil={idDukazu(nadpis)} className="group rounded-2xl bg-white shadow-[0_1px_0_#dbe3ec]">
       <summary className="flex cursor-pointer list-none items-baseline gap-3 px-5 py-4 [&::-webkit-details-marker]:hidden">
         <span className="text-[17px] font-bold text-[#16325c]">{nadpis}</span>
         <span className="ml-auto whitespace-nowrap text-[13px] text-slate-500">{rok}</span>
@@ -338,7 +339,7 @@ export function ProfilOboru({ data, inspekceHref, skolaHref, obec }: ProfilOboru
   const kdeStojimBox = (
     <>
       {stav === 'nevesli_se' && data.pasma && pasma?.pasma && pasma.pasma.length > 0 && (
-              <section aria-labelledby="kde-stojim" className="space-y-4 rounded-2xl border-2 border-[#0074e4] bg-white p-5 shadow-[0_12px_32px_-20px_rgba(0,116,228,0.45)] md:p-7">
+              <section aria-labelledby="kde-stojim" data-clarity-mask="true" className="space-y-4 rounded-2xl border-2 border-[#0074e4] bg-white p-5 shadow-[0_12px_32px_-20px_rgba(0,116,228,0.45)] md:p-7">
                 <div className="flex flex-wrap items-baseline gap-3">
                   <h3 id="kde-stojim" className="text-xl font-bold text-[#16325c] md:text-2xl">S kolika body se kdo dostal a kde byste stáli vy</h3>
                   <span className="ml-auto whitespace-nowrap text-[13px] font-semibold text-slate-500">1. kolo {data.pasma.rok}</span>
