@@ -655,7 +655,7 @@ export function ProfilSkoly({ data, skola, odkazy }: ProfilSkolyProps) {
             <Karta className="space-y-1">
               <p className="text-[13px] font-semibold text-slate-500">Velikost</p>
               <p className="text-[18px] font-bold text-[#16325c]">{cislo(inspis.aktualni_pocet_zaku)} žáků</p>
-              {inspis.opravy?.aktualni_pocet_zaku ? <Puvod typ="skola">Potvrdila škola {formatDatumCz(inspis.opravy.aktualni_pocet_zaku.datum)}</Puvod> : null}
+              {inspis.opravy?.aktualni_pocet_zaku ? <Puvod typ="skola">Doplnila škola {formatDatumCz(inspis.opravy.aktualni_pocet_zaku.datum)}</Puvod> : null}
               {inspis.nejvyssi_povoleny_pocet_zaku ? <p className="text-[14px] text-slate-600">nejvýš povoleno {cislo(inspis.nejvyssi_povoleny_pocet_zaku)}</p> : null}
               {!inspis.opravy?.aktualni_pocet_zaku || inspis.nejvyssi_povoleny_pocet_zaku ? <Puvod typ="archiv" /> : null}
             </Karta>
@@ -702,7 +702,7 @@ export function ProfilSkoly({ data, skola, odkazy }: ProfilSkolyProps) {
           <>
             <Dukaz nadpis="Výuka a vybavení">
               {inspis.zamereni?.length ? <div><p className="mb-1 text-[13px] text-slate-500">Zaměření</p><Stitky polozky={inspis.zamereni} /></div> : null}
-              {jazyky.length ? <div><p className="mb-1 text-[13px] text-slate-500">Cizí jazyky{opravaJazyku ? <> <Puvod typ="skola">Potvrdila škola {formatDatumCz(opravaJazyku.datum)}</Puvod></> : null}</p><Stitky polozky={jazyky} /></div> : null}
+              {jazyky.length ? <div><p className="mb-1 text-[13px] text-slate-500">Cizí jazyky{opravaJazyku ? <> <Puvod typ="skola">Doplnila škola {formatDatumCz(opravaJazyku.datum)}</Puvod></> : null}</p><Stitky polozky={jazyky} /></div> : null}
               {klasickeJazyky.length ? <div><p className="mb-1 text-[13px] text-slate-500">Klasické jazyky</p><Stitky polozky={klasickeJazyky} /></div> : null}
               {inspis.clil_metoda ? <div><p className="mb-1 text-[13px] text-slate-500">Výuka předmětů v cizím jazyce</p><Stitky polozky={inspis.clil_jazyky} /></div> : null}
               {inspis.odborne_ucebny?.length ? <div><p className="mb-1 text-[13px] text-slate-500">Odborné učebny</p><Stitky polozky={inspis.odborne_ucebny} /></div> : null}

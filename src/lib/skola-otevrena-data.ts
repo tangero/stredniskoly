@@ -216,7 +216,7 @@ export function otevrenaDataMarkdown(o: OtevrenaDataSkoly): string {
 
   if (o.udaje_od_skoly.length) {
     r.push('## Údaje od školy', '');
-    for (const x of o.udaje_od_skoly) r.push(`- **${POPISKY_POLI[x.pole] ?? x.pole}** (${x.puvod === 'text_skoly' ? 'text školy' : x.puvod === 'doplnila_skola' ? 'doplnila škola' : 'potvrdila škola'} ${x.potvrzeno_dne}): ${x.hodnota.replace(/\n+/g, ' ')}`);
+    for (const x of o.udaje_od_skoly) r.push(`- **${POPISKY_POLI[x.pole] ?? x.pole}** (${x.puvod === 'text_skoly' ? 'text školy' : x.puvod === 'doplnila_skola' ? 'doplnila škola' : 'doplnila škola'} ${x.potvrzeno_dne}): ${x.hodnota.replace(/\n+/g, ' ')}`);
     r.push('');
   }
 
@@ -239,7 +239,7 @@ export function otevrenaDataMarkdown(o: OtevrenaDataSkoly): string {
     if (p.pocet_zaku) {
       const nejvys = p.nejvyssi_povoleny_pocet_zaku ? `nejvýš ${cislo(p.nejvyssi_povoleny_pocet_zaku)}` : '';
       r.push(oprava
-        ? `- **Žáků:** ${cislo(p.pocet_zaku)} (potvrdila škola ${oprava.potvrzeno_dne}, ne údaj z InspIS${nejvys ? `; ${nejvys} podle InspIS` : ''})`
+        ? `- **Žáků:** ${cislo(p.pocet_zaku)} (doplnila škola ${oprava.potvrzeno_dne}, ne údaj z InspIS${nejvys ? `; ${nejvys} podle InspIS` : ''})`
         : `- **Žáků:** ${cislo(p.pocet_zaku)}${nejvys ? ` (${nejvys})` : ''}`);
     }
     if (p.specialiste?.length) r.push(`- **Specialisté:** ${p.specialiste.join(', ')}`);
