@@ -185,7 +185,7 @@ function RadekOboru({ o, rok }: { o: OborSkoly; rok: number | null }) {
         </span>
         {(o.prihlasky !== null || o.cjPrijati !== null) && (
           <span className="text-[13px] text-slate-500 tabular-nums">
-            {o.prihlasky !== null ? `${cislo(o.prihlasky)} ${sklon(o.prihlasky, 'přihláška', 'přihlášky', 'přihlášek')}` : ''}
+            {o.prihlasky !== null ? `${cislo(o.prihlasky)} ${sklon(o.prihlasky, 'přihláška', 'přihlášky', 'přihlášek')} v 1. kole` : ''}
             {o.cjPrijati !== null && o.maPrijati !== null ? ` · přijatí průměrně čeština ${cislo(o.cjPrijati, 1)} a matematika ${cislo(o.maPrijati, 1)} z 50 bodů` : ''}
           </span>
         )}

@@ -504,7 +504,7 @@ export function ProfilOboru({ data, inspekceHref, skolaHref, obec }: ProfilOboru
                   <tbody className="tabular-nums">
                     {([
                       ['Místa', (x: typeof r) => cislo(x.kapacita ?? 0)],
-                      ['Přihlášky', (x: typeof r) => cislo(x.prihlasky ?? 0)],
+                      ['Přihlášky (1. kolo)', (x: typeof r) => cislo(x.prihlasky ?? 0)],
                       ['Přihlášky na místo', (x: typeof r) => x.index_poptavky !== undefined ? `${cislo(x.index_poptavky, 1)}×` : '—'],
                       ['Tlak prvních voleb', (x: typeof r) => x.tlak_prvnich_voleb !== undefined ? `${cislo(x.tlak_prvnich_voleb, 1)}×` : '—'],
                       ['Přijatí', (x: typeof r) => cislo(x.prijati ?? 0)],
