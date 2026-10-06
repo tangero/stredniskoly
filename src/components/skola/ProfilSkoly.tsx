@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import type { ReactNode } from 'react';
+import { idDukazu } from '@/lib/mereni-oddilu';
 import type { ProfilSkolyData, OborSkoly } from '@/lib/skola-profil-data';
 import {
   cislo, zOd, ZARAZENI_POPISEK, NADPIS_OBTIZNOSTI, PORADI_OBTIZNOSTI,
@@ -90,7 +91,7 @@ function Puvod({ typ, children }: { typ: 'skola' | 'redakce' | 'text' | 'stroj' 
 
 function Oddil({ id, nadpis, stitek, children }: { id: string; nadpis: string; stitek?: string; children: ReactNode }) {
   return (
-    <section id={id} className="scroll-mt-16 border-b border-slate-200 py-10 last:border-b-0">
+    <section id={id} data-oddil={id} className="scroll-mt-16 border-b border-slate-200 py-10 last:border-b-0">
       <div className="mx-auto max-w-6xl px-4">
         <div className="mb-5 flex flex-wrap items-baseline justify-between gap-3">
           <h2 className="text-[26px] font-bold text-[#16325c] md:text-[30px]">{nadpis}</h2>
@@ -108,7 +109,7 @@ function Karta({ children, className = '' }: { children: ReactNode; className?: 
 
 function Dukaz({ nadpis, stitek, otevreny = false, children }: { nadpis: string; stitek?: string; otevreny?: boolean; children: ReactNode }) {
   return (
-    <details open={otevreny} className="group rounded-2xl bg-white shadow-[0_1px_0_#dbe3ec]">
+    <details open={otevreny} data-oddil={idDukazu(nadpis)} className="group rounded-2xl bg-white shadow-[0_1px_0_#dbe3ec]">
       <summary className="grid cursor-pointer list-none grid-cols-[minmax(0,1fr)_auto_auto] items-baseline gap-3 px-5 py-4 [&::-webkit-details-marker]:hidden">
         <span className="text-[17px] font-bold text-[#16325c]">{nadpis}</span>
         <span className="whitespace-nowrap text-[13px] text-slate-500">{stitek}</span>
@@ -187,7 +188,7 @@ function RadekOboru({ o, rok }: { o: OborSkoly; rok: number | null }) {
         </span>
         {(o.prihlasky !== null || o.cjPrijati !== null) && (
           <span className="text-[13px] text-slate-500 tabular-nums">
-            {o.prihlasky !== null ? `${cislo(o.prihlasky)} ${sklon(o.prihlasky, 'přihláška', 'přihlášky', 'přihlášek')}` : ''}
+            {o.prihlasky !== null ? `${cislo(o.prihlasky)} ${sklon(o.prihlasky, 'přihláška', 'přihlášky', 'přihlášek')} v 1. kole` : ''}
             {o.cjPrijati !== null && o.maPrijati !== null ? ` · přijatí průměrně čeština ${cislo(o.cjPrijati, 1)} a matematika ${cislo(o.maPrijati, 1)} z 50 bodů` : ''}
           </span>
         )}
