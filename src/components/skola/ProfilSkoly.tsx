@@ -808,10 +808,11 @@ export function ProfilSkoly({ data, skola, odkazy }: ProfilSkolyProps) {
                       <table className="w-full text-[14px] tabular-nums">
                         <thead><tr className="text-left text-[12px] text-slate-500"><th className="py-1.5 pr-2">Škola a obor</th><th className="px-2 text-right">Společných</th><th className="px-2 text-right">Vzdálenost</th><th className="pl-2">Obtížnost přijetí {soubeh.rok}</th></tr></thead>
                         <tbody>
-                          {o.radky.map(r => {
+                          {o.radky.map((r, i) => {
                             const cisloSkoly = [...poradiSoubehu.entries()].find(([red]) => r.href?.startsWith(`/skola/${red}-`))?.[1];
                             return (
-                              <tr key={`${r.nazev}-${r.obor}`} className="border-t border-slate-200 align-top">
+                              // Dvě školy se stejným zkráceným názvem a oborem (konzervatoře z různých měst) se liší obcí a pořadím.
+                              <tr key={`${r.nazev}-${r.obec}-${r.obor}-${i}`} className="border-t border-slate-200 align-top">
                                 <td className="py-2 pr-2">
                                   {cisloSkoly && !r.tataSkola ? <span className="mr-1.5 inline-grid h-5 w-5 place-items-center rounded-full bg-[#0074e4] text-[11px] font-bold text-white">{cisloSkoly}</span> : null}
                                   {r.tataSkola ? <b>Tato škola</b> : r.href ? <Link href={r.href} className="font-semibold text-slate-900 hover:text-[#0074e4]">{r.nazev}</Link> : <b>{r.nazev}</b>}
