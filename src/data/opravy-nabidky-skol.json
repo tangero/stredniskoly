@@ -1,0 +1,48 @@
+{
+  "_popis": "Ruční opravy nabídky škol podle hlášení škol z portálu (issue #371). Klíč opravy je RED IZO a KKOV oboru. Pole `plati_pro`: `zobrazeni` se použije hned při zobrazení oboru (název), `2027` se jen uchovává pro opravu nabídky 2027 a na webu se zatím nečte. Zdroj, datum hlášení a RED IZO jsou povinné u každé opravy (kontroluje tests/opravy-nabidky.test.mjs).",
+  "opravy": [
+    {
+      "redizo": "600017257",
+      "kkov": "37-42-M/01",
+      "pole": "zamereni",
+      "hodnota": "Marketing a logistika",
+      "plati_pro": "zobrazeni",
+      "zdroj": "škola (portál)",
+      "hlaseno": "2026-09-24",
+      "issue": 171
+    },
+    {
+      "redizo": "600171299",
+      "kkov": "69-41-L/02",
+      "pole": "zamereni",
+      "hodnota": null,
+      "plati_pro": "zobrazeni",
+      "poznamka": "Text „69-53-H/01 Rekondiční a sportovní masér“ není zaměření, ale označení oboru L0+H; zaměření se nezobrazuje.",
+      "zdroj": "škola (portál)",
+      "hlaseno": "2026-10-02",
+      "issue": 256
+    },
+    {
+      "redizo": "600013367",
+      "kkov": "75-31-M/01",
+      "pole": "kapacita",
+      "hodnota": 58,
+      "plati_pro": "2027",
+      "poznamka": "Kapacita ve školním roce 2027/2028; data 1. kola 2026 se nemění.",
+      "zdroj": "škola, portál, 2. 10. 2026",
+      "hlaseno": "2026-10-02",
+      "issue": 248
+    },
+    {
+      "redizo": "691012431",
+      "kkov": "34-52-L/01",
+      "pole": "neotevira",
+      "hodnota": true,
+      "plati_pro": "2027",
+      "poznamka": "Škola obor pro přijímání 2027 neotevírá; historická data 2026 zůstávají.",
+      "zdroj": "škola (portál)",
+      "hlaseno": "2026-10-02",
+      "issue": 255
+    }
+  ]
+}
