@@ -126,8 +126,9 @@ export default async function RegionPage({ params }: Props) {
           <section>
             <p className="mb-5 max-w-3xl text-sm text-slate-600">
               Jeden řádek je jedna škola: obtížnost přijetí a pozice na přihlášce za 1. kolo {rok}, počet míst
-              a maturita. Jednotlivé obory najdete po kliknutí na školu. Přehled zahrnuje obory s jednotnou
-              přijímací zkouškou; učební obory bez maturity v něm nejsou.
+              a maturita. Jednotlivé obory najdete po kliknutí na školu. Přehled zahrnuje i učební obory, tedy
+              obory s výučním listem, a ostatní obory bez jednotné přijímací zkoušky; obtížnost přijetí u nich
+              ukazujeme jen při aspoň deseti soutěžících uchazečích a pozici na přihlášce ani pořadí v kraji nemají.
             </p>
             <RegionSchoolsTable skoly={skoly} krajNazev={kraj.nazev === 'Vysočina' ? 'Kraj Vysočina' : kraj.nazev} rok={rok} rokDruhehoKola={rokDruhehoKola} />
           </section>
