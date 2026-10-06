@@ -3,7 +3,7 @@ import { kriteriaOboru, poziceOboru } from '@/lib/pozice-kriteria';
 import { vsechnaKriteriaSkol } from '@/lib/kriteria-skoly-verejne';
 import { maUdajeSkoly, sPrednostiSkoly } from '@/lib/kriteria-skoly-sloucit';
 import { druhTestu, type DruhTestu, type KriteriaOboru, type PoziceOboru, type PrevodDruhu } from '@/lib/prevod-testu-vypocet';
-import { getSchoolsData, getExtractionsByRedizo, getInspisDataByRedizo, oborBezJpzProKlic } from '@/lib/data';
+import { bezJpzProKlice, getSchoolsData, getExtractionsByRedizo, getInspisDataByRedizo, oborBezJpzProKlic } from '@/lib/data';
 import { getSouhrnNabidky, nabidkyVeSkupineKraje, souhrnOboru, type SouhrnRocniku } from '@/lib/souhrny-kolo1';
 import { getKontextPrihlasek, type KontextPrihlasek } from '@/lib/kontext-prihlasek';
 import { getOkruhOboru, getSoubezneObce, type SoubezneObce } from '@/lib/okruhy-oboru';
@@ -187,7 +187,7 @@ export async function okruhNaStranceOboru(programId: string): Promise<OkruhNaStr
     zobrazeneObdobi('cermat-vysledky'),
   ]);
   const { okruhy, nastavby } = sestavOkruhyMesta([nalez.okruh], nalez.obec, [], {
-    katalog, nazvyKatalogu, kanonickeNazvy, rejstrik, obtiznost,
+    katalog, nazvyKatalogu, kanonickeNazvy, rejstrik, obtiznost, bezJpz: await bezJpzProKlice(klice),
   });
   const zobrazeni = okruhy[0] ?? nastavby[0];
   if (!zobrazeni) return null;

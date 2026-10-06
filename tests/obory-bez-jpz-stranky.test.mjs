@@ -11,7 +11,12 @@ import assert from 'node:assert/strict';
 import React from 'react';
 import { renderToStaticMarkup } from 'react-dom/server';
 import { text } from './_zavadec.mjs';
-import { getProgramsByRedizo, getProgramyBezJpz, getSchoolOverview, getSchoolPageType, getSchoolsByRedizo, skolaMimoKatalog } from '../src/lib/data.ts';
+import { getNabidkyBezJpzVeMeste, getProgramsByRedizo, getProgramyBezJpz, getSchoolOverview, getSchoolPageType, getSchoolsByRedizo, getSchoolsData, skolaMimoKatalog } from '../src/lib/data.ts';
+import { getCityStats } from '../src/lib/cityData.ts';
+import { dalsiOboryVeMeste, nactiIndexRejstriku } from '../src/lib/kontext-prihlasek.ts';
+import { sestavKartySkol } from '../src/lib/mesto-karty.ts';
+import { zrizovatelPodleRedizo } from '../src/lib/simulator-filter.ts';
+import { nazvySkolKatalogu, kanonickeNazvySkol } from '../src/lib/okruhy-podklad.ts';
 import { obtiznostBezJpz, rokBezJpz } from '../src/lib/obory-bez-jpz.ts';
 import { adresaPrehledu, adresyBezJpzMapa, adresySkolyMapa, obsazeneAdresy, zamereniBezKodu } from '../src/lib/adresa-oboru.mjs';
 import { buildSitemapPaths } from '../scripts/generate-sitemap.mjs';
@@ -231,4 +236,45 @@ test('stránka školy nese domovy mládeže a internáty z rejstříku', async (
   const { skola, jpz, bez } = await programySkoly(redizo);
   const profil = await getProfilSkoly(redizo, skola.nazev, jpz, new Set(jpz.map(p => p.id)), bez);
   assert.deepEqual(profil.domovy.map(d => d.druh), ['H22']);
+});
+
+// ---------------------------------------------------------------------------
+// Etapa 3c-1: stránka města
+// ---------------------------------------------------------------------------
+
+async function kartyMesta(mesto) {
+  const stats = await getCityStats(mesto);
+  const dalsi = await dalsiOboryVeMeste(mesto, new Set(stats.schools.map(r => `${r.redizo}_${r.id.split('_')[1] ?? ''}`)));
+  const [nazvyKatalogu, kanonickeNazvy, { identifikace }] = await Promise.all([nazvySkolKatalogu(), kanonickeNazvySkol(), nactiIndexRejstriku()]);
+  const bezJpz = await getNabidkyBezJpzVeMeste(mesto);
+  const karty = sestavKartySkol(stats.schools, dalsi.obory, {
+    nazvyKatalogu, kanonickeNazvy, adresySidel: identifikace, zrizovatele: zrizovatelPodleRedizo(await getSchoolsData()), obec: mesto,
+  }, bezJpz);
+  return { karty, bezJpz, radky: karty.flatMap(k => k.radky) };
+}
+
+test('město: nabídky bez JPZ mají řádek s místy, odkazem a skupinou, a z dalších oborů zmizí', async () => {
+  const { radky, bezJpz } = await kartyMesta('Brno');
+  assert.equal(bezJpz.length, DATA.nabidky.filter(n => n.obec === 'Brno').length);
+  const ids = radky.map(r => r.id);
+  assert.equal(new Set(ids).size, ids.length, 'řádek dvakrát');
+  const klice = new Set(bezJpz.map(x => `${x.redizo}_${x.program.bezJpz.kkov}`));
+  assert.ok(!radky.some(r => r.druh !== 'jpz' && r.zbylaMista === null && klice.has(r.id)), 'učební obor zůstal i mezi dalšími obory');
+  const ucebni = radky.filter(r => r.zbylaMista !== null);
+  assert.ok(ucebni.length > 50);
+  assert.ok(ucebni.every(r => r.href?.startsWith('/skola/') && r.mista !== null && r.zbylaMista >= 0));
+  assert.ok(ucebni.filter(r => r.vzdelani === 'vyucni').length > 20);
+  // Obory E, praktické školy a konzervatoře obtížnost nemají.
+  const bezObtiznosti = bezJpz.filter(x => ['C', 'E', 'J', 'P'].includes(x.program.bezJpz.kategorie)).map(x => x.program.id);
+  assert.ok(bezObtiznosti.length > 0);
+  for (const id of bezObtiznosti) assert.equal(radky.find(r => r.id === id).zarazeni, null, id);
+});
+
+test('město: škola, kterou katalog nevede, má kartu s názvem a odkazem na přehled', async () => {
+  const { karty } = await kartyMesta('Praha');
+  const k = karty.find(x => x.redizo === '600004538');
+  assert.ok(k, 'Pražská konzervatoř chybí');
+  assert.match(k.nazev, /^Pražská konzervatoř/);
+  assert.equal(k.href, '/skola/600004538-prazska-konzervator-na-rejdisti');
+  assert.ok(k.radky.every(r => r.href && r.vzdelani === 'ostatni'));
 });
