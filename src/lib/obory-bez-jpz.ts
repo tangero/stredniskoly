@@ -104,6 +104,11 @@ export async function rokBezJpz(): Promise<number | null> {
   return (await nacti())?.rok ?? null;
 }
 
+/** Všechny denní nabídky bez JPZ zobrazeného ročníku (pro vyhledávání). */
+export async function vsechnyNabidkyBezJpz(): Promise<NabidkaBezJpz[]> {
+  return (await nacti())?.nabidky ?? [];
+}
+
 /** Denní nabídky bez JPZ jedné školy (bez nedenních nástaveb). */
 export async function nabidkyBezJpzSkoly(redizo: string): Promise<NabidkaBezJpz[]> {
   const data = await nacti();

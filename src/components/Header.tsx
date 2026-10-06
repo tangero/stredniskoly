@@ -18,6 +18,8 @@ interface SearchResult {
   kraj: string;
   slug: string;
   delka_studia?: number;
+  /** Druh oboru bez jednotné zkoušky („učební obor“…), issue #244, etapa 3c-3. */
+  druh_oboru?: string;
 }
 
 interface Kraj {
@@ -425,6 +427,7 @@ export function Header() {
                                 {school.delka_studia && (
                                   <span className="text-slate-500 text-sm ml-1">({school.delka_studia}leté)</span>
                                 )}
+                                {school.druh_oboru && <span className="text-slate-500 text-sm ml-1">· {school.druh_oboru}</span>}
                               </span>
                             </>
                           )}

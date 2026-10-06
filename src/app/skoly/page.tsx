@@ -3,7 +3,7 @@ import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { SchoolSearch } from '@/components/SchoolSearch';
 import { VibecordingPromo } from '@/components/VibecordingPromo';
-import { getAllSchools, getAllSchoolsForSearch, getAllKraje, getSchoolAnalysis } from '@/lib/data';
+import { getAllSchools, getPolozkyHledani, getAllKraje, getSchoolAnalysis } from '@/lib/data';
 import { createSlug } from '@/lib/utils';
 import { SchoolsPageTabs } from '@/components/SchoolsPageTabs';
 import Link from 'next/link';
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
 export default async function SchoolsPage() {
   const [schools, searchSchools, kraje, analysis] = await Promise.all([
     getAllSchools(),
-    getAllSchoolsForSearch(),
+    getPolozkyHledani(),
     getAllKraje(),
     getSchoolAnalysis(),
   ]);

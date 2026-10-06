@@ -1,6 +1,6 @@
 # Obory bez jednotné zkoušky a nedenní formy: průzkum zdrojů a návrh
 
-Verze 1.5 · 6. 10. 2026 · Fáze 1 k issue #209 (pouze průzkum a návrh, web se nemění).
+Verze 1.6 · 6. 10. 2026 · Fáze 1 k issue #209 (pouze průzkum a návrh, web se nemění).
 Fáze 2 (implementace) vznikne jako samostatné zadání po schválení návrhu.
 Verze 1.1 vypořádává oponenturu (`docs/podklady/oponentura-obory-bez-jpz-2026-10-01.md`);
 vypořádání je v oddílu 17, oddíly 10 a 11 jsou přepsané. Verze 1.1 byla schválena
@@ -739,6 +739,7 @@ zopakovat jedním příkazem. Níže verdikt ke každé námitce s důkazem:
 
 | Verze | Změna |
 |---|---|
+| 1.6 | Etapa 3c-3, vyhledávání (oddíl 16.8). |
 | 1.5 | Skupiny oborů na stránce školy v pevném pořadí (oddíl 16.5, rozhodnutí vlastníka, #393). |
 | 1.4 | Etapa 3b (oddíl 16.4): 221 škol mimo katalog z rejstříku, ubytování, seznam inspekcí bez shrnutí, zaměření bez kódu oboru. |
 | 1.3 | Etapa 3a (oddíl 16.3): stránka učebního oboru a obory na stránce školy u škol, které web vede; rozdělení etapy 3 na 3a, 3b a 3c. |
@@ -806,3 +807,12 @@ nemátlo, že se mění podle školy. Tím se pro stránku školy mění pravidl
 nahoře, učební obor dole“): skupina S maturitou stojí první vždy. Pravidlo dál platí pro řazení na stránce města
 a kraje, kde se učební obory řadí s ostatními (etapa 3c). Volba skupiny se pamatuje v prohlížeči a platí i na další
 škole; škola s jedinou skupinou přepínač nemá.
+
+### 16.8 Etapa 3c-3: vyhledávání (6. 10. 2026)
+
+Vyhledávání na titulce, /regiony a /skoly i hledání v záhlaví (API `/api/schools/search`, jen textový dotaz) najdou
+všechny denní nabídky bez JPZ s odkazem na stránku oboru a druhem oboru („učební obor“, „konzervatoř“…). Data
+vyhledávání jdou do prohlížeče v úsporném tvaru jen s poli, která vyhledávání čte (`PolozkaHledani`), takže stránky
+jsou i s 2 902 položkami navíc menší než dřív (titulka 3,24 MB proti 3,37 MB). Katalog simulátoru
+(`simulatorCatalog=1`) a dotaz podle id se nemění; simulátor nabídky bez JPZ dostane v etapě 5. Žebříček
+nejžádanějších oborů na /skoly zůstává jen u oborů se zkouškou.
