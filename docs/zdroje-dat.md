@@ -41,6 +41,7 @@ Ukazatel se pak zavádí podle [slovníku ukazatelů](slovnik-ukazatelu.md). Ten
 | RSS/Atom feedy školních webů | weby škol, sklízeč `scripts/sklizec-novinek.py` | 533 z 1 093 škol s feedem | REDIZO + GUID položky | automaticky 2× denně |
 | Hranice krajů, RÚIAN | ČÚZK, SHP za celý stát (`services.cuzk.gov.cz/shp/stat/epsg-5514/1.zip`), vrstva `VUSC_P`, CC BY 4.0 → `src/data/mapa-kraju.json` | 14 krajů | kód NUTS 3 (`CZ0xx`) | ručně, při změně hranic |
 | Microsoft Clarity, souhrny simulátoru | Clarity Data Export API (`www.clarity.ms/export-data/api/v1/project-live-insights`), měřicí skript jen na `/simulator` a stránkách škol a oborů | jen stránka simulátoru, od 5. 10. 2026 | adresa stránky × dimenze | denně skriptem `scripts/clarity-export.mjs` do soukromého repozitáře signálů (#326); web z něj nic nezobrazuje |
+| Ruční opravy nabídky od škol | hlášení škol z portálu, `src/data/opravy-nabidky-skol.json` | 4 opravy (#371) | REDIZO + KKOV | ručně, podle hlášení |
 
 **Co v repozitáři není.** Zdroj patří do soupisu i tehdy, když jeho soubor na disku neleží. Takových je několik:
 
@@ -522,6 +523,18 @@ Odpověď API je seznam ukazatelů (`metricName`) a u každého pole `informatio
 | `ExcessiveScroll` | posouvání sem a tam | hledání na dlouhé stránce | ano |
 
 Heatmapy a mrtvá kliknutí po prvcích jsou jen v rozhraní Clarity, API je nevrací. Zváženo a zamítnuto: **záznamy relací** (bez cookies nefungují a jsou zbytečně podrobné), **dimenze `OS`, `Country/Region`, `Source`, `Medium`, `Campaign`, `Channel`, `Referrer`** (návštěvnost podle zdroje a země už dává Matomo, třetí dimenze by spotřebovala limit dotazů bez nové otázky).
+
+### 2.19 Ruční opravy nabídky od škol
+
+Soubor `src/data/opravy-nabidky-skol.json` (čtení v `src/lib/opravy-nabidky.ts`, test `tests/opravy-nabidky.test.mjs`) drží jednotlivé opravy podle hlášení škol z portálu (zadání #371). Oprava nemění data CERMAT ani katalog; zapisuje jen to, co škola řekla. Každá oprava nese RED IZO, KKOV, pole, hodnotu, zdroj („škola (portál)“), datum hlášení a číslo issue. Osobní údaje se do souboru nezapisují.
+
+| Pole | Obsah | Používáme |
+|---|---|---|
+| `zamereni` (`plati_pro: zobrazeni`) | zaměření k zobrazení v názvu oboru, nebo `null` = nezobrazovat; adresy stránek se nemění | ano, stránka školy a stránka oboru (Opava, Ostrava) |
+| `kapacita` (`plati_pro: 2027`) | kapacita oboru ve školním roce 2027/2028 podle školy | jen uloženo pro opravu nabídky 2027, web ji zatím nečte (Boskovice) |
+| `neotevira` (`plati_pro: 2027`) | škola obor pro přijímání 2027 neotevírá | jen uloženo pro opravu nabídky 2027, web ji zatím nečte (Hronov) |
+
+Rozhodnutí vlastníka 5. 10. 2026: kapacita Boskovic a neotevíraný obor v Hronově se do webu dostanou až s nabídkou 2027. Obor 26-41-L/01 v Bohumíně v datech 2026 není a zdroj, proč, nemáme; soubor ho proto neobsahuje.
 
 ## 3. Sloupce, které nepoužíváme
 

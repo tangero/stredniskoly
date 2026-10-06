@@ -4,6 +4,8 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound, permanentRedirect } from 'next/navigation';
 import { Header } from '@/components/Header';
+import opravyNabidky from '@/data/opravy-nabidky-skol.json';
+import { nazevSZamerenim, type OpravaNabidky } from '@/lib/opravy-nabidky';
 import { Footer } from '@/components/Footer';
 import { ProgramTabs } from '@/components/ProgramTabs';
 import { InspectionSummary } from '@/components/InspectionSummary';
@@ -101,7 +103,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const overviewSlugMeta = `${pageInfo.redizo}-${createSlug(school.nazev)}`;
 
   const program = pageInfo.program;
-  const oborNazev = program?.zamereni ? `${program.obor} - ${program.zamereni}` : program?.obor ?? school.obor;
+  const oborNazev = program ? nazevSZamerenim(opravyNabidky.opravy as OpravaNabidky[], pageInfo.redizo, program.id.split('_')[1] ?? '', program.obor, program.zamereni) : school.obor;
   const title = `${school.nazev} - ${oborNazev}`;
   const description = program?.bezJpz
     ? `${school.nazev}: ${oborNazev}, ${druhOboruBezJpz(program.bezJpz.kategorie)}. Místa po 1. kole, přihlášky, kam se hlásí ostatní a kam dál. ${school.obec}, ${krajNames[school.kraj_kod] || school.kraj}`
@@ -247,17 +249,24 @@ export default async function SchoolDetailPage({ params }: Props) {
 
   // Připravit data pro ProgramTabs
   // Zjistit duplicitní názvy oborů (různá délka studia, ale stejný název)
+  // Zobrazený název bere ruční opravu zaměření; adresa (slug) se dál počítá z původního zaměření.
+  const nazevProTab = (p: (typeof detailedPrograms)[number]) =>
+    nazevSZamerenim(opravyNabidky.opravy as OpravaNabidky[], redizo, p.id.split('_')[1] ?? '', p.obor, p.zamereni);
   const oborCounts = new Map<string, number>();
+  const slugCounts = new Map<string, number>();
   for (const p of detailedPrograms) {
-    const baseName = p.zamereni ? `${p.obor} - ${p.zamereni}` : p.obor;
+    const baseName = nazevProTab(p);
     oborCounts.set(baseName, (oborCounts.get(baseName) || 0) + 1);
+    const puvodniNazev = p.zamereni ? `${p.obor} - ${p.zamereni}` : p.obor;
+    slugCounts.set(puvodniNazev, (slugCounts.get(puvodniNazev) || 0) + 1);
   }
 
   const programsForTabs = detailedPrograms.map(p => {
-    const baseName = p.zamereni ? `${p.obor} - ${p.zamereni}` : p.obor;
+    const baseName = nazevProTab(p);
+    const puvodniNazev = p.zamereni ? `${p.obor} - ${p.zamereni}` : p.obor;
     // Pokud je více oborů se stejným názvem, přidat délku studia
-    const hasDuplicateName = (oborCounts.get(baseName) || 0) > 1;
-    const displayName = hasDuplicateName ? `${baseName} (${p.delka_studia}leté)` : baseName;
+    const hasDuplicateName = (slugCounts.get(puvodniNazev) || 0) > 1;
+    const displayName = (oborCounts.get(baseName) || 0) > 1 ? `${baseName} (${p.delka_studia}leté)` : baseName;
 
     // Pro duplicitní názvy přidat délku studia do slugu
     const programSlug = p.zamereni
@@ -312,7 +321,7 @@ export default async function SchoolDetailPage({ params }: Props) {
 
   // Slug pro přehled školy
   const overviewSlug = `${redizo}-${createSlug(school.nazev)}`;
-  const displayOborName = program.zamereni && program.zamereni !== program.obor ? `${program.obor} - ${program.zamereni}` : program.obor;
+  const displayOborName = nazevSZamerenim(opravyNabidky.opravy as OpravaNabidky[], redizo, program.id.split('_')[1] ?? '', program.obor, program.zamereni);
 
   // JSON-LD strukturovaná data
   const jsonLd = {
@@ -609,7 +618,7 @@ export default async function SchoolDetailPage({ params }: Props) {
           <div className="bg-blue-50 border-l-4 border-blue-500 p-6 rounded-r-xl mb-8">
             <h3 className="font-semibold text-blue-800 mb-2">Co to znamená?</h3>
             <p className="text-blue-700">
-              {program.rok ? `V roce ${program.rok} bylo` : 'Bylo'} na tento obor podáno {program.prihlasky} přihlášek při kapacitě {program.kapacita} míst.
+              {program.rok ? `V 1. kole ${program.rok} bylo` : 'V 1. kole bylo'} na tento obor podáno {program.prihlasky} přihlášek při kapacitě {program.kapacita} míst.
               Počet přihlášek zahrnuje všechny priority. Popisuje poptávku v daném ročníku, nikoli osobní pravděpodobnost přijetí.
               Kritéria pro rok 2027 ověřte u školy.
             </p>
