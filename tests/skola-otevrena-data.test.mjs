@@ -26,7 +26,7 @@ test('JSON nese období z registru, původ údajů od školy a nesčítá přihl
   assert.equal('celkem_prihlasek' in d, false);
   assert.equal(d.obory[0].obtiznost_prijeti, 'velmi_tezke');
   assert.equal(d.obory[0].vypsano_v_roce, 2026);
-  assert.deepEqual(d.udaje_od_skoly.map(x => [x.pole, x.puvod]), [['dny_otevrenych_dveri', 'potvrdila_skola'], ['popis_skoly', 'text_skoly']]);
+  assert.deepEqual(d.udaje_od_skoly.map(x => [x.pole, x.puvod]), [['dny_otevrenych_dveri', 'doplnila_skola'], ['popis_skoly', 'text_skoly']]);
   assert.equal(d.maturita.skupiny_oboru[0].roky[0].zarazeni_proti_skupine, 'above');
   assert.equal(d.obory[1].druhe_kolo.kapacita, 7);
   assert.equal(d.obory[1].druhe_kolo.predchozi_rok.stav, 'bez_2_kola');
@@ -38,7 +38,7 @@ test('Markdown vychází ze stejného objektu', () => {
   assert.match(md, /## Co tu lze studovat \(1\. kolo 2026\)/);
   assert.match(md, /velmi těžké se dostat \(přijato 30 ze 112 soutěžících uchazečů\)/);
   assert.match(md, /\| 2026 \| 31 ze 31 \| 78,4 % \| 71,8 % \| nad středem podobných škol \| 48 % \|/);
-  assert.match(md, /\*\*Dny otevřených dveří\*\* \(potvrdila škola 2026-11-03\): 18\. 11\. 2026/);
+  assert.match(md, /\*\*Dny otevřených dveří\*\* \(doplnila škola 2026-11-03\): 18\. 11\. 2026/);
   assert.match(md, /- \*\*2\. kolo:\*\* Ve 2\. kole 2026 škola vypsala 7 míst\. Přišlo 13 přihlášek a přijati byli 2\..*V roce 2025 škola 2\. kolo nevypsala\./);
   assert.doesNotMatch(md, /Celkem přihlášek|2025 \(přihlášky na místo\)|Index poptávky/);
 });

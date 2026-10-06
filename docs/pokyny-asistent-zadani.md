@@ -108,3 +108,11 @@ Rozhodnutí z briefingu zapisuj podle oddílu 18 návrhu: zastavující platí h
 až po potvrzení zápisu na konci briefingu. Do zavedení soukromého repozitáře se zápisy (fáze 2) dávej
 rozjíždějícím rozhodnutím doklad `Zdroj: briefing RRRR-MM-DD` a rozhodnutí z oddílu 3 návrhu převeď na
 issue se štítkem `navrh`, které vlastník schválí štítkem `schvaleno`.
+
+## Nápady na briefing a kritéria přínosu
+
+Každý nápad AI, který dáváš na briefing, nese odkaz na signál, který ho podpírá: řádek týdenního souhrnu
+signálů (Matomo, Search Console, rychlost stránek, hlášení a opravy od škol) nebo jiný doložitelný údaj.
+Nápad bez signálu označ jako předpoklad a řekni to vlastníkovi (zadání #326). U zadání nové funkce nebo
+změny webu vyplň pole „Přínos a vyhodnocení“ a termín vyhodnocení; postup je v `docs/spoluprace-na-githubu.md`,
+oddíl 2b.
