@@ -79,7 +79,25 @@ test('Oprava z review (#410): token App jen v jobu Zápis, ne v jobu, který spo
   assert.ok(!JSON.stringify(data.jobs.oprava).includes('PRIJIMACKY_AI'));
 });
 
-test('push od App nespouští nasazení náhledu (skript z větve s VERCEL_TOKEN)', () => {
-  const podminka = String(workflow['testy.yml'].data.jobs.deploy.if);
-  assert.match(podminka, /github\.actor != 'prijimacky-ai\[bot\]'/);
+// Vyhodnotí podmínku jobu deploy pro daný kontext (jen operátory, které podmínka používá).
+const nasadi = (ctx) => {
+  const vyraz = String(workflow['testy.yml'].data.jobs.deploy.if)
+    .replace(/github\.actor/g, JSON.stringify(ctx.actor))
+    .replace(/github\.ref/g, JSON.stringify(ctx.ref))
+    .replace(/github\.event_name/g, JSON.stringify(ctx.event ?? 'push'))
+    .replace(/vars\.VERCEL_ACTIONS_ENABLED/g, JSON.stringify('true'))
+    .replace(/inputs\.deployment/g, JSON.stringify(ctx.deployment ?? ''))
+    .replace(/==/g, '===').replace(/!===/g, '!==');
+  return Function(`return (${vyraz});`)();
+};
+
+test('push od App do jiné větve než main nespouští nasazení náhledu (skript z větve s VERCEL_TOKEN)', () => {
+  assert.equal(nasadi({ actor: 'prijimacky-ai[bot]', ref: 'refs/heads/zadani/410-oprava' }), false);
+  assert.equal(nasadi({ actor: 'prijimacky-ai[bot]', ref: 'refs/heads/auto/veletrhy-snimek' }), false);
+});
+
+test('automatické sloučení do main od App se nasadí (#411)', () => {
+  assert.equal(nasadi({ actor: 'prijimacky-ai[bot]', ref: 'refs/heads/main' }), true);
+  assert.equal(nasadi({ actor: 'tangero', ref: 'refs/heads/main' }), true);
+  assert.equal(nasadi({ actor: 'dependabot[bot]', ref: 'refs/heads/main' }), false);
 });
