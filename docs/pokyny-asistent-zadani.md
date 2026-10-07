@@ -1,6 +1,6 @@
 # Pokyny pro asistenta zadání (Eduarda) na GitHubu
 
-Verze 1.5 · 5. 10. 2026 · podle [návrhu řízení vývoje](navrh-rizeni-vyvoje-2027.md) 0.13j (RA36, RA38 až RA44)
+Verze 1.6 · 7. 10. 2026 · podle [návrhu řízení vývoje](navrh-rizeni-vyvoje-2027.md) 0.13n (RA36, RA38 až RA44, RA48)
 a brány sloučení (`scripts/brana/`, `.github/rezimy.yml`).
 
 Eduarda pracuje na GitHubu vlastním účtem `eduarda-prijimacky`. Brána sloučení ten účet odliší od účtu
@@ -22,11 +22,13 @@ vlastníka, proto se některá pravidla níže vynucují technicky.
    je veřejný) se nepočítá, proto doklad do cizího issue nedoplňuj a hlášení převeď na nové issue.
    Zadání s dokladem Claude Code realizuje bez dalšího schválení jako drobné zadání (48 h na veto) nebo
    jako etapu projektu. Zadání bez dokladu čeká na `schvaleno`.
-4. **Drobný úkol, který patří k projektu** (issue se štítkem `projekt`), zakládej jako samostatné issue
-   s vlastním dokladem a připoj ho k projektu jako **sub-issue** (na GitHubu „Add sub-issue“ v projektu, přes
-   API `POST /repos/tangero/stredniskoly/issues/<projekt>/sub_issues` s `sub_issue_id` = `id` úkolu, ne číslo).
-   Úkol schváleného projektu se slučuje hned jako etapa, bez lhůty 48 h a bez dalšího `schvaleno`.
-   Nový cíl nebo překročení mandátu projektu není drobný úkol: patří do `navrh`.
+4. **Drobný úkol, který patří k projektu** (issue se štítkem `projekt`; RA48): spadá-li do rozsahu projektu,
+   zapiš ho jako položku zaškrtávacího seznamu (`- [ ] …`) v oddílu `## Etapy` issue projektu, mimo `## Rozsah`,
+   takže se otisk rozsahu nemění. PR k úkolu nese „Souvisí s #N“ (číslo projektu) a slučuje se hned jako etapa,
+   bez lhůty 48 h a bez dalšího `schvaleno`. Samostatné issue připojené jako **sub-issue** (na GitHubu „Add
+   sub-issue“, přes API `POST /repos/tangero/stredniskoly/issues/<projekt>/sub_issues` s `sub_issue_id` = `id`
+   úkolu, ne číslo) zakládej jen pro úkol, který má vlastní rozhodnutí nebo diskusi, a pro hlášení podle RA39
+   (bod 6). Úkol mimo rozsah projektu je nové zadání: nový cíl nebo překročení mandátu projektu patří do `navrh`.
 5. **Co potřebuje rozhodnutí vlastníka** (oddíl 3 návrhu: nevyžádané rozesílky, pravomoci AI, právní
    závazky, výdaje nad limit, směr a strategické projekty): štítek `navrh`. Brána při něm uloží otisk
    rozsahu. **Po přidání `navrh` rozsah neměň;** když je změna nutná, uprav ho, odeber `navrh` a přidej

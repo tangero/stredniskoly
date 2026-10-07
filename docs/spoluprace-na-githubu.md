@@ -1,6 +1,6 @@
 # Spolupráce na GitHubu
 
-Verze 1.3 · 7. 10. 2026
+Verze 1.4 · 7. 10. 2026
 
 Jak spolu na repozitáři pracují Patrick (schvaluje a slučuje), Eduarda (píše zadání), Claude Code
 (realizuje) a komunita (hlásí chyby). Pravidla pro Claude Code jsou závazně v `CLAUDE.md`; tento
@@ -93,6 +93,18 @@ při každé změně štítků, issues a PR, po každém běhu brány sloučení
 Workflow navíc při přidání `schvaleno` odebere `navrh` a při odebrání `schvaleno` vrátí otevřené
 interní zadání do `navrh`; řídí se aktuálními štítky issue, ne pořadím doručených událostí. Po sloučení PR odebere `k-overeni` z propojených issues, která zůstala otevřená (etapy projektu). Stavy hledá podle názvu; chybějící stav jen ohlásí varováním v běhu.
 Karty PR nemění, kromě pole níže.
+
+**Přehlednost nástěnky (RA48, 7. 10. 2026).** Drobné úkoly projektu nejsou samostatná issues, ale zaškrtávací
+seznam v oddílu `## Etapy` issue projektu (mimo `## Rozsah`, takže úprava neruší schválení). PR úkolu nese
+„Souvisí s #N“. Sub-issue vzniká jen pro úkol, který potřebuje vlastní rozhodnutí nebo diskusi, a pro hlášení
+připojená k projektu (RA39). Nastavení nástěnky dělá vlastník (API je neumí):
+
+- v tabulkovém pohledu zapnout pole **Parent issue** a **Sub-issue progress** (tlačítko + v záhlaví → Hidden fields);
+- hlavní pohled s filtrem `no:parent-issue` a uložit: na kartě projektu zůstane jen postup („2/6“);
+- druhý pohled „Úkoly“ seskupený podle pole **Parent issue** (Group by) pro detail;
+- Workflows → **Auto-archive items** pro zavřené položky (například `is:closed updated:<@today-7d`): hotové karty
+  zmizí z nástěnky, issues zůstanou dohledatelné;
+- Workflows → „Auto-add sub-issues to project“ vypnout (oddíl 15 návrhu řízení).
 
 Pole **„Na co čeká“** (text, založí ho skript) vyplní workflow u issues i PR jednou větou: výsledek brány lidsky
 (chybí protokol, lhůta na veto do…, čeká na tvé schvaleno, konflikt s main, prošlo a sloučí se samo) se stavem
