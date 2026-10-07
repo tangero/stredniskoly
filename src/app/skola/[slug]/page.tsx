@@ -32,7 +32,7 @@ import { ProfilOboru } from '@/components/obor/ProfilOboru';
 import { MereniClarity } from '@/components/MereniClarity';
 import { ProfilUcebnihoOboru } from '@/components/obor/ProfilUcebnihoOboru';
 import { getProfilUcebnihoOboru } from '@/lib/ucebni-obor-profil-data';
-import { druhOboruBezJpz } from '@/lib/obory-bez-jpz';
+import { druhOboruBezJpz, rokBezJpz } from '@/lib/obory-bez-jpz';
 import { VeletrhVMeste } from '@/components/veletrhy/VeletrhVMeste';
 import { UlozitObor } from '@/components/obor/UlozitObor';
 import { createSlug } from '@/lib/utils';
@@ -108,7 +108,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const oborNazev = program ? nazevSZamerenim(opravyNabidky.opravy as OpravaNabidky[], pageInfo.redizo, program.id.split('_')[1] ?? '', program.obor, program.zamereni) : school.obor;
   const title = titulekOboru(oborNazev, school.nazev, school.obec);
   const description = program?.bezJpz
-    ? popisOboruBezJpz(oborNazev, druhOboruBezJpz(program.bezJpz.kategorie), school.nazev, school.obec, rokVysledku)
+    ? popisOboruBezJpz(oborNazev, druhOboruBezJpz(program.bezJpz.kategorie), school.nazev, school.obec, await rokBezJpz())
     : popisOboru(oborNazev, school.nazev, school.obec, rokVysledku);
 
   return {
