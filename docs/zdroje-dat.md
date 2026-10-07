@@ -539,6 +539,21 @@ Soubor `src/data/opravy-nabidky-skol.json` (čtení v `src/lib/opravy-nabidky.ts
 
 Rozhodnutí vlastníka 5. 10. 2026: kapacita Boskovic a neotevíraný obor v Hronově se do webu dostanou až s nabídkou 2027. Obor 26-41-L/01 v Bohumíně v datech 2026 není a zdroj, proč, nemáme; soubor ho proto neobsahuje.
 
+### 2.20 Matomo, týdenní souhrn signálů
+
+Zdroj: Matomo na `https://ma.hlidacstatu.cz/` (site ID 7), Reporting API, jen čtení agregátů tokenem `MATOMO_TOKEN` (secret, vytváří vlastník). Skript `scripts/signaly_tyden.py` dělá 7 dotazů jednou týdně s prodlevou 2 s (zadání #326). Plný souhrn jde jen do Telegramu (zkrácený po znacích na 4096). Artefakt workflow `signaly-tyden.yml` (90 dní, ve veřejném repozitáři ke stažení) obsahuje jen verzi bez oddílů hledání, protože hledané výrazy mohou obsahovat jména; obě verze vznikají z jednoho stažení. Do repozitáře se nic nezapisuje. Testy volají jen mock.
+
+| Metoda | Pole | Otázka | Používáme |
+|---|---|---|---|
+| `Actions.getPageUrls` (tento a minulý týden) | `label`, `nb_hits`, `nb_visits`, `bounce_rate` | které stránky rodiny čtou, které rostou a které opouštějí hned | ano |
+| `Actions.getSiteSearchKeywords` | `label`, `nb_visits` | co lidé na webu hledají | ano, jen výrazy s aspoň 5 hledáními (mohou obsahovat jména) |
+| `Actions.getSiteSearchNoResultKeyword` | `label`, `nb_visits` | co hledají a nenajdou | ano, stejný práh |
+| `Events.getCategory`, `Events.getAction` | `label`, `nb_events` | kolik lidí použilo simulátor a odběr | ano |
+| `VisitsSummary.get` | `nb_visits`, `nb_actions` | celkový rozsah týdne | ano |
+| (stejné metody) | `nb_uniq_visitors`, `avg_time_on_page`, `exit_rate`, `sum_time_spent` | | ne: duplikují návštěvy a odchody, nové otázky nepřidávají |
+
+Zamítnuto: záznamy jednotlivých návštěv, IP adresy a identifikátory návštěvníků (osobní údaje, k otázkám týdenního souhrnu netřeba). Search Console a CrUX přijdou v etapě 2 zadání #326 a zapíšou se sem při zavedení.
+
 ## 3. Sloupce, které nepoužíváme
 
 Tohle je hlavní důvod existence dokumentu. Seřazeno podle toho, kolik by to dalo rodiči.
