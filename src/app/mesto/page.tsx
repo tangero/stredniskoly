@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
+import { DrobeckyJsonLd } from '@/components/DrobeckyJsonLd';
 import { promises as fs } from 'fs';
 import path from 'path';
 import { Header } from '@/components/Header';
@@ -70,6 +71,7 @@ export default async function MestaPage() {
               <span className="mx-2">/</span>
               <span className="text-white">Města</span>
             </nav>
+            <DrobeckyJsonLd polozky={[{ nazev: 'Domů', cesta: '/' }, { nazev: 'Města' }]} />
             <h1 className="text-3xl md:text-4xl font-bold mb-4">
               Střední školy podle měst
             </h1>

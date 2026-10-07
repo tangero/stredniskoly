@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { DrobeckyJsonLd } from '@/components/DrobeckyJsonLd';
 import type { ReactNode } from 'react';
 import { idDukazu } from '@/lib/mereni-oddilu';
 import type { ProfilSkolyData, OborSkoly } from '@/lib/skola-profil-data';
@@ -276,6 +277,7 @@ export function ProfilSkoly({ data, skola, odkazy }: ProfilSkolyProps) {
             <Link href={odkazy.kraj} className="hover:text-[#0074e4]">{skola.kraj}</Link><span className="mx-1.5">/</span>
             <span className="text-slate-700">{skola.nazev}</span>
           </nav>
+          <DrobeckyJsonLd polozky={[{ nazev: 'Domů', cesta: '/' }, { nazev: 'Školy', cesta: '/skoly' }, { nazev: skola.kraj, cesta: odkazy.kraj }, { nazev: skola.nazev }]} />
           <div>
             <h1 className="text-[32px] font-bold leading-[1.1] text-[#16325c] [text-wrap:balance] md:text-[44px]">{skola.nadpis || nazevSObci(skola.nazev, skola.obec)}</h1>
             {podnadpis.text && (
