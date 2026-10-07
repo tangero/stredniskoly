@@ -395,6 +395,7 @@ def mer_soutezici_prahy() -> dict:
     ined = i["NEPŘIJATI - NEDOSTATEČNÁ KAPACITA"]
     pod_prahem: dict[str, Counter] = {}
     pasma_H = Counter()
+    pasma_E = Counter()  # etapa 5 (#244): počet učebních pojistek E do dokladu
     for r in radky:
         forma = str(r[i["FORMA VZDĚLÁVÁNÍ"]] or "")
         zkr = str(r[i["ZKRÁCENÉ STUDIUM"]] or "")
@@ -411,18 +412,19 @@ def mer_soutezici_prahy() -> dict:
         soutezici = pjt + ned
         if soutezici < 10:
             c["pod_prahem_10"] += 1
-        if kat == "H" and soutezici >= 10:
+        if kat in ("H", "E") and soutezici >= 10:
+            pasma = pasma_H if kat == "H" else pasma_E
             podil = pjt / soutezici
             if ned == 0:
-                pasma_H["kapacita_nerozhodovala"] += 1
+                pasma["kapacita_nerozhodovala"] += 1
             elif podil >= 2 / 3:
-                pasma_H["vetsina_uspela"] += 1
+                pasma["vetsina_uspela"] += 1
             elif podil >= 1 / 2:
-                pasma_H["stredne_tezke"] += 1
+                pasma["stredne_tezke"] += 1
             elif podil >= 1 / 3:
-                pasma_H["tezke"] += 1
+                pasma["tezke"] += 1
             else:
-                pasma_H["velmi_tezke"] += 1
+                pasma["velmi_tezke"] += 1
     return {
         "pod_prahem_10_soutezicich": {
             kat: {"nabidek": v["nabidek"], "pod_prahem": v["pod_prahem_10"],
@@ -430,6 +432,7 @@ def mer_soutezici_prahy() -> dict:
             for kat, v in sorted(pod_prahem.items())
         },
         "pasma_H_nad_prahem": dict(pasma_H),
+        "pasma_E_nad_prahem": dict(pasma_E),
     }
 
 

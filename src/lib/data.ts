@@ -374,6 +374,42 @@ export async function getPolozkyHledani(): Promise<PolozkaHledani[]> {
   return vysledek;
 }
 
+/** Nabídka bez jednotné zkoušky pro katalog simulátoru (#244, etapa 5), s údaji 1. kola po celém id nabídky. */
+export interface NabidkaSimulatoruBezJpz {
+  id: string; nazev: string; nazev_display: string; obor: string; zamereni?: string; obec: string;
+  ulice: string | null; adresa: string; kraj_kod: string; typ: string; zrizovatel: string | null;
+  delka_studia: number; adresa_stranky: string; druh_oboru: string;
+  bez_jpz: { kategorie: string; prijati: number | null; nepr_kapacita: number | null; nepr_podminky: number | null; prihlasky: number | null };
+}
+
+let simulatorBezJpzCache: NabidkaSimulatoruBezJpz[] | null = null;
+
+/**
+ * Denní nabídky bez JPZ pro simulátor: učební obory jako pojistka bez bodů, ostatní (umělecké, konzervatoře,
+ * C, J) do „Bez srovnání“. Tytéž adresy a názvy jako vyhledávání (`getPolozkyHledani`).
+ */
+export async function getSimulatorBezJpz(): Promise<NabidkaSimulatoruBezJpz[]> {
+  if (simulatorBezJpzCache) return simulatorBezJpzCache;
+  const vysledek: NabidkaSimulatoruBezJpz[] = [];
+  const redizo = [...new Set((await vsechnyNabidkyBezJpz()).map(n => n.redizo))].sort();
+  for (const r of redizo) {
+    const skola = (await getSchoolsByRedizo(r))[0] ?? await skolaMimoKatalog(r);
+    if (!skola) continue;
+    for (const p of await programyBezJpzSkoly(r, skola.nazev)) {
+      const b = p.bezJpz!;
+      vysledek.push({
+        id: p.id, nazev: skola.nazev, nazev_display: skola.nazev_display || skola.nazev, obor: p.obor,
+        ...(p.zamereni ? { zamereni: p.zamereni } : {}), obec: skola.obec, ulice: (skola as School & { ulice?: string }).ulice ?? null, adresa: skola.adresa,
+        kraj_kod: skola.kraj_kod, typ: p.typ, zrizovatel: skola.zrizovatel || null, delka_studia: p.delka_studia,
+        adresa_stranky: p.adresa ?? '', druh_oboru: druhOboruBezJpz(b.kategorie),
+        bez_jpz: { kategorie: b.kategorie, prijati: b.prijati, nepr_kapacita: b.nepr_kapacita, nepr_podminky: b.nepr_podminky, prihlasky: b.prihlasky },
+      });
+    }
+  }
+  simulatorBezJpzCache = vysledek;
+  return vysledek;
+}
+
 /**
  * Najde školu podle slug (kompatibilita se starým API)
  */

@@ -45,7 +45,7 @@ test('bez pojistky upozornění; pojistka za posledním místem se nepočítá',
   assert.equal(k.pojistkaMimoPrihlasku, true);
   const html = renderToStaticMarkup(React.createElement(StrategiePrihlasek, { polozky, pravidla: { ...pravidla, prihlasek_bezne: 3 }, rok: 2026, onMove() {}, navrhyPojistky: [], onAdd() {} }));
   assert.match(html, /V přihlášce chybí pojistka/);
-  assert.match(html, /Posuň ho výš/);
+  assert.match(html, /Posuň ji výš/);
 });
 
 test('pojistka nad pásmem a doporučení oboru, kde nikoho neodmítli', () => {

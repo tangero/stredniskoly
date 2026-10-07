@@ -11,6 +11,10 @@ export interface PolozkaSeznamu {
   skupina: Skupina | null;
   /** null = druh zkoušky neznáme; kontrola přihlášky se pozastaví. */
   talentova: boolean | null;
+  /** Učební obor, kde v 1. kole nikoho neodmítli kvůli počtu míst (pojistka bez bodů, #244 etapa 5). */
+  ucebniPojistka?: boolean;
+  /** Název oboru do věty o učební pojistce. */
+  obor?: string;
 }
 
 interface Props {
@@ -20,6 +24,8 @@ interface Props {
   rok: number;
   onMove: (id: string, smer: -1 | 1) => void;
   navrhyPojistky: Array<{ id: string; label: string; href?: string }>;
+  /** Učební pojistky se stejným kódem oboru jako zvažovaný učební obor (`navrhniUcebniPojistku`). */
+  navrhyUcebniPojistky?: Array<{ id: string; label: string; href?: string }>;
   onAdd: (id: string) => void;
 }
 
@@ -28,7 +34,24 @@ const tlacitko = 'flex h-11 w-11 items-center justify-center rounded-lg border b
 const prihlasekText = (n: number, talentove: boolean) =>
   `${n} ${n === 1 ? 'přihláška' : n >= 2 && n <= 4 ? 'přihlášky' : 'přihlášek'}${talentove ? ' na obory s talentovou zkouškou' : ' na obory bez talentové zkoušky'}`;
 
-export function StrategiePrihlasek({ polozky, pravidla, rok, onMove, navrhyPojistky, onAdd }: Props) {
+function Navrhy({ navrhy, uvod, onAdd }: { navrhy: Array<{ id: string; label: string; href?: string }>; uvod: string; onAdd: (id: string) => void }) {
+  if (!navrhy.length) return null;
+  return (
+    <>
+      <p className="mt-2">{uvod}</p>
+      <ul className="mt-1 space-y-1">
+        {navrhy.map(n => (
+          <li key={n.id} className="flex flex-wrap items-center gap-2">
+            {n.href ? <Link href={n.href} className="underline">{n.label}</Link> : <span>{n.label}</span>}
+            <button type="button" className="min-h-11 rounded-lg border border-amber-500 bg-white px-3 text-xs font-medium hover:bg-amber-100" onClick={() => onAdd(n.id)}>Přidat mezi zvažované</button>
+          </li>
+        ))}
+      </ul>
+    </>
+  );
+}
+
+export function StrategiePrihlasek({ polozky, pravidla, rok, onMove, navrhyPojistky, navrhyUcebniPojistky = [], onAdd }: Props) {
   if (!polozky.length) return null;
   const k = zkontrolujStrategii(polozky, pravidla);
   const vejdeSe = new Set([...k.vejdeSeBezne, ...k.vejdeSeTalentove]);
@@ -49,7 +72,8 @@ export function StrategiePrihlasek({ polozky, pravidla, rok, onMove, navrhyPojis
         </p>
         <p>
           <strong>Přidej pojistku</strong>, tedy obor, kam se v 1. kole {rok} s tvým výsledkem dostali všichni soutěžící uchazeči
-          (skupina „Nad pásmem“). Pokud to jde, přidej i obor ze skupiny „Obory, kde nikoho neodmítli“.
+          (skupina „Nad pásmem“), nebo učební obor, kde v 1. kole {rok} nikoho neodmítli kvůli počtu míst.
+          Pokud to jde, přidej i obor ze skupiny „Obory, kde nikoho neodmítli“.
         </p>
         <p className="text-slate-600">
           Podle pravidel {pravidla.rok_pravidel} podáš v 1. kole {prihlasekText(pravidla.prihlasek_bezne, false)} a{' '}
@@ -93,13 +117,17 @@ export function StrategiePrihlasek({ polozky, pravidla, rok, onMove, navrhyPojis
             ani jestli v ní máš pojistku. Zkus stránku načíst znovu; pokud to nepomůže, odeber obor, který se už nenabízí.
           </p>
         ) : !k.znameSkupiny ? (
-          <p className="rounded-lg border border-blue-200 bg-blue-50 p-3 text-blue-900">
-            Zadej výsledek cvičného testu v kroku 1 a ukážeme, jestli máš mezi prvními {pravidla.prihlasek_bezne} obory pojistku.
-          </p>
+          <div className="rounded-lg border border-blue-200 bg-blue-50 p-3 text-blue-900">
+            <p>Zadej výsledek cvičného testu v kroku 1 a ukážeme, jestli máš mezi prvními {pravidla.prihlasek_bezne} obory pojistku.</p>
+            <Navrhy navrhy={navrhyUcebniPojistky} onAdd={onAdd}
+              uvod={`Učební obory se stejným oborem jako ten, který zvažuješ, kde v 1. kole ${rok} nikoho neodmítli kvůli počtu míst:`} />
+          </div>
         ) : k.maPojistku ? (
           <p className="rounded-lg border border-emerald-300 bg-emerald-50 p-3 text-emerald-900">
-            Pojistku máš: aspoň jeden obor v přihlášce je nad pásmem 1. kola {rok}.
-            {!k.maNikdoNeodmitnut && (k.nikdoNeodmitnutMimoPrihlasku
+            {k.pojistkaNad ? `Pojistku máš: aspoň jeden obor v přihlášce je nad pásmem 1. kola ${rok}.`
+              : `Pojistku máš: ${polozky.find(p => p.id === k.ucebniPojistky[0])?.obor ?? polozky.find(p => p.id === k.ucebniPojistky[0])?.label}, učební obor, kde v 1. kole ${rok} nikoho neodmítli kvůli počtu míst. Platí to jen, když splníš požadavky školy.`}
+            {/* Skupiny stojí na výsledku testu; bez něj (jen učební pojistka) doporučení skupiny nedává smysl. */}
+            {polozky.some(p => p.skupina !== null) && !k.maNikdoNeodmitnut && (k.nikdoNeodmitnutMimoPrihlasku
               ? ` Obor ze skupiny „Obory, kde nikoho neodmítli“ zvažuješ, ale stojí až za ${pravidla.prihlasek_bezne}. místem; posuň ho výš, pokud ho chceš v přihlášce.`
               : ' Obor ze skupiny „Obory, kde nikoho neodmítli“ v přihlášce nemáš; přidej ho, pokud nějaký takový zvažuješ.')}
           </p>
@@ -108,26 +136,18 @@ export function StrategiePrihlasek({ polozky, pravidla, rok, onMove, navrhyPojis
             <p className="font-semibold">V přihlášce chybí pojistka.</p>
             <p className="mt-1">
               {k.pojistkaMimoPrihlasku
-                ? `Obor nad pásmem 1. kola ${rok} zvažuješ, ale stojí až za ${pravidla.prihlasek_bezne}. místem. Posuň ho výš, jinak se do přihlášky nevejde.`
+                ? `Pojistku (obor nad pásmem 1. kola ${rok} nebo učební obor, kde nikoho neodmítli kvůli počtu míst) zvažuješ, ale stojí až za ${pravidla.prihlasek_bezne}. místem. Posuň ji výš, jinak se do přihlášky nevejde.`
                 : `Žádný z oborů, které se vejdou do přihlášky, není nad pásmem 1. kola ${rok}. Když tě nepřijmou nikam, čeká tě 2. kolo s obory, kde zbyla místa.`}
             </p>
-            {!k.pojistkaMimoPrihlasku && navrhyPojistky.length > 0 && (
-              <>
-                <p className="mt-2">Nejbližší obory nad pásmem z tvého hledání:</p>
-                <ul className="mt-1 space-y-1">
-                  {navrhyPojistky.map(n => (
-                    <li key={n.id} className="flex flex-wrap items-center gap-2">
-                      {n.href ? <Link href={n.href} className="underline">{n.label}</Link> : <span>{n.label}</span>}
-                      <button type="button" className="min-h-11 rounded-lg border border-amber-500 bg-white px-3 text-xs font-medium hover:bg-amber-100" onClick={() => onAdd(n.id)}>Přidat mezi zvažované</button>
-                    </li>
-                  ))}
-                </ul>
-              </>
-            )}
+            {!k.pojistkaMimoPrihlasku && <>
+              <Navrhy navrhy={navrhyPojistky} onAdd={onAdd} uvod="Nejbližší obory nad pásmem z tvého hledání:" />
+              <Navrhy navrhy={navrhyUcebniPojistky} onAdd={onAdd}
+                uvod={`Učební obory se stejným oborem jako ten, který zvažuješ, kde v 1. kole ${rok} nikoho neodmítli kvůli počtu míst:`} />
+            </>}
           </div>
         )}
         <p className="text-xs text-slate-500">
-          Skupiny popisují 1. kolo {rok}, ne předpověď; hranice se mezi ročníky posouvá. Šanci na přijetí ani přiřazení ke škole nepočítáme.
+          Skupiny i učební pojistky popisují 1. kolo {rok}, ne předpověď; hranice i počet uchazečů se mezi ročníky mění. Šanci na přijetí ani přiřazení ke škole nepočítáme.
         </p>
       </div>
     </section>

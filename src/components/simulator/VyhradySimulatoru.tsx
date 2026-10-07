@@ -23,7 +23,7 @@ export function VyhradySimulatoru({ rokPasem, rokKriterii, terminKriterii, jinyT
   const body = ([
     { key: 'stres', text: <><strong>Na ostrém testu, tedy u jednotné přijímací zkoušky v termínu přijímaček, působí stres a čas.</strong> Doma píšeš bez tlaku a aplikace TAU dovoluje opravy, takže výsledek z domova vychází spíš lepší než u zkoušky.</> },
     { key: 'prevod', text: <><strong>Převod předpokládá, že jsi test psal celý, na čas, bez oprav a poprvé.</strong> Když ne, převedený výsledek, tedy body, které by to byly v roce {rokPasem}, tvůj skutečný výsledek přeceňuje.</> },
-    { key: 'rocnik', text: <><strong>Skupiny popisují 1. kolo {rokPasem}, ne předpověď.</strong> Nejnižší výsledek přijatých se u oboru mezi dvěma posledními ročníky posunul typicky o 5 bodů, u šestiny oborů o víc než 10.</> },
+    { key: 'rocnik', text: <><strong>Skupiny i učební pojistky popisují 1. kolo {rokPasem}, ne předpověď.</strong> Nejnižší výsledek přijatých se u oboru mezi dvěma posledními ročníky posunul typicky o 5 bodů, u šestiny oborů o víc než 10. U učebního oboru, kde letos nikoho neodmítli, může příští rok uchazečů přibýt.</> },
     rokKriterii !== null ? {
       key: 'kriteria',
       text: <><strong>Kritéria {rokKriterii} jsou strojový přepis PDF z DiPSy.</strong> Kontrola vzorku našla podstatnou chybu zhruba u každého desátého přepisu. Školy kritéria mění{terminKriterii ? <>; pro přijímačky {terminKriterii.rok} je zveřejní {terminKriterii.datum} {terminKriterii.rok}</> : null}. Ověř si je u školy.</>,

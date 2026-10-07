@@ -30,6 +30,8 @@ interface Props {
   onToggleSave: (id: string) => void;
   /** Kolik nabídek ukázat v každé skupině na začátku. */
   naStranku?: number;
+  /** Údaje platí pro konkrétní zaměření (učební obory), ne za celý obor školy. */
+  udajePoZamereni?: boolean;
 }
 
 const tlacitko = 'min-h-11 rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm font-medium hover:bg-slate-50 focus-visible:outline-2 focus-visible:outline-blue-600';
@@ -62,7 +64,7 @@ function Karta({ n, veta, props }: { n: NabidkaSimulatoru; veta: string | null; 
         ><span aria-hidden="true">{ulozeno ? '★' : '☆'}</span></button>
       </div>
       {veta && <p className="mt-2 text-sm text-slate-800">{veta}</p>}
-      {veta && n.zamereni && <p className="mt-1 text-xs text-slate-500">Data 1. kola neznají zaměření; údaj platí za celý obor školy.</p>}
+      {veta && n.zamereni && !props.udajePoZamereni && <p className="mt-1 text-xs text-slate-500">Data 1. kola neznají zaměření; údaj platí za celý obor školy.</p>}
       {r?.extra_body === true && props.rokKriterii !== null && (
         <p className="mt-2 inline-block rounded-md bg-violet-50 px-2 py-1 text-xs font-semibold text-violet-800 ring-1 ring-inset ring-violet-200">
           O přijetí rozhodují i extra body <span className="font-normal">(podle kritérií {props.rokKriterii})</span>
@@ -80,6 +82,20 @@ function Seznam({ polozky, veta, props, klic }: { polozky: NabidkaSimulatoru[]; 
     <ul className="mt-3 grid gap-3">{polozky.slice(0, pocet).map(n => <Karta key={`${klic}:${n.id}`} n={n} veta={veta(n)} props={props} />)}</ul>
     {polozky.length > pocet && <button type="button" className={`${tlacitko} mt-3`} onClick={() => setPocet(pocet + krok)}>Dalších {Math.min(krok, polozky.length - pocet)} z {polozky.length - pocet}</button>}
   </>;
+}
+
+/**
+ * Blok „Učební obory“ (doplněk návrhu simulátoru, oddíl 3): pod bodovými skupinami, i bez zadaného testu.
+ * Bez bodů, pásma a odznaku obtížnosti; věta říká jen, jestli v 1. kole přijali všechny soutěžící uchazeče.
+ */
+export function SeznamUcebnichOboru(props: Omit<Props, 'poloha'> & { veta: (n: NabidkaSimulatoru) => string; popis: string }) {
+  if (!props.nabidky.length) return null;
+  const vlastnosti: Props = { ...props, poloha: null, udajePoZamereni: true };
+  return <section aria-label="Učební obory" className="border-l-4 border-teal-500 pl-4">
+    <h3 className="text-lg font-semibold">Učební obory ({props.nabidky.length})</h3>
+    <p className="mt-1 text-sm text-slate-600">{props.popis}</p>
+    <Seznam polozky={props.nabidky} veta={props.veta} props={vlastnosti} klic="ucebni" />
+  </section>;
 }
 
 /** Seznam nabídek simulátoru: se zadaným testem ve skupinách podle polohy vůči pásmu, bez něj jeden seznam. */
