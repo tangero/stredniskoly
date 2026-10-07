@@ -63,19 +63,17 @@ export async function zmer(url, klic, nacti, hodiny = Date.now) {
   }
 }
 
-/** Kontrola všech adres; selhání se v témže běhu ověří druhým dotazem po 30 s a platí až druhý výsledek. */
+/**
+ * Kontrola všech adres souběžně; selhané se jednou po 30 s ověří druhým dotazem (také souběžně) a platí až
+ * druhý výsledek. Nejhorší případ je kolem 60 s a nejvýš 2 × počet adres dotazů.
+ */
 export async function zkontroluj(adresy, nacti, { spi = (ms) => new Promise((r) => setTimeout(r, ms)), hodiny = Date.now } = {}) {
-  const vysledky = [];
-  for (const a of adresy) {
-    const url = `${ZAKLADNI}${a.cesta}`;
-    let v = await zmer(url, a.text, nacti, hodiny);
-    if (!v.ok) {
-      await spi(OVERENI_PO);
-      v = await zmer(url, a.text, nacti, hodiny);
-    }
-    vysledky.push({ cesta: a.cesta, ...v });
-  }
-  return vysledky;
+  const meri = (a) => zmer(`${ZAKLADNI}${a.cesta}`, a.text, nacti, hodiny);
+  const prvni = await Promise.all(adresy.map(meri));
+  const selhane = adresy.filter((_, i) => !prvni[i].ok);
+  if (selhane.length) await spi(OVERENI_PO);
+  const druhe = new Map(await Promise.all(selhane.map(async (a) => [a.cesta, await meri(a)])));
+  return adresy.map((a, i) => ({ cesta: a.cesta, ...(druhe.get(a.cesta) ?? prvni[i]) }));
 }
 
 const prazdnyHistogram = () => new Array(KOSE.length + 1).fill(0);

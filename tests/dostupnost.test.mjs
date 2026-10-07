@@ -50,6 +50,18 @@ test('selhání se v témže běhu ověří druhým dotazem po 30 s', async () =
   assert.equal(dalsi.stav.adresy['/'].selhani, 0);
 });
 
+test('úplný výpadek: čeká se jen jednou a dotazů je nejvýš 10', async () => {
+  const volani = [];
+  const spanky = [];
+  const nacti = async (url) => { volani.push(url); return { status: 503, text: '' }; };
+  const v = await zkontroluj(ADRESY, nacti, { spi: async (ms) => { spanky.push(ms); } });
+  assert.deepEqual(spanky, [30000]);
+  assert.equal(volani.length, ADRESY.length * 2);
+  assert.ok(volani.length <= 10);
+  assert.equal(v.length, ADRESY.length);
+  assert.ok(v.every((x) => !x.ok && x.status === 503));
+});
+
 // K3 a K4: výpadek otevře jedno issue, během trvání jen připomínka po 6 h, obnovení jednou.
 test('výpadek: otevření po 2 bězích, ticho, připomínka po 6 h, obnovení', () => {
   let stav = novyStav();
