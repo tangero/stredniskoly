@@ -6,9 +6,9 @@ import { druhTestu, type DruhTestu, type KriteriaOboru, type PoziceOboru, type P
 import { bezJpzProKlice, getSchoolsData, getExtractionsByRedizo, getInspisDataByRedizo, oborBezJpzProKlic } from '@/lib/data';
 import { getSouhrnNabidky, nabidkyVeSkupineKraje, souhrnOboru, type SouhrnRocniku } from '@/lib/souhrny-kolo1';
 import { getKontextPrihlasek, type KontextPrihlasek } from '@/lib/kontext-prihlasek';
-import { getOkruhOboru, getSoubezneObce, type SoubezneObce } from '@/lib/okruhy-oboru';
+import { getOkruheMesta, getOkruhOboru, getSoubezneObce, type SoubezneObce } from '@/lib/okruhy-oboru';
 import { sestavOkruhyMesta, type OkruhMestaKZobrazeni } from '@/lib/mesto-karty';
-import { katalogOboru, kanonickeNazvySkol, nazvySkolKatalogu, obtiznostOboru } from '@/lib/okruhy-podklad';
+import { castiObce, katalogOboru, kanonickeNazvySkol, nazvySkolKatalogu, obtiznostOboru } from '@/lib/okruhy-podklad';
 import { nactiIndexRejstriku } from '@/lib/kontext-prihlasek';
 import { MESTA } from '@/lib/mesta.mjs';
 import { getPasmaPrijeti, getPasmaPrijetiZaRok, celostatniMedianUchazecu, rokPasemPrijeti, type PasmaPrijetiObor } from '@/lib/pasma-prijeti';
@@ -181,15 +181,18 @@ export interface OkruhNaStranceOboru {
 export async function okruhNaStranceOboru(programId: string): Promise<OkruhNaStranceOboru | null> {
   const nalez = await getOkruhOboru(programId);
   if (!nalez) return null;
-  const klice = nalez.okruh.obory.map(o => o.klic);
-  const [katalog, nazvyKatalogu, kanonickeNazvy, rejstrik, obtiznost, rokObtiznosti] = await Promise.all([
+  // Jméno okruhu závisí na ostatních okruzích města (upřesnění při shodě jmen), proto se sestaví
+  // všechny okruhy města stejně jako na stránce města a vybere se ten oboru.
+  const vsechny = (await getOkruheMesta(nalez.obec))?.okruhy ?? [nalez.okruh];
+  const klice = vsechny.flatMap(o => o.obory.map(x => x.klic));
+  const [katalog, nazvyKatalogu, kanonickeNazvy, rejstrik, obtiznost, rokObtiznosti, casti] = await Promise.all([
     katalogOboru(), nazvySkolKatalogu(), kanonickeNazvySkol(), nactiIndexRejstriku(), obtiznostOboru(klice),
-    zobrazeneObdobi('cermat-vysledky'),
+    zobrazeneObdobi('cermat-vysledky'), castiObce(nalez.obec),
   ]);
-  const { okruhy, nastavby } = sestavOkruhyMesta([nalez.okruh], nalez.obec, [], {
-    katalog, nazvyKatalogu, kanonickeNazvy, rejstrik, obtiznost, bezJpz: await bezJpzProKlice(klice),
+  const { okruhy, nastavby } = sestavOkruhyMesta(vsechny, nalez.obec, [], {
+    katalog, nazvyKatalogu, kanonickeNazvy, rejstrik, obtiznost, castiObce: casti, bezJpz: await bezJpzProKlice(klice),
   });
-  const zobrazeni = okruhy[0] ?? nastavby[0];
+  const zobrazeni = [...okruhy, ...nastavby].find(o => o.id === nalez.okruh.id);
   if (!zobrazeni) return null;
   const mesto = MESTA.find(m => m.nazev === nalez.obec);
   return {

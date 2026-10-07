@@ -18,7 +18,8 @@ import { ZARAZENI_POPISEK } from '../src/lib/obor-profil.ts';
 import { dalsiOboryVeMeste, nactiIndexRejstriku } from '../src/lib/kontext-prihlasek.ts';
 import { getSchoolAnalysis, getProgramsByRedizo, getSchoolsData } from '../src/lib/data.ts';
 import { zrizovatelPodleRedizo } from '../src/lib/simulator-filter.ts';
-import { sestavKartySkol, sestavOkruhyMesta, nazevOkruhu, velikostMesta, maZkratku, ocistenyUplnyNazev, nazevSkolyKZobrazeni } from '../src/lib/mesto-karty.ts';
+import { sestavKartySkol, sestavOkruhyMesta, nazevOkruhu, velikostMesta, castOkruhu, maZkratku, ocistenyUplnyNazev, nazevSkolyKZobrazeni } from '../src/lib/mesto-karty.ts';
+import { castiObce } from '../src/lib/okruhy-podklad.ts';
 import { getOkruheMesta, getOkruhOboru } from '../src/lib/okruhy-oboru.ts';
 import { OkruhyMesta, OkruhOboruObsah } from '../src/components/mesto/OkruhyMesta.tsx';
 import { smerOboru, SMERY_STUDIA } from '../src/lib/smery-studia.ts';
@@ -369,7 +370,7 @@ async function okruhyMesta(mesto) {
   }
   const nazvyKatalogu = new Map((await getSchoolsData())['2026'].map(z => [z.redizo, z.nazev_display]));
   const rejstrik = await nactiIndexRejstriku();
-  return { data, ...sestavOkruhyMesta(data.okruhy, mesto, stats.schools, { katalog, nazvyKatalogu, kanonickeNazvy, rejstrik }) };
+  return { data, ...sestavOkruhyMesta(data.okruhy, mesto, stats.schools, { katalog, nazvyKatalogu, kanonickeNazvy, rejstrik, castiObce: await castiObce(mesto) }) };
 }
 
 test('jméno okruhu ze směrů studia, víceletá gymnázia podle délky, učební obory', () => {
@@ -453,6 +454,52 @@ test('stránka oboru: okruh zkrácený na deset oborů, tento obor vždy a zvýr
   assert.match(text(html), new RegExp(`ještě ${velky.radky.length - 11} `));
   assert.match(html, new RegExp(`href="/mesto/brno#okruh-${velky.id}"`));
   assert.match(text(html), /měli je často zároveň na přihlášce/);
+});
+
+// ---------------------------------------------------------------------------
+// Shodná jména okruhů (#364)
+// ---------------------------------------------------------------------------
+
+test('jména okruhů se neopakují v Praze, Ostravě ani Brně (okruhy i nástavby dohromady)', async () => {
+  for (const mesto of ['Praha', 'Ostrava', 'Brno']) {
+    const { okruhy, nastavby } = await okruhyMesta(mesto);
+    const jmena = [...okruhy, ...nastavby].map(o => o.nazev);
+    assert.equal(new Set(jmena).size, jmena.length, `${mesto}: ${jmena.filter((x, i) => jmena.indexOf(x) !== i).join(' | ')}`);
+  }
+});
+
+test('jména okruhů se neopakují v žádném městě s okruhy', async () => {
+  for (const { nazev: mesto } of MESTA) {
+    if (!(await getOkruheMesta(mesto))) continue;
+    const { okruhy, nastavby } = await okruhyMesta(mesto);
+    const jmena = [...okruhy, ...nastavby].map(o => o.nazev);
+    assert.equal(new Set(jmena).size, jmena.length, `${mesto}: ${jmena.filter((x, i) => jmena.indexOf(x) !== i).join(' | ')}`);
+  }
+});
+
+test('část obce okruhu: převažující podle uchazečů místních oborů, druhá od čtvrtiny', () => {
+  const casti = new Map([['1', 'Praha 4'], ['2', 'Praha 10'], ['3', 'Praha 6']]);
+  const r = (red, uchazecu, obec = null) => ({ klic: `${red}_79-41-K/81`, uchazecu, obec });
+  assert.equal(castOkruhu([r('1', 300), r('2', 150), r('3', 20)], casti), 'Praha 4, Praha 10');
+  assert.equal(castOkruhu([r('1', 300), r('3', 50)], casti), 'Praha 4');
+  // Obor z jiné obce se nepočítá.
+  assert.equal(castOkruhu([r('2', 900, 'Beroun'), r('1', 10)], casti), 'Praha 4');
+  assert.equal(castOkruhu([r('9', 100)], casti), null);
+  // Okruh po celém městě (žádná část nemá 40 %, první dvě ani 60 %) část obce nedostane.
+  const rozptyl = new Map([...'abcdefg'].map(c => [c, `Praha ${c}`]));
+  assert.equal(castOkruhu([...'abcdefg'].map(c => r(c, 100)), rozptyl), null);
+});
+
+test('Ostrava: okruhy umění se liší převažujícím oborem, ekonomika skupinou oborů', async () => {
+  const { okruhy, nastavby } = await okruhyMesta('Ostrava');
+  const jmena = [...okruhy, ...nastavby].map(o => o.nazev);
+  assert.ok(jmena.includes('Ekonomika, obchod a správa: právo a veřejná správa'), jmena.join(' | '));
+  assert.ok(jmena.includes('Ekonomika, obchod a správa: podnikání'), jmena.join(' | '));
+  assert.equal(jmena.filter(n => n.startsWith('Umění a design')).length, 2, jmena.join(' | '));
+  assert.ok(!jmena.some(n => n.includes('Moravská Ostrava')), jmena.join(' | '));
+  const konzervatore = [...okruhy, ...nastavby].find(o => String(o.id) === '70001');
+  assert.ok(konzervatore?.nazev.includes('hudebně dramatické umění'), [...okruhy, ...nastavby].map(o => `${o.id}:${o.nazev}`).join(' | '));
+  for (const j of ['Brno', 'Opava', 'Praha']) assert.ok(!jmena.some(n => n.includes(j)), `${j}: ${jmena.join(' | ')}`);
 });
 
 // ---------------------------------------------------------------------------
