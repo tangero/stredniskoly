@@ -1,9 +1,12 @@
 """Týdenní souhrn signálů z Matomu (zadání #326, etapa 1b).
 
 Čte jen agregované počty z Reporting API (7 dotazů, prodleva 2 s) a vypíše souhrn v Markdownu.
-Nic nezapisuje do repozitáře: workflow ho pošle do Telegramu a uloží jako artefakt běhu.
+Nic nezapisuje do repozitáře: workflow plný souhrn pošle do Telegramu a jako artefakt běhu uloží jen verzi
+bez hledaných výrazů (artefakt je ve veřejném repozitáři ke stažení, hledané výrazy mohou obsahovat jména).
+Obě verze vznikají z jednoho stažení.
 
-    MATOMO_TOKEN=... python3 scripts/signaly_tyden.py [--datum RRRR-MM-DD] [--hlaseni hlaseni.json] > souhrn.md
+    MATOMO_TOKEN=... python3 scripts/signaly_tyden.py [--datum RRRR-MM-DD] [--hlaseni hlaseni.json] \\
+        [--bez-hledani souhrn-bez-hledani.md] [--telegram zprava.txt --odkaz URL] > souhrn.md
 """
 from __future__ import annotations
 
@@ -25,6 +28,7 @@ MIN_HLEDANI = 5     # hledané výrazy mohou obsahovat jména: jen výrazy s asp
 MIN_NÁVŠTĚV_ODCHODY = 20
 PRAH_ODCHODU = 0.7
 TOP = 10
+LIMIT_TELEGRAM = 4096
 
 Fetch = Callable[[dict[str, str]], Any]
 
@@ -89,7 +93,7 @@ def _tabulka(hlavicka: list[str], radky: list[list[Any]]) -> str:
     return "\n".join(out) + "\n"
 
 
-def souhrn(data: dict[str, Any], konec_tydne: date, hlaseni: dict[str, int] | None = None) -> str:
+def souhrn(data: dict[str, Any], konec_tydne: date, hlaseni: dict[str, int] | None = None, s_hledanim: bool = True) -> str:
     stranky = [r for r in data.get("stranky", []) if isinstance(r, dict)]
     minule = {_stranka(r): _cislo(r, "nb_hits") for r in data.get("stranky_minuly", []) if isinstance(r, dict)}
     top = sorted(stranky, key=lambda r: -_cislo(r, "nb_hits"))[:TOP]
@@ -121,19 +125,34 @@ def souhrn(data: dict[str, Any], konec_tydne: date, hlaseni: dict[str, int] | No
         _tabulka(["Stránka", "Zobrazení", "Minulý týden"], [[s, int(a), int(b)] for s, a, b in rust]),
         f"## Stránky s vysokým podílem odchodů (aspoň {MIN_NÁVŠTĚV_ODCHODY} návštěv, odchody od {int(PRAH_ODCHODU * 100)} %)\n",
         _tabulka(["Stránka", "Návštěvy", "Podíl odchodů"], [[_stranka(r), int(_cislo(r, "nb_visits")), f"{_cislo(r, 'bounce_rate') * 100:.0f} %"] for r in odchody]),
-        f"## Hledání na webu (výrazy s aspoň {MIN_HLEDANI} hledáními)\n",
-        _tabulka(["Výraz", "Hledání"], hledani("hledani")),
-        "## Hledání bez výsledku\n",
-        _tabulka(["Výraz", "Hledání"], hledani("hledani_bez_vysledku")),
         "## Události (kategorie)\n",
         _tabulka(["Kategorie", "Události"], udalosti("udalosti_kategorie")),
         "## Události (akce)\n",
         _tabulka(["Akce", "Události"], udalosti("udalosti_akce")),
     ]
+    if s_hledanim:
+        casti += [
+            f"## Hledání na webu (výrazy s aspoň {MIN_HLEDANI} hledáními)\n",
+            _tabulka(["Výraz", "Hledání"], hledani("hledani")),
+            "## Hledání bez výsledku\n",
+            _tabulka(["Výraz", "Hledání"], hledani("hledani_bez_vysledku")),
+        ]
     if hlaseni is not None:
         casti += ["## Hlášení a opravy od škol podle oblasti (otevřená issues)\n",
                   _tabulka(["Oblast", "Počet"], [[k, v] for k, v in sorted(hlaseni.items(), key=lambda kv: -kv[1])])]
     return "\n".join(casti)
+
+
+def zprava_telegram(text: str, odkaz: str, limit: int = LIMIT_TELEGRAM) -> str:
+    """Zkrátí souhrn po znacích (ne po bajtech) na konci celého řádku a přidá řádek s odkazem na běh."""
+    patka = f"\n\nCelý souhrn: artefakt běhu {odkaz}\n"
+    misto = limit - len(patka)
+    if len(text) <= misto:
+        return text + patka
+    rez = text[:misto]
+    if text[misto] != "\n" and "\n" in rez:
+        rez = rez[: rez.rindex("\n")]
+    return rez.rstrip() + patka
 
 
 def hlaseni_z_issues(issues: list[dict[str, Any]]) -> dict[str, int]:
@@ -153,6 +172,9 @@ def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--datum", help="poslední den týdne, výchozí: poslední dokončená neděle")
     ap.add_argument("--hlaseni", help="JSON se seznamem issues z GitHubu (gh issue list --json labels)")
+    ap.add_argument("--bez-hledani", help="soubor pro verzi souhrnu bez hledaných výrazů (do veřejného artefaktu)")
+    ap.add_argument("--telegram", help="soubor pro zprávu do Telegramu (plný souhrn zkrácený po znacích)")
+    ap.add_argument("--odkaz", default="", help="adresa běhu workflow do patičky zprávy pro Telegram")
     args = ap.parse_args(argv)
     token = os.environ.get("MATOMO_TOKEN", "").strip()
     if not token:
@@ -164,7 +186,15 @@ def main(argv: list[str] | None = None) -> int:
     if args.hlaseni:
         with open(args.hlaseni, encoding="utf-8") as f:
             hlaseni = hlaseni_z_issues(json.load(f))
-    print(souhrn(stahni(fetch_matomo(token), konec), konec, hlaseni))
+    data = stahni(fetch_matomo(token), konec)
+    plny = souhrn(data, konec, hlaseni)
+    print(plny)
+    if args.bez_hledani:
+        with open(args.bez_hledani, "w", encoding="utf-8") as f:
+            f.write(souhrn(data, konec, hlaseni, s_hledanim=False))
+    if args.telegram:
+        with open(args.telegram, "w", encoding="utf-8") as f:
+            f.write(zprava_telegram(plny, args.odkaz))
     return 0
 
 

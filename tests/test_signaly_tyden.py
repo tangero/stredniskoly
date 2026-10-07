@@ -61,6 +61,27 @@ class SignalyTest(unittest.TestCase):
         self.assertLess(rust.index("/simulator"), rust.index("/mesto/brno"))
         self.assertIn("| simulator | 33 |", text)
 
+    def test_verze_pro_artefakt_bez_hledani(self) -> None:
+        data = s.stahni(falesny_matomo, KONEC, mock.Mock())
+        verejny = s.souhrn(data, KONEC, s_hledanim=False)
+        self.assertNotIn("Hledání na webu", verejny)
+        self.assertNotIn("Hledání bez výsledku", verejny)
+        self.assertNotIn("gymnázium brno", verejny)
+        self.assertNotIn("xyz", verejny)
+        self.assertIn("/mesto/brno", verejny)
+        self.assertIn("gymnázium brno", s.souhrn(data, KONEC))
+
+    def test_zprava_telegram_po_znacich(self) -> None:
+        odkaz = "https://github.com/tangero/stredniskoly/actions/runs/1"
+        dlouhy = "\n".join(f"| řádek č. {i} | žluťoučký kůň |" for i in range(400))
+        zprava = s.zprava_telegram(dlouhy, odkaz)
+        zprava.encode("utf-8").decode("utf-8")
+        self.assertLessEqual(len(zprava), 4096)
+        self.assertTrue(zprava.endswith(f"artefakt běhu {odkaz}\n"))
+        telo = zprava.split("\n\nCelý souhrn")[0]
+        self.assertIn(telo.split("\n")[-1], dlouhy.split("\n"))  # ořez na hranici celého řádku
+        self.assertEqual(s.zprava_telegram("krátký text", odkaz), f"krátký text\n\nCelý souhrn: artefakt běhu {odkaz}\n")
+
     def test_hlaseni_podle_oblasti(self) -> None:
         issues = [
             {"labels": [{"name": "bug-report"}, {"name": "oblast:detail"}]},

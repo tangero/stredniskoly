@@ -541,7 +541,7 @@ Rozhodnutí vlastníka 5. 10. 2026: kapacita Boskovic a neotevíraný obor v Hro
 
 ### 2.20 Matomo, týdenní souhrn signálů
 
-Zdroj: Matomo na `https://ma.hlidacstatu.cz/` (site ID 7), Reporting API, jen čtení agregátů tokenem `MATOMO_TOKEN` (secret, vytváří vlastník). Skript `scripts/signaly_tyden.py` dělá 7 dotazů jednou týdně s prodlevou 2 s (zadání #326). Výstup jde do Telegramu a jako artefakt workflow `signaly-tyden.yml` (90 dní), do repozitáře se nic nezapisuje. Testy volají jen mock.
+Zdroj: Matomo na `https://ma.hlidacstatu.cz/` (site ID 7), Reporting API, jen čtení agregátů tokenem `MATOMO_TOKEN` (secret, vytváří vlastník). Skript `scripts/signaly_tyden.py` dělá 7 dotazů jednou týdně s prodlevou 2 s (zadání #326). Plný souhrn jde jen do Telegramu (zkrácený po znacích na 4096). Artefakt workflow `signaly-tyden.yml` (90 dní, ve veřejném repozitáři ke stažení) obsahuje jen verzi bez oddílů hledání, protože hledané výrazy mohou obsahovat jména; obě verze vznikají z jednoho stažení. Do repozitáře se nic nezapisuje. Testy volají jen mock.
 
 | Metoda | Pole | Otázka | Používáme |
 |---|---|---|---|
