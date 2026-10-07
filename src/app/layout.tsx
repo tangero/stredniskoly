@@ -3,6 +3,7 @@ import { Cabin } from 'next/font/google';
 import Script from 'next/script';
 import { Analytics } from '@vercel/analytics/react';
 import BugReportButton from '@/components/BugReportButton';
+import { MatomoPrechody } from '@/components/MatomoPrechody';
 import './globals.css';
 import { SITE_URL } from '@/lib/site.mjs';
 
@@ -83,11 +84,15 @@ export default function RootLayout({
         {children}
         <BugReportButton />
         <Analytics />
+        <MatomoPrechody />
         <Script
           id="matomo-analytics"
           strategy="afterInteractive"
           dangerouslySetInnerHTML={{
+            // Měří se jen produkční doména: náhledy a kopie na vercel.app by míchaly cizí
+            // návštěvy do řady webu (SEO audit 20. 9. 2026, oddíl 6). Bez `_paq` nic dalšího neměří.
             __html: `
+              if (window.location.hostname === '${new URL(SITE_URL).hostname}') {
               var _paq = window._paq = window._paq || [];
               _paq.push(['trackPageView']);
               _paq.push(['enableLinkTracking']);
@@ -98,6 +103,7 @@ export default function RootLayout({
                 var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
                 g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
               })();
+              }
             `,
           }}
         />
