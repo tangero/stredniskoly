@@ -2,8 +2,10 @@
 # sloučí PR, které brána pustila, stejným skriptem jako AI v relaci (scripts/brana/sloucit.mjs).
 # Vypíná ho `slucovani_ai: false` v .github/rezimy.yml; veto je štítek `stop`.
 #
-# PROJECT_TOKEN (klasický token vlastníka, scope public_repo): komentář s žádostí o vyhodnocení musí
-# spustit workflow brány, a to komentář od GITHUB_TOKEN neudělá. Kód z PR se nespouští (checkout main).
+# Token GitHub App prijimacky-ai (#403, RA47): komentář s žádostí o vyhodnocení musí spustit workflow brány,
+# a to komentář od GITHUB_TOKEN neudělá. Token platí hodinu, jen pro tento repozitář a s právy níže; App není
+# v Bypass listu rulesetu, takže povinné kontroly platí i pro ni. Kód z PR se nespouští (checkout main).
+# Bez secrets App krok tokenu selže a nic se nesloučí; náhradní token se záměrně nepoužívá.
 name: Sloučení
 
 on:
@@ -41,7 +43,18 @@ jobs:
       - name: Závislosti
         run: npm ci --ignore-scripts --no-audit --no-fund
 
+      - name: Token App prijimacky-ai
+        id: app
+        uses: actions/create-github-app-token@v3
+        with:
+          client-id: ${{ secrets.PRIJIMACKY_AI_CLIENT_ID }}
+          private-key: ${{ secrets.PRIJIMACKY_AI_PRIVATE_KEY }}
+          permission-contents: write
+          permission-pull-requests: write
+          permission-issues: write
+          permission-checks: read
+
       - name: Sloučit
         env:
-          GITHUB_TOKEN: ${{ secrets.PROJECT_TOKEN }}
+          GITHUB_TOKEN: ${{ steps.app.outputs.token }}
         run: node scripts/brana/slucit-pripravene.mjs

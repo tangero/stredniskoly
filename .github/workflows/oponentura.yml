@@ -11,7 +11,7 @@
 # - Návrhy vznikají naslepo: nápad z issue a komentáře leží mimo pracovní složku (model je nepřečte), dokud
 #   neskončí fáze návrhů.
 # - Secrets: každý krok s modelem dostane jen svůj klíč (CLAUDE_CODE_OAUTH_TOKEN, nebo KIMI_API_KEY) a model
-#   ho dostane přes `env -i` bez ostatních proměnných. PROJECT_TOKEN jen na změnu štítků, aby se spustila Tabule.
+#   ho dostane přes `env -i` bez ostatních proměnných. token App prijimacky-ai (#403) jen na změnu štítků, aby se spustila Tabule.
 #   Komentář píše GITHUB_TOKEN. Nic neslučuje, štítky `schvaleno`, `zamitnuto` ani `stop` nemění.
 # - Komentář se nezapíše, když některý výstup obsahuje klíč nebo syntéza nemá nadpis „## Oponentura“.
 name: Oponentura
@@ -288,10 +288,19 @@ jobs:
       - name: Komentář do issue
         run: gh api "repos/$GH_REPO/issues/$CISLO/comments" -F "body=@$RUNNER_TEMP/oponentura.md" --jq .html_url
 
-      # PROJECT_TOKEN: změna štítků spustí Tabule; karta se vrátí do Návrhu (nebo do stavu podle schvaleno).
+      # Token App (#403): změna štítků spustí Tabule; karta se vrátí do Návrhu (nebo do stavu podle schvaleno).
+      # Vzniká až po krocích s modely, které k výstupům kroků přístup nemají.
+      - name: Token App prijimacky-ai
+        id: app
+        uses: actions/create-github-app-token@v3
+        with:
+          client-id: ${{ secrets.PRIJIMACKY_AI_CLIENT_ID }}
+          private-key: ${{ secrets.PRIJIMACKY_AI_PRIVATE_KEY }}
+          permission-issues: write
+
       - name: Štítky
         env:
-          GH_TOKEN: ${{ secrets.PROJECT_TOKEN }}
+          GH_TOKEN: ${{ steps.app.outputs.token }}
         run: |
           stitky=$(gh api "repos/$GH_REPO/issues/$CISLO/labels" --jq '[.[].name]')
           if jq -e 'index("oponentura")' <<< "$stitky" > /dev/null; then
