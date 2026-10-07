@@ -2,7 +2,7 @@ import Link from 'next/link';
 import type { ReactNode } from 'react';
 import type { ProfilUcebnihoOboruData, Nastavba } from '@/lib/ucebni-obor-profil-data';
 import { BEZ_OBTIZNOSTI, type KategorieBezJpz } from '@/lib/obory-bez-jpz';
-import { ZARAZENI_POPISEK, VYSVETLENI_SOUTEZICICH, cislo, zOd } from '@/lib/obor-profil';
+import { ZARAZENI_POPISEK, VYSVETLENI_SOUTEZICICH, bezPrijatychJinam, cislo, zOd } from '@/lib/obor-profil';
 import { RozpadPrihlasek, SloupceSoutezicich, VysledekUchazecu } from '@/components/obor/grafy';
 import { Dukaz, Odpoved, Otazka, Proc, TabulkaOboruNaPrihlasce, Zdroj } from '@/components/obor/ProfilOboru';
 import { SoubezneObceObsah } from '@/components/obor/SoubezneObce';
@@ -114,10 +114,10 @@ export function ProfilUcebnihoOboru({ data, adresa, obec, skolaHref }: Props) {
               <p className="text-[17px] leading-relaxed text-slate-800">
                 {!bezObtiznosti && zarazeni === 'kapacita_nerozhodovala' && <>V 1. kole bylo místo pro všechny, kdo splnili požadavky školy. </>}
                 {!bezObtiznosti && zarazeni === 'vetsina_uspela' && soutezici !== null && (
-                  <>V 1. kole {rok} se dostala většina soutěžících uchazečů, ale ne všichni: {zOd(soutezici) === 'ze' ? 'ze' : 'z'} <b>{cislo(soutezici)} soutěžících uchazečů</b>, {VYSVETLENI_SOUTEZICICH}, se dostalo {cislo(n.prijati!)}. </>
+                  <>V 1. kole {rok} se dostala většina soutěžících uchazečů, ale ne všichni: {zOd(soutezici) === 'ze' ? 'ze' : 'z'} <b>{cislo(soutezici)} soutěžících uchazečů</b>, {VYSVETLENI_SOUTEZICICH}, se dostalo {cislo(n.prijati!)}{bezPrijatychJinam(n.nepr_vyssi_priorita)}. </>
                 )}
                 {!bezObtiznosti && zarazeni && zarazeni !== 'kapacita_nerozhodovala' && zarazeni !== 'vetsina_uspela' && soutezici !== null && (
-                  <>V 1. kole bylo {ZARAZENI_POPISEK[zarazeni]} se sem dostat: {zOd(soutezici) === 'ze' ? 'ze' : 'z'} <b>{cislo(soutezici)} soutěžících uchazečů</b>, {VYSVETLENI_SOUTEZICICH}, se dostalo {cislo(n.prijati!)}. </>
+                  <>V 1. kole bylo {ZARAZENI_POPISEK[zarazeni]} se sem dostat: {zOd(soutezici) === 'ze' ? 'ze' : 'z'} <b>{cislo(soutezici)} soutěžících uchazečů</b>, {VYSVETLENI_SOUTEZICICH}, se dostalo {cislo(n.prijati!)}{bezPrijatychJinam(n.nepr_vyssi_priorita)}. </>
                 )}
                 {!bezObtiznosti && !zarazeni && <>Soutěžících uchazečů bylo méně než deset, obtížnost přijetí se proto neuvádí. </>}
                 Škola přijala {uchazeceAk(n.prijati!)}{n.nepr_kapacita ? <>, {neveslo(n.nepr_kapacita)} kvůli kapacitě</> : null}.
@@ -136,8 +136,8 @@ export function ProfilUcebnihoOboru({ data, adresa, obec, skolaHref }: Props) {
           <div className="space-y-3">
             {maPocty && (n.nepr_kapacita ?? 0) > 0 && soutezici !== null && (
               <Dukaz nadpis="Kolik soutěžících uchazečů se dostalo" rok={String(rok)}>
-                <Proc>Soutěžící uchazeči jsou ti, kdo splnili požadavky školy a nedostali se na obor, který měli na přihlášce výš.</Proc>
-                <SloupceSoutezicich radky={[{ rok, prijati: n.prijati!, nevesli: n.nepr_kapacita! }]} />
+                <Proc>Soutěžící uchazeči jsou ti, kdo splnili podmínky přijetí a nebyli přijati jinam podle vyšší priority na přihlášce.</Proc>
+                <SloupceSoutezicich radky={[{ rok, prijati: n.prijati!, nevesli: n.nepr_kapacita!, jinam: n.nepr_vyssi_priorita }]} />
               </Dukaz>
             )}
             {maPocty && (

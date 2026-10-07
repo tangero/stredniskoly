@@ -36,7 +36,7 @@ test('JSON nese období z registru, původ údajů od školy a nesčítá přihl
 test('Markdown vychází ze stejného objektu', () => {
   const md = otevrenaDataMarkdown(sestavOtevrenaData(skola, profil, { vysledky: 2026, uchazeci: 2025, maturita: '2026' }));
   assert.match(md, /## Co tu lze studovat \(1\. kolo 2026\)/);
-  assert.match(md, /velmi těžké se dostat \(přijato 30 ze 112 soutěžících uchazečů\)/);
+  assert.match(md, /velmi těžké se dostat \(přijato 30 ze 112( \(bez (\d+ )?přijatých jinam podle vyšší priority\))?\)/);
   assert.match(md, /\| 2026 \| 31 ze 31 \| 78,4 % \| 71,8 % \| nad středem podobných škol \| 48 % \|/);
   assert.match(md, /\*\*Dny otevřených dveří\*\* \(doplnila škola 2026-11-03\): 18\. 11\. 2026/);
   assert.match(md, /- \*\*2\. kolo:\*\* Ve 2\. kole 2026 škola vypsala 7 míst\. Přišlo 13 přihlášek a přijati byli 2\..*V roce 2025 škola 2\. kolo nevypsala\./);

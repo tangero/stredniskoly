@@ -105,6 +105,7 @@ export interface CitySchoolRow {
   predchoziRok: number | null;
   /** Soutěžící uchazeči a přijatí ze souhrnů, pro větu „přijato X ze Y“. */
   soutezici: number | null;
+  vyssiPriorita: number | null;
   prijatiZeSoutezicich: number | null;
   /** Nesplnili podmínky školy; uvádí se vedle, když je jich hodně (slovník). */
   nesplniliPodminky: number | null;
@@ -306,6 +307,7 @@ export async function getCityStats(mestoNazev: string): Promise<CityStats | null
       zarazeniPredchozi: souhrn?.predchozi ? zarazeniObtiznosti(souhrn.predchozi) : null,
       predchoziRok: souhrn?.predchoziRok ?? null,
       soutezici,
+      vyssiPriorita: souhrn?.aktualni.higher_priority ?? null,
       prijatiZeSoutezicich: souhrn?.aktualni.prijati ?? null,
       nesplniliPodminky: souhrn?.aktualni.conditions_not_met ?? null,
       // Bez souhrnu nabídka v ročníku není; s ním je vypsaná, i kdyby chyběla shoda.

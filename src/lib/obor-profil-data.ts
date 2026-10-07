@@ -46,6 +46,7 @@ export interface OborNaPrihlasce {
   zarazeni: ZarazeniObtiznosti | null;
   prijati: number | null;
   soutezici: number | null;
+  vyssiPriorita: number | null;
   /** Obor, který přehled nezahrnuje: bez jednotné zkoušky (například učební obor), nebo z jiného důvodu. */
   mimoPrehled: ZnackaMimoPrehled | null;
 }
@@ -228,6 +229,7 @@ export async function kontextNaStranku(
         // Bez obtížnosti (C, E, J, P nebo pod prahem) sloupec řekne „bez jednotné zkoušky“.
         mimoPrehled: bezJpz.zarazeni ? null : 'bez_zkousky',
         href: bezJpz.href, zarazeni: bezJpz.zarazeni, prijati: bezJpz.prijati, soutezici: bezJpz.soutezici,
+        vyssiPriorita: bezJpz.vyssiPriorita,
       };
     }
     return {
@@ -239,6 +241,7 @@ export async function kontextNaStranku(
       zarazeni: r ? zarazeniObtiznosti(r) : null,
       prijati: r?.prijati ?? null,
       soutezici: r ? soutezicichUchazecu(r) : null,
+      vyssiPriorita: r?.higher_priority ?? null,
     };
   };
   return {

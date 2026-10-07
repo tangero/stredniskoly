@@ -4,6 +4,7 @@ import {
   zarazeniObtiznosti, slovniPodil, zOd, stavNabidky, zminitPozadavek, vetaPozadavku,
   poradiVeSkupine, textPoradi, nazevSkupiny, soutezicichUchazecu, vKraji, nazevNabidky,
   kohortaPozice, MIN_NABIDEK_PRO_KOHORTU, nazevOboruZKlice,
+  textPrijatoZ, bezPrijatychJinam, poznamkaNepocita,
 } from '../src/lib/obor-profil.ts';
 
 const machar8 = { kapacita: 30, prihlasky: 233, prijati: 30, capacity_rejected: 82, conditions_not_met: 85, higher_priority: 36, zarazeni_obtiznosti: 'velmi_tezke' };
@@ -111,4 +112,25 @@ test('název oboru ze souběhu: z rejstříku, jinak kód, nikdy klíč s RED IZ
   const obory = { '23-68-H/01': 'Mechanik opravář motorových vozidel' };
   assert.equal(nazevOboruZKlice('600009815_23-68-H/01', obory), 'Mechanik opravář motorových vozidel');
   assert.equal(nazevOboruZKlice('600009815_99-99-X/99', obory), '99-99-X/99');
+});
+
+test('přijato X ze Y nese dovětek o přijatých jinam podle vyšší priority (#428)', () => {
+  assert.equal(textPrijatoZ(28, 49, 31), 'přijato 28 ze 49 (bez 31 přijatých jinam podle vyšší priority)');
+  assert.equal(textPrijatoZ(28, 42, 37), 'přijato 28 ze 42 (bez 37 přijatých jinam podle vyšší priority)');
+  // 0 přijatých jinam: část se vynechá; chybějící údaj: bez čísla.
+  assert.equal(textPrijatoZ(10, 30, 0), 'přijato 10 ze 30');
+  assert.equal(textPrijatoZ(10, 30, null), 'přijato 10 ze 30 (bez přijatých jinam podle vyšší priority)');
+  assert.equal(textPrijatoZ(10, 30, undefined), 'přijato 10 ze 30 (bez přijatých jinam podle vyšší priority)');
+  assert.equal(bezPrijatychJinam(1), ' (bez 1 přijatého jinam podle vyšší priority)');
+  assert.equal(bezPrijatychJinam(3), ' (bez 3 přijatých jinam podle vyšší priority)');
+});
+
+test('vysvětlení pod číslem: skloňování a okrajové případy (#428)', () => {
+  assert.equal(poznamkaNepocita(31, 2), 'Nepočítá se 31 uchazečů přijatých jinam podle vyšší priority na přihlášce ani 2, kteří nesplnili podmínky přijetí.');
+  assert.equal(poznamkaNepocita(1, 1), 'Nepočítá se 1 uchazeč přijatý jinam podle vyšší priority na přihlášce ani 1, který nesplnil podmínky přijetí.');
+  assert.equal(poznamkaNepocita(3, 0), 'Nepočítá se 3 uchazeči přijatí jinam podle vyšší priority na přihlášce.');
+  assert.equal(poznamkaNepocita(0, 5), 'Nepočítá se 5 uchazečů, kteří nesplnili podmínky přijetí.');
+  assert.equal(poznamkaNepocita(0, 0), null);
+  assert.equal(poznamkaNepocita(null, 0), null);
+  assert.equal(poznamkaNepocita(null, 2), 'Nepočítají se uchazeči přijatí jinam podle vyšší priority na přihlášce ani 2, kteří nesplnili podmínky přijetí.');
 });

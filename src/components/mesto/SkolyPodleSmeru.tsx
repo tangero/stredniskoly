@@ -299,8 +299,8 @@ export function SkolyPodleSmeru({
 
         <p className="max-w-[68ch] text-[14px] leading-relaxed text-slate-600">
           <b className="font-semibold text-slate-800">Obtížnost přijetí</b>{rok ? ` v 1. kole ${rok}` : ''}: kolik
-          soutěžících uchazečů se dostalo, tedy těch, kdo splnili požadavky školy a nedostali se na obor, který měli
-          na přihlášce výš. Kvalitu školy nepopisuje.
+          soutěžících uchazečů se dostalo, tedy těch, kdo splnili podmínky přijetí a nebyli přijati jinam podle vyšší
+          priority na přihlášce. Kvalitu školy nepopisuje.
           {ukazZrizovatele && ' Zřizovatel je ten, kdo školu založil a odpovídá za ni; soukromé a církevní školy mohou vybírat školné.'}
         </p>
 

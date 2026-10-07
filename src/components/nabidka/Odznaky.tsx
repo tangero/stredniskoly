@@ -1,5 +1,5 @@
 import {
-  cislo, zOd, KOHORTA_POPISEK, KOHORTA_VETA, ZARAZENI_POPISEK,
+  cislo, zOd, textPrijatoZ, KOHORTA_POPISEK, KOHORTA_VETA, ZARAZENI_POPISEK,
   type KohortaPozice, type ZarazeniObtiznosti,
 } from '@/lib/obor-profil';
 
@@ -58,6 +58,8 @@ export interface UdajeObtiznosti {
   zarazeniPredchozi: ZarazeniObtiznosti | null;
   predchoziRok: number | null;
   soutezici: number | null;
+  /** Přijatí jinam podle vyšší priority; `undefined` = zdroj údaj nenese. */
+  vyssiPriorita?: number | null;
   prijati: number | null;
   prihlasky: number | null;
   nesplniliPodminky: number | null;
@@ -77,7 +79,7 @@ export function VetaObtiznosti({ u }: { u: UdajeObtiznosti }) {
   const casti: string[] = [];
 
   if (u.soutezici !== null && u.prijati !== null && u.zarazeni !== 'kapacita_nerozhodovala') {
-    casti.push(`přijato ${cislo(u.prijati)} ${zOd(u.soutezici)} ${cislo(u.soutezici)}`);
+    casti.push(textPrijatoZ(u.prijati, u.soutezici, u.vyssiPriorita));
   }
 
   if (u.zarazeniPredchozi && u.predchoziRok) {

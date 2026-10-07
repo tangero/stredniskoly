@@ -1,6 +1,6 @@
 # Slovník pojmů
 
-Verze 1.48 · 7. 10. 2026 · **Závazný pro všechny texty na webu.** Nový pojem se na stránce nepoužije bez zápisu sem.
+Verze 1.49 · 7. 10. 2026 · **Závazný pro všechny texty na webu.** Nový pojem se na stránce nepoužije bez zápisu sem.
 
 Slovník pojmů říká, **jakými slovy mluvíme k rodičům a uchazečům**, aby tatáž věc nezněla na každé stránce jinak. Doplňuje [slovník ukazatelů](slovnik-ukazatelu.md), který říká, **jak se veličina jmenuje v datech a jak se počítá**. Kde se oba liší, platí: v datech, kódu a API název ze slovníku ukazatelů, v textu stránky pojem odsud.
 
@@ -18,7 +18,7 @@ Slovník pojmů říká, **jakými slovy mluvíme k rodičům a uchazečům**, a
 |---|---|---|---|
 | **uchazeči** | všichni, kdo měli obor na přihlášce v daném kole | není potřeba; když jde o konkrétní obor: „uchazeči, kteří měli tento obor na přihlášce“ | žáci (před přijetím), zájemci, přihlášení |
 | **přihlášky** | počet přihlášek na obor; jeden uchazeč podává víc přihlášek na různé obory | „jeden uchazeč si podává přihlášky až na tři obory, proto se přihlášky za různé obory nesčítají“ | uchazeči (jako synonymum) |
-| **soutěžící uchazeči** | uchazeči, kteří splnili požadavky školy a nedostali se na obor, který měli na přihlášce výš; tedy přijatí a ti, kdo se nevešli | „soutěžící uchazeči, tedy ti, kdo splnili požadavky školy a nedostali se na obor, který měli na přihlášce výš“ | soutěžící (samotné), uchazeči (když jde o tuto podmnožinu), konkurence |
+| **soutěžící uchazeči** | uchazeči, kteří splnili podmínky přijetí a nebyli přijati jinam podle vyšší priority na přihlášce; tedy přijatí a ti, kdo se nevešli | „soutěžící uchazeči, tedy ti, kdo splnili podmínky přijetí a nebyli přijati jinam podle vyšší priority na přihlášce“ | soutěžící (samotné), uchazeči (když jde o tuto podmnožinu), konkurence |
 | **přijatí** | uchazeči přijatí na tento obor v daném kole | není potřeba | úspěšní, přijatí žáci |
 | **nevešli se kvůli kapacitě** | soutěžící uchazeči, na které nezbylo místo | „splnili požadavky školy, ale na místo se nedostali, protože jiní měli lepší výsledek“ | odmítnutí, neúspěšní, propadli |
 | **nedosáhli požadavku školy** | uchazeči, kteří nesplnili kritéria přijímacího řízení, typicky hranici bodů; v datech „nesplnili podmínky“ | „nedosáhli požadavku školy, například minima bodů z kritérií“; kde je hranice odvozená: „podle výsledků to odpovídá minimu 20 bodů v každém testu“ | nesplnili podmínky, vyřazeni, chyba v přihlášce |
@@ -156,6 +156,7 @@ Slovník pojmů říká, **jakými slovy mluvíme k rodičům a uchazečům**, a
 
 | Verze | Změna |
 |---|---|
+| 1.49 | **Soutěžící uchazeči** nově vysvětleni větou „kdo splnili podmínky přijetí a nebyli přijati jinam podle vyšší priority na přihlášce“ a údaj „přijato X ze Y“ nese u čísla dovětek o přijatých jinam (7. 10. 2026, #428). Školy čtly „přijato 28 ze 49“ jako odmítnutí 21 zájemců, ale dalších 31 se dostalo jinam, kam se hlásili raději. Čísla se nemění. |
 | 1.48 | Skupiny **S maturitou**, **S výučním listem**, **Po vyučení**, **Ostatní** i v souhrnu míst v záhlaví stránky města a kraje (6. 10. 2026, #244, etapa 3c-4). |
 | 1.47 | **Pojistka** zahrnuje i učební obor, kde v 1. kole nikoho neodmítli kvůli počtu míst; blok **Učební obory** v simulátoru (7. 10. 2026, #244, etapa 5). |
 | 1.46 | Skupiny **S maturitou**, **S výučním listem**, **Po vyučení**, **Ostatní** i ve filtru Vzdělání na stránce města; obory bez odkazu tamtéž **mimo náš přehled** (6. 10. 2026, #244, etapa 3c-1). |

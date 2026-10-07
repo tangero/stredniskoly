@@ -159,7 +159,7 @@ export default async function MestoPage({ params }: Props) {
             <div className="space-y-2">
               <Vysvetlivka title="Co je obtížnost přijetí?">
                 Slovní zařazení podle toho, kolik soutěžících uchazečů se na obor dostalo, tedy těch,
-                kdo splnili požadavky školy a nedostali se na obor, který měli na přihlášce výš. Stupně
+                kdo splnili podmínky přijetí a nebyli přijati jinam podle vyšší priority na přihlášce. Stupně
                 jsou: místo pro všechny (nikdo nebyl odmítnut kvůli kapacitě), dostala se většina
                 (aspoň dvě třetiny), středně těžké (polovina až dvě třetiny), těžké (třetina až
                 polovina) a velmi těžké (méně než třetina). Popisuje jeden ročník, ne kvalitu školy
