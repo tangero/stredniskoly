@@ -1,6 +1,6 @@
 # Slovník pojmů
 
-Verze 1.47 · 6. 10. 2026 · **Závazný pro všechny texty na webu.** Nový pojem se na stránce nepoužije bez zápisu sem.
+Verze 1.48 · 7. 10. 2026 · **Závazný pro všechny texty na webu.** Nový pojem se na stránce nepoužije bez zápisu sem.
 
 Slovník pojmů říká, **jakými slovy mluvíme k rodičům a uchazečům**, aby tatáž věc nezněla na každé stránce jinak. Doplňuje [slovník ukazatelů](slovnik-ukazatelu.md), který říká, **jak se veličina jmenuje v datech a jak se počítá**. Kde se oba liší, platí: v datech, kódu a API název ze slovníku ukazatelů, v textu stránky pojem odsud.
 
@@ -31,7 +31,7 @@ Slovník pojmů říká, **jakými slovy mluvíme k rodičům a uchazečům**, a
 | Pojem na stránce | Význam | Vysvětlení při prvním výskytu v bloku | Nepoužívat |
 |---|---|---|---|
 | **pořadí na přihlášce**, **1. volba**, **2. volba** | pořadí oborů, jak je uchazeč zapsal; v datech priorita | u rad vždy doplnit: „pořadí na přihlášce šanci na přijetí nemění, škola řadí jen podle svých kritérií“ | priorita (v textu pro rodiče), preference |
-| **pojistka** | v Simulátoru přijímaček obor ze skupiny „Nad pásmem“ mezi obory, které se vejdou do přihlášky: v 1. kole daného roku se sem s výsledkem uchazeče dostali všichni soutěžící uchazeči | „obor, kam se v 1. kole {rok} s tvým výsledkem dostali všichni soutěžící uchazeči“; vždy s větou, že skupiny popisují 1. kolo, ne předpověď | jistota, jistá škola, záchranná škola |
+| **pojistka** | v Simulátoru přijímaček obor ze skupiny „Nad pásmem“ mezi obory, které se vejdou do přihlášky: v 1. kole daného roku se sem s výsledkem uchazeče dostali všichni soutěžící uchazeči; nebo učební obor, kde v 1. kole daného roku nikoho neodmítli kvůli počtu míst (aspoň 10 soutěžících uchazečů), od etapy 5 #244 | „obor, kam se v 1. kole {rok} s tvým výsledkem dostali všichni soutěžící uchazeči“; vždy s větou, že skupiny popisují 1. kolo, ne předpověď | jistota, jistá škola, záchranná škola |
 | **pozice na přihlášce**: **škola první volby**, **smíšená pozice**, **záložní volba** | kohorta podle pozice na přihlášce ze slovníku ukazatelů: jak často si obor uchazeči zapsali jako 1. volbu ve srovnání s obory stejného typu v celé zemi; platí pro nabídku, ne pro celou školu | „srovnává se jen s obory stejného typu“ a vždy v bloku: „neříká nic o kvalitě školy: záložní volba znamená, že si ji uchazeči píší jako pojistku, ne že je horší“ | kategorie oboru, vyvážený obor, preferovaný obor, oblíbenost, atraktivita |
 | **obor výš na přihlášce**, **obor níž na přihlášce** | obor zapsaný před tímto oborem, nebo za ním | není potřeba | lepší obor, horší obor, záložní škola |
 | **kritéria přijetí** | pravidla, podle kterých škola uchazeče řadí a kdy je nepřijme; vyhlašuje je škola | „kritéria, která škola vyhlašuje na svém webu“ | podmínky přijetí (vyjma citace), pravidla školy |
@@ -156,7 +156,8 @@ Slovník pojmů říká, **jakými slovy mluvíme k rodičům a uchazečům**, a
 
 | Verze | Změna |
 |---|---|
-| 1.47 | Skupiny **S maturitou**, **S výučním listem**, **Po vyučení**, **Ostatní** i v souhrnu míst v záhlaví stránky města a kraje (6. 10. 2026, #244, etapa 3c-4). |
+| 1.48 | Skupiny **S maturitou**, **S výučním listem**, **Po vyučení**, **Ostatní** i v souhrnu míst v záhlaví stránky města a kraje (6. 10. 2026, #244, etapa 3c-4). |
+| 1.47 | **Pojistka** zahrnuje i učební obor, kde v 1. kole nikoho neodmítli kvůli počtu míst; blok **Učební obory** v simulátoru (7. 10. 2026, #244, etapa 5). |
 | 1.46 | Skupiny **S maturitou**, **S výučním listem**, **Po vyučení**, **Ostatní** i ve filtru Vzdělání na stránce města; obory bez odkazu tamtéž **mimo náš přehled** (6. 10. 2026, #244, etapa 3c-1). |
 | 1.45 | Typy studia bez jednotné zkoušky ve filtru stránky kraje (6. 10. 2026, #244, etapa 3c-2). |
 | 1.44 | Skupiny oborů **S maturitou**, **S výučním listem**, **Po vyučení**, **Ostatní** na stránce školy (6. 10. 2026, #393). |

@@ -11,7 +11,7 @@ import assert from 'node:assert/strict';
 import React from 'react';
 import { renderToStaticMarkup } from 'react-dom/server';
 import { text } from './_zavadec.mjs';
-import { getAllSchoolsForSearch, getNabidkyBezJpzVeMeste, getPolozkyHledani, getProgramsByRedizo, getProgramyBezJpz, getSchoolOverview, getSchoolPageType, getSchoolsByRedizo, getSchoolsData, skolaMimoKatalog } from '../src/lib/data.ts';
+import { getAllSchoolsForSearch, getSimulatorBezJpz, getNabidkyBezJpzVeMeste, getPolozkyHledani, getProgramsByRedizo, getProgramyBezJpz, getSchoolOverview, getSchoolPageType, getSchoolsByRedizo, getSchoolsData, skolaMimoKatalog } from '../src/lib/data.ts';
 import { getCityStats } from '../src/lib/cityData.ts';
 import { dalsiOboryVeMeste, nactiIndexRejstriku } from '../src/lib/kontext-prihlasek.ts';
 import { sestavKartySkol } from '../src/lib/mesto-karty.ts';
@@ -357,4 +357,26 @@ test('město: souhrn míst v záhlaví ukáže skupiny v pevném pořadí s poč
   assert.match(t, /S výučním listem 3 \(méně než 1 %\)/);
   assert.match(t, /U 1 oboru počet míst neznáme/);
   assert.equal(renderToStaticMarkup(React.createElement(MistaPodleDruhu, { skupiny: [], celkem: 0, bezUdaje: 2, rok: 2026 })), '');
+});
+
+// ---------------------------------------------------------------------------
+// Etapa 5: katalog simulátoru (učební obor jako pojistka bez bodů)
+// ---------------------------------------------------------------------------
+
+test('simulátor: katalog nese všechny denní nabídky bez JPZ s údaji 1. kola po celém id nabídky', async () => {
+  const katalog = await getSimulatorBezJpz();
+    const podleId = new Map(katalog.map(k => [k.id, k]));
+  for (const n of DATA.nabidky) {
+    const k = podleId.get(n.id);
+    if (!k) continue;
+    assert.deepEqual(k.bez_jpz, { kategorie: n.kategorie, prijati: n.prijati, nepr_kapacita: n.nepr_kapacita, nepr_podminky: n.nepr_podminky, prihlasky: n.prihlasky }, n.id);
+    assert.ok(k.adresa_stranky, n.id);
+  }
+  assert.ok(katalog.length >= DATA.nabidky.length - 5, `${katalog.length} z ${DATA.nabidky.length}`);
+  // Dvě zaměření téhož oboru na jedné škole s různými počty: každé má své údaje, ne společné pod REDIZO_KKOV.
+  const skupiny = new Map();
+  for (const k of katalog) { const z = k.id.split('_').slice(0, 2).join('_'); skupiny.set(z, [...(skupiny.get(z) ?? []), k]); }
+  const ruzne = [...skupiny.values()].find(v => v.length > 1 && new Set(v.map(k => JSON.stringify(k.bez_jpz))).size > 1);
+  assert.ok(ruzne, 'v datech je obor se dvěma zaměřeními a různými počty');
+  assert.notDeepEqual(ruzne[0].bez_jpz, ruzne[1].bez_jpz);
 });

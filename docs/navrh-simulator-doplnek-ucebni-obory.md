@@ -1,6 +1,6 @@
 # Doplněk návrhu simulátoru: učební obor jako pojistka bez bodů
 
-Verze 0.2 · 1. 10. 2026 · **návrh, čeká na schválení vlastníkem projektu.** Na schválení čeká
+Verze 0.3 · 7. 10. 2026 · **schváleno a realizováno v etapě 5 (#244).** Původně na schválení čekala
 etapa 5 fáze 2 oborů bez jednotné zkoušky (#244).
 
 Doplňuje [návrh Simulátoru přijímaček](navrh-simulator-prijimacek-2027.md) (dále „návrh simulátoru“)
@@ -228,5 +228,6 @@ nevzniká. Body uchazeče dál neopouštějí prohlížeč.
 
 | Verze | Změna |
 |---|---|
+| 0.3 | Realizováno v etapě 5 (#244, 7. 10. 2026): vedlejší index v katalogu simulátoru, otázky oddílu 7 ve výchozím znění, E 71 pojistek v dokladu; předchozí ročník zatím bez věty (data 2025 nenesou odmítnuté kvůli kapacitě). Viz návrh oborů bez JPZ, oddíl 16.10. |
 | 0.2 | Review (1. 10. 2026): věty podle slovníku pojmů (*nedosáhli požadavku školy* místo „nesplnili podmínky“, bez „místo pro všechny“), vysvětlení soutěžících uchazečů v úvodu bloku; návrh učební pojistky jako samostatná funkce (`navrhniUcebniPojistku`) místo rozporu s `navrhniPojistku`; řádky indexu pro všechny kategorie bez zkoušky (umělecké M/L a P s `talentova` = 1), `talentova` jako `boolean | null`, odkaz na kritéria jen tam, kde je stránka oboru má, pojistka po celém id nabídky (ne `klicPasma`); patička rozsahu výsledků podle všech kategorií ve výsledcích; filtr „po 9. třídě“ pouští učební obory bez ohledu na délku studia; kontrola „rozporu počtů“ nahrazena chybějícím polem, protože soutěžící jsou z definice přijatí + nepřijatí kvůli kapacitě. |
 | 0.1 | První návrh doplňku (#244, etapa 5; návrh učebních oborů oddíl 16 ot. 6, oddíl 17 O4). |

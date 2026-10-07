@@ -271,13 +271,15 @@ export function rozbor(soubory, konfig) {
  * jen protokol od vlastníka, asistenta zadání nebo github-actions[bot]; tělo PR jen u důvěryhodného autora.
  */
 /**
- * Automatická obnova dat (RA46): PR bez propojeného zadání od účtu vlastníka (workflow), ne z forku, z větve
- * uvedené v `datove_obnovy` v rezimy.yml, který mění jen cesty povolené pro tuto větev. Projde v režimu R bez
- * souhlasu a bez review; CI zůstává povinné.
+ * Automatická obnova dat (RA46): PR bez propojeného zadání od účtu vlastníka nebo automatiky (workflow, GitHub App
+ * `automatika` v rezimy.yml, #403), ne z forku, z větve uvedené v `datove_obnovy` v rezimy.yml, který mění jen cesty
+ * povolené pro tuto větev. Projde v režimu R bez souhlasu a bez review; CI zůstává povinné. Jinde účet automatiky
+ * žádnou důvěru nemá: není vlastník (souhlas, stop), asistent (doklad, review) ani github-actions[bot] (záznamy).
  */
 export function datovaObnova(pr, soubory, konfig, issues = []) {
   const povolene = konfig.rezimy.datove_obnovy?.[pr.vetev];
-  if (!povolene || issues.length || pr.zForku !== false || pr.autor !== konfig.rezimy.vlastnik || !soubory.length) return false;
+  const autor = pr.autor === konfig.rezimy.vlastnik || (Boolean(konfig.rezimy.automatika) && pr.autor === konfig.rezimy.automatika);
+  if (!povolene || issues.length || pr.zForku !== false || !autor || !soubory.length) return false;
   return soubory.every((s) => [s.nazev, s.puvodni].filter(Boolean).every((c) => shoda(c, povolene)));
 }
 

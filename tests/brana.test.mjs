@@ -651,3 +651,35 @@ test('automatická obnova dat projde bez souhlasu a review, jen z povolené vět
   assert.equal(run({ pr: obnova({ vetev: 'codex/csi-weekly-refresh' }), issues: [], soubory: csi }).uspech, true);
   assert.equal(run({ pr: obnova({ vetev: 'codex/csi-weekly-refresh' }), issues: [], soubory: data.slice(0, 1) }).uspech, false);
 });
+
+test('účet automatiky (GitHub App, #403): obnova dat projde, jinde žádná důvěra', () => {
+  const app = konfig.rezimy.automatika;
+  assert.equal(app, 'prijimacky-ai[bot]');
+  const data = [soubor('src/data/veletrhy-2027.json', 200), soubor('public/stav_datovych_sad.json', 4)];
+  const obnova = (o = {}) => pr({ telo: 'Automatický export.', komentare: [], vetev: 'auto/veletrhy-snimek', zForku: false, autor: app, ...o });
+  // K5: obnova dat od App projde v režimu R, mimo povolené cesty jako dřív.
+  const v = run({ pr: obnova(), issues: [], soubory: data });
+  assert.equal(v.uspech, true, v.duvody.join('; '));
+  assert.equal(v.rezim, 'R');
+  assert.equal(run({ pr: obnova(), issues: [], soubory: [...data, soubor('src/app/page.tsx')] }).uspech, false);
+  assert.equal(run({ pr: obnova({ vetev: 'zadani/1-x' }), issues: [], soubory: data }).uspech, false);
+  // Jiná větev bez zadání od App: PR jiného autora, souhlas jen na PR.
+  assert.equal(run({ pr: obnova({ vetev: 'zadani/1-x', telo: TELO_PR }), issues: [issue()], soubory: [STRANKA] }).uspech, false);
+  // K6: schvaleno přidané účtem App není souhlas vlastníka (na PR ani na issue).
+  const naPr = run({ pr: pr({ telo: 'data', stitky: ['schvaleno'], udalosti: [schvalenoUdalost(PRED(2), app)] }), issues: [] });
+  assert.equal(naPr.uspech, false);
+  const vlastnik = run({ pr: pr({
+    telo: 'data', stitky: ['schvaleno'], udalosti: [schvalenoUdalost(PRED(2))],
+    komentare: [protokolKomentar(), { autor: BOT, cas: PRED(2), telo: ZNACKA.souhlasPr(SHA) }],
+  }), issues: [] });
+  assert.equal(vlastnik.uspech, true, vlastnik.duvody.join('; '));
+  // K6: stop přidaný vlastníkem a odebraný účtem App dál platí.
+  const ud = (akce, aktor, h) => ({ akce, stitek: 'stop', cas: PRED(h), aktor });
+  assert.equal(run({ issues: [issue({ udalosti: [ud('labeled', 'tangero', 5), ud('unlabeled', app, 4)] })] }).uspech, false);
+  // K6: doklad „Zdroj:“ v issue od App neplatí.
+  const odApp = run({ issues: [issue({ autor: app })] });
+  assert.equal(odApp.uspech, false);
+  // Review a protokol od App se nepočítají.
+  const reviewApp = run({ pr: pr({ komentare: [reviewKomentar(SHA, 'Bez P1 a P2', { autor: app }), protokolKomentar()] }) });
+  assert.equal(reviewApp.uspech, false);
+});

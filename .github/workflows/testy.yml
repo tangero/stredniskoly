@@ -129,9 +129,13 @@ jobs:
     name: Build na GitHubu a nasazení na Vercel
     needs: [python, typescript, integrace]
     # PR testy (včetně forků) nemají přístup k deploy secrets. Automatický
-    # provoz zapneme až po zkoušce přes workflow_dispatch.
+    # provoz zapneme až po zkoušce přes workflow_dispatch. Push od App prijimacky-ai
+    # do jiné větve než main (oprava z review, obnovy dat) náhled nenasazuje: skript z větve
+    # by běžel s VERCEL_TOKEN (#410). Push do main od App je automatické sloučení schváleného
+    # PR a nasadit se musí (#411).
     if: >-
       github.actor != 'dependabot[bot]' &&
+      !(github.actor == 'prijimacky-ai[bot]' && github.ref != 'refs/heads/main') &&
       ((github.event_name == 'push' && vars.VERCEL_ACTIONS_ENABLED == 'true') ||
        (github.event_name == 'workflow_dispatch' && inputs.deployment != 'none'))
     runs-on: ubuntu-latest

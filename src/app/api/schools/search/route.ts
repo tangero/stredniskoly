@@ -3,7 +3,7 @@ import { promises as fs } from 'fs';
 import path from 'path';
 import { adresaNabidkyVeSkole, adresaPrehledu, nabidkySeStrankou } from '@/lib/adresa-oboru.mjs';
 import { normalizeSchoolKey, uniqueSchoolIndex } from '@/lib/school-key';
-import { getPolozkyHledani, getResultsForYear, getSchoolAnalysis, getSchools2026Data } from '@/lib/data';
+import { getPolozkyHledani, getResultsForYear, getSchoolAnalysis, getSchools2026Data, getSimulatorBezJpz, type NabidkaSimulatoruBezJpz } from '@/lib/data';
 import { readSchoolIds } from '@/lib/simulator-state';
 import { MESTA } from '@/lib/mesta.mjs';
 import { zrizovatelPodleRedizo } from '@/lib/simulator-filter';
@@ -214,14 +214,28 @@ export async function GET(request: NextRequest) {
         comparison: { status: 'unavailable', minimum: null },
       };
     };
+    // Kraj nabídky bez JPZ podle kódu stejným slovem jako katalog („Moravskoslezský“, ne „Moravskoslezský kraj“),
+    // jinak by ji filtr kraje v simulátoru minul.
+    const krajPodleKodu = new Map((krajeCache ?? []).map(k => [k.kod, k.nazev]));
+    // Jen pole, která simulátor čte: katalog má přes 2 900 těchto nabídek a prázdná pole by ho zbytečně zvětšila.
+    const serializeBezJpz = (p: NabidkaSimulatoruBezJpz, requestedId = p.id) => ({
+      // Simulátor ukazuje `nazev_display || nazev`; stejný název se posílá jen jednou.
+      id: requestedId, nazev: p.nazev_display || p.nazev, obor: p.obor, ...(p.zamereni ? { zamereni: p.zamereni } : {}),
+      obec: p.obec, kraj: krajPodleKodu.get(p.kraj_kod) ?? '', zrizovatel: p.zrizovatel, delka_studia: p.delka_studia,
+      slug: p.adresa_stranky, druh_oboru: p.druh_oboru, bez_jpz: p.bez_jpz,
+    });
     if (params.has('ids')) {
       const ids = readSchoolIds(params.get('ids'));
-      const found = ids.flatMap(id => {
+      const bezJpzIndex = uniqueSchoolIndex(await getSimulatorBezJpz(), p => p.id);
+      const found = ids.flatMap((id): Record<string, unknown>[] => {
         const school = index.get(normalizeSchoolKey(id)) ?? legacyIndex.get(normalizeSchoolKey(id));
-        return school ? [serialize(school, id)] : [];
+        if (school) return [serialize(school, id)];
+        const bez = bezJpzIndex.get(normalizeSchoolKey(id));
+        return bez ? [serializeBezJpz(bez, id)] : [];
       });
+      const znamy = (id: string) => index.has(normalizeSchoolKey(id)) || legacyIndex.has(normalizeSchoolKey(id)) || bezJpzIndex.has(normalizeSchoolKey(id));
       return NextResponse.json({ schools: found, kraje: krajeCache, total: found.length,
-        missingIds: ids.filter(id => !index.has(normalizeSchoolKey(id)) && !legacyIndex.has(normalizeSchoolKey(id))), catalogYear: 2026 });
+        missingIds: ids.filter(id => !znamy(id)), catalogYear: 2026 });
     }
     const query = normalizeText((params.get('search') || '').trim());
     const duration = params.get('delkaStudia');
@@ -234,8 +248,11 @@ export async function GET(request: NextRequest) {
     }).sort((a, b) => a.nazev.localeCompare(b.nazev, 'cs') || a.id.localeCompare(b.id, 'cs'));
     const mesta = najdiMesta(await getMesta(schools), query);
     if (params.get('simulatorCatalog') === '1') {
-      // Simulátor nabídky bez JPZ zatím nezná (#244, etapa 5); katalog pro něj zůstává beze změny.
-      return NextResponse.json({ schools: filtered.map(s => serialize(s)), mesta, kraje: krajeCache, total: filtered.length, catalogYear: 2026 });
+      // Nabídky bez JPZ (#244, etapa 5): učební obory jako pojistka bez bodů, ostatní do „Bez srovnání“.
+      // Údaje 1. kola jdou po celém id nabídky (pojistka platí pro zaměření, ne pro celý obor školy).
+      const bezJpz = (await getSimulatorBezJpz()).map(p => serializeBezJpz(p));
+      return NextResponse.json({ schools: [...filtered.map(s => serialize(s)), ...bezJpz], mesta, kraje: krajeCache,
+        total: filtered.length + bezJpz.length, catalogYear: 2026 });
     }
     // Učební obory a ostatní nabídky bez JPZ (etapa 3c-3) do hledání textem: bez výsledků jednotné zkoušky,
     // s odkazem na stránku oboru a druhem oboru. Stejný tvar odpovědi, chybějící údaje jsou null.

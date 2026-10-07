@@ -1502,6 +1502,12 @@
       "stredne_tezke": 164,
       "tezke": 78,
       "velmi_tezke": 17
+    },
+    "pasma_E_nad_prahem": {
+      "kapacita_nerozhodovala": 71,
+      "stredne_tezke": 13,
+      "tezke": 8,
+      "vetsina_uspela": 48
     }
   },
   "pojistky": {

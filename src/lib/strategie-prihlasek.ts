@@ -22,6 +22,11 @@ export interface PolozkaStrategie {
   skupina: Skupina | null;
   /** null = druh zkoušky neznáme (obor se dohledává, nebo se nenačetla pásma). */
   talentova: boolean | null;
+  /**
+   * Učební obor, kde v 1. kole nikoho neodmítli kvůli počtu míst (aspoň 10 soutěžících): pojistka
+   * bez bodů (doplněk návrhu simulátoru, #244 etapa 5). Platí i bez zadaného testu.
+   */
+  ucebniPojistka?: boolean;
 }
 
 export interface KontrolaStrategie {
@@ -32,8 +37,12 @@ export interface KontrolaStrategie {
    * pozastavená, protože bez něj nevíme, co se do přihlášky vejde.
    */
   pozastaveno: boolean;
-  /** Aspoň jeden obor nad pásmem mezi těmi, které se vejdou do přihlášky. */
+  /** Aspoň jeden obor nad pásmem nebo učební pojistka mezi těmi, které se vejdou do přihlášky. */
   maPojistku: boolean;
+  /** Id učebních pojistek, které se vejdou do přihlášky (věta „Pojistku máš: {obor}, učební obor…“). */
+  ucebniPojistky: string[];
+  /** Aspoň jeden obor nad pásmem mezi těmi, které se vejdou do přihlášky. */
+  pojistkaNad: boolean;
   /** Aspoň jeden obor „kde nikoho neodmítli“ mezi těmi, které se vejdou. */
   maNikdoNeodmitnut: boolean;
   /** Pojistka je v seznamu, ale až za posledním místem přihlášky. */
@@ -64,25 +73,29 @@ export function posunVPoradi(ids: string[], id: string, smer: -1 | 1): string[] 
  * které se do přihlášky vejdou; talentový obor pojistkou není (patří do „bez srovnání“).
  */
 export function zkontrolujStrategii(polozky: PolozkaStrategie[], pravidla: PravidlaPrihlasek): KontrolaStrategie {
-  const znameSkupiny = polozky.some(p => p.skupina !== null);
+  // Učební pojistka nestojí na testu, takže kontrola pojistky funguje i bez zadaného výsledku.
+  const znameSkupiny = polozky.some(p => p.skupina !== null || p.ucebniPojistka);
   if (polozky.some(p => p.talentova === null)) {
     return {
-      znameSkupiny, pozastaveno: true, maPojistku: false, maNikdoNeodmitnut: false, pojistkaMimoPrihlasku: false, nikdoNeodmitnutMimoPrihlasku: false,
-      vejdeSeBezne: [], vejdeSeTalentove: [], navicBezne: 0, navicTalentove: 0,
+      znameSkupiny, pozastaveno: true, maPojistku: false, ucebniPojistky: [], pojistkaNad: false, maNikdoNeodmitnut: false, pojistkaMimoPrihlasku: false,
+      nikdoNeodmitnutMimoPrihlasku: false, vejdeSeBezne: [], vejdeSeTalentove: [], navicBezne: 0, navicTalentove: 0,
     };
   }
   const bezne = polozky.filter(p => !p.talentova);
   const talentove = polozky.filter(p => p.talentova);
   const vejdeSe = bezne.slice(0, pravidla.prihlasek_bezne);
   const zbytek = bezne.slice(pravidla.prihlasek_bezne);
-  const maPojistku = vejdeSe.some(p => p.skupina === 'nad');
+  const jePojistka = (p: PolozkaStrategie) => p.skupina === 'nad' || !!p.ucebniPojistka;
+  const maPojistku = vejdeSe.some(jePojistka);
   const maNikdoNeodmitnut = vejdeSe.some(p => p.skupina === 'nikdo_neodmitnut');
   return {
     znameSkupiny,
     pozastaveno: false,
     maPojistku,
+    ucebniPojistky: vejdeSe.filter(p => p.ucebniPojistka).map(p => p.id),
+    pojistkaNad: vejdeSe.some(p => p.skupina === 'nad'),
     maNikdoNeodmitnut,
-    pojistkaMimoPrihlasku: !maPojistku && zbytek.some(p => p.skupina === 'nad'),
+    pojistkaMimoPrihlasku: !maPojistku && zbytek.some(jePojistka),
     nikdoNeodmitnutMimoPrihlasku: !maNikdoNeodmitnut && zbytek.some(p => p.skupina === 'nikdo_neodmitnut'),
     vejdeSeBezne: vejdeSe.map(p => p.id),
     vejdeSeTalentove: talentove.slice(0, pravidla.prihlasek_talentove).map(p => p.id),
@@ -113,7 +126,7 @@ export function navrhniPojistku<T extends { id: string; obor: string }>(
  * starší uložená nabídka, obor bez JPZ) druh zkoušky nemá doložený: vrací null a
  * kontrola strategie se pozastaví, místo aby ho tiše počítala mezi běžné přihlášky.
  */
-export function talentovaZPasem(pasma: unknown, radek: { talentova: boolean } | undefined | null): boolean | null {
+export function talentovaZPasem(pasma: unknown, radek: { talentova: boolean | null } | undefined | null): boolean | null {
   if (!pasma || !radek) return null;
   return radek.talentova;
 }

@@ -7,11 +7,21 @@ const source = JSON.parse(fs.readFileSync('public/applications_2026.json'));
 let response;
 const catalog = async () => response ??= await fetch(`${base}/api/schools/search?simulatorCatalog=1`).then(r => r.json());
 test('katalog zpřístupní každý záznam importu 2026 právě jednou', async () => {
-  const data = await catalog();
+  const vse = await catalog();
+  // Nabídky bez jednotné zkoušky (#244, etapa 5) jsou v katalogu simulátoru navíc, s polem `bez_jpz`.
+  const data = { ...vse, schools: vse.schools.filter(s => !s.bez_jpz) };
   assert.equal(data.catalogYear, 2026);
   assert.equal(data.schools.length, source.data.length);
   assert.deepEqual(new Set(data.schools.map(s => normalizeSchoolKey(s.id))), new Set(source.data.map(s => normalizeSchoolKey(s.id))));
   assert.equal(new Set(data.schools.map(s => s.href)).size, source.data.length);
+  const bez = vse.schools.filter(s => s.bez_jpz);
+  assert.ok(bez.length > 2800, `nabídek bez JPZ: ${bez.length}`);
+  assert.equal(new Set(bez.map(s => normalizeSchoolKey(s.id))).size, bez.length);
+  const sJpz = new Set(source.data.map(s => normalizeSchoolKey(s.id)));
+  for (const s of bez) {
+    assert.ok(!sJpz.has(normalizeSchoolKey(s.id)), s.id);
+    assert.ok(s.slug && s.kraj && s.obec, s.id);
+  }
   for (const s of data.schools) {
     assert.equal(s.catalog_year, 2026);
     assert.equal(s.offer_2027_status, 'unverified');

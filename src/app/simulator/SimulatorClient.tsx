@@ -8,8 +8,12 @@ import { nazevNabidky } from '@/lib/obor-profil';
 import { DRUHY_ZRIZOVATELE, matchesSearchLocation, matchesZrizovatel, splitByCommute, type DruhZrizovatele } from '@/lib/simulator-filter';
 import type { AdmissionContext } from '@/lib/admission-summary';
 import { MAX_SELECTION, readSelection, selectionForShare, shareUrlFor } from '@/lib/simulator-state';
-import { SeznamNabidek, type NabidkaSimulatoru } from '@/components/simulator/SeznamNabidek';
-import { hodnotaHranice, radekPasmaNabidky, nactiIndexPasem, polohaVuciPasmu, seradNabidky, type IndexPasem } from '@/lib/poloha-vuci-pasmu';
+import { SeznamNabidek, SeznamUcebnichOboru, type NabidkaSimulatoru } from '@/components/simulator/SeznamNabidek';
+import {
+  jeTalentovyBezJpz, jeUcebniObor, jeUcebniPojistka, kkovNabidky, navrhniUcebniPojistku, popisBlokuUcebnichOboru, projdeFiltremTridy,
+  rozsahVysledku, vetaUcebnihoOboru, vyhodnotUcebniObor, type UdajeBezJpz,
+} from '@/lib/ucebni-pojistka';
+import { hodnotaHranice, radekPasmaNabidky, nactiIndexPasem, polohaVuciPasmu, seradNabidky, type IndexPasem, type Poloha } from '@/lib/poloha-vuci-pasmu';
 import { SavedSelectionBar } from '@/components/simulator/SavedSelectionBar';
 import { StrategiePrihlasek } from '@/components/simulator/StrategiePrihlasek';
 import { VyhradaNahore, VyhradySimulatoru, type TerminKriterii } from '@/components/simulator/VyhradySimulatoru';
@@ -31,6 +35,8 @@ interface School {
   ulice?: string;
   kraj: string;
   zrizovatel?: string | null;
+  /** Nabídka bez jednotné zkoušky (#244, etapa 5): kategorie a údaje 1. kola po celém id nabídky. */
+  bez_jpz?: UdajeBezJpz;
   admission_context: AdmissionContext | null;
   demand: { first_priority: number | null; year: number; round: number; applications: number | null; capacity: number | null } | null;
   history: {
@@ -276,8 +282,8 @@ export function SimulatorClient({ rokPasem, prevod, pravidla, rokKriterii, termi
   const availableSubjects = useMemo(() => Array.from(new Set(catalog?.schools.map(s => s.obor).filter(Boolean))).sort((a, b) => a.localeCompare(b, 'cs')), [catalog]);
   const cities = useMemo(() => Array.from(new Set(catalog?.schools.map(s => s.obec.trim()).filter(Boolean))).sort((a, b) => a.localeCompare(b, 'cs')), [catalog]);
   const filtered = useMemo(() => (catalog?.schools ?? []).filter(s => {
-    const duration = grade === '5' ? 8 : grade === '7' ? 6 : null;
-    if (duration ? s.delka_studia !== duration : grade === '9' && s.delka_studia !== 4 && s.delka_studia !== 5) return false;
+    // Učební obory (H, E) jsou po 9. třídě bez ohledu na délku studia (dvou- i tříleté).
+    if (!projdeFiltremTridy(s.delka_studia, s.bez_jpz?.kategorie, grade)) return false;
     return matchesSearchLocation(s, { city, region, commute: !!stop }) && (!subjects.length || subjects.includes(s.obor)) &&
       matchesZrizovatel(s, zrizovatele) &&
       (!query.trim() || normalize([s.obor, s.zamereni].join(' ')).includes(normalize(query.trim())));
@@ -295,23 +301,41 @@ export function SimulatorClient({ rokPasem, prevod, pravidla, rokKriterii, termi
   const minutyDojezdu = (n: { id: string }) => estimates.byId.get(normalizeSchoolKey(n.id))?.minutes;
   // Při více testech rozhoduje nejhorší výsledek (rozhodnutí zadavatele 4).
   const bodySkupiny = testy.nejhorsi;
+  // Nabídky bez JPZ, které nejsou učební: umělecké obory a konzervatoře mají talentovou zkoušku, C a J
+  // výsledky s jednotnou zkouškou nemají. Obojí patří do „Bez srovnání“ (doplněk, oddíl 2.1).
+  const udajeBezJpz = (id: string) => catalogIndex.get(normalizeSchoolKey(id))?.bez_jpz;
   const poloha = pasma && bodySkupiny !== null && rokPasem !== null
-    ? (n: { id: string }) => polohaVuciPasmu(bodySkupiny, radekPasma(n), Number(druh), minPrijatych)
+    ? (n: { id: string }): Poloha => {
+      const b = udajeBezJpz(n.id);
+      if (b) return { skupina: 'bez_srovnani', duvod: jeTalentovyBezJpz(b.kategorie) ? 'talentova' : 'chybi_data' };
+      return polohaVuciPasmu(bodySkupiny, radekPasma(n), Number(druh), minPrijatych);
+    }
     : null;
   const poradiVyberu = new Map(selectedIds.map((id, i) => [normalizeSchoolKey(id), i]));
-  function seznam(offers: School[], zpusob: 'dojezd' | 'hranice' = razeni, vyber = onlySaved) {
+  function seznam(vsechny: School[], zpusob: 'dojezd' | 'hranice' = razeni, vyber = onlySaved) {
     // Mezi zvažovanými znamená výchozí řazení pořadí nastavené šipkami ve strategii.
     const podleVyberu = vyber && zpusob === 'dojezd';
+    // Učební obory mají vlastní blok pod bodovými skupinami, i bez zadaného testu (doplněk, oddíl 3).
+    const ucebni = vsechny.filter(s => jeUcebniObor(s.bez_jpz?.kategorie));
+    const offers = vsechny.filter(s => !jeUcebniObor(s.bez_jpz?.kategorie));
+    const serazeneUcebni = seradNabidky(ucebni.map(toNabidka), 'dojezd', {
+      minuty: minutyDojezdu, nazev: n => `${n.nazev} ${n.program}`, hranice: () => null,
+      poradiVyberu: vyber ? n => poradiVyberu.get(normalizeSchoolKey(n.id)) : undefined,
+    });
     const serazene = seradNabidky(offers.map(toNabidka), zpusob, {
       minuty: minutyDojezdu, nazev: n => `${n.nazev} ${n.program}`, hranice: n => hodnotaHranice(radekPasma(n), minPrijatych),
       // V pohledu „jen zvažované“ platí pořadí nastavené šipkami ve strategii.
       poradiVyberu: podleVyberu ? n => poradiVyberu.get(normalizeSchoolKey(n.id)) : undefined,
     });
-    return <SeznamNabidek
-      nabidky={serazene} poloha={poloha} radek={radekPasma} minuty={minutyDojezdu}
-      rok={rokPasem ?? 0} rokKriterii={pasma?.rok_kriterii ?? null} minPrijatych={minPrijatych}
-      isSaved={id => savedKeys.has(normalizeSchoolKey(id))} onToggleSave={toggle}
-    />;
+    const spolecne = {
+      radek: radekPasma, minuty: minutyDojezdu, rok: rokPasem ?? 0, rokKriterii: pasma?.rok_kriterii ?? null, minPrijatych,
+      isSaved: (id: string) => savedKeys.has(normalizeSchoolKey(id)), onToggleSave: toggle,
+    };
+    return <div className="grid gap-8">
+      {serazene.length > 0 && <SeznamNabidek nabidky={serazene} poloha={poloha} {...spolecne} />}
+      {rokPasem !== null && <SeznamUcebnichOboru nabidky={serazeneUcebni} {...spolecne} popis={popisBlokuUcebnichOboru(rokPasem)}
+        veta={n => { const b = udajeBezJpz(n.id); return b ? vetaUcebnihoOboru(vyhodnotUcebniObor(b), rokPasem) : ''; }} />}
+    </div>;
   }
   const skupinaPodleId = (id: string) => poloha ? polohaVuciPasmu(bodySkupiny!, radekPasma({ id }), Number(druh), minPrijatych).skupina : null;
   // Nedohledaný obor zůstává ve výběru na svém místě, jinak by se ostatní posunuly a číslovaly špatně.
@@ -320,7 +344,14 @@ export function SimulatorClient({ rokPasem, prevod, pravidla, rokKriterii, termi
     const school = catalogIndex.get(normalizeSchoolKey(id));
     if (!school) return { id, label: popisekNedohledaneho(dohledani), skupina: null, talentova: null };
     const n = toNabidka(school);
-    return { id, label: popisekOboru(school), href: n.href ?? `/skola/${n.slug}`, skupina: skupinaPodleId(id), talentova: talentovaZPasem(pasma, radekPasma({ id })) };
+    // Druh zkoušky nabídky bez JPZ je z kategorie oboru, ne z pásem (doplněk, oddíl 5).
+    const b = school.bez_jpz;
+    return {
+      id, label: popisekOboru(school), href: n.href ?? `/skola/${n.slug}`, obor: school.obor,
+      skupina: b ? null : skupinaPodleId(id),
+      talentova: b ? jeTalentovyBezJpz(b.kategorie) : talentovaZPasem(pasma, radekPasma({ id })),
+      ucebniPojistka: jeUcebniPojistka(b),
+    };
   });
   const oboryZvazovanych = new Set(polozkyStrategie.flatMap(p => { const s = catalogIndex.get(normalizeSchoolKey(p.id)); return s ? [s.obor] : []; }));
   // Pojistku navrhujeme jen z hledání omezeného místem: obory z celé země nikomu nepomohou.
@@ -328,6 +359,11 @@ export function SimulatorClient({ rokPasem, prevod, pravidla, rokKriterii, termi
   const navrhyPojistky = poloha ? navrhniPojistku(kandidatiPojistky, id => savedKeys.has(normalizeSchoolKey(id)), oboryZvazovanych, {
     skupina: s => skupinaPodleId(s.id), minuty: minutyDojezdu, nazev: s => s.nazev_display || s.nazev,
   }).map(s => { const n = toNabidka(s); return { id: s.id, label: `${n.program} · ${n.nazev}, ${n.obec}`, href: n.href ?? `/skola/${n.slug}` }; }) : [];
+  // Učební pojistku navrhujeme jen se stejným kódem oboru jako zvažovaný učební obor (doplněk, oddíl 3).
+  const kkovUcebnich = new Set(selectedIds.flatMap(id => jeUcebniObor(udajeBezJpz(id)?.kategorie) ? [kkovNabidky(id)] : []));
+  const navrhyUcebniPojistky = navrhniUcebniPojistku(kandidatiPojistky, id => savedKeys.has(normalizeSchoolKey(id)), kkovUcebnich, {
+    udaje: s => s.bez_jpz, minuty: minutyDojezdu, nazev: s => s.nazev_display || s.nazev,
+  }).map(s => { const n = toNabidka(s); return { id: s.id, label: `${n.program} · ${n.nazev}, ${n.obec}`, href: n.href ?? `/skola/${n.slug}` }; });
   function move(id: string, smer: -1 | 1) { saveIds(posunVPoradi(selectedIds, id, smer)); }
   const savedItems = selectedIds.map(id => {
     const school = catalogIndex.get(normalizeSchoolKey(id));
@@ -429,7 +465,7 @@ export function SimulatorClient({ rokPasem, prevod, pravidla, rokKriterii, termi
       {krok1}
       {rokPasem !== null && <StrategiePrihlasek
         polozky={polozkyStrategie} pravidla={pravidla} rok={rokPasem}
-        onMove={move} navrhyPojistky={navrhyPojistky} onAdd={toggle}
+        onMove={move} navrhyPojistky={navrhyPojistky} navrhyUcebniPojistky={navrhyUcebniPojistky} onAdd={toggle}
       />}
       {razeniControls(true)}
       {seznam(selectedIds.flatMap(id => { const school = catalogIndex.get(normalizeSchoolKey(id)); return school ? [school] : []; }), razeni, true)}
@@ -474,7 +510,7 @@ export function SimulatorClient({ rokPasem, prevod, pravidla, rokKriterii, termi
             <p className="mt-1 text-slate-600">{stop ? 'Bez omezení krajem. Zvolený typ studia a obory platí dál.' : needsPlace ? 'Vyber město, kraj nebo výchozí zastávku a ukážeme obory v okolí.' : `Bez omezení dojezdem.${city && region ? ` Současně platí kraj: ${region}.` : ''}`}</p>
             {(city || (!stop && region)) && <button className="mt-2 min-h-11 text-blue-700 underline" onClick={() => { setCity(''); setRegion(''); }}>Zrušit územní omezení</button>}
           </div>
-          <p className="mb-4 text-xs text-slate-500">{rokPasem !== null ? `Nabídky doložené v 1. kole ${rokPasem}, v rozsahu` : 'Nabídky v rozsahu'} denních nezkrácených oborů s povinnou JPZ. Úplná nabídka a kritéria pro nové řízení se doplňují.</p>
+          <p className="mb-4 text-xs text-slate-500">{rokPasem !== null ? `Nabídky doložené v 1. kole ${rokPasem}, v rozsahu` : 'Nabídky v rozsahu'} {rozsahVysledku(shownOffers.flatMap(s => s.bez_jpz ? [s.bez_jpz.kategorie] : []))}. Úplná nabídka a kritéria pro nové řízení se doplňují.</p>
           <div className="mb-4">
             <SavedSelectionBar
               items={savedItems}

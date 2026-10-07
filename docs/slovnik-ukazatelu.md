@@ -1,6 +1,6 @@
 # Slovník ukazatelů
 
-Verze 1.60 · 6. 10. 2026 · **Závazný soupis. Nový ukazatel se nezavádí bez zápisu sem.**
+Verze 1.61 · 7. 10. 2026 · **Závazný soupis. Nový ukazatel se nezavádí bez zápisu sem.**
 
 Každý ukazatel má jeden název, jednu definici a jeden způsob výpočtu. Když se veličina objeví na webu, v datech, v API nebo v dokumentaci, používá se jméno z tohoto soupisu. Když se způsob výpočtu změní, změní se tady a zároveň se přepíše verze.
 
@@ -345,6 +345,8 @@ Zařazení se nezobrazuje pod 10 soutěžícími (jeden uchazeč by přehodil st
 **Práh je pravidlo zobrazení, ne součást definice.** Datové pole `zarazeni_obtiznosti` v `public/souhrny_kolo1.json` proto nese hodnotu **i pro obory pod prahem** a kdokoli ho čte přímo, musí práh uplatnit sám. Od 17. 9. 2026 platí dělba: veličinu počítá `scripts/build-souhrny-kolo1.py`, práh uplatňuje `zarazeniObtiznosti` v `src/lib/obor-profil.ts`. Do té doby si zařazení počítaly obě strany zvlášť a lišily se právě o tenhle práh; ověřeno, že sjednocení nezměnilo ani jeden z 6 150 zobrazovaných záznamů.
 
 **Nabídky bez jednotné zkoušky** (issue #244, etapa 3a, návrh oddíl 10.1): výpočet je stejný (`scripts/build-obory-bez-jpz.py` volá `zarazeni_obtiznosti` ze souhrnů), pravidlo zobrazení přísnější. Práh 10 soutěžících platí **i pro stupeň `kapacita_nerozhodovala`**, protože u malých učebních oborů by „místo pro všechny“ vycházelo z hrstky uchazečů; uplatňuje ho `obtiznostBezJpz` v `src/lib/obory-bez-jpz.ts`. U kategorií C, E, J a P se zařazení nezobrazuje vůbec (C a E jako citlivá skupina, J a P rozhodnutím vlastníka z 2. 10. 2026). Učební obory H 2026, jak je stránky ukážou: místo pro všechny 574, dostala se většina 302, středně těžké 164, těžké 78, velmi těžké 17; u ostatních 642 nabídek H se zařazení neuvádí.
+
+**Kde se zobrazuje: simulátor** (issue #244, etapa 5, [doplněk návrhu simulátoru](navrh-simulator-doplnek-ucebni-obory.md)). Stupeň `kapacita_nerozhodovala` s prahem 10 soutěžících určuje u učebních oborů (H a E) **pojistku bez bodů**: učební obor, kde v 1. kole nikoho neodmítli kvůli počtu míst, splní v kontrole přihlášky požadavek pojistky. Počítá `vyhodnotUcebniObor` v `src/lib/ucebni-pojistka.ts` z počtů nabídky (po celém id včetně zaměření), ne z pole `zarazeni_obtiznosti`. Odznak ani slovní stupeň se v simulátoru nezobrazuje, věta mluví o místech („nikoho neodmítli kvůli počtu míst“), ne o obtížnosti, a „místo pro všechny“ se nepíše, protože u pojistky by znělo jako záruka. Pojistek 2026: H 574, E 71 (doklad `docs/podklady/mereni-obory-bez-jpz-2026.json`, `soutezici_prahy`).
 
 **Není to hodnocení školy** a nesmí se používat k řazení škol. Nahrazuje zamítnutý index obtížnosti (oddíl 6) popisem jednoho ročníku, který jde ověřit ze zdroje. Podmínky školy mohou být hlavní překážkou i tam, kde kapacita nerozhodovala; proto se počet nesplněných podmínek uvádí vedle, kdykoli dosáhne počtu přijatých nebo 20 % přihlášek.
 
@@ -850,7 +852,8 @@ Například „Vyvážený obor“. Způsob zařazení není dohledaný. Platí 
 
 | Verze | Změna |
 |---|---|
-| 1.60 | Nový ukazatel *Místa podle druhu studia*: součet kapacity míst za město a kraj ve čtyřech skupinách přepínače (6. 10. 2026, issue #244, etapa 3c-4, rozhodnutí vlastníka). |
+| 1.61 | Nový ukazatel *Místa podle druhu studia*: součet kapacity míst za město a kraj ve čtyřech skupinách přepínače (6. 10. 2026, issue #244, etapa 3c-4, rozhodnutí vlastníka). |
+| 1.60 | *Obtížnost přijetí slovy*: v simulátoru stupeň „kapacita nerozhodovala“ s prahem 10 soutěžících určuje pojistku bez bodů u učebních oborů H a E (7. 10. 2026, issue #244, etapa 5). Výpočet beze změny. |
 | 1.59 | Nový ukazatel *Zbylá místa po 1. kole*; platnost ukazatelů poptávky a výsledku pro nabídky bez jednotné zkoušky; u *Obtížnosti přijetí slovy* pravidlo zobrazení pro tyto nabídky (práh i pro místo pro všechny, ne u C, E, J, P) a rozdělení oborů H (5. 10. 2026, issue #244, etapa 3a). |
 | 1.58 | Nový ukazatel *Jistota zařazení do okruhu* (5. 10. 2026, issue #366): bootstrap uchazečů, 100 opakování, na webu jen pod 0,5 jako „na pomezí okruhů“. |
 | 1.57 | *Souběžné přihlášky podle obce*: zveřejněné počty společných uchazečů se berou z obou stran dvojice oborů (review PR #294). Kontrola hotového výstupu stejným směrem. |

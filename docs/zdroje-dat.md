@@ -430,7 +430,7 @@ Sada zatím **není v registru stavu datových sad**: registr vede období, kter
 
 Pravidlo „kontakty na web nepatří“ z verze 1.13 tím není zrušeno, ale zúženo: týká se **zobrazení na stránce**, ne zdrojového sešitu. Dohledané kontakty, které jsou podrobnější a zahrnují i přímé mobily, leží mimo repozitář v `data/veletrhy/poradatele-kontakty.json` (v `.gitignore`).
 
-**Past: ověřenost pořadatele a ověřenost termínu jsou dvě různé věci.** Sloupec `overeno` má `ano` u 14 řádků, ale znamená „ověřili jsme, že tuhle akci tato organizace pořádá“, ne „tohle datum platí“. Královéhradecká komora má `overeno = ano` a v termínech „2026 TBD (2025: Trutnov 10.–11. 10.; …)“. Odvozený soubor proto nese vlastní příznak `terminPotvrzen` a **zobrazuje se jen akce, která ho má**. Z 96 záznamů jich je 80; zbylých 16 nese pole `cekaNa` s důvodem.
+**Past: ověřenost pořadatele a ověřenost termínu jsou dvě různé věci.** Sloupec `overeno` má `ano` u 14 řádků, ale znamená „ověřili jsme, že tuhle akci tato organizace pořádá“, ne „tohle datum platí“. Královéhradecká komora má `overeno = ano` a v termínech „2026 TBD (2025: Trutnov 10.–11. 10.; …)“. Odvozený soubor proto nese vlastní příznak `terminPotvrzen` a **zobrazuje se jen akce, která ho má**. Z 96 záznamů jich je 81; zbylých 15 nese pole `cekaNa` s důvodem.
 
 **Pokrytí není úplné a netvrdí se, že je.** Po rešerši 24. 9. 2026 má rozpis 95 záznamů, z toho 77 zobrazitelných, a **všech čtrnáct krajů** aspoň jednu zobrazitelnou akci. Mezery zůstávají tam, kde pořadatel letošní termín ještě nezveřejnil (Ústí nad Labem, Louny, Pelhřimov, Klatovy a další, všechny vedené jako čekající s loňským termínem v `cekaNa`). Stránka to říká výslovně a nabízí formulář pro nahlášení chybějící akce.
 
@@ -539,6 +539,21 @@ Soubor `src/data/opravy-nabidky-skol.json` (čtení v `src/lib/opravy-nabidky.ts
 
 Rozhodnutí vlastníka 5. 10. 2026: kapacita Boskovic a neotevíraný obor v Hronově se do webu dostanou až s nabídkou 2027. Obor 26-41-L/01 v Bohumíně v datech 2026 není a zdroj, proč, nemáme; soubor ho proto neobsahuje.
 
+### 2.20 Matomo, týdenní souhrn signálů
+
+Zdroj: Matomo na `https://ma.hlidacstatu.cz/` (site ID 7), Reporting API, jen čtení agregátů tokenem `MATOMO_TOKEN` (secret, vytváří vlastník). Skript `scripts/signaly_tyden.py` dělá 7 dotazů jednou týdně s prodlevou 2 s (zadání #326). Plný souhrn jde jen do Telegramu (zkrácený po znacích na 4096). Artefakt workflow `signaly-tyden.yml` (90 dní, ve veřejném repozitáři ke stažení) obsahuje jen verzi bez oddílů hledání, protože hledané výrazy mohou obsahovat jména; obě verze vznikají z jednoho stažení. Do repozitáře se nic nezapisuje. Testy volají jen mock.
+
+| Metoda | Pole | Otázka | Používáme |
+|---|---|---|---|
+| `Actions.getPageUrls` (tento a minulý týden) | `label`, `nb_hits`, `nb_visits`, `bounce_rate` | které stránky rodiny čtou, které rostou a které opouštějí hned | ano |
+| `Actions.getSiteSearchKeywords` | `label`, `nb_visits` | co lidé na webu hledají | ano, jen výrazy s aspoň 5 hledáními (mohou obsahovat jména) |
+| `Actions.getSiteSearchNoResultKeyword` | `label`, `nb_visits` | co hledají a nenajdou | ano, stejný práh |
+| `Events.getCategory`, `Events.getAction` | `label`, `nb_events` | kolik lidí použilo simulátor a odběr | ano |
+| `VisitsSummary.get` | `nb_visits`, `nb_actions` | celkový rozsah týdne | ano |
+| (stejné metody) | `nb_uniq_visitors`, `avg_time_on_page`, `exit_rate`, `sum_time_spent` | | ne: duplikují návštěvy a odchody, nové otázky nepřidávají |
+
+Zamítnuto: záznamy jednotlivých návštěv, IP adresy a identifikátory návštěvníků (osobní údaje, k otázkám týdenního souhrnu netřeba). Search Console a CrUX přijdou v etapě 2 zadání #326 a zapíšou se sem při zavedení.
+
 ## 3. Sloupce, které nepoužíváme
 
 Tohle je hlavní důvod existence dokumentu. Seřazeno podle toho, kolik by to dalo rodiči.
@@ -569,7 +584,7 @@ Tohle je hlavní důvod existence dokumentu. Seřazeno podle toho, kolik by to d
 | Ředitel a délka jeho funkce | rejstřík, `reditel` | stabilita vedení | sporná vypovídací hodnota |
 | Kdo na veletrhu vystavuje | **v žádném zdroji není** | „Bude tam škola, která mě zajímá?“ Jediný podklad, podle kterého by šlo poctivě upozornit na veletrh na stránce školy | seznamy vystavovatelů zveřejňují pořadatelé nestejně, část až týden před akcí, část vůbec. Chce se získat od pořadatelů jako součást mediálního partnerství, viz [veletrhy](veletrhy-skol-2027.md) § 7 |
 | Kontakty na pořadatele veletrhů | veletrhy, `kontaktni_osoba`, `email`, `telefon`; dohledané kontakty v `data/veletrhy/poradatele-kontakty.json` | žádná | na web nepatří ze stejného důvodu jako kontakt na školu. Soubor s dohledanými kontakty (9 organizací, 15 osob) je v `.gitignore` a čte se jen lokálně při obesílání — jsou to jména, služební e-maily a mobily konkrétních lidí |
-| Nepotvrzené termíny veletrhů | veletrhy, 16 z 96 záznamů | „Koná se u nás vůbec něco?“ — všech 14 krajů má k 24. 9. 2026 zobrazitelnou akci, přehled ale není úplný | termín 2026 není potvrzený, u části jde o loňské datum. Zobrazit by znamenalo zopakovat chybu pole `dny_otevrenych_dveri` z § 2.8. Záznamy nesou `cekaNa` s tím, co chybí |
+| Nepotvrzené termíny veletrhů | veletrhy, 15 z 96 záznamů | „Koná se u nás vůbec něco?“ — všech 14 krajů má k 24. 9. 2026 zobrazitelnou akci, přehled ale není úplný | termín 2026 není potvrzený, u části jde o loňské datum. Zobrazit by znamenalo zopakovat chybu pole `dny_otevrenych_dveri` z § 2.8. Záznamy nesou `cekaNa` s tím, co chybí |
 
 **Dobíhající obor neříká, co se od něj čekalo.** Do 17. 9. 2026 tu stálo, že příznak poslouží jako varování „škola tenhle obor zavírá“ před podáním přihlášky. Měření to vyvrátilo: proti snímku rejstříku k 30. 6. 2026 je **nula z 3 091 nabídek** 1. kola 2026 vedena jako dobíhající. Hrubý join na REDIZO a KKOV dá 29 zásahů, ale **všech 29 je falešných** — pokaždé dobíhá jiná forma nebo délka téhož oboru, typicky dálková nástavba vedle denní. Závěr platí i při nejširší definici druhu školy. Reprodukuje `python3 scripts/dobihajici-obory.py`, doklad `docs/podklady/dobihajici-obory.json`.
 
