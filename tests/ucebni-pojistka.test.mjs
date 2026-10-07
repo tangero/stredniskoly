@@ -69,11 +69,27 @@ test('věty u učebního oboru: rok, pojmy ze slovníku, bez bodů a bez „mís
 test('filtr třídy: po 9. třídě dvou- i tříleté učební obory, po 5. a 7. třídě ne', () => {
   assert.equal(U.projdeFiltremTridy(2, 'E', '9'), true);
   assert.equal(U.projdeFiltremTridy(3, 'H', '9'), true);
-  assert.equal(U.projdeFiltremTridy(3, 'M', '9'), false);
   assert.equal(U.projdeFiltremTridy(4, undefined, '9'), true);
   for (const t of ['5', '7']) assert.equal(U.projdeFiltremTridy(3, 'H', t), false, t);
   assert.equal(U.projdeFiltremTridy(8, undefined, '5'), true);
   assert.equal(U.projdeFiltremTridy(3, 'H', 'all'), true);
+});
+
+test('filtr třídy: nabídky bez zkoušky podle druhu; osmileté konzervatoře po 5., ostatní po 9., po 7. žádná', () => {
+  const ocekavani = [
+    ['P 6 let', 6, 'P', { 5: false, 7: false, 9: true, all: true }],
+    ['P 8 let', 8, 'P', { 5: true, 7: false, 9: false, all: true }],
+    ['C 1 rok', 1, 'C', { 5: false, 7: false, 9: true, all: true }],
+    ['C 2 roky', 2, 'C', { 5: false, 7: false, 9: true, all: true }],
+    ['J 2 roky', 2, 'J', { 5: false, 7: false, 9: true, all: true }],
+  ];
+  for (const [popis, delka, kategorie, dle] of ocekavani) {
+    for (const [trida, ma] of Object.entries(dle)) assert.equal(U.projdeFiltremTridy(delka, kategorie, trida), ma, `${popis}, ${trida}`);
+  }
+  // Obory se zkouškou beze změny: šestileté po 7., osmileté po 5., čtyřleté po 9.
+  assert.equal(U.projdeFiltremTridy(6, undefined, '7'), true);
+  assert.equal(U.projdeFiltremTridy(6, undefined, '9'), false);
+  assert.equal(U.projdeFiltremTridy(8, undefined, '5'), true);
 });
 
 test('strategie: učební pojistka platí i bez testu, mezi běžnými přihláškami, za posledním místem „posuň výš“', () => {

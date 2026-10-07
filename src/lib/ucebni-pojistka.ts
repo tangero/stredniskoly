@@ -121,13 +121,21 @@ export function rozsahVysledku(kategorie: Iterable<string>): string {
 }
 
 /**
- * Filtr „Po které třídě hledáš“ (doplněk, oddíl 4): po 5. a 7. třídě osmi- a šestiletá studia, po 9. třídě
- * čtyř- a pětiletá a učební obory bez ohledu na délku (dvou- i tříleté); „all“ nefiltruje.
+ * Filtr „Po které třídě hledáš“ (doplněk, oddíl 4): obory se zkouškou po 5. a 7. třídě osmi- a šestiletá
+ * studia, po 9. třídě čtyř- a pětiletá. Nabídky bez jednotné zkoušky (kategorie H, E, M, L, P, C, J) se
+ * řadí podle druhu, ne podle délky: po 9. třídě všechny kromě osmiletých konzervatoří (P, 8 let), po 5. třídě
+ * jen osmileté konzervatoře, po 7. třídě žádná; „all“ nefiltruje.
  */
 export function projdeFiltremTridy(delka: number | undefined, kategorie: string | null | undefined, trida: string): boolean {
-  const ucebni = jeUcebniObor(kategorie);
-  if (trida === '5') return !ucebni && delka === 8;
-  if (trida === '7') return !ucebni && delka === 6;
-  if (trida === '9') return ucebni || delka === 4 || delka === 5;
+  if (kategorie) {
+    const osmilete = kategorie === 'P' && delka === 8;
+    if (trida === '5') return osmilete;
+    if (trida === '7') return false;
+    if (trida === '9') return !osmilete;
+    return true;
+  }
+  if (trida === '5') return delka === 8;
+  if (trida === '7') return delka === 6;
+  if (trida === '9') return delka === 4 || delka === 5;
   return true;
 }
