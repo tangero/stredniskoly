@@ -14,6 +14,11 @@ vlastnik: tangero
 # protokol z preview jen od nich nebo od github-actions[bot]; PR jiného autora jen se schvaleno na PR.
 asistent: eduarda-prijimacky
 
+# Účet automatiky ve workflow: GitHub App `prijimacky-ai` (#403, RA47). Slučuje PR, mění štítky a zakládá PR s obnovou
+# dat. Brána mu věří jen u automatických obnov dat (`datove_obnovy`); není vlastník (souhlas, odebrání `stop`),
+# asistent (doklad „Zdroj:“, review, protokol) ani github-actions[bot] (záznamy brány).
+automatika: prijimacky-ai[bot]
+
 # Smí AI slučovat skriptem scripts/brana/sloucit.mjs? Zapne se samostatným PR (H2) až po přejímce
 # a po přidání brány do rulesetu (docs/postup-zavedeni-faze-0.md, krok 3). Do té doby slučuje vlastník.
 slucovani_ai: true
@@ -92,7 +97,7 @@ stranky:
   - src/app/**/page.tsx
   - src/app/**/route.ts
 
-# Automatické obnovy dat (RA46, #385): PR bez propojeného zadání od účtu vlastníka (workflow), ne z forku,
+# Automatické obnovy dat (RA46, #385): PR bez propojeného zadání od účtu vlastníka nebo `automatika` (workflow), ne z forku,
 # z uvedené větve, který mění jen cesty této větve, projde v režimu R bez souhlasu a bez review. CI zůstává
 # povinné. Změna mimo tyto cesty se posuzuje jako dřív.
 datove_obnovy:

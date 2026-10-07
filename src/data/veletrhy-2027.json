@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-10-01",
+  "checkedAt": "2026-10-05",
   "sezona": "2027",
   "zdroj": "docs/prijimacky-veletrhy-poradatele-2026.xlsx",
   "poznamka": "Rozpis pořadatelů na jednotlivé akce. Zobrazuje se jen akce s terminPotvrzen: true. Popis viz docs/veletrhy-skol-2027.md.",
@@ -712,11 +712,11 @@
       "start": "2026-10-21",
       "end": "2026-10-21",
       "datum": "21. října 2026",
-      "terminPotvrzen": false,
-      "url": "https://www.novinykraje.cz/stredocesky/2026/08/26/kam-po-zakladni-skole-benesov-chysta-prehlidku-ktera-devatakum-usnadni-velke-rozhodnuti/",
-      "zdrojOvereni": "novinykraje.cz",
-      "overeno": "2026-09-24",
-      "cekaNa": "Termín 21. 10. 2026 (Městské divadlo Na Poště) zatím jen ve zpravodajství (novinykraje.cz, 26. 8. 2026) a na agregátoru; chybí stránka Úřadu práce nebo města."
+      "cas": "9:00–17:00",
+      "terminPotvrzen": true,
+      "url": "https://benesov-city.cz/nevite-kam-po-zakladni-skole-prijdte-se-inspirovat-na-prehlidku-strednich-skol",
+      "zdrojOvereni": "benesov-city.cz (plakát Úřadu práce ČR a města Benešov); formulář nahlášení",
+      "overeno": "2026-10-05"
     },
     {
       "id": "prehlidka-chrudim-2026",

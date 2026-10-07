@@ -3,8 +3,8 @@
 # patičky AI, nebo zápis s nadpisem „Odpověď vlastníka“) štítek odebere a tabule se srovná.
 #
 # Pojistky: otázku posílá jen štítek od vlastníka nebo asistenta zadání; kód z PR se nespouští (checkout main),
-# skript nemá závislosti. Secrets: Telegram jen pro zprávu, PROJECT_TOKEN jen pro odebrání štítku (aby se spustila
-# Tabule). Nic jiného nemění.
+# skript nemá závislosti. Secrets: Telegram jen pro zprávu, token App prijimacky-ai (#403) jen pro odebrání štítku
+# (aby se spustila Tabule). Nic jiného nemění.
 name: Otázka vlastníkovi
 
 on:
@@ -53,6 +53,15 @@ jobs:
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
         run: node scripts/brana/otazka.mjs
 
+      - name: Token App prijimacky-ai
+        id: app
+        if: github.event_name == 'issue_comment'
+        uses: actions/create-github-app-token@v3
+        with:
+          client-id: ${{ secrets.PRIJIMACKY_AI_CLIENT_ID }}
+          private-key: ${{ secrets.PRIJIMACKY_AI_PRIVATE_KEY }}
+          permission-issues: write
+
       - name: Odpověď odebere štítek
         if: github.event_name == 'issue_comment'
         env:
@@ -61,5 +70,5 @@ jobs:
           KOMENTAR_AUTOR: ${{ github.event.comment.user.login }}
           KOMENTAR_TELO: ${{ github.event.comment.body }}
           GITHUB_TOKEN: ${{ github.token }}
-          STITKY_TOKEN: ${{ secrets.PROJECT_TOKEN }}
+          STITKY_TOKEN: ${{ steps.app.outputs.token }}
         run: node scripts/brana/otazka.mjs

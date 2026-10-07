@@ -1,6 +1,6 @@
 # Spolupráce na GitHubu
 
-Verze 1.1 · 2. 10. 2026
+Verze 1.3 · 7. 10. 2026
 
 Jak spolu na repozitáři pracují Patrick (schvaluje a slučuje), Eduarda (píše zadání), Claude Code
 (realizuje) a komunita (hlásí chyby). Pravidla pro Claude Code jsou závazně v `CLAUDE.md`; tento
@@ -111,21 +111,22 @@ rozhodující test a otázky; průzkum, kandidáti i kritiky jsou pod ním sbale
 a issue bez `navrh` a `schvaleno` vrátí do `navrh`. Issue bez šablony se zpracuje taky (problém odvodí průzkum).
 Běh trvá desítky minut. Modely mají jen čtení (průzkum navíc web), každý krok dostane jen svůj klíč.
 Secrets: `CLAUDE_CODE_OAUTH_TOKEN`, `KIMI_API_KEY` (klíč z konzole Kimi Code, ne z platform.moonshot.ai)
-a `PROJECT_TOKEN` na změnu štítků. Výchozí rozhraní Kimi je `https://api.kimi.ai/coding/`; účet z kimi.com
+a token App `prijimacky-ai` na změnu štítků (oddíl 4a). Výchozí rozhraní Kimi je `https://api.kimi.ai/coding/`; účet z kimi.com
 (Čína) potřebuje proměnnou repozitáře `KIMI_BASE_URL` s hodnotou `https://api.kimi.com/coding/`. Verze Claude
 Code je ve workflow připnutá; novější připni až po ověření s Kimi.
 
 **Otázka vlastníkovi** (`.github/workflows/otazka.yml`, `scripts/brana/otazka.mjs`, #385): AI píše z účtu vlastníka,
 takže mu GitHub o jejích otázkách nic neoznámí. Když se ptá, přidá štítek `otazka`; workflow pošle poslední
 komentář AI do Telegramu s odkazem. Komentář vlastníka bez patičky AI, nebo zápis jeho odpovědi s nadpisem
-„Odpověď vlastníka“ (od něj nebo od asistenta zadání), štítek odebere (přes `PROJECT_TOKEN`, aby se srovnala tabule).
+„Odpověď vlastníka“ (od něj nebo od asistenta zadání), štítek odebere (tokenem App `prijimacky-ai`, aby se srovnala tabule).
 
 **Automatické obnovy dat** (RA46): PR z větví `auto/veletrhy-snimek` a `codex/csi-weekly-refresh`, které mění jen
 cesty uvedené u větve v `datove_obnovy` v `rezimy.yml`, brána pustí v režimu R bez souhlasu a review; po CI se
 sloučí samy. Změna jiné cesty se posuzuje jako dřív.
 
-Potřebuje secret `PROJECT_TOKEN`, klasický token se scopes `project` a `public_repo` (fine-grained token
-do projektu na osobním účtu zapisovat neumí). Token má omezenou platnost; expiraci hlídá týdenní přehled.
+Tabule potřebuje secret `PROJECT_TOKEN`, klasický token se scopes `project` a `public_repo` (fine-grained token
+ani GitHub App do projektu na osobním účtu zapisovat neumí). Token má omezenou platnost; expiraci hlídá týdenní
+přehled. Od #403 ho používá jen Tabule (a týdenní přehled na dotaz na expiraci).
 
 Nastavení projektu (dělá vlastník, API stavy neumí měnit):
 
@@ -154,10 +155,54 @@ pro admina vrátí přepnutí bypass na *Always*.
 - datová linka zapisuje do větve `linka/stav`;
 - `csi-weekly-refresh` a `veletrhy-snimek` zakládají PR přes `create-pull-request`.
 
-`veletrhy-snimek` i `csi-weekly-refresh` zakládají PR tokenem `CSI_PR_TOKEN` (fine-grained PAT jen
-pro tento repozitář, oprávnění *Contents* a *Pull requests* pro čtení i zápis, #266), takže na něm
-povinné kontroly běží a slučuje se běžně. Bez tohoto secretu workflow použije `GITHUB_TOKEN`
-a PR jde sloučit zase jen přes bypass. Token má expiraci, obnovuje ho vlastník.
+`veletrhy-snimek` i `csi-weekly-refresh` zakládají PR tokenem App `prijimacky-ai` (oddíl 4a), takže na něm
+povinné kontroly běží a brána ho pozná jako automatickou obnovu dat. Bez secrets App krok tokenu selže
+a PR nevznikne; náhradní `GITHUB_TOKEN` se záměrně nepoužívá (dřív `CSI_PR_TOKEN`, #266).
+
+## 4a. GitHub App `prijimacky-ai` (automatika ve workflow)
+
+Od #403 (RA47) jedná automatika ve workflow vlastní identitou `prijimacky-ai[bot]`, ne účtem vlastníka.
+Token vzniká v každém jobu krokem `actions/create-github-app-token@v3`, platí hodinu, jen pro tento repozitář
+a jen s právy, která job potřebuje:
+
+| workflow | k čemu | práva tokenu |
+|---|---|---|
+| Sloučení (`slouceni.yml`) | žádost o vyhodnocení brány a sloučení PR | contents, pull-requests, issues zápis; checks čtení |
+| Otázka vlastníkovi (`otazka.yml`) | odebrání štítku `otazka` | issues zápis |
+| Oponentura (`oponentura.yml`, krok Štítky) | štítky po oponentuře | issues zápis |
+| CSI Weekly Refresh, Záloha veletrhů | PR s obnovou dat | contents, pull-requests zápis |
+| Oprava z review (`oprava-z-review.yml`, job Zápis, #410) | push opravy do větve PR, aby testy u PR běžely bez schvalování spuštění | contents zápis |
+| Týdenní přehled | jen ověření, že se App přihlásí | metadata čtení |
+
+Brána App věří jen u automatických obnov dat (`automatika` v `rezimy.yml`); `schvaleno`, odebrání `stop`,
+doklad `Zdroj:`, review ani protokol od ní neplatí. Beze změny zůstávají Claude Code v relacích (účet
+vlastníka), Eduarda, Tabule (`PROJECT_TOKEN`) a workflow na `GITHUB_TOKEN` (brána, testy, ověření, datová
+linka). Push od App nespouští nasazení náhledu (job deploy v `testy.yml`), protože by běžel skript z větve
+s `VERCEL_TOKEN`; testy u PR běží normálně.
+
+**Založení (vlastník, asi 15 minut). Pořadí je důležité: nejdřív App a secrets, pak sloučit PR z #403.**
+Po sloučení bez secrets by sloučení PR a obnovy dat selhaly.
+
+1. GitHub → Settings → Developer settings → GitHub Apps → New GitHub App. Název `prijimacky-ai`, Homepage
+   `https://www.prijimackynaskolu.cz`, Webhook vypnout (Active odškrtnout), „Only on this account“.
+2. Repository permissions: Contents **Read and write**, Pull requests **Read and write**, Issues **Read and
+   write**, Checks **Read-only**, Metadata **Read-only**. Vše ostatní **No access**, hlavně Administration,
+   Workflows, Secrets, Actions a Environments. Žádná práva k účtu.
+3. Install App → Only select repositories → `tangero/stredniskoly`.
+4. V nastavení App „Generate a private key“; stáhne se soubor `.pem`.
+5. Do secrets repozitáře (Settings → Secrets and variables → Actions) vložit `PRIJIMACKY_AI_CLIENT_ID`
+   (Client ID z nastavení App, ne App ID) a `PRIJIMACKY_AI_PRIVATE_KEY` (celý obsah souboru `.pem`). Soubor pak smazat.
+6. Ruleset „Ochrana main“: App **nepřidávat** do Bypass list.
+7. Sloučit PR z #403 a ručně spustit (Actions → Run workflow) Sloučení, CSI Weekly Refresh, Zálohu veletrhů
+   a Týdenní přehled. Ověřit, že sloučení a nové PR jsou od `prijimacky-ai[bot]` a že na PR běží povinné kontroly.
+8. `CSI_PR_TOKEN` smazat až po dvou týdnech bez chyb; `PROJECT_TOKEN` zůstává pro Tabuli (stačí mu scope `project`
+   a `public_repo`, jiná práva neodebírat bez ověření Tabule).
+
+**Únik klíče.** Soukromý klíč App nevyprší a v secrets ho může přečíst kterýkoli workflow z `main`. Při podezření
+na únik: v nastavení App smazat klíč (Private keys → Delete); tím přestane platit okamžitě a workflow s App
+selžou. Okamžitě odstřihne App i odinstalování z repozitáře (Settings → Applications → Configure → Uninstall).
+Pak vygenerovat nový klíč, vyměnit secret `PRIJIMACKY_AI_PRIVATE_KEY` a v historii repozitáře (Pull requests,
+štítky) zkontrolovat akce `prijimacky-ai[bot]` od posledního známého dobrého stavu.
 
 Před merge se dělá review přes `codex review --base origin/main`, nejvýš 10 kol.
 

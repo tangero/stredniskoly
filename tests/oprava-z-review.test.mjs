@@ -89,26 +89,29 @@ test('oprava nesmí změnit cesty H2', () => {
   assert.deepEqual(zasahH2(['tests/brana.test.mjs'], konfig), []);
 });
 
-test('workflow: minimální oprávnění, jen token pro Claude, bez pull_request_target', () => {
+test('workflow: minimální oprávnění, token pro Claude a token App jen na push, bez pull_request_target', () => {
   const obsah = fs.readFileSync('.github/workflows/oprava-z-review.yml', 'utf8');
   const w = yaml.load(obsah);
   assert.deepEqual(Object.keys(w.on), ['issue_comment']);
   assert.doesNotMatch(obsah, /pull_request_target/);
   assert.deepEqual(w.permissions, {});
-  assert.deepEqual([...new Set(obsah.match(/secrets\.[A-Za-z0-9_]+/g))], ['secrets.CLAUDE_CODE_OAUTH_TOKEN']);
+  assert.deepEqual([...new Set(obsah.match(/secrets\.[A-Za-z0-9_]+/g))].sort(),
+    ['secrets.CLAUDE_CODE_OAUTH_TOKEN', 'secrets.PRIJIMACKY_AI_CLIENT_ID', 'secrets.PRIJIMACKY_AI_PRIVATE_KEY']);
   // Kód větve běží jen v jobu oprava, a to se čtecím tokenem; zápis kód větve nespouští.
   assert.deepEqual(w.jobs.oprava.permissions, { contents: 'read' });
   assert.deepEqual(w.jobs.zapis.permissions, { contents: 'write', 'pull-requests': 'write', issues: 'read' });
   assert.ok(!w.jobs.zapis.steps.some((s) => /npm (test|run)|npx /.test(s.run || '')), 'zápis nesmí spouštět kód větve');
   assert.match(JSON.stringify(w.jobs.zapis.steps), /cd main && npm ci --ignore-scripts/);
-  assert.deepEqual(w.jobs.testy.permissions, { actions: 'write' });
-  // Testy bez nasazení: nasazovací job by spustil skript z větve s VERCEL_TOKEN.
-  assert.match(w.jobs.testy.steps[0].run, /-f deployment=none/);
+  // Testy spustí push tokenem App (#410); ruční spuštění testů odpadlo. Nasazení náhledu push od App
+  // nespustí (podmínka v testy.yml, test workflow-token-app).
+  assert.equal(w.jobs.testy, undefined);
   // Veto se ověřuje znovu před kolem i před pushem.
   assert.match(JSON.stringify(w.jobs.zacatek.steps), /oprava-z-review\.mjs veto/);
   assert.match(JSON.stringify(w.jobs.zapis.steps), /oprava-z-review\.mjs veto/);
-  // Claude dostane jen CLAUDE_CODE_OAUTH_TOKEN a v jobu se zápisem žádný secret není.
-  assert.doesNotMatch(JSON.stringify(w.jobs.zapis), /secrets\./);
+  // Claude dostane jen CLAUDE_CODE_OAUTH_TOKEN; v jobu se zápisem jsou jen údaje App pro token na push (#410).
+  assert.deepEqual([...new Set(JSON.stringify(w.jobs.zapis).match(/secrets\.[A-Za-z0-9_]+/g))].sort(),
+    ['secrets.PRIJIMACKY_AI_CLIENT_ID', 'secrets.PRIJIMACKY_AI_PRIVATE_KEY']);
+  assert.doesNotMatch(JSON.stringify(w.jobs.oprava), /PRIJIMACKY_AI/);
   for (const [id, job] of Object.entries(w.jobs)) assert.ok(job['timeout-minutes'] > 0, id);
   assert.match(w.concurrency.group, /github\.event\.issue\.number/);
   // Claude nemá push ani gh v povolených nástrojích; pushne až krok po kontrole H2.
