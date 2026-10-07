@@ -5,6 +5,7 @@ import { notFound } from 'next/navigation';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { MESTA, getCityStats } from '@/lib/cityData';
+import { popisMesta, titulekMesta } from '@/lib/seo-titulky';
 import { zobrazeneObdobi } from '@/lib/stav-datovych-sad';
 import { dalsiOboryVeMeste, nactiIndexRejstriku } from '@/lib/kontext-prihlasek';
 import { bezJpzProKlice, getNabidkyBezJpzVeMeste, getSchoolsData } from '@/lib/data';
@@ -39,15 +40,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!meta) return { title: 'Město nenalezeno' };
   // Ročník z registru, nikdy napevno (CLAUDE.md, Stav datových sad, pravidlo 1).
   const rok = await zobrazeneObdobi('cermat-vysledky');
-  const zaRok = rok ? ` ${rok}` : '';
+  // Titulek začíná dotazem „přijímačky + město“ (#405, kontrolní SEO audit #414), bez přípony layoutu.
+  const title = titulekMesta(meta.nazev);
+  const description = popisMesta(meta.nazev, rok);
   return {
     alternates: { canonical: `/mesto/${meta.slug}` },
-    title: `Střední školy ${meta.nazev} — kompletní přehled`,
-    description: `Střední školy ${meta.nazev}: co se tu dá studovat po školách a směrech, jak těžké bylo se na obory dostat v 1. kole${zaRok} a počty míst.`,
-    openGraph: {
-      title: `Střední školy ${meta.nazev} — kompletní přehled`,
-      description: `Střední školy ${meta.nazev}: které školy nabízejí co a jak těžké bylo se na ně dostat v 1. kole${zaRok}.`,
-    },
+    title: { absolute: title },
+    description,
+    openGraph: { title, description },
   };
 }
 

@@ -22,12 +22,13 @@ import { formatujDen } from '@/lib/veletrhy-pocty';
 
 export const metadata: Metadata = {
   alternates: { canonical: '/jak-vybrat-skolu' },
-  title: 'Jak vybrat střední školu a jak funguje přijímací řízení',
+  // Začíná dotazem „přijímací řízení“ (#405, kontrolní SEO audit #414: CTR 0,3 % při pozici 7,6).
+  title: { absolute: 'Přijímací řízení na střední školu: jak vybrat a podat přihlášku' },
   description:
     'Návod krok za krokem: kdy co podat, jak se rozhoduje o přijetí, jak najít a posoudit školu '
     + 'a jak sestavit tři přihlášky. Včetně toho, co o školách víme a co ne.',
   openGraph: {
-    title: 'Jak vybrat střední školu a jak funguje přijímací řízení',
+    title: 'Přijímací řízení na střední školu: jak vybrat a podat přihlášku',
     description: 'Návod krok za krokem od prvního hledání po tři obory na přihlášce.',
     type: 'article',
     url: '/jak-vybrat-skolu',

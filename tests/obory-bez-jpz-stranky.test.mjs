@@ -48,6 +48,13 @@ test('ročník nabídek bez JPZ je ten, který web zobrazuje', async () => {
   assert.equal(String(await rokBezJpz()), registr.sady['cermat-prihlasky'].zobrazeno.obdobi);
 });
 
+test('popis oboru bez JPZ v metadatech bere ročník nabídek, ne výsledků', () => {
+  const zdroj = fs.readFileSync('src/app/skola/[slug]/page.tsx', 'utf8');
+  const volani = zdroj.match(/popisOboruBezJpz\([^\n]*\)/)?.[0] ?? '';
+  assert.match(volani, /await rokBezJpz\(\)/);
+  assert.doesNotMatch(volani, /rokVysledku/);
+});
+
 test('nabídky bez JPZ škol na webu mají vlastní adresu a žádnou nepřebírají od oborů se zkouškou', async () => {
   let pocet = 0;
   for (const redizo of SKOLY) {

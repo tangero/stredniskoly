@@ -20,6 +20,7 @@ import { VibecordingPromo } from '@/components/VibecordingPromo';
 import { getNoteForSchool } from '@/lib/school-notes';
 import { getPasmaPrijeti, rokPasemPrijeti } from '@/lib/pasma-prijeti';
 import { platnostObdobi, zobrazeneObdobi } from '@/lib/stav-datovych-sad';
+import { popisOboru, popisOboruBezJpz, popisSkoly, titulekOboru, titulekSkoly } from '@/lib/seo-titulky';
 import { getSouhrnNabidky } from '@/lib/souhrny-kolo1';
 import { PasmaPrijetiCard } from '@/components/school/detail/PasmaPrijetiCard';
 import { getDruheKolo } from '@/lib/druhe-kolo';
@@ -32,7 +33,7 @@ import { ProfilOboru } from '@/components/obor/ProfilOboru';
 import { MereniClarity } from '@/components/MereniClarity';
 import { ProfilUcebnihoOboru } from '@/components/obor/ProfilUcebnihoOboru';
 import { getProfilUcebnihoOboru } from '@/lib/ucebni-obor-profil-data';
-import { druhOboruBezJpz } from '@/lib/obory-bez-jpz';
+import { druhOboruBezJpz, rokBezJpz } from '@/lib/obory-bez-jpz';
 import { VeletrhVMeste } from '@/components/veletrhy/VeletrhVMeste';
 import { UlozitObor } from '@/components/obor/UlozitObor';
 import { createSlug } from '@/lib/utils';
@@ -73,19 +74,20 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 
   const school = pageInfo.school;
+  // Ročník z registru, nikdy napevno; titulky a popisy ze src/lib/seo-titulky.ts (#405).
+  const rokVysledku = await zobrazeneObdobi('cermat-vysledky');
 
   // Různé meta tagy pro přehled vs detail
   if (pageInfo.type === 'overview') {
-    // Stejný název jako nadpis stránky: plný název z rejstříku MŠMT, jinak zkrácený s obcí.
-    const nazev = nazevSkolyNadpis(await uplnyNazevZRejstriku(pageInfo.redizo), school.nazev, school.obec);
-    const title = `${nazev} - přehled oborů`;
-    const description = `Přehled všech oborů a zaměření školy ${nazev}. ${krajNames[school.kraj_kod] || school.kraj}`;
+    // Krátký název z katalogu s obcí; plný název z rejstříku nese nadpis stránky.
+    const title = titulekSkoly(school.nazev, school.obec);
+    const description = popisSkoly(school.nazev, school.obec, rokVysledku);
 
     return {
-      title,
+      title: { absolute: title },
       description,
       openGraph: {
-        title: `${title} | Přijímačky na střední školy`,
+        title,
         description,
         type: 'article',
         url: `/skola/${slug}`,
@@ -105,16 +107,16 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   const program = pageInfo.program;
   const oborNazev = program ? nazevSZamerenim(opravyNabidky.opravy as OpravaNabidky[], pageInfo.redizo, program.id.split('_')[1] ?? '', program.obor, program.zamereni) : school.obor;
-  const title = `${school.nazev} - ${oborNazev}`;
+  const title = titulekOboru(oborNazev, school.nazev, school.obec);
   const description = program?.bezJpz
-    ? `${school.nazev}: ${oborNazev}, ${druhOboruBezJpz(program.bezJpz.kategorie)}. Místa po 1. kole, přihlášky, kam se hlásí ostatní a kam dál. ${school.obec}, ${krajNames[school.kraj_kod] || school.kraj}`
-    : `Přijímací zkoušky ${school.nazev}: ${oborNazev}. Historické výsledky a přihlášky. ${school.obec}, ${krajNames[school.kraj_kod] || school.kraj}`;
+    ? popisOboruBezJpz(oborNazev, druhOboruBezJpz(program.bezJpz.kategorie), school.nazev, school.obec, await rokBezJpz())
+    : popisOboru(oborNazev, school.nazev, school.obec, rokVysledku);
 
   return {
-    title,
+    title: { absolute: title },
     description,
     openGraph: {
-      title: `${title} | Přijímačky na střední školy`,
+      title,
       description,
       type: 'article',
       url: `/skola/${slug}`,
