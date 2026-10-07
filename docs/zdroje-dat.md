@@ -616,6 +616,7 @@ Zamítnuta je i **krajová míra nezaměstnanosti za skupinu oborů**: odpovíd�
 5. **Data uchazečů zaostávají za souhrny.** Web má přihlášky, kapacity a výsledky za rok 2026, ale data uchazečů jen za rok 2025, a to v předběžné verzi. CERMAT data uchazečů za rok 2026 zveřejnil už 20. 5. 2026; nepřevzali jsme je. Cokoli z uchazečů odvozeného je proto zatím za rok 2025. Do 13. 9. 2026 tu stálo, že data za rok 2026 neexistují.
 6. **Malé počty.** 1 586 ze 4 350 oborů má méně než deset přijatých. Minimum a medián jsou tam velmi kolísavé.
 7. **Zkrácený název školy z rejstříku není jedinečný.** Index názvů (`nazvy-oboru.json`, pole `skoly`) nese `zkracenyNazev`, a ten je u 97 škol jen „Gymnázium“, u desítek dalších „Obchodní akademie“ nebo „Střední odborné učiliště“. Řádek seznamu s takovým názvem školu neurčí a seskupení podle názvu slije různé školy. Pro zobrazení se bere název s ulicí z katalogu (`nazev_display`), u školy mimo katalog zkrácený název doplněný o ulici z `identifikace.adresa`; seskupuje se vždy podle REDIZO (`nazevSkolyProRadek` v `src/lib/okruhy-oboru.ts`). **Zkratky v katalogovém názvu** („Bezpečnost. práv. akad.“, „AKADEMIA Gy“) mají i data přihlášek a výsledků CERMAT; plný tvar nese jen rejstřík (`identifikace.uplny_nazev`). Od 5. 10. 2026 ho stránka města a okruhy používají u názvů se zkratkou, očištěný o právní formu, obec a adresu (`nazevSkolyKZobrazeni` v `src/lib/mesto-karty.ts`, #363); týká se 171 škol.
+8. **Katalog ročníku 2025 nese i nedenní formy se stejným id.** Starší zpracování ročníku 2025 v `schools_data.json` nefiltrovalo formu studia, takže u 29 id stojí vedle denního i dálkové, distanční nebo kombinované studium (v ročníku 2024 u 31 id). Generátor ročníku 2026 (`build-catalogue-2026.py`) od 5. 10. 2026 přenáší ze zdvojení jen denní záznam podle souhrnu CERMAT 2025 (#365). **Známý dluh:** dalších 22 přenesených „nevypsaných“ nabídek 2026 je nedenních bez zdvojení a visí na nich stránky; ročníky 2024 a 2025 zdvojení dál nesou a web je obchází přes `uniqueSchoolIndex`.
 
 ## 5. Stav datových sad
 
@@ -781,6 +782,7 @@ _Vygenerováno z `public/stav_datovych_sad.json` dne 2026-10-05. Neupravovat ru�
 | 1.35 | Oddíl 2.10: soubor nabídek bez JPZ nese identitu škol z rejstříku pro školy mimo katalog (etapa 3b, issue #244); oddíl 2.4 `typZrizovatele` a kód okresu nově i pro web. |
 | 1.34 | Oddíl 2.18: Clarity i na stránkách škol a oborů, události čtení a rozbalení oddílů (#386); web z nich nic nezobrazuje. |
 | 1.33 | Oddíl 2.10: odvozený soubor `src/data/obory-bez-jpz-2026.json`, který od etapy 3a (issue #244) čte web; žádný nový sloupec zdroje. |
+| 1.34 | Oddíl 4: past 8, nedenní formy se stejným id v katalogu 2025 a jejich přenos do ročníku 2026 (#365). |
 | 1.32 | Nový zdroj 2.18 Microsoft Clarity, souhrny chování na simulátoru (#329); web z něj nic nezobrazuje. |
 | 1.30 | Oddíl 4, past 7: úplný název školy z rejstříku pro zobrazení u názvů se zkratkou (#363); oddíl 2.4 `identifikace.uplny_nazev` nově i pro web. |
 | 1.29 | Oddíl 2.10: souhrny 1. kola nesou i ročník 2024 (`PZ2024_kolo1_skolobory_vysledky.xlsx`, rozhodnutí vlastníka 3. 10. 2026 v #277). Žádný nový sloupec. |
