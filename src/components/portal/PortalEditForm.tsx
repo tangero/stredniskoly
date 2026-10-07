@@ -99,7 +99,7 @@ export function PortalEditForm({ auth, profil, pole, vychoziEmail = '' }: Props)
         <div className="text-4xl mb-4">✅</div>
         <h2 className="text-xl font-bold text-slate-900 mb-2">Děkujeme!</h2>
         <p className="text-slate-600 max-w-md mx-auto">
-          Vaše změny jsme zapsali. Na stránce školy se objeví se značkou „potvrdila škola“, obvykle
+          Vaše změny jsme zapsali. Na stránce školy se objeví se značkou „Doplnila škola“, obvykle
           do hodiny. Na schválení nic nečeká. Když v údajích najdeme chybu, opravíme ji a napíšeme
           vám na zadaný e-mail.
         </p>

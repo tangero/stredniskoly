@@ -45,7 +45,7 @@ test('potvrzení říká, že se na schválení nečeká', () => {
   // tvrdila opak, popřela by to v okamžiku, kdy na tom člověku záleží nejvíc.
   const html = potvrzeni();
   assert.match(html, /Na schválení nic nečeká/);
-  assert.match(html, /potvrdila škola/);
+  assert.match(html, /Doplnila škola/);
 });
 
 test('formulář nikde neslibuje kontrolu redakcí před zveřejněním', () => {

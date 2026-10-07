@@ -109,7 +109,7 @@ export function ProfilUkazka({ starsiZdroj }: ProfilUkazkaProps) {
 
         <p className="border-t border-[#e3e9f1] bg-[#f7f9fc] px-5 py-3 text-xs text-[#6b7a8c] sm:px-6">
           {doplneno
-            ? 'Údaje potvrdila škola 3. listopadu. Na stránce stojí odděleně od statistik přijímacího řízení.'
+            ? 'Údaje doplnila škola 3. listopadu. Na stránce stojí odděleně od statistik přijímacího řízení.'
             : `Bez školy ukazujeme jen to, co je v datových zdrojích, například ${starsiZdroj}.`}
         </p>
 
