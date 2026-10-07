@@ -1,0 +1,49 @@
+# Kontrola dostupnosti webu zvenčí (#355, etapa 1, docs/monitoring-produkce.md): každých 5 minut načte pět
+# veřejných stránek na https://www.prijimackynaskolu.cz (GET, bez cookies, nejvýš 10 dotazů na běh), výpadek
+# a pomalý web ohlásí issue a Telegramem (scripts/provoz/dostupnost.mjs). Bez modelu, jen skript.
+#
+# Pojistky (P1, P2): jen `contents: read` a `issues: write`, ze secrets jen Telegram; žádný VERCEL_TOKEN
+# ani přístup k Neonu. Spouští se z main (plán, ruční spuštění); kód větví se nespouští.
+# GitHub plánované běhy při zátěži zpožďuje, takže „každých 5 minut“ je jen orientační (O1).
+name: Dostupnost
+
+on:
+  schedule:
+    - cron: "*/5 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+concurrency:
+  group: dostupnost
+  cancel-in-progress: false
+
+jobs:
+  dostupnost:
+    name: Dostupnost
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          persist-credentials: false
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+
+      - name: Závislosti
+        run: npm ci --ignore-scripts --no-audit --no-fund
+
+      - name: Zkontrolovat dostupnost
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          ZAMRZNUTI_OD: ${{ vars.ZAMRZNUTI_OD }}
+          ZAMRZNUTI_DO: ${{ vars.ZAMRZNUTI_DO }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: node scripts/provoz/dostupnost.mjs
