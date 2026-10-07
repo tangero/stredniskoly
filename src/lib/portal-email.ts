@@ -138,7 +138,7 @@ export async function posliPotvrzovaciEmail(para: {
     subject: '✅ Změny profilu školy jsou na webu',
     html: OBALKA(`
       <p>Dobrý den,</p>
-      <p>úpravy profilu školy <strong>${esc(para.nazevSkoly)}</strong> jsme zapsali. Na stránce školy se objeví se značkou „potvrdila škola“, obvykle do hodiny:</p>
+      <p>úpravy profilu školy <strong>${esc(para.nazevSkoly)}</strong> jsme zapsali. Na stránce školy se objeví se značkou „Doplnila škola“, obvykle do hodiny:</p>
       <p style="text-align: center; margin: 24px 0;">
         <a href="${para.skolaUrl}" style="display: inline-block; background: #0074e4; color: #ffffff; padding: 12px 24px; text-decoration: none; border-radius: 6px; font-weight: 600;">Stránka vaší školy</a>
       </p>
@@ -243,7 +243,7 @@ export function pozvankaDoPilotu(para: PozvankaPara): { subject: string; html: s
         : 'Zveme vaši školu, aby si svůj profil na našem webu spravovala sama.'}
          Doplníte, co v úředních datech chybí: dny otevřených dveří, odkaz na vyhlášená kritéria přijetí, přípravné
          kurzy, ubytování nebo kontakt na výchovného poradce. Údaje se na stránce školy zobrazí se značkou
-         „potvrdila škola“ a s datem. Je to zdarma a nic není povinné.</p>
+         „Doplnila škola“ a s datem. Je to zdarma a nic není povinné.</p>
       <p><strong>Jak na to</strong></p>
       <ol>
         <li>Otevřete <a href="https://www.prijimackynaskolu.cz/pro-skoly" style="color: #0074e4;">www.prijimackynaskolu.cz/pro-skoly</a>
@@ -254,7 +254,7 @@ export function pozvankaDoPilotu(para: PozvankaPara): { subject: string; html: s
         <li>Správce může pozvat kolegy. Každý se pak přihlašuje svým e-mailem, bez hesla.</li>
         <li>Co vyplníte, se na stránce školy objeví obvykle do hodiny. Na schválení nic nečeká — věříme tomu,
             kdo za školu údaje zadává. Když v nich najdeme chybu, opravíme ji a dáme vám vědět; u opraveného
-            údaje je pak místo „potvrdila škola“ uvedeno „opravila redakce“.</li>
+            údaje je pak místo „Doplnila škola“ uvedeno „opravila redakce“.</li>
       </ol>
       <p>Na stránce školy uvedeme „Profil spravuje škola“. Jméno a funkci správce tam uvedeme, jen když k tomu dá
          ve formuláři souhlas; odvolat ho jde kdykoli v profilu. Osobní údaje zpracovávám já jako jejich správce,

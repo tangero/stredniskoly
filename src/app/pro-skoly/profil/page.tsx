@@ -130,7 +130,7 @@ export default async function PortalProfilPage({ searchParams }: Props) {
         </div>
       )}
       <p className="text-sm text-slate-500 mb-4">
-        Odeslané údaje se objeví na stránce školy se značkou „potvrdila škola“, obvykle do hodiny.
+        Odeslané údaje se objeví na stránce školy se značkou „Doplnila škola“, obvykle do hodiny.
         Nečekají na schválení. Když v nich najdeme chybu, opravíme ji a dáme vám vědět.
       </p>
       <div className="mb-6 rounded-xl border border-blue-200 bg-blue-50 p-4 text-sm text-slate-800">

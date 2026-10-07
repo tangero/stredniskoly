@@ -7,6 +7,17 @@
         "zdroj": "škola (zástupce ředitele), e-mail 1. 10. 2026",
         "datum": "2026-10-01"
       }
+    },
+    "600019497": {
+      "vyuka_jazyku": {
+        "hodnota": [
+          "anglický",
+          "latinský",
+          "německý"
+        ],
+        "zdroj": "oprava od školy 2026-10-07",
+        "datum": "2026-10-07"
+      }
     }
   }
 }

@@ -93,7 +93,7 @@ export async function PortalEditace({
       </p>
       <p className="text-sm text-slate-500 mb-8">
         Zkontrolujte a doplňte údaje o škole. Po uložení se zobrazí na stránce školy se značkou
-        „potvrdila škola“, obvykle do hodiny. Na schválení nic nečeká.
+        „Doplnila škola“, obvykle do hodiny. Na schválení nic nečeká.
       </p>
 
       {host && (
