@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { sestavPrehled, expiraceTokenu, MAX_POLOZEK } from '../scripts/prehled/tydenni.mjs';
+import { sestavPrehled, expiraceTokenu, prihlaseniApp, MAX_POLOZEK } from '../scripts/prehled/tydenni.mjs';
 
 const TED = Date.parse('2026-10-12T06:00:00Z');
 const zaklad = {
@@ -97,4 +97,17 @@ test('PR se štítkem potrebuje-cloveka je v krátké i dlouhé verzi s odkazem'
   assert.match(kratky, /PR potřebuje člověka: #330 PR C\nhttps:\/\/github\.com\/tangero\/stredniskoly\/pull\/330/);
   assert.match(dlouhy, /PR \[#330\]\(https:\/\/github\.com\/tangero\/stredniskoly\/pull\/330\) PR C: smyčka oprav z review skončila/);
   assert.doesNotMatch(sestavPrehled(zaklad).kratky, /smyčka oprav/);
+});
+
+test('přihlášení App automatiky (#403): stav v provozu, nefunkční přihlášení jako varování', async () => {
+  const odp = (status) => async () => ({ status, headers: new Map() });
+  assert.equal(await prihlaseniApp('t', odp(200)), 'funguje');
+  assert.equal(await prihlaseniApp('t', odp(401)), 'nefunguje');
+  assert.equal(await prihlaseniApp('', odp(200)), 'nefunguje');
+  const ok = sestavPrehled({ ...zaklad, expirace: { PROJECT_TOKEN: null }, app: 'funguje' });
+  assert.match(ok.dlouhy, /App prijimacky-ai: přihlášení funguje/);
+  assert.doesNotMatch(ok.kratky, /POZOR/);
+  assert.doesNotMatch(ok.dlouhy, /CSI_PR_TOKEN/);
+  const spatne = sestavPrehled({ ...zaklad, expirace: { PROJECT_TOKEN: null }, app: 'nefunguje' });
+  assert.match(spatne.kratky, /POZOR, App prijimacky-ai se nepřihlásí/);
 });

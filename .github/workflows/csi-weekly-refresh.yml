@@ -196,13 +196,24 @@ jobs:
             --vystup "$RUNNER_TEMP/telo_pr.md" "${ARGS[@]}")
           printf '\nDiff summary: `%s`\n' "${{ steps.summary.outputs.changed_summary }}" >> "$RUNNER_TEMP/telo_pr.md"
 
+      - name: Token App prijimacky-ai
+        id: app
+        if: steps.shrnout.outputs.ano == 'true'
+        uses: actions/create-github-app-token@v3
+        with:
+          client-id: ${{ secrets.PRIJIMACKY_AI_CLIENT_ID }}
+          private-key: ${{ secrets.PRIJIMACKY_AI_PRIVATE_KEY }}
+          permission-contents: write
+          permission-pull-requests: write
+
       - name: Create Pull Request
         id: create_pr
         if: steps.shrnout.outputs.ano == 'true'
         uses: peter-evans/create-pull-request@v6
         with:
-          # CSI_PR_TOKEN (fine-grained PAT, #266): na PR pak běží povinné kontroly. Bez něj GITHUB_TOKEN a CI neběží.
-          token: ${{ secrets.CSI_PR_TOKEN || secrets.GITHUB_TOKEN }}
+          # Token App prijimacky-ai (#403): na PR běží povinné kontroly a brána ho pozná jako obnovu dat (RA46).
+          # Bez secrets App krok tokenu selže; GITHUB_TOKEN se záměrně nepoužívá (CI by na PR neběželo).
+          token: ${{ steps.app.outputs.token }}
           commit-message: "Update CSI data with history and diff snapshot"
           branch: "codex/csi-weekly-refresh"
           delete-branch: true

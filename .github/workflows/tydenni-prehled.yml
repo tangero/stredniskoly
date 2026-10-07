@@ -3,8 +3,8 @@
 # sloučené PR, co čeká na vlastníka, červené CI na main a expirace tokenů. Dlouhá verze je v souhrnu
 # běhu, krátká jde do Telegramu (bot datové linky).
 #
-# Tokeny vlastníka (CSI_PR_TOKEN, PROJECT_TOKEN) se použijí jen na dotaz na vlastní expiraci
-# (hlavička odpovědi /rate_limit); nic jiného s nimi skript nedělá.
+# PROJECT_TOKEN vlastníka se použije jen na dotaz na vlastní expiraci (hlavička odpovědi /rate_limit). Token App
+# prijimacky-ai (#403) jen s právem metadata: přehled ověří, že se App přihlásí. Nic jiného s nimi skript nedělá.
 name: Týdenní přehled
 
 on:
@@ -37,11 +37,21 @@ jobs:
       - name: Závislosti
         run: npm ci --ignore-scripts --no-audit --no-fund
 
+      # Selhání přihlášení App nezastaví přehled; přehled ho ohlásí.
+      - name: Přihlášení App prijimacky-ai
+        id: app
+        continue-on-error: true
+        uses: actions/create-github-app-token@v3
+        with:
+          client-id: ${{ secrets.PRIJIMACKY_AI_CLIENT_ID }}
+          private-key: ${{ secrets.PRIJIMACKY_AI_PRIVATE_KEY }}
+          permission-metadata: read
+
       - name: Přehled
         env:
           GITHUB_TOKEN: ${{ github.token }}
-          CSI_PR_TOKEN: ${{ secrets.CSI_PR_TOKEN }}
           PROJECT_TOKEN: ${{ secrets.PROJECT_TOKEN }}
+          APP_TOKEN: ${{ steps.app.outputs.token }}
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
         run: node scripts/prehled/tydenni.mjs
