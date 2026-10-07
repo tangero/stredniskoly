@@ -49,6 +49,7 @@ export interface NabidkaKraje {
   zarazeniPredchozi: ZarazeniObtiznosti | null;
   predchoziRok: number | null;
   soutezici: number | null;
+  vyssiPriorita: number | null;
   prijati: number | null;
   nesplniliPodminky: number | null;
   kohorta: KohortaPozice | null;
@@ -169,6 +170,7 @@ async function spoctiKrajPrehled(
       zarazeniPredchozi: n.predchozi ? zarazeniObtiznosti(n.predchozi) : null,
       predchoziRok: n.predchoziRok,
       soutezici: soutezicichUchazecu(a),
+      vyssiPriorita: a.higher_priority ?? null,
       prijati: a.prijati ?? null,
       nesplniliPodminky: a.conditions_not_met ?? null,
       kohorta: kohortaPozice(a, n.nabidekVeSkupine),
@@ -210,6 +212,7 @@ async function spoctiKrajPrehled(
       kapacita: b.kapacita, prihlasky: b.prihlasky, prihlaskyNaMisto: b.index_poptavky,
       zarazeni: obtiznostBezJpz(b), zarazeniPredchozi: null, predchoziRok: null,
       soutezici: b.prijati !== null && b.nepr_kapacita !== null ? b.prijati + b.nepr_kapacita : null,
+      vyssiPriorita: b.nepr_vyssi_priorita,
       prijati: b.prijati, nesplniliPodminky: b.nepr_podminky, kohorta: null,
       novaNabidka: b.rok_2025 === null, meloDruheKolo: b.kolo_2 !== null,
       poradiZajem: null, poradiVysledky: null,

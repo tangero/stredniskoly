@@ -291,8 +291,8 @@ export default async function JakVybratSkoluPage() {
                 <p className="text-[16px] leading-relaxed text-slate-800">
                   <b>Pozor na jedno číslo.</b> „Přihlášek na místo“ vypadá jako míra obtížnosti, ale nadsazuje ji:
                   jeden uchazeč podává až tři přihlášky, takže se tytéž děti počítají víckrát. Spolehlivější je
-                  podíl přijatých ze <b>soutěžících uchazečů</b>, tedy z těch, kdo splnili požadavky školy a
-                  nedostali se na obor, který měli na přihlášce výš. Ten u každého oboru ukazujeme.
+                  podíl přijatých ze <b>soutěžících uchazečů</b>, tedy z těch, kdo splnili podmínky přijetí a
+                  nebyli přijati jinam podle vyšší priority na přihlášce. Ten u každého oboru ukazujeme.
                 </p>
               </Karta>
             </Krok>

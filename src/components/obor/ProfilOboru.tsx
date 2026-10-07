@@ -6,7 +6,7 @@ import { MIN_PRIJATYCH_PRO_HRANICI } from '@/lib/pasma-prijeti';
 import { idDukazu } from '@/lib/mereni-oddilu';
 import { vetyDruhehoKola, VYSVETLENI_DRUHEHO_KOLA } from '@/lib/druhe-kolo-vyklad';
 import {
-  ZARAZENI_POPISEK, cislo, popisekObtiznosti, slovniPodil, vKraji, soutezicichUchazecu, textPoradi, vetaPozadavku, zOd, zminitPozadavek,
+  ZARAZENI_POPISEK, cislo, popisekObtiznosti, slovniPodil, vKraji, soutezicichUchazecu, textPoradi, vetaPozadavku, zOd, zminitPozadavek, bezPrijatychJinam, textPrijatoZ,
   VYSVETLENI_SOUTEZICICH, KOHORTA_NENI_KVALITA, KOHORTA_POPISEK, KOHORTA_VETA,
 } from '@/lib/obor-profil';
 import {
@@ -325,7 +325,7 @@ export function TabulkaOboruNaPrihlasce({ kontext }: { kontext: NonNullable<Prof
                   <td className="py-2 pl-3">
                     <span className="inline-block whitespace-nowrap rounded-full bg-slate-100 px-2.5 py-0.5 text-[13px] font-semibold text-slate-800">{popisekObtiznosti(o)}</span>
                     {o.zarazeni && o.mimoPrehled ? <span className="block text-[12px] text-slate-500">{popisekObtiznosti({ zarazeni: null, mimoPrehled: o.mimoPrehled })}</span> : null}
-                    {o.soutezici ? <span className="block text-[12px] text-slate-500">{cislo(o.prijati ?? 0)} {zOd(o.soutezici)} {cislo(o.soutezici)}</span> : null}
+                    {o.soutezici ? <span className="block text-[12px] text-slate-500">{textPrijatoZ(o.prijati ?? 0, o.soutezici, o.vyssiPriorita)}</span> : null}
                   </td>
                 </tr>
               ))}
@@ -427,10 +427,10 @@ export function ProfilOboru({ data, inspekceHref, skolaHref, obec }: ProfilOboru
             <p className="text-[26px] font-bold leading-tight text-[#16325c]">{hlavni}</p>
             {stav === 'nevesli_se' ? (
               <p className="text-[17px] leading-relaxed text-slate-800">
-                {zOd(soutezici) === 'ze' ? 'Ze' : 'Z'} <b>{cislo(soutezici)} soutěžících uchazečů</b>, {VYSVETLENI_SOUTEZICICH}, se dostalo {cislo(r.prijati ?? 0)}, což je <b>{slovniPodil(r.prijati ?? 0, soutezici)}</b>.
+                {zOd(soutezici) === 'ze' ? 'Ze' : 'Z'} <b>{cislo(soutezici)} soutěžících uchazečů</b>, {VYSVETLENI_SOUTEZICICH}, se dostalo {cislo(r.prijati ?? 0)}{bezPrijatychJinam(r.higher_priority ?? null)}, což je <b>{slovniPodil(r.prijati ?? 0, soutezici)}</b>.
                 {p && predchoziRok && soutezicichDriv ? (
                   (p.capacity_rejected ?? 0) > 0
-                    ? <> V roce {predchoziRok}: {slovniPodil(p.prijati ?? 0, soutezicichDriv)}, {cislo(p.prijati ?? 0)} {zOd(soutezicichDriv)} {cislo(soutezicichDriv)}.</>
+                    ? <> V roce {predchoziRok}: {slovniPodil(p.prijati ?? 0, soutezicichDriv)}, {cislo(p.prijati ?? 0)} {zOd(soutezicichDriv)} {cislo(soutezicichDriv)}{bezPrijatychJinam(p.higher_priority ?? null)}.</>
                     : <> V roce {predchoziRok} kapacita nerozhodovala.</>
                 ) : null}
               </p>
@@ -440,7 +440,7 @@ export function ProfilOboru({ data, inspekceHref, skolaHref, obec }: ProfilOboru
                 {dk?.zaznam.stav === 'vypsano' && <> Volná místa nabídla ve <b>2. kole</b> ({cislo(dk.zaznam.kapacita)}).</>}
               </p>
             )}
-            {stav === 'nevesli_se' && soutezici >= 10 && <MrizkaSoutezicich prijati={r.prijati ?? 0} soutezici={soutezici} />}
+            {stav === 'nevesli_se' && soutezici >= 10 && <MrizkaSoutezicich prijati={r.prijati ?? 0} soutezici={soutezici} jinam={r.higher_priority ?? null} />}
             {zminitPozadavek(r) && (
               <p className="text-[15px] leading-relaxed text-slate-700">
                 Kromě toho <b>{cislo(r.conditions_not_met ?? 0)} {zOd(r.prihlasky ?? 0)} {cislo(r.prihlasky ?? 0)}</b> uchazečů {vetaPozadavku(kontext?.data.odvozena_hranice)}.
@@ -455,8 +455,8 @@ export function ProfilOboru({ data, inspekceHref, skolaHref, obec }: ProfilOboru
 
           <div className="space-y-3">
             <Dukaz nadpis="Kolik soutěžících uchazečů se dostalo" rok={rozsahRoku} otevreny={stav === 'nevesli_se'}>
-              <Proc>Soutěžící uchazeči jsou ti, kdo splnili požadavky školy a nedostali se na obor, který měli na přihlášce výš.</Proc>
-              <SloupceSoutezicich radky={roky.map(x => ({ rok: x.rok, prijati: x.r.prijati ?? 0, nevesli: x.r.capacity_rejected ?? 0 }))} />
+              <Proc>Soutěžící uchazeči jsou ti, kdo splnili podmínky přijetí a nebyli přijati jinam podle vyšší priority na přihlášce.</Proc>
+              <SloupceSoutezicich radky={roky.map(x => ({ rok: x.rok, prijati: x.r.prijati ?? 0, nevesli: x.r.capacity_rejected ?? 0, jinam: x.r.higher_priority ?? null }))} />
               <Zdroj>CERMAT, souhrny 1. kola. Předchozí rok jen u oboru, který jde mezi roky jednoznačně přiřadit.</Zdroj>
             </Dukaz>
 

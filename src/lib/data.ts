@@ -809,7 +809,7 @@ export async function skolaMimoKatalog(redizo: string): Promise<School | null> {
  * a níž na přihlášce). Jen u škol, které web vede; víc nabídek téhož oboru vede na přehled školy.
  */
 export async function oborBezJpzProKlic(klic: string): Promise<{
-  href: string; zarazeni: ReturnType<typeof obtiznostBezJpz>; prijati: number | null; soutezici: number | null;
+  href: string; zarazeni: ReturnType<typeof obtiznostBezJpz>; prijati: number | null; soutezici: number | null; vyssiPriorita: number | null;
 } | null> {
   const [redizo, kkov] = klic.split('_');
   // Levná kontrola nejdřív: `getProgramsByRedizo` čte celý katalog, volá se jen u školy s učebním oborem.
@@ -820,11 +820,12 @@ export async function oborBezJpzProKlic(klic: string): Promise<{
   const nazev = skola.nazev;
   const programy = (await programyBezJpzSkoly(redizo, nazev)).filter(p => p.bezJpz?.kkov === kkov);
   if (programy.length === 0) return null;
-  if (programy.length > 1) return { href: `/skola/${adresaPrehledu(redizo, nazev)}#obory`, zarazeni: null, prijati: null, soutezici: null };
+  if (programy.length > 1) return { href: `/skola/${adresaPrehledu(redizo, nazev)}#obory`, zarazeni: null, prijati: null, soutezici: null, vyssiPriorita: null };
   const n = programy[0].bezJpz!;
   return {
     href: `/skola/${programy[0].adresa}`, zarazeni: obtiznostBezJpz(n), prijati: n.prijati,
     soutezici: n.prijati !== null && n.nepr_kapacita !== null ? n.prijati + n.nepr_kapacita : null,
+    vyssiPriorita: n.nepr_vyssi_priorita,
   };
 }
 

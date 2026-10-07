@@ -1,4 +1,4 @@
-import { cislo, zOd } from '@/lib/obor-profil';
+import { cislo, zOd, bezPrijatychJinam } from '@/lib/obor-profil';
 
 /**
  * Grafy stránky oboru jako serverové komponenty bez knihovny (docs/grafy-skoly-a-oboru-2027.md).
@@ -34,7 +34,7 @@ function Legenda({ polozky }: { polozky: [string, string][] }) {
  * Mřížka soutěžících uchazečů: každý čtvereček jeden uchazeč, plné jsou přijatí.
  * Nad 150 soutěžícími uchazeči se mřížka přepočítá na 100, aby zůstala čitelná.
  */
-export function MrizkaSoutezicich({ prijati, soutezici }: { prijati: number; soutezici: number }) {
+export function MrizkaSoutezicich({ prijati, soutezici, jinam }: { prijati: number; soutezici: number; jinam?: number | null }) {
   const naSto = soutezici > 150;
   const celkem = naSto ? 100 : soutezici;
   const plnych = naSto ? Math.round((100 * prijati) / soutezici) : prijati;
@@ -42,7 +42,7 @@ export function MrizkaSoutezicich({ prijati, soutezici }: { prijati: number; sou
     <figure className="space-y-2">
       <div
         role="img"
-        aria-label={`${cislo(prijati)} přijatých ${zOd(soutezici)} ${cislo(soutezici)} soutěžících uchazečů`}
+        aria-label={`${cislo(prijati)} přijatých ${zOd(soutezici)} ${cislo(soutezici)} soutěžících uchazečů${bezPrijatychJinam(jinam)}`}
         className="grid gap-[3px]"
         style={{ gridTemplateColumns: `repeat(auto-fill, minmax(${celkem > 60 ? 10 : 14}px, 1fr))` }}
       >
@@ -67,6 +67,8 @@ export interface RadekRoku {
   rok: number;
   prijati: number;
   nevesli: number;
+  /** Přijatí jinam podle vyšší priority; nejsou v součtu. `undefined` = údaj se nezobrazuje. */
+  jinam?: number | null;
 }
 
 /**
@@ -95,7 +97,7 @@ export function SloupceSoutezicich({ radky }: { radky: RadekRoku[] }) {
                   {r.nevesli > 0 && <span className="rounded-[4px]" style={{ flex: r.nevesli, background: BARVY.nevesli }} title={`nevešli se ${r.nevesli}`} />}
                 </div>
                 <p className="mt-1 text-[13px] text-slate-600">
-                  přijato {cislo(r.prijati)} {zOd(celkem)} {cislo(celkem)} soutěžících uchazečů{r.nevesli ? `, ${cislo(r.nevesli)} se nevešlo` : ', nikdo neodmítnut kvůli kapacitě'}
+                  přijato {cislo(r.prijati)} {zOd(celkem)} {cislo(celkem)}{r.jinam !== undefined ? bezPrijatychJinam(r.jinam) : ' soutěžících uchazečů'}{r.nevesli ? `, ${cislo(r.nevesli)} se nevešlo` : ', nikdo neodmítnut kvůli kapacitě'}
                 </p>
               </div>
             </li>

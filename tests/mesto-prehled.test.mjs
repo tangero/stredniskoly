@@ -243,7 +243,7 @@ test('vykreslení: počty v čipech směrů a v nabídce obtížnosti odpovídaj
   }
   // Pojem se vysvětlí při prvním výskytu v bloku (slovník pojmů).
   assert.match(vykresleny, /soutěžících uchazečů/);
-  assert.match(vykresleny, /kdo splnili požadavky školy/);
+  assert.match(vykresleny, /kdo splnili podmínky přijetí/);
 });
 
 test('vykreslení: malé město nemá čipy ani filtry, rok bez registru se nevypíše', async () => {

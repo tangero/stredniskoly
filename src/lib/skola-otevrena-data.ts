@@ -7,7 +7,7 @@
  * označené. Přihlášky se za školu nesčítají (slovník ukazatelů, přihlášky na místo).
  */
 import type { ProfilSkolyData } from './skola-profil-data';
-import { zOd, type ZarazeniObtiznosti } from './obor-profil.ts';
+import { zOd, textPrijatoZ, type ZarazeniObtiznosti } from './obor-profil.ts';
 import { vetyDruhehoKola } from './druhe-kolo-vyklad.ts';
 
 export const VERZE_SCHEMATU = 3;
@@ -79,6 +79,8 @@ export function sestavOtevrenaData(skola: SkolaZakladni, d: ProfilSkolyData, obd
       prihlasky: o.prihlasky,
       prijati: o.prijati,
       soutezici_uchazeci: o.soutezici,
+      prijati_jinam_vyssi_priorita: o.vyssiPriorita,
+      nesplnili_podminky: o.nesplnili,
       obtiznost_prijeti: o.zarazeni,
       obtiznost_prijeti_text: o.zarazeni ? OBTIZNOST_TEXT[o.zarazeni] : null,
       predchozi_rok: o.predchoziRok,
@@ -180,7 +182,7 @@ export function otevrenaDataMarkdown(o: OtevrenaDataSkoly): string {
   r.push(`- **Obory v 1. kole ${o.obdobi_dat.prijimaci_rizeni_kolo1 ?? ''}:** ${o.pocet_oboru}, celkem ${cislo(o.celkova_kapacita)} míst`, '');
 
   r.push(`## Co tu lze studovat (1. kolo ${o.obdobi_dat.prijimaci_rizeni_kolo1 ?? ''})`, '');
-  r.push('Obtížnost přijetí popisuje, kolik soutěžících uchazečů se v 1. kole dostalo; soutěžící uchazeči jsou ti, kdo splnili požadavky školy a nedostali se na obor, který měli na přihlášce výš. Přihlášky se za školu nesčítají.', '');
+  r.push('Obtížnost přijetí popisuje, kolik soutěžících uchazečů se v 1. kole dostalo; soutěžící uchazeči jsou ti, kdo splnili podmínky přijetí a nebyli přijati jinam podle vyšší priority na přihlášce. Přihlášky se za školu nesčítají.', '');
   for (const ob of o.obory) {
     r.push(`### ${ob.nazev}, ${ob.delka_studia}leté`, '');
     r.push(`- **Pro koho:** žáci ${ob.pro_koho}`);
@@ -189,7 +191,7 @@ export function otevrenaDataMarkdown(o: OtevrenaDataSkoly): string {
     if (ob.zbyla_mista_po_1_kole === 0) r.push('- **Po 1. kole obsazeno**');
     else if (ob.zbyla_mista_po_1_kole != null && ob.kapacita != null) r.push(`- **Zbylá místa po 1. kole:** ${cislo(ob.zbyla_mista_po_1_kole)} ${zOd(ob.kapacita)} ${cislo(ob.kapacita)}`);
     if (ob.obtiznost_prijeti_text) {
-      r.push(`- **Obtížnost přijetí:** ${ob.obtiznost_prijeti_text}${ob.soutezici_uchazeci && ob.obtiznost_prijeti !== 'kapacita_nerozhodovala' ? ` (přijato ${cislo(ob.prijati ?? 0)} ${zOd(ob.soutezici_uchazeci)} ${cislo(ob.soutezici_uchazeci)} soutěžících uchazečů)` : ''}`);
+      r.push(`- **Obtížnost přijetí:** ${ob.obtiznost_prijeti_text}${ob.soutezici_uchazeci && ob.obtiznost_prijeti !== 'kapacita_nerozhodovala' ? ` (${textPrijatoZ(ob.prijati ?? 0, ob.soutezici_uchazeci, ob.prijati_jinam_vyssi_priorita)})` : ''}`);
     }
     if (ob.predchozi_rok && ob.obtiznost_prijeti_predchozi) r.push(`- **V roce ${ob.predchozi_rok}:** ${OBTIZNOST_TEXT[ob.obtiznost_prijeti_predchozi]}`);
     if (ob.prihlasky != null) r.push(`- **Přihlášky:** ${cislo(ob.prihlasky)}; **přijatí:** ${cislo(ob.prijati ?? 0)}`);

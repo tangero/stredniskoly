@@ -4,7 +4,7 @@ import type { ReactNode } from 'react';
 import { idDukazu } from '@/lib/mereni-oddilu';
 import type { ProfilSkolyData, OborSkoly } from '@/lib/skola-profil-data';
 import {
-  cislo, zOd, ZARAZENI_POPISEK, NADPIS_OBTIZNOSTI, PORADI_OBTIZNOSTI,
+  cislo, zOd, textPrijatoZ, poznamkaNepocita, ZARAZENI_POPISEK, NADPIS_OBTIZNOSTI, PORADI_OBTIZNOSTI,
   type ZarazeniObtiznosti,
 } from '@/lib/obor-profil';
 import {
@@ -175,18 +175,21 @@ function RadekOboru({ o, rok }: { o: OborSkoly; rok: number | null }) {
         <span className="text-[18px] font-bold text-[#16325c]">{nadpis}</span>
         {/* Proužek podílu přijatých ze soutěžících by u učebního oboru pod zbylými místy vypadal jako zaplněnost míst. */}
         {!o.bezJpz && o.soutezici && o.zarazeni && o.zarazeni !== 'kapacita_nerozhodovala' ? (
-          <div className="flex h-2.5 max-w-xs overflow-hidden rounded bg-[#e3e9f1]" role="img" aria-label={`${o.prijati} přijatých ${zOd(o.soutezici)} ${o.soutezici} soutěžících uchazečů`}>
+          <div className="flex h-2.5 max-w-xs overflow-hidden rounded bg-[#e3e9f1]" role="img" aria-label={textPrijatoZ(o.prijati ?? 0, o.soutezici, o.vyssiPriorita)}>
             <span className="bg-[#0074e4]" style={{ width: `${(100 * (o.prijati ?? 0)) / o.soutezici}%` }} />
           </div>
         ) : null}
         <span className="text-[14px] text-slate-600 tabular-nums">
           {o.soutezici && o.zarazeni && o.zarazeni !== 'kapacita_nerozhodovala'
-            ? `přijato ${cislo(o.prijati ?? 0)} ${zOd(o.soutezici)} ${cislo(o.soutezici)} soutěžících uchazečů`
+            ? `přijato ${cislo(o.prijati ?? 0)} ${zOd(o.soutezici)} ${cislo(o.soutezici)} uchazečů, kteří o místo soutěžili`
             : o.prijati !== null && o.kapacita !== null ? `přijato ${cislo(o.prijati)} na ${pocetMist(o.kapacita, cislo)}` : ''}
           {o.bezJpz && o.zarazeni ? ` · ${ZARAZENI_POPISEK[o.zarazeni]}` : ''}
           {o.predchoziRok && o.zarazeniPredchozi ? ` · v roce ${o.predchoziRok} ${ZARAZENI_POPISEK[o.zarazeniPredchozi]}` : ''}
           {o.tlak !== null ? ` · tlak prvních voleb ${cislo(o.tlak, 1)}×` : ''}
         </span>
+        {o.soutezici && o.zarazeni && o.zarazeni !== 'kapacita_nerozhodovala' && poznamkaNepocita(o.vyssiPriorita, o.nesplnili) ? (
+          <span className="text-[12px] text-slate-500">{poznamkaNepocita(o.vyssiPriorita, o.nesplnili)}</span>
+        ) : null}
         {(o.prihlasky !== null || o.cjPrijati !== null) && (
           <span className="text-[13px] text-slate-500 tabular-nums">
             {o.prihlasky !== null ? `${cislo(o.prihlasky)} ${sklon(o.prihlasky, 'přihláška', 'přihlášky', 'přihlášek')} v 1. kole` : ''}
@@ -373,7 +376,7 @@ export function ProfilSkoly({ data, skola, odkazy }: ProfilSkolyProps) {
       <Oddil id="obory" nadpis="Co tu lze studovat" stitek={rok ? `1. kolo ${rok}` : undefined}>
         {vypsane.length > 0 ? (
           <>
-            <p className="text-[15px] text-slate-600">Obtížnost přijetí popisuje, kolik soutěžících uchazečů se v 1. kole dostalo; soutěžící uchazeči jsou ti, kdo splnili požadavky školy a nedostali se na obor, který měli na přihlášce výš. Každý obor má vlastní přijímání, za školu se nesčítá.</p>
+            <p className="text-[15px] text-slate-600">Obtížnost přijetí popisuje, kolik soutěžících uchazečů se v 1. kole dostalo; soutěžící uchazeči jsou ti, kdo splnili podmínky přijetí a nebyli přijati jinam podle vyšší priority na přihlášce. Každý obor má vlastní přijímání, za školu se nesčítá.</p>
             {vypsane.some(o => o.bezJpz) && (
               <p className="text-[15px] text-slate-600">U učebních oborů, tedy oborů s výučním listem, a ostatních oborů bez jednotné přijímací zkoušky body nejsou, protože se zkouška nekoná; prvním údajem je, kolik míst zbylo po 1. kole.</p>
             )}
@@ -844,7 +847,7 @@ export function ProfilSkoly({ data, skola, odkazy }: ProfilSkolyProps) {
                                 <td className="px-2 py-2 text-right">{r.km !== null ? `${cislo(r.km, 1)} km` : '—'}</td>
                                 <td className="py-2 pl-2">
                                   {r.zarazeni ? <span className="whitespace-nowrap rounded-full bg-slate-200/70 px-2 py-0.5 text-[12px] font-semibold text-[#16325c]">{ZARAZENI_POPISEK[r.zarazeni]}</span> : <span className="text-[12px] text-slate-500">bez údaje</span>}
-                                  {r.soutezici && r.zarazeni !== 'kapacita_nerozhodovala' ? <span className="block text-[12px] text-slate-500">{cislo(r.prijati ?? 0)} {zOd(r.soutezici)} {cislo(r.soutezici)}</span> : null}
+                                  {r.soutezici && r.zarazeni !== 'kapacita_nerozhodovala' ? <span className="block text-[12px] text-slate-500">{textPrijatoZ(r.prijati ?? 0, r.soutezici, r.vyssiPriorita)}</span> : null}
                                 </td>
                               </tr>
                             );

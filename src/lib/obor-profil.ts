@@ -103,7 +103,53 @@ export function kohortaPozice(
  * Vyžaduje slovník pojmů, pravidlo 2.
  */
 export const VYSVETLENI_SOUTEZICICH =
-  'tedy těch, kdo splnili požadavky školy a nedostali se na obor, který měli na přihlášce výš';
+  'tedy těch, kdo splnili podmínky přijetí a nebyli přijati jinam podle vyšší priority na přihlášce';
+
+/** Skloňování podle počtu: 1 / 2–4 / 5 a více. */
+function podlePoctu(n: number, jedna: string, dva: string, pet: string): string {
+  if (n === 1) return jedna;
+  return n >= 2 && n <= 4 ? dva : pet;
+}
+
+/**
+ * Dovětek ke krátkému tvaru „přijato X ze Y“: kolik uchazečů se do Y nepočítá, protože byli přijati
+ * jinam podle vyšší priority na přihlášce. Nula část vynechá, chybějící údaj (`null`) dá tvar bez čísla.
+ */
+export function bezPrijatychJinam(jinam: number | null | undefined): string {
+  if (jinam === 0) return '';
+  const cast = jinam == null
+    ? 'přijatých jinam'
+    : `${cislo(jinam)} ${podlePoctu(jinam, 'přijatého', 'přijatých', 'přijatých')} jinam`;
+  return ` (bez ${cast} podle vyšší priority)`;
+}
+
+/** Krátký tvar: „přijato 28 ze 49 (bez 31 přijatých jinam podle vyšší priority)“. */
+export function textPrijatoZ(prijati: number, soutezici: number, jinam: number | null | undefined): string {
+  return `přijato ${cislo(prijati)} ${zOd(soutezici)} ${cislo(soutezici)}${bezPrijatychJinam(jinam)}`;
+}
+
+/**
+ * Vysvětlení pod číslem na kartě oboru. Vrací `null`, když nemá co říct (obě části jsou nula
+ * nebo chybí): „Nepočítá se 31 uchazečů přijatých jinam podle vyšší priority na přihlášce ani 2,
+ * kteří nesplnili podmínky přijetí.“
+ */
+export function poznamkaNepocita(jinam: number | null | undefined, nesplnili: number | null | undefined): string | null {
+  const j = jinam ?? 0;
+  const n = nesplnili ?? 0;
+  if (jinam == null && n === 0) return null;
+  if (j === 0 && n === 0) return null;
+  let veta = '';
+  if (jinam == null) {
+    veta = 'Nepočítají se uchazeči přijatí jinam podle vyšší priority na přihlášce';
+  } else if (j > 0) {
+    veta = `Nepočítá se ${cislo(j)} ${podlePoctu(j, 'uchazeč přijatý', 'uchazeči přijatí', 'uchazečů přijatých')} jinam podle vyšší priority na přihlášce`;
+  }
+  if (n > 0) {
+    const kdo = `${cislo(n)}, ${podlePoctu(n, 'který nesplnil', 'kteří nesplnili', 'kteří nesplnili')} podmínky přijetí`;
+    veta = veta ? `${veta} ani ${kdo}` : `Nepočítá se ${cislo(n)} ${podlePoctu(n, 'uchazeč, který nesplnil', 'uchazeči, kteří nesplnili', 'uchazečů, kteří nesplnili')} podmínky přijetí`;
+  }
+  return `${veta}.`;
+}
 
 /**
  * Proč obor výš nebo níž na přihlášce přehled nezahrnuje. `null` znamená, že se

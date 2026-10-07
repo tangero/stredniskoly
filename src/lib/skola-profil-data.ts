@@ -39,6 +39,10 @@ export interface OborSkoly {
   prihlasky: number | null;
   prijati: number | null;
   soutezici: number | null;
+  /** Přijatí jinam podle vyšší priority na přihlášce; do soutěžících se nepočítají. */
+  vyssiPriorita: number | null;
+  /** Uchazeči, kteří nesplnili podmínky přijetí; do soutěžících se nepočítají. */
+  nesplnili: number | null;
   zarazeni: ZarazeniObtiznosti | null;
   predchoziRok: number | null;
   zarazeniPredchozi: ZarazeniObtiznosti | null;
@@ -98,6 +102,7 @@ export interface RadekSoubehu {
   zarazeni: ZarazeniObtiznosti | null;
   prijati: number | null;
   soutezici: number | null;
+  vyssiPriorita: number | null;
 }
 
 export interface ProfilSkolyData {
@@ -280,6 +285,8 @@ export async function getProfilSkoly(
       prihlasky: a?.prihlasky ?? null,
       prijati: a?.prijati ?? null,
       soutezici: a ? soutezicichUchazecu(a) : null,
+      vyssiPriorita: a?.higher_priority ?? null,
+      nesplnili: a?.conditions_not_met ?? null,
       zarazeni: a ? zarazeniObtiznosti(a) : null,
       predchoziRok: s?.predchoziRok ?? null,
       zarazeniPredchozi: s?.predchozi ? zarazeniObtiznosti(s.predchozi) : null,
@@ -303,6 +310,7 @@ export async function getProfilSkoly(
       proKoho: n.typ_skoly === 'KON' && p.delka_studia === 8 ? 'z 5. třídy' : 'z 9. třídy', skupina: null,
       kapacita: n.kapacita, prihlasky: n.prihlasky, prijati: n.prijati,
       soutezici: n.prijati !== null && n.nepr_kapacita !== null ? n.prijati + n.nepr_kapacita : null,
+      vyssiPriorita: n.nepr_vyssi_priorita, nesplnili: n.nepr_podminky,
       zarazeni: obtiznostBezJpz(n), predchoziRok: null, zarazeniPredchozi: null, predchozi: null,
       tlak: n.tlak_prvnich_voleb, cjPrijati: null, maPrijati: null, umisteniPrijatych: null,
       novy: false, drivejsiNazev: null, vypsano: true, nenabira: false, druheKolo: null,
@@ -381,6 +389,7 @@ export async function getProfilSkoly(
             zarazeni: s2 ? zarazeniObtiznosti(s2) : null,
             prijati: s2?.prijati ?? null,
             soutezici: s2 ? soutezicichUchazecu(s2) : null,
+            vyssiPriorita: s2?.higher_priority ?? null,
           };
         }));
         const nazev = program ? (program.zamereni && program.zamereni !== program.obor ? `${program.obor} - ${program.zamereni}` : program.obor) + (programy.filter(p => p.obor === program.obor).length > 1 ? `, ${program.delka_studia}leté` : '') : nazevOboruZKlice(klic, nazvyRejstriku);
