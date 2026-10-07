@@ -1,5 +1,5 @@
-// Varianta B přehledu veletrhů: stejná data a stejné věty, jiné rozložení.
-// Veřejný výpis (bez `varianta`) se nesmí změnit — to hlídá i veletrhy-render.
+// Varianta B přehledu veletrhů: stejná data a stejné věty, jiné rozložení. Od #429 je veřejnou
+// stránkou /veletrhy. Výpis komponenty bez `varianta` (původní rozložení) hlídá dál veletrhy-render.
 
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
@@ -46,7 +46,7 @@ function vykresli(akce, varianta) {
   );
 }
 
-test('veřejný výpis nemá pás nejbližších akcí ani značku varianty', () => {
+test('výpis bez varianty nemá pás nejbližších akcí ani značku varianty', () => {
   const html = vykresli([karta()]);
   assert.equal(html.includes('Nejbližší akce'), false);
   assert.equal(html.includes('data-varianta'), false);
@@ -93,15 +93,14 @@ test('na kartě varianty B je datum vidět ve dlaždici a věta s datem je pro �
   assert.ok(html.includes('před zveřejněním ji ověříme na stránce pořadatele.'));
 });
 
-test('přepis ?varianta=b míří na prototyp a veřejná stránka parametr nečte', () => {
+test('veřejná stránka /veletrhy je varianta B, indexovaná, bez přepisu a s přesměrováním prototypu (#429)', () => {
   const config = readFileSync(new URL('../next.config.ts', import.meta.url), 'utf8');
-  assert.match(config, /key: 'varianta', value: 'b'/);
-  assert.match(config, /destination: '\/prototyp\/veletrhy'/);
-  const prototyp = readFileSync(new URL('../src/app/prototyp/veletrhy/page.tsx', import.meta.url), 'utf8');
-  assert.match(prototyp, /index: false/);
-  assert.match(prototyp, /varianta="b"/);
-  assert.match(prototyp, /Veletrh středních škol, tedy akce/);
+  assert.equal(config.includes("key: 'varianta'"), false);
+  assert.match(config, /source: '\/prototyp\/veletrhy', destination: '\/veletrhy', permanent: true/);
   const verejna = readFileSync(new URL('../src/app/veletrhy/page.tsx', import.meta.url), 'utf8');
+  assert.match(verejna, /varianta="b"/);
+  assert.match(verejna, /canonical: '\/veletrhy'/);
+  assert.equal(/index: false/.test(verejna), false);
+  assert.match(verejna, /Co si na veletrhu zjistit/);
   assert.equal(verejna.includes('searchParams'), false);
-  assert.equal(verejna.includes('varianta='), false);
 });

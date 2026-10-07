@@ -160,6 +160,8 @@ const nextConfig: NextConfig = {
         destination: '/simulator',
         permanent: true,
       },
+      // Varianta B veletrhů je od #429 veřejná stránka; prototyp z #420 zanikl.
+      { source: '/prototyp/veletrhy', destination: '/veletrhy', permanent: true },
       // Průvodci sloučeni do jednoho návodu (docs/pruvodce-vyberem-skoly-2027.md).
       // Kotva míří na krok, který nese obsah zrušené stránky.
       {
@@ -179,16 +181,6 @@ const nextConfig: NextConfig = {
   // Rewrites pro strojově čitelné formáty stránek škol
   async rewrites() {
     return {
-      // Před stránkou: /veletrhy existuje, pole přepisů by se k ní nedostalo.
-      // Platí jen s parametrem, takže adresa bez něj zůstává varianta A.
-      // Přepis nikoho do skupiny nepřiřazuje: komu parametr poslat, rozhodne test.
-      beforeFiles: [
-        {
-          source: '/veletrhy',
-          has: [{ type: 'query', key: 'varianta', value: 'b' }],
-          destination: '/prototyp/veletrhy',
-        },
-      ],
       afterFiles: [
         { source: '/skola/:slug.md', destination: '/api/skola/:slug/md' },
         { source: '/skola/:slug.json', destination: '/api/skola/:slug/json' },
