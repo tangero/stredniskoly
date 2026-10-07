@@ -2,6 +2,7 @@ import { StatsTab } from '@/components/school/detail/tabs/StatsTab';
 import { normalizeSchoolKey, uniqueSchoolIndex } from '@/lib/school-key';
 import { Metadata } from 'next';
 import Link from 'next/link';
+import { DrobeckyJsonLd } from '@/components/DrobeckyJsonLd';
 import { notFound, permanentRedirect } from 'next/navigation';
 import { Header } from '@/components/Header';
 import opravyNabidky from '@/data/opravy-nabidky-skol.json';
@@ -364,6 +365,7 @@ export default async function SchoolDetailPage({ params }: Props) {
                 <span className="mx-1.5">/</span>
                 <Link href={`/skola/${overviewSlug}`} className="hover:text-[#0074e4]">{school.nazev}</Link>
               </nav>
+              <DrobeckyJsonLd polozky={[{ nazev: 'Domů', cesta: '/' }, { nazev: krajNazev, cesta: `/regiony/${krajSlug}` }, { nazev: school.nazev, cesta: `/skola/${overviewSlug}` }, { nazev: displayOborName }]} />
 
               <div className="mt-6 flex flex-wrap items-end justify-between gap-x-10 gap-y-6">
                 <div className="min-w-0 max-w-3xl">
@@ -474,6 +476,11 @@ export default async function SchoolDetailPage({ params }: Props) {
               <span className="mx-2">/</span>
               <span className="text-slate-900">{displayOborName}</span>
             </nav>
+            <DrobeckyJsonLd polozky={[
+              { nazev: 'Domů', cesta: '/' }, { nazev: 'Školy', cesta: '/skoly' },
+              { nazev: krajNames[school.kraj_kod] || school.kraj, cesta: `/regiony/${krajSlug}` },
+              { nazev: school.nazev, cesta: `/skola/${overviewSlug}` }, { nazev: displayOborName },
+            ]} />
           </div>
         </div>
 

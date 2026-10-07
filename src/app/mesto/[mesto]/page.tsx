@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
+import { DrobeckyJsonLd } from '@/components/DrobeckyJsonLd';
 import { notFound } from 'next/navigation';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
@@ -114,6 +115,7 @@ export default async function MestoPage({ params }: Props) {
         <span className="mx-2" aria-hidden="true">/</span>
         <span className="text-white">{mestoMeta.nazev}</span>
       </nav>
+      <DrobeckyJsonLd polozky={[{ nazev: 'Domů', cesta: '/' }, { nazev: 'Města', cesta: '/mesto' }, { nazev: mestoMeta.nazev }]} />
       <h1 className="text-[32px] font-bold leading-tight md:text-[40px]">Střední školy — {mestoMeta.nazev}</h1>
       <p className="mt-2 max-w-3xl text-[17px] leading-relaxed text-[#dbe5f3]">
         {mestoMeta.kraj}. {fmt(skoly.length)} {sklon(skoly.length, 'škola', 'školy', 'škol')},{' '}

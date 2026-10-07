@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
+import { DrobeckyJsonLd } from '@/components/DrobeckyJsonLd';
 import { notFound } from 'next/navigation';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
@@ -100,6 +101,7 @@ export default async function RegionPage({ params }: Props) {
               <span className="mx-2">/</span>
               <span className="text-white">{kraj.nazev}</span>
             </nav>
+            <DrobeckyJsonLd polozky={[{ nazev: 'Domů', cesta: '/' }, { nazev: 'Regiony', cesta: '/regiony' }, { nazev: kraj.nazev }]} />
             <h1 className="mb-1 text-3xl font-bold md:text-4xl">Střední školy - {krajLabel(kraj.nazev)}</h1>
             <p className="text-blue-200">
               {cislo(skoly.length)} {skol(skoly.length)}, {cislo(pocetNabidek)} {tvar(pocetNabidek, 'nabídka', 'nabídky', 'nabídek')} v 1. kole {rok}
