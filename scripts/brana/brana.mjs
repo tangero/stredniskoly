@@ -270,6 +270,23 @@ export function rozbor(soubory, konfig) {
  * Poslední protokol z preview pro aktuální hlavu PR (oddíl 11). Repozitář je veřejný, proto se počítá
  * jen protokol od vlastníka, asistenta zadání nebo github-actions[bot]; tělo PR jen u důvěryhodného autora.
  */
+/**
+ * Automatická obnova dat (RA46): PR bez propojeného zadání od účtu vlastníka (workflow), ne z forku, z větve
+ * uvedené v `datove_obnovy` v rezimy.yml, který mění jen cesty povolené pro tuto větev. Projde v režimu R bez
+ * souhlasu a bez review; CI zůstává povinné.
+ */
+export function datovaObnova(pr, soubory, konfig, issues = []) {
+  const povolene = konfig.rezimy.datove_obnovy?.[pr.vetev];
+  if (!povolene || issues.length || pr.zForku !== false || pr.autor !== konfig.rezimy.vlastnik || !soubory.length) return false;
+  return soubory.every((s) => [s.nazev, s.puvodni].filter(Boolean).every((c) => shoda(c, povolene)));
+}
+
+/** Text oddílu `## Pro vlastníka` z popisu PR, prázdný, když oddíl chybí nebo je prázdný. */
+export function proVlastnika(telo = '') {
+  const m = telo.match(/^##[ \t]+Pro vlastníka[^\n]*\n([\s\S]*?)(?=^##[ \t]|(?![\s\S]))/im);
+  return m ? m[1].replace(/<!--[\s\S]*?-->/g, '').trim() : '';
+}
+
 export function protokol(pr, konfig, issues = []) {
   const smi = (autor) => autor === BOT || duveryhodny(autor, konfig);
   const kratke = pr.hlava.sha.slice(0, 7);
@@ -358,6 +375,7 @@ export function vyhodnot({ pr, soubory, issues, konfig, zamrznuti, ted, predchoz
   const info = [];
   const zaznamenat = [];
   const a = rozbor(soubory, konfig);
+  const obnova = datovaObnova(pr, soubory, konfig, issues);
 
   if (stopPlati(pr, konfig)) blokuje.push('PR má štítek stop (nebo ho odebral jiný účet než ten, kdo ho přidal, či vlastník)');
   for (const i of issues) if (stopPlati(i, konfig)) blokuje.push(`issue #${i.cislo} má štítek stop`);
@@ -375,15 +393,17 @@ export function vyhodnot({ pr, soubory, issues, konfig, zamrznuti, ted, predchoz
   let protokolTelo = '';
   if (!a.jenBezPreview) {
     const p = protokol(pr, konfig, issues);
+    // Protokol z preview se nevyžaduje (RA45): vlastník dostane po nasazení oznámení s adresou
+    // (oznameni-nasazeni.mjs). Blokuje jen protokol k aktuální hlavě, který hlásí nesplněné kritérium.
     if (p.ok) protokolTelo = p.telo;
-    // Souhlas vlastníka na PR (vázaný na hlavu) nahradí chybějící protokol (RA42); nesplněné kritérium ne.
-    else if (sPr.platny && !p.nesplneno) info.push(`${p.duvod}: nahrazuje souhlas vlastníka na PR`);
-    else blokuje.push(p.duvod);
+    else if (p.nesplneno) blokuje.push(p.duvod);
+    // Vlastník dostane po nasazení oddíl „Pro vlastníka“ do Telegramu; PR se zadáním ho musí mít (RA45).
+    if (issues.length && !proVlastnika(pr.telo)) blokuje.push('popis PR nemá oddíl „Pro vlastníka“ (1 až 3 věty, co návštěvník na webu uvidí jinak, a adresa)');
   }
 
   // Review asistenta zadání (#301): ne u změn bez dopadu na web a ne u PR se souhlasem vlastníka na PR.
   let reviewTelo = '';
-  if (r.review?.vyzadovat && !a.jenBezPreview && !sPr.platny) {
+  if (r.review?.vyzadovat && !a.jenBezPreview && !sPr.platny && !obnova) {
     const rv = review(pr, konfig);
     if (!rv.ok) blokuje.push(rv.duvod);
     else reviewTelo = rv.stav;
@@ -407,7 +427,10 @@ export function vyhodnot({ pr, soubory, issues, konfig, zamrznuti, ted, predchoz
   };
 
   const cizi = !duveryhodny(pr.autor, konfig);
-  if (a.h2.length) {
+  if (obnova) {
+    rezim = 'R';
+    info.push(`automatická obnova dat z větve ${pr.vetev}: jen povolené datové cesty, bez souhlasu a review (RA46)`);
+  } else if (a.h2.length) {
     rezim = 'H2';
     potrebaSouhlasu(`mění pravomoci AI (${a.h2.join(', ')})`);
   } else if (a.k.length) {

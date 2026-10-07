@@ -19,15 +19,20 @@ import { OdznakObtiznosti } from '@/components/nabidka/Odznaky';
  */
 
 /** Srovnatelné skupiny v pořadí, v jakém je rodina hledá. */
-const SKUPINY = ['GY8_8', 'GY6_6', 'GY4_4', 'LYC_4', 'SOS_4', 'SOU_4', 'NAS_2'];
+const SKUPINY = ['GY8_8', 'GY6_6', 'GY4_4', 'LYC_4', 'SOS_4', 'SOU_4', 'NAS_2', 'UCEBNI', 'UMELECKY', 'KONZ', 'PRAKT'];
 const SKUPINA_POPISEK: Record<string, string> = {
   GY8_8: 'Osmileté gymnázium', GY6_6: 'Šestileté gymnázium', GY4_4: 'Čtyřleté gymnázium',
   LYC_4: 'Lyceum', SOS_4: 'Odborná s maturitou', SOU_4: 'Maturitní obor SOU', NAS_2: 'Nástavba',
+  // Nabídky bez jednotné zkoušky (issue #244, etapa 3c-2): typ podle kategorie oboru, bez pořadí v kraji.
+  UCEBNI: 'Učební obor', UMELECKY: 'Umělecký obor s talentovou zkouškou', KONZ: 'Konzervatoř', PRAKT: 'Praktická škola a obor J',
 };
 const SKUPINA_KRATCE: Record<string, string> = {
   GY8_8: 'GY 8leté', GY6_6: 'GY 6leté', GY4_4: 'GY 4leté', LYC_4: 'lyceum',
   SOS_4: 'SOŠ', SOU_4: 'SOU', NAS_2: 'nástavba',
+  UCEBNI: 'učební', UMELECKY: 'umělecký', KONZ: 'konzervatoř', PRAKT: 'praktická',
 };
+/** Typy bez srovnatelné skupiny v souhrnech 1. kola: pořadí v kraji podle zájmu ani výsledků nemají. */
+const BEZ_PORADI = new Set(['UCEBNI', 'UMELECKY', 'KONZ', 'PRAKT']);
 
 type Zrizovatel = 'verejna' | 'soukroma' | 'cirkevni';
 const ZRIZOVATEL_POPISEK: Record<Zrizovatel, string> = { verejna: 'veřejná', soukroma: 'soukromá', cirkevni: 'církevní' };
@@ -76,7 +81,7 @@ function zAdresy(search: string): Filtr {
     okres: p.get('okres'),
     delka: [4, 6, 8].includes(delka) ? delka : null,
     // Pořadí v kraji dává smysl jen uvnitř jedné srovnatelné skupiny (slovník ukazatelů).
-    razeni: skupina || (razeni !== 'zajem' && razeni !== 'vysledky') ? razeni : 'nazev',
+    razeni: (skupina && !BEZ_PORADI.has(skupina)) || (razeni !== 'zajem' && razeni !== 'vysledky') ? razeni : 'nazev',
   };
 }
 
@@ -228,7 +233,7 @@ export function RegionSchoolsTable({ skoly, krajNazev, rok, rokDruhehoKola }: Pr
 
   const zmen = (zmena: Partial<Filtr>) => {
     const novy = { ...filtr, ...zmena };
-    if (!novy.skupina && (novy.razeni === 'zajem' || novy.razeni === 'vysledky')) novy.razeni = 'nazev';
+    if ((!novy.skupina || BEZ_PORADI.has(novy.skupina)) && (novy.razeni === 'zajem' || novy.razeni === 'vysledky')) novy.razeni = 'nazev';
     setFiltr(novy);
     setZobrazeno(PO_STRANKACH);
     window.history.replaceState(null, '', `${window.location.pathname}${doAdresy(novy)}`);
@@ -394,7 +399,7 @@ export function RegionSchoolsTable({ skoly, krajNazev, rok, rokDruhehoKola }: Pr
           <span className="text-slate-500">Řadit školy:</span>
           {(['nazev', 'mista', 'zajem', 'vysledky'] as Razeni[]).map(r => {
             const jenSeSkupinou = r === 'zajem' || r === 'vysledky';
-            const lze = !jenSeSkupinou || !!filtr.skupina;
+            const lze = !jenSeSkupinou || (!!filtr.skupina && !BEZ_PORADI.has(filtr.skupina));
             return (
               <button key={r} type="button" disabled={!lze} onClick={() => zmen({ razeni: r })}
                 aria-pressed={filtr.razeni === r} data-razeni={r}

@@ -10,6 +10,9 @@ import { nenabiraSe } from '@/lib/dobihajici-obory';
 import { getDruheKolo, type DruheKoloNabidky } from '@/lib/druhe-kolo';
 import { zobrazeneObdobi, platnostObdobi } from '@/lib/stav-datovych-sad';
 import { createSlug } from '@/lib/utils';
+import opravyNabidky from '@/data/opravy-nabidky-skol.json';
+import { nazevSZamerenim, type OpravaNabidky } from '@/lib/opravy-nabidky';
+import { domovyMladeze, druhOboruBezJpz, obtiznostBezJpz, type DomovMladeze } from '@/lib/obory-bez-jpz';
 import { zarazeniObtiznosti, soutezicichUchazecu, nazevOboruZKlice, type ZarazeniObtiznosti } from '@/lib/obor-profil';
 import {
   nazevSkupinyMaturity, proKohoObor, shrnutiMaturity, smerStupne, vzdalenostKm,
@@ -50,6 +53,11 @@ export interface OborSkoly {
   /** Rejstřík obor vede jako dobíhající: škola ho dokončuje a nenabírá do něj. */
   nenabira: boolean;
   druheKolo: DruheKoloNabidky | null;
+  /**
+   * Nabídka bez jednotné zkoušky (issue #244, etapa 3a): druh oboru a zbylá místa po 1. kole, první údaj
+   * učebního oboru. Body ani nic na nich postaveného nemá; obtížnost jen nad prahem a ne u C, E, J, P.
+   */
+  bezJpz: { druh: string; zbylaMista: number | null; kolo2: { kapacita: number | null; prijati: number | null } | null } | null;
 }
 
 export interface MaturitaSkoly {
@@ -94,6 +102,8 @@ export interface RadekSoubehu {
 
 export interface ProfilSkolyData {
   redizo: string;
+  /** Domovy mládeže a internáty, které rejstřík škol MŠMT vede pod REDIZO školy (issue #244, etapa 3b). */
+  domovy: DomovMladeze[];
   rok: number | null;
   platnostDat: string | null;
   obory: OborSkoly[];
@@ -234,6 +244,8 @@ export async function getProfilSkoly(
   nazevSkoly: string,
   programy: SchoolProgram[],
   vypsaneIds: Set<string>,
+  /** Nabídky bez JPZ (`getProgramyBezJpz`), u škol, které web vede; etapa 3a issue #244. */
+  programyBezJpz: SchoolProgram[] = [],
 ): Promise<ProfilSkolyData> {
   const [nazvy, extrakce, csi, inspis, portal, web, lok, obdobiVysledku, platnost, obdobiUchazecu, maturita] = await Promise.all([
     nazvySkol(), getExtractionsByRedizo(redizo), getCSIDataByRedizo(redizo), getInspisDataByRedizo(redizo),
@@ -249,7 +261,7 @@ export async function getProfilSkoly(
     pocetNazvu.set(k, (pocetNazvu.get(k) ?? 0) + 1);
   }
   const obory: OborSkoly[] = await Promise.all(programy.map(async p => {
-    const zakladNazvu = p.zamereni && p.zamereni !== p.obor ? `${p.obor} - ${p.zamereni}` : p.obor;
+    const zakladNazvu = nazevSZamerenim(opravyNabidky.opravy as OpravaNabidky[], redizo, kkovZId(p.id), p.obor, p.zamereni);
     const duplicitni = (pocetNazvu.get(p.zamereni ? `${p.obor} - ${p.zamereni}` : p.obor) ?? 0) > 1;
     const [s, druheKolo] = await Promise.all([getSouhrnNabidky(p.id), getDruheKolo(p.id, p.zamereni)]);
     const a = s?.aktualni;
@@ -281,8 +293,26 @@ export async function getProfilSkoly(
       vypsano,
       nenabira,
       druheKolo,
+      bezJpz: null,
     };
   }));
+  for (const p of programyBezJpz) {
+    const n = p.bezJpz!;
+    obory.push({
+      id: p.id, href: `/skola/${p.adresa}`, nazev: p.zamereni ? `${p.obor} - ${p.zamereni}` : p.obor, delka: p.delka_studia,
+      proKoho: n.typ_skoly === 'KON' && p.delka_studia === 8 ? 'z 5. třídy' : 'z 9. třídy', skupina: null,
+      kapacita: n.kapacita, prihlasky: n.prihlasky, prijati: n.prijati,
+      soutezici: n.prijati !== null && n.nepr_kapacita !== null ? n.prijati + n.nepr_kapacita : null,
+      zarazeni: obtiznostBezJpz(n), predchoziRok: null, zarazeniPredchozi: null, predchozi: null,
+      tlak: n.tlak_prvnich_voleb, cjPrijati: null, maPrijati: null, umisteniPrijatych: null,
+      novy: false, drivejsiNazev: null, vypsano: true, nenabira: false, druheKolo: null,
+      bezJpz: { druh: druhOboruBezJpz(n.kategorie), zbylaMista: n.zbyla_mista, kolo2: n.kolo_2 ? { kapacita: n.kolo_2.kapacita, prijati: n.kolo_2.prijati } : null },
+    });
+  }
+  // Učební obory se řadí s ostatními podle názvu, ne za ně (návrh, oddíl 11: žádná hierarchie).
+  if (programyBezJpz.length > 0) {
+    obory.sort((a, b) => a.nazev.localeCompare(b.nazev, 'cs') || b.delka - a.delka || a.id.localeCompare(b.id));
+  }
 
   // ---------------------------------------------------------------- maturita
   let maturitaVystup: MaturitaSkoly | null = null;
@@ -397,6 +427,7 @@ export async function getProfilSkoly(
       novejsi: novejsiInspekce(csi, posledni.date),
     } : null,
     inspekceSeznam: csi,
+    domovy: await domovyMladeze(redizo),
     inspis,
     portal,
     web,

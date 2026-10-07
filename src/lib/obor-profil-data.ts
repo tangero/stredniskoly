@@ -3,7 +3,7 @@ import { kriteriaOboru, poziceOboru } from '@/lib/pozice-kriteria';
 import { vsechnaKriteriaSkol } from '@/lib/kriteria-skoly-verejne';
 import { maUdajeSkoly, sPrednostiSkoly } from '@/lib/kriteria-skoly-sloucit';
 import { druhTestu, type DruhTestu, type KriteriaOboru, type PoziceOboru, type PrevodDruhu } from '@/lib/prevod-testu-vypocet';
-import { getSchoolsData, getExtractionsByRedizo, getInspisDataByRedizo } from '@/lib/data';
+import { bezJpzProKlice, getSchoolsData, getExtractionsByRedizo, getInspisDataByRedizo, oborBezJpzProKlic } from '@/lib/data';
 import { getSouhrnNabidky, nabidkyVeSkupineKraje, souhrnOboru, type SouhrnRocniku } from '@/lib/souhrny-kolo1';
 import { getKontextPrihlasek, type KontextPrihlasek } from '@/lib/kontext-prihlasek';
 import { getOkruheMesta, getOkruhOboru, getSoubezneObce, type SoubezneObce } from '@/lib/okruhy-oboru';
@@ -178,7 +178,7 @@ export interface OkruhNaStranceOboru {
 }
 
 /** Okruh oboru sestavený stejně jako na stránce města (`sestavOkruhyMesta`); řádky odkazují na přehled školy. */
-async function okruhNaStranceOboru(programId: string): Promise<OkruhNaStranceOboru | null> {
+export async function okruhNaStranceOboru(programId: string): Promise<OkruhNaStranceOboru | null> {
   const nalez = await getOkruhOboru(programId);
   if (!nalez) return null;
   // Jméno okruhu závisí na ostatních okruzích města (upřesnění při shodě jmen), proto se sestaví
@@ -190,7 +190,7 @@ async function okruhNaStranceOboru(programId: string): Promise<OkruhNaStranceObo
     zobrazeneObdobi('cermat-vysledky'), castiObce(nalez.obec),
   ]);
   const { okruhy, nastavby } = sestavOkruhyMesta(vsechny, nalez.obec, [], {
-    katalog, nazvyKatalogu, kanonickeNazvy, rejstrik, obtiznost, castiObce: casti,
+    katalog, nazvyKatalogu, kanonickeNazvy, rejstrik, obtiznost, castiObce: casti, bezJpz: await bezJpzProKlice(klice),
   });
   const zobrazeni = [...okruhy, ...nastavby].find(o => o.id === nalez.okruh.id);
   if (!zobrazeni) return null;
@@ -206,6 +206,49 @@ async function okruhNaStranceOboru(programId: string): Promise<OkruhNaStranceObo
 }
 
 /** Null, když nabídka v zobrazeném ročníku souhrnů není; stránka pak použije starší podobu. */
+/**
+ * Obory výš a níž na přihlášce s názvy a obtížností přijetí pro stránku oboru. Sdílí ji stránka oboru
+ * se zkouškou i stránka učebního oboru (issue #244, etapa 3a).
+ */
+export async function kontextNaStranku(
+  kontextVysledek: Awaited<ReturnType<typeof getKontextPrihlasek>>,
+  nazvy?: Awaited<ReturnType<typeof nazvyOboru>>,
+): Promise<ProfilOboruData['kontext']> {
+  if (!kontextVysledek) return null;
+  const index = nazvy ?? await nazvyOboru();
+  const prevod = async ([k, n]: [string, number]): Promise<OborNaPrihlasce> => {
+    const nazev = index.get(k);
+    // Učební obor školy, kterou web vede, má od etapy 3a vlastní stránku (issue #244).
+    const bezJpz = nazev ? null : await oborBezJpzProKlic(k);
+    const mimo = nazev ? undefined : kontextVysledek.mimoPrehled[k];
+    const r = await souhrnOboru(k, kontextVysledek.rok);
+    if (bezJpz) {
+      return {
+        klic: k, uchazecu: n, skola: mimo?.skola ?? k, obec: mimo?.obec ?? '', obor: mimo?.obor ?? '',
+        // Bez obtížnosti (C, E, J, P nebo pod prahem) sloupec řekne „bez jednotné zkoušky“.
+        mimoPrehled: bezJpz.zarazeni ? null : 'bez_zkousky',
+        href: bezJpz.href, zarazeni: bezJpz.zarazeni, prijati: bezJpz.prijati, soutezici: bezJpz.soutezici,
+      };
+    }
+    return {
+      klic: k, uchazecu: n,
+      skola: nazev?.skola ?? mimo?.skola ?? k, obec: nazev?.obec ?? mimo?.obec ?? '', obor: nazev?.obor ?? mimo?.obor ?? '',
+      delka: nazev?.delka,
+      mimoPrehled: znackaMimoPrehled(Boolean(nazev), mimo),
+      href: nazev ? `/skola/${k.split('_')[0]}-${createSlug(nazev.nazev)}` : null,
+      zarazeni: r ? zarazeniObtiznosti(r) : null,
+      prijati: r?.prijati ?? null,
+      soutezici: r ? soutezicichUchazecu(r) : null,
+    };
+  };
+  return {
+    rok: kontextVysledek.rok,
+    data: kontextVysledek.kontext,
+    vys: await Promise.all(kontextVysledek.kontext.obory_vys.map(prevod)),
+    niz: await Promise.all(kontextVysledek.kontext.obory_niz.map(prevod)),
+  };
+}
+
 export async function getProfilOboru(programId: string, zamereni: string | undefined, redizo: string): Promise<ProfilOboruData | null> {
   const souhrn = await getSouhrnNabidky(programId);
   if (!souhrn) return null;
@@ -271,30 +314,7 @@ export async function getProfilOboru(programId: string, zamereni: string | undef
     poradi(souhrn.rok, souhrn.kraj, souhrn.skupina, klicSouhrnu, 'umisteni', souhrn.predchoziRok),
   ]);
 
-  let kontext: ProfilOboruData['kontext'] = null;
-  if (kontextVysledek) {
-    const prevod = async ([k, n]: [string, number]): Promise<OborNaPrihlasce> => {
-      const nazev = nazvy.get(k);
-      const mimo = nazev ? undefined : kontextVysledek.mimoPrehled[k];
-      const r = await souhrnOboru(k, kontextVysledek.rok);
-      return {
-        klic: k, uchazecu: n,
-        skola: nazev?.skola ?? mimo?.skola ?? k, obec: nazev?.obec ?? mimo?.obec ?? '', obor: nazev?.obor ?? mimo?.obor ?? '',
-        delka: nazev?.delka,
-        mimoPrehled: znackaMimoPrehled(Boolean(nazev), mimo),
-        href: nazev ? `/skola/${k.split('_')[0]}-${createSlug(nazev.nazev)}` : null,
-        zarazeni: r ? zarazeniObtiznosti(r) : null,
-        prijati: r?.prijati ?? null,
-        soutezici: r ? soutezicichUchazecu(r) : null,
-      };
-    };
-    kontext = {
-      rok: kontextVysledek.rok,
-      data: kontextVysledek.kontext,
-      vys: await Promise.all(kontextVysledek.kontext.obory_vys.map(prevod)),
-      niz: await Promise.all(kontextVysledek.kontext.obory_niz.map(prevod)),
-    };
-  }
+  const kontext = await kontextNaStranku(kontextVysledek, nazvy);
 
   const posledni = [...extrakce].sort((a, b) => (b.date ?? '').localeCompare(a.date ?? ''))[0];
   const podpora = posledni?.hard_facts?.support_services;

@@ -1,0 +1,106 @@
+```json
+{
+  "report_id": "GY4_691017832_2026-06-01",
+  "school_profile": {
+    "school_type": "Čtyřleté gymnázium s všeobecným vzděláním, soukromé (s.r.o.)",
+    "inspection_period": "1. 6. 2026 – 3. 6. 2026",
+    "school_change_summary": "Škola funguje od 1. 9. 2025. V termínu inspekce měla jednu třídu prvního ročníku s 24 žáky. Maximální kapacita je 240 žáků. Sídlí v pronajatých prostorách na Novém Městě v Praze."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Příjemné prostředí a přístup učitelů",
+        "detail": "Škola vytváří pozitivní, tvůrčí atmosféru s profesionálním a individuálním přístupem pedagogů, který podporuje vzdělávání.",
+        "evidence": "Inspektoři zaznamenali „pozitivní, tvůrčí atmosféru, profesionální a individuální přístup pedagogických pracovníků"."
+      },
+      {
+        "tag": "Projektové učení a osobnostní rozvoj",
+        "detail": "Vzdělávání zahrnuje pravidelné projektové dny a dlouhodobé projekty, které rozvíjejí sociální kompetence a osobnostní růst.",
+        "evidence": "Škola klade důraz na „projektové dny" a „zapojením v rámci projektových dnů" podporuje osobnostní rozvoj."
+      },
+      {
+        "tag": "Kvalitní vedení a partnerství",
+        "detail": "Ředitel uplatňuje demokratický styl řízení a škola má funkční partnerské vztahy s institucemi (PORG, ČVUT, Národní muzeum).",
+        "evidence": "Ředitel „uplatňuje demokratický styl řízení" a škola má „partnerské vztahy, které přinášejí škole pozitiva v mnoha oblastech"."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Vysoká absence žáků",
+        "detail": "V prvním pololetí 2025/2026 měli žáci průměrně 110 zameškaných hodin, což je výrazně vysoké číslo.",
+        "evidence": "Průměrný počet zameškaných hodin na žáka činil v 1. pololetí 2025/2026 celkem 110 hodin. Vedení přijalo opatření."
+      },
+      {
+        "tag": "Kvalifikace některých učitelů",
+        "detail": "Ze 17 pedagogů jsou 3 externí učitelé, kteří nesplňují předpoklady odborné kvalifikace.",
+        "evidence": "Z 17 pedagogických pracovníků je 14 externích, z nichž 3 nesplňují předpoklad odborné kvalifikace."
+      },
+      {
+        "tag": "Metodické nedostatky v některých hodinách",
+        "detail": "V menší části hodin chybí kvalitní závěr hodiny, reflexe a ověření cílů. Někdy je nižší důraz na jazykovou kulturu.",
+        "evidence": "Inspektoři zjistili „nedostatečnou pozornost věnovanou využití didaktického závěru" a menší důraz na „úroveň spisovného vyjadřování"."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně řešíte vysokou absenci žáků? Jaká opatření jste zavedli po prvním pololetí?",
+      "Jaký je plán na získání odborné kvalifikace pro tři učitele, kteří ji zatím nesplňují?",
+      "Jak probíhá adaptační kurz pro nové žáky a jak dlouho trvá?"
+    ],
+    "who_school_fits": [
+      "Žáci, kteří si cení individuálního přístupu a tvůrčího prostředí s důrazem na projektové učení",
+      "Motivovaní žáci, kteří se chtějí podílet na rozhodování o svém vzdělávání a mají zájem o mezipředmětové souvislosti",
+      "Rodiny hledající menší gymnázium s osobnějším přístupem a silnějšími vazbami mezi žáky a učiteli"
+    ],
+    "who_should_be_cautious": [
+      "Žáci se sklonem k absencím – škola má vysoké nároky na docházku a v prvním pololetí byla průměrná absence 110 hodin",
+      "Rodiny očekávající, že všichni učitelé budou mít vysokou kvalifikaci – tři z 17 pedagogů zatím nesplňují odborné předpoklady",
+      "Žáci vyžadující striktní strukturu a tradičnější výuku – škola používá blokové vyučování a projektové přístupy, což klade vyšší nároky na samostatnost"
+    ],
+    "plain_czech_summary": "School for Future je nové gymnázium v Praze, které funguje od září 2025. Inspektoři jej hodnotí pozitivně – chválí přátelskou atmosféru, individuální přístup učitelů a projektové učení. Vedení školy je demokratické a funguje dobře. Jsou zde však tři rizika: vysoká absence žáků (průměrně 110 hodin za pololetí), tři učitelé bez potřebné kvalifikace a v některých hodinách chybí kvalitní závěr a reflexe. Škola už na problémy reaguje a přijala opatření."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Nedostupné – škola funguje teprve od září 2025",
+      "key_numbers": [
+        "Jednoročníků: 24 žáků",
+        "Maximální kapacita: 240 žáků",
+        "Pedagogů: 17 (14 externích)"
+      ],
+      "evidence": "Vzhledem ke krátké době působení školy nejsou zatím k dispozici údaje o celkovém hodnocení za uzavřený školní rok."
+    },
+    "absence": {
+      "trend": "Vysoká v prvním pololetí, snížená po opatřeních vedení",
+      "key_numbers": [
+        "Průměr 1. pololetí: 110 hodin na žáka",
+        "Neomluvená absence: 0 hodin",
+        "Opatření vedla ve 2. pololetí k výraznému snížení"
+      ],
+      "evidence": "Průměrný počet zameškaných hodin na žáka činil v 1. pololetí 2025/2026 celkem 110 hodin. Po vyhodnocení vedení přijalo opatření, která vedla k výraznému snížení."
+    },
+    "support_services": [
+      "Výchovné poradenství propojené s prevencí sociálně patologických jevů",
+      "Individuální přístup k žákům s rizikem studijního neúspěchu",
+      "Podpora pro žáky se speciálními vzdělávacími potřebami (2 žáci) a s odlišným mateřským jazykem (1 žák)"
+    ],
+    "safety_climate": [
+      "Důraz na dodržování pravidel a bezpečné prostředí",
+      "Elektronický systém napomáhá bezpečnosti",
+      "Adaptační kurz pro nově vznikající třídní kolektiv má pozitivní dopad na motivaci a soudržnost"
+    ],
+    "partnerships_practice": [
+      "Laboratoře Gymnázia PORG pro praktickou výuku přírodních věd",
+      "Spolupráce s Gymnáziem Přírodní škola a Akademií věd na projektových aktivitách",
+      "Návštěvy speciálních pracovišť ČVUT, Národního muzea a České televize"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je jasně strukturovaná a obsahuje konkrétní fakta. Hlavní zjištění jsou srozumitelná. Absence dat o maturitě je pochopitelná vzhledem k věku školy. Některé pasáže jsou technické, ale pro rodiče jsou klíčové informace dostupné.",
+    "uncertainty_notes": [
+      "Dlouhodobé trendy nelze posoudit – škola funguje teprve 9 měsíců",
+      "Výsledky maturit nejsou k dispozici, první maturitní ročník bude v roce 2029",
+      "Kvalita učitelů bez kvalifikace není detailně popsána – není jasné, v kterých předmětech učí"
+    ]
+  }
+}
+```

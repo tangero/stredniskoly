@@ -3,7 +3,7 @@ import { promises as fs } from 'fs';
 import path from 'path';
 import { adresaNabidkyVeSkole, adresaPrehledu, nabidkySeStrankou } from '@/lib/adresa-oboru.mjs';
 import { normalizeSchoolKey, uniqueSchoolIndex } from '@/lib/school-key';
-import { getResultsForYear, getSchoolAnalysis, getSchools2026Data } from '@/lib/data';
+import { getPolozkyHledani, getResultsForYear, getSchoolAnalysis, getSchools2026Data } from '@/lib/data';
 import { readSchoolIds } from '@/lib/simulator-state';
 import { MESTA } from '@/lib/mesta.mjs';
 import { zrizovatelPodleRedizo } from '@/lib/simulator-filter';
@@ -233,8 +233,30 @@ export async function GET(request: NextRequest) {
         .some(value => normalizeText(value || '').includes(query));
     }).sort((a, b) => a.nazev.localeCompare(b.nazev, 'cs') || a.id.localeCompare(b.id, 'cs'));
     const mesta = najdiMesta(await getMesta(schools), query);
-    return NextResponse.json({ schools: (params.get('simulatorCatalog') === '1' ? filtered : filtered.slice(offset, offset + limit)).map(s => serialize(s)),
-      mesta, kraje: krajeCache, total: filtered.length, catalogYear: 2026 });
+    if (params.get('simulatorCatalog') === '1') {
+      // Simulátor nabídky bez JPZ zatím nezná (#244, etapa 5); katalog pro něj zůstává beze změny.
+      return NextResponse.json({ schools: filtered.map(s => serialize(s)), mesta, kraje: krajeCache, total: filtered.length, catalogYear: 2026 });
+    }
+    // Učební obory a ostatní nabídky bez JPZ (etapa 3c-3) do hledání textem: bez výsledků jednotné zkoušky,
+    // s odkazem na stránku oboru a druhem oboru. Stejný tvar odpovědi, chybějící údaje jsou null.
+    const bezJpz = query ? (await getPolozkyHledani()).filter(p => p.druh_oboru && (!duration || p.delka_studia === Number(duration))
+      && (!region || p.kraj_kod === region)
+      && [p.nazev, p.nazev_display, p.obor, p.zamereni, p.obec, p.adresa].some(v => normalizeText(v || '').includes(query))) : [];
+    type Polozka = { razeni: string; id: string; json: () => Record<string, unknown> };
+    const vse: Polozka[] = [
+      ...filtered.map(s => ({ razeni: s.nazev, id: s.id, json: () => serialize(s) })),
+      ...bezJpz.map(p => ({
+        razeni: p.nazev, id: p.id, json: () => ({
+          admission_context: null, demand: null, id: p.id, nazev: p.nazev, nazev_display: p.nazev_display ?? p.nazev,
+          obor: p.obor, zamereni: p.zamereni ?? null, obec: p.obec, ulice: null, adresa: p.adresa, kraj: p.kraj, kraj_kod: p.kraj_kod,
+          typ: p.typ, zrizovatel: null, delka_studia: p.delka_studia, slug: p.adresa_stranky, href: `/skola/${p.adresa_stranky}`,
+          catalog_year: 2026, offer_2027_status: 'unverified', history: null, comparison: { status: 'unavailable', minimum: null },
+          druh_oboru: p.druh_oboru,
+        }),
+      })),
+    ].sort((a, b) => a.razeni.localeCompare(b.razeni, 'cs') || a.id.localeCompare(b.id, 'cs'));
+    return NextResponse.json({ schools: vse.slice(offset, offset + limit).map(x => x.json()),
+      mesta, kraje: krajeCache, total: vse.length, catalogYear: 2026 });
   } catch (error) {
     console.error('Error searching schools:', error);
     return NextResponse.json({ error: 'Školy se nepodařilo načíst.' }, { status: 500 });

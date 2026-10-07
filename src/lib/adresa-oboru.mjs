@@ -245,3 +245,79 @@ export function nabidkySeStrankou(nabidky, znaZakladniKlic) {
     return zamereniProAdresu(n.zamereni) ? true : !seZamerenim.has(k) || !n.nevypsano_2026;
   });
 }
+
+/**
+ * Adresy nabídek bez jednotné zkoušky (issue #244, etapa 3a) jako mapa adresa → nabídka.
+ *
+ * Skládají se stejně jako adresy ostatních nabídek (`adresySkolyMapa`), jen nad vlastním seznamem,
+ * aby se **žádná dnešní adresa oboru se zkouškou nezměnila**: kdyby učební obory vstoupily do téhož
+ * výpočtu, mohly by ostatním nabídkám přidat délku studia nebo pořadí. Adresa, kterou už drží
+ * nabídka se zkouškou (`obsazene`), dostane pořadové číslo. Zaměření shodné s názvem oboru
+ * („Zahradník“ se zaměřením „zahradník“, u učebních oborů časté) do adresy nepatří.
+ *
+ * @param {string} redizo
+ * @param {string} nazevSkoly
+ * @param {NabidkaProAdresu[]} nabidky
+ * @param {Set<string>} obsazene
+ * @param {boolean} [sKodemOboru] adresy tak, jak je počítala etapa 3a (zaměření s kódem oboru); slouží jen
+ *   k rozpoznání starých adres, které se přesměrují na dnešní
+ * @returns {Map<string, NabidkaProAdresu>}
+ */
+export function adresyBezJpzMapa(redizo, nazevSkoly, nabidky, obsazene, sKodemOboru = false) {
+  const proAdresu = nabidky.map(n => ({
+    nabidka: n,
+    tvar: (() => {
+      const z = sKodemOboru ? String(n.zamereni ?? '') : zamereniBezKodu(n.zamereni);
+      return { ...n, zamereni: !z || slugify(z, 40) === slugify(n.obor ?? '', 40) ? undefined : z };
+    })(),
+  }));
+  /** @type {Map<string, NabidkaProAdresu>} */
+  const vysledek = new Map();
+  const mapa = adresySkolyMapa(redizo, nazevSkoly, proAdresu.map(x => x.tvar));
+  const puvodni = new Map(proAdresu.map(x => [x.tvar, x.nabidka]));
+  for (const adresa of [...mapa.keys()].sort()) {
+    let a = adresa;
+    for (let i = 2; obsazene.has(a) || vysledek.has(a); i++) a = `${adresa}-${i}`;
+    vysledek.set(a, puvodni.get(mapa.get(adresa)));
+  }
+  return vysledek;
+}
+
+/**
+ * Adresy, které nabídka bez JPZ převzít nesmí: přehled školy, adresy nabídek se zkouškou a jejich
+ * základní adresy bez zaměření a s délkou, které se dnes přesměrovávají (docs/adresa-oboru-2027.md).
+ * Sdílí ji aplikace (`getProgramyBezJpz`) i sitemapa, aby obě skládaly tytéž adresy.
+ *
+ * @param {string} redizo
+ * @param {string} nazevSkoly
+ * @param {NabidkaProAdresu[]} nabidkyJpz
+ * @returns {Set<string>}
+ */
+export function obsazeneAdresy(redizo, nazevSkoly, nabidkyJpz) {
+  return new Set([
+    adresaPrehledu(redizo, nazevSkoly),
+    ...adresySkolyMapa(redizo, nazevSkoly, nabidkyJpz).keys(),
+    ...nabidkyJpz.flatMap(n => [
+      `${redizo}-${createSlug(nazevSkoly, n.obor)}`,
+      `${redizo}-${createSlug(nazevSkoly, n.obor, undefined, n.delka_studia)}`,
+    ]),
+  ]);
+}
+
+/**
+ * Zaměření bez úvodních kódů oborů: CERMAT u konzervatoří a části učebních oborů píše do zaměření kód
+ * („82-44-M/01 Skladba“, „82-46-P/01, 82-46-M/01“). Pro název i adresu se kód vynechá (issue #244, 3b).
+ *
+ * @param {string|undefined|null} zamereni
+ * @returns {string}
+ */
+export function zamereniBezKodu(zamereni) {
+  return String(zamereni ?? '')
+    // „(82-44-M,P/01)“, „82-44-M/01, 82-44-P/01“, „Housle (82-44-M/01)“, „Truhlář - 33-56-H/01“
+    .replace(/\(?\s*\d{2}-\d{2}-[A-Z](?:,\s*[A-Z])*\/\d{2}\s*\)?/g, ' ')
+    .replace(/\s+([.,;])/g, '$1')
+    .replace(/([,;])(?:\s*[,;])+/g, '$1')
+    .replace(/^[\s,;.\-–]+|[\s,;\-–]+$/g, '')
+    .replace(/\s{2,}/g, ' ')
+    .trim();
+}

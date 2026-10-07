@@ -1,0 +1,111 @@
+```json
+{
+  "report_id": "GY4_691014566_2026-06-05",
+  "school_profile": {
+    "school_type": "Mateřská škola, základní škola a gymnázium VIA Beroun (MŠ, ZŠ bilingvní, SŠ/gymnázium)",
+    "inspection_period": "5. až 9. června 2026",
+    "school_change_summary": "Od poslední inspekce (2021/2022) došlo k výrazným změnám: nový ředitel od července 2023, rozšíření o předškolní vzdělávání (MŠ a přípravné třídy od září 2025) a střední vzdělávání (od září 2025). Zvýšil se počet dětí, žáků, tříd a pedagogických pracovníků. Zlepšily se prostorové a materiální podmínky."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Příjemné prostředí a vztahy",
+        "detail": "Pedagogové podporují pozitivní atmosféru a partnerské vztahy mezi všemi aktéry vzdělávání vstřícným a respektujícím přístupem.",
+        "evidence": "Všichni pedagogové svým vstřícným a respektujícím přístupem v komunikaci s dětmi i žáky podporují pozitivní atmosféru."
+      },
+      {
+        "tag": "Nadstandardní vybavení",
+        "detail": "Esteticky podnětné prostředí s edukativní výzdobou a kvalitními učebními pomůckami vytváří nadstandardní podmínky pro vzdělávání.",
+        "evidence": "Esteticky podnětné a funkčně vybavené školní prostředí s edukativní výzdobou a učebními pomůckami zajištěné ve spolupráci se zřizovatelem."
+      },
+      {
+        "tag": "Efektivní hodnocení",
+        "detail": "Funkční systém hodnocení kombinuje zpětnou vazbu, sebehodnocení a vrstevnické hodnocení, což podporuje odpovědnost žáků za vlastní učení.",
+        "evidence": "Funkční systém hodnocení výsledků vzdělávání poskytuje efektivní zpětnou vazbu a přispívá k rozvoji odpovědnosti za vlastní učení."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Diferenciace v mateřské škole",
+        "detail": "V heterogenních třídách MŠ a přípravných třídách není vzdělávací nabídka vždy dostatečně přizpůsobena věku a individuálním potřebám dětí.",
+        "evidence": "Organizace vzdělávání v heterogenních třídách neumožňovala v dostatečné míře diferenciaci vzdělávací nabídky vzhledem k věku a individuálním potřebám dětí."
+      },
+      {
+        "tag": "Diagnostika v předškolním vzdělávání",
+        "detail": "Informace z pedagogické diagnostiky nejsou vždy dostatečně využívány při plánování individualizované vzdělávací nabídky.",
+        "evidence": "Informace získané z pedagogické diagnostiky nebyly vždy dostatečně využívány při plánování konkrétních vzdělávacích záměrů."
+      },
+      {
+        "tag": "Diferenciace na gymnáziu",
+        "detail": "Žáci gymnázia nemají možnost výběru úloh s různou náročností podle svých schopností a předpokladů.",
+        "evidence": "Žáci neměli možnost výběru úloh s odlišnou kognitivní náročností a diferencovaných úloh s ohledem na rozvoj jejich individuálních studijních předpokladů."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola přizpůsobuje výuku individuálním potřebám dětí v mateřské škole a přípravných třídách?",
+      "Jaké má škola zkušenosti s podporou nadaných žáků a jak s nimi pracuje?",
+      "Jak funguje bilingvní výuka v praxi a jaké jsou výsledky žáků v angličtině?"
+    ],
+    "who_school_fits": [
+      "Rodiny hledající kvalitní bilingvní vzdělávání s důrazem na anglický jazyk od 1. třídy",
+      "Rodiče, kterým vyhovuje moderní přístup k vzdělávání s důrazem na sociální kompetence a wellbeing",
+      "Rodiny ocení nadstandardní vybavení, bezpečný areál a péči o individuální rozvoj dítěte"
+    ],
+    "who_should_be_cautious": [
+      "Rodiče dětí s výraznými individuálními potřebami by měli ověřit, jak konkrétně škola zajišťuje diferenciaci v heterogenních třídách",
+      "Pokud hledáte školu s tradičnějším přístupem, tato škola je zaměřena na moderní metody a sociální rozvoj",
+      "Rodiny s omezeným rozpočtem – škola je soukromá a vyžaduje úhradu za vzdělávání"
+    ],
+    "plain_czech_summary": "Škola VIA Beroun je moderní vzdělávací instituce od mateřské školy až po gymnázium s důrazem na bilingvní výuku. Inspektoři ocenili příjemné prostředí, kvalitní vybavení a vstřícný přístup pedagogů. Všichni žáci základní školy prospívají s vyznamenáním. Slabší stránkou je, že v mateřské škole a na gymnáziu není vždy dostatečně přizpůsobena výuka individuálním potřebám jednotlivých dětí a žáků. Škola má plán na zlepšení v těchto oblastech."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Gymnázium bylo zřízeno až v září 2025, v době inspekce (červen 2026) jsou pouze 1. ročníky. Maturitní výsledky zatím nejsou k dispozici.",
+      "key_numbers": [
+        "36 žáků v 1. ročníku gymnázia (naplněnost 15 %)",
+        "Žáci dosahují průměrného hodnocení v českém a anglickém jazyce",
+        "Nižší hodnocení v matematice a druhém cizím jazyce"
+      ],
+      "evidence": "Ve dvou třídách 1. ročníku čtyřletého oboru vzdělání Gymnázium bylo k termínu inspekční činnosti poskytováno vzdělávání 36 žákům."
+    },
+    "absence": {
+      "trend": "Zpráva neobsahuje konkrétní údaje o absenci žáků.",
+      "key_numbers": [
+        "Údaje o absenci nejsou v inspekční zprávě uvedeny"
+      ],
+      "evidence": "Inspekční zpráva se zaměřuje na kvalitu vzdělávání, bezpečnost a klima, absence není zmíněna."
+    },
+    "support_services": [
+      "Sedmičlenný tým Pastoral care poskytující poradenské služby",
+      "Dvě školní psycholožky (jedna pro 2. stupeň a koordinace prevence, druhá pro MŠ, PT a 1. stupeň)",
+      "Dvě speciálně pedagogicky kvalifikované pedagožky pro 6 žáků se speciálními vzdělávacími potřebami",
+      "Výchovné poradenství zajišťované zástupkyní 1. stupně a třídními učiteli",
+      "Efektivní spolupráce s externími specializovanými pracovišti",
+      "Preventivní programy zaměřené na bezpečnost a zdravý životní styl"
+    ],
+    "safety_climate": [
+      "Pravidla a opatření k zajištění bezpečného prostředí jsou jasně nastavena ředitelem",
+      "Systém prevence úrazů, bezpečnosti a ochrany zdraví je funkční, úrazovost je nízká",
+      "Vchody do budov jsou zajištěny proti vstupu cizích osob i proti svévolnému odchodu dětí a žáků",
+      "Dětí a žáci jsou přiměřeně seznamováni s pravidly bezpečného chování",
+      "Součástí vzdělávání jsou preventivní aktivity a programy zaměřené na předcházení rizikovému chování"
+    ],
+    "partnerships_practice": [
+      "Škola podporuje spolupráci se zákonnými zástupci prostřednictvím společných kulturních, společenských a sportovních akcí",
+      "Vytváření portfolia spřátelených spolupracujících organizací",
+      "Zapojení žáků do charitativních akcí a školních soutěží",
+      "Efektivní spolupráce s externími specializovanými pracovišti v oblasti poradenských služeb",
+      "Komunikace se zákonnými zástupci prostřednictvím školního informačního systému, osobních schůzek a digitálních komunikačních platforem"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je psána srozumitelně a obsahuje konkrétní příklady z hospitací. Jsou jasně odděleny silné stránky a oblasti ke zlepšení. Některé pasáže jsou však poměrně dlouhé a obsahují odbornou terminologii, která může být pro laické rodiče méně přístupná.",
+    "uncertainty_notes": [
+      "Gymnázium bylo zřízeno teprve v září 2025, takže nejsou k dispozici dlouhodobé výsledky maturit ani zkušenosti s absolventy",
+      "Naplněnost gymnázia je velmi nízká (15 %), není jasné, zda se zvýší v následujících letech",
+      "Některé údaje o kvalifikaci pedagogů (7 rodilých mluvčích bez předepsaného vzdělání) nejsou zcela jasné, inspektoři však uvedli, že to neovlivnilo kvalitu výuky"
+    ]
+  }
+}
+```

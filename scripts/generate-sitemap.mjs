@@ -7,12 +7,13 @@ import { SITE_URL } from '../src/lib/site.mjs';
 import { MESTA } from '../src/lib/mesta.mjs';
 import { krajNames } from '../src/lib/kraje.mjs';
 import { hasInspectionSummary } from '../src/lib/inspection-availability.mjs';
-import { adresySkoly, adresaPrehledu, nabidkySeStrankou } from '../src/lib/adresa-oboru.mjs';
+import { adresySkoly, adresaPrehledu, adresyBezJpzMapa, nabidkySeStrankou, obsazeneAdresy } from '../src/lib/adresa-oboru.mjs';
 
 const BASE_URL = SITE_URL;
 const PUBLIC_DIR = path.join(process.cwd(), 'public');
 const SCHOOL_ANALYSIS_PATH = path.join(PUBLIC_DIR, 'school_analysis.json');
 const SCHOOLS_DATA_PATH = path.join(PUBLIC_DIR, 'schools_data.json');
+const OBORY_BEZ_JPZ_PATH = path.join(process.cwd(), 'src', 'data', 'obory-bez-jpz-2026.json');
 const OUTPUT_PATH = path.join(PUBLIC_DIR, 'sitemap.xml');
 
 function readJson(filePath) {
@@ -54,7 +55,7 @@ function xmlEscape(value) {
  * tentýž, kterým je rozpoznává `src/lib/data.ts` — sitemapa tak nemůže ukazovat na adresu,
  * která se přesměrovává. Ročník se bere z registru stavu datových sad, ne napevno.
  */
-function buildSchoolSlugs(analysisData, schoolsData, rocnik) {
+function buildSchoolSlugs(analysisData, schoolsData, rocnik, oboryBezJpz = null) {
   const schools = Object.values(analysisData || {});
   const nabidkyRocniku = (schoolsData || {})[rocnik] || [];
   if (!nabidkyRocniku.length) {
@@ -76,6 +77,15 @@ function buildSchoolSlugs(analysisData, schoolsData, rocnik) {
     podleRedizo.get(row.redizo).push(row);
   }
 
+  // Soubor nabídek bez JPZ platí jen pro ročník, který registr zobrazuje (jako v src/lib/obory-bez-jpz.ts).
+  const bezJpzPodleRedizo = new Map();
+  if (oboryBezJpz && String(oboryBezJpz.rok) === String(rocnik)) {
+    for (const n of oboryBezJpz.nabidky) {
+      if (!bezJpzPodleRedizo.has(n.redizo)) bezJpzPodleRedizo.set(n.redizo, []);
+      bezJpzPodleRedizo.get(n.redizo).push(n);
+    }
+  }
+
   const slugs = new Set();
   for (const [redizo, nabidky] of podleRedizo) {
     // Název školy bere `data.ts` ze school_analysis.json; sitemapa musí brát týž,
@@ -85,6 +95,21 @@ function buildSchoolSlugs(analysisData, schoolsData, rocnik) {
     // Jen nabídky, pro které stránka oboru vznikne; ostatní by se jen přesměrovaly.
     const sestrankou = nabidkySeStrankou(nabidky, k => zakladniKlice.has(k));
     for (const adresa of adresySkoly(redizo, nazev, sestrankou)) slugs.add(adresa);
+    // Nabídky bez JPZ (issue #244, etapa 3a) jen u škol, které web vede, se stejnými adresami jako aplikace.
+    const bezJpz = bezJpzPodleRedizo.get(redizo);
+    if (bezJpz) {
+      const vstup = bezJpz.map(n => ({ id: n.id, obor: n.obor, zamereni: n.zamereni || undefined, delka_studia: n.delka ?? 0 }));
+      for (const adresa of adresyBezJpzMapa(redizo, nazev, vstup, obsazeneAdresy(redizo, nazev, sestrankou)).keys()) slugs.add(adresa);
+    }
+  }
+
+  // Školy jen s obory bez JPZ, které katalog nevede (etapa 3b): přehled a stránky jejich nabídek.
+  for (const [redizo, bezJpz] of bezJpzPodleRedizo) {
+    const skola = oboryBezJpz.skoly?.[redizo];
+    if (nazvy.has(redizo) || !skola) continue;
+    slugs.add(adresaPrehledu(redizo, skola.nazev));
+    const vstup = bezJpz.map(n => ({ id: n.id, obor: n.obor, zamereni: n.zamereni || undefined, delka_studia: n.delka ?? 0 }));
+    for (const adresa of adresyBezJpzMapa(redizo, skola.nazev, vstup, obsazeneAdresy(redizo, skola.nazev, [])).keys()) slugs.add(adresa);
   }
 
   return Array.from(slugs).sort((a, b) => a.localeCompare(b, 'cs'));
@@ -107,8 +132,8 @@ function buildKrajSlugs(analysisData) {
  * Jen kanonické cesty. Lastmod záměrně vynecháváme: mtime dat při buildu
  * neříká, kdy se významně změnila konkrétní stránka.
  */
-export function buildSitemapPaths(analysisData, schoolsData, rocnik, inspections, resultYears) {
-  const schoolSlugs = buildSchoolSlugs(analysisData, schoolsData, rocnik);
+export function buildSitemapPaths(analysisData, schoolsData, rocnik, inspections, resultYears, oboryBezJpz = null) {
+  const schoolSlugs = buildSchoolSlugs(analysisData, schoolsData, rocnik, oboryBezJpz);
   const schoolSet = new Set(schoolSlugs);
   const paths = new Set([
     '/', '/prijimacky-2027', '/simulator', '/skoly', '/regiony', '/mesto',
@@ -155,7 +180,8 @@ function main() {
   const rocnik = registr?.sady?.['cermat-prihlasky']?.zobrazeno?.obdobi;
   if (!rocnik) throw new Error('registr neuvádí zobrazené období sady cermat-prihlasky');
 
-  const paths = buildSitemapPaths(analysisData, schoolsData, rocnik, inspections, results.available_years);
+  const oboryBezJpz = fs.existsSync(OBORY_BEZ_JPZ_PATH) ? readJson(OBORY_BEZ_JPZ_PATH) : null;
+  const paths = buildSitemapPaths(analysisData, schoolsData, rocnik, inspections, results.available_years, oboryBezJpz);
   fs.writeFileSync(OUTPUT_PATH, renderSitemap(paths), 'utf8');
   console.log(`Generated sitemap: ${OUTPUT_PATH}`);
   console.log(`Total URLs: ${paths.length}`);

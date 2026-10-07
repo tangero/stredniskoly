@@ -1,0 +1,105 @@
+```json
+{
+  "report_id": "GY4_600015572_2026-06-10",
+  "school_profile": {
+    "school_type": "Soukromé gymnázium se zaměřením na IT a ekonomiku s právem státní jazykové zkoušky",
+    "inspection_period": "10. 6. 2026 − 12. 6. 2026",
+    "school_change_summary": "Škola prošla významnou obměnou pedagogického sboru a zavedla nová studijní zaměření. Došlo ke zlepšení vybavení a systematizaci kontrolní činnosti. Výrazně se zlepšily výsledky maturitních zkoušek."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Výborná podpora žáků se speciálními potřebami",
+        "detail": "Školní poradenské pracoviště poskytuje velmi dobrou podporu prostřednictvím účelně nastavených podpůrných opatření a pravidelné spolupráce se všemi zainteresovanými stranami.",
+        "evidence": "Individuální vzdělávací plány jsou zpracovány kvalitně a jejich realizace je průběžně vyhodnocována."
+      },
+      {
+        "tag": "Kvalitní výuka s praktickým zaměřením",
+        "detail": "Učitelé propojují teorii s praxí, využívají digitální technologie a vytvářejí příznivé pracovní klima bez kázeňských problémů.",
+        "evidence": "V odborných předmětech je patrné účelné propojování teoretických poznatků s jejich praktickým využitím."
+      },
+      {
+        "tag": "Zlepšené výsledky maturit",
+        "detail": "Ve školním roce 2024/2025 byli úspěšní všichni žáci denního studia s výjimkou jednoho, v jarním období 2025/2026 uspěli všichni.",
+        "evidence": "Výrazně se to projevilo zejména ve výsledcích maturitních zkoušek."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Chybí vlastní tělocvična",
+        "detail": "Škola nemá vlastní tělocvičnu ani sportoviště, což omezuje podmínky pro realizaci pohybových aktivit.",
+        "evidence": "Tělesná výchova se realizuje v tělocvičně místní základní školy s organizovanými přesuny žáků."
+      },
+      {
+        "tag": "Někteří učitelé nemají potřebnou kvalifikaci",
+        "detail": "Ke dni inspekce dva pedagogičtí pracovníci nesplňovali odbornou kvalifikaci stanovenou právním předpisem.",
+        "evidence": "Ředitel školy doložil, že vyvinul prokazatelné úsilí, které však nebylo úspěšné."
+      },
+      {
+        "tag": "Nedostatečná individualizace výuky",
+        "detail": "Ve výuce chybí diferenciace podle vzdělávacích potřeb, úlohy s rozdílnou náročností a metody podporující kritické myšlení.",
+        "evidence": "Výuka postrádala systematičtější využívání sebehodnocení a vzájemného hodnocení žáků."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola řeší nedostatek vlastní tělocvičny a jak jsou zajištěny bezpečné přesuny žáků?",
+      "Jaký je plán na doplnění kvalifikace pedagogů, kteří ji v současnosti nemají?",
+      "Jak škola individualizuje výuku pro žáky s různými schopnostmi a jak se to projeví v praxi?"
+    ],
+    "who_school_fits": [
+      "Žáci se speciálními vzdělávacími potřebami, kterým škola poskytuje velmi dobrou podporu",
+      "Studenti zainteresovaní na propojení teorie s praxí a digitálními technologiemi",
+      "Žáci, kteří si cení kvalitního poradenství a osobního přístupu pedagogů"
+    ],
+    "who_should_be_cautious": [
+      "Žáci, kteří potřebují intenzivní individualizovanou výuku s úlohami různé náročnosti",
+      "Studenti, pro které je tělesná výchova důležitá a preferují vlastní školní vybavení",
+      "Žáci v kombinované formě studia, kde jsou výsledky maturit méně příznivé"
+    ],
+    "plain_czech_summary": "Soukromé gymnázium v Kunovicích se zlepšuje. Inspektoři ocenili kvalitní práci s žáky se speciálními potřebami, dobrou výuku s praktickým zaměřením a výrazné zlepšení výsledků maturit. Problémy jsou tři: chybí vlastní tělocvična, dva učitelé nemají potřebnou kvalifikaci a výuka by měla více individualizovat úlohy podle schopností žáků. Škola má jasný plán na zlepšení."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Výrazné zlepšení",
+      "key_numbers": [
+        "Školní rok 2024/2025: všichni žáci denního studia úspěšní kromě jednoho",
+        "Jarní období 2025/2026: 100% úspěšnost v denní formě",
+        "Kombinovaná forma: 4 neúspěšní žáci v jarním období"
+      ],
+      "evidence": "Výrazně se to projevilo zejména ve výsledcích maturitních zkoušek. V jarním zkušebním období školního roku 2025/2026 uspěli všichni žáci denní formy vzdělávání."
+    },
+    "absence": {
+      "trend": "Není v textu specifikováno",
+      "key_numbers": [],
+      "evidence": "Zpráva se absence věnuje minimálně, zaměřuje se na kázeňský klimat a dodržování pravidel."
+    },
+    "support_services": [
+      "Školní poradenské pracoviště koordinované ředitelem školy s výchovnou poradkyní",
+      "Péče o žáky se speciálními vzdělávacími potřebami s individuálními vzdělávacími plány",
+      "Supervizní setkání pro podporu pedagogických a psychosociálních kompetencí pedagogů",
+      "Adaptační programy a třídnické hodiny zaměřené na pozitivní vztahy mezi žáky"
+    ],
+    "safety_climate": [
+      "Příznivé pracovní klima založené na vzájemném respektu",
+      "Výuka probíhá v klidném prostředí bez kázeňských problémů",
+      "Žáci dodržují nastavená pravidla a aktivně komunikují s učiteli",
+      "Nastavená opatření pro bezpečnost a ochranu zdraví minimalizují bezpečnostní rizika"
+    ],
+    "partnerships_practice": [
+      "Spolupráce se zřizovatelem a školskou radou",
+      "Komunikace se zákonnými zástupci prostřednictvím běžně využívaných informačních kanálů",
+      "Přínosná spolupráce s odbornými pracovišti a zaměstnavateli podporující propojení vzdělávání s praxí",
+      "Mezinárodní spolupráce není v současné době rozvíjena"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 5,
+    "czech_clarity_reason": "Zpráva je velmi jasně strukturovaná, používá srozumitelný jazyk bez zbytečného úřednického stylu. Konkrétní zjištění jsou podpořena citacemi a číselnými údaji. Silné a slabé stránky jsou jasně odděleny a doporučení jsou konkrétní a realizovatelná.",
+    "uncertainty_notes": [
+      "Absence není v textu detailně řešena, není jasné, jaké jsou konkrétní údaje o absenci žáků",
+      "Finanční situace školy je popsána jen obecně jako 'mírně zlepšená', konkrétní čísla nejsou uvedena",
+      "Plán na dobudování zázemí pro kynologii není konkrétně datován"
+    ]
+  }
+}
+```

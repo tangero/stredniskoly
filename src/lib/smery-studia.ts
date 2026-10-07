@@ -81,3 +81,25 @@ export function jeNastavba(kkov: string): boolean {
 export function jeVyucniList(kkov: string): boolean {
   return /-[EH]\/\d\d$/.test(kkov);
 }
+
+/**
+ * Čím studium končí (issue #393): skupiny oborů na stránce školy. Pořadí je pevné a nemění se podle
+ * školy (rozhodnutí vlastníka 6. 10. 2026), aby rodinu nemátlo; nic neříká o tom, které vzdělání je lepší.
+ */
+export type DruhVzdelani = 'maturita' | 'vyucni' | 'po_vyuceni' | 'ostatni';
+
+export const DRUHY_VZDELANI: { id: DruhVzdelani; nazev: string }[] = [
+  { id: 'maturita', nazev: 'S maturitou' },
+  { id: 'vyucni', nazev: 'S výučním listem' },
+  { id: 'po_vyuceni', nazev: 'Po vyučení' },
+  { id: 'ostatni', nazev: 'Ostatní' },
+];
+
+/** Skupina podle kategorie v kódu KKOV: K, M, L maturita (nástavby L/5x zvlášť), H a E výuční list, C, J, P ostatní. */
+export function druhVzdelani(kkov: string): DruhVzdelani {
+  if (jeNastavba(kkov)) return 'po_vyuceni';
+  const kategorie = /^\d{2}-\d{2}-([A-Z])\/\d{2}$/.exec(kkov)?.[1];
+  if (kategorie === 'K' || kategorie === 'M' || kategorie === 'L') return 'maturita';
+  if (kategorie === 'H' || kategorie === 'E') return 'vyucni';
+  return 'ostatni';
+}

@@ -14,6 +14,7 @@ dokument popisuje nastavení GitHubu, na kterém stojí.
 | `navrh` | čeká na schválení Patrickem, nerealizovat |
 | `schvaleno` | Claude Code může realizovat; přidává jen Patrick |
 | `zamitnuto` | nerealizovat |
+| `otazka` | AI se ptá vlastníka; otázka mu jde do Telegramu (workflow Otázka vlastníkovi), štítek zmizí po jeho odpovědi |
 | `oponentura` | problém pro nový projekt projde oponenturou (workflow Oponentura) a štítek se sám odebere; mezitím nerealizovat |
 | `k-overeni` | otevřený PR s protokolem z preview (ověřuje AI, vlastník volitelně); po sloučení ho z otevřeného issue (etapa projektu) odebere workflow Tabule |
 | `pripominka` | úkol s termínem; před termínem se nerealizuje |
@@ -41,6 +42,24 @@ zpracování issues: štítek `pripominka` a termín v těle, buď z pole formul
 
 První připomínka: #240, vyhodnocení sklizně výpisů aktualit k 8. 10. 2026.
 
+## 2b. Kritéria přínosu a jejich vyhodnocení
+
+Zadání nové funkce nebo změny webu může mít v těle oddíl „Přínos a vyhodnocení“ (pole formuláře, zadání #326).
+Druhy kritérií:
+
+- **správnost**: dělá funkce, co tvrdí, změřitelně z vlastních dat (například o kolik se liší výsledek s funkcí a bez ní);
+- **použití**: kolik lidí funkci použije a co udělají dál (události v Matomu);
+- **vnímání**: krátká otázka na stránce, jen když je to opravdu potřeba;
+- **předpoklad**: přínos, který změřit neumíme; zapíše se jako předpoklad s podmínkou, kdy funkci zjednodušit nebo zrušit.
+
+Postup:
+
+1. Řádek `Termín: RRRR-MM-DD` v oddílu je termín vyhodnocení. Ke sloučení zadání založí Claude Code (nebo asistent
+   zadání) připomínku (štítek `pripominka`, řádek `Termín:`, odkaz na zadání), zpracuje se podle oddílu 2.
+2. Od termínu Claude Code vyhodnocení provede a zapíše komentářem do zadání: co se měřilo, jaká čísla vyšla,
+   které kritérium splněno a které ne. Čísla, která nemá z čeho vzít (chybí signál), označí jako nezměřená.
+3. Rozhodnutí z vyhodnocení (ponechat, zjednodušit, zrušit) dělá Patrick. Do jeho rozhodnutí funkci nerušíme.
+
 ## 2a. Ruční zásahy
 
 Když vlastník ručně odblokuje něco, co měla zvládnout automatika (zaseknutý náhled, restart běhu,
@@ -64,7 +83,7 @@ při každé změně štítků, issues a PR, po každém běhu brány sloučení
 | stav | podle čeho | kdo je na tahu |
 |---|---|---|
 | Hlášení | veřejná hlášení, připomínky a issues bez stavového štítku | třídění (AI) |
-| Návrh | `navrh` (bez `schvaleno`) nebo `stop` | **vlastník** |
+| Návrh | `navrh` (bez `schvaleno`), `stop` nebo `otazka` (AI čeká na odpověď) | **vlastník** |
 | Oponentura | `oponentura` (má přednost i před `navrh`): návrh posuzuje workflow Oponentura, pak jde k vlastníkovi | AI |
 | Schváleno | `schvaleno` nebo doklad `Zdroj:` v interním zadání, žádný otevřený PR | denní úloha podle Směru vývoje |
 | V PR | otevřený PR s `Closes #N` nebo `Souvisí s #N` (CI, review, vypořádání, lhůta) | AI |
@@ -95,6 +114,15 @@ Secrets: `CLAUDE_CODE_OAUTH_TOKEN`, `KIMI_API_KEY` (klíč z konzole Kimi Code, 
 a `PROJECT_TOKEN` na změnu štítků. Výchozí rozhraní Kimi je `https://api.kimi.ai/coding/`; účet z kimi.com
 (Čína) potřebuje proměnnou repozitáře `KIMI_BASE_URL` s hodnotou `https://api.kimi.com/coding/`. Verze Claude
 Code je ve workflow připnutá; novější připni až po ověření s Kimi.
+
+**Otázka vlastníkovi** (`.github/workflows/otazka.yml`, `scripts/brana/otazka.mjs`, #385): AI píše z účtu vlastníka,
+takže mu GitHub o jejích otázkách nic neoznámí. Když se ptá, přidá štítek `otazka`; workflow pošle poslední
+komentář AI do Telegramu s odkazem. Komentář vlastníka bez patičky AI, nebo zápis jeho odpovědi s nadpisem
+„Odpověď vlastníka“ (od něj nebo od asistenta zadání), štítek odebere (přes `PROJECT_TOKEN`, aby se srovnala tabule).
+
+**Automatické obnovy dat** (RA46): PR z větví `auto/veletrhy-snimek` a `codex/csi-weekly-refresh`, které mění jen
+cesty uvedené u větve v `datove_obnovy` v `rezimy.yml`, brána pustí v režimu R bez souhlasu a review; po CI se
+sloučí samy. Změna jiné cesty se posuzuje jako dřív.
 
 Potřebuje secret `PROJECT_TOKEN`, klasický token se scopes `project` a `public_repo` (fine-grained token
 do projektu na osobním účtu zapisovat neumí). Token má omezenou platnost; expiraci hlídá týdenní přehled.

@@ -34,6 +34,8 @@ const DELKA_SLOVY: Record<number, string> = { 2: 'dvouleté', 3: 'tříleté', 4
 /** Ze které třídy se na obor hlásí; nástavby po vyučení. */
 function proKoho(typ: string, delka: number): string {
   if (typ === 'NAS') return 'po vyučení';
+  // Konzervatoř (issue #244): šestiletá po 9. třídě, osmiletá po 5. třídě.
+  if (typ === 'KON') return delka === 8 ? 'z 5. třídy' : 'z 9. třídy';
   if (delka === 8) return 'z 5. třídy';
   if (delka === 6) return 'ze 7. třídy';
   return 'z 9. třídy';

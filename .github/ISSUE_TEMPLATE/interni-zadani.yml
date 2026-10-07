@@ -36,7 +36,7 @@ body:
     id: hotovo
     attributes:
       label: Hotovo když
-      description: "Kritéria jako checklist. Každé má označení K1, K2… a za pomlčkou, čím se ověří (adresa a šířka náhledu, test, příkaz). Jedno kritérium = jedna kontrola s výsledkem ano/ne; místo „A a B“ napište dvě kritéria. Označení se nepřečíslovávají: rozdělené K3 má K3.1 a K3.2, zrušené kritérium zůstane přeškrtnuté (~~K4: …~~). Protokol z preview musí mít řádek pro každé K a P, jinak ho brána nepustí. Kritérium ve tvaru `ověření: /adresa „očekávaný text“` se po sloučení ověřuje i v produkci (#325)."
+      description: "Kritéria jako checklist. Každé má označení K1, K2… a za pomlčkou, čím se ověří (adresa a šířka náhledu, test, příkaz). Jedno kritérium = jedna kontrola s výsledkem ano/ne; místo „A a B“ napište dvě kritéria. Označení se nepřečíslovávají: rozdělené K3 má K3.1 a K3.2, zrušené kritérium zůstane přeškrtnuté (~~K4: …~~). Kritérium ve tvaru `ověření: /adresa „očekávaný text“` se po sloučení ověřuje i v produkci (#325)."
       value: |
         - [ ] K1: … - ověření: náhled /…, 390 a 1280 px
         - [ ] K2: … - ověření: …
@@ -55,6 +55,19 @@ body:
         - Cizí servery: žádné (jinak uvést server, endpointy, rychlost, data a důvod; před prvním dotazem zapsat do issue, odkud se stahuje, schválení netřeba; CLAUDE.md pravidlo 7).
     validations:
       required: true
+  - type: textarea
+    id: prinos
+    attributes:
+      label: Přínos a vyhodnocení
+      description: "Nepovinné; u nové funkce nebo změny webu vyplňte. Kritéria přínosu podle druhu: správnost (dělá funkce, co tvrdí, změřitelně z vlastních dat), použití (kolik lidí funkci použije a co udělají dál, události v Matomu), vnímání (krátká otázka na stránce, jen když je opravdu potřeba), předpoklad (přínos, který změřit neumíme; uveďte podmínku, kdy funkci zjednodušit nebo zrušit). Řádek `Termín: RRRR-MM-DD` vyhodnocení; z něj vznikne připomínka (štítek pripominka)."
+      value: |
+        - Správnost: …
+        - Použití: …
+        - Vnímání: …
+        - Předpoklad a podmínka zjednodušení nebo zrušení: …
+        Termín: RRRR-MM-DD
+    validations:
+      required: false
   - type: textarea
     id: otazky
     attributes:

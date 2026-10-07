@@ -5,6 +5,8 @@ import { nabidkyKraje, type SouhrnNabidkyKraje } from './souhrny-kolo1';
 import { adresaPrehledu } from './adresa-oboru.mjs';
 import { druheKoloPodleRedizo, klicDruhehoKola, rokDruhehoKola } from './druhe-kolo';
 import { getSchoolAnalysis } from './data';
+import { nabidkyBezJpzVKraji, obtiznostBezJpz, typBezJpz } from './obory-bez-jpz';
+import { zamereniBezKodu } from './adresa-oboru.mjs';
 import { getWebSkoly } from './skoly-web';
 import { maturitaVPrehledu, type MaturitaVPrehledu } from './maturita-skoly';
 import { zobrazeneObdobi } from './stav-datovych-sad';
@@ -192,6 +194,36 @@ async function spoctiKrajPrehled(
   // Katalog bez zobrazeného ročníku (registr přepnutý dřív, než vyšla data): rodině se
   // nesmí ukázat „0 škol“ — chybějící data nejsou nula. Stránka udělá notFound().
   if (skoly.size === 0) return null;
+
+  // Nabídky bez jednotné zkoušky (issue #244, etapa 3c-2): učební obory, umělecké obory, konzervatoře
+  // a praktické školy, i u škol mimo katalog. Bez kohorty a pořadí v kraji (nemají srovnatelnou skupinu
+  // se souhrny 1. kola); obtížnost jen podle pravidel návrhu (oddíl 10.1).
+  for (const { nabidka: b, skola: sb } of await nabidkyBezJpzVKraji(krajKod)) {
+    const nabidka: NabidkaKraje = {
+      klic: b.id, redizo: b.redizo, obor: b.obor,
+      zamereni: (() => { const z = zamereniBezKodu(b.zamereni); return z && z.toLocaleLowerCase('cs') !== b.obor.toLocaleLowerCase('cs') ? z : ''; })(),
+      delka: b.delka ?? 0, skupina: typBezJpz(b.kategorie),
+      kapacita: b.kapacita, prihlasky: b.prihlasky, prihlaskyNaMisto: b.index_poptavky,
+      zarazeni: obtiznostBezJpz(b), zarazeniPredchozi: null, predchoziRok: null,
+      soutezici: b.prijati !== null && b.nepr_kapacita !== null ? b.prijati + b.nepr_kapacita : null,
+      prijati: b.prijati, nesplniliPodminky: b.nepr_podminky, kohorta: null,
+      novaNabidka: b.rok_2025 === null, meloDruheKolo: b.kolo_2 !== null,
+      poradiZajem: null, poradiVysledky: null,
+    };
+    const existujici = skoly.get(b.redizo);
+    if (existujici) {
+      existujici.nabidky.push(nabidka);
+      continue;
+    }
+    // Škola, kterou souhrny 1. kola nevedou (nabízí jen obory bez JPZ): karta z rejstříku (etapa 3b).
+    skoly.set(b.redizo, {
+      redizo: b.redizo, nazev: sb.nazev, obec: sb.obec, okres: sb.okres ?? '', ulice: sb.ulice ?? '',
+      zrizovatel: sb.zrizovatel, slug: adresaPrehledu(b.redizo, kanonickeNazvy.get(b.redizo) ?? sb.nazev),
+      web: await getWebSkoly(b.redizo),
+      maturita: obdobiMaturity ? await maturitaVPrehledu(b.redizo) : null,
+      nabidky: [nabidka],
+    });
+  }
 
   const seznam = [...skoly.values()].sort((x, y) => x.nazev.localeCompare(y.nazev, 'cs'));
   for (const s of seznam) {

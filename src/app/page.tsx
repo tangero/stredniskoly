@@ -4,7 +4,7 @@ import { Footer } from '@/components/Footer';
 import { SchoolSearch } from '@/components/SchoolSearch';
 import { VibecordingPromo } from '@/components/VibecordingPromo';
 import { OdberBlok } from '@/components/novinky/OdberBlok';
-import { getAllSchoolsForSearch, getAllKraje } from '@/lib/data';
+import { getPolozkyHledani, getAllKraje } from '@/lib/data';
 import { zobrazeneObdobi } from '@/lib/stav-datovych-sad';
 import calendar from '@/data/admissions-2027.json';
 
@@ -59,7 +59,7 @@ function terminyJednotneZkousky(): string | null {
 }
 
 export default async function HomePage() {
-  const schools = await getAllSchoolsForSearch();
+  const schools = await getPolozkyHledani();
   const kraje = await getAllKraje();
 
   // Počet unikátních škol (podle REDIZO), ne zaměření

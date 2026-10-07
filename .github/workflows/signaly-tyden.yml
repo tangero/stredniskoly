@@ -1,0 +1,46 @@
+name: Signály týdně
+
+# Týdenní souhrn z Matomu (zadání #326, etapa 1b): plný do Telegramu, do artefaktu běhu (90 dní) jen verze bez hledaných výrazů (artefakt je veřejný).
+# Potřebuje secret MATOMO_TOKEN (token jen pro čtení); bez něj skript skončí chybou a nic nestáhne.
+# Do repozitáře se nic nezapisuje.
+
+on:
+  schedule:
+    - cron: "0 6 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: read
+
+jobs:
+  souhrn:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Hlášení podle oblasti
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh issue list -R "$GITHUB_REPOSITORY" --state open --limit 500 --json labels > hlaseni.json
+      - name: Souhrn z Matomu
+        env:
+          MATOMO_TOKEN: ${{ secrets.MATOMO_TOKEN }}
+        run: |
+          python3 scripts/signaly_tyden.py --hlaseni hlaseni.json --bez-hledani souhrn-bez-hledani.md \
+            --telegram zprava.txt --odkaz "$GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID" > /dev/null
+      - uses: actions/upload-artifact@v4
+        with:
+          name: signaly-tyden
+          path: souhrn-bez-hledani.md
+          retention-days: 90
+      - name: Telegram
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: |
+          curl -fsS "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
+            --data-urlencode "chat_id=${TELEGRAM_CHAT_ID}" --data-urlencode "text@zprava.txt" > /dev/null

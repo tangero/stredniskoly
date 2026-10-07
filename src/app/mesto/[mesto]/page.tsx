@@ -6,11 +6,12 @@ import { Footer } from '@/components/Footer';
 import { MESTA, getCityStats } from '@/lib/cityData';
 import { zobrazeneObdobi } from '@/lib/stav-datovych-sad';
 import { dalsiOboryVeMeste, nactiIndexRejstriku } from '@/lib/kontext-prihlasek';
-import { getSchoolsData } from '@/lib/data';
+import { bezJpzProKlice, getNabidkyBezJpzVeMeste, getSchoolsData } from '@/lib/data';
 import { getOkruheMesta } from '@/lib/okruhy-oboru';
 import { castiObce, katalogOboru, kanonickeNazvySkol, nazvySkolKatalogu, obtiznostOboru } from '@/lib/okruhy-podklad';
 import { OkruhyMesta } from '@/components/mesto/OkruhyMesta';
 import { sestavKartySkol, sestavOkruhyMesta, velikostMesta } from '@/lib/mesto-karty';
+import { DRUHY_VZDELANI } from '@/lib/smery-studia';
 import { SkolyPodleSmeru } from '@/components/mesto/SkolyPodleSmeru';
 import { zrizovatelPodleRedizo } from '@/lib/simulator-filter';
 import { VeletrhVMeste } from '@/components/veletrhy/VeletrhVMeste';
@@ -75,12 +76,19 @@ export default async function MestoPage({ params }: Props) {
     nactiIndexRejstriku(), nazvySkolKatalogu(), kanonickeNazvySkol(),
   ]);
 
+  // Nabídky bez jednotné zkoušky (issue #244, etapa 3c-1): učební obory, praktické školy, konzervatoře
+  // a umělecké obory s čísly a vlastní stránkou, i u škol, které katalog nevede.
+  const bezJpz = await getNabidkyBezJpzVeMeste(mestoMeta.nazev);
   const skoly = sestavKartySkol(schools, dalsi.obory, {
     nazvyKatalogu, kanonickeNazvy, adresySidel: rejstrik.identifikace, obec: mestoMeta.nazev,
     zrizovatele: zrizovatelPodleRedizo(await getSchoolsData() as unknown as Record<string, unknown>),
-  });
-  const pocetNabidek = skoly.flatMap(k => k.radky).filter(r => r.druh === 'jpz').length;
-  const pocetDalsich = dalsi.obory.length;
+  }, bezJpz);
+  const radky = skoly.flatMap(k => k.radky);
+  // Obory s čísly podle toho, čím studium končí, v pevném pořadí skupin (issue #393); obory, které přehled
+  // nevede (jen z přihlášek, bez míst), zvlášť.
+  const sCisly = radky.filter(r => r.mista !== null || r.druh === 'jpz');
+  const poSkupinach = DRUHY_VZDELANI.map(d => ({ ...d, pocet: sCisly.filter(r => r.vzdelani === d.id).length })).filter(d => d.pocet > 0);
+  const pocetDalsich = radky.length - sCisly.length;
 
   // Okruhy oborů: jen města, kde okruhy vycházejí (meze zveřejnění uplatnil generátor).
   const okruheMesta = await getOkruheMesta(mestoMeta.nazev);
@@ -89,6 +97,7 @@ export default async function MestoPage({ params }: Props) {
       katalog: await katalogOboru(), nazvyKatalogu, kanonickeNazvy, rejstrik,
       obtiznost: await obtiznostOboru(okruheMesta.okruhy.flatMap(o => o.obory.map(x => x.klic))),
       castiObce: await castiObce(mestoMeta.nazev),
+      bezJpz: await bezJpzProKlice(okruheMesta.okruhy.flatMap(o => o.obory.map(x => x.klic))),
     })
     : { okruhy: [], nastavby: [] };
   const maOkruhy = okruhy.okruhy.length + okruhy.nastavby.length > 0;
@@ -105,9 +114,12 @@ export default async function MestoPage({ params }: Props) {
       <h1 className="text-[32px] font-bold leading-tight md:text-[40px]">Střední školy — {mestoMeta.nazev}</h1>
       <p className="mt-2 max-w-3xl text-[17px] leading-relaxed text-[#dbe5f3]">
         {mestoMeta.kraj}. {fmt(skoly.length)} {sklon(skoly.length, 'škola', 'školy', 'škol')},{' '}
-        {fmt(pocetNabidek)} {sklon(pocetNabidek, 'obor', 'obory', 'oborů')} s jednotnou zkouškou
+        {fmt(sCisly.length)} {sklon(sCisly.length, 'obor', 'obory', 'oborů')}
+        {poSkupinach.length > 1 && (
+          <> ({poSkupinach.map(d => `${d.nazev.toLocaleLowerCase('cs')} ${fmt(d.pocet)}`).join(', ')})</>
+        )}
         {pocetDalsich > 0 && (
-          <> a {fmt(pocetDalsich)} {sklon(pocetDalsich, 'další obor', 'další obory', 'dalších oborů')}, většinou učebních</>
+          <> a {fmt(pocetDalsich)} {sklon(pocetDalsich, 'další obor', 'další obory', 'dalších oborů')} mimo náš přehled</>
         )}.
         {maOkruhy && (
           <>
@@ -127,7 +139,7 @@ export default async function MestoPage({ params }: Props) {
         <SkolyPodleSmeru
           skoly={skoly}
           rok={rok}
-          velikost={velikostMesta(pocetNabidek)}
+          velikost={velikostMesta(sCisly.length)}
           hlavicka={hlavicka}
         />
 
@@ -157,11 +169,14 @@ export default async function MestoPage({ params }: Props) {
                 víceletá gymnázia zvlášť, protože se na ně hlásí žáci 5. a 7. třídy. Pořadí směrů nic
                 neříká o tom, kam je těžší se dostat.
               </Vysvetlivka>
-              <Vysvetlivka title="Proč některý obor nemá údaje?">
-                Obory bez jednotné zkoušky, například učební obory s výučním listem, a několik dalších
-                oborů přehled zatím nezahrnuje a nemají u nás vlastní stránku; víme o nich jen název.
-                {dalsi.minUchazecu !== null && (
-                  <> Známe je z přihlášek, takže obory, o které se hlásilo méně než {dalsi.minUchazecu} uchazečů, v přehledu chybí.</>
+              <Vysvetlivka title="Proč některý obor nemá obtížnost přijetí?">
+                Učební obory, tedy obory s výučním listem, a ostatní obory bez jednotné přijímací zkoušky mají
+                místo obtížnosti přijetí údaj, kolik míst zbylo po 1. kole. Obtížnost přijetí u nich ukazujeme jen
+                tam, kde bylo aspoň deset soutěžících uchazečů, a vůbec ne u oborů E, praktických škol, oborů bez
+                maturity i výučního listu a konzervatoří.
+                {pocetDalsich > 0 && (
+                  <> Obory bez odkazu, například jiné formy studia, přehled zatím nezahrnuje; víme o nich jen z přihlášek
+                    {dalsi.minUchazecu !== null && <>, takže obory, o které se hlásilo méně než {dalsi.minUchazecu} uchazečů, v přehledu chybí</>}.</>
                 )}{' '}
                 Obor, který škola v zobrazeném ročníku nevypsala, zůstane bez údajů.{' '}
                 <b>Chybějící údaj není nula</b> a neznamená, že se tam dostal každý.

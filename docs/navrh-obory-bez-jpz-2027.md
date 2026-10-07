@@ -1,6 +1,6 @@
 # Obory bez jednotné zkoušky a nedenní formy: průzkum zdrojů a návrh
 
-Verze 1.2 · 2. 10. 2026 · Fáze 1 k issue #209 (pouze průzkum a návrh, web se nemění).
+Verze 1.8 · 6. 10. 2026 · Fáze 1 k issue #209 (pouze průzkum a návrh, web se nemění).
 Fáze 2 (implementace) vznikne jako samostatné zadání po schválení návrhu.
 Verze 1.1 vypořádává oponenturu (`docs/podklady/oponentura-obory-bez-jpz-2026-10-01.md`);
 vypořádání je v oddílu 17, oddíly 10 a 11 jsou přepsané. Verze 1.1 byla schválena
@@ -739,6 +739,12 @@ zopakovat jedním příkazem. Níže verdikt ke každé námitce s důkazem:
 
 | Verze | Změna |
 |---|---|
+| 1.8 | Etapa 3c-3, vyhledávání (oddíl 16.8). |
+| 1.7 | Etapa 3c-1, stránka města (oddíl 16.6). |
+| 1.6 | Etapa 3c-2, přehled kraje (oddíl 16.7). |
+| 1.5 | Skupiny oborů na stránce školy v pevném pořadí (oddíl 16.5, rozhodnutí vlastníka, #393). |
+| 1.4 | Etapa 3b (oddíl 16.4): 221 škol mimo katalog z rejstříku, ubytování, seznam inspekcí bez shrnutí, zaměření bez kódu oboru. |
+| 1.3 | Etapa 3a (oddíl 16.3): stránka učebního oboru a obory na stránce školy u škol, které web vede; rozdělení etapy 3 na 3a, 3b a 3c. |
 | 1.2 | Odpovědi z etapy 0 fáze 2 (#244, oddíl 16.1): párování 2025 ↔ 2026 (96 %) a 1. ↔ 2. kola, konzervatoře s výhradou, kategorie J zahrnuta, šest skupin souhrnu míst; pojem pro kategorii J. Otázky 1 a 7 změřeny po schválení dotazů na cizí servery (DiPSy, rešerše). |
 | 1.1 | Vypořádání oponentury (oddíl 17): přepsané oddíly 10 a 11, nová měření 3.5–3.7 a 5.1, oprava chyby o nástavbách, rozhodnutí o C/E, dva nové ukazatele, domovy mládeže. |
 | 1.0 | První návrh (fáze 1, issue #209). |
@@ -755,3 +761,82 @@ M 216, P 146), 72 nedenních nástaveb L/5x (L/51 a čtyři L/52) s příznakem 
 kapacita a obec). `ID_SOF` je v každé nabídce, odkaz na PDF v DiPSy se tedy páruje přes něj, ne přes REDIZO
 (oddíl 16.1, bod 1). Chybějící počet zůstává `null`; `zbyla_mista` se počítá jen tam, kde je kapacita i přijatí. `id` nástavby nese na konci formu (dist, dal, komb), protože jedna škola má stejný KKOV ve více formách.
 Zobrazení, slovníky a registr jsou etapy 3 a 4.
+
+### 16.3 Etapa 3a: stránka učebního oboru a obory na stránce školy (5. 10. 2026)
+
+Rozhodnutí vlastníka 5. 10. 2026 (komentář v #244): nabídky bez JPZ se zapojí do stejného seznamu nabídek školy
+jako ostatní (varianta A), etapa 3 se dělí na 3a (stránka učebního oboru u škol, které web vede), 3b (nové školy,
+ubytování, sitemap nových škol) a 3c (město, kraj, vyhledávání, značky); slovníky a registr jdou s každou z nich.
+
+Etapa 3a zapojuje 2 105 nabídek bez JPZ u 433 škol, které katalog vede. Seznam je jeden (`getProgramyBezJpz`
+v `src/lib/data.ts`), ale čtou ho zatím jen stránka školy, stránka oboru a sitemapa; stránka města, kraje a vyhledávání
+nabídky bez JPZ dostanou až v 3c, aby se tam neobjevily bez filtrů a souhrnu míst. Adresy nabídek bez JPZ vznikají
+vlastní mapou (`adresyBezJpzMapa`), takže **žádná dnešní adresa oboru se zkouškou se nezměnila** (hlídá test).
+Stránka učebního oboru odpovídá na pět otázek z oddílu 11 v pořadí místo, zájem, ostatní, potom, cesta; otázka
+„Co přijde potom“ je jen u H a E. Obtížnost slovy se ukazuje nad prahem 10 soutěžících včetně stupně „místo pro
+všechny“ (574/302/164/78/17 u H, jak uvádí oddíl 3.6), u C, E, J a P vůbec.
+
+Zatím mimo: odkaz na PDF podmínek přijetí konkrétní nabídky v DiPSy (veřejná stálá adresa karty nabídky není
+ověřená; stránka odkazuje na web školy a na DiPSy obecně), kohorta podle pozice na přihlášce a pořadí v kraji
+(potřebují skupiny kategorie × dvojčíslí KKOV), maturita u uměleckých M a L (oddíl 10.4) a simulátor (etapa 5).
+
+### 16.4 Etapa 3b: školy, které katalog nevede, a ubytování (6. 10. 2026)
+
+221 škol nabízí jen obory bez jednotné zkoušky, a katalog je proto nevede (návrh odhadoval 227; rozdíl dělají školy,
+které mezitím katalog dostal, a nástavby). Jejich identitu přidal `scripts/build-obory-bez-jpz.py` do pole `skoly`
+souboru `src/data/obory-bez-jpz-2026.json` z rejstříku škol MŠMT: zkrácený a úplný název, adresa, městská část,
+okres, kraj a druh zřizovatele. Název školy se skládá jako v katalogu („zkrácený název, ulice“), okres a druh
+zřizovatele se převádějí z kódů rejstříku podle škol, které katalog i rejstřík vedou (okres většinou hlasů, bez
+prázdných; typ zřizovatele 5 soukromá, 6 církevní, ostatní veřejná). Jméno ředitele, e-maily ani zřizovatele jako
+osobu skript nečte.
+
+Nové školy mají přehled (obory, maturita tam, kde ji CERMAT vede, seznam inspekcí ČŠI, profil InspIS, portál,
+veletrhy, souběžné přihlášky) a stránky všech nabídek. Polohu (souřadnice) rejstřík nemá, proto u nich chybí
+nejbližší zastávka a školy v okolí; adresa vede na Mapy.cz a na nástroj Dojezd do škol. Seznam inspekcí se nově
+ukazuje u každé školy, ke které nemáme shrnutí inspekční zprávy, nejen u nových. Blok ubytování (domovy mládeže
+a internáty z rejstříku, druh H21 a H22) je v oddílu „Kde je“ u všech 438 škol, které je pod svým REDIZO vedou.
+
+CERMAT u konzervatoří a části učebních oborů píše do zaměření kód oboru („Hudba – 82-44-M/01 Dirigování“,
+„Housle (82-44-M/01)“); název i adresa ho vynechávají (`zamereniBezKodu`), takže se změnilo 15 adres učebních oborů
+ze 3a, které už jsou nasazené. Staré adresy se přesměrují na adresu téže nabídky (`getSchoolPageType`,
+`staraAdresaBezJpz`), takže žádný odkaz nepřestane fungovat.
+
+### 16.5 Skupiny oborů na stránce školy (6. 10. 2026, #393)
+
+Rozhodnutí vlastníka 6. 10. 2026: obory na stránce školy se dělí do skupin podle toho, čím studium končí (S maturitou,
+S výučním listem, Po vyučení, Ostatní), s přepínačem nad seznamem. **Pořadí skupin je vždy stejné**, aby rodinu
+nemátlo, že se mění podle školy. Tím se pro stránku školy mění pravidlo z oddílu 11 („nevytvářet hierarchii maturita
+nahoře, učební obor dole“): skupina S maturitou stojí první vždy. Pravidlo dál platí pro řazení na stránce města
+a kraje, kde se učební obory řadí s ostatními (etapa 3c). Volba skupiny se pamatuje v prohlížeči a platí i na další
+škole; škola s jedinou skupinou přepínač nemá.
+
+### 16.6 Etapa 3c-1: stránka města (6. 10. 2026)
+
+Etapa 3c se dělí na 3c-1 (stránka města), 3c-2 (kraj a /regiony) a 3c-3 (vyhledávání a API). Na stránce města
+mají nabídky bez JPZ, i u škol, které katalog nevede, vlastní řádek s místy a odkazem na stránku oboru; místo
+obtížnosti přijetí řádek bez ní ukáže zbylá místa po 1. kole. Obtížnost platí podle oddílu 10.1 (práh 10
+soutěžících, nic u C, E, J, P). Z „dalších oborů“ z přihlášek se tyto nabídky vynechají, zůstanou jen obory mimo
+přehled. Filtr Vzdělání používá skupiny z oddílu 16.5 v pevném pořadí a sdílí uloženou volbu se stránkou školy.
+Záhlaví města počítá obory po skupinách. Okruhy oborů na stránce města i oboru odkazují učební obory na jejich
+stránku a nesou jejich obtížnost. Velikost města (která určuje, které filtry se ukážou) počítá všechny obory
+s čísly, ne jen obory se zkouškou.
+
+Otevřené u vlastníka (komentář v #244 z 6. 10. 2026): zda „katalog“ znamená datovou vrstvu, ne soubory, a zda souhrn
+*Místa podle druhu studia* přejde na čtyři skupiny přepínače. Souhrn proto v 3c-1 není.
+
+### 16.7 Etapa 3c-2: přehled kraje (6. 10. 2026)
+
+Přehled kraje a souhrn na /regiony nesou i nabídky bez JPZ, vybrané podle kraje sídla školy z rejstříku (pole
+`skoly`), včetně škol mimo katalog s kartou z rejstříku. Mají vlastní typ ve filtru (Učební obor, Umělecký obor
+s talentovou zkouškou, Konzervatoř, Praktická škola a obor J), obtížnost podle oddílu 10.1, bez pozice na přihlášce
+(kohorty) a bez pořadí v kraji: srovnatelné skupiny ze souhrnů 1. kola pro ně nejsou a řazení podle pořadí se
+u těchto typů vypne. Nedenní nástavby v přehledu nejsou. Text nad tabulkou už netvrdí, že učební obory chybí.
+
+### 16.8 Etapa 3c-3: vyhledávání (6. 10. 2026)
+
+Vyhledávání na titulce, /regiony a /skoly i hledání v záhlaví (API `/api/schools/search`, jen textový dotaz) najdou
+všechny denní nabídky bez JPZ s odkazem na stránku oboru a druhem oboru („učební obor“, „konzervatoř“…). Data
+vyhledávání jdou do prohlížeče v úsporném tvaru jen s poli, která vyhledávání čte (`PolozkaHledani`), takže stránky
+jsou i s 2 902 položkami navíc menší než dřív (titulka 3,24 MB proti 3,37 MB). Katalog simulátoru
+(`simulatorCatalog=1`) a dotaz podle id se nemění; simulátor nabídky bez JPZ dostane v etapě 5. Žebříček
+nejžádanějších oborů na /skoly zůstává jen u oborů se zkouškou.

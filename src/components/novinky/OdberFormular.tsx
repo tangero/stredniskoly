@@ -99,7 +99,7 @@ export function OdberFormular({ rocnik, zdroj, varianta }: OdberFormularProps) {
   }
 
   return (
-    <form onSubmit={odesli} className="text-left">
+    <form onSubmit={odesli} className="text-left" data-clarity-mask="true">
       <p className={`mb-3 text-sm ${stitek}`}>
         Pošleme ti s předstihem termíny přijímacího řízení {rocnik} a napíšeme, co je potřeba
         připravit: kritéria, přihlášky, jednotná zkouška, výsledky a 2. kolo. K tomu zprávu, když na

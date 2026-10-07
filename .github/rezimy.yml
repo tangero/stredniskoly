@@ -92,6 +92,23 @@ stranky:
   - src/app/**/page.tsx
   - src/app/**/route.ts
 
+# Automatické obnovy dat (RA46, #385): PR bez propojeného zadání od účtu vlastníka (workflow), ne z forku,
+# z uvedené větve, který mění jen cesty této větve, projde v režimu R bez souhlasu a bez review. CI zůstává
+# povinné. Změna mimo tyto cesty se posuzuje jako dřív.
+datove_obnovy:
+  auto/veletrhy-snimek:
+    - src/data/veletrhy-2027.json
+    - public/stav_datovych_sad.json
+    - docs/zdroje-dat.md
+  codex/csi-weekly-refresh:
+    - data/csi_*.json
+    - data/csi_snapshots/**
+    - data/inspection_extractions.json
+    - inspekce/config/production_reports.json
+    - inspekce/data/**
+    - public/stav_datovych_sad.json
+    - docs/zdroje-dat.md
+
 # Změny jen v těchto cestách nepotřebují protokol z preview (web se nemění).
 bez_preview:
   - docs/**

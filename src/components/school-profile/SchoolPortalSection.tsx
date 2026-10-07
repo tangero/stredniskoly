@@ -71,10 +71,10 @@ export function SchoolPortalSection({ zaznam, spravce = null }: SchoolPortalSect
   return (
     <section className="bg-white p-6 rounded-xl shadow-sm mb-8">
       <div className="flex items-center justify-between mb-5">
-        <h2 className="text-2xl font-semibold text-slate-900">Údaje potvrzené školou</h2>
+        <h2 className="text-2xl font-semibold text-slate-900">Údaje doplněné školou</h2>
         {nejnovejsi && (
           <span className="text-xs px-2 py-1 rounded bg-green-50 text-green-700 border border-green-200">
-            potvrdila škola {formatDatumCz(nejnovejsi)}
+            doplnila škola {formatDatumCz(nejnovejsi)}
           </span>
         )}
       </div>
@@ -103,7 +103,7 @@ export function SchoolPortalSection({ zaznam, spravce = null }: SchoolPortalSect
                   <span className="whitespace-pre-line">{r.hodnota}</span>
                 )}
                 <span className="block text-xs text-slate-400 mt-0.5">
-                  {r.zdroj === 'redakce' ? 'opravila redakce' : 'potvrdila škola'} {formatDatumCz(r.potvrzeno_dne)}
+                  {r.zdroj === 'redakce' ? 'opravila redakce' : 'doplnila škola'} {formatDatumCz(r.potvrzeno_dne)}
                 </span>
               </dd>
             </div>
@@ -119,7 +119,7 @@ export function SchoolPortalSection({ zaznam, spravce = null }: SchoolPortalSect
           </div>
           <p className="text-sm text-slate-700 whitespace-pre-line">{popis}</p>
           <p className="text-xs text-slate-400 mt-2">
-            {z.udaje.popis_skoly!.zdroj === 'redakce' ? 'opravila redakce' : 'potvrdila škola'}{' '}
+            {z.udaje.popis_skoly!.zdroj === 'redakce' ? 'opravila redakce' : 'doplnila škola'}{' '}
             {formatDatumCz(z.udaje.popis_skoly!.potvrzeno_dne)}
           </p>
         </div>

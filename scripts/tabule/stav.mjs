@@ -26,6 +26,8 @@ export function cilovyStav(issue, prs = []) {
   // se vrátí k vlastníkovi. Zbylý `navrh` vedle `schvaleno` (zmeškaná úprava štítku) kartu do návrhu
   // nevrací; schválení je novější rozhodnutí.
   if (s.has('stop')) return STAVY.navrh;
+  // Otázka AI na vlastníka (#385): na tahu je vlastník, i když je zadání schválené.
+  if (s.has('otazka')) return STAVY.navrh;
   if (s.has('oponentura')) return STAVY.oponentura;
   if (s.has('navrh') && !s.has('schvaleno')) return STAVY.navrh;
   if (prs.length) return prs.some((p) => p.cekaNaSouhlas) ? STAVY.cekaNaSouhlas : STAVY.vPr;
@@ -84,6 +86,7 @@ export function naCoCeka(issue, prs = [], dnes = new Date().toISOString().slice(
   if (issue.stav === 'CLOSED') return '';
   if (s.has('trvale')) return null;
   if (s.has('stop')) return 'zastaveno štítkem stop';
+  if (s.has('otazka')) return 'otázka čeká na tvou odpověď (komentář v issue, poslaná do Telegramu)';
   if (s.has('oponentura')) return 'oponentura, pak k tvému rozhodnutí';
   if (s.has('navrh') && !s.has('schvaleno')) return 'čeká na tvé rozhodnutí: schvaleno, nebo zamitnuto';
   if (s.has('pripominka')) {

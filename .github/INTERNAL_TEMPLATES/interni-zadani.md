@@ -24,7 +24,7 @@ Založení:
 ### Hotovo když
 
 <!-- Každé kritérium: označení K1, K2…, jedna kontrola ano/ne a čím se ověří. Označení se nepřečíslovávají
-     (rozdělené K3 → K3.1, K3.2; zrušené přeškrtnout ~~K4: …~~). Protokol z preview má řádek pro každé K a P.
+     (rozdělené K3 → K3.1, K3.2; zrušené přeškrtnout ~~K4: …~~).
      Tvar `ověření: /adresa „očekávaný text“` se po sloučení ověřuje i v produkci (#325). -->
 
 - [ ] K1: … - ověření: náhled /…, 390 a 1280 px
@@ -39,6 +39,20 @@ Založení:
 - Žádné refaktory mimo zadání.
 - Produkční data v Neonu beze změny (migrace: žádná).
 - Cizí servery: žádné (jinak uvést server, endpointy, rychlost, data a důvod; před prvním dotazem zapsat do issue, odkud se stahuje, schválení netřeba; CLAUDE.md pravidlo 7).
+
+### Přínos a vyhodnocení
+
+<!-- Nepovinné; u nové funkce nebo změny webu vyplň, jinak oddíl smaž. Čtyři druhy kritérií, použij ty, které dávají smysl:
+     správnost (dělá funkce, co tvrdí, změřitelně z vlastních dat), použití (kolik lidí funkci použije a co udělají dál,
+     události v Matomu), vnímání (krátká otázka na stránce, jen když je opravdu potřeba), předpoklad (přínos, který
+     změřit neumíme; s podmínkou, kdy funkci zjednodušit nebo zrušit). Řádek Termín vytvoří připomínku (štítek pripominka). -->
+
+- Správnost: …
+- Použití: …
+- Vnímání: …
+- Předpoklad a podmínka zjednodušení nebo zrušení: …
+
+Termín: RRRR-MM-DD
 
 ### Otevřené otázky
 
