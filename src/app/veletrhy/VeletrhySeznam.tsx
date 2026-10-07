@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { useEffect, useMemo, useRef, useState, type ReactNode } from 'react';
 import Link from 'next/link';
 import { cn, createKrajSlug } from '@/lib/utils';
 import { cipKraje, nadpisKraje, vsechnyKraje } from '@/lib/kraje.mjs';
@@ -33,6 +33,13 @@ interface Props {
   akce: VeletrhKarta[];
   /** Den, se kterým stránku sestavil server. Drží první render shodný. */
   den: string;
+  /**
+   * Souběžný návrh pro srovnání s veřejnou stránkou. Bez hodnoty zůstává
+   * výpis, který berou testy jako smlouvu (`/veletrhy`).
+   */
+  varianta?: 'b';
+  /** „Co si na veletrhu zjistit“. Varianta B to položí vedle seznamu. */
+  otazky?: ReactNode;
 }
 
 /**
@@ -96,6 +103,48 @@ function dlazdice(start: string, end: string): { den: string; mesic: string } {
   return { den: `${Number(d1)}–${Number(d2)}`, mesic: `${MESICE[Number(m1) - 1]}–${MESICE[Number(m2) - 1]}` };
 }
 
+/** Tři nejbližší akce napříč kraji. Doplněk mapy, ne nová osa stránky. */
+function NejblizsiAkce({ akce }: { akce: VeletrhKarta[] }) {
+  if (akce.length === 0) return null;
+  return (
+    <section aria-label="Nejbližší akce">
+      <h2 className="text-sm font-medium text-gray-700">Nejbližší akce</h2>
+      <ul className="mt-3 grid gap-3 sm:grid-cols-3">
+        {akce.map((a) => {
+          const kraj = KRAJE.find((k) => k.kod === a.krajKod);
+          if (!kraj) return null;
+          const dl = dlazdice(a.start, a.end);
+          const denDlazdice = `${a.terminPribligny ? '~' : ''}${dl.den}`;
+          return (
+            <li key={a.id}>
+              <a
+                href={`#${kraj.slug}`}
+                className="flex h-full gap-3 rounded-lg border border-gray-200 bg-white p-3 hover:border-blue-300"
+              >
+                <span
+                  aria-hidden="true"
+                  className="flex h-12 w-14 shrink-0 flex-col items-center justify-center rounded-md bg-blue-50 text-blue-800"
+                >
+                  <span className="text-base font-bold leading-none">{denDlazdice}</span>
+                  <span className="text-xs uppercase tracking-wide">{dl.mesic}</span>
+                </span>
+                <span className="min-w-0">
+                  <span className="block text-xs font-semibold uppercase tracking-wide text-gray-500">
+                    {mistoAkce(a)}
+                  </span>
+                  <span className="mt-0.5 block font-semibold text-gray-900">{a.nazev}</span>
+                  <span className="sr-only">, {a.datum}, oddíl kraje</span>
+                </span>
+              </a>
+            </li>
+          );
+        })}
+      </ul>
+      <p className="mt-2 text-sm text-gray-600">Seznam níže je podle krajů.</p>
+    </section>
+  );
+}
+
 /**
  * Osou stránky je kraj, ne datum. Rodina se ptá „co je blízko nás“, a až
  * potom „kdy“: čtrnáct krajů s jednou až sedmi akcemi se přehlédne rychleji
@@ -108,7 +157,7 @@ function dlazdice(start: string, end: string): { den: string; mesic: string } {
  * Proběhlé akce filtruje i klient, ne jen server: stránka se přestavuje
  * po hodinách, takže by akce po svém posledním dni chvíli visela dál.
  */
-export function VeletrhySeznam({ akce, den }: Props) {
+export function VeletrhySeznam({ akce, den, varianta, otazky }: Props) {
   const [kraj, setKraj] = useState('');
 
   // První render musí vyjít stejně na serveru i v prohlížeči, jinak React
@@ -183,6 +232,17 @@ export function VeletrhySeznam({ akce, den }: Props) {
 
   const probihajici = useMemo(() => akce.filter((a) => a.end >= dnes), [akce, dnes]);
 
+  // Pořadí háčků drží testy: tohle je výpočet, ne stav. Kraj bez číselníku
+  // do pásu nepatří, odkaz by vedl na kotvu, kterou seznam nevykreslí.
+  const nejblizsi = useMemo(
+    () =>
+      [...probihajici]
+        .filter((a) => KRAJE.some((k) => k.kod === a.krajKod))
+        .sort((a, b) => a.start.localeCompare(b.start) || a.id.localeCompare(b.id))
+        .slice(0, 3),
+    [probihajici],
+  );
+
   // Počty u krajů se počítají z právě probíhajících akcí, ne ze serverového
   // seznamu — jinak by po půlnoci čip sliboval akci, která už zmizela.
   const oddily = useMemo(() => {
@@ -240,9 +300,9 @@ export function VeletrhySeznam({ akce, den }: Props) {
     </button>
   );
 
-  return (
-    <div className="space-y-8">
-      <nav aria-label="Kraje s akcemi">
+  const telo = (
+    <>
+      <nav id={varianta === 'b' ? 'kde' : undefined} aria-label="Kraje s akcemi">
         <p className="text-sm font-medium text-gray-700 mb-2">Kde se veletrh koná</p>
         <div className="lg:grid lg:grid-cols-[minmax(0,3fr)_minmax(0,2fr)] lg:items-center lg:gap-8">
         <div className="mb-4 lg:mb-0">
@@ -348,6 +408,7 @@ export function VeletrhySeznam({ akce, den }: Props) {
               // první řádka karty: ta nese město, nebo u série bez měst přímo
               // `misto`; a když je místo totéž co město, nepíše se dvakrát.
               const mistoNaRadku = a.mesto && !a.online && a.misto && a.misto !== a.mesto ? ` — ${a.misto}` : '';
+              const mistoNavic = mistoNaRadku.replace(/^ — /, '');
               return (
                 <li
                   key={a.id}
@@ -380,15 +441,31 @@ export function VeletrhySeznam({ akce, den }: Props) {
                         {a.nazev}
                       </a>
                     </h3>
-                    <p className="mt-1 text-sm text-gray-700">
-                      {a.terminPribligny ? 'přibližně ' : ''}
-                      <time dateTime={a.start}>{a.datum}</time>
-                      {a.cas ? `, ${a.cas}` : ''}
-                      {mistoNaRadku}
-                    </p>
+                    {varianta === 'b' ? (
+                      <p className="mt-1 text-sm text-gray-700">
+                        <time className="sr-only" dateTime={a.start}>
+                          {a.terminPribligny ? 'přibližně ' : ''}
+                          {a.datum}
+                        </time>
+                        {[a.cas, mistoNavic].filter(Boolean).join(' · ')}
+                      </p>
+                    ) : (
+                      <p className="mt-1 text-sm text-gray-700">
+                        {a.terminPribligny ? 'přibližně ' : ''}
+                        <time dateTime={a.start}>{a.datum}</time>
+                        {a.cas ? `, ${a.cas}` : ''}
+                        {mistoNaRadku}
+                      </p>
+                    )}
 
                     {(a.zdrojJenAgregator || a.terminPribligny) && (
-                      <p className="mt-2 rounded border border-amber-200 bg-amber-50 px-3 py-2 text-sm text-amber-900">
+                      <p
+                        className={
+                          varianta === 'b'
+                            ? 'mt-2 text-sm text-amber-900'
+                            : 'mt-2 rounded border border-amber-200 bg-amber-50 px-3 py-2 text-sm text-amber-900'
+                        }
+                      >
                         <strong>{a.zdrojJenAgregator ? 'Termín neověřený u pořadatele.' : 'Termín je přibližný.'}</strong>{' '}
                         {a.poznamkaTerminu} Před cestou si ho ověřte na stránce akce.
                       </p>
@@ -426,6 +503,20 @@ export function VeletrhySeznam({ akce, den }: Props) {
           </p>
         </section>
       ))}
-    </div>
+    </>
   );
+
+  if (varianta === 'b') {
+    return (
+      <div className="space-y-8" data-varianta="b">
+        <NejblizsiAkce akce={nejblizsi} />
+        <div className="grid items-start gap-10 lg:grid-cols-[minmax(0,1fr)_18rem]">
+          <div className="order-2 min-w-0 space-y-8 lg:order-1">{telo}</div>
+          {otazky ? <div className="order-1 lg:sticky lg:top-24 lg:order-2">{otazky}</div> : null}
+        </div>
+      </div>
+    );
+  }
+
+  return <div className="space-y-8">{telo}</div>;
 }
