@@ -10,12 +10,13 @@
 # - Kód větve (testy, závislosti) běží jen v jobu „Oprava“ se čtecím tokenem. Claude tam commituje
 #   lokálně a výsledek předá jako patch. Push dělá job „Zápis“, který kód větve nespouští: patch použije
 #   přes `git am`, ověří skriptem z main, že nemění cesty H2 a nepřepisuje historii, a teprve pak pushne.
-#   GITHUB_TOKEN navíc nesmí měnit .github/workflows.
-# - Secrets: jen CLAUDE_CODE_OAUTH_TOKEN (předplatné vlastníka, job „Oprava“) a GITHUB_TOKEN. Nic
-#   neslučuje a štítky `schvaleno` ani `zamitnuto` nepřidává.
-# - Push přes GITHUB_TOKEN nespustí workflow Testy, proto ho poslední job spustí ručně
-#   (workflow_dispatch) s `deployment=none`: kontroly ano, nasazení náhledu ne, protože nasazovací job
-#   spouští skript z větve s VERCEL_TOKEN. Náhled pro protokol spustí vlastník nebo Claude Code.
+#   Push jde tokenem App prijimacky-ai (#410), který stejně jako GITHUB_TOKEN nesmí měnit .github/workflows.
+# - Secrets: CLAUDE_CODE_OAUTH_TOKEN (předplatné vlastníka, job „Oprava“), GITHUB_TOKEN a v jobu „Zápis“
+#   token App (jen contents: write, jen na push). Nic neslučuje a štítky `schvaleno` ani `zamitnuto` nepřidává.
+# - Push tokenem App spustí testy u PR běžně (push přes GITHUB_TOKEN je GitHub pozastavil jako od nového
+#   přispěvatele a ručně spuštěné testy se do povinných kontrol PR nepočítaly, #395). Nasazení náhledu
+#   push od App nespustí (podmínka v testy.yml), protože nasazovací job spouští skript z větve s VERCEL_TOKEN.
+#   Náhled pro protokol spustí vlastník nebo Claude Code.
 name: Oprava z review
 
 on:
@@ -294,11 +295,23 @@ jobs:
         if: steps.kontrola.outputs.push == 'true'
         run: node main/scripts/brana/oprava-z-review.mjs veto "$PR"
 
+      # Token App (#410) až po kontrolách a vetu; kód větve se v tomto jobu nespouští.
+      - name: Token App prijimacky-ai
+        id: app
+        if: steps.kontrola.outputs.push == 'true' && steps.veto.outputs.ok == 'true'
+        uses: actions/create-github-app-token@v3
+        with:
+          client-id: ${{ secrets.PRIJIMACKY_AI_CLIENT_ID }}
+          private-key: ${{ secrets.PRIJIMACKY_AI_PRIVATE_KEY }}
+          permission-contents: write
+
       - name: Push
         id: push
         if: steps.kontrola.outputs.push == 'true' && steps.veto.outputs.ok == 'true'
         working-directory: vetev
-        run: git push "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" "HEAD:refs/heads/${VETEV}"
+        env:
+          APP_TOKEN: ${{ steps.app.outputs.token }}
+        run: git push "https://x-access-token:${APP_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" "HEAD:refs/heads/${VETEV}"
 
       - name: Zápis do PR
         if: always()
@@ -331,17 +344,3 @@ jobs:
             gh pr edit "$PR" --repo "$GITHUB_REPOSITORY" --add-label potrebuje-cloveka
           fi
 
-  testy:
-    name: Spuštění testů
-    needs: [rozhodnuti, zapis]
-    if: needs.zapis.outputs.push == 'true'
-    runs-on: ubuntu-latest
-    timeout-minutes: 5
-    permissions:
-      actions: write
-    steps:
-      - name: Testy pro nový commit (bez nasazení náhledu)
-        env:
-          GH_TOKEN: ${{ github.token }}
-          VETEV: ${{ needs.rozhodnuti.outputs.vetev }}
-        run: gh workflow run testy.yml --repo "$GITHUB_REPOSITORY" --ref "$VETEV" -f deployment=none
