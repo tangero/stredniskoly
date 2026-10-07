@@ -9,7 +9,7 @@ import yaml from 'js-yaml';
 
 const SLOZKA = '.github/workflows';
 const AKCE = 'actions/create-github-app-token@';
-const S_APP = ['csi-weekly-refresh.yml', 'oponentura.yml', 'otazka.yml', 'slouceni.yml', 'tydenni-prehled.yml', 'veletrhy-snimek.yml'];
+const S_APP = ['csi-weekly-refresh.yml', 'oponentura.yml', 'oprava-z-review.yml', 'otazka.yml', 'slouceni.yml', 'tydenni-prehled.yml', 'veletrhy-snimek.yml'];
 // Spouštěče, které běží nad kódem z main (nebo z větve, kterou spustil člověk s právem zápisu), ne nad kódem PR.
 const BEZPECNE_SPOUSTECE = new Set(['schedule', 'workflow_dispatch', 'workflow_run', 'issues', 'issue_comment']);
 
@@ -29,7 +29,8 @@ test('workflow s tokenem App se nespouští nad kódem z PR', () => {
   for (const f of S_APP) {
     const { data } = workflow[f];
     for (const sp of spoustece(data)) assert.ok(BEZPECNE_SPOUSTECE.has(sp), `${f}: spouštěč ${sp}`);
-    for (const { id, kroky: k } of kroky(data)) {
+    // Kontroluje se job, který token vytváří; jiné joby téhož workflow (Oprava z review) kód větve spouštět smí.
+    for (const { id, kroky: k } of kroky(data).filter((j) => j.kroky.some((x) => String(x.uses ?? '').startsWith(AKCE)))) {
       for (const krok of k.filter((x) => String(x.uses ?? '').startsWith('actions/checkout@'))) {
         const ref = String(krok.with?.ref ?? '');
         assert.doesNotMatch(ref, /pull_request|head_sha|head_branch|head\.ref|head\.sha/, `${f}/${id}: checkout ${ref}`);
@@ -62,4 +63,23 @@ test('tokeny vlastníka zůstávají jen v Tabuli a v týdenním přehledu', () 
     assert.doesNotMatch(text, /secrets\.CSI_PR_TOKEN/, f);
     if (!['tabule.yml', 'tydenni-prehled.yml'].includes(f)) assert.doesNotMatch(text, /secrets\.PROJECT_TOKEN/, f);
   }
+});
+
+test('Oprava z review (#410): token App jen v jobu Zápis, ne v jobu, který spouští kód větve a model', () => {
+  const { data } = workflow['oprava-z-review.yml'];
+  const sTokenem = kroky(data).filter((j) => j.kroky.some((x) => String(x.uses ?? '').startsWith(AKCE))).map((j) => j.id);
+  assert.deepEqual(sTokenem, ['zapis']);
+  const zapis = data.jobs.zapis.steps;
+  const app = zapis.find((x) => String(x.uses ?? '').startsWith(AKCE));
+  assert.deepEqual(Object.keys(app.with).filter((x) => x.startsWith('permission-')), ['permission-contents']);
+  // Token vzniká až po kontrole patche a vetu, ve stejné podmínce jako push.
+  const poradi = zapis.map((x) => x.id ?? x.name);
+  assert.ok(poradi.indexOf('app') > poradi.indexOf('veto') && poradi.indexOf('app') < poradi.indexOf('push'));
+  assert.equal(app.if, zapis.find((x) => x.id === 'push').if);
+  assert.ok(!JSON.stringify(data.jobs.oprava).includes('PRIJIMACKY_AI'));
+});
+
+test('push od App nespouští nasazení náhledu (skript z větve s VERCEL_TOKEN)', () => {
+  const podminka = String(workflow['testy.yml'].data.jobs.deploy.if);
+  assert.match(podminka, /github\.actor != 'prijimacky-ai\[bot\]'/);
 });

@@ -1,6 +1,6 @@
 # Spolupráce na GitHubu
 
-Verze 1.2 · 7. 10. 2026
+Verze 1.3 · 7. 10. 2026
 
 Jak spolu na repozitáři pracují Patrick (schvaluje a slučuje), Eduarda (píše zadání), Claude Code
 (realizuje) a komunita (hlásí chyby). Pravidla pro Claude Code jsou závazně v `CLAUDE.md`; tento
@@ -171,12 +171,14 @@ a jen s právy, která job potřebuje:
 | Otázka vlastníkovi (`otazka.yml`) | odebrání štítku `otazka` | issues zápis |
 | Oponentura (`oponentura.yml`, krok Štítky) | štítky po oponentuře | issues zápis |
 | CSI Weekly Refresh, Záloha veletrhů | PR s obnovou dat | contents, pull-requests zápis |
+| Oprava z review (`oprava-z-review.yml`, job Zápis, #410) | push opravy do větve PR, aby testy u PR běžely bez schvalování spuštění | contents zápis |
 | Týdenní přehled | jen ověření, že se App přihlásí | metadata čtení |
 
 Brána App věří jen u automatických obnov dat (`automatika` v `rezimy.yml`); `schvaleno`, odebrání `stop`,
 doklad `Zdroj:`, review ani protokol od ní neplatí. Beze změny zůstávají Claude Code v relacích (účet
-vlastníka), Eduarda, Tabule (`PROJECT_TOKEN`) a workflow na `GITHUB_TOKEN` (brána, testy, ověření, oprava
-z review, datová linka).
+vlastníka), Eduarda, Tabule (`PROJECT_TOKEN`) a workflow na `GITHUB_TOKEN` (brána, testy, ověření, datová
+linka). Push od App nespouští nasazení náhledu (job deploy v `testy.yml`), protože by běžel skript z větve
+s `VERCEL_TOKEN`; testy u PR běží normálně.
 
 **Založení (vlastník, asi 15 minut). Pořadí je důležité: nejdřív App a secrets, pak sloučit PR z #403.**
 Po sloučení bez secrets by sloučení PR a obnovy dat selhaly.
