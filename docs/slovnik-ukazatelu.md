@@ -1,6 +1,6 @@
 # Slovník ukazatelů
 
-Verze 1.61 · 7. 10. 2026 · **Závazný soupis. Nový ukazatel se nezavádí bez zápisu sem.**
+Verze 1.62 · 7. 10. 2026 · **Závazný soupis. Nový ukazatel se nezavádí bez zápisu sem.**
 
 Každý ukazatel má jeden název, jednu definici a jeden způsob výpočtu. Když se veličina objeví na webu, v datech, v API nebo v dokumentaci, používá se jméno z tohoto soupisu. Když se způsob výpočtu změní, změní se tady a zároveň se přepíše verze.
 
@@ -294,7 +294,7 @@ Nezaměňovat s **průměrem JPZ přijatých** z oddílu výše. Ten pochází z
 ### Soutěžící o obor
 Přijatí a ti, kdo se nevešli kvůli kapacitě, dohromady. Je to jmenovatel všech ukazatelů o hranici přijetí.
 
-Na stránce se píše **„soutěžící uchazeči“** a při prvním výskytu v bloku se vysvětlí: „tedy ti, kdo splnili požadavky školy a nedostali se na obor, který měli na přihlášce výš“ ([slovník pojmů](slovnik-pojmu.md)). Samotné „soutěžící“ ani „uchazeči“ místo tohoto pojmu nestačí: uchazeči jsou všichni přihlášení.
+Na stránce se píše **„soutěžící uchazeči“** a při prvním výskytu v bloku se vysvětlí: „tedy ti, kdo splnili podmínky přijetí a nebyli přijati jinam podle vyšší priority na přihlášce“ ([slovník pojmů](slovnik-pojmu.md)). Samotné „soutěžící“ ani „uchazeči“ místo tohoto pojmu nestačí: uchazeči jsou všichni přihlášení.
 
 Dvě skupiny do něj **nepatří** a při zobrazení se uvádějí zvlášť:
 
@@ -852,6 +852,7 @@ Například „Vyvážený obor“. Způsob zařazení není dohledaný. Platí 
 
 | Verze | Změna |
 |---|---|
+| 1.62 | *Soutěžící o obor*: vysvětlení pojmu na stránce sjednoceno se slovníkem pojmů 1.49 („nebyli přijati jinam podle vyšší priority na přihlášce“). Definice, výpočet ani pole beze změny (7. 10. 2026, issue #428). |
 | 1.61 | Nový ukazatel *Místa podle druhu studia*: součet kapacity míst za město a kraj ve čtyřech skupinách přepínače (6. 10. 2026, issue #244, etapa 3c-4, rozhodnutí vlastníka). |
 | 1.60 | *Obtížnost přijetí slovy*: v simulátoru stupeň „kapacita nerozhodovala“ s prahem 10 soutěžících určuje pojistku bez bodů u učebních oborů H a E (7. 10. 2026, issue #244, etapa 5). Výpočet beze změny. |
 | 1.59 | Nový ukazatel *Zbylá místa po 1. kole*; platnost ukazatelů poptávky a výsledku pro nabídky bez jednotné zkoušky; u *Obtížnosti přijetí slovy* pravidlo zobrazení pro tyto nabídky (práh i pro místo pro všechny, ne u C, E, J, P) a rozdělení oborů H (5. 10. 2026, issue #244, etapa 3a). |
