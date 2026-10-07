@@ -69,9 +69,12 @@ Nastavení GitHubu (formuláře, tabule projektu, ochrana `main`) popisuje `docs
    Výjimka: když issue nebo vlastník projektu určí dodávku **po etapách**, má každá etapa vlastní větev
    (`zadani/<N>-etapa-<M>-<kratky-popis>`) a PR, který na issue odkazuje („Souvisí s #N“); `Closes #N` nese
    jen PR poslední etapy. Titulek PR podle issue (například „Fáze 2 / etapa M: …“).
-   **Drobný úkol projektu**, který Patrick rozhodl v rozhovoru, zapiš jako issue s dokladem `Zdroj: vlastník`
-   a připoj ho jako sub-issue k issue projektu (`POST /repos/tangero/stredniskoly/issues/<projekt>/sub_issues`,
-   `sub_issue_id` je `id` úkolu). PR nese `Closes #<úkol>`; schválený projekt ho pustí jako etapu bez lhůty.
+   **Drobný úkol projektu**, který Patrick rozhodl v rozhovoru a který spadá do rozsahu projektu, zapiš jako
+   položku zaškrtávacího seznamu v oddílu `## Etapy` těla issue projektu, ne jako samostatné issue (RA48, nástěnka
+   zůstane přehledná). Seznam stojí mimo oddíl `## Rozsah`, takže jeho úprava schválení projektu neruší. PR úkolu
+   nese `Souvisí s #<projekt>` a schválený projekt ho pustí jako etapu bez lhůty; po sloučení položku odškrtni.
+   Samostatné issue (sub-issue projektu, `POST /repos/tangero/stredniskoly/issues/<projekt>/sub_issues`) zakládej
+   jen pro úkol, který potřebuje vlastní rozhodnutí nebo diskusi. Úkol mimo rozsah projektu je nové zadání.
 3. **Nikdy nepushuj do `main`; slučuj jen skriptem** `node scripts/brana/sloucit.mjs <PR>`, a to jen když je
    v `.github/rezimy.yml` na `main` `slucovani_ai: true`; totéž dělá po každém běhu brány workflow Sloučení.
    Do té doby slučuje Patrick. Nikdy neslučuj tlačítkem,
