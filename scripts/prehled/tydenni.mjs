@@ -64,7 +64,19 @@ export async function expiraceTokenu(token, fetchFn = globalThis.fetch) {
   return odp.headers.get('github-authentication-token-expiration');
 }
 
-export async function nactiData(api, ted, tokeny = {}, { vlastnik = 'tangero', asistent = null } = {}) {
+/**
+ * Přihlásí se GitHub App automatiky (#403)? Token z kroku workflow (právo metadata) musí přečíst repozitář.
+ * Prázdný token znamená, že krok přihlášení selhal (chybí secrets, App není nainstalovaná).
+ */
+export async function prihlaseniApp(token, fetchFn = globalThis.fetch) {
+  if (!token) return 'nefunguje';
+  const odp = await fetchFn(`https://api.github.com/repos/${REPO}`, {
+    headers: { authorization: `Bearer ${token}`, accept: 'application/vnd.github+json' },
+  });
+  return odp.status === 200 ? 'funguje' : 'nefunguje';
+}
+
+export async function nactiData(api, ted, tokeny = {}, { vlastnik = 'tangero', asistent = null, appToken } = {}) {
   const od = ted - 7 * DEN;
 
   const zavrene = await strankuj(api, `repos/${REPO}/pulls?state=closed&sort=updated&direction=desc`,
@@ -109,6 +121,8 @@ export async function nactiData(api, ted, tokeny = {}, { vlastnik = 'tangero', a
     expirace[nazev] = token ? await expiraceTokenu(token) : 'chybi';
   }
 
+  const app = appToken === undefined ? undefined : await prihlaseniApp(appToken);
+
   // Chyba měřítek nesmí zastavit zbytek přehledu; vypíše se místo oddílu.
   let meritka = null;
   try {
@@ -118,7 +132,7 @@ export async function nactiData(api, ted, tokeny = {}, { vlastnik = 'tangero', a
     meritka = { chyba: String(e.message || e).slice(0, 200) };
   }
 
-  return { od, ted, slouceno, rozhodnuti, navrhy, zastavene, cekajiNaSouhlas, potrebujiCloveka, cervenaMain, expirace, meritka };
+  return { od, ted, slouceno, rozhodnuti, navrhy, zastavene, cekajiNaSouhlas, potrebujiCloveka, cervenaMain, expirace, app, meritka };
 }
 
 /** Text přehledu: krátký do Telegramu, dlouhý (markdown) do souhrnu běhu. */
@@ -154,6 +168,7 @@ export function sestavPrehled(d, { vlastnik = 'tangero' } = {}) {
     d.meritka && !d.meritka.chyba ? kratkaMeritka(d.meritka) : '',
     d.cervenaMain.length ? `POZOR, červené CI na main: ${d.cervenaMain.join(', ')}\nhttps://github.com/${REPO}/commits/main` : '',
     ...tokenyPozor.map((t) => `POZOR, token ${t}`),
+    d.app === 'nefunguje' ? 'POZOR, App prijimacky-ai se nepřihlásí: sloučení, štítky a PR s obnovou dat stojí' : '',
     ciziSchvaleni.length ? `POZOR, schvaleno z jiného účtu:\n${vypisPolozek(cizi, Infinity, MAX_POLOZEK).join('\n')}` : '',
   ].filter(Boolean).join('\n');
   const cekajiciVypis = vypisPolozek(cekajici, MAX_DELKA_KRATKE - hlavicka.length, MAX_POLOZEK);
@@ -189,6 +204,7 @@ export function sestavPrehled(d, { vlastnik = 'tangero' } = {}) {
     '## Provoz',
     d.cervenaMain.length ? `- červené CI na main: ${d.cervenaMain.join(', ')}` : '- CI na main bez chyb',
     ...Object.entries(d.expirace).map(([n, e]) => `- token ${n}: ${e === 'chybi' ? 'secret chybí' : e === 'neplatny' ? 'neplatí' : e ? `vyprší ${e}` : 'bez expirace'}`),
+    ...(d.app ? [`- App prijimacky-ai: přihlášení ${d.app}`] : []),
     '',
     'Změny rulesetu a nastavení repozitáře přehled zatím nevidí (`GITHUB_TOKEN` k nim nemá přístup).',
   ].join('\n');
@@ -214,9 +230,8 @@ async function main() {
   let volani = 0;
   const pocitaneApi = (...a) => { volani++; return api(...a); };
   const data = await nactiData(pocitaneApi, Date.now(), {
-    CSI_PR_TOKEN: process.env.CSI_PR_TOKEN,
     PROJECT_TOKEN: process.env.PROJECT_TOKEN,
-  }, { vlastnik, asistent });
+  }, { vlastnik, asistent, appToken: process.env.APP_TOKEN ?? '' });
   const { kratky, dlouhy } = sestavPrehled(data, { vlastnik });
   console.log(dlouhy);
   console.log(`\nVolání GitHub API: ${volani}`);

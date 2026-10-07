@@ -1,6 +1,6 @@
 # Řízení vývoje: směr určuje člověk, provedení a přehled zajišťuje AI
 
-Verze 0.13l · 5. 10. 2026 · **část A ke schválení hned, část B k rozhodnutí podle měřítek.**
+Verze 0.13m · 7. 10. 2026 · **část A ke schválení hned, část B k rozhodnutí podle měřítek.**
 Stav zavedení: fáze 0 a 1 hotové (4. 10. 2026): brána sloučení je povinná kontrola v rulesetu bez obejití,
 AI slučuje skriptem a workflow Sloučení automaticky (RA40); fáze 2 čeká (postup v
 [postup-zavedeni-faze-0.md](postup-zavedeni-faze-0.md)).
@@ -27,7 +27,7 @@ a výdaje, posílá týdenní přehled a hlásí jen výjimky.
 **Co tím odpadne:** schvalování drobných zadání, kontrola na preview a merge u zhruba 20 PR týdně,
 odpovídání na dotazy v issues, obnova většiny tokenů.
 
-**Co je potřeba schválit:** část A jako celek (rozhodnutí RA1 až RA46 v oddílu 21). Část B se rozhodne
+**Co je potřeba schválit:** část A jako celek (rozhodnutí RA1 až RA47 v oddílu 21). Část B se rozhodne
 po čtyřech týdnech provozu podle měřítek.
 
 **Zavedení po fázích podle přínosu** (oddíl 20): fáze 1 odstraní merge a kontrolu preview, fáze 2 přidá
@@ -74,8 +74,12 @@ Princip:
 
 **Asistent zadání má vlastní účet, ostatní pracují přes účet vlastníka** (rozhodnutí vlastníka z 3. 10.
 2026, RA35 a RA36). Eduarda používá účet `eduarda-prijimacky`; Claude Code, boti pro review a vývoj
-i automatika ve skriptech používají přihlášení vlastníka. GitHub App pro AI nevzniká. Vlastník riziko
-sdíleného účtu považuje za malé a jiné řešení by mu přidalo práci.
+používají přihlášení vlastníka. Vlastník riziko sdíleného účtu považuje za malé a jiné řešení by mu přidalo
+práci. **Výjimka pro automatiku ve workflow** (RA47, #403): sloučení PR, štítky v Otázce a Oponentuře a PR
+s obnovou dat dělá GitHub App `prijimacky-ai` (`automatika` v `rezimy.yml`) s tokenem jen pro tento
+repozitář, platným hodinu a zúženým na práva daného jobu. App nemá právo měnit workflow ani nastavení, není
+v Bypass listu rulesetu a brána jí věří jen u automatických obnov dat. Claude Code v relacích a Tabule
+(projekt na osobním účtu, kam App zapisovat neumí) zůstávají na účtu vlastníka.
 
 | kdo | identita | dělá |
 |---|---|---|
@@ -83,7 +87,7 @@ sdíleného účtu považuje za malé a jiné řešení by mu přidalo práci.
 | **Eduarda** (AI asistent) | vlastní účet `eduarda-prijimacky` (Linux s Grok Bot) | vede briefing, zapisuje z něj rozhodnutí, přijímá hlášení e-mailem a z portálu, píše zadání a oponentury |
 | **Claude Code** | účet vlastníka | třídí, realizuje, review, ověření na preview, merge přes bránu, přehled, provoz |
 | **Druhý klíč** | workflow v Actions s jiným modelem, `GITHUB_TOKEN` | nezávisle kontroluje rizikové PR a smí přidat `stop` (oddíl 6) |
-| **automatika** | `GITHUB_TOKEN`, tokeny vlastníka v secrets | štítky oblastí, brána sloučení, CI, tabule |
+| **automatika** | `GITHUB_TOKEN`; GitHub App `prijimacky-ai` (RA47); `PROJECT_TOKEN` vlastníka jen pro Tabuli | štítky oblastí, brána sloučení a CI (`GITHUB_TOKEN`); sloučení PR, štítky z Otázky a Oponentury, PR s obnovou dat (App); tabule (`PROJECT_TOKEN`) |
 
 **Proti čemu pojistky chrání a proti čemu ne.** Pojistky v tomto návrhu chrání před **chybou AI** a před
 **podvrženým vstupem zvenku** (veřejné hlášení, e-mail): brána sloučení, režimy, lhůty, protokol
@@ -676,6 +680,7 @@ ověří ho měřítka.
 | RA43 | Oponentura návrhů modelem Kimi K3 (předplatné Kimi Code vlastníka) na štítek `oponentura` od vlastníka nebo asistenta zadání: smysl, přínos k cílům, náklady proti přínosům a lepší řešení podle skillu `oponentura`; výsledek jde do issue, rozhoduje vlastník | **ano** (rozhodnutí vlastníka) |
 | RA44 | Oponentura jen při rozjezdu nového projektu, ručně štítkem `oponentura`: vlastník popíše problém bez řešení, Claude Code ho prozkoumá (i na webu), Claude a Kimi K3 nezávisle navrhnou řešení, navzájem je anonymně posoudí z pohledu hodnot projektu a person a syntéza předloží 2 až 3 varianty s rozhodujícím testem; vlastník vybere. Nahrazuje jednokrokovou oponenturu z RA43 | **ano** (rozhodnutí vlastníka) |
 | RA45 | Protokol z preview se nevyžaduje: PR se změnou webu se slučuje automaticky po bráně (CI, review); vlastník po nasazení dostane do Telegramu oddíl „Pro vlastníka“ z popisu PR (2 až 3 věty) s adresami na webu, každý PR jednou. Blokuje jen protokol s „nesplněno“. Nahrazuje RA42 | **ano** (rozhodnutí vlastníka) |
+| RA47 | Výjimka z RA35 pro automatiku ve workflow: GitHub App `prijimacky-ai` jen pro tento repozitář (token na hodinu, práva po jobech, bez práva Workflows a mimo Bypass list) slučuje PR, mění štítky v Otázce a Oponentuře a zakládá PR s obnovou dat. Brána jí věří jen u automatických obnov dat. Claude Code v relacích, asistent zadání a Tabule beze změny; hlášení z webu později samostatně | **ano** (rozhodnutí vlastníka, #403) |
 | RA46 | Otázky AI na vlastníka chodí do Telegramu (štítek `otazka`, tabule je ukazuje jako jeho tah); jasnou část zadání AI realizuje a ptá se jen na nejasnou. Automatické obnovy dat (PR bez zadání z větví v `datove_obnovy`, jen povolené cesty, od účtu vlastníka, ne z forku) se slučují v režimu R bez souhlasu a review | **ano** (rozhodnutí vlastníka) |
 
 # Část B: rozšíření podle měřítek
@@ -706,6 +711,8 @@ Po čtyřech týdnech provozu části A:
 
 ## Změny návrhu
 
+- **0.13m** (7. 10. 2026, rozhodnutí vlastníka, zadání #403): automatika ve workflow jako GitHub App `prijimacky-ai`
+  místo tokenů vlastníka, výjimka z RA35 (RA47).
 - **0.13l** (5. 10. 2026, rozhodnutí vlastníka, zadání #385): otázky vlastníkovi do Telegramu se štítkem `otazka`, realizace
   jasné části zadání, automatické sloučení datových obnov (RA46).
 - **0.13k** (5. 10. 2026, rozhodnutí vlastníka, zadání #383): protokol z preview se ruší jako podmínka brány, místo něj
