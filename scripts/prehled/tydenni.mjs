@@ -13,6 +13,7 @@ import { pathToFileURL } from 'node:url';
 import yaml from 'js-yaml';
 import { REPO, NAZEV_KONTROLY, vytvorApi } from '../brana/data.mjs';
 import { nactiMeritka, spocitejMeritka, kratkaMeritka, oddilMeritka } from './meritka.mjs';
+import { nactiStav, souhrnTydne } from '../provoz/dostupnost.mjs';
 
 const DEN = 24 * 60 * 60 * 1000;
 export const STITKY_ROZHODNUTI = ['schvaleno', 'zamitnuto', 'stop'];
@@ -118,7 +119,49 @@ export async function nactiData(api, ted, tokeny = {}, { vlastnik = 'tangero', a
     meritka = { chyba: String(e.message || e).slice(0, 200) };
   }
 
-  return { od, ted, slouceno, rozhodnuti, navrhy, zastavene, cekajiNaSouhlas, potrebujiCloveka, cervenaMain, expirace, meritka };
+  // Dostupnost (#355): souhrn ze stavu kontroly a výpadky za týden; chyba nesmí zastavit zbytek přehledu.
+  let dostupnost = null;
+  try {
+    const { stav } = await nactiStav(api);
+    const vypadky = (await api(`repos/${REPO}/issues?state=all&labels=oblast:provoz&since=${new Date(od).toISOString()}&per_page=100`))
+      .filter((i) => !i.pull_request && /^(Výpadek|Pomalý web): /.test(i.title))
+      .map((i) => ({ cislo: i.number, titulek: i.title, od: i.created_at, do: i.closed_at }));
+    dostupnost = { adresy: souhrnTydne(stav, ted), vypadky };
+  } catch (e) {
+    dostupnost = { chyba: String(e.message || e).slice(0, 200) };
+  }
+
+  return { od, ted, slouceno, rozhodnuti, navrhy, zastavene, cekajiNaSouhlas, potrebujiCloveka, cervenaMain, expirace, meritka, dostupnost };
+}
+
+const ms = (x) => (x == null ? 'bez dat' : `${x} ms`);
+const pct = (x) => (x == null ? 'bez dat' : `${String(x).replace('.', ',')} %`);
+
+/** Jeden řádek do Telegramu: nejnižší dostupnost za týden a počet výpadků. */
+export function kratkaDostupnost(dost) {
+  if (!dost || dost.chyba || !dost.adresy.length) return '';
+  const nejnizsi = Math.min(...dost.adresy.map((a) => a.dostupnost ?? 100));
+  return `Dostupnost webu: nejnižší ${pct(nejnizsi)}, výpadků a pomalých úseků ${dost.vypadky.length}`;
+}
+
+/** Oddíl Dostupnost dlouhého přehledu (#355): po adresách dostupnost, medián a p95 odezvy, podíl 5xx a výpadky. */
+export function oddilDostupnost(dost, odkazFn) {
+  if (!dost) return [];
+  if (dost.chyba) return ['## Dostupnost', `- nepodařilo se načíst: ${dost.chyba}`, ''];
+  if (!dost.adresy.length) return ['## Dostupnost', '- kontrola zatím nezaznamenala žádný běh', ''];
+  return [
+    '## Dostupnost',
+    'Kontrola zvenčí na pěti stránkách, odezva z histogramu (horní hranice koše, p95 je přibližné).',
+    '',
+    '| adresa | kontrol | dostupnost | medián | p95 | odpovědi 5xx |',
+    '|---|---|---|---|---|---|',
+    ...dost.adresy.map((a) => `| ${a.cesta.length > 40 ? `${a.cesta.slice(0, 40)}…` : a.cesta} | ${a.kontrol} | ${pct(a.dostupnost)} | ${ms(a.p50)} | ${ms(a.p95)} | ${pct(a.podil5xx)} |`),
+    '',
+    ...(dost.vypadky.length
+      ? dost.vypadky.map((v) => `- ${odkazFn(v.cislo)} ${v.titulek} (od ${datum(v.od)}${v.do ? `, skončil ${datum(v.do)}` : ', trvá'})`)
+      : ['- žádný výpadek ani pomalý web']),
+    '',
+  ];
 }
 
 /** Text přehledu: krátký do Telegramu, dlouhý (markdown) do souhrnu běhu. */
@@ -152,6 +195,7 @@ export function sestavPrehled(d, { vlastnik = 'tangero' } = {}) {
     d.navrhy.length ? `Čeká na tebe: ${d.navrhy.length} návrhů, ${d.cekajiNaSouhlas.length} PR bez souhlasu` : `Čeká na tebe: ${d.cekajiNaSouhlas.length} PR bez souhlasu`,
     potrebujiCloveka.length ? `PR, kde smyčka oprav z review skončila: ${potrebujiCloveka.length}` : '',
     d.meritka && !d.meritka.chyba ? kratkaMeritka(d.meritka) : '',
+    kratkaDostupnost(d.dostupnost),
     d.cervenaMain.length ? `POZOR, červené CI na main: ${d.cervenaMain.join(', ')}\nhttps://github.com/${REPO}/commits/main` : '',
     ...tokenyPozor.map((t) => `POZOR, token ${t}`),
     ciziSchvaleni.length ? `POZOR, schvaleno z jiného účtu:\n${vypisPolozek(cizi, Infinity, MAX_POLOZEK).join('\n')}` : '',
@@ -186,6 +230,7 @@ export function sestavPrehled(d, { vlastnik = 'tangero' } = {}) {
     ...radky(d.zastavene, (z) => `- ${odkaz(z.cislo)} ${z.titulek}`, 'nic'),
     '',
     ...(d.meritka ? [d.meritka.chyba ? `## Měřítka\n- nepodařilo se spočítat: ${d.meritka.chyba}` : oddilMeritka(d.meritka, odkaz), ''] : []),
+    ...oddilDostupnost(d.dostupnost, odkaz),
     '## Provoz',
     d.cervenaMain.length ? `- červené CI na main: ${d.cervenaMain.join(', ')}` : '- CI na main bez chyb',
     ...Object.entries(d.expirace).map(([n, e]) => `- token ${n}: ${e === 'chybi' ? 'secret chybí' : e === 'neplatny' ? 'neplatí' : e ? `vyprší ${e}` : 'bez expirace'}`),
