@@ -7,6 +7,7 @@ import { druheKoloPodleRedizo, klicDruhehoKola, rokDruhehoKola } from './druhe-k
 import { getSchoolAnalysis } from './data';
 import { nabidkyBezJpzVKraji, obtiznostBezJpz, typBezJpz } from './obory-bez-jpz';
 import { zamereniBezKodu } from './adresa-oboru.mjs';
+import { druhVzdelani, type DruhVzdelani } from './smery-studia';
 import { getWebSkoly } from './skoly-web';
 import { maturitaVPrehledu, type MaturitaVPrehledu } from './maturita-skoly';
 import { zobrazeneObdobi } from './stav-datovych-sad';
@@ -38,6 +39,8 @@ export interface NabidkaKraje {
   delka: number;
   /** Srovnatelná skupina, například `GY8_8`; slouží k filtru i k pořadí. */
   skupina: string;
+  /** Čím studium končí (skupiny přepínače, issue #393); pro souhrn Místa podle druhu studia. */
+  vzdelani: DruhVzdelani;
   kapacita: number | null;
   prihlasky: number | null;
   prihlaskyNaMisto: number | null;
@@ -158,6 +161,7 @@ async function spoctiKrajPrehled(
       zamereni: String(k.zamereni ?? ''),
       delka: Number(k.delka_studia) || Number(n.skupina.split('_')[1]) || 4,
       skupina: n.skupina,
+      vzdelani: druhVzdelani(n.kkov),
       kapacita: a.kapacita ?? null,
       prihlasky: a.prihlasky ?? null,
       prihlaskyNaMisto,
@@ -202,7 +206,7 @@ async function spoctiKrajPrehled(
     const nabidka: NabidkaKraje = {
       klic: b.id, redizo: b.redizo, obor: b.obor,
       zamereni: (() => { const z = zamereniBezKodu(b.zamereni); return z && z.toLocaleLowerCase('cs') !== b.obor.toLocaleLowerCase('cs') ? z : ''; })(),
-      delka: b.delka ?? 0, skupina: typBezJpz(b.kategorie),
+      delka: b.delka ?? 0, skupina: typBezJpz(b.kategorie), vzdelani: druhVzdelani(b.kkov),
       kapacita: b.kapacita, prihlasky: b.prihlasky, prihlaskyNaMisto: b.index_poptavky,
       zarazeni: obtiznostBezJpz(b), zarazeniPredchozi: null, predchoziRok: null,
       soutezici: b.prijati !== null && b.nepr_kapacita !== null ? b.prijati + b.nepr_kapacita : null,

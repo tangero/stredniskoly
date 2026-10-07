@@ -36,7 +36,8 @@
     "src/data/obory-bez-jpz-2026.json"
    ],
    "ukazatele": [
-    "Kapacita míst"
+    "Kapacita míst",
+    "Místa podle druhu studia"
    ],
    "aktualizace": {
     "zdroj": "https://data.cermat.cz/files/files/JPZ/agregovana_data_skoly/PZ{rok}_kolo1_skolobory_kapacity.xlsx",

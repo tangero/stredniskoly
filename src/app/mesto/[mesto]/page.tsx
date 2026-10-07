@@ -11,7 +11,8 @@ import { getOkruheMesta } from '@/lib/okruhy-oboru';
 import { katalogOboru, kanonickeNazvySkol, nazvySkolKatalogu, obtiznostOboru } from '@/lib/okruhy-podklad';
 import { OkruhyMesta } from '@/components/mesto/OkruhyMesta';
 import { sestavKartySkol, sestavOkruhyMesta, velikostMesta } from '@/lib/mesto-karty';
-import { DRUHY_VZDELANI } from '@/lib/smery-studia';
+import { DRUHY_VZDELANI, mistaPodleDruhu } from '@/lib/smery-studia';
+import { MistaPodleDruhu } from '@/components/MistaPodleDruhu';
 import { SkolyPodleSmeru } from '@/components/mesto/SkolyPodleSmeru';
 import { zrizovatelPodleRedizo } from '@/lib/simulator-filter';
 import { VeletrhVMeste } from '@/components/veletrhy/VeletrhVMeste';
@@ -89,6 +90,8 @@ export default async function MestoPage({ params }: Props) {
   const sCisly = radky.filter(r => r.mista !== null || r.druh === 'jpz');
   const poSkupinach = DRUHY_VZDELANI.map(d => ({ ...d, pocet: sCisly.filter(r => r.vzdelani === d.id).length })).filter(d => d.pocet > 0);
   const pocetDalsich = radky.length - sCisly.length;
+  // Místa podle druhu studia: jen obory vypsané v zobrazeném ročníku (u nevypsaných nese řádek loňská místa).
+  const mista = mistaPodleDruhu(sCisly.filter(r => !r.nevypsano));
 
   // Okruhy oborů: jen města, kde okruhy vycházejí (meze zveřejnění uplatnil generátor).
   const okruheMesta = await getOkruheMesta(mestoMeta.nazev);
@@ -127,6 +130,7 @@ export default async function MestoPage({ params }: Props) {
           </>
         )}
       </p>
+      <MistaPodleDruhu {...mista} rok={rok} />
     </>
   );
 

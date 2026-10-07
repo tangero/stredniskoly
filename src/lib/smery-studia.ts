@@ -103,3 +103,24 @@ export function druhVzdelani(kkov: string): DruhVzdelani {
   if (kategorie === 'H' || kategorie === 'E') return 'vyucni';
   return 'ostatni';
 }
+
+export interface MistaSkupiny { id: DruhVzdelani; nazev: string; mista: number; oboru: number }
+
+/**
+ * Místa podle druhu studia (slovník ukazatelů): součet kapacity míst 1. kola za území ve čtyřech skupinách
+ * přepínače, v pevném pořadí. Sčítají se jen obory se známou kapacitou zobrazeného ročníku; ostatní
+ * se spočítají zvlášť (`bezUdaje`), protože chybějící údaj není nula. Místa se sčítat smí (nejsou to přihlášky).
+ */
+export function mistaPodleDruhu(obory: { vzdelani: DruhVzdelani; mista: number | null }[]): {
+  skupiny: MistaSkupiny[]; celkem: number; bezUdaje: number;
+} {
+  const skupiny = DRUHY_VZDELANI.map(d => ({ ...d, mista: 0, oboru: 0 }));
+  let bezUdaje = 0;
+  for (const o of obory) {
+    if (o.mista === null) { bezUdaje++; continue; }
+    const s = skupiny.find(x => x.id === o.vzdelani)!;
+    s.mista += o.mista;
+    s.oboru++;
+  }
+  return { skupiny: skupiny.filter(s => s.oboru > 0), celkem: skupiny.reduce((a, s) => a + s.mista, 0), bezUdaje };
+}

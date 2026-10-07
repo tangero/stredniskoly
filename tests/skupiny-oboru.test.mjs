@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { DRUHY_VZDELANI, druhVzdelani } from '../src/lib/smery-studia.ts';
+import { DRUHY_VZDELANI, druhVzdelani, mistaPodleDruhu } from '../src/lib/smery-studia.ts';
 
 // Skupiny oborů na stránce školy podle toho, čím studium končí (issue #393).
 
@@ -21,4 +21,19 @@ test('zařazení do skupin podle kategorie v kódu oboru', () => {
 
 test('pořadí skupin je pevné', () => {
   assert.deepEqual(DRUHY_VZDELANI.map(d => d.nazev), ['S maturitou', 'S výučním listem', 'Po vyučení', 'Ostatní']);
+});
+
+// Místa podle druhu studia (slovník ukazatelů, issue #244): součet míst ve skupinách přepínače.
+test('místa podle druhu studia: pevné pořadí, prázdné skupiny vynechá, chybějící místa nejsou nula', () => {
+  const v = mistaPodleDruhu([
+    { vzdelani: 'vyucni', mista: 24 },
+    { vzdelani: 'maturita', mista: 30 },
+    { vzdelani: 'maturita', mista: 60 },
+    { vzdelani: 'ostatni', mista: null },
+    { vzdelani: 'vyucni', mista: 0 },
+  ]);
+  assert.deepEqual(v.skupiny.map(s => [s.id, s.mista, s.oboru]), [['maturita', 90, 2], ['vyucni', 24, 2]]);
+  assert.equal(v.celkem, 114);
+  assert.equal(v.bezUdaje, 1);
+  assert.deepEqual(mistaPodleDruhu([]), { skupiny: [], celkem: 0, bezUdaje: 0 });
 });

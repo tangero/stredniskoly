@@ -1,6 +1,6 @@
 # Slovník ukazatelů
 
-Verze 1.60 · 7. 10. 2026 · **Závazný soupis. Nový ukazatel se nezavádí bez zápisu sem.**
+Verze 1.61 · 7. 10. 2026 · **Závazný soupis. Nový ukazatel se nezavádí bez zápisu sem.**
 
 Každý ukazatel má jeden název, jednu definici a jeden způsob výpočtu. Když se veličina objeví na webu, v datech, v API nebo v dokumentaci, používá se jméno z tohoto soupisu. Když se způsob výpočtu změní, změní se tady a zároveň se přepíše verze.
 
@@ -21,6 +21,13 @@ Počet míst, které škola pro obor v daném kole vypsala. Zdroj: CERMAT, sloup
 Platí jen tam, kde jsou oba sloupce vyplněné; u nabídek bez čísel (53 z 2 902, převážně konzervatoře) se neukazuje a stránka řekne, že data počty neuvádějí. Po 1. kole 2026 zbyla místa u 1 372 z 1 776 učebních oborů H.
 
 **Neříká, zda škola vypíše 2. kolo** ani kolik míst v něm nabídne: to říká až údaj o 2. kole. Neříká ani, že je o obor malý zájem: místa zůstávají i tam, kde uchazeči nesplnili podmínky školy nebo se dostali na obor výš na přihlášce.
+
+### Místa podle druhu studia
+Součet *Kapacity míst* 1. kola za město nebo kraj ve čtyřech skupinách podle toho, čím studium končí, v pevném pořadí přepínače na stránce školy a města (issue #393): S maturitou (kategorie KKOV K, M, L), S výučním listem (H, E), Po vyučení (nástavby L/5x), Ostatní (C, J, P). Vzorec: `Σ kapacita` nabídek skupiny; podíl skupiny = její místa / místa všech skupin. Zdroj: CERMAT, sloupec `KAPACITA` zobrazeného ročníku (souhrny 1. kola a `src/data/obory-bez-jpz-2026.json`). Jednotka: místa a podíl v procentech (pod 1 % se píše „méně než 1 %“). Počítá `mistaPodleDruhu` v `src/lib/smery-studia.ts`; zobrazuje se v záhlaví stránky města a kraje. Zavedeno 6. 10. 2026 (issue #244, etapa 3c-4, [návrh](navrh-obory-bez-jpz-2027.md), oddíly 14 a 16.9).
+
+Na stránce města se sčítají jen obory vypsané v zobrazeném ročníku; obory, o kterých víme jen z přihlášek, místa nemají a do součtu nepatří. Obory bez kapacity se do součtu nepočítají a záhlaví řekne, u kolika oborů počet míst neznáme: chybějící údaj není nula.
+
+Místa se na rozdíl od přihlášek sčítat smí, jeden uchazeč se v nich nepočítá víckrát. **Neříká**, kolik uchazečů se na skupinu hlásilo, kolik míst zbylo ani jak těžké bylo se dostat; nevypovídá ani o tom, které vzdělání je lepší. Nedenní formy studia a nástavby, které katalog nevede, v součtu nejsou.
 
 ### Přihlášky celkem
 Součet přihlášek ze všech priorit. Zdroj: CERMAT, `PŘIHLÁŠKY CELKEM`. Pole `prihlasky`.
@@ -845,6 +852,7 @@ Například „Vyvážený obor“. Způsob zařazení není dohledaný. Platí 
 
 | Verze | Změna |
 |---|---|
+| 1.61 | Nový ukazatel *Místa podle druhu studia*: součet kapacity míst za město a kraj ve čtyřech skupinách přepínače (6. 10. 2026, issue #244, etapa 3c-4, rozhodnutí vlastníka). |
 | 1.60 | *Obtížnost přijetí slovy*: v simulátoru stupeň „kapacita nerozhodovala“ s prahem 10 soutěžících určuje pojistku bez bodů u učebních oborů H a E (7. 10. 2026, issue #244, etapa 5). Výpočet beze změny. |
 | 1.59 | Nový ukazatel *Zbylá místa po 1. kole*; platnost ukazatelů poptávky a výsledku pro nabídky bez jednotné zkoušky; u *Obtížnosti přijetí slovy* pravidlo zobrazení pro tyto nabídky (práh i pro místo pro všechny, ne u C, E, J, P) a rozdělení oborů H (5. 10. 2026, issue #244, etapa 3a). |
 | 1.58 | Nový ukazatel *Jistota zařazení do okruhu* (5. 10. 2026, issue #366): bootstrap uchazečů, 100 opakování, na webu jen pod 0,5 jako „na pomezí okruhů“. |

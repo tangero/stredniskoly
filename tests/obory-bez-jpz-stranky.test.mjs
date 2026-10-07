@@ -15,6 +15,8 @@ import { getAllSchoolsForSearch, getSimulatorBezJpz, getNabidkyBezJpzVeMeste, ge
 import { getCityStats } from '../src/lib/cityData.ts';
 import { dalsiOboryVeMeste, nactiIndexRejstriku } from '../src/lib/kontext-prihlasek.ts';
 import { sestavKartySkol } from '../src/lib/mesto-karty.ts';
+import { mistaPodleDruhu } from '../src/lib/smery-studia.ts';
+import { MistaPodleDruhu } from '../src/components/MistaPodleDruhu.tsx';
 import { zrizovatelPodleRedizo } from '../src/lib/simulator-filter.ts';
 import { nazvySkolKatalogu, kanonickeNazvySkol } from '../src/lib/okruhy-podklad.ts';
 import { obtiznostBezJpz, rokBezJpz, typBezJpz } from '../src/lib/obory-bez-jpz.ts';
@@ -322,6 +324,39 @@ test('kraj: všechny denní nabídky bez JPZ v kraji jsou v přehledu, bez kohor
   const nove = prehled.skoly.filter(s => !VE_KATALOGU.has(s.redizo));
   assert.ok(nove.length > 0);
   for (const s of nove) assert.equal(s.slug, adresaPrehledu(s.redizo, DATA.skoly[s.redizo].nazev));
+});
+
+// ---------------------------------------------------------------------------
+// Etapa 3c-4: Místa podle druhu studia (město a kraj)
+// ---------------------------------------------------------------------------
+
+test('kraj: místa podle druhu studia sčítají kapacitu všech nabídek, učební obory ve skupině S výučním listem', async () => {
+  const prehled = await getKrajPrehled('CZ064');
+  const nabidky = prehled.skoly.flatMap(s => s.nabidky);
+  const v = mistaPodleDruhu(nabidky.map(n => ({ vzdelani: n.vzdelani, mista: n.kapacita })));
+  assert.equal(v.celkem, nabidky.reduce((a, n) => a + (n.kapacita ?? 0), 0));
+  assert.equal(v.bezUdaje, nabidky.filter(n => n.kapacita === null).length);
+  assert.deepEqual(v.skupiny.map(s => s.id), ['maturita', 'vyucni', 'po_vyuceni', 'ostatni']);
+  // Učební obory H a E jsou ve skupině S výučním listem, konzervatoře mezi ostatními.
+  for (const n of nabidky.filter(n => n.skupina === 'UCEBNI')) assert.equal(n.vzdelani, 'vyucni', n.klic);
+  for (const n of nabidky.filter(n => n.skupina === 'KONZ')) assert.equal(n.vzdelani, 'ostatni', n.klic);
+  // Gymnázia ze souhrnů 1. kola jsou ve skupině S maturitou.
+  for (const n of nabidky.filter(n => n.skupina.startsWith('GY'))) assert.equal(n.vzdelani, 'maturita', n.klic);
+});
+
+test('město: souhrn míst v záhlaví ukáže skupiny v pevném pořadí s počtem míst a podílem', () => {
+  const html = renderToStaticMarkup(React.createElement(MistaPodleDruhu, {
+    ...mistaPodleDruhu([
+      { vzdelani: 'vyucni', mista: 3 }, { vzdelani: 'maturita', mista: 300 }, { vzdelani: 'ostatni', mista: null },
+    ]),
+    rok: 2026,
+  }));
+  const t = text(html);
+  assert.match(t, /Místa v 1\. kole 2026 podle toho, čím studium končí: 303 míst/);
+  assert.ok(t.indexOf('S maturitou') < t.indexOf('S výučním listem'));
+  assert.match(t, /S výučním listem 3 \(méně než 1 %\)/);
+  assert.match(t, /U 1 oboru počet míst neznáme/);
+  assert.equal(renderToStaticMarkup(React.createElement(MistaPodleDruhu, { skupiny: [], celkem: 0, bezUdaje: 2, rok: 2026 })), '');
 });
 
 // ---------------------------------------------------------------------------

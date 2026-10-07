@@ -4,6 +4,8 @@ import { notFound } from 'next/navigation';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { RegionSchoolsTable } from '@/components/RegionSchoolsTable';
+import { MistaPodleDruhu } from '@/components/MistaPodleDruhu';
+import { mistaPodleDruhu } from '@/lib/smery-studia';
 import { getAllKraje } from '@/lib/data';
 import { getKrajPrehled } from '@/lib/krajData';
 import { zobrazeneObdobi } from '@/lib/stav-datovych-sad';
@@ -79,6 +81,7 @@ export default async function RegionPage({ params }: Props) {
   if (!prehled) notFound();
   const { skoly, rok, rokDruhehoKola, rokMaturity } = prehled;
   const pocetNabidek = skoly.reduce((a, s) => a + s.nabidky.length, 0);
+  const mista = mistaPodleDruhu(skoly.flatMap(s => s.nabidky.map(n => ({ vzdelani: n.vzdelani, mista: n.kapacita }))));
   // Seznam měst píše kraje tvarem „Jihomoravský kraj“ a „Kraj Vysočina“.
   // U Prahy je město totéž co kraj; odkaz by vedl na stejný seznam škol.
   const mesta = MESTA.filter(m => [krajLabel(kraj.nazev), `Kraj ${kraj.nazev}`].includes(m.kraj) && m.nazev !== 'Praha');
@@ -101,6 +104,7 @@ export default async function RegionPage({ params }: Props) {
             <p className="text-blue-200">
               {cislo(skoly.length)} {skol(skoly.length)}, {cislo(pocetNabidek)} {tvar(pocetNabidek, 'nabídka', 'nabídky', 'nabídek')} v 1. kole {rok}
             </p>
+            <MistaPodleDruhu {...mista} rok={rok} />
             {/* Bez počtu akcí: stránka je statická a počet by po skončení
                 akce lhal až do dalšího sestavení. Přehled si ho spočítá sám. */}
             <p className="mt-4 text-sm text-blue-100">
