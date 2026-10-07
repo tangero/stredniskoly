@@ -33,7 +33,8 @@ export interface RadekPasma {
   v_pasmu_soutezilo: number | null;
   v_pasmu_prijato: number | null;
   nikdo_neodmitnut: boolean;
-  talentova: boolean;
+  /** null = index druh zkoušky nenese; kontrola strategie se pak pozastaví (chybějící není „ne“). */
+  talentova: boolean | null;
   druh: number | null;
   /** true / false podle kritérií; null = bez přepisu kritérií (chybějící není nula). */
   extra_body: boolean | null;
@@ -83,7 +84,7 @@ export function nactiIndexPasem(json: {
       v_pasmu_soutezilo: hod('v_pasmu_soutezilo'),
       v_pasmu_prijato: hod('v_pasmu_prijato'),
       nikdo_neodmitnut: hod('nikdo_neodmitnut') === 1,
-      talentova: hod('talentova') === 1,
+      talentova: hod('talentova') === null ? null : hod('talentova') === 1,
       druh: hod('druh'),
       extra_body: extra === null ? null : extra === 1,
       obec: obec === null ? null : json.obce[obec] ?? null,

@@ -1,6 +1,6 @@
 # Obory bez jednotné zkoušky a nedenní formy: průzkum zdrojů a návrh
 
-Verze 1.8 · 6. 10. 2026 · Fáze 1 k issue #209 (pouze průzkum a návrh, web se nemění).
+Verze 1.9 · 7. 10. 2026 · Fáze 1 k issue #209 (pouze průzkum a návrh, web se nemění).
 Fáze 2 (implementace) vznikne jako samostatné zadání po schválení návrhu.
 Verze 1.1 vypořádává oponenturu (`docs/podklady/oponentura-obory-bez-jpz-2026-10-01.md`);
 vypořádání je v oddílu 17, oddíly 10 a 11 jsou přepsané. Verze 1.1 byla schválena
@@ -739,6 +739,7 @@ zopakovat jedním příkazem. Níže verdikt ke každé námitce s důkazem:
 
 | Verze | Změna |
 |---|---|
+| 1.9 | Etapa 5, simulátor: učební obor jako pojistka bez bodů (oddíl 16.10). |
 | 1.8 | Etapa 3c-3, vyhledávání (oddíl 16.8). |
 | 1.7 | Etapa 3c-1, stránka města (oddíl 16.6). |
 | 1.6 | Etapa 3c-2, přehled kraje (oddíl 16.7). |
@@ -840,3 +841,18 @@ vyhledávání jdou do prohlížeče v úsporném tvaru jen s poli, která vyhle
 jsou i s 2 902 položkami navíc menší než dřív (titulka 3,24 MB proti 3,37 MB). Katalog simulátoru
 (`simulatorCatalog=1`) a dotaz podle id se nemění; simulátor nabídky bez JPZ dostane v etapě 5. Žebříček
 nejžádanějších oborů na /skoly zůstává jen u oborů se zkouškou.
+
+### 16.10 Etapa 5: simulátor, učební obor jako pojistka bez bodů (7. 10. 2026)
+
+Podle schváleného [doplňku návrhu simulátoru](navrh-simulator-doplnek-ucebni-obory.md), otevřené otázky jeho
+oddílu 7 v jeho výchozím znění: E je pojistka, C a J nejsou, simulátor učební obor sám nenabízí (jen se stejným
+kódem oboru jako zvažovaný učební obor), práh 10 soutěžících platí, asymetrie s obory se zkouškou zůstává.
+
+- **Data:** vedlejší index místo rozšíření indexu pásem (doplněk, oddíl 5, volba implementace). Katalog
+  simulátoru (`/api/schools/search?simulatorCatalog=1`) nese všechny denní nabídky bez JPZ z
+  `src/data/obory-bez-jpz-2026.json` s kategorií a počty 1. kola **po celém id nabídky** (`bez_jpz`). Generátor
+  pásem, datová linka ani registr se nemění. `talentova` v indexu pásem je `boolean | null`.
+- **Pojistek 2026:** H 574 (sedí s dokladem), E 71 (doplněno do dokladu, `scripts/mereni-obory-bez-jpz.py`).
+- **Předchozí ročník:** data nabídek bez JPZ pro rok 2025 nenesou nepřijaté kvůli kapacitě, proto věta
+  „Rok předtím také“ zatím chybí (doplněk ji připouští jen u spárované nabídky s doloženými počty).
+- **Kritéria:** web je u učebních oborů nepřepisuje, věta odkazuje na web školy.
