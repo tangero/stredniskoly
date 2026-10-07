@@ -50,7 +50,7 @@ test('opravený počet žáků nese původ od školy, ne z exportu InspIS (#220)
   assert.equal(d.profil_inspis.pocet_zaku, 493);
   assert.deepEqual(d.profil_inspis.opravy_od_skoly, { pocet_zaku: { puvod: 'potvrdila_skola', potvrzeno_dne: '2026-10-01', zdroj: 'škola, e-mail' } });
   const md = otevrenaDataMarkdown(d);
-  assert.match(md, /- \*\*Žáků:\*\* 493 \(potvrdila škola 2026-10-01, ne údaj z InspIS; nejvýš 550 podle InspIS\)/);
+  assert.match(md, /- \*\*Žáků:\*\* 493 \(doplnila škola 2026-10-01, ne údaj z InspIS; nejvýš 550 podle InspIS\)/);
 
   const bez = sestavOtevrenaData(skola, { ...profil, inspis: { ...inspis, aktualni_pocet_zaku: 456, opravy: undefined } }, { vysledky: 2026, uchazeci: 2025, maturita: '2026' });
   assert.equal('opravy_od_skoly' in bez.profil_inspis, false);
