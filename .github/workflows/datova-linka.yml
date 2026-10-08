@@ -105,8 +105,24 @@ jobs:
         if: steps.krok.outputs.krok == 'beh'
         run: python3 scripts/datova-linka.py ${{ steps.krok.outputs.nanecisto }} beh ${{ steps.krok.outputs.kanaly }}
 
+      # Token App prijimacky-ai (#440, RA49): PR z předání založí App, takže na něm běží povinné kontroly a brána
+      # ho pozná jako předání z datové linky (větev data/*, jen výstupy linky). Potvrzení kódem v Telegramu nebo
+      # v issue je souhlas vlastníka; druhé schvaleno na PR není potřeba. Větev pushuje GITHUB_TOKEN z checkoutu.
+      - name: Token App prijimacky-ai
+        id: app
+        if: steps.krok.outputs.krok == 'schvaleni' && steps.fronta.outputs.ceka == 'ano' && steps.krok.outputs.nanecisto == ''
+        uses: actions/create-github-app-token@v3
+        with:
+          client-id: ${{ secrets.PRIJIMACKY_AI_CLIENT_ID }}
+          private-key: ${{ secrets.PRIJIMACKY_AI_PRIVATE_KEY }}
+          permission-pull-requests: write
+          permission-contents: read
+
       - name: Schválení a předání
         if: steps.krok.outputs.krok == 'schvaleni' && steps.fronta.outputs.ceka == 'ano'
+        env:
+          # Jen pro `gh pr create` v předání (scripts/linka/predani.py); komentáře a issue píše dál GITHUB_TOKEN.
+          PREDANI_GH_TOKEN: ${{ steps.app.outputs.token }}
         run: |
           git config user.name "datova-linka[bot]"
           git config user.email "datova-linka@users.noreply.github.com"

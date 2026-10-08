@@ -134,7 +134,25 @@ komentář AI do Telegramu s odkazem. Komentář vlastníka bez patičky AI, neb
 
 **Automatické obnovy dat** (RA46): PR z větví `auto/veletrhy-snimek` a `codex/csi-weekly-refresh`, které mění jen
 cesty uvedené u větve v `datove_obnovy` v `rezimy.yml`, brána pustí v režimu R bez souhlasu a review; po CI se
-sloučí samy. Změna jiné cesty se posuzuje jako dřív.
+sloučí samy. Změna jiné cesty se posuzuje jako dřív. Totéž platí pro předání z datové linky (větve `data/*` od App
+`prijimacky-ai`, jen výstupy linky): potvrzení „schvaluji KÓD“ je souhlas, druhé `schvaleno` není potřeba (RA49, #440).
+
+**Rutina z automatiky** (RA49): issue se štítkem `rutina`, které založil `github-actions[bot]` (výpadek z hlídání
+dostupnosti, regrese z ověření v produkci), bere rutina Claude Code do práce bez dokladu „Zdroj:“ a brána opravu
+pustí v režimu R (přes limit rutiny jako L).
+
+**Čeká na tebe** (`.github/workflows/ceka-na-tebe.yml`, `scripts/prehled/ceka-na-tebe.mjs`, #440): denně v 8:52
+jedna zpráva do Telegramu, jen když něco čeká na vlastníka. Skupiny: PR ke schválení (věta z oddílu „Pro vlastníka“
+a odkaz na stránku v náhledu), otázky, hotové oponentury, návrhy, splatné připomínky, uvízlé opravy z review
+a oponentury. Pod každou skupinou pokyn, co udělat, pod zprávou tlačítka na PR nebo issue. Ručně ji spustíš
+v Actions (Čeká na tebe, Run workflow).
+
+**Tep rutiny** (`.github/workflows/tep-rutiny.yml`, `scripts/provoz/tep-rutiny.mjs`, #440): rutina Claude Code na
+začátku každého běhu spustí workflow Tep rutiny. Kontrola každou hodinu: po 12 hodinách bez tepu přijde zpráva do
+Telegramu, pak jednou denně, dokud tep nepřijde. Dokud rutina tep neposílá, kontrola mlčí.
+
+**Selhání oponentury** (#440): workflow odebere štítek `oponentura`, napíše do issue a pošle zprávu do Telegramu;
+znovu ji spustíš přidáním štítku.
 
 Tabule potřebuje secret `PROJECT_TOKEN`, klasický token se scopes `project` a `public_repo` (fine-grained token
 ani GitHub App do projektu na osobním účtu zapisovat neumí). Token má omezenou platnost; expiraci hlídá týdenní
@@ -181,8 +199,9 @@ a jen s právy, která job potřebuje:
 |---|---|---|
 | Sloučení (`slouceni.yml`) | žádost o vyhodnocení brány a sloučení PR | contents, pull-requests, issues zápis; checks čtení |
 | Otázka vlastníkovi (`otazka.yml`) | odebrání štítku `otazka` | issues zápis |
-| Oponentura (`oponentura.yml`, krok Štítky) | štítky po oponentuře | issues zápis |
+| Oponentura (`oponentura.yml`, kroky Štítky a Oznámení o selhání) | štítky po oponentuře, odebrání `oponentura` po selhání (#440) | issues zápis |
 | CSI Weekly Refresh, Záloha veletrhů | PR s obnovou dat | contents, pull-requests zápis |
+| Datová linka | PR z předání schválených dat (jen `gh pr create`, větev pushuje `GITHUB_TOKEN`, #440) | pull-requests zápis, contents čtení |
 | Oprava z review (`oprava-z-review.yml`, job Zápis, #410) | push opravy do větve PR, aby testy u PR běžely bez schvalování spuštění | contents zápis |
 | Týdenní přehled | jen ověření, že se App přihlásí | metadata čtení |
 

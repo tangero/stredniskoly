@@ -99,7 +99,9 @@ stranky:
 
 # Automatické obnovy dat (RA46, #385): PR bez propojeného zadání od účtu vlastníka nebo `automatika` (workflow), ne z forku,
 # z uvedené větve, který mění jen cesty této větve, projde v režimu R bez souhlasu a bez review. CI zůstává
-# povinné. Změna mimo tyto cesty se posuzuje jako dřív.
+# povinné. Změna mimo tyto cesty se posuzuje jako dřív. Klíč může být vzor větve: `data/*` jsou předání
+# z datové linky (RA49, #440), která vznikají až po potvrzení vlastníka kódem v Telegramu nebo v issue;
+# cesty jsou výstupy zpracovatelů linky (scripts/linka/zpracovani.py), registr se přepíná až po sloučení.
 datove_obnovy:
   auto/veletrhy-snimek:
     - src/data/veletrhy-2027.json
@@ -113,6 +115,14 @@ datove_obnovy:
     - inspekce/data/**
     - public/stav_datovych_sad.json
     - docs/zdroje-dat.md
+  data/*:
+    - public/pasma_prijeti_*.json
+    - public/soubeh_prihlasek_*.json
+    - public/kontext_prihlasek_*.json
+    - public/simulator_pasma_*.json
+    - public/okruhy_oboru_*.json
+    - public/druhe_kolo.json
+    - public/maturita_skoly.json
 
 # Změny jen v těchto cestách nepotřebují protokol z preview (web se nemění).
 bez_preview:

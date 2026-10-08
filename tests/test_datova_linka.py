@@ -16,6 +16,7 @@ import subprocess
 import sys
 import tempfile
 import threading
+from unittest import mock
 import unittest
 from pathlib import Path
 from types import SimpleNamespace
@@ -510,6 +511,21 @@ class TestDatovaLinka(unittest.TestCase):
         self.assertEqual(vysledek["pull_request"], "https://github.com/test/pr/1")
         self.assertEqual([v[:2] for v in volani][:2], [["git", "fetch"], ["git", "worktree"]])
         self.assertIn("push", volani[4])
+
+    def test_predani_zalozi_pr_tokenem_app(self):
+        # PR z předání zakládá App (PREDANI_GH_TOKEN), aby na něm běžely kontroly (#440); ostatní příkazy bez něj.
+        _, u = self.schvalena_uloha_uchazecu()
+        tokeny = {}
+
+        def runner(prikaz, **kw):
+            tokeny[" ".join(prikaz[:3])] = (kw.get("env") or {}).get("GH_TOKEN")
+            vystup = "https://github.com/test/pr/1" if prikaz[:3] == ["gh", "pr", "create"] else ""
+            return SimpleNamespace(returncode=0, stdout=vystup, stderr="")
+
+        with mock.patch.dict(os.environ, {"PREDANI_GH_TOKEN": "token-app"}):
+            predani.predej(u, self.registr, nanecisto=False, runner=runner)
+        self.assertEqual(tokeny["gh pr create"], "token-app")
+        self.assertIsNone(tokeny["git fetch origin"])
 
     def test_predani_odmitne_zmeneny_zdroj(self):
         _, u = self.schvalena_uloha_uchazecu()

@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { oddil, textProVlastnika, cestyNaWebu, kandidati, oznameno, zprava, ZNACKA, OD, OKNO } from '../scripts/brana/oznameni-nasazeni.mjs';
+import { oddil, textProVlastnika, cestyNaWebu, kandidati, oznameno, zprava, ZNACKA, OD, OKNO, TEXT_OBNOVY, TEXT_LINKY, textObnovy } from '../scripts/brana/oznameni-nasazeni.mjs';
 import { BOT } from '../scripts/brana/brana.mjs';
 
 const TELO = `Closes #10
@@ -62,4 +62,10 @@ test('zpráva: adresy na produkci, bez adresy upozornění, commit a návod na v
   assert.match(text, /#7 Okruhy\nNový oddíl\.\nZkontroluj:\nhttps:\/\/www\.prijimackynaskolu\.cz\/mesto\/brno/);
   assert.match(text, /#8 Export\nPopis pro vlastníka v PR chybí\.\nZkontroluj:\nhttps:\/\/www\.prijimackynaskolu\.cz \(adresu PR neuvádí\)/);
   assert.match(text, /Commit abcdef1\. .*vrátit #číslo/);
+});
+
+test('text automatické obnovy: předání z datové linky má vlastní větu (#440)', () => {
+  assert.equal(textObnovy('data/cermat-maturita-2026-gq99c'), TEXT_LINKY);
+  assert.equal(textObnovy('auto/veletrhy-snimek'), TEXT_OBNOVY);
+  assert.equal(textObnovy(undefined), TEXT_OBNOVY);
 });

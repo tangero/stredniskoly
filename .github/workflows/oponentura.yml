@@ -14,6 +14,8 @@
 #   ho dostane přes `env -i` bez ostatních proměnných. token App prijimacky-ai (#403) jen na změnu štítků, aby se spustila Tabule.
 #   Komentář píše GITHUB_TOKEN. Nic neslučuje, štítky `schvaleno`, `zamitnuto` ani `stop` nemění.
 # - Komentář se nezapíše, když některý výstup obsahuje klíč nebo syntéza nemá nadpis „## Oponentura“.
+# - Po selhání se štítek `oponentura` odebere a vlastník dostane zprávu do Telegramu (#440); Telegram mají jen kroky
+#   po selhání, kroky s modely ho nevidí.
 name: Oponentura
 
 on:
@@ -292,6 +294,9 @@ jobs:
       # Vzniká až po krocích s modely, které k výstupům kroků přístup nemají.
       - name: Token App prijimacky-ai
         id: app
+        # I po selhání modelu: krok Oznámení o selhání jím odebere štítek (#440).
+        if: always() && steps.kdo.outcome == 'success'
+        continue-on-error: true
         uses: actions/create-github-app-token@v3
         with:
           client-id: ${{ secrets.PRIJIMACKY_AI_CLIENT_ID }}
@@ -310,7 +315,26 @@ jobs:
             gh api "repos/$GH_REPO/issues/$CISLO/labels" -f 'labels[]=navrh' > /dev/null
           fi
 
+      # Selhání (#440): štítek `oponentura` se odebere tokenem App (krok výše běží i po selhání), aby karta neuvízla
+      # a oponentura šla spustit znovu přidáním štítku; vlastník dostane zprávu do Telegramu.
       - name: Oznámení o selhání
         if: failure() && steps.kdo.outcome == 'success'
+        env:
+          STITKY_TOKEN: ${{ steps.app.outputs.token }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          TITULEK: ${{ github.event.issue.title }}
         run: |
-          gh api "repos/$GH_REPO/issues/$CISLO/comments" -f body="Oponentura se nepovedla, štítek \`oponentura\` zůstává. Podrobnosti v [běhu workflow]($GITHUB_SERVER_URL/$GH_REPO/actions/runs/$GITHUB_RUN_ID); znovu ji spustíš odebráním a přidáním štítku." > /dev/null || true
+          beh="$GITHUB_SERVER_URL/$GH_REPO/actions/runs/$GITHUB_RUN_ID"
+          if [ -n "$STITKY_TOKEN" ] && GH_TOKEN="$STITKY_TOKEN" gh api -X DELETE "repos/$GH_REPO/issues/$CISLO/labels/oponentura" > /dev/null 2>&1; then
+            stitek="Štítek \`oponentura\` jsem odebral, znovu ji spustíš jeho přidáním."
+          else
+            stitek="Štítek \`oponentura\` se odebrat nepodařilo; znovu ji spustíš jeho odebráním a přidáním."
+          fi
+          gh api "repos/$GH_REPO/issues/$CISLO/comments" -f body="Oponentura se nepovedla. $stitek Podrobnosti v [běhu workflow]($beh)." > /dev/null || true
+          if [ -n "$TELEGRAM_BOT_TOKEN" ] && [ -n "$TELEGRAM_CHAT_ID" ]; then
+            text=$(printf 'Oponentura k #%s se nepovedla.\n%s\n\n%s\nPodrobnosti: %s\n%s/%s/issues/%s' \
+              "$CISLO" "$TITULEK" "${stitek//\`/}" "$beh" "$GITHUB_SERVER_URL" "$GH_REPO" "$CISLO")
+            curl -sS -o /dev/null -X POST "https://api.telegram.org/bot$TELEGRAM_BOT_TOKEN/sendMessage" \
+              --data-urlencode "chat_id=$TELEGRAM_CHAT_ID" --data-urlencode "text=$text" -d disable_web_page_preview=true || true
+          fi

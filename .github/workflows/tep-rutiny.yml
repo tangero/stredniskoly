@@ -1,0 +1,43 @@
+# Tep rutiny Claude Code (#440, scripts/provoz/tep-rutiny.mjs). Rutina běží mimo repozitář a na začátku každého
+# běhu tento workflow spustí ručně (workflow_dispatch): ten běh je tep a nic nedělá. Kontrola každou hodinu zjistí
+# poslední tep; po 12 hodinách ticha pošle vlastníkovi zprávu do Telegramu (pak jednou denně, dokud tep nepřijde).
+#
+# Pojistky: jen čtení běhů workflow, secrets jen Telegram v kontrole, kód z PR se nespouští, skript bez závislostí.
+name: Tep rutiny
+
+on:
+  workflow_dispatch:
+  schedule:
+    # Každou hodinu v 23. minutě, mimo celou hodinu.
+    - cron: "23 * * * *"
+
+permissions: {}
+
+jobs:
+  tep:
+    name: Tep
+    if: github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - run: echo "Tep rutiny od ${{ github.actor }}."
+
+  kontrola:
+    name: Kontrola tepu
+    if: github.event_name == 'schedule'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: read
+      actions: read
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          sparse-checkout: scripts/provoz
+      - name: Kontrola
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: node scripts/provoz/tep-rutiny.mjs
