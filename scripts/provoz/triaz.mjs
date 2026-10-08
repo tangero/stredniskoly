@@ -39,7 +39,8 @@ export function patriDoTriaze(issue) {
   const s = nazvy(issue);
   if (s.includes('interni') || s.includes('projekt')) return false;
   if (s.some((x) => STITKY_HLASENI.includes(x))) return true;
-  return s.length === 0 && !DUVERYHODNI.has(issue.user?.login) && issue.user?.type !== 'Bot';
+  // Cizí issue zůstává hlášením i po triáži, dokud nese jen štítky, které triáž smí zapsat (oblast:*, druh).
+  return s.every((x) => POVOLENE_STITKY.has(x)) && !DUVERYHODNI.has(issue.user?.login) && issue.user?.type !== 'Bot';
 }
 
 /** E-maily a telefonní čísla se z textu odstraní dřív, než jde ven k modelu, do komentáře nebo do Telegramu (P9). */
