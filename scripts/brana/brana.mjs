@@ -277,10 +277,23 @@ export function rozbor(soubory, konfig) {
  * žádnou důvěru nemá: není vlastník (souhlas, stop), asistent (doklad, review) ani github-actions[bot] (záznamy).
  */
 export function datovaObnova(pr, soubory, konfig, issues = []) {
-  const povolene = konfig.rezimy.datove_obnovy?.[pr.vetev];
+  const obnovy = konfig.rezimy.datove_obnovy || {};
+  // Klíč je název větve, nebo vzor (`data/*` pro předání z datové linky, větev `data/<sada>-<období>-<kód>`).
+  const klic = Object.keys(obnovy).find((k) => k === pr.vetev || (Boolean(pr.vetev) && matchesGlob(pr.vetev, k)));
+  const povolene = klic && obnovy[klic];
   const autor = pr.autor === konfig.rezimy.vlastnik || (Boolean(konfig.rezimy.automatika) && pr.autor === konfig.rezimy.automatika);
   if (!povolene || issues.length || pr.zForku !== false || !autor || !soubory.length) return false;
   return soubory.every((s) => [s.nazev, s.puvodni].filter(Boolean).every((c) => shoda(c, povolene)));
+}
+
+/**
+ * Issue, které založila automatika repozitáře se štítkem `rutina`: výpadek z hlídání dostupnosti
+ * (scripts/provoz/dostupnost.mjs) nebo regrese z ověření v produkci (scripts/brana/overeni-produkce.mjs).
+ * Za github-actions[bot] píšou jen workflow tohoto repozitáře, jejichž změna je K nebo H2; doklad „Zdroj:“
+ * proto nepotřebuje (#440). Platí jen pro rutinu: přes limit rutiny běží jako drobné zadání (L).
+ */
+export function zjistilaAutomatika(issue) {
+  return issue?.autor === BOT && (issue.stitky || []).includes('rutina');
 }
 
 /** Text oddílu `## Pro vlastníka` z popisu PR, prázdný, když oddíl chybí nebo je prázdný. */
@@ -470,6 +483,13 @@ export function vyhodnot({ pr, soubory, issues, konfig, zamrznuti, ted, predchoz
           ri = 'K';
           blokuje.push(`issue #${i.cislo} pochází z hlášení; ve fázi 1 potřebuje schvaleno, nebo připojení ke schválenému projektu (${s.duvod})`);
         }
+      } else if (zjistilaAutomatika(i)) {
+        if (vRozsahuRutiny) ri = 'R';
+        else {
+          ri = 'L';
+          info.push(`oprava z automatického zjištění #${i.cislo} přesahuje limit rutiny, běží jako drobné zadání`);
+        }
+        if (ri === 'R') info.push(`rutina z automatického zjištění #${i.cislo} (výpadek nebo regrese)`);
       } else if (!ZDROJ.test(i.telo || '')) {
         ri = 'K';
         blokuje.push(`issue #${i.cislo} nemá doklad „Zdroj:“ ani platný souhlas (${s.duvod})`);

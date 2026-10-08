@@ -5,6 +5,7 @@ větev vzniká v dočasném git worktree. Bez stavu `schvaleno` se nic nestane.
 """
 from __future__ import annotations
 
+import os
 import shutil
 import subprocess
 import tempfile
@@ -93,7 +94,12 @@ def predej(uloha: dict, registr: dict, nanecisto: bool, runner=subprocess.run, s
         spust(["git", "-C", str(docasny), "add", *p["soubory"].values()])
         spust(["git", "-C", str(docasny), "commit", "-m", p["nadpis"]])
         spust(["git", "-C", str(docasny), "push", "-u", "origin", p["vetev"]])
-        adresa = spust(["gh", "pr", "create", "--base", "main", "--head", p["vetev"], "--title", p["nadpis"], "--body", p["telo"]])
+        # PR zakládá App prijimacky-ai (PREDANI_GH_TOKEN), aby na něm běžely kontroly a brána ho poznala jako
+        # předání z linky (#440, RA49). Komentáře a issue linky zůstávají na GITHUB_TOKEN: komentář App by
+        # znovu spustil workflow linky.
+        token = os.environ.get("PREDANI_GH_TOKEN")
+        env = {**os.environ, "GH_TOKEN": token} if token else None
+        adresa = spust(["gh", "pr", "create", "--base", "main", "--head", p["vetev"], "--title", p["nadpis"], "--body", p["telo"]], env=env)
     finally:
         runner(["git", "worktree", "remove", "--force", str(docasny)], capture_output=True, text=True, cwd=jadro.KOREN)
     uloha["predani"] = {"plan": p, "pull_request": adresa}

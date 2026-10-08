@@ -9,7 +9,7 @@ import yaml from 'js-yaml';
 
 const SLOZKA = '.github/workflows';
 const AKCE = 'actions/create-github-app-token@';
-const S_APP = ['csi-weekly-refresh.yml', 'oponentura.yml', 'oprava-z-review.yml', 'otazka.yml', 'slouceni.yml', 'tydenni-prehled.yml', 'veletrhy-snimek.yml'];
+const S_APP = ['csi-weekly-refresh.yml', 'datova-linka.yml', 'oponentura.yml', 'oprava-z-review.yml', 'otazka.yml', 'slouceni.yml', 'tydenni-prehled.yml', 'veletrhy-snimek.yml'];
 // Spouštěče, které běží nad kódem z main (nebo z větve, kterou spustil člověk s právem zápisu), ne nad kódem PR.
 const BEZPECNE_SPOUSTECE = new Set(['schedule', 'workflow_dispatch', 'workflow_run', 'issues', 'issue_comment']);
 

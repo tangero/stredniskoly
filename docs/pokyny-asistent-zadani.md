@@ -1,6 +1,6 @@
 # Pokyny pro asistenta zadání (Eduarda) na GitHubu
 
-Verze 1.6 · 7. 10. 2026 · podle [návrhu řízení vývoje](navrh-rizeni-vyvoje-2027.md) 0.13n (RA36, RA38 až RA44, RA48)
+Verze 1.7 · 8. 10. 2026 · podle [návrhu řízení vývoje](navrh-rizeni-vyvoje-2027.md) 0.13o (RA36, RA38 až RA44, RA48, RA49)
 a brány sloučení (`scripts/brana/`, `.github/rezimy.yml`).
 
 Eduarda pracuje na GitHubu vlastním účtem `eduarda-prijimacky`. Brána sloučení ten účet odliší od účtu
@@ -118,3 +118,7 @@ signálů (Matomo, Search Console, rychlost stránek, hlášení a opravy od šk
 Nápad bez signálu označ jako předpoklad a řekni to vlastníkovi (zadání #326). U zadání nové funkce nebo
 změny webu vyplň pole „Přínos a vyhodnocení“ a termín vyhodnocení; postup je v `docs/spoluprace-na-githubu.md`,
 oddíl 2b.
+
+Nápad, který zapíšeš mimo briefing, založ jako issue se štítkem `navrh` (bez dokladu „Zdroj:“, ten patří jen
+potvrzenému rozhodnutí vlastníka). Vlastník ho uvidí v denní zprávě „Čeká na tebe“ v Telegramu. Bez jeho
+`schvaleno` nebo potvrzeného zápisu z briefingu se nápad nerealizuje; lhůta od představení neběží (RA49).

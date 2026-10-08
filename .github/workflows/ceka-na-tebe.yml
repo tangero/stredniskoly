@@ -1,0 +1,45 @@
+# Denní zpráva „Čeká na tebe“ (#440, scripts/prehled/ceka-na-tebe.mjs): co čeká na rozhodnutí vlastníka (PR ke
+# schválení, otázky, oponentury, návrhy, splatné připomínky, uvízlé opravy z review), seskupené, s lidskou větou,
+# co a kde zkontrolovat, a tlačítky na PR nebo issue. Prázdný den nic neposílá.
+#
+# Pojistky: jen čtení (issues, PR, kontroly, stavy commitů), secrets jen Telegram, kód z PR se nespouští.
+name: Čeká na tebe
+
+on:
+  schedule:
+    # Denně 6:52 UTC (8:52 letního času v Praze), mimo celou hodinu.
+    - cron: "52 6 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: read
+  pull-requests: read
+  checks: read
+  statuses: read
+
+jobs:
+  zprava:
+    name: Čeká na tebe
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          persist-credentials: false
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+
+      - name: Závislosti
+        run: npm ci --ignore-scripts --no-audit --no-fund
+
+      - name: Zpráva
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: node scripts/prehled/ceka-na-tebe.mjs

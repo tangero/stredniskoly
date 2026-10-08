@@ -16,6 +16,9 @@ export const OKNO = 3 * DEN;
 export const OD = Date.parse('2026-10-05T00:00:00Z');
 export const MAX_ADRES = 3;
 export const TEXT_OBNOVY = 'Pravidelná automatická obnova dat. Vzhled webu se nemění, mohou se změnit jen údaje.';
+export const TEXT_LINKY = 'Nová data z datové linky, která jsi potvrdil kódem. Na webu se ukážou po přepnutí období v registru.';
+/** Text pro automatickou obnovu dat: předání z datové linky (větev data/*, #440), jinak pravidelná obnova. */
+export const textObnovy = (vetev = '') => (vetev.startsWith('data/') ? TEXT_LINKY : TEXT_OBNOVY);
 export const ZNACKA = (sha) => `<!-- oznameni-nasazeni sha=${sha} -->`;
 const CTI_ZNACKU = /<!-- oznameni-nasazeni sha=[0-9a-f]{7,40} -->/;
 
@@ -117,7 +120,7 @@ async function main() {
     if (!srovnani || !['ahead', 'identical'].includes(srovnani.status)) continue;
     const soubory = (await api(`repos/${REPO}/pulls/${p.cislo}/files?per_page=100`)).map((s) => ({ nazev: s.filename, puvodni: s.previous_filename, stav: s.status, pridano: s.additions, odebrano: s.deletions }));
     if (rozbor(soubory, konfig).jenBezPreview) continue;
-    const text = datovaObnova(p, soubory, konfig) ? TEXT_OBNOVY : textProVlastnika(p.telo);
+    const text = datovaObnova(p, soubory, konfig) ? textObnovy(p.vetev) : textProVlastnika(p.telo);
     polozky.push({ ...p, text, cesty: cestyNaWebu(p.telo) });
   }
   if (!polozky.length) return console.log('Žádná nová nasazená změna webu k oznámení.');

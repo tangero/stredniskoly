@@ -1,6 +1,6 @@
 # Řízení vývoje: směr určuje člověk, provedení a přehled zajišťuje AI
 
-Verze 0.13n · 7. 10. 2026 · **část A ke schválení hned, část B k rozhodnutí podle měřítek.**
+Verze 0.13o · 8. 10. 2026 · **část A ke schválení hned, část B k rozhodnutí podle měřítek.**
 Stav zavedení: fáze 0 a 1 hotové (4. 10. 2026): brána sloučení je povinná kontrola v rulesetu bez obejití,
 AI slučuje skriptem a workflow Sloučení automaticky (RA40); fáze 2 čeká (postup v
 [postup-zavedeni-faze-0.md](postup-zavedeni-faze-0.md)).
@@ -27,7 +27,7 @@ a výdaje, posílá týdenní přehled a hlásí jen výjimky.
 **Co tím odpadne:** schvalování drobných zadání, kontrola na preview a merge u zhruba 20 PR týdně,
 odpovídání na dotazy v issues, obnova většiny tokenů.
 
-**Co je potřeba schválit:** část A jako celek (rozhodnutí RA1 až RA48 v oddílu 21). Část B se rozhodne
+**Co je potřeba schválit:** část A jako celek (rozhodnutí RA1 až RA49 v oddílu 21). Část B se rozhodne
 po čtyřech týdnech provozu podle měřítek.
 
 **Zavedení po fázích podle přínosu** (oddíl 20): fáze 1 odstraní merge a kontrolu preview, fáze 2 přidá
@@ -184,7 +184,7 @@ Riziko špatného rozhodnutí: **N** nízké, **S** střední, **V** vysoké. Ty
 | 11 | závislosti (`package*.json`, `requirements*.txt`) | D S, bezpečnost S | L / K | bezpečnostní aktualizace Dependabotu, AI projde changelog, jen verze starší 7 dnů; patch a minor L, major K |
 | 12 | přepnutí datové sady v registru | R **V** (rodiče rozhodují podle čísel) | K | kontroly datové linky, srovnání rozdělení hodnot s loňskem, vzorky proti zdroji naslepo, náhled na preview; jen mimo zamrznutí |
 | 13 | nový ukazatel nebo změna výpočtu | R S | K | zápis do slovníku včetně toho, co ukazatel neříká, oponentura druhým klíčem, statistická kontrola |
-| 14 | nový projekt | P S, D S | L / H5 | AI navrhuje projekty a hodnotí je podle Směru vývoje, návštěvnosti, hlášení a sezóny i s odhadem nákladů; **nápad AI se nejdřív představí na briefingu** (oddíl 18) a lhůta 48 h běží až od představení; projekt v mezích mandátu (oddíl 10, bod 4) jako L; strategický nebo nad mandát H5; nápady se vedou v rejstříku návrhů se stavem a důvodem zamítnutí, aby se zamítnuté nevracely |
+| 14 | nový projekt | P S, D S | L / H5 | AI navrhuje projekty a hodnotí je podle Směru vývoje, návštěvnosti, hlášení a sezóny i s odhadem nákladů; **nápad AI jde jako issue se štítkem `navrh` k vlastníkovi** (oddíl 18, RA49): bez jeho `schvaleno` nebo dokladu „Zdroj:“ se nerealizuje, lhůta L u nápadů neběží; projekt schválený v mezích mandátu (oddíl 10, bod 4) jako E; strategický nebo nad mandát H5; nápady se vedou v rejstříku návrhů se stavem a důvodem zamítnutí, aby se zamítnuté nevracely |
 | 15 | zadání z veřejného hlášení nebo z e-mailu od neověřeného odesílatele | R S | K | povinné vyvolání chyby nebo ověření proti zdroji, limit hlášení na autora, klasifikace spamu a podvržených pokynů druhým klíčem |
 | 16 | opravy údajů od škol | R S | L | oddíl 12 |
 | 17 | osobní údaje ve veřejném issue | R **V**, právní S | R | AI issue **přesune do soukromého repozitáře** (`stredniskoly-rizeni`) a ve veřejném založí očištěnou kopii; issue i s historií úprav z veřejného repozitáře zmizí. Stačí právo zápisu do obou repozitářů; mazání (vyžaduje admina, tedy i právo měnit ruleset) ani smazání revize není potřeba |
@@ -491,6 +491,11 @@ briefingu, takže si neodporují.
 - **Upozornění při výjimce** do Telegramu (kanál souhrnů datové linky), ne denně: něco čeká na
   rozhodnutí z oddílu 3, druhý klíč něco zastavil, výdaje nebo tokeny přesáhly 80 % rozpočtu,
   co se zítra sloučí po lhůtě v režimu K.
+- **Denní zpráva „Čeká na tebe“** (RA49, `scripts/prehled/ceka-na-tebe.mjs`) v 8:52, jen když něco čeká: PR
+  ke schválení s větou, co a na které stránce náhledu zkontrolovat, otázky, hotové oponentury, návrhy, splatné
+  připomínky a uvízlé opravy z review, seskupené, s tlačítky na PR nebo issue. Je to pravidelný souhrn jako týdenní
+  přehled, do měřítka „počet vyrušení“ (oddíl 20) se nepočítá; počítají se zprávy mimo něj (otázky, oznámení
+  nasazení, výpadek rutiny po 12 h ticha, selhání oponentury).
 - **Program briefingu** (Grok Bot): nejvýš 3 nápady AI, otázky ke směru, na konci všechny zápisy
   k potvrzení najednou (oddíl 18).
 - **Týdenní přehled** v pondělí do Telegramu (hlavní pravidelný výstup), delší verze do soukromého
@@ -527,7 +532,8 @@ odhad práce a nákladů), ne hotovou analýzu. Spotřebu podle košů uvádí t
 
 **Rozpočet pozornosti vlastníka:**
 
-- **nejvýš 3 nápady AI na briefing**, pevně; neprošlé zůstávají v rejstříku návrhů a po 30 dnech bez
+- **nejvýš 3 nápady AI na briefing**, pevně; mimo briefing je vlastník vidí v denní zprávě „Čeká na tebe“
+  (skupina Návrhy), nerealizují se bez jeho souhlasu (RA49); neprošlé zůstávají v rejstříku návrhů a po 30 dnech bez
   zařazení se vyřadí (AI je může znovu navrhnout jen s novým důvodem);
 - výběr tří nápadů podle skóre: **přínos** (návštěvnost dotčené oblasti, počet hlášení, sezóna)
   × **soulad se Směrem vývoje** ÷ **náklady** (odhad tokenů a práce), každé 1–5; skóre a jednu větu
@@ -557,10 +563,12 @@ proměnit v projekt nebo mu připsat rozhodnutí, které neudělal. Proto platí
 | **věci z oddílu 3 kromě směru** (H1, H3, H4) | schválení dávky rozesílky, výdaj nad limit | **po potvrzení zápisu a s odkazem v GitHubu** | jako rozjíždějící; navíc doplní issue s odkazem na zápis, aby rozhodnutí bylo dohledatelné |
 | **uvolnění pravomocí AI** (H2) | změna brány, rulesetu, workflows | **jen přes GitHub** | připraví PR; sloučí se jen se `schvaleno` od vlastníka |
 
-**Nápady AI** (například nová analýza RSS kanálů škol) se nejdřív představí na briefingu: co, proč,
-odhad práce a nákladů, oblast, skóre. Nejvýš tři na jeden briefing (oddíl 17a). Vlastník je může
-odmítnout, změnit, nebo pustit hned. Když nereaguje, běží od představení lhůta 48 h a projekt startuje
-v režimu L. Projekt zadaný vlastníkem startuje hned a etapy v mandátu se slučují bez lhůty (režim E). Nápady se vedou v **rejstříku návrhů** v soukromém
+**Nápady AI** (například nová analýza RSS kanálů škol) se zapíšou jako issue se štítkem `navrh`: co, proč,
+odhad práce a nákladů, oblast, skóre. Představí se na briefingu (nejvýš tři, oddíl 17a) a denní zpráva
+„Čeká na tebe“ je vlastníkovi připomíná v Telegramu s odkazem na issue. Vlastník je schválí (`schvaleno`, nebo
+potvrzený zápis s dokladem „Zdroj: briefing“), změní, nebo zamítne. **Bez jeho odpovědi se nápad nerealizuje**
+(RA49): lhůta 48 h u nápadů neběží, protože issue bez souhlasu a bez dokladu brána pustí jen v režimu K se
+`schvaleno` na PR. Původní lhůta od představení (RA22) se v praxi neuplatnila a nahrazuje ji toto pravidlo. Projekt zadaný vlastníkem startuje hned a etapy v mandátu se slučují bez lhůty (režim E). Nápady se vedou v **rejstříku návrhů** v soukromém
 repozitáři (stav, datum, důvod zamítnutí), aby se zamítnuté nevracely.
 
 **Doklad potvrzení** (RA30) ukládá podle RA35 sám asistent; samostatná služba s vlastní identitou se
@@ -662,7 +670,7 @@ ověří ho měřítka.
 | RA19 | Migrace přes větev Neonu v režimu K | **ano**, po ověření tarifu |
 | RA20 | Nová data podle politiky přístupu v režimu K | **ano** |
 | RA21 | Rozhodnutí o směru na briefingu v Grok Bot: zastavující hned, rozjíždějící a úpravy po potvrzení zápisu | **ano** |
-| RA22 | Nápady AI se představují na briefingu, lhůta běží od představení, rejstřík návrhů | **ano** |
+| RA22 | Nápady AI se představují na briefingu, lhůta běží od představení, rejstřík návrhů | **ano**; lhůtu od představení nahrazuje RA49 |
 | RA23 | Změny `secrets.*` a `permissions:` ve workflows jako H2, ostatní úpravy workflows K | **ano** |
 | RA24 | Issue s osobními údaji přesunout do soukromého repozitáře místo mazání | **ano** |
 | RA25 | Zadání asistenta je interní jen s dokladem (briefing, ověřená oprava od školy); ostatní e-maily režim K | **ano** |
@@ -686,6 +694,7 @@ ověří ho měřítka.
 | RA43 | Oponentura návrhů modelem Kimi K3 (předplatné Kimi Code vlastníka) na štítek `oponentura` od vlastníka nebo asistenta zadání: smysl, přínos k cílům, náklady proti přínosům a lepší řešení podle skillu `oponentura`; výsledek jde do issue, rozhoduje vlastník | **ano** (rozhodnutí vlastníka) |
 | RA44 | Oponentura jen při rozjezdu nového projektu, ručně štítkem `oponentura`: vlastník popíše problém bez řešení, Claude Code ho prozkoumá (i na webu), Claude a Kimi K3 nezávisle navrhnou řešení, navzájem je anonymně posoudí z pohledu hodnot projektu a person a syntéza předloží 2 až 3 varianty s rozhodujícím testem; vlastník vybere. Nahrazuje jednokrokovou oponenturu z RA43 | **ano** (rozhodnutí vlastníka) |
 | RA45 | Protokol z preview se nevyžaduje: PR se změnou webu se slučuje automaticky po bráně (CI, review); vlastník po nasazení dostane do Telegramu oddíl „Pro vlastníka“ z popisu PR (2 až 3 věty) s adresami na webu, každý PR jednou. Blokuje jen protokol s „nesplněno“. Nahrazuje RA42 | **ano** (rozhodnutí vlastníka) |
+| RA49 | Autonomní trasy (#440): issue se štítkem `rutina` od automatiky repozitáře (github-actions[bot]: výpadek, regrese) se realizuje bez dokladu „Zdroj:“, v limitu rutiny jako R, jinak L; předání z datové linky (větev `data/*` od App, jen výstupy linky) projde jako automatická obnova dat, potvrzení kódem je souhlas; denní zpráva „Čeká na tebe“ do Telegramu; selhání oponentury do Telegramu a odebrání štítku; tep rutiny s upozorněním po 12 h ticha; nápady AI jdou přes `navrh` k vlastníkovi a bez souhlasu se nerealizují (nahrazuje lhůtu od představení z RA22) | **ano** (rozhodnutí vlastníka, 8. 10. 2026) |
 | RA48 | Drobné úkoly projektu jako zaškrtávací seznam v oddílu Etapy issue projektu (mimo Rozsah), PR „Souvisí s #N“; sub-issue jen pro úkol s vlastním rozhodnutím a pro hlášení (RA39). Nástěnka: hlavní pohled `no:parent-issue`, automatické archivování zavřených položek. Upravuje RA38 | **ano** (rozhodnutí vlastníka, 7. 10. 2026) |
 | RA47 | Výjimka z RA35 pro automatiku ve workflow: GitHub App `prijimacky-ai` jen pro tento repozitář (token na hodinu, práva po jobech, bez práva Workflows a mimo Bypass list) slučuje PR, mění štítky v Otázce a Oponentuře a zakládá PR s obnovou dat. Brána jí věří jen u automatických obnov dat. Claude Code v relacích, asistent zadání a Tabule beze změny; hlášení z webu později samostatně | **ano** (rozhodnutí vlastníka, #403) |
 | RA46 | Otázky AI na vlastníka chodí do Telegramu (štítek `otazka`, tabule je ukazuje jako jeho tah); jasnou část zadání AI realizuje a ptá se jen na nejasnou. Automatické obnovy dat (PR bez zadání z větví v `datove_obnovy`, jen povolené cesty, od účtu vlastníka, ne z forku) se slučují v režimu R bez souhlasu a review | **ano** (rozhodnutí vlastníka) |
@@ -718,6 +727,9 @@ Po čtyřech týdnech provozu části A:
 
 ## Změny návrhu
 
+- **0.13o** (8. 10. 2026, rozhodnutí vlastníka, zadání #440): rutina z automatického zjištění bez dokladu,
+  předání z datové linky bez druhého souhlasu, denní zpráva „Čeká na tebe“, selhání oponentury a tep rutiny
+  do Telegramu, nápady AI přes `navrh` bez lhůty (RA49).
 - **0.13n** (7. 10. 2026, rozhodnutí vlastníka): drobné úkoly projektu jako seznam v issue projektu místo
   sub-issues, přehlednější nástěnka (RA48).
 - **0.13m** (7. 10. 2026, rozhodnutí vlastníka, zadání #403): automatika ve workflow jako GitHub App `prijimacky-ai`

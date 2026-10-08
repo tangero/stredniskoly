@@ -683,3 +683,38 @@ test('účet automatiky (GitHub App, #403): obnova dat projde, jinde žádná d�
   const reviewApp = run({ pr: pr({ komentare: [reviewKomentar(SHA, 'Bez P1 a P2', { autor: app }), protokolKomentar()] }) });
   assert.equal(reviewApp.uspech, false);
 });
+
+test('předání z datové linky (větev data/*, RA49): od App projde v R, jinde ne (#440)', () => {
+  const app = konfig.rezimy.automatika;
+  const vystupy = [soubor('public/pasma_prijeti_2027.json', 900), soubor('public/okruhy_oboru_2027.json', 300)];
+  const predani = (o = {}) => pr({ telo: 'Připravila datová linka.', komentare: [], vetev: 'data/cermat-uchazeci-kolo1-2027-qnype', zForku: false, autor: app, ...o });
+  const v = run({ pr: predani(), issues: [], soubory: vystupy });
+  assert.equal(v.uspech, true, v.duvody.join('; '));
+  assert.equal(v.rezim, 'R');
+  // Registr nebo kód mimo výstupy linky: posoudí se jako dřív.
+  assert.equal(run({ pr: predani(), issues: [], soubory: [...vystupy, soubor('public/stav_datovych_sad.json')] }).uspech, false);
+  assert.equal(run({ pr: predani(), issues: [], soubory: [soubor('src/app/page.tsx')] }).uspech, false);
+  // Vzor neplatí do hloubky, z forku ani od asistenta.
+  assert.equal(run({ pr: predani({ vetev: 'data/a/b' }), issues: [], soubory: vystupy }).uspech, false);
+  assert.equal(run({ pr: predani({ zForku: true }), issues: [], soubory: vystupy }).uspech, false);
+  assert.equal(run({ pr: predani({ autor: 'eduarda-prijimacky' }), issues: [], soubory: vystupy }).uspech, false);
+});
+
+test('rutina z automatického zjištění (issue od github-actions[bot]) projde bez dokladu Zdroj (#440)', () => {
+  const regrese = (o = {}) => issue({ cislo: 423, autor: BOT, stitky: ['interni', 'rutina', 'oblast:skola'], telo: 'Regrese v produkci: PR #400 nesplnil K1.', ...o });
+  const v = run({ predchozi: null, issues: [regrese()] });
+  assert.equal(v.uspech, true, v.duvody.join('; '));
+  assert.equal(v.rezim, 'R');
+  assert.match(v.duvody.join(), /automatického zjištění #423/);
+  // Přes limit rutiny: drobné zadání s lhůtou.
+  const velka = run({ predchozi: null, issues: [regrese()], soubory: [soubor('src/components/skola/DruheKolo.tsx', 400)] });
+  assert.equal(velka.rezim, 'L');
+  assert.equal(velka.uspech, false);
+  // Bez štítku rutina, nebo od jiného účtu (i App), doklad Zdroj dál chybí.
+  assert.equal(run({ predchozi: null, issues: [regrese({ stitky: ['interni'] })] }).uspech, false);
+  assert.equal(run({ predchozi: null, issues: [regrese({ autor: konfig.rezimy.automatika })] }).uspech, false);
+  assert.equal(run({ predchozi: null, issues: [regrese({ autor: 'nekdo' })] }).uspech, false);
+  // Stop na issue dál platí.
+  const stop = { akce: 'labeled', stitek: 'stop', cas: PRED(1), aktor: 'tangero' };
+  assert.equal(run({ predchozi: null, issues: [regrese({ stitky: ['interni', 'rutina', 'stop'], udalosti: [stop] })] }).uspech, false);
+});
