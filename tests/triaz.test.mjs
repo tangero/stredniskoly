@@ -161,3 +161,31 @@ test('souhrn hlášení: nová podle druhu, netříděná, starší 7 dní', asy
   assert.match(text, /## Hlášení/);
   assert.match(text, /bug 2/);
 });
+
+// Oprava po prvním běhu v produkci (8. 10. 2026): nápad z formuláře nedostane štítek chyby, komentář
+// neprotiřečí oblasti issue a neuvádí bezcennou „jistotu“; model dostane definice druhů.
+test('formulář nápadů: druh je požadavek na funkci a štítek druhu se nepřidá', () => {
+  const napad = hlaseni(53, { labels: [{ name: 'feature-request' }, { name: 'oblast:data' }] });
+  const t = overVystup(JSON.stringify(dobry), [], napad);
+  assert.equal(t.druh, 'požadavek na funkci');
+  assert.deepEqual(stitkyKZapisu(napad, t), []);
+  assert.match(komentar(napad, t), /Druh: \*\*požadavek na funkci\*\*/);
+  // Duplicita od modelu má přednost i u nápadu.
+  assert.equal(overVystup(JSON.stringify({ ...dobry, druh: 'duplicita' }), [], napad).druh, 'duplicita');
+});
+
+test('komentář: oblast podle štítku issue, odhad modelu jen jako poznámka, bez jistoty', () => {
+  const s = hlaseni(168, { labels: [{ name: 'bug-report' }, { name: 'oblast:dojezdy' }] });
+  const t = overVystup(JSON.stringify({ ...dobry, oblast: 'simulator' }), [], s);
+  const k = komentar(s, t);
+  assert.match(k, /Oblast: \*\*dojezdy\*\* \(podle štítku issue; model navrhoval simulator\)/);
+  assert.doesNotMatch(k, /Jistota/);
+  const bez = komentar(hlaseni(10), overVystup(JSON.stringify(dobry), [], hlaseni(10)));
+  assert.match(bez, /Oblast: \*\*detail\*\*\n/);
+});
+
+test('zadání pro model definuje druhy a uvádí formulář jako nápovědu', () => {
+  const [system, user] = sestavPrompt(hlaseni(10, { labels: [{ name: 'portal-skoly' }] }), []);
+  for (const druh of ['„chyba webu“', '„chyba v datech“', '„požadavek na funkci“', '„duplicita“', '„jiné“']) assert.ok(system.content.includes(druh), druh);
+  assert.match(user.content, /Formulář: portal-skoly/);
+});
