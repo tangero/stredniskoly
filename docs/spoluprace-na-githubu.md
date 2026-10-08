@@ -14,6 +14,10 @@ dokument popisuje nastavení GitHubu, na kterém stojí.
 | `navrh` | čeká na schválení Patrickem, nerealizovat |
 | `schvaleno` | Claude Code může realizovat; přidává jen Patrick |
 | `zamitnuto` | nerealizovat |
+| `stop` | veto; PR ani issue se nesloučí; odebrat smí jen ten, kdo ho přidal, nebo Patrick |
+| `rutina` | režim R: oprava rozporu z vlastních dat nebo kódu, do 150 řádků v jedné oblasti |
+| `projekt` | práce s cílem a etapami; etapy v dohodnutém rozsahu bez lhůty |
+| `puvod:hlaseni`, `puvod:email` | zadání z veřejného hlášení nebo neověřeného e-mailu; jen se `schvaleno` |
 | `otazka` | AI se ptá vlastníka; otázka mu jde do Telegramu (workflow Otázka vlastníkovi), štítek zmizí po jeho odpovědi |
 | `oponentura` | problém pro nový projekt projde oponenturou (workflow Oponentura) a štítek se sám odebere; mezitím nerealizovat |
 | `k-overeni` | otevřený PR s protokolem z preview (ověřuje AI, vlastník volitelně); po sloučení ho z otevřeného issue (etapa projektu) odebere workflow Tabule |
@@ -34,7 +38,7 @@ Formuláře vidí i veřejnost. Realizaci podmiňuje štítek `schvaleno`, ne fo
 
 GitHub sám připomínky neposílá. Připomínka je proto issue, které Claude Code najde při každém
 zpracování issues: štítek `pripominka` a termín v těle, buď z pole formuláře, nebo řádkem
-`Termín: RRRR-MM-DD`. Příkaz, který je vypíše a označí splatné, je v `CLAUDE.md` (pravidlo 1).
+`Termín: RRRR-MM-DD`. Příkaz, který je vypíše a označí splatné, je ve skillu `trideni-issues` (pravidlo 1 v `CLAUDE.md`).
 
 - Před termínem se připomínka nerealizuje, ani se `schvaleno`.
 - Od termínu ji Claude Code se `schvaleno` zpracuje, bez něj ji jen připomene.

@@ -44,6 +44,17 @@ upraveném protokolu. Push na konci lhůty ji tedy restartuje; nepushuj kosmetic
 
 **Propojení s issue** se čte z těla PR: `Closes #N` nebo `Souvisí s #N`.
 
+**Etapy:** když issue nebo vlastník projektu určí dodávku po etapách, má každá etapa vlastní větev
+`zadani/<N>-etapa-<M>-<kratky-popis>` a PR se „Souvisí s #N“; `Closes #N` nese jen PR poslední etapy. Titulek PR
+podle issue (například „Fáze 2 / etapa M: …“). Drobný úkol projektu (RA48) je položka zaškrtávacího seznamu
+v oddílu `## Etapy` issue projektu; seznam stojí mimo `## Rozsah`, takže jeho úprava schválení projektu neruší,
+a schválený projekt PR úkolu pustí jako etapu bez lhůty. Sub-issue projektu se zakládá přes
+`POST /repos/tangero/stredniskoly/issues/<projekt>/sub_issues`.
+
+**Pro vlastníka:** věty z pohledu návštěvníka bez technických slov (například „Místo krátkého divného jména
+Gymnazium uvidíš celý oficiální název školy“) a adresy na webu. Po nasazení je workflow Ověření v produkci pošle
+vlastníkovi do Telegramu.
+
 ## Jak číst výsledek
 
 ```bash

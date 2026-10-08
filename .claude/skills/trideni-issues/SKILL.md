@@ -9,7 +9,12 @@ Pravidla: `CLAUDE.md` (pravidla 1 a 4) a `docs/navrh-rizeni-vyvoje-2027.md`, odd
 
 ## Postup
 
-1. Splatné připomínky (`pripominka`) vypiš zvlášť, příkaz je v `CLAUDE.md`, pravidlo 1.
+1. Splatné připomínky (`pripominka`) vypiš zvlášť (`CLAUDE.md`, pravidlo 1):
+   ```bash
+   gh issue list -R tangero/stredniskoly --label pripominka --state open --json number,title,body \
+     --jq '.[] | (.body | capture("Termín:?\\s*(?<d>[0-9]{4}-[0-9]{2}-[0-9]{2})").d // "bez termínu") as $t
+       | "#\(.number) termín \($t)\(if $t <= (now|strftime("%Y-%m-%d")) then " – SPLATNÉ" else "" end)  \(.title)"'
+   ```
 2. Každé otevřené issue bez oblasti dostane právě jeden štítek `oblast:<slug>`. Oblasti a cesty
    v kódu: `.github/labeler.yml` (detail, prehledy, simulator, dojezdy, novinky, veletrhy, portal, data,
    provoz).
