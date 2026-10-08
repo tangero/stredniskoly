@@ -58,3 +58,30 @@ stránku.
 
 Zakázat workflow Dostupnost v Actions (nebo smazat soubor). Otevřená issue výpadků zavřít ručně.
 Ruční zkouška bez zápisu: `node scripts/provoz/dostupnost.mjs --nanecisto`.
+
+## Etapa 2: triáž hlášení (#355, #437)
+
+Workflow Triáž (`.github/workflows/triaz.yml`, skript `scripts/provoz/triaz.mjs`) běží při založení nebo označení
+hlášení (`bug-report`, `portal-skoly`, `feature-request`, `puvod:hlaseni`, `puvod:email`, nebo issue od cizího účtu
+bez štítků) a každou hodinu jako dohledání. Interní zadání (`interni`, `projekt`) a PR netřídí.
+
+### Co se stane
+
+- Levný model (OpenRouter, `OPENROUTER_API_KEY`, model v `TRIAZ_MODEL`, výchozí `openai/gpt-4o-mini`) dostane jen
+  titulek a tělo hlášení (bez e-mailů a telefonů) a seznam otevřených issues. Nemá nástroje ani token GitHubu,
+  text hlášení bere jako data. Vrátí druh, oblast, RED IZO, kandidáta duplicity a projektu, jistotu a jednu větu.
+- Skript výstup ověří proti povoleným hodnotám. Co neprojde, dostane komentář „Netříděno“ a žádný štítek.
+- Zapíše štítek `oblast:*` (jen když issue žádný nemá), štítek druhu (`bug`, `chybna-data`, `enhancement`,
+  `duplicate`, jen když žádný nemá) a jeden komentář `## Třídění` se skrytou značkou `triaz:v1`. Opakovaný běh
+  komentář ani zprávu nezdvojí.
+- Duplicitu a projekt jen navrhne. Nikdy nepřidá ani neodebere `schvaleno`, `zamitnuto`, `stop`, `navrh`,
+  `projekt`, `otazka`, nezavírá issues, nepřipojuje sub-issues a nepíše `Zdroj:`.
+- Telegram: hlášení „web nefunguje“ hned, ostatní souhrnem v hodinovém běhu (druh, oblast, odkaz, bez textu hlášení).
+- Týdenní přehled: oddíl Hlášení (nová podle druhu, netříděná, otevřená starší 7 dní).
+
+Chyba modelu (výpadek služby) nic nezapíše, hlášení se zkusí při dalším běhu.
+
+### Jak vypnout
+
+Zakázat workflow Triáž v Actions (nebo smazat soubor). Ruční zkouška bez zápisu:
+`node scripts/provoz/triaz.mjs --nanecisto` (potřebuje `GITHUB_TOKEN` nebo přihlášené `gh` a klíč modelu).

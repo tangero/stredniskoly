@@ -14,6 +14,7 @@ import yaml from 'js-yaml';
 import { REPO, NAZEV_KONTROLY, vytvorApi } from '../brana/data.mjs';
 import { nactiMeritka, spocitejMeritka, kratkaMeritka, oddilMeritka } from './meritka.mjs';
 import { nactiStav, souhrnTydne } from '../provoz/dostupnost.mjs';
+import { souhrnHlaseni } from '../provoz/triaz.mjs';
 
 const DEN = 24 * 60 * 60 * 1000;
 export const STITKY_ROZHODNUTI = ['schvaleno', 'zamitnuto', 'stop'];
@@ -145,7 +146,18 @@ export async function nactiData(api, ted, tokeny = {}, { vlastnik = 'tangero', a
     dostupnost = { chyba: String(e.message || e).slice(0, 200) };
   }
 
-  return { od, ted, slouceno, rozhodnuti, navrhy, zastavene, cekajiNaSouhlas, potrebujiCloveka, cervenaMain, expirace, app, meritka, dostupnost };
+  // Hlášení (#355, etapa 2): nová podle druhu, netříděná a otevřená starší 7 dní; chyba nesmí zastavit přehled.
+  let hlaseni = null;
+  try {
+    const otevrena = await api(`repos/${REPO}/issues?state=open&per_page=100`);
+    const nedavna = await api(`repos/${REPO}/issues?state=all&since=${new Date(od).toISOString()}&per_page=100`);
+    const podleCisla = new Map([...otevrena, ...nedavna].map((i) => [i.number, i]));
+    hlaseni = souhrnHlaseni([...podleCisla.values()], ted);
+  } catch (e) {
+    hlaseni = { chyba: String(e.message || e).slice(0, 200) };
+  }
+
+  return { od, ted, slouceno, rozhodnuti, navrhy, zastavene, cekajiNaSouhlas, potrebujiCloveka, cervenaMain, expirace, app, meritka, dostupnost, hlaseni };
 }
 
 const ms = (x) => (x == null ? 'bez dat' : `${x} ms`);
@@ -156,6 +168,20 @@ export function kratkaDostupnost(dost) {
   if (!dost || dost.chyba || !dost.adresy.length) return '';
   const nejnizsi = Math.min(...dost.adresy.map((a) => a.dostupnost ?? 100));
   return `Dostupnost webu: nejnižší ${pct(nejnizsi)}, výpadků a pomalých úseků ${dost.vypadky.length}`;
+}
+
+/** Oddíl Hlášení dlouhého přehledu (#355, K15): nová podle druhu, netříděná, otevřená starší 7 dní. */
+export function oddilHlaseni(h, odkazFn = (n) => `#${n}`) {
+  if (!h) return [];
+  if (h.chyba) return ['## Hlášení', `- nepodařilo se načíst: ${h.chyba}`, ''];
+  const nova = Object.entries(h.nova);
+  return [
+    '## Hlášení',
+    `- Nová za týden: ${nova.length ? nova.map(([d, n]) => `${d} ${n}`).join(', ') : 'žádná'}`,
+    `- Netříděná otevřená: ${h.netridena.length ? h.netridena.map((x) => odkazFn(x.cislo)).join(', ') : 'žádná'}`,
+    `- Otevřená starší 7 dní: ${h.stara.length ? h.stara.map((x) => odkazFn(x.cislo)).join(', ') : 'žádná'}`,
+    '',
+  ];
 }
 
 /** Oddíl Dostupnost dlouhého přehledu (#355): po adresách dostupnost, medián a p95 odezvy, podíl 5xx a výpadky. */
@@ -246,6 +272,7 @@ export function sestavPrehled(d, { vlastnik = 'tangero' } = {}) {
     '',
     ...(d.meritka ? [d.meritka.chyba ? `## Měřítka\n- nepodařilo se spočítat: ${d.meritka.chyba}` : oddilMeritka(d.meritka, odkaz), ''] : []),
     ...oddilDostupnost(d.dostupnost, odkaz),
+    ...oddilHlaseni(d.hlaseni, odkaz),
     '## Provoz',
     d.cervenaMain.length ? `- červené CI na main: ${d.cervenaMain.join(', ')}` : '- CI na main bez chyb',
     ...Object.entries(d.expirace).map(([n, e]) => `- token ${n}: ${e === 'chybi' ? 'secret chybí' : e === 'neplatny' ? 'neplatí' : e ? `vyprší ${e}` : 'bez expirace'}`),

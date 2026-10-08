@@ -1,0 +1,55 @@
+# Triáž hlášení (#355, etapa 2, docs/monitoring-produkce.md): nové hlášení roztřídí levný model (druh, oblast,
+# možná duplicita a projekt), skript zapíše štítek oblasti a druhu, jeden komentář „Třídění“ a pošle zprávu do
+# Telegramu (scripts/provoz/triaz.mjs). Hodinový běh dohledá netříděná a pošle souhrn.
+#
+# Pojistky (P6, P8): jen `contents: read` a `issues: write`, ze secrets jen klíč modelu a Telegram. Model nemá
+# nástroje ani token GitHubu, text hlášení dostává jen jako data. Kód z issue se nespouští, nic se nestahuje;
+# checkout je vždy main. Skript nikdy nemění schvaleno, zamitnuto, stop, navrh, projekt ani otazka.
+name: Triáž
+
+on:
+  issues:
+    types: [opened, labeled]
+  schedule:
+    - cron: "17 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+concurrency:
+  group: triaz
+  cancel-in-progress: false
+
+jobs:
+  triaz:
+    name: Triáž
+    # Štítek spouští jen hlášení; ostatní štítky (oblast, k-overeni…) běh nezakládají.
+    if: >-
+      github.event_name != 'issues' ||
+      github.event.action == 'opened' ||
+      contains(fromJSON('["bug-report","portal-skoly","feature-request","puvod:hlaseni","puvod:email"]'), github.event.label.name)
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          persist-credentials: false
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+
+      - name: Závislosti
+        run: npm ci --ignore-scripts --no-audit --no-fund
+
+      - name: Roztřídit hlášení
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: node scripts/provoz/triaz.mjs
