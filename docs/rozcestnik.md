@@ -1,8 +1,9 @@
 # Rozcestník dokumentace
 
 Podrobná dokumentace jednotlivých oblastí projektu. Nový dokument zapiš sem, ve stejné dávce, ve které vzniká.
-Soubor načítá `CLAUDE.md`; pravidla projektu jsou v `CLAUDE.md` a `.claude/claude.md`.
+`CLAUDE.md` na tento soubor odkazuje (nenačítá ho celý); pravidla projektu jsou v `CLAUDE.md` a `.claude/claude.md`.
 
+- [Gotchas](gotchas.md) — neočekávané chování a předpoklady, které nejsou vidět z kódu
 - [Slovník ukazatelů](slovnik-ukazatelu.md) — závazné názvy, definice a výpočty všech čísel na webu
 - [Slovník pojmů](slovnik-pojmu.md) — závazné pojmy pro texty na webu, jejich vysvětlení při prvním výskytu a zakázaná slova
 - [Zdroje dat](zdroje-dat.md) — zdrojové soubory sloupec po sloupci a registr stavu datových sad
