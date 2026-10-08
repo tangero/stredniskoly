@@ -93,6 +93,14 @@ body:
         - L
     validations:
       required: true
+  - type: input
+    id: zavisi
+    attributes:
+      label: Závisí na
+      description: "Nepovinné. Čísla issues, na kterých zadání stojí, například `Závisí na #123, #124`. Dokud nejsou zavřená, zadání se nerealizuje."
+      placeholder: "Závisí na #123"
+    validations:
+      required: false
   - type: textarea
     id: odkazy
     attributes:
