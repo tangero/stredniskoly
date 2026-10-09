@@ -80,7 +80,7 @@ export const changelog: ChangelogEntry[] = [
       { type: 'new', text: 'Portál pro školy má podrobný formulář kritérií přijetí: body za jednotnou zkoušku, další body, minima a pravidla při rovnosti bodů, s varováním před zahozením neuložených změn' },
       { type: 'new', text: 'Stránka Pro novináře s balíčky dat ke stažení (XLSX, CSV): veletrhy, konzervatoře, uchazeči 1. a 2. kola 2026 po krajích a ročnících a volná místa po 2. kole' },
       { type: 'fix', text: 'Pásma přijetí a kontext přihlášek se počítají jen z denního studia, stejně jako oficiální souhrny 1. kola; dálkové a zkrácené studium se do denního oboru už nemíchá' },
-      { type: 'fix', text: 'V datech 2025 se vzdání se přijetí počítá jako přijetí, stejně jako v datech 2026, takže oba ročníky jdou srovnat' },
+      { type: 'fix', text: 'Pásma přijetí a kontext přihlášek za rok 2025 počítají vzdání se přijetí jako přijetí, stejně jako data 2026, takže oba ročníky jdou srovnat. Sekce „Jak to dopadlo loni“ to tak dělala už od verze 2.8.0' },
       { type: 'fix', text: '24 oborů, které škola vypsala bez zaměření vedle loňských zaměření, má vlastní stránku s letošními čísly' },
     ],
   },
