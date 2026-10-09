@@ -21,6 +21,10 @@ of 0.25° x 0.5° with at least 30 stations, e.g. a missing region or Prague.
 Service volume is checked too: trips in the morning window must stay at 85 %
 (or above a fixed floor when the current graph does not record them) and at most 30 % of shared routes may
 double their headway, e.g. a feed with only a few trips per route.
+Station locations are checked always, also without a reference: no station may lie far
+from Czechia (47-53 N, 9-25 E) and at most 2 % may lack coordinates. The feed itself
+has some stations without coordinates (246 of 32,360 on 2026-10-12, e.g. city buses in
+Most); they stay in the graph at 0, 0 so that routes through them still work.
 
 The data come from the data pipeline (scripts/linka/, sada doprava-gtfs), which
 downloads the feed after a timetable change and runs this script:
@@ -53,6 +57,9 @@ MIN_SHARE_TRIPS = 0.85
 FALLBACK_MIN_TRIPS = 21_000
 MAX_SHARE_SLOWER_ROUTES = 0.3
 MIN_SHARED_ROUTES = 50
+# Station locations (see module docstring).
+REGION_LAT, REGION_LON = (47.0, 53.0), (9.0, 25.0)
+MAX_SHARE_NO_COORDS = 0.02
 
 WEEKDAYS = ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"]
 HOUR_START = 7
@@ -185,6 +192,22 @@ def stations_by_cell(graph: dict) -> dict[tuple[int, int], int]:
         if stop and (stop[1] or stop[2]):
             cells[map_cell(stop[1], stop[2])] += 1
     return cells
+
+
+def location_problems(graph: dict) -> list[str]:
+    """Stations far from Czechia or too many without coordinates; empty when fine."""
+    problems = []
+    stops = graph["stops"].values()
+    missing = [s for s in stops if not s[1] and not s[2]]
+    if len(missing) > MAX_SHARE_NO_COORDS * max(1, len(graph["stops"])):
+        problems.append(f"{len(missing)} of {len(graph['stops'])} stations without coordinates "
+                        f"(e.g. {', '.join(s[0] for s in missing[:3])})")
+    far = [s for s in stops if (s[1] or s[2]) and not (REGION_LAT[0] <= s[1] <= REGION_LAT[1]
+                                                       and REGION_LON[0] <= s[2] <= REGION_LON[1])]
+    if far:
+        problems.append(f"{len(far)} stations far from Czechia (e.g. "
+                        + ", ".join(f"{s[0]} {s[1]:.2f} N {s[2]:.2f} E" for s in far[:3]) + ")")
+    return problems
 
 
 def coverage_problems(new: dict, reference: dict) -> list[str]:
@@ -509,12 +532,18 @@ def main(argv: list[str] | None = None):
             "avg_out_degree": round(total_edges / max(1, len(edges_out)), 1),
             "routes_with_headway": len(headways_out),
             "trips_in_window": trips_in_window,
+            "stations_without_coordinates": sum(1 for s in stops_out.values() if not s[1] and not s[2]),
             "version": 2,
         },
         "stops": dict(sorted(stops_out.items())),
         "edges": {k: v for k, v in sorted(edges_out.items())},
         "headways": dict(sorted(headways_out.items())),
     }
+
+    problems = location_problems(output_data)
+    if problems:
+        sys.exit("Station location check failed:\n  " + "\n  ".join(problems))
+    print(f"  Station location check: OK ({output_data['metadata']['stations_without_coordinates']} without coordinates)")
 
     if not args.bez_srovnani and args.srovnat.exists():
         reference = json.loads(args.srovnat.read_text(encoding="utf-8"))

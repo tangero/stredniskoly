@@ -104,5 +104,19 @@ class PokrytiTest(unittest.TestCase):
         self.assertEqual(graf.coverage_problems(novy, reference), [])
 
 
+class PolohaTest(unittest.TestCase):
+    def test_bezne_stanice_projdou(self):
+        stanice = {f"S{i}": (49.2, 16.6) for i in range(98)}
+        self.assertEqual(graf.location_problems(graf_se_stanicemi({**stanice, "Z1": (0.0, 0.0), "D": (51.15, 15.0)})), [])
+
+    def test_prilis_stanic_bez_souradnic_neprojde(self):
+        stanice = {**{f"S{i}": (49.2, 16.6) for i in range(90)}, **{f"Z{i}": (0.0, 0.0) for i in range(10)}}
+        self.assertIn("10 of 100 stations without coordinates", graf.location_problems(graf_se_stanicemi(stanice))[0])
+
+    def test_stanice_daleko_od_ceska_neprojde(self):
+        stanice = {**{f"S{i}": (49.2, 16.6) for i in range(50)}, "H": (60.17, 24.94)}
+        self.assertIn("1 stations far from Czechia", graf.location_problems(graf_se_stanicemi(stanice))[0])
+
+
 if __name__ == "__main__":
     unittest.main()
