@@ -737,12 +737,13 @@
    ],
    "ukazatele": [],
    "aktualizace": {
-    "zdroj": "https://data.pid.cz/PID_GTFS.zip; celostátní jízdní řády KOMPLET ručně",
-    "detekce": "PID se obnovuje denně, Last-Modified 13. 9. 2026.",
-    "import": "scripts/build_transit_graph_v2.py a převodníky KOMPLET v scripts/.",
+    "zdroj": "https://www.spojenka.cz/jrdata/jizdnirady-gtfs.zip (GTFS CIS JŘ, obsahuje i PID); zastávky PID pro našeptávač z https://data.pid.cz/PID_GTFS.zip",
+    "detekce": "Oba zdroje se publikují denně (Last-Modified 9. 10. 2026). Podstatná změna je celostátní změna jízdních řádů druhou neděli v prosinci.",
+    "import": "scripts/stahni-jizdni-rady.py stáhne CIS JŘ do data/GTFS_CR/, scripts/build_transit_graph_v2.py --datum <pondělí> z něj postaví data/transit_graph.json jen ze spojů jedoucích ve zvolené pondělí.",
     "automatizace": "priprava",
-    "lidsky_krok": "PID lze stahovat automaticky; celostátní data KOMPLET se získávají ručně a stavba grafu je náročná, proto doporučeno obnovovat při změně jízdních řádů, ne průběžně.",
+    "lidsky_krok": "Po změně jízdních řádů spustit stahování a stavbu grafu pro běžné školní pondělí nejvýš dva týdny po stažení (PID se zveřejňuje jen asi dva týdny dopředu, skript při neúplných datech odmítne graf postavit) a commitnout data/transit_graph.json; pak přepnout sadu příkazem stav-datovych-sad.py prepni.",
     "sledovat": [
+     "https://www.spojenka.cz/jrdata/jizdnirady-gtfs.zip",
      "https://data.pid.cz/PID_GTFS.zip"
     ],
     "revize_oznamovat": false

@@ -8,8 +8,22 @@ Produces data/transit_graph.json with:
 - metadata
 
 Time profile: Monday 07:00-08:00 (morning commute to school).
+
+Only trips that actually run on one reference Monday are used (calendar.txt
+plus exceptions in calendar_dates.txt). Default is the nearest upcoming Monday;
+pick a regular school Monday with --datum, e.g. after the December timetable change.
+
+The feed only contains trips published so far: PID (Prague) about two weeks
+ahead, other operators until the end of the yearly timetable. The build fails
+when fewer than --min-trips trips run on the reference Monday (a whole country
+Monday has ~160k trips, without Prague ~110k), so the reference Monday must lie
+within about two weeks of the download.
+
+    python3 scripts/stahni-jizdni-rady.py
+    python3 scripts/build_transit_graph_v2.py --datum 2027-01-11
 """
 
+import argparse
 import csv
 import json
 import os
@@ -17,14 +31,15 @@ import statistics
 import sys
 import time
 from collections import defaultdict
+from datetime import date, datetime, timedelta
 from pathlib import Path
 
 GTFS_DIR = Path(__file__).resolve().parent.parent / "data" / "GTFS_CR"
 OUTPUT = Path(__file__).resolve().parent.parent / "data" / "transit_graph.json"
 
-# Reference date for filtering: a Monday within the GTFS validity range
-# We'll pick the first Monday that falls within calendar validity
-REFERENCE_WEEKDAY = "monday"
+MIN_TRIPS = 140_000
+
+WEEKDAYS = ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"]
 HOUR_START = 7
 HOUR_END = 8
 
@@ -65,13 +80,73 @@ def is_night_route(route_short: str) -> bool:
     return False
 
 
-def main():
+def next_monday(today: date) -> date:
+    """Nearest Monday on or after today."""
+    return today + timedelta(days=(7 - today.weekday()) % 7)
+
+
+def active_service_ids(gtfs_dir: Path, day: date) -> set[str]:
+    """service_ids running on the given day (calendar.txt + calendar_dates.txt)."""
+    ymd = day.strftime("%Y%m%d")
+    weekday = WEEKDAYS[day.weekday()]
+    active = set()
+
+    calendar = gtfs_dir / "calendar.txt"
+    if calendar.exists():
+        with open(calendar, encoding="utf-8-sig") as f:
+            for row in csv.DictReader(f):
+                if row.get(weekday, "0").strip() == "1" and row["start_date"].strip() <= ymd <= row["end_date"].strip():
+                    active.add(row["service_id"].strip())
+
+    calendar_dates = gtfs_dir / "calendar_dates.txt"
+    if calendar_dates.exists():
+        with open(calendar_dates, encoding="utf-8-sig") as f:
+            for row in csv.DictReader(f):
+                if row["date"].strip() != ymd:
+                    continue
+                sid = row["service_id"].strip()
+                exception = row.get("exception_type", "").strip()
+                if exception == "1":
+                    active.add(sid)
+                elif exception == "2":
+                    active.discard(sid)
+
+    return active
+
+
+def source_published(gtfs_dir: Path) -> str | None:
+    """Publication date of the GTFS feed written by stahni-jizdni-rady.py."""
+    info = gtfs_dir / "_zdroj.json"
+    if not info.exists():
+        return None
+    return json.loads(info.read_text(encoding="utf-8")).get("publikovano") or None
+
+
+def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
+    parser = argparse.ArgumentParser(description="Build data/transit_graph.json from GTFS CIS JŘ")
+    parser.add_argument("--datum", type=date.fromisoformat, default=None,
+                        help="reference Monday YYYY-MM-DD (default: nearest upcoming Monday)")
+    parser.add_argument("--gtfs-dir", type=Path, default=GTFS_DIR)
+    parser.add_argument("--output", type=Path, default=OUTPUT)
+    parser.add_argument("--min-trips", type=int, default=MIN_TRIPS,
+                        help=f"fail when fewer trips run on the reference Monday (default {MIN_TRIPS})")
+    args = parser.parse_args(argv)
+    if args.datum is None:
+        args.datum = next_monday(date.today())
+    if args.datum.weekday() != 0:
+        parser.error(f"--datum {args.datum} is not a Monday")
+    return args
+
+
+def main(argv: list[str] | None = None):
+    args = parse_args(argv)
+    gtfs_dir, output = args.gtfs_dir, args.output
     t0 = time.time()
 
     # --- Step 1: Load routes.txt → route_id → route_short_name ---
     print("Loading routes.txt...")
     route_id_to_short = {}
-    with open(GTFS_DIR / "routes.txt", encoding="utf-8-sig") as f:
+    with open(gtfs_dir / "routes.txt", encoding="utf-8-sig") as f:
         reader = csv.DictReader(f)
         for row in reader:
             rid = row["route_id"].strip()
@@ -80,20 +155,18 @@ def main():
                 route_id_to_short[rid] = short
     print(f"  {len(route_id_to_short)} routes loaded")
 
-    # --- Step 2: Load calendar.txt → Monday service_ids ---
-    print("Loading calendar.txt...")
-    monday_service_ids = set()
-    with open(GTFS_DIR / "calendar.txt", encoding="utf-8-sig") as f:
-        reader = csv.DictReader(f)
-        for row in reader:
-            if row.get(REFERENCE_WEEKDAY, "0") == "1":
-                monday_service_ids.add(row["service_id"].strip())
-    print(f"  {len(monday_service_ids)} Monday service_ids")
+    # --- Step 2: Load calendar.txt + calendar_dates.txt → services running on the reference Monday ---
+    print(f"Loading calendar for {args.datum.isoformat()}...")
+    monday_service_ids = active_service_ids(gtfs_dir, args.datum)
+    print(f"  {len(monday_service_ids)} service_ids running on {args.datum.isoformat()}")
+    if not monday_service_ids:
+        sys.exit(f"No services run on {args.datum.isoformat()}; the GTFS feed does not cover this date "
+                 "(download fresh data with scripts/stahni-jizdni-rady.py or pick another --datum)")
 
     # --- Step 3: Load trips.txt → filter Monday trips → trip_id → route_short_name ---
     print("Loading trips.txt...")
     trip_to_route_short = {}
-    with open(GTFS_DIR / "trips.txt", encoding="utf-8-sig") as f:
+    with open(gtfs_dir / "trips.txt", encoding="utf-8-sig") as f:
         reader = csv.DictReader(f)
         for row in reader:
             sid = row["service_id"].strip()
@@ -105,13 +178,17 @@ def main():
             if tid and short:
                 trip_to_route_short[tid] = short
     print(f"  {len(trip_to_route_short)} Monday trips with route info")
+    if len(trip_to_route_short) < args.min_trips:
+        sys.exit(f"Only {len(trip_to_route_short)} trips run on {args.datum.isoformat()} (expected at least "
+                 f"{args.min_trips}); the feed does not fully cover this date, Prague (PID) is published only "
+                 "about two weeks ahead. Download fresh data or pick an earlier --datum.")
 
     # --- Step 4: Load stops.txt → stop_id → parent_station, name, lat, lon ---
     print("Loading stops.txt...")
     stop_parent = {}  # stop_id → parent_station (or itself if location_type=1)
     parent_info = {}  # parent_id → (name, lat, lon)
 
-    with open(GTFS_DIR / "stops.txt", encoding="utf-8-sig") as f:
+    with open(gtfs_dir / "stops.txt", encoding="utf-8-sig") as f:
         reader = csv.DictReader(f)
         for row in reader:
             sid = row["stop_id"].strip()
@@ -204,7 +281,7 @@ def main():
                     headway_departures[(route_short, parent)].append(first_dep)
 
     lines_processed = 0
-    with open(GTFS_DIR / "stop_times.txt", encoding="utf-8-sig") as f:
+    with open(gtfs_dir / "stop_times.txt", encoding="utf-8-sig") as f:
         reader = csv.DictReader(f)
         for row in reader:
             lines_processed += 1
@@ -329,6 +406,8 @@ def main():
         "metadata": {
             "source": "GTFS_CR (spojenka.cz)",
             "profile": "monday_07_08",
+            "reference_date": args.datum.isoformat(),
+            "source_published": source_published(gtfs_dir),
             "parent_stations": len(stops_out),
             "stations_with_edges": len(edges_out),
             "directed_edges": total_edges,
@@ -341,12 +420,12 @@ def main():
         "headways": dict(sorted(headways_out.items())),
     }
 
-    with open(OUTPUT, "w", encoding="utf-8") as f:
+    with open(output, "w", encoding="utf-8") as f:
         json.dump(output_data, f, ensure_ascii=False, separators=(",", ":"))
 
-    file_size_mb = os.path.getsize(OUTPUT) / (1024 * 1024)
+    file_size_mb = os.path.getsize(output) / (1024 * 1024)
     print(f"\nDone in {time.time() - t0:.1f}s")
-    print(f"Output: {OUTPUT} ({file_size_mb:.1f} MB)")
+    print(f"Output: {output} ({file_size_mb:.1f} MB)")
     print(f"  Stops: {len(stops_out)}")
     print(f"  Edges: {total_edges}")
     print(f"  Routes with headway: {len(headways_out)}")

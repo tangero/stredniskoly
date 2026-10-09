@@ -243,6 +243,15 @@ Portál nese i popisky, které snímek nezná vůbec, například „Počet při
 
 Otázka rodiče je jediná: **jak dlouho bude dítě dojíždět**. Odpovídáme na ni přes `src/app/api/dostupnost/route.ts`.
 
+**Obnova dopravního grafu.** Graf `data/transit_graph.json` vzniká z GTFS CIS JŘ (`https://www.spojenka.cz/jrdata/jizdnirady-gtfs.zip`), který obsahuje i PID a MHD měst:
+
+```bash
+python3 scripts/stahni-jizdni-rady.py                           # stáhne do data/GTFS_CR/, když je zdroj novější
+python3 scripts/build_transit_graph_v2.py --datum 2027-01-11    # spoje jedoucí v toto pondělí, 7–8 h
+```
+
+Graf bere jen spoje, které ve zvolené pondělí opravdu jedou (`calendar.txt` i výjimky v `calendar_dates.txt`). Do 9. 10. 2026 bral všechny služby s pondělkem v `calendar.txt` bez ohledu na období. Zdroj obsahuje spoje jen na dobu, na kterou je dopravci zveřejnili: PID asi dva týdny dopředu, ostatní do konce ročního jízdního řádu (druhá sobota v prosinci). Pondělí proto vybírejte nejvýš dva týdny po stažení. Když ve zvolený den jede méně než 140 000 spojů (celá republika má kolem 160 000, bez Prahy kolem 110 000), skript graf nepostaví. Metadata grafu nesou `reference_date` a `source_published`.
+
 ### 2.10 Odvozené soubory v `public/`
 
 | Soubor | Vzniká z | Skript | Poznámka |
@@ -753,7 +762,7 @@ _Vygenerováno z `public/stav_datovych_sad.json` dne 2026-10-05. Neupravovat ru�
 | `csi-inspekce` | plná | Workflow CSI Weekly Refresh každé pondělí, poslední úspěšný běh 7. 9. 2026. | scripts/process-csi-data.js, snímek s manifestem a rozdílem. | Revidovat a sloučit pull request. Chybí jen tento krok. |
 | `csi-extrakce` | plná | Týdenní workflow CSI Weekly Refresh po změně seznamu inspekcí vybere zprávy bez shrnutí (inspekce/scripts/vyber_chybejici.py); datová linka hlásí školy s nezpracovanou novější inspekcí a nesloučený pull request. | inspekce/scripts/run_production.sh (manifest, PDF, text, extrakce, export); týdně dílčí běh v csi-weekly-refresh.yml modelem claude_haiku_4_5, nejvýš 60 zpráv. Shrnutí na webu jsou z modelů claude_haiku_4_5, openrouter_pony_alpha a stealth_space_bunny_alpha v tomto pořadí (WEB_MODELY). | Přečíst vzorek shrnutí z tabulky v pull requestu proti zprávě ČŠI a pull request sloučit. |
 | `csi-inspis` | ruční | Datová sada 70 z otevřených dat ČŠI zmizela: stránka vrací 404 a v seznamu sad chybí. Workflow InspIS Weekly Refresh proto padá od 10. 8. 2026; pull request #34 s daty z 3. 8. 2026 je otevřený od 16. 2. 2026. | scripts/import-inspis-data.js | Najít nový zdroj profilů InspIS, nebo workflow vypnout. Soubor workflow je v pracovním stromu smazaný, necommitováno. |
-| `doprava-gtfs` | příprava | PID se obnovuje denně, Last-Modified 13. 9. 2026. | scripts/build_transit_graph_v2.py a převodníky KOMPLET v scripts/. | PID lze stahovat automaticky; celostátní data KOMPLET se získávají ručně a stavba grafu je náročná, proto doporučeno obnovovat při změně jízdních řádů, ne průběžně. |
+| `doprava-gtfs` | příprava | Oba zdroje se publikují denně (Last-Modified 9. 10. 2026). Podstatná změna je celostátní změna jízdních řádů druhou neděli v prosinci. | scripts/stahni-jizdni-rady.py stáhne CIS JŘ do data/GTFS_CR/, scripts/build_transit_graph_v2.py --datum <pondělí> z něj postaví data/transit_graph.json jen ze spojů jedoucích ve zvolené pondělí. | Po změně jízdních řádů spustit stahování a stavbu grafu pro běžné školní pondělí nejvýš dva týdny po stažení (PID se zveřejňuje jen asi dva týdny dopředu, skript při neúplných datech odmítne graf postavit) a commitnout data/transit_graph.json; pak přepnout sadu příkazem stav-datovych-sad.py prepni. |
 | `katalog-historie` | neaktualizuje se | — | — | Nepřepíná se. |
 | `school-analysis-legacy` | neaktualizuje se | — | — | Generátor není dohledaný, soubor nejde aktualizovat, jen nahradit katalogem. |
 | `cermat-kolo2-agregaty` | příprava | HTTP HEAD. | scripts/build-druhe-kolo.py; v datové lince zpracovatel cermat-kolo2-agregaty stáhne k souboru 2. kola i výsledky 1. kola téhož roku a doplní ročník do stávajícího výstupu. | Schválit úlohu, zkontrolovat počty v pull requestu a přepnout období v registru. |
