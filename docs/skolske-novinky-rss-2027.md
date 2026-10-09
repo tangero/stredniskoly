@@ -1,6 +1,5 @@
 # Školní novinky z RSS/Atom feedů – návrh implementace
 
-<<<<<<< HEAD
 **Verze:** 1.16 (titulek z výpisu aktualit bez slitého úvodu článku, #450; zprávy o přijímacím řízení z minulého cyklu nejsou po 31. 8. kartou, #451; zprávy z výpisu aktualit na stránce školy; výpis aktualit jako druhý typ zdroje; plán běží z nastavení služby Railway, ne z repozitáře; provozní opravy z prvních běhů; text návrhu po páté oponentuře – [oponentura 1.4](oponentura-skolske-novinky-rss-2027-v1.4.md); starší: [čtvrtá](oponentura-skolske-novinky-rss-2027-v1.3.md), [třetí](oponentura-skolske-novinky-rss-2027-v1.2.md), [druhá](oponentura-skolske-novinky-rss-2027-v1.1.md), [první](oponentura-skolske-novinky-rss-2027.md))
 **Datum:** 20. 9. 2026
 **Podklady:** sonda feedů (`docs/rss-webu-skol-sonda-2026.md`, data `data/sondy/rss-webu-skol-20260919.json`), reprodukovatelné měření klasifikace (`scripts/rss-klasifikace-mereni.py --offline`; manifest `data/sondy/rss-klasifikace-manifest80.json`, vzorek `data/sondy/rss-klasifikace-vzorek80.json` + `…-doplneni.json`, ruční reference `data/sondy/rss-klasifikace-reference.json`), regresní testy `tests/test_rss_klasifikace.py`.
