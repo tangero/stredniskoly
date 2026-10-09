@@ -5,6 +5,7 @@ větev vzniká v dočasném git worktree. Bez stavu `schvaleno` se nic nestane.
 """
 from __future__ import annotations
 
+import copy
 import os
 import shutil
 import subprocess
@@ -41,21 +42,27 @@ def zajisti_vystupy(uloha: dict, registr: dict, stahni_fn=jadro.stahni) -> None:
     zpr = uloha.get("priprava", {}).get("zpracovani") or {}
     if all(Path(zdroj).exists() for zdroj in zpr.get("predani", {})):
         return
+    schvalena = copy.deepcopy(uloha.get("priprava", {}))
     otisk_vystupu = zpr.get("otisk_vystupu")
-    otisk = uloha.get("priprava", {}).get("stazeno", {}).get("sha256")
+    otisk = schvalena.get("stazeno", {}).get("sha256")
     stav = uloha["stav"]
     zpracovani.priprav(uloha, registr, stahni_fn=stahni_fn)
     uloha["stav"] = stav  # příprava přepíše stav; rozhodnutí správce platí dál
+    nova = uloha.get("priprava", {})
     if otisk_vystupu:
-        novy = (uloha.get("priprava", {}).get("zpracovani") or {}).get("otisk_vystupu")
-        if novy != otisk_vystupu:
-            chyba = uloha.get("priprava", {}).get("chyba")
-            raise RuntimeError(f"výstup se od schválení změnil: {otisk_vystupu[:12]}… → "
-                               f"{(novy or chyba or '')[:60]}; úlohu znovu otevři příkazem znovu")
-        return
-    novy = uloha.get("priprava", {}).get("stazeno", {}).get("sha256")
-    if otisk and novy != otisk:
-        raise RuntimeError(f"zdroj se od schválení změnil: sha256 {otisk[:12]}… → {(novy or '')[:12]}…")
+        novy = (nova.get("zpracovani") or {}).get("otisk_vystupu")
+        chyba = None if novy == otisk_vystupu else (
+            f"výstup se od schválení změnil: {otisk_vystupu[:12]}… → {(novy or nova.get('chyba') or '')[:60]}; "
+            "úlohu znovu otevři příkazem znovu")
+    else:
+        novy = nova.get("stazeno", {}).get("sha256")
+        chyba = f"zdroj se od schválení změnil: sha256 {otisk[:12]}… → {(novy or '')[:12]}…" if otisk and novy != otisk else None
+    if chyba:
+        # Neschválené výstupy nesmí zůstat na místě: opakované předání by je jinak vzalo jako hotové.
+        for zdroj in (nova.get("zpracovani") or {}).get("predani", {}):
+            Path(zdroj).unlink(missing_ok=True)
+        uloha["priprava"] = schvalena
+        raise RuntimeError(chyba)
 
 
 def predej(uloha: dict, registr: dict, nanecisto: bool, runner=subprocess.run, stahni_fn=jadro.stahni) -> dict:

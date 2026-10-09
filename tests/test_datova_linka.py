@@ -560,8 +560,9 @@ class TestDatovaLinka(unittest.TestCase):
         syntetika_uchazecu(self.tmp / "jiny.xlsx", list_="jiny")
         self.server.soubory["/U/PZ2026_uchazeci.xlsx"] = (200, (self.tmp / "jiny.xlsx").read_bytes(), "Thu, 21 May 2026 10:00:00 GMT")
         runner = lambda *a, **kw: SimpleNamespace(returncode=0, stdout="", stderr="")  # noqa: E731
-        with self.assertRaisesRegex(RuntimeError, "zdroj se od schválení změnil"):
-            predani.predej(u, self.registr, nanecisto=False, runner=runner)
+        for _ in range(2):  # ani opakované předání neschválený soubor nepředá
+            with self.assertRaisesRegex(RuntimeError, "zdroj se od schválení změnil"):
+                predani.predej(u, self.registr, nanecisto=False, runner=runner)
         self.assertEqual(u["stav"], "schvaleno")
 
     def test_nepodporovana_sada_se_preda_bez_souboru(self):
@@ -665,9 +666,13 @@ class TestDatovaLinka(unittest.TestCase):
         shutil.rmtree(self.tmp / "prace")
         self.server.soubory["/J/gtfs.zip"] = (200, syntetika_gtfs(self.tmp / "gtfs.zip", odjezdy=("07:30:00",)), "Wed, 16 Dec 2026 03:00:00 GMT")
         with mock.patch.dict(zpracovani.ZPRACOVATELE, {"doprava-gtfs": zpracovatel}):
-            with self.assertRaisesRegex(RuntimeError, "výstup se od schválení změnil"):
-                predani.predej(u, self.registr, nanecisto=False, runner=runner)
+            schvaleny_otisk = u["priprava"]["zpracovani"]["otisk_vystupu"]
+            for _ in range(2):  # ani opakované předání neschválený graf nepředá
+                with self.assertRaisesRegex(RuntimeError, "výstup se od schválení změnil"):
+                    predani.predej(u, self.registr, nanecisto=False, runner=runner)
             self.assertEqual(u["stav"], "schvaleno")
+            self.assertEqual(u["priprava"]["zpracovani"]["otisk_vystupu"], schvaleny_otisk)
+            self.assertFalse(any(Path(z).exists() for z in u["priprava"]["zpracovani"]["predani"]))
             # Nové vydání beze změny spojů: graf je stejný, předá se, i když se otisk ZIPu liší.
             self.server.soubory["/J/gtfs.zip"] = (200, syntetika_gtfs(self.tmp / "gtfs.zip", navic=" 2"), "Thu, 17 Dec 2026 03:00:00 GMT")
             vysledek = predani.predej(u, self.registr, nanecisto=False, runner=runner)
