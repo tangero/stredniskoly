@@ -127,16 +127,17 @@ ZNOVU_OTEVRITELNE = ("predano", "bez_zmeny", "zamitnuto", "selhalo")
 
 
 def znovu_otevri(uloha: dict, duvod: str) -> None:
-    """Vrátí uzavřenou úlohu do stavu zjisteno, například když sada mezitím dostala zpracovatele.
+    """Vrátí uzavřenou úlohu nebo schválenou úlohu s chybou předání do stavu zjisteno.
 
     Předchozí přípravu, oznámení a rozhodnutí úloha nezapomene: přesunou se do předchozích kol.
     Nové schválení platí jen pro nové oznámení, starší zprávy se ignorují.
     """
     if not duvod.strip():
         raise ValueError("znovuotevření vyžaduje důvod")
-    if uloha["stav"] not in ZNOVU_OTEVRITELNE:
-        raise ValueError(f"{uloha['kod']}: znovu otevřít lze jen úlohu ve stavu {', '.join(ZNOVU_OTEVRITELNE)}, stav je {uloha['stav']}")
-    kolo = {k: uloha.pop(k) for k in ("priprava", "oznameni", "issue", "rozhodnuti", "predani") if k in uloha}
+    selhalo_predani = uloha["stav"] == "schvaleno" and bool(uloha.get("predani_chyba"))
+    if uloha["stav"] not in ZNOVU_OTEVRITELNE and not selhalo_predani:
+        raise ValueError(f"{uloha['kod']}: znovu otevřít lze jen úlohu ve stavu {', '.join(ZNOVU_OTEVRITELNE)} nebo schválenou s chybou předání, stav je {uloha['stav']}")
+    kolo = {k: uloha.pop(k) for k in ("priprava", "oznameni", "issue", "rozhodnuti", "predani", "predani_chyba") if k in uloha}
     kolo["stav"] = uloha["stav"]
     uloha.setdefault("predchozi_kola", []).append(kolo)
     zmen_stav(uloha, "zjisteno", f"znovu otevřeno: {duvod.strip()}")

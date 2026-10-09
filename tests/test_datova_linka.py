@@ -513,6 +513,11 @@ class TestDatovaLinka(unittest.TestCase):
         with self.assertRaises(RuntimeError):
             predani.predej(u, self.registr, nanecisto=True)
 
+    def test_schvalena_uloha_bez_chyby_predani_se_neotevre(self):
+        _, u = self.schvalena_uloha_uchazecu()
+        with self.assertRaises(ValueError):
+            jadro.znovu_otevri(u, "úloha ještě neselhala")
+
     def test_predani_nanecisto_nevola_git(self):
         _, u = self.schvalena_uloha_uchazecu()
 
@@ -722,6 +727,47 @@ class TestDatovaLinka(unittest.TestCase):
         self.assertIn(u["priprava"]["stazeno"]["sha256"], vysledek["plan"]["telo"], "popis PR nese otisk znovu staženého zdroje")
         self.assertIn(hashlib.sha256((self.tmp / "gtfs.zip").read_bytes()).hexdigest(), vysledek["plan"]["telo"])
         self.assertTrue(vysledek["plan"]["vetev"].startswith("data/doprava-gtfs-2026-12-13-"))
+
+    def test_zmeneny_graf_lze_po_chybe_predani_znovu_otevrit_prikazem(self):
+        self.sada_jizdnich_radu()
+        fronta, u = self.uloha_jizdnich_radu()
+        self.priprav_jizdni_rady(u)
+        komunikace.oznam(fronta, [], nanecisto=False)
+        komunikace.uplatni_rozhodnuti(fronta, [{"od": "t", "povoleny": True, "cas": jadro.ted(), "text": f"schvaluji {u['kod']}"}], "test")
+        stare_rozhodnuti = u["rozhodnuti"].copy()
+        # CLI běží nad stejným syntetickým grafem a skutečnými skripty, bez gitu a vnější sítě.
+        (self.tmp / "data").mkdir()
+        shutil.copyfile(next(iter(u["priprava"]["zpracovani"]["predani"])), self.tmp / "data/transit_graph.json")
+        (self.tmp / "scripts").symlink_to(KOREN / "scripts", target_is_directory=True)
+        Path(os.environ["LINKA_REGISTR"]).write_text(json.dumps(self.registr), encoding="utf-8")
+        jadro.uloz_frontu(fronta)
+        shutil.rmtree(self.tmp / "prace")
+        self.server.soubory["/J/gtfs.zip"] = (200, syntetika_gtfs(self.tmp / "gtfs.zip", odjezdy=("07:30:00",)), "Wed, 16 Dec 2026 03:00:00 GMT")
+        prikaz = [sys.executable, str(KOREN / "scripts/datova-linka.py")]
+        env = {**os.environ, "LINKA_KOREN": str(self.tmp)}
+        r = subprocess.run([*prikaz, "predej", u["kod"]], capture_output=True, text=True, env=env)
+        self.assertNotEqual(r.returncode, 0)
+        self.assertIn("výstup se od schválení změnil", r.stderr)
+        ulozena = jadro.nacti_frontu()["ulohy"][u["kod"]]
+        self.assertEqual(ulozena["stav"], "schvaleno")
+        self.assertIn("predani_chyba", ulozena)
+        r = subprocess.run([*prikaz, "znovu", u["kod"], "--duvod", "zdroj už nepokrývá původní pondělí"], capture_output=True, text=True, env=env)
+        self.assertEqual(r.returncode, 0, r.stderr)
+        fronta = jadro.nacti_frontu()
+        u = fronta["ulohy"][u["kod"]]
+        self.assertEqual(u["stav"], "zjisteno")
+        self.assertNotIn("rozhodnuti", u)
+        self.assertNotIn("predani_chyba", u)
+        self.assertIn("predani_chyba", u["predchozi_kola"][-1])
+        u["historie"][-1]["cas"] = "2027-01-05T08:00:00+00:00"
+        self.server.soubory["/J/gtfs.zip"] = (200, syntetika_gtfs(self.tmp / "gtfs.zip"), "Tue, 5 Jan 2027 03:00:00 GMT")
+        self.priprav_jizdni_rady(u)
+        graf = json.loads(Path(next(iter(u["priprava"]["zpracovani"]["predani"]))).read_text())
+        self.assertEqual(graf["metadata"]["reference_date"], "2027-01-11")
+        komunikace.oznam(fronta, [], nanecisto=False)
+        u["oznameni"]["cas"] = "2027-01-05T09:00:00+00:00"
+        komunikace.uplatni_rozhodnuti(fronta, [{"od": "t", "povoleny": True, "cas": stare_rozhodnuti["cas"], "text": f"schvaluji {u['kod']}"}], "test")
+        self.assertEqual(u["stav"], "oznameno", "staré rozhodnutí nové oznámení neschválí")
 
     # ------------------------------------------------------------ příkazová řádka
 

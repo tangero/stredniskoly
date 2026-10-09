@@ -20,7 +20,7 @@ Podklady: [zdroje dat, oddíl 5](zdroje-dat.md#5-stav-datových-sad), `public/st
 
 **Shrnutí inspekcí (`csi-extrakce`).** Shrnutí nových inspekčních zpráv nepřipravuje linka, ale týdenní workflow CSI Weekly Refresh v pull requestu z větve `codex/csi-weekly-refresh` (viz `inspekce/README.md`). Linka čte `main`, takže při `zjisti` a `beh` jen kontroluje (`scripts/linka/inspekce.py`): kolik škol má nejnovější inspekci novější, než je shrnutá (týž výpočet jako `src/lib/inspekce-aktualnost.ts`), a zda pull request s obnovou není otevřený déle než 14 dní. Obojí je problém, který `beh --kanal telegram` pošle jednou zprávou do Telegramu, a výsledek se zapíše k běhu do fronty. Nanečisto a při `zjisti` se stav PR přes `gh` nezjišťuje.
 
-`znovu KÓD --duvod …` vrátí uzavřenou úlohu (předanou, bez změny, zamítnutou nebo selhanou) do stavu `zjisteno`, typicky když sada mezitím dostala zpracovatele. Předchozí příprava, oznámení a rozhodnutí zůstanou v `predchozi_kola`; úloha se znovu připraví, oznámí a čeká na **nové** schválení, protože zprávy starší než oznámení se ignorují.
+`znovu KÓD --duvod …` vrátí uzavřenou úlohu (předanou, bez změny, zamítnutou nebo selhanou) do stavu `zjisteno`, typicky když sada mezitím dostala zpracovatele. Přijme také schválenou úlohu s uloženou chybou předání (`predani_chyba`), například po změně otisku grafu. Schválenou úlohu bez chyby předání neotevře. Předchozí příprava, oznámení, rozhodnutí i chyba předání zůstanou v `predchozi_kola`; úloha se znovu připraví, oznámí a čeká na **nové** schválení, protože zprávy starší než oznámení se ignorují.
 
 Všechny kroky přijímají `--nanecisto`: nic nepošle, nic nepushne, jen vypíše, co by udělal, a oznámení uloží do souboru.
 
