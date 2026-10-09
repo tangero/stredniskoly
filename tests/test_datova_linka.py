@@ -674,6 +674,17 @@ class TestDatovaLinka(unittest.TestCase):
         self.assertFalse((self.tmp / "prace" / u["kod"] / "GTFS").exists(), "rozbalená data se po stavbě mažou")
         self.assertIn("referenční pondělí 2026-12-14", komunikace.text_ulohy(u))
 
+    def test_jizdni_rady_neprevezmou_soubory_z_predchoziho_pokusu(self):
+        self.sada_jizdnich_radu()
+        _, u = self.uloha_jizdnich_radu()
+        zbytky = self.tmp / "prace" / u["kod"] / "GTFS"
+        zbytky.mkdir(parents=True)
+        # Výjimka ze starého vydání by spoj v referenční pondělí zrušila.
+        (zbytky / "calendar_dates.txt").write_text("service_id,date,exception_type\nVSE,20261214,2\n")
+        self.priprav_jizdni_rady(u)
+        self.assertEqual(u["stav"], "pripraveno", u.get("priprava"))
+        self.assertFalse(zbytky.exists())
+
     def test_jizdni_rady_s_mensim_pokrytim_nez_web_selzou(self):
         self.sada_jizdnich_radu()
         web = self.tmp / "web-graf.json"

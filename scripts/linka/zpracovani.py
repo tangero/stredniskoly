@@ -314,25 +314,27 @@ def zpracuj_jizdni_rady(uloha: dict, soubor: Path, prace: Path, struktura: dict,
     chybi = [s for s in GTFS_POVINNE if s not in struktura["soubory"]]
     if chybi:
         raise ValueError(f"archiv neobsahuje {', '.join(chybi)}")
-    gtfs = prace / "GTFS"
-    gtfs.mkdir(parents=True, exist_ok=True)
-    with zipfile.ZipFile(soubor) as zf:
-        for jmeno in struktura["soubory"]:
-            if "/" not in jmeno and "\\" not in jmeno and jmeno.endswith(".txt"):
-                with zf.open(jmeno) as src, open(gtfs / jmeno, "wb") as dst:
-                    shutil.copyfileobj(src, dst)
-
     otevreno = [h["cas"] for h in uloha.get("historie", []) if h["stav"] == "zjisteno"] or [uloha["vytvoreno"]]
     od = max(dt.date.fromisoformat(str(uloha["obdobi"])), dt.date.fromisoformat(otevreno[-1][:10]))
     vystup = prace / "transit_graph.json"
+    vystup.unlink(missing_ok=True)  # graf z předchozího pokusu se nesmí vydávat za nový
     if stavajici is None:
         stavajici = jadro.KOREN / "data" / "transit_graph.json"
     publikovano = jadro.datum_zmeny(uloha.get("priprava", {}).get("stazeno", {}).get("last_modified", ""))
+    gtfs = prace / "GTFS"
     argumenty = ["--gtfs-dir", str(gtfs), "--od", od.isoformat(), "--output", str(vystup)]
     argumenty += ["--srovnat", str(stavajici)] if stavajici.exists() else ["--bez-srovnani"]
     if publikovano:
         argumenty += ["--publikovano", publikovano.isoformat()]
+    # Vždy prázdný adresář: soubory z přerušeného pokusu by se smíchaly s novým vydáním.
+    shutil.rmtree(gtfs, ignore_errors=True)
+    gtfs.mkdir(parents=True)
     try:
+        with zipfile.ZipFile(soubor) as zf:
+            for jmeno in struktura["soubory"]:
+                if "/" not in jmeno and "\\" not in jmeno and jmeno.endswith(".txt"):
+                    with zf.open(jmeno) as src, open(gtfs / jmeno, "wb") as dst:
+                        shutil.copyfileobj(src, dst)
         zprava = spust("build_transit_graph_v2.py", *argumenty)
     finally:
         shutil.rmtree(gtfs, ignore_errors=True)  # rozbalená data mají stovky MB
