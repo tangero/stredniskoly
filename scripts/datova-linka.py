@@ -79,6 +79,9 @@ def main() -> None:
     s.add_argument("--kanal", action="append", choices=["telegram", "github"], default=[])
     s.add_argument("--kod")
     s.add_argument("--rozhodnuti", choices=["schvaleno", "zamitnuto"])
+    s = sub.add_parser("zaloz", help="založit úlohu revize sady na pokyn vlastníka")
+    s.add_argument("sada")
+    s.add_argument("--duvod", required=True)
     s = sub.add_parser("znovu")
     s.add_argument("kod")
     s.add_argument("--duvod", required=True)
@@ -96,6 +99,10 @@ def main() -> None:
         for u in sorted(fronta["ulohy"].values(), key=lambda x: x["vytvoreno"]):
             print(f"{u['kod']}  {u['stav']:11} {u['sada']:24} {str(u['obdobi']):10} {u['druh']}")
         return
+
+    if a.prikaz == "zaloz":
+        k = jadro.zaloz_rucne(registr, fronta, a.sada, a.duvod)
+        print(f"{k}: založeno ručně, další běh ji připraví a oznámí")
 
     if a.prikaz == "znovu":
         jadro.znovu_otevri(fronta["ulohy"][a.kod], a.duvod)

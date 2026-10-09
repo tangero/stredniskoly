@@ -28,5 +28,14 @@ Pravidla: `CLAUDE.md` (pravidla 1 a 4) a `docs/navrh-rizeni-vyvoje-2027.md`, odd
 6. **Co realizovat:** interní issue se `schvaleno` nebo s dokladem `Zdroj:` a bez `navrh`, `zamitnuto`,
    `stop`. Ostatní nech být. Otázku na Patricka nepiš do GitHubu; když ovlivní směr, patří na briefing
    (zapisuje ji Eduarda).
+7. **Závislosti:** řádek `Závisí na #N` v těle issue (uznává se i `Depends on #N` a `Blocked by #N`),
+   jedno nebo víc čísel. Issue, jehož závislost je ještě otevřená, se nerealizuje (nevzniká větev ani PR).
+   Při zpracování issues ho vypiš zvlášť s čísly závislostí a řaď až za ně. Když závislost přibude k issue,
+   které už má otevřený PR, napiš to do PR komentářem a v PR nepokračuj, dokud se závislost nezavře.
+   Závislost nic neschvaluje a štítky nemění.
+8. **Už vyřešeno:** před realizací prohledej sloučené PR za posledních 60 dní (titulek, `Closes` a
+   `Souvisí s`, změněné soubory) a hledej, zda zadání už nevyřešil jiný PR. Podezření napiš do issue
+   komentářem s odkazy na PR. Issue sám nezavírej a s realizací počkej na odpověď (štítek `otazka`,
+   pravidlo 8).
 
 Štítky `schvaleno` a `zamitnuto` nepřidávej nikdy, `stop` nikoho jiného neodebírej.

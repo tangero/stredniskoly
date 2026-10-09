@@ -344,7 +344,12 @@ export function ProfilSkoly({ data, skola, odkazy }: ProfilSkolyProps) {
               } : null,
               inspis ? {
                 href: '#jaka', q: 'Jaká škola je',
-                a: <>{inspis.aktualni_pocet_zaku ? <><b>{cislo(inspis.aktualni_pocet_zaku)} žáků</b>, </> : null}{specialiste.slice(0, 2).join(' a ')}{jazyky.length ? `, ${pocetCizichJazyku(jazyky.length)}` : ''}{inspis.bezbariery_pristup === 'ne' ? <>, <b>bez bezbariérového přístupu</b></> : inspis.bezbariery_pristup ? `, bezbariérový přístup: ${inspis.bezbariery_pristup}` : ''}</>,
+                a: <>{[
+                  inspis.aktualni_pocet_zaku ? <b key="zaci">{cislo(inspis.aktualni_pocet_zaku)} žáků</b> : null,
+                  specialiste.length ? specialiste.slice(0, 2).join(' a ') : null,
+                  jazyky.length ? pocetCizichJazyku(jazyky.length) : null,
+                  inspis.bezbariery_pristup === 'ne' ? <b key="bb">bez bezbariérového přístupu</b> : inspis.bezbariery_pristup ? `bezbariérový přístup: ${inspis.bezbariery_pristup}` : null,
+                ].filter(Boolean).flatMap((x, i) => (i ? [', ', x] : [x]))}</>,
               } : null,
               {
                 href: '#kde', q: 'Kde je',

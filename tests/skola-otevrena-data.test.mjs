@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { sestavOtevrenaData, otevrenaDataMarkdown, VERZE_SCHEMATU } from '../src/lib/skola-otevrena-data.ts';
+import { sestavOtevrenaData, otevrenaDataMarkdown, hlavickyOtevrenychDat, VERZE_SCHEMATU } from '../src/lib/skola-otevrena-data.ts';
 
 const skola = { nazev: 'Gymnázium Test', redizo: '600000001', slug: '600000001-gymnazium-test', adresa: 'Ulice 1, Obec', obec: 'Obec', okres: 'Okres', kraj: 'Středočeský', zrizovatel: 'veřejné / státní' };
 const obor = (o) => ({ id: 'x', href: '/skola/600000001-gymnazium-test-gymnazium-8lete', nazev: 'Gymnázium', delka: 8, proKoho: 'z 5. třídy', skupina: 'GY8_8', kapacita: 30, prihlasky: 233, prijati: 30, soutezici: 112, zarazeni: 'velmi_tezke', predchoziRok: 2025, zarazeniPredchozi: 'tezke', predchozi: null, tlak: 4.1, cjPrijati: 39.5, maPrijati: 40.6, umisteniPrijatych: 92.4, novy: false, drivejsiNazev: null, vypsano: true, druheKolo: null, ...o });
@@ -66,4 +66,11 @@ test('zbylá místa po 1. kole bez JPZ se neukazují záporná: JSON ořízne na
   assert.match(md, /Po 1\. kole obsazeno/);
   assert.doesNotMatch(md, /-2/);
   assert.match(md, /Zbylá místa po 1\. kole:\*\* 5 ze? 14/);
+});
+
+test('strojové podoby nesou kanonickou adresu stránky školy (#405)', () => {
+  const o = sestavOtevrenaData(skola, profil, { vysledky: 2026, uchazeci: 2026, maturita: '2026' });
+  const h = hlavickyOtevrenychDat(o, 'application/json');
+  assert.equal(h['Content-Type'], 'application/json');
+  assert.equal(h.Link, '<https://www.prijimackynaskolu.cz/skola/600000001-gymnazium-test>; rel="canonical"');
 });

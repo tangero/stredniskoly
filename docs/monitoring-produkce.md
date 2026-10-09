@@ -72,8 +72,11 @@ bez štítků) a každou hodinu jako dohledání. Interní zadání (`interni`, 
   text hlášení bere jako data. Vrátí druh, oblast, RED IZO, kandidáta duplicity a projektu, jistotu a jednu větu.
 - Skript výstup ověří proti povoleným hodnotám. Co neprojde, dostane komentář „Netříděno“ a žádný štítek.
 - Zapíše štítek `oblast:*` (jen když issue žádný nemá), štítek druhu (`bug`, `chybna-data`, `enhancement`,
-  `duplicate`, jen když žádný nemá) a jeden komentář `## Třídění` se skrytou značkou `triaz:v1`. Opakovaný běh
-  komentář ani zprávu nezdvojí.
+  `duplicate`, jen když žádný nemá; štítek `feature-request` z formuláře nápadů se počítá jako druh „požadavek na
+  funkci“) a jeden komentář `## Třídění` se skrytou značkou `triaz:v1`. Opakovaný běh komentář ani zprávu nezdvojí.
+- Komentář uvádí oblast podle štítku issue, odhad modelu jen jako poznámku, když se liší. Jistotu modelu neuvádí: při
+  prvním běhu 8. 10. 2026 vracel u všech 35 hlášení stejných 80 %. Model dostává definici každého druhu a formulář,
+  ze kterého hlášení přišlo, jako nápovědu.
 - Duplicitu a projekt jen navrhne. Nikdy nepřidá ani neodebere `schvaleno`, `zamitnuto`, `stop`, `navrh`,
   `projekt`, `otazka`, nezavírá issues, nepřipojuje sub-issues a nepíše `Zdroj:`.
 - Telegram: hlášení „web nefunguje“ hned, ostatní souhrnem v hodinovém běhu (druh, oblast, odkaz, bez textu hlášení).

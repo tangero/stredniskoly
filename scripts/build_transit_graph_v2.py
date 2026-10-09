@@ -8,8 +8,27 @@ Produces data/transit_graph.json with:
 - metadata
 
 Time profile: Monday 07:00-08:00 (morning commute to school).
+
+Only trips that actually run on one reference Monday are used (calendar.txt
+plus exceptions in calendar_dates.txt). The reference Monday must be a regular
+school day; default is the nearest school Monday on or after --od (today).
+
+The feed only contains trips published so far: PID (Prague) about two weeks
+ahead, other operators until the end of the yearly timetable. Before writing,
+the graph is compared with the current one (--srovnat): the build fails when
+stations with departures drop below 85 % overall or below 50 % in any map cell
+of 0.25° x 0.5° with at least 30 stations, e.g. a missing region or Prague.
+Service volume is checked too: trips in the morning window must stay at 85 %
+(or above a fixed floor when the current graph does not record them) and at most 30 % of shared routes may
+double their headway, e.g. a feed with only a few trips per route.
+
+The data come from the data pipeline (scripts/linka/, sada doprava-gtfs), which
+downloads the feed after a timetable change and runs this script:
+
+    python3 scripts/build_transit_graph_v2.py --gtfs-dir <rozbalené GTFS> --output <graf.json>
 """
 
+import argparse
 import csv
 import json
 import os
@@ -17,14 +36,25 @@ import statistics
 import sys
 import time
 from collections import defaultdict
+from datetime import date, timedelta
 from pathlib import Path
 
 GTFS_DIR = Path(__file__).resolve().parent.parent / "data" / "GTFS_CR"
 OUTPUT = Path(__file__).resolve().parent.parent / "data" / "transit_graph.json"
 
-# Reference date for filtering: a Monday within the GTFS validity range
-# We'll pick the first Monday that falls within calendar validity
-REFERENCE_WEEKDAY = "monday"
+# Coverage check against the current graph (see module docstring).
+CELL_LAT, CELL_LON = 0.25, 0.5
+MIN_SHARE_TOTAL = 0.85
+MIN_SHARE_CELL = 0.5
+MIN_CELL_STATIONS = 30
+MIN_SHARE_TRIPS = 0.85
+# Until the current graph records trips_in_window (graphs before October 2026 do not):
+# the whole country had ~25,500 trips in the window on 2026-10-12, without Prague ~16,900.
+FALLBACK_MIN_TRIPS = 21_000
+MAX_SHARE_SLOWER_ROUTES = 0.3
+MIN_SHARED_ROUTES = 50
+
+WEEKDAYS = ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"]
 HOUR_START = 7
 HOUR_END = 8
 
@@ -65,13 +95,155 @@ def is_night_route(route_short: str) -> bool:
     return False
 
 
-def main():
+def next_monday(today: date) -> date:
+    """Nearest Monday on or after today."""
+    return today + timedelta(days=(7 - today.weekday()) % 7)
+
+
+def active_service_ids(gtfs_dir: Path, day: date) -> set[str]:
+    """service_ids running on the given day (calendar.txt + calendar_dates.txt)."""
+    ymd = day.strftime("%Y%m%d")
+    weekday = WEEKDAYS[day.weekday()]
+    active = set()
+
+    calendar = gtfs_dir / "calendar.txt"
+    if calendar.exists():
+        with open(calendar, encoding="utf-8-sig") as f:
+            for row in csv.DictReader(f):
+                if row.get(weekday, "0").strip() == "1" and row["start_date"].strip() <= ymd <= row["end_date"].strip():
+                    active.add(row["service_id"].strip())
+
+    calendar_dates = gtfs_dir / "calendar_dates.txt"
+    if calendar_dates.exists():
+        with open(calendar_dates, encoding="utf-8-sig") as f:
+            for row in csv.DictReader(f):
+                if row["date"].strip() != ymd:
+                    continue
+                sid = row["service_id"].strip()
+                exception = row.get("exception_type", "").strip()
+                if exception == "1":
+                    active.add(sid)
+                elif exception == "2":
+                    active.discard(sid)
+
+    return active
+
+
+def easter_sunday(year: int) -> date:
+    """Gregorian Easter Sunday (anonymous algorithm)."""
+    a, b, c = year % 19, year // 100, year % 100
+    d, e = b // 4, b % 4
+    f = (b + 8) // 25
+    g = (b - f + 1) // 3
+    h = (19 * a + b - d - g + 15) % 30
+    i, k = c // 4, c % 4
+    l = (32 + 2 * e + 2 * i - h - k) % 7
+    m = (a + 11 * h + 22 * l) // 451
+    month, day = divmod(h + l - 7 * m + 114, 31)
+    return date(year, month, day + 1)
+
+
+PUBLIC_HOLIDAYS = {(1, 1), (5, 1), (5, 8), (7, 5), (7, 6), (9, 28), (10, 28), (11, 17), (12, 24), (12, 25), (12, 26)}
+
+
+def school_day_problem(day: date) -> str | None:
+    """Why the day is not a regular school day in Czechia, or None.
+
+    Holidays that differ by district (spring break, February to mid-March) count as
+    a problem too: school-only trips would be missing in part of the country.
+    """
+    if (day.month, day.day) in PUBLIC_HOLIDAYS or day == easter_sunday(day.year) + timedelta(days=1):
+        return "public holiday"
+    if day.month in (7, 8):
+        return "summer holidays"
+    if (day.month == 12 and day.day >= 21) or (day.month == 1 and day.day <= 3):
+        return "Christmas holidays"
+    if day.month == 10 and 26 <= day.day <= 30:
+        return "autumn holidays"
+    if day.month == 2 or (day.month == 3 and day.day <= 21):
+        return "spring holidays in some districts"
+    return None
+
+
+def nearest_school_monday(start: date) -> date:
+    """First Monday on or after start that is a regular school day."""
+    day = next_monday(start)
+    while school_day_problem(day):
+        day += timedelta(days=7)
+    return day
+
+
+def map_cell(lat: float, lon: float) -> tuple[int, int]:
+    return int(lat // CELL_LAT), int(lon // CELL_LON)
+
+
+def stations_by_cell(graph: dict) -> dict[tuple[int, int], int]:
+    """Stations with departures (graph edges) per map cell."""
+    cells: dict[tuple[int, int], int] = defaultdict(int)
+    for sid in graph["edges"]:
+        stop = graph["stops"].get(sid)
+        if stop and (stop[1] or stop[2]):
+            cells[map_cell(stop[1], stop[2])] += 1
+    return cells
+
+
+def coverage_problems(new: dict, reference: dict) -> list[str]:
+    """Coverage drops of the new graph against the reference graph; empty when fine."""
+    problems = []
+    total_new, total_ref = len(new["edges"]), len(reference["edges"])
+    if total_ref and total_new < MIN_SHARE_TOTAL * total_ref:
+        problems.append(f"stations with departures: {total_new} vs {total_ref} in the current graph")
+    new_cells = stations_by_cell(new)
+    names = {map_cell(s[1], s[2]): s[0] for s in reference["stops"].values() if s[1] or s[2]}
+    for cell, count in sorted(stations_by_cell(reference).items()):
+        if count >= MIN_CELL_STATIONS and new_cells.get(cell, 0) < MIN_SHARE_CELL * count:
+            lat, lon = cell[0] * CELL_LAT, cell[1] * CELL_LON
+            problems.append(f"area {lat:.2f}-{lat + CELL_LAT:.2f} N, {lon:.1f}-{lon + CELL_LON:.1f} E "
+                            f"(e.g. {names.get(cell, '?')}): {new_cells.get(cell, 0)} stations vs {count}")
+    trips_new, trips_ref = new["metadata"].get("trips_in_window"), reference.get("metadata", {}).get("trips_in_window")
+    if trips_new is not None and trips_ref and trips_new < MIN_SHARE_TRIPS * trips_ref:
+        problems.append(f"trips in the 6:30-9:00 window: {trips_new} vs {trips_ref} in the current graph")
+    elif trips_new is not None and not trips_ref and trips_new < FALLBACK_MIN_TRIPS:
+        problems.append(f"trips in the 6:30-9:00 window: {trips_new}, expected at least {FALLBACK_MIN_TRIPS}")
+    shared = [r for r in reference.get("headways", {}) if r in new.get("headways", {})]
+    if len(shared) >= MIN_SHARED_ROUTES:
+        slower = sum(1 for r in shared if new["headways"][r] >= 2 * reference["headways"][r])
+        if slower > MAX_SHARE_SLOWER_ROUTES * len(shared):
+            problems.append(f"headway doubled on {slower} of {len(shared)} shared routes")
+    return problems
+
+
+def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
+    parser = argparse.ArgumentParser(description="Build data/transit_graph.json from GTFS CIS JŘ")
+    parser.add_argument("--datum", type=date.fromisoformat, default=None,
+                        help="reference school Monday YYYY-MM-DD (default: nearest school Monday on or after --od)")
+    parser.add_argument("--od", type=date.fromisoformat, default=None,
+                        help="earliest reference Monday when --datum is not given (default: today)")
+    parser.add_argument("--gtfs-dir", type=Path, default=GTFS_DIR)
+    parser.add_argument("--output", type=Path, default=OUTPUT)
+    parser.add_argument("--srovnat", type=Path, default=OUTPUT,
+                        help="current graph for the coverage check (default data/transit_graph.json)")
+    parser.add_argument("--bez-srovnani", action="store_true", help="skip the coverage check")
+    parser.add_argument("--publikovano", default=None, help="publication date of the feed, stored in metadata")
+    args = parser.parse_args(argv)
+    if args.datum is None:
+        args.datum = nearest_school_monday(args.od or date.today())
+    elif args.datum.weekday() != 0:
+        parser.error(f"--datum {args.datum} is not a Monday")
+    elif problem := school_day_problem(args.datum):
+        parser.error(f"--datum {args.datum} is not a regular school day ({problem})")
+    return args
+
+
+def main(argv: list[str] | None = None):
+    args = parse_args(argv)
+    gtfs_dir, output = args.gtfs_dir, args.output
     t0 = time.time()
 
     # --- Step 1: Load routes.txt → route_id → route_short_name ---
     print("Loading routes.txt...")
     route_id_to_short = {}
-    with open(GTFS_DIR / "routes.txt", encoding="utf-8-sig") as f:
+    with open(gtfs_dir / "routes.txt", encoding="utf-8-sig") as f:
         reader = csv.DictReader(f)
         for row in reader:
             rid = row["route_id"].strip()
@@ -80,20 +252,17 @@ def main():
                 route_id_to_short[rid] = short
     print(f"  {len(route_id_to_short)} routes loaded")
 
-    # --- Step 2: Load calendar.txt → Monday service_ids ---
-    print("Loading calendar.txt...")
-    monday_service_ids = set()
-    with open(GTFS_DIR / "calendar.txt", encoding="utf-8-sig") as f:
-        reader = csv.DictReader(f)
-        for row in reader:
-            if row.get(REFERENCE_WEEKDAY, "0") == "1":
-                monday_service_ids.add(row["service_id"].strip())
-    print(f"  {len(monday_service_ids)} Monday service_ids")
+    # --- Step 2: Load calendar.txt + calendar_dates.txt → services running on the reference Monday ---
+    print(f"Loading calendar for {args.datum.isoformat()}...")
+    monday_service_ids = active_service_ids(gtfs_dir, args.datum)
+    print(f"  {len(monday_service_ids)} service_ids running on {args.datum.isoformat()}")
+    if not monday_service_ids:
+        sys.exit(f"No services run on {args.datum.isoformat()}; the GTFS feed does not cover this date")
 
     # --- Step 3: Load trips.txt → filter Monday trips → trip_id → route_short_name ---
     print("Loading trips.txt...")
     trip_to_route_short = {}
-    with open(GTFS_DIR / "trips.txt", encoding="utf-8-sig") as f:
+    with open(gtfs_dir / "trips.txt", encoding="utf-8-sig") as f:
         reader = csv.DictReader(f)
         for row in reader:
             sid = row["service_id"].strip()
@@ -111,7 +280,7 @@ def main():
     stop_parent = {}  # stop_id → parent_station (or itself if location_type=1)
     parent_info = {}  # parent_id → (name, lat, lon)
 
-    with open(GTFS_DIR / "stops.txt", encoding="utf-8-sig") as f:
+    with open(gtfs_dir / "stops.txt", encoding="utf-8-sig") as f:
         reader = csv.DictReader(f)
         for row in reader:
             sid = row["stop_id"].strip()
@@ -153,10 +322,12 @@ def main():
 
     # Process trip by trip
     current_trip_id = None
-    trip_stops = []  # [(stop_id, arrival_sec, departure_sec), ...]
+    trip_stops = []
+    trips_in_window = 0  # [(stop_id, arrival_sec, departure_sec), ...]
 
     def process_trip(trip_id, stops_list):
         """Process a complete trip: extract consecutive edges and headway data."""
+        nonlocal trips_in_window
         route_short = trip_to_route_short.get(trip_id)
         if not route_short:
             return
@@ -173,6 +344,7 @@ def main():
         min_dep = min(dep_times)
         if min_dep < 6.5 * 3600 or min_dep >= 9 * 3600:  # 6:30-9:00
             return
+        trips_in_window += 1
 
         for i in range(len(stops_list) - 1):
             sid_from, _, dep_sec_from = stops_list[i]
@@ -204,7 +376,7 @@ def main():
                     headway_departures[(route_short, parent)].append(first_dep)
 
     lines_processed = 0
-    with open(GTFS_DIR / "stop_times.txt", encoding="utf-8-sig") as f:
+    with open(gtfs_dir / "stop_times.txt", encoding="utf-8-sig") as f:
         reader = csv.DictReader(f)
         for row in reader:
             lines_processed += 1
@@ -329,11 +501,14 @@ def main():
         "metadata": {
             "source": "GTFS_CR (spojenka.cz)",
             "profile": "monday_07_08",
+            "reference_date": args.datum.isoformat(),
+            "source_published": args.publikovano,
             "parent_stations": len(stops_out),
             "stations_with_edges": len(edges_out),
             "directed_edges": total_edges,
             "avg_out_degree": round(total_edges / max(1, len(edges_out)), 1),
             "routes_with_headway": len(headways_out),
+            "trips_in_window": trips_in_window,
             "version": 2,
         },
         "stops": dict(sorted(stops_out.items())),
@@ -341,12 +516,21 @@ def main():
         "headways": dict(sorted(headways_out.items())),
     }
 
-    with open(OUTPUT, "w", encoding="utf-8") as f:
+    if not args.bez_srovnani and args.srovnat.exists():
+        reference = json.loads(args.srovnat.read_text(encoding="utf-8"))
+        problems = coverage_problems(output_data, reference)
+        if problems:
+            sys.exit(f"Coverage check against {args.srovnat} failed for {args.datum.isoformat()}; the feed does not "
+                     "fully cover this date (Prague/PID is published only about two weeks ahead) or a region "
+                     "is missing:\n  " + "\n  ".join(problems[:15]))
+        print(f"  Coverage check against {args.srovnat}: OK")
+
+    with open(output, "w", encoding="utf-8") as f:
         json.dump(output_data, f, ensure_ascii=False, separators=(",", ":"))
 
-    file_size_mb = os.path.getsize(OUTPUT) / (1024 * 1024)
+    file_size_mb = os.path.getsize(output) / (1024 * 1024)
     print(f"\nDone in {time.time() - t0:.1f}s")
-    print(f"Output: {OUTPUT} ({file_size_mb:.1f} MB)")
+    print(f"Output: {output} ({file_size_mb:.1f} MB)")
     print(f"  Stops: {len(stops_out)}")
     print(f"  Edges: {total_edges}")
     print(f"  Routes with headway: {len(headways_out)}")

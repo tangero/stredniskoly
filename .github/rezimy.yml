@@ -28,13 +28,17 @@ slucovani_ai: true
 platnost_od: "2026-10-03"
 
 # Smyčka review a oprav (#301, docs/navrh-rizeni-vyvoje-2027.md, oddíl 9d). Brána vyžaduje pro aktuální
-# hlavu PR komentář „Review“ od účtu `asistent` s verdiktem „Bez P1 a P2“ a řádkem `Commit: <sha7>`;
+# hlavu PR komentář „Review“ od účtu `asistent` (nebo automatické review, viz níže) s verdiktem „Bez P1 a P2“ a řádkem `Commit: <sha7>`;
 # neplatí pro změny bez dopadu na web (bez_preview) a pro PR se `schvaleno` na PR. Workflow
 # oprava-z-review.yml provede na komentář `@claude` nejvýš `max_kol_oprav` kol na PR, pak přidá
 # štítek `potrebuje-cloveka`.
 review:
   vyzadovat: true
   max_kol_oprav: 5
+  # Automatické review modelem Kimi K3 (#455, workflow review.yml): komentář „Review“ od účtu `automatika`
+  # s touto značkou platí jako review asistenta a jeho `@claude` se značkou spustí smyčku oprav. Bez značky
+  # automatika review ani opravy nespouští (jinak jí brána věří jen u obnov dat).
+  znacka_automatiky: "<!-- review:kimi -->"
 
 # Režim L: drobné zadání se sloučí po této době od poslední změny PR, pokud nikdo nepřidal `stop`.
 lhuta_l_hodin: 48
@@ -52,6 +56,7 @@ h2:
   - .github/workflows/oblasti-pr.yml
   - .github/workflows/slouceni.yml
   - .github/workflows/oponentura.yml
+  - .github/workflows/review.yml
   - scripts/brana/**
   - CLAUDE.md
   - .claude/claude.md
@@ -123,6 +128,7 @@ datove_obnovy:
     - public/okruhy_oboru_*.json
     - public/druhe_kolo.json
     - public/maturita_skoly.json
+    - data/transit_graph.json
 
 # Změny jen v těchto cestách nepotřebují protokol z preview (web se nemění).
 bez_preview:

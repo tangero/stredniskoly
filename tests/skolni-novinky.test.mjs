@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { novinkySkoly } from '../src/lib/skolni-novinky.ts';
+import { novinkySkoly, konecCyklu } from '../src/lib/skolni-novinky.ts';
 import { nastavPoolProTesty } from '../src/lib/novinky-db.ts';
 
 /**
@@ -360,4 +360,67 @@ test('starý rozbor položky výpisu bez článku nerozhoduje o kartě', async (
   const v = await novinkySkoly('600001111', new Date('2026-11-01T10:00:00Z'));
   assert.equal(v.polozky[0].zobrazeni, 'karta');
   assert.equal(v.polozky[0].souhrn, null);
+});
+
+test('konec cyklu: zpráva do srpna patří k cyklu končícímu 31. 8. téhož roku, od září k dalšímu (#451)', () => {
+  assert.equal(konecCyklu('2026-08-16T00:00:00.000Z'), '2026-08-31');
+  assert.equal(konecCyklu('2026-01-20T00:00:00.000Z'), '2026-08-31');
+  assert.equal(konecCyklu('2026-09-01T00:00:00.000Z'), '2027-08-31');
+  assert.equal(konecCyklu('2026-12-31T00:00:00.000Z'), '2027-08-31');
+});
+
+test('výsledky kola z léta po 31. 8. nejsou kartou, zůstanou odkazem k přijímačkám (#451)', async () => {
+  const letni = radek({
+    id: 'v1', titulek: 'Výsledky 4. kola přijímacího řízení', publikovano: '2026-08-16T00:00:00.000Z',
+    zobrazeni: 'karta', tridy: ['vysledky_prijm'], terminy: [], konec_platnosti: '2026-10-15T00:00:00.000Z',
+  });
+  process.env.DATABASE_URL = 'postgres://test';
+  nastavPoolProTesty(pool([PRAZDNO, { rows: [letni] }, PRAZDNO, ZDROJ]));
+  const v = await novinkySkoly('600000001', new Date('2026-10-09T08:00:00Z'));
+  assert.equal(v.polozky.length, 1);
+  assert.equal(v.polozky[0].zobrazeni, 'odkaz');
+});
+
+test('výsledky kola jsou kartou do konce cyklu (#451)', async () => {
+  const letni = radek({
+    id: 'v1', publikovano: '2026-08-16T00:00:00.000Z', zobrazeni: 'karta', tridy: ['vysledky_prijm'], terminy: [],
+    konec_platnosti: '2026-10-15T00:00:00.000Z',
+  });
+  process.env.DATABASE_URL = 'postgres://test';
+  nastavPoolProTesty(pool([PRAZDNO, { rows: [letni] }, PRAZDNO, ZDROJ]));
+  const v = await novinkySkoly('600000001', new Date('2026-08-30T08:00:00Z'));
+  assert.equal(v.polozky[0].zobrazeni, 'karta');
+});
+
+test('kritéria nového cyklu vydaná v září zůstávají kartou (#451)', async () => {
+  const kriteria = radek({
+    id: 'k1', titulek: 'Kritéria přijímacího řízení', publikovano: '2026-09-20T00:00:00.000Z',
+    zobrazeni: 'karta', tridy: ['kriteria'], terminy: [], konec_platnosti: '2026-11-19T00:00:00.000Z',
+  });
+  process.env.DATABASE_URL = 'postgres://test';
+  nastavPoolProTesty(pool([PRAZDNO, { rows: [kriteria] }, PRAZDNO, ZDROJ]));
+  const v = await novinkySkoly('600000001', new Date('2026-10-09T08:00:00Z'));
+  assert.equal(v.polozky[0].zobrazeni, 'karta');
+});
+
+test('pozvánka z léta s termínem v budoucnu zůstává kartou i po konci cyklu (#451)', async () => {
+  const dod = radek({
+    id: 'd1', publikovano: '2026-08-25T00:00:00.000Z', zobrazeni: 'karta', tridy: ['dod', 'prijimaci_rizeni'],
+    terminy: ['2026-11-12'], konec_platnosti: '2026-11-15T00:00:00.000Z',
+  });
+  process.env.DATABASE_URL = 'postgres://test';
+  nastavPoolProTesty(pool([PRAZDNO, { rows: [dod] }, PRAZDNO, ZDROJ]));
+  const v = await novinkySkoly('600000001', new Date('2026-10-09T08:00:00Z'));
+  assert.equal(v.polozky[0].zobrazeni, 'karta');
+});
+
+test('zpráva z léta s třídou akce pro příští cyklus (přijímačky nanečisto) kartou zůstává (#451)', async () => {
+  const nanecisto = radek({
+    id: 'p1', publikovano: '2026-08-22T00:00:00.000Z', zobrazeni: 'karta', tridy: ['prijimacky_nanecisto', 'prijimaci_rizeni'],
+    terminy: [], konec_platnosti: '2026-10-21T00:00:00.000Z',
+  });
+  process.env.DATABASE_URL = 'postgres://test';
+  nastavPoolProTesty(pool([PRAZDNO, { rows: [nanecisto] }, PRAZDNO, ZDROJ]));
+  const v = await novinkySkoly('600000001', new Date('2026-10-09T08:00:00Z'));
+  assert.equal(v.polozky[0].zobrazeni, 'karta');
 });

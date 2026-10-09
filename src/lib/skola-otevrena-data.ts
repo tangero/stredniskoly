@@ -170,6 +170,15 @@ export function sestavOtevrenaData(skola: SkolaZakladni, d: ProfilSkolyData, obd
 
 export type OtevrenaDataSkoly = ReturnType<typeof sestavOtevrenaData>;
 
+/**
+ * Hlavičky odpovědi `.md` a `.json`: `Link rel="canonical"` na stránku školy. Strojové podoby mají týž obsah jako
+ * stránka a Search Console je bez kanonické adresy hlásí jako duplicity (#405). Vyhledávač tak indexuje jen stránku,
+ * podoby zůstávají dostupné pro llms.txt a otevřená data.
+ */
+export function hlavickyOtevrenychDat(o: Pick<OtevrenaDataSkoly, 'url'>, contentType: string): Record<string, string> {
+  return { 'Content-Type': contentType, Link: `<${o.url}>; rel="canonical"` };
+}
+
 const cislo = (n: number, desetin = 0) => n.toLocaleString('cs-CZ', { minimumFractionDigits: desetin, maximumFractionDigits: desetin });
 
 export function otevrenaDataMarkdown(o: OtevrenaDataSkoly): string {

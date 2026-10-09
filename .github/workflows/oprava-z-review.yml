@@ -3,8 +3,9 @@
 # a co ne. Nejvýš `review.max_kol_oprav` kol na PR (rezimy.yml), pak štítek `potrebuje-cloveka`.
 #
 # Pojistky:
-# - Spustí se jen na komentář vlastníka nebo asistenta zadání u PR, který založil jeden z nich,
-#   a nikdy u PR z forku (rozhoduje scripts/brana/oprava-z-review.mjs z main).
+# - Spustí se jen na komentář vlastníka, asistenta zadání nebo automatického review (App prijimacky-ai se
+#   značkou review, #455) u PR, který založil vlastník nebo asistent, a nikdy u PR z forku (rozhoduje
+#   scripts/brana/oprava-z-review.mjs z main).
 # - `stop` na PR nebo propojeném issue a štítek `potrebuje-cloveka` zastaví další kola; veto se ověřuje
 #   při rozhodnutí, znovu před začátkem kola a znovu těsně před pushem.
 # - Kód větve (testy, závislosti) běží jen v jobu „Oprava“ se čtecím tokenem. Claude tam commituje
@@ -34,7 +35,8 @@ concurrency:
 jobs:
   rozhodnuti:
     name: Rozhodnutí
-    if: github.event.issue.pull_request && contains(github.event.comment.body, '@claude') && github.event.comment.user.type != 'Bot'
+    # Boti jen App prijimacky-ai (automatické review, #455); zda nese značku review, ověří skript z main.
+    if: github.event.issue.pull_request && contains(github.event.comment.body, '@claude') && (github.event.comment.user.type != 'Bot' || github.event.comment.user.login == 'prijimacky-ai[bot]')
     runs-on: ubuntu-latest
     timeout-minutes: 5
     permissions:
@@ -42,8 +44,8 @@ jobs:
       issues: read
       pull-requests: read
     outputs:
-      akce: ${{ steps.rozhodni.outputs.akce }}
-      duvod: ${{ steps.rozhodni.outputs.duvod }}
+      akce: ${{ steps.stagnace.outputs.akce || steps.rozhodni.outputs.akce }}
+      duvod: ${{ steps.stagnace.outputs.duvod || steps.rozhodni.outputs.duvod }}
       kolo: ${{ steps.rozhodni.outputs.kolo }}
       max: ${{ steps.rozhodni.outputs.max }}
       vetev: ${{ steps.rozhodni.outputs.vetev }}
@@ -67,6 +69,16 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ github.token }}
         run: node scripts/brana/oprava-z-review.mjs rozhodni
+
+      # Stagnace (#327): opakovaný nález P1 nebo P2 ve dvou review po sobě změní `oprava` na `strop`.
+      - name: Stagnace
+        id: stagnace
+        if: steps.rozhodni.outputs.akce == 'oprava'
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          AKCE: ${{ steps.rozhodni.outputs.akce }}
+          DUVOD: ${{ steps.rozhodni.outputs.duvod }}
+        run: node scripts/review/stagnace.mjs "${{ github.event.issue.number }}"
 
   strop:
     name: Strop kol

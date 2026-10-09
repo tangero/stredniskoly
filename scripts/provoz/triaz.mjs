@@ -69,11 +69,15 @@ export function sestavPrompt(issue, otevrena) {
         ' "projekt": číslo issue označeného „projekt“ ze seznamu nebo null, "jistota": 0 až 1,',
         ' "oduvodneni": "jedna věta česky bez osobních údajů"}.',
         '"web_nefunguje" je true jen pro popis, že stránka nejde načíst nebo je chyba na celém webu.',
+        'Druhy: „chyba webu“ = stránka nebo funkce webu nefunguje správně (výpočet, filtr, vyhledávání, zobrazení);',
+        '„chyba v datech“ = konkrétní údaj o škole nebo oboru je špatně nebo zastaralý (název, adresa, počty, výsledky, obory);',
+        '„požadavek na funkci“ = návrh nové funkce nebo údaje, který web zatím nemá; „duplicita“ = totéž hlášení je už v seznamu',
+        'otevřených issues; „jiné“ = nic z toho. Formulář, ze kterého hlášení přišlo, je jen nápověda.',
       ].join(' '),
     },
     {
       role: 'user',
-      content: `Otevřená issues:\n${seznam || '(žádná)'}\n\n<hlaseni>\nTitulek: ${odstranOsobni(issue.title).slice(0, 200)}\n\n${odstranOsobni(issue.body || '').slice(0, MAX_TEXT)}\n</hlaseni>`,
+      content: `Otevřená issues:\n${seznam || '(žádná)'}\n\nFormulář: ${nazvy(issue).filter((n) => STITKY_HLASENI.includes(n)).join(', ') || '(žádný)'}\n\n<hlaseni>\nTitulek: ${odstranOsobni(issue.title).slice(0, 200)}\n\n${odstranOsobni(issue.body || '').slice(0, MAX_TEXT)}\n</hlaseni>`,
     },
   ];
 }
@@ -96,7 +100,8 @@ export function overVystup(surovy, otevrena, issue) {
   const izo = typeof v.red_izo === 'string' && /^\d{9}$/.test(v.red_izo) ? v.red_izo : null;
   const odu = typeof v.oduvodneni === 'string' ? odstranOsobni(v.oduvodneni).replace(/\s+/g, ' ').slice(0, 240) : '';
   return {
-    druh: v.druh,
+    // Nápad z formuláře nápadů je požadavek na funkci, ať model odhadne cokoli; duplicita má přednost.
+    druh: nazvy(issue).includes('feature-request') && v.druh !== 'duplicita' ? 'požadavek na funkci' : v.druh,
     oblast: v.oblast,
     webNefunguje: v.web_nefunguje === true,
     redIzo: izo,
@@ -107,13 +112,16 @@ export function overVystup(surovy, otevrena, issue) {
   };
 }
 
-/** Štítky k zapsání: oblast jen když issue žádnou nemá, druh jen když nemá žádný ze štítků druhu (K11, P7). */
+// Štítky, které už druh hlášení určují: vlastní štítky druhu a formulář nápadů (feature-request = požadavek na funkci).
+const STITKY_DRUHU = ['bug', 'chybna-data', 'enhancement', 'duplicate', 'feature-request'];
+
+/** Štítky k zapsání: oblast jen když issue žádnou nemá, druh jen když nemá žádný štítek druhu (K11, P7). */
 export function stitkyKZapisu(issue, t) {
   const ma = nazvy(issue);
   const chci = [];
   if (t && !ma.some((s) => s.startsWith('oblast:'))) chci.push(`oblast:${t.oblast}`);
   const druh = t && DRUHY[t.druh];
-  if (druh && !ma.some((s) => ['bug', 'chybna-data', 'enhancement', 'duplicate'].includes(s))) chci.push(druh);
+  if (druh && !ma.some((s) => STITKY_DRUHU.includes(s))) chci.push(druh);
   return chci.filter((s) => POVOLENE_STITKY.has(s) && !NEDOTCITELNE.includes(s) && !ma.includes(s));
 }
 
@@ -122,15 +130,19 @@ export function komentar(issue, t, odeslano = 0) {
   if (!t) {
     return `## Třídění\n\nNetříděno: výstup modelu neprošel kontrolou, hlášení čeká na ruční zařazení.\n\n— workflow Triáž (#355)\n${znacka}`;
   }
+  // Oblast, kterou issue už má, platí; komentář ji neprotiřečí odhadem modelu.
+  const stavajici = nazvy(issue).find((s) => s.startsWith('oblast:'))?.slice('oblast:'.length);
+  const oblast = stavajici
+    ? `- Oblast: **${stavajici}** (podle štítku issue${stavajici !== t.oblast ? `; model navrhoval ${t.oblast}` : ''})`
+    : `- Oblast: **${t.oblast}**`;
   const r = [
     '## Třídění',
     '',
     `- Druh: **${t.druh}**`,
-    `- Oblast: **${t.oblast}**${stitkyKZapisu(issue, t).some((s) => s.startsWith('oblast:')) ? '' : ' (štítek oblasti už issue má, nemění se)'}`,
+    oblast,
     ...(t.redIzo ? [`- RED IZO v textu: ${t.redIzo}`] : []),
     ...(t.duplicita ? [`- Možná duplicita #${t.duplicita} (jen návrh, nezavírá se)`] : []),
     ...(t.projekt ? [`- Možná patří k projektu #${t.projekt} (jen návrh, připojí vlastník)`] : []),
-    `- Jistota modelu: ${Math.round(t.jistota * 100)} %`,
     ...(t.oduvodneni ? ['', t.oduvodneni] : []),
     '',
     '— workflow Triáž (#355), návrh třídění bez záruky',
