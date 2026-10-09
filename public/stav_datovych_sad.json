@@ -1,6 +1,6 @@
 {
  "verze": 1,
- "aktualizovano": "2026-10-05",
+ "aktualizovano": "2026-10-09",
  "popis": "Registr stavu datových sad. Pro každou sadu říká, které období web zobrazuje, odkud je, jaké období čekáme a kdy, co se stane se starými daty po přepnutí a které ukazatele ze slovníku na sadě stojí. Postup a pravidla: docs/zdroje-dat.md, oddíl Stav datových sad. Měnit jen přes scripts/stav-datovych-sad.py.",
  "pravidla": {
   "jistota": "znamo = datum doložené zdrojem; odhad = odvozeno z předchozího období, uveď zdůvodnění; neznamo = nelze odhadnout",
@@ -720,14 +720,16 @@
    "cyklus": "rucni",
    "pouziti": "web",
    "zobrazeno": {
-    "obdobi": "2026-02-07",
-    "soubor": "data/PID_GTFS.zip"
+    "obdobi": "2026-10-09",
+    "soubor": "data/PID/PID_GTFS.zip",
+    "sha256": "097f7e86479bb2defcbf11af70070e55b5def19ea9afc6794f1b66bf34cd79a7",
+    "prepnuto": "2026-10-09"
    },
    "ocekavano": {
     "obdobi": null,
     "kdy": null,
     "jistota": "neznamo",
-    "zduvodneni": "Jízdní řády se mění s každým vydáním."
+    "zduvodneni": "Jízdní řády se mění s každým vydáním; celostátní část grafu potřebuje ruční obnovu (robots.txt spojenka.cz zakazuje automatické stažení)."
    },
    "obnovit_nejpozdeji": "2027-01-31",
    "po_prepnuti": "Nahrazuje se celý.",
@@ -746,7 +748,13 @@
      "https://data.pid.cz/PID_GTFS.zip"
     ],
     "revize_oznamovat": false
-   }
+   },
+   "historie_obdobi": [
+    {
+     "obdobi": "2026-02-07",
+     "soubor": "data/PID_GTFS.zip"
+    }
+   ]
   },
   "katalog-historie": {
    "nazev": "Katalog, historické ročníky 2024 a 2025",
@@ -1187,6 +1195,13 @@
    "z": "2026-09-07",
    "na": "2026-10-05",
    "doklad": "PR #379, týdenní workflow CSI Weekly Refresh 2026-10-05, commit fb977a3"
+  },
+  {
+   "datum": "2026-10-09",
+   "sada": "doprava-gtfs",
+   "z": "2026-02-07",
+   "na": "2026-10-09",
+   "doklad": "Rozhodnutí vlastníka v #426 (9. 10. 2026): přestavět graf z aktuálních dat. Část PID z feedu PID platného 9.–22. 10. 2026 (scripts/obnova_pid_v_grafu.py); celostátní část mimo PID zůstává z GTFS spojenka.cz z 7. 2. 2026."
   }
  ]
 }

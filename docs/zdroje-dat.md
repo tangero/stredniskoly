@@ -243,6 +243,14 @@ Portál nese i popisky, které snímek nezná vůbec, například „Počet při
 
 Otázka rodiče je jediná: **jak dlouho bude dítě dojíždět**. Odpovídáme na ni přes `src/app/api/dostupnost/route.ts`.
 
+**Obnova.** Celý graf staví `scripts/build_transit_graph_v2.py` z celostátního GTFS (`data/GTFS_CR`, spojenka.cz).
+Jeho `robots.txt` zakazuje stahování `/jrdata/*.zip`, takže celostátní data se automaticky nestahují. Část PID (Praha
+a Středočeský kraj) se obnovuje zvlášť z otevřeného feedu PID: stáhnout `https://data.pid.cz/PID_GTFS.zip` (rozbalit do
+`data/PID/` bez `shapes.txt`) a `https://data.pid.cz/stops/json/stops.json` do `data/PID/`, pak
+`python3 scripts/obnova_pid_v_grafu.py`. Skript v grafu nahradí hrany mezi zastávkami, které feed PID obsluhuje, a
+přepíše `public/pid_stops_compact.json`; zbytek republiky nechá (#426). Feed PID platí dva týdny, takže graf zachytí
+i dočasné výluky a náhradní dopravu v daném týdnu.
+
 ### 2.10 Odvozené soubory v `public/`
 
 | Soubor | Vzniká z | Skript | Poznámka |
@@ -706,7 +714,7 @@ Plné převzetí bez člověka se nedoporučuje: CERMAT soubory přepisuje i mě
 
 <!-- stav-datovych-sad:od -->
 
-_Vygenerováno z `public/stav_datovych_sad.json` dne 2026-10-05. Neupravovat ručně._
+_Vygenerováno z `public/stav_datovych_sad.json` dne 2026-10-09. Neupravovat ručně._
 
 | Sada | Použití | Zobrazujeme | Odkud | Zveřejněno, nepřevzato | Čekáme | Kdy | Po přepnutí |
 |---|---|---|---|---|---|---|---|
@@ -724,7 +732,7 @@ _Vygenerováno z `public/stav_datovych_sad.json` dne 2026-10-05. Neupravovat ru�
 | `csi-inspekce` | web | 2026-10-05 | `data/csi_snapshots/csi_inspections_2026-10-05T12-16-15-633Z.json` | — | — | 2026-10neznámo | Starší snímky zůstávají v data/csi_snapshots s manifestem. |
 | `csi-extrakce` | web | 2026-06-16 | `data/inspection_extractions.json` | — | — | 2026-11, odhad | Starší zpráva téže školy zůstává sbalená pod novější. |
 | `csi-inspis` | web | 2026-02-11 | `data/inspis_school_profiles.json` | — | — | neznámo | Nahrazuje se celý. |
-| `doprava-gtfs` | web | 2026-02-07 | `data/PID_GTFS.zip` | — | — | neznámo | Nahrazuje se celý. |
+| `doprava-gtfs` | web | 2026-10-09 | `data/PID/PID_GTFS.zip` | — | — | neznámo | Nahrazuje se celý. |
 | `katalog-historie` | web | 2025 | `public/schools_data.json` | — | — | neznámo | Nepřepíná se. |
 | `school-analysis-legacy` | nezobrazovat | 2025 | `public/school_analysis.json` | — | — | neznámo | Nepřepíná se. |
 | `cermat-kolo2-agregaty` | web | 2026 | `PZ2026_kolo2_skolobory_vysledky.xlsx` | — | 2027 | 2027-09, odhad | Předchozí rok zůstává ve výstupu a na stránce slouží k větě, zda škola 2. kolo vypsala i tehdy. |
