@@ -659,6 +659,25 @@ class TestDatovaLinka(unittest.TestCase):
         graf = json.loads(Path(next(iter(u["priprava"]["zpracovani"]["predani"]))).read_text(encoding="utf-8"))
         self.assertEqual(graf["metadata"]["reference_date"], "2027-01-11")
 
+    def test_rucni_zalozeni_obnovi_jizdni_rad_uprostred_obdobi(self):
+        self.sada_jizdnich_radu()
+        self.registr["sady"]["doprava-gtfs"]["zobrazeno"]["obdobi"] = "2026-12-20"
+        os.environ["LINKA_DNES"] = "2027-01-20"
+        fronta, _ = self.zjisti()
+        self.assertNotIn("doprava-gtfs", self.ulohy_podle_sady(fronta), "uprostřed zobrazeného jízdního řádu zjištění nic nezaloží")
+        k = jadro.zaloz_rucne(self.registr, fronta, "doprava-gtfs", "obnova po změnách linek")
+        u = fronta["ulohy"][k]
+        self.assertEqual((u["druh"], u["obdobi"], u["stav"]), ("revize", "2026-12-13", "zjisteno"))
+        with self.assertRaises(ValueError):
+            jadro.zaloz_rucne(self.registr, fronta, "doprava-gtfs", "podruhé týž den")
+        with self.assertRaises(ValueError):
+            jadro.zaloz_rucne(self.registr, fronta, "doprava-gtfs", " ")
+        u["historie"][-1]["cas"] = "2027-01-20T15:00:00+00:00"
+        self.priprav_jizdni_rady(u)
+        self.assertEqual(u["stav"], "pripraveno", u.get("priprava"))
+        graf = json.loads(Path(next(iter(u["priprava"]["zpracovani"]["predani"]))).read_text(encoding="utf-8"))
+        self.assertEqual(graf["metadata"]["reference_date"], "2027-01-25")
+
     def test_zmizely_zdroj_jizdnich_radu_se_ohlasi_hned(self):
         self.sada_jizdnich_radu()
         del self.server.soubory["/J/gtfs.zip"]

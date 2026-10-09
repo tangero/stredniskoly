@@ -22,6 +22,10 @@ on:
         description: "nic neposílat ven"
         type: boolean
         default: true
+      zalozit:
+        description: "jen s krokem beh: id sady, pro kterou založit úlohu ručně (obnova uprostřed období)"
+        required: false
+        default: ""
 
 permissions:
   contents: write
@@ -100,6 +104,12 @@ jobs:
         if: steps.krok.outputs.krok == 'beh' && steps.krok.outputs.nanecisto == ''
         run: |
           gh label create nova-data --color 1b4d7a --description "Datová linka, nová data k převzetí" --force
+
+      - name: Ruční založení úlohy
+        if: steps.krok.outputs.krok == 'beh' && github.event_name == 'workflow_dispatch' && inputs.zalozit != ''
+        env:
+          SADA: ${{ inputs.zalozit }}
+        run: python3 scripts/datova-linka.py zaloz "$SADA" --duvod "ruční spuštění workflow (${{ github.actor }})"
 
       - name: Zjištění, příprava, oznámení
         if: steps.krok.outputs.krok == 'beh'
