@@ -44,8 +44,8 @@ jobs:
       issues: read
       pull-requests: read
     outputs:
-      akce: ${{ steps.rozhodni.outputs.akce }}
-      duvod: ${{ steps.rozhodni.outputs.duvod }}
+      akce: ${{ steps.stagnace.outputs.akce || steps.rozhodni.outputs.akce }}
+      duvod: ${{ steps.stagnace.outputs.duvod || steps.rozhodni.outputs.duvod }}
       kolo: ${{ steps.rozhodni.outputs.kolo }}
       max: ${{ steps.rozhodni.outputs.max }}
       vetev: ${{ steps.rozhodni.outputs.vetev }}
@@ -69,6 +69,16 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ github.token }}
         run: node scripts/brana/oprava-z-review.mjs rozhodni
+
+      # Stagnace (#327): opakovaný nález P1 nebo P2 ve dvou review po sobě změní `oprava` na `strop`.
+      - name: Stagnace
+        id: stagnace
+        if: steps.rozhodni.outputs.akce == 'oprava'
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          AKCE: ${{ steps.rozhodni.outputs.akce }}
+          DUVOD: ${{ steps.rozhodni.outputs.duvod }}
+        run: node scripts/review/stagnace.mjs "${{ github.event.issue.number }}"
 
   strop:
     name: Strop kol
