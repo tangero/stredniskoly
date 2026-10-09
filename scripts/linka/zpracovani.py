@@ -5,11 +5,15 @@ se dostanou až předáním po schválení.
 """
 from __future__ import annotations
 
+import datetime as dt
+import hashlib
 import json
 import os
+import shutil
 import statistics
 import subprocess
 import sys
+import zipfile
 from pathlib import Path
 
 from . import jadro
@@ -42,6 +46,12 @@ def prozkoumej_xlsx(soubor: Path, pocitat_radky: bool = True) -> dict:
             break
         radku += 1
     return {"listy": wb.sheetnames, "hlavicka": hlavicka, "sloupcu": len(hlavicka), "radku": radku}
+
+
+def prozkoumej_zip(soubor: Path) -> dict:
+    """Soubory v archivu (jen ploché názvy, cesty uvnitř archivu se nerozbalují)."""
+    with zipfile.ZipFile(soubor) as zf:
+        return {"soubory": sorted(i.filename for i in zf.infolist() if not i.is_dir())}
 
 
 def rozdil_struktury(novy: dict, stary: dict | None) -> list[str]:
@@ -275,8 +285,75 @@ def zpracuj_maturitu(uloha: dict, soubor: Path, prace: Path, struktura: dict, st
     }
 
 
+GTFS_POVINNE = ("routes.txt", "trips.txt", "stops.txt", "stop_times.txt", "calendar.txt")
+
+
+def otisk_grafu(cesta: Path) -> str:
+    """sha256 grafu bez metadat; metadata nesou datum vydání zdroje, které se mění denně."""
+    graf = json.loads(cesta.read_text(encoding="utf-8"))
+    obsah = {k: graf[k] for k in ("stops", "edges", "headways")}
+    return hashlib.sha256(json.dumps(obsah, ensure_ascii=False, sort_keys=True).encode()).hexdigest()
+
+
+def zpracuj_jizdni_rady(uloha: dict, soubor: Path, prace: Path, struktura: dict, stavajici: Path | None = None) -> dict:
+    """GTFS CIS JŘ: dopravní graf pro první školní pondělí nového jízdního řádu.
+
+    Args:
+        uloha: Úloha datové linky; období je začátek jízdního řádu (jadro.obdobi_jizdniho_radu).
+        soubor: Stažený ZIP s GTFS.
+        prace: Pracovní adresář úlohy.
+        struktura: Soubory v archivu.
+        stavajici: Graf na webu, proti kterému se kontroluje pokrytí. Výchozí je
+            `data/transit_graph.json`; testy sem dávají vlastní soubor.
+
+    Referenční pondělí se odvozuje z období a z data založení úlohy, ne z dneška,
+    aby předání v pozdějším běhu postavilo graf pro týž den.
+    """
+    chybi = [s for s in GTFS_POVINNE if s not in struktura["soubory"]]
+    if chybi:
+        raise ValueError(f"archiv neobsahuje {', '.join(chybi)}")
+    gtfs = prace / "GTFS"
+    gtfs.mkdir(parents=True, exist_ok=True)
+    with zipfile.ZipFile(soubor) as zf:
+        for jmeno in struktura["soubory"]:
+            if "/" not in jmeno and "\\" not in jmeno and jmeno.endswith(".txt"):
+                with zf.open(jmeno) as src, open(gtfs / jmeno, "wb") as dst:
+                    shutil.copyfileobj(src, dst)
+
+    od = max(dt.date.fromisoformat(str(uloha["obdobi"])), dt.date.fromisoformat(uloha["vytvoreno"][:10]))
+    vystup = prace / "transit_graph.json"
+    if stavajici is None:
+        stavajici = jadro.KOREN / "data" / "transit_graph.json"
+    publikovano = jadro.datum_zmeny(uloha.get("priprava", {}).get("stazeno", {}).get("last_modified", ""))
+    argumenty = ["--gtfs-dir", str(gtfs), "--od", od.isoformat(), "--output", str(vystup)]
+    argumenty += ["--srovnat", str(stavajici)] if stavajici.exists() else ["--bez-srovnani"]
+    if publikovano:
+        argumenty += ["--publikovano", publikovano.isoformat()]
+    try:
+        zprava = spust("build_transit_graph_v2.py", *argumenty)
+    finally:
+        shutil.rmtree(gtfs, ignore_errors=True)  # rozbalená data mají stovky MB
+
+    meta = json.loads(vystup.read_text(encoding="utf-8"))["metadata"]
+    web = json.loads(stavajici.read_text(encoding="utf-8"))["metadata"] if stavajici.exists() else None
+    return {
+        "zpracovatel": "doprava-gtfs",
+        "vystupy_skriptu": ["\n".join(zprava.splitlines()[-5:])],
+        "srovnani": {
+            "popis": f"referenční pondělí {meta['reference_date']}, zastávek {meta['parent_stations']}, "
+                     f"hran {meta['directed_edges']}, linek s intervalem {meta['routes_with_headway']}"
+                     + (f" (na webu {web['parent_stations']}, {web['directed_edges']} a {web['routes_with_headway']}"
+                        f", referenční den {web.get('reference_date', 'neuveden')})" if web else ""),
+        },
+        "predani": {str(vystup): "data/transit_graph.json"},
+        "otisk_vystupu": otisk_grafu(vystup),
+        "dopad": "Přepíše data/transit_graph.json, ze kterého web počítá dojezdy. Po sloučení přepni sadu doprava-gtfs "
+                 "v registru. Našeptávač zastávek public/pid_stops_compact.json se nemění.",
+    }
+
+
 ZPRACOVATELE = {"cermat-uchazeci-kolo1": zpracuj_uchazeci, "cermat-kolo2-agregaty": zpracuj_druhe_kolo,
-                "cermat-maturita": zpracuj_maturitu}
+                "cermat-maturita": zpracuj_maturitu, "doprava-gtfs": zpracuj_jizdni_rady}
 S_DALSIMI_SOUBORY = (zpracuj_druhe_kolo, zpracuj_maturitu, zpracuj_uchazeci)
 
 
@@ -311,6 +388,9 @@ def priprav(uloha: dict, registr: dict, stahni_fn=jadro.stahni) -> None:
             stara = prozkoumej_xlsx(predchozi, pocitat_radky=False) if predchozi else None
             priprava["struktura"] = {k: struktura[k] for k in ("listy", "sloupcu", "radku")}
             priprava["zmeny_struktury"] = rozdil_struktury(struktura, stara)
+        elif soubor.suffix == ".zip":
+            struktura = prozkoumej_zip(soubor)
+            priprava["zmeny_struktury"] = []
         else:
             struktura = None
             priprava["zmeny_struktury"] = []

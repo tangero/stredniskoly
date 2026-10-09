@@ -1,6 +1,6 @@
 # Datová linka
 
-Verze 1.5 · 2. 10. 2026 · Plán, provozní příručka a výsledky ověření.
+Verze 1.6 · 9. 10. 2026 · Plán, provozní příručka a výsledky ověření.
 
 Automatizovaný systém, který zjistí, že zdroj zveřejnil nová nebo přepsaná data, stáhne je, zkontroluje a zpracuje, oznámí to správci a po jeho schválení připraví převzetí. **Web se bez schválení nikdy nezmění** a ani po schválení linka sama nepřepíná zobrazené období; to zůstává krokem `prepni` v [registru stavu datových sad](zdroje-dat.md#5-stav-datových-sad).
 
@@ -39,6 +39,8 @@ zjisteno → pripraveno → oznameno → schvaleno → predano
 | `revize` | Soubor pro zobrazené období se změnil po datu, kdy jsme ho převzali |
 | `zmizelo` | Zdroj, který dříve existoval, vrací 404 |
 
+**Zdroj s pevnou adresou, který vychází denně** (jízdní řády, `aktualizace.obdobi: "jizdni-rad"` v registru): období se neodvozuje ze souboru, ale z data. Je jím začátek jízdního řádu platného v nejbližší pondělí (druhá neděle v prosinci), takže úloha vznikne jednou ročně po celostátní změně. Kód úlohy u takové sady nezahrnuje datum změny souboru, aby každé denní vydání nezaložilo novou úlohu. Při předání v pozdějším běhu se zdroj stáhne znovu a jiný otisk ZIPu se nepovažuje za změnu; shodovat se musí otisk grafu (`otisk_vystupu`), jinak předání skončí chybou a úlohu je třeba otevřít příkazem `znovu`.
+
 Úlohy vznikají jen pro sady s použitím `web` nebo `planovano`. Ostatní sady linka jen zapíše do přehledu, aby oznámení nezahlcovala.
 
 Fronta je v `data/linka/fronta.json`. Pracovní soubory ve `data/linka/prace/<KÓD>/` se do gitu neukládají.
@@ -50,6 +52,7 @@ Fronta je v `data/linka/fronta.json`. Pracovní soubory ve `data/linka/prace/<K�
 | `cermat-uchazeci-kolo1` | kontrola povinných sloupců, `build-pasma-prijeti.py`, `build-soubeh-prihlasek.py` a `build-kontext-prihlasek.py` do pracovního adresáře, srovnání s tím, co je na webu. **Poslední dva berou názvy oborů mimo katalog z indexu rejstříku škol** (viz níže). Po kontrolách `build-okruhy-oboru.py --jen-zdroje` (okruhy oborů, issue #277): k novému souboru se stáhnou soubory dvou předchozích let (adresa se liší jen rokem), oblasti přihlášek se odhadnou ze sloučených ročníků; nestažený starší rok jen zúží odhad | větev s novými soubory `public/pasma_prijeti_<rok>.json`, `public/soubeh_prihlasek_<rok>.json`, `public/kontext_prihlasek_<rok>.json`, `public/simulator_pasma_<rok>.json` a `public/okruhy_oboru_<rok>.json` a pull request |
 | `cermat-maturita` | k jarnímu souboru stažení tří předchozích jarních ročníků, `build-maturita-skoly.py` s doplněním do stávajícího výstupu, kontrola povinných sloupců češtiny (včetně pasti směrodatné odchylky a percentilu), pojistka proti poklesu počtu škol; stav po podzimu se nezpracuje | větev s `public/maturita_skoly.json` a pull request; web ho čte až po přepnutí období v registru |
 | `cermat-kolo2-agregaty` | stažení výsledků 1. kola téhož roku, `build-druhe-kolo.py` s doplněním ročníku do stávajícího výstupu, pojistka proti nabídkám bez 2. kola | větev s `public/druhe_kolo.json` a pull request; web nový rok ukáže až po přepnutí období v registru |
+| `doprava-gtfs` | rozbalení GTFS CIS JŘ, `build_transit_graph_v2.py` pro první školní pondělí nového jízdního řádu, kontrola pokrytí proti grafu na webu (celkem i po čtvercích mapy), rozbalená data se pak mažou | větev s `data/transit_graph.json` a pull request; web graf čte hned po sloučení, registr se přepne zvlášť |
 | ostatní | stažení, sha256, listy, hlavička, počet řádků, změny struktury proti předchozímu souboru | záznam rozhodnutí ve frontě a doporučený ruční krok |
 
 Změna struktury, například přejmenovaný list nebo chybějící sloupec, úlohu nezastaví, ale v oznámení je uvedena jako první věc. Chybějící povinný sloupec zpracování zastaví a úloha skončí ve stavu `selhalo` s vysvětlením.
@@ -154,6 +157,7 @@ Kontrolu shrnutí inspekcí pokrývá `tests/test_inspekce_tydenni.py` s falešn
 
 | Verze | Změna |
 |---|---|
+| 1.6 | Zpracovatel jízdních řádů (`doprava-gtfs`): dopravní graf z GTFS CIS JŘ jednou ročně po změně jízdního řádu, období podle data, předání s otiskem výstupu, `data/transit_graph.json` ve výstupech předání v `.github/rezimy.yml`. Důvod: graf se dosud obnovoval ručním stahováním mimo linku (review PR #453). |
 | 1.5 | Kontrola shrnutí inspekcí v `zjisti` a `beh`: školy s nezpracovanou novější inspekcí a pull request týdenní obnovy otevřený déle než 14 dní (#266). Důvod: PR se seznamem inspekcí zůstal od 13. 4. do 13. 9. 2026 nesloučený a shrnutí u 82 škol zastarala (#259). |
 | 1.4 | Potvrzování rozhodnutí a výsledku předání, odpověď na nesrozumitelné schválení, schválení bez kódu, okamžité zpracování komentáře v issue a kontrola Telegramu každých 15 minut. Důvod: 14. 9. 2026 správce schválil GQ99C v Telegramu i v issue #89 a nedostal žádnou odezvu; denní kontrola ještě neproběhla a linka potvrzení vůbec neposílala. Návod v oznámení nově uvádí skutečný kód místo zástupného „KÓD“, který se dal opsat doslova. |
 | 1.3 | Příkaz `znovu` pro znovuotevření uzavřené úlohy; použit 14. 9. 2026 u GQ99C (maturita jaro 2026), kterou 13. 9. linka předala bez souborů, protože sada ještě neměla zpracovatele. Nové oznámení: issue #89. |

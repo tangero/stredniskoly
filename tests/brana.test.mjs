@@ -691,6 +691,9 @@ test('předání z datové linky (větev data/*, RA49): od App projde v R, jinde
   const v = run({ pr: predani(), issues: [], soubory: vystupy });
   assert.equal(v.uspech, true, v.duvody.join('; '));
   assert.equal(v.rezim, 'R');
+  // Dopravní graf z jízdních řádů (zpracovatel doprava-gtfs).
+  const graf = run({ pr: predani({ vetev: 'data/doprava-gtfs-2026-12-13-kq7mn' }), issues: [], soubory: [soubor('data/transit_graph.json', 1)] });
+  assert.equal(graf.uspech, true, graf.duvody.join('; '));
   // Registr nebo kód mimo výstupy linky: posoudí se jako dřív.
   assert.equal(run({ pr: predani(), issues: [], soubory: [...vystupy, soubor('public/stav_datovych_sad.json')] }).uspech, false);
   assert.equal(run({ pr: predani(), issues: [], soubory: [soubor('src/app/page.tsx')] }).uspech, false);

@@ -163,6 +163,24 @@ def rozvin(vzor: str, den: dt.date) -> list[tuple[str | None, str]]:
     return [(None, vzor)]
 
 
+def zacatek_jizdniho_radu(den: dt.date) -> dt.date:
+    """Začátek ročního jízdního řádu platného v daný den: druhá neděle v prosinci."""
+    def druha_nedele(rok: int) -> dt.date:
+        prvni = dt.date(rok, 12, 1)
+        return prvni + dt.timedelta(days=(6 - prvni.weekday()) % 7 + 7)
+    zacatek = druha_nedele(den.year)
+    return zacatek if den >= zacatek else druha_nedele(den.year - 1)
+
+
+def obdobi_jizdniho_radu(den: dt.date) -> str:
+    """Období sady s pevnou adresou, která se publikuje denně (`aktualizace.obdobi: jizdni-rad`).
+
+    Obdobím je začátek jízdního řádu platného v nejbližší pondělí, takže nová úloha
+    vznikne jednou za rok po celostátní změně, ne s každým denním vydáním.
+    """
+    return zacatek_jizdniho_radu(den + dt.timedelta(days=(7 - den.weekday()) % 7)).isoformat()
+
+
 def porovnej(a: str | None, b: str | None) -> int | None:
     """-1, 0, 1 pro roky nebo data ve tvaru RRRR-MM-DD, None když se porovnat nedají."""
     if not a or not b:
@@ -198,10 +216,13 @@ def zjisti(registr: dict, fronta: dict, head_fn=head) -> dict:
             continue
         zobrazeno = sada.get("zobrazeno", {}).get("obdobi")
         reference = referencni_datum(sada)
+        jizdni_rad = akt.get("obdobi") == "jizdni-rad"
         kandidati = []  # (druh, obdobi, url, last_modified)
         for vzor in vzory:
             dostupne = []
             for obdobi, url in rozvin(vzor, den):
+                if obdobi is None and jizdni_rad:
+                    obdobi = obdobi_jizdniho_radu(den)
                 stav, zmena = head_fn(url)
                 zname = fronta["zname"].get(url)
                 if stav == 200:
@@ -219,8 +240,8 @@ def zjisti(registr: dict, fronta: dict, head_fn=head) -> dict:
             for obdobi, url, zmena in dostupne:
                 zname = fronta["zname"].get(url)
                 cmp = porovnej(obdobi, zobrazeno)
-                if zname and zname.get("last_modified") == zmena:
-                    pass
+                if zname and zname.get("last_modified") == zmena and not jizdni_rad:
+                    pass  # u jízdního řádu určuje období datum, ne soubor; duplicitu hlídá kód úlohy
                 elif obdobi is not None and (zobrazeno is None or cmp == 1):
                     kandidati.append(("nove_obdobi", obdobi, url, zmena))
                 elif cmp == 0 or obdobi is None:
@@ -240,7 +261,8 @@ def zjisti(registr: dict, fronta: dict, head_fn=head) -> dict:
             kandidati = [k for k in kandidati if k[0] != "revize"]
 
         for druh, obdobi, url, zmena in kandidati:
-            k = kod(sid, str(obdobi), druh, url, zmena)
+            # Denně publikovaný zdroj: jedna úloha na období, ne na každé vydání.
+            k = kod(sid, str(obdobi), druh, url, "" if jizdni_rad else zmena)
             zaznam = {"sada": sid, "druh": druh, "obdobi": obdobi, "url": url, "last_modified": zmena}
             if sada.get("pouziti") not in UKOLOVE_POUZITI:
                 beh["informace"].append(zaznam)

@@ -123,6 +123,7 @@ datove_obnovy:
     - public/okruhy_oboru_*.json
     - public/druhe_kolo.json
     - public/maturita_skoly.json
+    - data/transit_graph.json
 
 # Změny jen v těchto cestách nepotřebují protokol z preview (web se nemění).
 bez_preview:

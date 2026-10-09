@@ -34,16 +34,26 @@ def zajisti_vystupy(uloha: dict, registr: dict, stahni_fn=jadro.stahni) -> None:
     """Pracovní soubory mohou chybět, například v dalším běhu GitHub Actions; připraví se znovu.
 
     Znovu stažený soubor musí mít stejný otisk jako při oznámení, jinak by se
-    předalo něco jiného, než správce schválil.
+    předalo něco jiného, než správce schválil. Zdroj, který vychází denně
+    (jízdní řády), se mění vždy; u něj zpracovatel uvádí otisk výstupu a musí
+    se shodovat ten.
     """
     zpr = uloha.get("priprava", {}).get("zpracovani") or {}
     if all(Path(zdroj).exists() for zdroj in zpr.get("predani", {})):
         return
+    otisk_vystupu = zpr.get("otisk_vystupu")
     otisk = uloha.get("priprava", {}).get("stazeno", {}).get("sha256")
     stav = uloha["stav"]
     zpracovani.priprav(uloha, registr, stahni_fn=stahni_fn)
-    novy = uloha.get("priprava", {}).get("stazeno", {}).get("sha256")
     uloha["stav"] = stav  # příprava přepíše stav; rozhodnutí správce platí dál
+    if otisk_vystupu:
+        novy = (uloha.get("priprava", {}).get("zpracovani") or {}).get("otisk_vystupu")
+        if novy != otisk_vystupu:
+            chyba = uloha.get("priprava", {}).get("chyba")
+            raise RuntimeError(f"výstup se od schválení změnil: {otisk_vystupu[:12]}… → "
+                               f"{(novy or chyba or '')[:60]}; úlohu znovu otevři příkazem znovu")
+        return
+    novy = uloha.get("priprava", {}).get("stazeno", {}).get("sha256")
     if otisk and novy != otisk:
         raise RuntimeError(f"zdroj se od schválení změnil: sha256 {otisk[:12]}… → {(novy or '')[:12]}…")
 
