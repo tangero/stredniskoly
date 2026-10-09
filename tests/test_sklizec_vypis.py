@@ -226,6 +226,74 @@ class ZdrojVypisu(unittest.TestCase):
         self.assertNotIn("cesta", v)
 
 
+PEREX = ("Ve čtvrtek se v aule konal další ročník setkání, na kterém studenti představili svým spolužákům "
+         "kroužky a volnočasové aktivity, kterým se během roku věnují, a pozvali je mezi sebe")
+
+
+def karty(sablona, polozky):
+    return "<html><body><div class='obsah'>" + "".join(sablona.format(*p) for p in polozky) + "</div></body></html>"
+
+
+# Struktury výpisů čtyř škol, u kterých se titulek slil s úvodem článku (#450). Stránky z 9. 10. 2026
+# posloužily jako předloha; texty, adresy a jména jsou smyšlené.
+CLANKY = [("veletrh", "Veletrh volnočasových aktivit", "30. 9. 2026"),
+          ("kurz", "Kurz němčiny pro veřejnost", "29. 9. 2026"),
+          ("beh", "Běžecký klub gymnázia Jana Nováka", "22. 9. 2026")]
+
+# Obrázek s alt a „Více informací“, titulek mimo odkaz v <p>.
+VYPIS_OBRAZEK_ALT = karty(
+    "<div class='blokAktuality'><a href='aktuality/{0}'><img src='a.webp' alt='{1}'></a>"
+    "<div><p> {1}</p></div><p>{2}</p><div><p>" + PEREX + " …</p></div>"
+    "<a href='aktuality/{0}'>Více informací <img src='sipka.svg' alt='Více informací'></a></div>", CLANKY)
+# Obrázek bez textu, titulek v odkazu s title „Zjistit více“, perex s odkazem „více“.
+VYPIS_TITULEK_V_ODKAZU = karty(
+    "<div class='new'><a href='/aktuality/{0}' class='new_image' style='background:url(a.png)'></a>"
+    "<div class='new_content'><div class='new_title'><a href='/aktuality/{0}' title='Zjistit více'>{1}</a></div>"
+    "<div class='new_date'><p>{2}</p></div><div class='new_text'><p>" + PEREX + "<a href='/aktuality/{0}' title='Číst více'>více</a></p></div></div></div>",
+    CLANKY)
+# Obrázek s aria-label, titulek v odkazu, datum v závorce a perex mimo odkaz.
+VYPIS_ARIA_LABEL = karty(
+    "<div class='vitem'><div class='vmini'><a href='fr.asp?id={0}' aria-label=\"{1}\"><img src='a.jpg' alt=''></a></div>"
+    "<div class='vtitle'><div class='vdate'>({2})</div><div class='vsubj'><a href='fr.asp?id={0}'>{1}</a></div></div>"
+    "<div class='vabst'>" + PEREX + "</div></div>", CLANKY)
+# Tři odkazy na týž článek: titulek pro mobil, titulek pro počítač a odkaz na celou kartu s perexem.
+VYPIS_ODKAZ_NA_KARTU = karty(
+    "<div class='clanek'><div class='datum'>{2}</div><div class='d-md-none'><a href='/clanek-cist/{0}'>"
+    "<div class='h5'>{1}</div></a></div><div class='small'>Autorka Jana Nováková</div>"
+    "<a href='/clanek-cist/{0}' class='clanky-odkaz'>{1}</a>"
+    "<a href='/clanek-cist/{0}' class='clanky-odkaz'><img src='f.jpg'><p>" + PEREX + "...</p></a></div>", CLANKY)
+
+
+class SliteTitulky(unittest.TestCase):
+    def test_titulek_konci_na_hranici_odkazu_ne_v_perexu(self):
+        for nazev, html in (("obrázek s alt", VYPIS_OBRAZEK_ALT), ("titulek v odkazu", VYPIS_TITULEK_V_ODKAZU),
+                            ("aria-label", VYPIS_ARIA_LABEL), ("odkaz na kartu", VYPIS_ODKAZ_NA_KARTU)):
+            with self.subTest(nazev):
+                p = nv.precti_vypis(html, STRANKA, DNES)
+                self.assertEqual([x["titulek"] for x in p], [c[1] for c in CLANKY])
+                self.assertTrue(all(x["url"].rstrip("/").endswith(c[0]) for x, c in zip(p, CLANKY)))
+
+    def test_pojistka_zkrati_dlouhy_titulek_na_prvni_vetu(self):
+        self.assertEqual(nv.zkrat_titulek("Veletrh volnočasových aktivit. " + PEREX), "Veletrh volnočasových aktivit")
+
+    def test_pojistka_bez_vety_zkrati_na_cele_slovo(self):
+        t = nv.zkrat_titulek(PEREX)
+        self.assertLessEqual(len(t), nv.MAX_TITULEK)
+        self.assertTrue(t.endswith("…"))
+        self.assertTrue(PEREX.startswith(t[:-1]))
+
+    def test_titulek_do_meze_zustane_beze_zmeny(self):
+        t = "Říjnová akce 1. D - celoškolní sbírka starých a nepotřebných mobilů, tabletů a příslušenství"
+        self.assertEqual(nv.zkrat_titulek(t), t)
+
+    def test_rss_titulek_se_nezkracuje(self):
+        titulek = "Slavnostní předávání maturitních vysvědčení. " + PEREX
+        feed = (f"<?xml version=\"1.0\"?><rss><channel><item><title>{titulek}</title>"
+                "<link>https://skola.example.cz/predavani</link><pubDate>Thu, 24 Sep 2026 08:00:00 GMT</pubDate></item></channel></rss>")
+        v, _, _ = ZdrojVypisu.zpracuj(self, {"typ": "rss"}, primo=ok(feed))
+        self.assertEqual(v["polozky"][0]["titulek"], titulek)
+
+
 class Registr(unittest.TestCase):
     def setUp(self):
         self.tmp = tempfile.TemporaryDirectory()
