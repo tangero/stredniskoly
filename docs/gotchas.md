@@ -17,3 +17,10 @@ ve kterém na něj narazíš (krátce: co se stane, proč, co s tím). Oprava, k
 
 - **Lokální `npm run build` může spadnout na limit 60 s pro předgenerování stránky**, když je počítač vytížený
   (jiné procesy, vysoká zátěž). Nejde o chybu změny; ověř v CI nebo na náhledu a napiš to do PR.
+
+## SEO
+
+- **Strojové podoby stránek školy (`/skola/{slug}.md`, `.json`) Google považuje za duplicity stránky.** Bez kanonické
+  adresy je Search Console hlásí jako „Duplicitní stránka bez kanonické verze vybrané uživatelem“. Odpovědi proto nesou
+  hlavičku `Link: <…/skola/{slug}>; rel="canonical"` (`hlavickyOtevrenychDat` v `src/lib/skola-otevrena-data.ts`, #405).
+  Nová strojová podoba stránky potřebuje tutéž hlavičku.

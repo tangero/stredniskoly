@@ -325,16 +325,28 @@ const RADEK_COMMIT = /^[\s>*_]*Commit:[\s*_]*`?([0-9a-f]{7,40})\b/im;
 const RADEK_VERDIKT = /^[\s>*_]*Verdikt:[\s*_]*(.*)$/im;
 
 /**
+ * Smí komentář platit jako review nebo žádost o opravu z review? Asistent zadání vždy; automatika (App) jen
+ * s značkou automatického review z `review.znacka_automatiky` (#455). Značku píše skript workflow Review
+ * z main, model ji do textu nedostane (scripts/brana/review.mjs ji z jeho textu odstraní).
+ */
+export function odRecenzenta(komentar, konfig) {
+  const r = konfig.rezimy;
+  if (r.asistent && komentar.autor === r.asistent) return true;
+  const znacka = r.review?.znacka_automatiky;
+  return Boolean(znacka && r.automatika && komentar.autor === r.automatika && (komentar.telo || '').includes(znacka));
+}
+
+/**
  * Review asistenta zadání pro aktuální hlavu PR (smyčka review a oprav, #301). Počítá se jen komentář
- * s nadpisem „Review“ od účtu `asistent` s řádkem `Commit: <sha>` pro hlavu PR; vlastník se nepočítá,
+ * s nadpisem „Review“ od účtu `asistent` (nebo automatické review, `odRecenzenta`) s řádkem `Commit: <sha>`
+ * pro hlavu PR; vlastník se nepočítá,
  * protože přes jeho účet pracuje Claude Code, který PR připravil. Rozhoduje naposledy upravené review
  * pro tuto hlavu a projde jen verdikt „Bez P1 a P2“.
  */
 export function review(pr, konfig) {
-  const asistent = konfig.rezimy.asistent;
   const kratke = pr.hlava.sha.slice(0, 7);
   const texty = pr.komentare
-    .filter((k) => asistent && k.autor === asistent && /^#{1,6}\s*Review\b/im.test(k.telo))
+    .filter((k) => odRecenzenta(k, konfig) && /^#{1,6}\s*Review\b/im.test(k.telo))
     .filter((k) => {
       const m = k.telo.match(RADEK_COMMIT);
       return m && pr.hlava.sha.startsWith(m[1].toLowerCase());

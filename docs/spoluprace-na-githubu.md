@@ -207,10 +207,11 @@ a jen s právy, která job potřebuje:
 | CSI Weekly Refresh, Záloha veletrhů | PR s obnovou dat | contents, pull-requests zápis |
 | Datová linka | PR z předání schválených dat (jen `gh pr create`, větev pushuje `GITHUB_TOKEN`, #440) | pull-requests zápis, contents čtení |
 | Oprava z review (`oprava-z-review.yml`, job Zápis, #410) | push opravy do větve PR, aby testy u PR běžely bez schvalování spuštění | contents zápis |
+| Review (`review.yml`, job Zápis, #455) | komentář s automatickým review a žádost `@claude` o opravu (komentář od App spustí bránu i smyčku oprav) | issues, pull-requests zápis; contents čtení |
 | Týdenní přehled | jen ověření, že se App přihlásí | metadata čtení |
 
-Brána App věří jen u automatických obnov dat (`automatika` v `rezimy.yml`); `schvaleno`, odebrání `stop`,
-doklad `Zdroj:`, review ani protokol od ní neplatí. Beze změny zůstávají Claude Code v relacích (účet
+Brána App věří jen u automatických obnov dat (`automatika` v `rezimy.yml`) a u review se značkou automatického
+review (#455, RA50); `schvaleno`, odebrání `stop`, doklad `Zdroj:`, jiné review ani protokol od ní neplatí. Beze změny zůstávají Claude Code v relacích (účet
 vlastníka), Eduarda, Tabule (`PROJECT_TOKEN`) a workflow na `GITHUB_TOKEN` (brána, testy, ověření, datová
 linka). Push od App nespouští nasazení náhledu (job deploy v `testy.yml`), protože by běžel skript z větve
 s `VERCEL_TOKEN`; testy u PR běží normálně.

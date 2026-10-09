@@ -1,6 +1,6 @@
 {
  "verze": 1,
- "aktualizovano": "2026-10-05",
+ "aktualizovano": "2026-10-09",
  "popis": "Registr stavu datových sad. Pro každou sadu říká, které období web zobrazuje, odkud je, jaké období čekáme a kdy, co se stane se starými daty po přepnutí a které ukazatele ze slovníku na sadě stojí. Postup a pravidla: docs/zdroje-dat.md, oddíl Stav datových sad. Měnit jen přes scripts/stav-datovych-sad.py.",
  "pravidla": {
   "jistota": "znamo = datum doložené zdrojem; odhad = odvozeno z předchozího období, uveď zdůvodnění; neznamo = nelze odhadnout",
@@ -737,15 +737,16 @@
    ],
    "ukazatele": [],
    "aktualizace": {
-    "zdroj": "https://data.pid.cz/PID_GTFS.zip; celostátní jízdní řády KOMPLET ručně",
-    "detekce": "PID se obnovuje denně, Last-Modified 13. 9. 2026.",
-    "import": "scripts/build_transit_graph_v2.py a převodníky KOMPLET v scripts/.",
+    "zdroj": "https://www.spojenka.cz/jrdata/jizdnirady-gtfs.zip (GTFS CIS JŘ, obsahuje i PID); zastávky PID pro našeptávač z https://data.pid.cz/PID_GTFS.zip",
+    "detekce": "Zdroj vychází denně, linka proto sleduje období jízdního řádu (aktualizace.obdobi = jizdni-rad): úloha vznikne v týdnu po celostátní změně druhou neděli v prosinci.",
+    "import": "Datová linka (zpracovatel doprava-gtfs) stáhne GTFS a scripts/build_transit_graph_v2.py postaví data/transit_graph.json jen ze spojů prvního školního pondělí nového jízdního řádu; pokrytí kontroluje proti grafu na webu.",
     "automatizace": "priprava",
-    "lidsky_krok": "PID lze stahovat automaticky; celostátní data KOMPLET se získávají ručně a stavba grafu je náročná, proto doporučeno obnovovat při změně jízdních řádů, ne průběžně.",
+    "lidsky_krok": "Schválit úlohu linky, sloučit její PR a přepnout sadu příkazem stav-datovych-sad.py prepni doprava-gtfs <období>. Našeptávač public/pid_stops_compact.json linka neobnovuje.",
     "sledovat": [
-     "https://data.pid.cz/PID_GTFS.zip"
+     "https://www.spojenka.cz/jrdata/jizdnirady-gtfs.zip"
     ],
-    "revize_oznamovat": false
+    "revize_oznamovat": false,
+    "obdobi": "jizdni-rad"
    }
   },
   "katalog-historie": {

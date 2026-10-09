@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { nactiOtevrenaDataSkoly } from '@/lib/skola-otevrena-data-server';
+import { hlavickyOtevrenychDat } from '@/lib/skola-otevrena-data';
 
 // Stejná obnova jako stránka školy, aby otevřená data neukazovala jiný ročník než web.
 // Cache-Control nenastavujeme: Next ho odvodí z revalidate a na Vercelu k odpovědi přidá značky
@@ -10,5 +11,5 @@ export async function GET(_request: NextRequest, { params }: { params: Promise<{
   const { slug } = await params;
   const data = await nactiOtevrenaDataSkoly(slug);
   if (!data) return NextResponse.json({ error: 'Škola nenalezena' }, { status: 404 });
-  return NextResponse.json(data);
+  return NextResponse.json(data, { headers: hlavickyOtevrenychDat(data, 'application/json') });
 }

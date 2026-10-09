@@ -691,6 +691,9 @@ test('předání z datové linky (větev data/*, RA49): od App projde v R, jinde
   const v = run({ pr: predani(), issues: [], soubory: vystupy });
   assert.equal(v.uspech, true, v.duvody.join('; '));
   assert.equal(v.rezim, 'R');
+  // Dopravní graf z jízdních řádů (zpracovatel doprava-gtfs).
+  const graf = run({ pr: predani({ vetev: 'data/doprava-gtfs-2026-12-13-kq7mn' }), issues: [], soubory: [soubor('data/transit_graph.json', 1)] });
+  assert.equal(graf.uspech, true, graf.duvody.join('; '));
   // Registr nebo kód mimo výstupy linky: posoudí se jako dřív.
   assert.equal(run({ pr: predani(), issues: [], soubory: [...vystupy, soubor('public/stav_datovych_sad.json')] }).uspech, false);
   assert.equal(run({ pr: predani(), issues: [], soubory: [soubor('src/app/page.tsx')] }).uspech, false);
@@ -717,4 +720,24 @@ test('rutina z automatického zjištění (issue od github-actions[bot]) projde 
   // Stop na issue dál platí.
   const stop = { akce: 'labeled', stitek: 'stop', cas: PRED(1), aktor: 'tangero' };
   assert.equal(run({ predchozi: null, issues: [regrese({ stitky: ['interni', 'rutina', 'stop'], udalosti: [stop] })] }).uspech, false);
+});
+
+test('review: automatické review (App se značkou, #455) se počítá; bez značky, od github-actions a k jiné hlavě ne', () => {
+  const znacka = konfig.rezimy.review.znacka_automatiky;
+  assert.ok(znacka, 'rezimy.yml: review.znacka_automatiky');
+  const auto = (o = {}) => ({ autor: konfig.rezimy.automatika, cas: PRED(56), telo: `## Review\n\nVerdikt: Bez P1 a P2\nCommit: ${SHA.slice(0, 7)}\n\nBez nálezů.\n${znacka}`, ...o });
+  const zkus = (k) => run({ pr: pr({ komentare: [k, protokolKomentar()] }) });
+  assert.equal(zkus(auto()).uspech, true, zkus(auto()).duvody.join('; '));
+  assert.match(zkus(auto({ telo: auto().telo.replace(znacka, '') })).duvody.join(), /chybí review/);
+  assert.match(zkus(auto({ autor: BOT })).duvody.join(), /chybí review/);
+  assert.match(zkus(auto({ telo: auto().telo.replace(SHA.slice(0, 7), SHA2.slice(0, 7)) })).duvody.join(), /chybí review/);
+  const nalezy = zkus(auto({ telo: auto().telo.replace('Bez P1 a P2', 'Nálezy k opravě (P2)') }));
+  assert.match(nalezy.duvody.join(), /nemá verdikt „Bez P1 a P2“/);
+});
+
+test('review: automatické review nepustí cestu K bez souhlasu vlastníka (#455)', () => {
+  const znacka = konfig.rezimy.review.znacka_automatiky;
+  const auto = { autor: konfig.rezimy.automatika, cas: PRED(56), telo: `## Review\n\nVerdikt: Bez P1 a P2\nCommit: ${SHA.slice(0, 7)}\n${znacka}` };
+  const v = run({ pr: pr({ komentare: [auto, protokolKomentar()] }), soubory: [STRANKA, soubor('db/migrace/099-x.sql')] });
+  assert.equal(v.uspech, false);
 });
