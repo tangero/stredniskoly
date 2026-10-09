@@ -282,3 +282,31 @@ def zjisti(registr: dict, fronta: dict, head_fn=head) -> dict:
             beh["nove_ulohy"].append(k)
     fronta.setdefault("behy", []).append(beh)
     return beh
+
+
+def zaloz_rucne(registr: dict, fronta: dict, sid: str, duvod: str) -> str:
+    """Založí úlohu revize sady na pokyn vlastníka, i když zjištění žádnou změnu nevidí.
+
+    Slouží k obnově dat uprostřed období (např. jízdní řád po únoru). Úloha prochází
+    stejnou přípravou, oznámením a schválením jako zjištěná; jeden den dá jeden kód.
+    """
+    if not duvod.strip():
+        raise ValueError("ruční založení vyžaduje důvod")
+    sada = registr["sady"].get(sid)
+    if sada is None:
+        raise ValueError(f"sada {sid} v registru není")
+    akt = sada.get("aktualizace", {})
+    pevne = [url for vzor in akt.get("sledovat", []) for obdobi, url in rozvin(vzor, dnes()) if obdobi is None]
+    if not pevne or sada.get("pouziti") not in UKOLOVE_POUZITI:
+        raise ValueError(f"sada {sid} nemá pevnou sledovanou adresu nebo se nepoužívá na webu")
+    den = dnes()
+    zobrazeno = sada.get("zobrazeno", {}).get("obdobi")
+    obdobi = obdobi_jizdniho_radu(den) if akt.get("obdobi") == "jizdni-rad" else zobrazeno
+    k = kod(sid, str(obdobi), "revize", pevne[0], f"rucne:{den.isoformat()}")
+    if k in fronta["ulohy"]:
+        raise ValueError(f"{k}: úloha z dnešního ručního založení už existuje, použij příkaz znovu")
+    uloha = {"kod": k, "sada": sid, "druh": "revize", "obdobi": obdobi, "url": pevne[0], "last_modified": "",
+             "vytvoreno": ted(), "zobrazene_obdobi": zobrazeno}
+    zmen_stav(uloha, "zjisteno", f"ručně: {duvod}")
+    fronta["ulohy"][k] = uloha
+    return k

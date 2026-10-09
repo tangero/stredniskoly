@@ -1,6 +1,6 @@
 # Datová linka
 
-Verze 1.6 · 9. 10. 2026 · Plán, provozní příručka a výsledky ověření.
+Verze 1.7 · 9. 10. 2026 · Plán, provozní příručka a výsledky ověření.
 
 Automatizovaný systém, který zjistí, že zdroj zveřejnil nová nebo přepsaná data, stáhne je, zkontroluje a zpracuje, oznámí to správci a po jeho schválení připraví převzetí. **Web se bez schválení nikdy nezmění** a ani po schválení linka sama nepřepíná zobrazené období; to zůstává krokem `prepni` v [registru stavu datových sad](zdroje-dat.md#5-stav-datových-sad).
 
@@ -19,6 +19,8 @@ Podklady: [zdroje dat, oddíl 5](zdroje-dat.md#5-stav-datových-sad), `public/st
 `beh` provede zjištění, přípravu a oznámení najednou. `stav` vypíše frontu úloh.
 
 **Shrnutí inspekcí (`csi-extrakce`).** Shrnutí nových inspekčních zpráv nepřipravuje linka, ale týdenní workflow CSI Weekly Refresh v pull requestu z větve `codex/csi-weekly-refresh` (viz `inspekce/README.md`). Linka čte `main`, takže při `zjisti` a `beh` jen kontroluje (`scripts/linka/inspekce.py`): kolik škol má nejnovější inspekci novější, než je shrnutá (týž výpočet jako `src/lib/inspekce-aktualnost.ts`), a zda pull request s obnovou není otevřený déle než 14 dní. Obojí je problém, který `beh --kanal telegram` pošle jednou zprávou do Telegramu, a výsledek se zapíše k běhu do fronty. Nanečisto a při `zjisti` se stav PR přes `gh` nezjišťuje.
+
+`zaloz SADA --duvod …` založí úlohu revize na pokyn vlastníka, i když zjištění žádnou změnu nevidí, například obnovu jízdních řádů uprostřed období. Sada musí mít pevnou sledovanou adresu a použití na webu; jeden den dá jeden kód. Z GitHubu: ruční spuštění workflow s krokem `beh` a vstupem `zalozit` (id sady). Úloha pak prochází stejnou přípravou, oznámením a schválením jako zjištěná.
 
 `znovu KÓD --duvod …` vrátí uzavřenou úlohu (předanou, bez změny, zamítnutou nebo selhanou) do stavu `zjisteno`, typicky když sada mezitím dostala zpracovatele. Přijme také schválenou úlohu s uloženou chybou předání (`predani_chyba`), například po změně otisku grafu. Schválenou úlohu bez chyby předání neotevře. Předchozí příprava, oznámení, rozhodnutí i chyba předání zůstanou v `predchozi_kola`; úloha se znovu připraví, oznámí a čeká na **nové** schválení, protože zprávy starší než oznámení se ignorují.
 
@@ -157,6 +159,7 @@ Kontrolu shrnutí inspekcí pokrývá `tests/test_inspekce_tydenni.py` s falešn
 
 | Verze | Změna |
 |---|---|
+| 1.7 | Příkaz `zaloz` a vstup workflow `zalozit`: ruční úloha pro obnovu uprostřed období. Důvod: graf jízdních řádů z února, linka by ho sama obnovila až v prosinci. |
 | 1.6 | Zpracovatel jízdních řádů (`doprava-gtfs`): dopravní graf z GTFS CIS JŘ jednou ročně po změně jízdního řádu, období podle data, předání s otiskem výstupu, `data/transit_graph.json` ve výstupech předání v `.github/rezimy.yml`. Důvod: graf se dosud obnovoval ručním stahováním mimo linku (review PR #453). |
 | 1.5 | Kontrola shrnutí inspekcí v `zjisti` a `beh`: školy s nezpracovanou novější inspekcí a pull request týdenní obnovy otevřený déle než 14 dní (#266). Důvod: PR se seznamem inspekcí zůstal od 13. 4. do 13. 9. 2026 nesloučený a shrnutí u 82 škol zastarala (#259). |
 | 1.4 | Potvrzování rozhodnutí a výsledku předání, odpověď na nesrozumitelné schválení, schválení bez kódu, okamžité zpracování komentáře v issue a kontrola Telegramu každých 15 minut. Důvod: 14. 9. 2026 správce schválil GQ99C v Telegramu i v issue #89 a nedostal žádnou odezvu; denní kontrola ještě neproběhla a linka potvrzení vůbec neposílala. Návod v oznámení nově uvádí skutečný kód místo zástupného „KÓD“, který se dal opsat doslova. |
