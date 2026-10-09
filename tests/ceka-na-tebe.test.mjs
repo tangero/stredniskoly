@@ -81,7 +81,7 @@ test('hlášení od veřejnosti jako skupina, včetně hlášení škol, trvalá
     issue({ cislo: 32, stitky: ['portal-skoly', 'oblast:portal'] }),
     issue({ cislo: 33, stitky: ['interni', 'trvale', 'rutina', 'navrh'] }),
   ] });
-  assert.deepEqual(g.map((x) => [x.klic, x.polozky.map((p) => p.cislo)]), [['hlaseni', [30]]]);
+  assert.deepEqual(g.map((x) => [x.klic, x.polozky.map((p) => p.cislo)]), [['hlaseni', [30, 32]]]);
 });
 
 test('otázka jako jeden odstavec bez nadpisů a tabulek (#461)', () => {
