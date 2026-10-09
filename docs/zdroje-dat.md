@@ -249,13 +249,13 @@ Graf bere jen spoje, které jedou v referenční pondělí (`calendar.txt` i vý
 
 Zdroj obsahuje spoje jen na dobu, na kterou je dopravci zveřejnili, PID asi dva týdny dopředu. Před zápisem se proto nový graf porovná s grafem na webu: skript ho nepostaví, když stanic s odjezdy ubude pod 85 % celkem nebo pod 50 % v některém čtverci mapy 0,25° × 0,5° s aspoň 30 stanicemi (chybějící Praha nebo kraj). Hlídá i objem: spojů v ranním okně 6:30–9:00 musí zůstat aspoň 85 % (když je graf na webu uvádí) a nejvýš 30 % společných linek smí mít dvojnásobný interval. Metadata grafu nesou `reference_date`, `source_published` a `trips_in_window`.
 
-**Obnova.** Celý graf staví `scripts/build_transit_graph_v2.py` z celostátního GTFS (`data/GTFS_CR`, spojenka.cz).
-Jeho `robots.txt` zakazuje stahování `/jrdata/*.zip`, takže celostátní data se automaticky nestahují. Část PID (Praha
-a Středočeský kraj) se obnovuje zvlášť z otevřeného feedu PID: stáhnout `https://data.pid.cz/PID_GTFS.zip` (rozbalit do
+**Mimořádná obnova části PID.** Mezi obnovami přes datovou linku lze obnovit jen část PID (Praha
+a Středočeský kraj) z otevřeného feedu PID: stáhnout `https://data.pid.cz/PID_GTFS.zip` (rozbalit do
 `data/PID/` bez `shapes.txt`) a `https://data.pid.cz/stops/json/stops.json` do `data/PID/`, pak
 `python3 scripts/obnova_pid_v_grafu.py`. Skript v grafu nahradí hrany mezi zastávkami, které feed PID obsluhuje, a
 přepíše `public/pid_stops_compact.json`; zbytek republiky nechá (#426). Feed PID platí dva týdny, takže graf zachytí
-i dočasné výluky a náhradní dopravu v daném týdnu.
+i dočasné výluky a náhradní dopravu v daném týdnu. Je to jen mimořádný krok: další přestavba grafu přes linku
+nahradí klíče `PID:` i `route_names` údaji ze spojenka.cz.
 
 Linky z obnovy PID mají v hranách a tabulce intervalů samostatný klíč `PID:<označení>`.
 Stejně označené linky mimo PID si ponechají původní klíč i interval; například plzeňská `26`

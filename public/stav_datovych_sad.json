@@ -729,7 +729,7 @@
     "obdobi": null,
     "kdy": null,
     "jistota": "neznamo",
-    "zduvodneni": "Jízdní řády se mění s každým vydáním; celostátní část grafu potřebuje ruční obnovu (robots.txt spojenka.cz zakazuje automatické stažení)."
+    "zduvodneni": "Jízdní řády se mění s každým vydáním; celou sadu obnovuje datová linka po prosincové změně jízdních řádů a část PID je od 9. 10. 2026 z feedu PID (#426)."
    },
    "obnovit_nejpozdeji": "2027-01-31",
    "po_prepnuti": "Nahrazuje se celý.",
