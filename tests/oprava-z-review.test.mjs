@@ -142,3 +142,13 @@ test('workflow: nesouvisející komentář nesdílí frontu s opravou', () => {
   const w = yaml.load(fs.readFileSync('.github/workflows/oprava-z-review.yml', 'utf8'));
   assert.match(w.concurrency.group, /contains\(github\.event\.comment\.body, '@claude'\) && 'claude' \|\| github\.run_id/);
 });
+
+test('automatické review (App se značkou, #455) spustí kolo; App bez značky ani github-actions ne', () => {
+  const znacka = konfig.rezimy.review.znacka_automatiky;
+  const app = konfig.rezimy.automatika;
+  assert.equal(rozhodni({ komentar: komentar({ autor: app, telo: `@claude Oprav prosím nálezy z automatického review ke commitu abc1234:\n\n- **P2** x\n\n${znacka}` }) }).akce, 'oprava');
+  assert.equal(rozhodni({ komentar: komentar({ autor: app }) }).akce, 'nic');
+  assert.equal(rozhodni({ komentar: komentar({ autor: BOT, telo: `@claude ${znacka}` }) }).akce, 'nic');
+  // PR od automatiky (obnova dat) smyčka oprav dál neopravuje.
+  assert.equal(rozhodni({ komentar: komentar({ autor: app, telo: `@claude ${znacka}` }), pr: pr({ autor: app }) }).akce, 'nic');
+});

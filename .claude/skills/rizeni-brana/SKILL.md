@@ -33,9 +33,10 @@ Vždy: `stop` blokuje, při zamrznutí projde jen `incident` v rozsahu rutiny. P
 (RA45, nahrazuje RA42); blokuje jen protokol k aktuálnímu commitu, který hlásí „nesplněno“. Vlastník místo
 protokolu dostane po nasazení do Telegramu oddíl „Pro vlastníka“ z popisu PR s adresami na webu.
 
-**Review asistenta zadání** (oddíl 9d): u změn webu brána navíc chce pro aktuální hlavu komentář
-`## Review` od účtu `asistent` s řádky `Verdikt: Bez P1 a P2` a `Commit: <sha7>`; neplatí s `schvaleno`
-na PR. Review od účtu vlastníka (tedy i tvoje) se nepočítá. Lhůta L běží od review. Nálezy P1 a P2 opraví
+**Review** (oddíl 9d): u změn webu brána navíc chce pro aktuální hlavu komentář
+`## Review` od účtu `asistent`, nebo automatické review workflow Review (Kimi K3, App `prijimacky-ai` se značkou
+`<!-- review:kimi -->`, #455), s řádky `Verdikt: Bez P1 a P2` a `Commit: <sha7>`; neplatí s `schvaleno`
+na PR. Automatické review vzniká samo po každém pushi; ruční spuštění: workflow Review s číslem PR. Review od účtu vlastníka (tedy i tvoje) se nepočítá. Lhůta L běží od review. Nálezy P1 a P2 opraví
 workflow „Oprava z review“ na komentář `@claude` (nejvýš 5 kol, pak štítek `potrebuje-cloveka`);
 do PR se štítkem `potrebuje-cloveka` další `@claude` nepiš, rozhodne člověk.
 

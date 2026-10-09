@@ -3,8 +3,9 @@
 # a co ne. Nejvýš `review.max_kol_oprav` kol na PR (rezimy.yml), pak štítek `potrebuje-cloveka`.
 #
 # Pojistky:
-# - Spustí se jen na komentář vlastníka nebo asistenta zadání u PR, který založil jeden z nich,
-#   a nikdy u PR z forku (rozhoduje scripts/brana/oprava-z-review.mjs z main).
+# - Spustí se jen na komentář vlastníka, asistenta zadání nebo automatického review (App prijimacky-ai se
+#   značkou review, #455) u PR, který založil vlastník nebo asistent, a nikdy u PR z forku (rozhoduje
+#   scripts/brana/oprava-z-review.mjs z main).
 # - `stop` na PR nebo propojeném issue a štítek `potrebuje-cloveka` zastaví další kola; veto se ověřuje
 #   při rozhodnutí, znovu před začátkem kola a znovu těsně před pushem.
 # - Kód větve (testy, závislosti) běží jen v jobu „Oprava“ se čtecím tokenem. Claude tam commituje
@@ -34,7 +35,8 @@ concurrency:
 jobs:
   rozhodnuti:
     name: Rozhodnutí
-    if: github.event.issue.pull_request && contains(github.event.comment.body, '@claude') && github.event.comment.user.type != 'Bot'
+    # Boti jen App prijimacky-ai (automatické review, #455); zda nese značku review, ověří skript z main.
+    if: github.event.issue.pull_request && contains(github.event.comment.body, '@claude') && (github.event.comment.user.type != 'Bot' || github.event.comment.user.login == 'prijimacky-ai[bot]')
     runs-on: ubuntu-latest
     timeout-minutes: 5
     permissions:
