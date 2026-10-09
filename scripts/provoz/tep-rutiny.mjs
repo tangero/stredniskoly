@@ -15,12 +15,14 @@ export const ISSUE_TEPU = 462;
 export const ZNACKA_TEPU = '<!-- tep-rutiny -->';
 export const ZNACKA_KONTROLY = '<!-- tep-kontrola -->';
 const BOT = 'github-actions[bot]';
+// Tep smí zapsat jen vlastník nebo asistent (účty z .github/rezimy.yml); cizí komentář ve veřejném repozitáři se nepočítá.
+export const UCTY_TEPU = ['tangero', 'eduarda-prijimacky'];
 
 const REPO = process.env.GITHUB_REPOSITORY || 'tangero/stredniskoly';
 
 /** Poslední tep (úprava komentáře se značkou od vlastníka) a poslední upozornění (komentář kontroly). */
 export function ctiStav(komentare = []) {
-  const tep = komentare.filter((k) => k.autor !== BOT && (k.telo || '').includes(ZNACKA_TEPU))
+  const tep = komentare.filter((k) => UCTY_TEPU.includes(k.autor) && (k.telo || '').includes(ZNACKA_TEPU))
     .map((k) => k.upraveno || k.vytvoreno).sort().pop() || null;
   const kontrola = komentare.find((k) => k.autor === BOT && (k.telo || '').includes(ZNACKA_KONTROLY)) || null;
   const upozorneno = kontrola?.telo.match(/upozorneno=(\S+)/)?.[1] || null;

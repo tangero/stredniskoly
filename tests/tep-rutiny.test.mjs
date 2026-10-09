@@ -26,6 +26,7 @@ test('stav z komentářů: tep jen od rutiny (úprava komentáře), upozornění
     { id: 1, autor: 'tangero', telo: `${ZNACKA_TEPU}\nPoslední běh`, vytvoreno: po(0), upraveno: po(9) },
     { id: 2, autor: 'github-actions[bot]', telo: `${ZNACKA_KONTROLY}\nupozorneno=${po(5)}` },
     { id: 3, autor: 'github-actions[bot]', telo: `${ZNACKA_TEPU} podvržený tep od bota` },
+    { id: 4, autor: 'cizi-ucet', telo: `${ZNACKA_TEPU} podvržený tep od cizího účtu`, vytvoreno: po(11), upraveno: po(11) },
   ]);
   assert.equal(s.tep, po(9));
   assert.equal(s.upozorneno, po(5));
