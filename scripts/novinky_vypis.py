@@ -217,8 +217,46 @@ def precti_vypis(html, base, dnes):
     return sorted(nejlepsi, key=lambda x: x["datum"], reverse=True)
 
 
-RE_OBECNY_ODKAZ = re.compile(r"^(více|vice|číst|cist|celý článek|pokračovat|zobrazit|detail|více informací)", re.I)
+RE_OBECNY_ODKAZ = re.compile(r"^(více|vice|číst|cist|celý článek|pokračovat|zobrazit|zjistit|detail|více informací)", re.I)
 RE_JEN_MESIC = re.compile(r"^(" + "|".join(MESICE) + r")\s*20\d{2}$", re.I)
+
+# Pojistka délky titulku z výpisu (#450). Titulky, které píše škola sama v RSS, mají 99 % do 92
+# a 99,9 % do 126 znaků (platné zprávy v produkci 9. 10. 2026); delší titulek z výpisu je skoro
+# vždy slitý s úvodem článku.
+MAX_TITULEK = 120
+RE_KONEC_VETY = re.compile(r"[.!?…](?=\s+[A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽ\"„(])")
+
+
+def zkrat_titulek(text):
+    """Titulek delší než MAX_TITULEK zkrátí na první větu, jinak na celé slovo s „…“."""
+    if len(text) <= MAX_TITULEK:
+        return text
+    for m in RE_KONEC_VETY.finditer(text):
+        if 20 <= m.end() <= MAX_TITULEK:
+            return text[:m.end()].rstrip(".")
+        if m.end() > MAX_TITULEK:
+            break
+    return text[:MAX_TITULEK - 1].rsplit(" ", 1)[0].rstrip(" ,;:–-") + "…"
+
+
+def _text_odkazu(a):
+    """Text, kterým odkaz pojmenovává článek: jeho text, jinak aria-label, title nebo alt obrázku.
+
+    Odkaz obalující jen obrázek nebo „Více informací“ článek nepojmenuje textem; titulek
+    pak bývá v popisku obrázku. Obecné texty („Zjistit více“) se nepočítají.
+    """
+    kandidati = [a.cely_text(), a.attrs.get("aria-label"), a.attrs.get("title")]
+    stack = list(a.deti)
+    while stack:
+        u = stack.pop(0)
+        if u.tag == "img":
+            kandidati.append(u.attrs.get("alt"))
+        stack.extend(u.deti)
+    for t in kandidati:
+        t = re.sub(r"\s+", " ", t or "").strip()
+        if t and not RE_OBECNY_ODKAZ.match(t):
+            return t
+    return ""
 
 
 def _titulek_bloku(blok, odkazy, adresy=None):
@@ -234,14 +272,30 @@ def _titulek_bloku(blok, odkazy, adresy=None):
         if u.tag in ("h1", "h2", "h3", "h4", "h5", "h6") and u.cely_text():
             nadpis, uzel_nadpisu = u.cely_text(), u
         stack.extend(u.deti)
-    vhodne = [(a.cely_text(), h) for a, h in odkazy
-              if a.cely_text() and not RE_OBECNY_ODKAZ.match(a.cely_text())]
-    if vhodne:
+    if nadpis:
+        vhodne = [(a.cely_text(), h) for a, h in odkazy
+                  if a.cely_text() and not RE_OBECNY_ODKAZ.match(a.cely_text())]
         # Nejkratší rozumný text: celou kartu obalující odkaz je nejdelší.
         rozumne = [v for v in vhodne if len(v[0]) >= 8] or vhodne
-        text, href = min(rozumne, key=lambda v: len(v[0])) if nadpis else max(rozumne, key=lambda v: len(v[0]))
+        if rozumne:
+            text, href = min(rozumne, key=lambda v: len(v[0]))
     else:
-        text = ""
+        # Bez nadpisu: všechny odkazy bloku, i ty, které skupinu netvoří (skupinu může tvořit
+        # odkaz na obrázku, titulek je v sousedním odkazu na týž článek). Článek je adresa,
+        # na kterou blok odkazuje nejčastěji; jeho titulek je nejkratší rozumný text odkazů na
+        # něj, ne perex v odkazu na celou kartu (#450).
+        vsechny = [(a, adresy[id(a)]) for a in _odkazy(blok, []) if adresy and id(a) in adresy] or odkazy
+        pocet = {}
+        for _, h in vsechny:
+            pocet[h] = pocet.get(h, 0) + 1
+        vhodne = [(t, h) for t, h in ((_text_odkazu(a), h) for a, h in vsechny) if t]
+        rozumne = [v for v in vhodne if len(v[0]) >= 8] or vhodne
+        if rozumne:
+            # Stejně častý odkaz: delší text vyhraje jako dřív (odkaz na rubriku má krátký).
+            href = max(rozumne, key=lambda v: (pocet[v[1]], len(v[0])))[1]
+            text = min((v[0] for v in rozumne if v[1] == href), key=len)
+        else:
+            text = ""
     if nadpis:
         # Adresa článku je odkaz v nadpisu; jinak by karta s odkazem na rubriku
         # („Škola“) dostala adresu rubriky. Odkaz z nadpisu nemusí být mezi
@@ -251,9 +305,7 @@ def _titulek_bloku(blok, odkazy, adresy=None):
             if adresy and id(a) in adresy:
                 return nadpis, adresy[id(a)]
         return nadpis, href
-    if len(text) > 160:
-        text = text[:160].rsplit(" ", 1)[0] + "…"
-    return text or blok.cely_text()[:140], href
+    return text or blok.cely_text(), href
 
 
 def _nejlepsi_skupina(kandidati, koren, dnes):
@@ -281,8 +333,9 @@ def _nejlepsi_skupina(kandidati, koren, dnes):
                 titulek = re.sub(r"\s+", " ", titulek).strip()
                 titulek = re.sub(r"^\(?(?:" + RE_DATUM.pattern + r")\)?\s*[-–|·:]?\s*", "", titulek, flags=re.I)
                 titulek = re.sub(r"\s*[-–|·:]?\s*\(?(?:" + RE_DATUM.pattern + r")\)?$", "", titulek, flags=re.I).strip(" -–|·")
-                if 8 <= len(titulek) <= 250 and not RE_JEN_MESIC.match(titulek):
-                    polozky.append({"titulek": titulek[:200], "url": href, "datum": d.isoformat()})
+                titulek = zkrat_titulek(titulek)
+                if 8 <= len(titulek) and not RE_JEN_MESIC.match(titulek):
+                    polozky.append({"titulek": titulek, "url": href, "datum": d.isoformat()})
             # Týž článek dvakrát (zvýrazněný a v seznamu): platí první výskyt.
             unik = {}
             for x in polozky:
