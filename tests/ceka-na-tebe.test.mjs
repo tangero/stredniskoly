@@ -1,7 +1,7 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import {
-  sestavSkupiny, zprava, polozkaPr, uvodIssue, terminPripominky, potrebujeSouhlas, html, MAX_V_SKUPINE, MAX_TLACITEK, UVIZLA_PO,
+  sestavSkupiny, zprava, polozkaPr, uvodIssue, terminPripominky, potrebujeSouhlas, html, MAX_V_SKUPINE, MAX_TLACITEK, UVIZLA_PO, jedenOdstavec,
 } from '../scripts/prehled/ceka-na-tebe.mjs';
 
 const TED = Date.parse('2026-10-08T07:00:00Z');
@@ -72,4 +72,18 @@ test('pomocné funkce', () => {
   assert.equal(potrebujeSouhlas({ conclusion: 'failure', output: { summary: '- chybí review asistenta zadání' } }), false);
   assert.equal(potrebujeSouhlas({ conclusion: 'success', output: { summary: 'chybí souhlas vlastníka' } }), false);
   assert.equal(potrebujeSouhlas(undefined), false);
+});
+
+test('hlášení od veřejnosti jako skupina, hlášení škol a trvalá issue ne (#461)', () => {
+  const g = skupiny({ issues: [
+    issue({ cislo: 30, stitky: ['bug-report', 'oblast:detail'] }),
+    issue({ cislo: 31, stitky: ['bug-report', 'schvaleno'] }),
+    issue({ cislo: 32, stitky: ['portal-skoly', 'oblast:portal'] }),
+    issue({ cislo: 33, stitky: ['interni', 'trvale', 'rutina', 'navrh'] }),
+  ] });
+  assert.deepEqual(g.map((x) => [x.klic, x.polozky.map((p) => p.cislo)]), [['hlaseni', [30]]]);
+});
+
+test('otázka jako jeden odstavec bez nadpisů a tabulek (#461)', () => {
+  assert.equal(jedenOdstavec('## Otázka pro vlastníka\n\n| a | b |\n|---|---|\n- Platí to **i** pro [rok](https://x)?'), 'Otázka pro vlastníka Platí to i pro rok?');
 });

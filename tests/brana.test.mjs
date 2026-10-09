@@ -741,3 +741,8 @@ test('review: automatické review nepustí cestu K bez souhlasu vlastníka (#455
   const v = run({ pr: pr({ komentare: [auto, protokolKomentar()] }), soubory: [STRANKA, soubor('db/migrace/099-x.sql')] });
   assert.equal(v.uspech, false);
 });
+
+test('issue trvale od automatiky (stav hlídání dostupnosti) není úkol rutiny (#461)', () => {
+  const stav = issue({ cislo: 436, autor: BOT, stitky: ['interni', 'rutina', 'trvale', 'oblast:provoz'], telo: 'Úložiště stavu.' });
+  assert.equal(run({ predchozi: null, issues: [stav] }).uspech, false);
+});

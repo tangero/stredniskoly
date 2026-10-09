@@ -1,7 +1,7 @@
 // Denní zpráva „Čeká na tebe“ (#440): všechno, co čeká na rozhodnutí vlastníka, v jedné zprávě do Telegramu,
 // seskupené podle druhu. U každé položky lidská věta, co a kde zkontrolovat (oddíl „Pro vlastníka“ z popisu PR,
 // otázka z issue, první odstavec návrhu), a tlačítko na PR nebo issue, kam přidat `schvaleno` nebo odpovědět.
-// Prázdný den nic neposílá. Spouští ho workflow ceka-na-tebe.yml jednou denně. Bez modelu, jen čte.
+// Prázdný den nic neposílá. Spouští ho workflow ceka-na-tebe.yml jednou denně (Plánovač, #461). Bez modelu, jen čte.
 //
 //   node scripts/prehled/ceka-na-tebe.mjs --nanecisto   jen vypíše (mimo Actions přes gh)
 
@@ -21,6 +21,13 @@ const MAX_DELKA = 3900; // limit Telegramu je 4096 znaků
 
 export const html = (t = '') => String(t).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 const zkrat = (t, n = MAX_TEXTU) => (t.length > n ? `${t.slice(0, n - 1).trimEnd()}…` : t);
+export const STITKY_VEREJNYCH = ['bug-report', 'feature-request', 'puvod:hlaseni', 'puvod:email'];
+
+/** Markdown z komentáře jako jeden odstavec: bez nadpisů, tabulek, tučného písma a odkazů (#461). */
+export function jedenOdstavec(t = '') {
+  return t.split('\n').filter((r) => !/^\s*\|/.test(r)).map((r) => r.replace(/^\s*#{1,6}\s*/, '').replace(/^\s*[-*]\s+/, ''))
+    .join(' ').replace(/\*\*/g, '').replace(/`/g, '').replace(/\[([^\]]+)\]\([^)]+\)/g, '$1').replace(/\s+/g, ' ').trim();
+}
 const adresa = (cislo, pr = false) => `https://github.com/${REPO}/${pr ? 'pull' : 'issues'}/${cislo}`;
 
 /** Skupiny v pořadí, ve kterém je vlastník má vyřizovat. `akce` je pokyn pod položkou, `tlacitko` popisek tlačítka. */
@@ -29,6 +36,7 @@ export const SKUPINY = [
   { klic: 'otazka', nadpis: '❓ Otázky na tebe', akce: 'Odpověz komentářem v issue, nebo řekni Eduardě či Claude Code.', tlacitko: 'odpovědět' },
   { klic: 'oponentura', nadpis: '⚖️ Oponentura hotová', akce: 'Vyber variantu: <code>schvaleno</code> s komentářem, kterou, nebo <code>zamitnuto</code>.', tlacitko: 'vybrat' },
   { klic: 'navrh', nadpis: '💡 Návrhy', akce: 'Souhlas štítkem <code>schvaleno</code>, odmítnutí <code>zamitnuto</code>.', tlacitko: 'rozhodnout' },
+  { klic: 'hlaseni', nadpis: '📮 Hlášení od veřejnosti', akce: 'Opravit: <code>schvaleno</code>. Není to chyba: zavřít s důvodem, nebo <code>zamitnuto</code>.', tlacitko: 'hlášení' },
   { klic: 'pripominka', nadpis: '⏰ Splatné připomínky', akce: 'Vyhodnocení připraví AI; rozhodnutí z něj je na tobě.', tlacitko: 'připomínka' },
   { klic: 'clovek', nadpis: '🛠 Oprava z review uvízla', akce: 'Smyčka oprav skončila; rozhodni, jak dál (komentář v PR).', tlacitko: 'PR' },
   { klic: 'uvizla', nadpis: '⚠️ Uvízlá oponentura', akce: 'Spustíš ji znovu odebráním a přidáním štítku <code>oponentura</code>.', tlacitko: 'oponentura' },
@@ -55,7 +63,7 @@ export function potrebujeSouhlas(kontrola) {
  * není na webu); bez náhledu jen jako text.
  */
 export function polozkaPr(p, { nahled } = {}) {
-  const text = textProVlastnika(p.telo) || 'Popis pro vlastníka v PR chybí; podívej se do PR.';
+  const text = textProVlastnika(p.telo) || 'Popis pro vlastníka chybí. Když PR mění jen pravidla nebo automatiku, stačí přečíst shrnutí v PR.';
   const cesty = cestyNaWebu(p.telo);
   const kde = cesty.map((c) => (nahled ? `<a href="${html(nahled + c)}">${html(c)}</a>` : `<code>${html(c)}</code>`));
   const zkontroluj = kde.length ? `Na stránce ${kde.join(', ')} zkontroluj: ${html(zkrat(text))}` : html(zkrat(text));
@@ -71,10 +79,10 @@ export function sestavSkupiny({ prs = [], issues = [], ucty, dnes, ted }) {
   }
   for (const i of issues) {
     const st = new Set(i.stitky);
-    if (st.has('stop') || st.has('zamitnuto')) continue;
+    if (st.has('stop') || st.has('zamitnuto') || st.has('trvale')) continue;
     const zaklad = { cislo: i.cislo, pr: false, titulek: i.titulek };
     if (st.has('otazka')) {
-      s.otazka.push({ ...zaklad, radky: [html(zkrat(textOtazky(i.komentare || [], ucty) || 'Text otázky je v issue.', 400))] });
+      s.otazka.push({ ...zaklad, radky: [html(zkrat(jedenOdstavec(textOtazky(i.komentare || [], ucty)) || 'Text otázky je v issue.', 400))] });
       continue;
     }
     if (st.has('oponentura')) {
@@ -84,6 +92,11 @@ export function sestavSkupiny({ prs = [], issues = [], ucty, dnes, ted }) {
     if (st.has('navrh') && !st.has('schvaleno')) {
       const hotova = (i.komentare || []).some((k) => /^## Oponentura\s*$/m.test(k.telo || ''));
       s[hotova ? 'oponentura' : 'navrh'].push({ ...zaklad, radky: [html(uvodIssue(i.telo))].filter(Boolean) });
+      continue;
+    }
+    // Hlášení od veřejnosti bez rozhodnutí; hlášení škol z portálu realizuje rutina (RA51).
+    if (STITKY_VEREJNYCH.some((h) => st.has(h)) && !st.has('schvaleno')) {
+      s.hlaseni.push({ ...zaklad, radky: [] });
       continue;
     }
     if (st.has('pripominka')) {
@@ -155,7 +168,7 @@ async function main() {
   }
 
   const issues = new Map();
-  for (const stitek of ['otazka', 'oponentura', 'navrh', 'pripominka']) {
+  for (const stitek of ['otazka', 'oponentura', 'navrh', 'pripominka', ...STITKY_VEREJNYCH]) {
     for (const i of await api(`repos/${REPO}/issues?state=open&labels=${stitek}&per_page=100`)) {
       if (i.pull_request || issues.has(i.number)) continue;
       const stitky = i.labels.map((l) => l.name);

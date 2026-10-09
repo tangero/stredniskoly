@@ -1,0 +1,39 @@
+# Plánovač (#461, scripts/provoz/planovac.mjs): GitHub spouští plánované běhy tohoto repozitáře jen 4 až 5krát denně.
+# Workflow proto každých 5 minut spouští cron-job.org přes API (workflow_dispatch, jemný token vlastníka jen s právem
+# Actions pro tento repozitář, uložený jen na cron-job.org). Plánovač spustí na řadě jsoucí workflow: Dostupnost
+# (5 min), Datová linka (schválení, 15 min), Brána, Triáž a Tep rutiny (hodina), Čeká na tebe (denně 6:52 UTC).
+# Vlastní plán GitHubu je záloha, kdyby cron-job.org vypadl.
+#
+# Pojistky: jen `actions: write` na spuštění workflow z main; žádné secrets, kód z PR se nespouští, skript bez
+# závislostí. Seznam workflow je pevný v kódu, vstupy z cron-job.org se nečtou.
+name: Plánovač
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "*/5 * * * *"
+
+permissions: {}
+
+concurrency:
+  group: planovac
+  cancel-in-progress: true
+
+jobs:
+  planovac:
+    name: Plánovač
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    permissions:
+      actions: write
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          persist-credentials: false
+          sparse-checkout: scripts/provoz
+      - name: Spustit workflow na řadě
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: node scripts/provoz/planovac.mjs

@@ -1,38 +1,36 @@
-# Tep rutiny Claude Code (#440, scripts/provoz/tep-rutiny.mjs). Rutina běží mimo repozitář a na začátku každého
-# běhu tento workflow spustí ručně (workflow_dispatch): ten běh je tep a nic nedělá. Kontrola každou hodinu zjistí
-# poslední tep; po 12 hodinách ticha pošle vlastníkovi zprávu do Telegramu (pak jednou denně, dokud tep nepřijde).
+# Tep rutiny Claude Code (#440, #461, scripts/provoz/tep-rutiny.mjs). Rutina na začátku každého běhu přepíše
+# komentář se značkou v issue Tep rutiny (#462). Kontrola zjistí čas jeho poslední úpravy; po 12 hodinách ticha
+# pošle vlastníkovi zprávu do Telegramu (pak jednou denně, dokud tep nepřijde). Spouští ji Plánovač každou hodinu,
+# plán GitHubu je záloha.
 #
-# Pojistky: jen čtení běhů workflow, secrets jen Telegram v kontrole, kód z PR se nespouští, skript bez závislostí.
+# Pojistky: čtení komentářů a zápis jediného komentáře kontroly do #462, secrets jen Telegram, kód z PR se nespouští,
+# skript bez závislostí.
 name: Tep rutiny
 
 on:
   workflow_dispatch:
   schedule:
-    # Každou hodinu v 23. minutě, mimo celou hodinu.
+    # Záloha Plánovače, v 23. minutě.
     - cron: "23 * * * *"
 
 permissions: {}
 
-jobs:
-  tep:
-    name: Tep
-    if: github.event_name == 'workflow_dispatch'
-    runs-on: ubuntu-latest
-    timeout-minutes: 2
-    steps:
-      - run: echo "Tep rutiny od ${{ github.actor }}."
+concurrency:
+  group: tep-rutiny
+  cancel-in-progress: false
 
+jobs:
   kontrola:
     name: Kontrola tepu
-    if: github.event_name == 'schedule'
     runs-on: ubuntu-latest
     timeout-minutes: 5
     permissions:
       contents: read
-      actions: read
+      issues: write
     steps:
       - uses: actions/checkout@v4
         with:
+          ref: main
           persist-credentials: false
           sparse-checkout: scripts/provoz
       - name: Kontrola

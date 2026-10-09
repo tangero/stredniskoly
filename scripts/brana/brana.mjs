@@ -293,7 +293,9 @@ export function datovaObnova(pr, soubory, konfig, issues = []) {
  * proto nepotřebuje (#440). Platí jen pro rutinu: přes limit rutiny běží jako drobné zadání (L).
  */
 export function zjistilaAutomatika(issue) {
-  return issue?.autor === BOT && (issue.stitky || []).includes('rutina');
+  const stitky = issue?.stitky || [];
+  // `trvale` je úložiště stavu (například stav hlídání dostupnosti), ne úkol.
+  return issue?.autor === BOT && stitky.includes('rutina') && !stitky.includes('trvale');
 }
 
 /** Text oddílu `## Pro vlastníka` z popisu PR, prázdný, když oddíl chybí nebo je prázdný. */

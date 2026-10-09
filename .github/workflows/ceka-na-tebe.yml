@@ -6,9 +6,8 @@
 name: Čeká na tebe
 
 on:
-  schedule:
-    # Denně 6:52 UTC (8:52 letního času v Praze), mimo celou hodinu.
-    - cron: "52 6 * * *"
+  # Denně 6:52 UTC (8:52 letního času v Praze) ho spouští Plánovač (#461); vlastní plán GitHubu nemá, protože ho
+  # GitHub spouští o hodiny později a zpráva by přišla dvakrát.
   workflow_dispatch:
 
 permissions:

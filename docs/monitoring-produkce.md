@@ -5,8 +5,9 @@ přibudou do něj po realizaci.
 
 ## Etapa 1: dostupnost
 
-Workflow `.github/workflows/dostupnost.yml` každých 5 minut spustí `scripts/provoz/dostupnost.mjs`. GitHub plánované
-běhy při zátěži zpožďuje nebo vynechá, takže interval je jen orientační. Skript načte pět stránek na
+Workflow `.github/workflows/dostupnost.yml` každých 5 minut spustí `scripts/provoz/dostupnost.mjs`. Spouští ho
+Plánovač, kterého volá cron-job.org (#461); plán GitHubu je jen záloha, protože GitHub spouštěl plánované běhy
+tohoto repozitáře jen 4 až 5krát denně. Issue se stavem (#436) má štítek `trvale`, rutina ho nebere jako úkol. Skript načte pět stránek na
 `https://www.prijimackynaskolu.cz` (GET, bez cookies a formulářů, nejvýš 10 dotazů na běh).
 
 | adresa | klíčový text |
