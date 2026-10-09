@@ -18,6 +18,7 @@ a každou hodinu. Výsledek zapíše jako kontrolu „Brána sloučení“ na ak
 | E | propojené issue se štítkem `projekt` a dokladem `Zdroj:`, nebo úkol s vlastním dokladem, který je sub-issue schváleného projektu (otevřený rodič `projekt` se `schvaleno` nebo dokladem, bez `navrh`, `zamitnuto` a štítků hlášení); také veřejné hlášení, které je sub-issue schváleného projektu (RA39); `stop` na rodiči blokuje i úkol | hned |
 | L | ostatní interní zadání s dokladem `Zdroj:` | 48 h od prvního vyhodnocení stavu bez `stop` |
 | souhlas | propojené issue se `schvaleno` od Patricka, rozsah od schválení beze změny | hned |
+| R / L | hlášení přihlášené školy z portálu (`portal-skoly`, řádek `**Kanál:**` od webu), PR mění jen cesty `hlaseni_skol` v `rezimy.yml` (soubory oprav údajů škol, testy); v limitu rutiny R, jinak L (RA52) | hned / 48 h |
 | K | cesty z `k` v `rezimy.yml` (migrace, e-maily, portál, nasazení, workflow, závislosti, registr sad, slovník ukazatelů), PR bez zadání, hlášení mimo schválený projekt | `schvaleno` na PR nebo na issue |
 | H2 | brána, `rezimy.yml`, `labeler.yml`, `CLAUDE.md`, workflow se změnou oprávnění nebo secrets | `schvaleno` přímo na PR, platí pro jeden commit |
 
