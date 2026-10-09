@@ -9,9 +9,10 @@ import yaml from 'js-yaml';
 
 const SLOZKA = '.github/workflows';
 const AKCE = 'actions/create-github-app-token@';
-const S_APP = ['csi-weekly-refresh.yml', 'datova-linka.yml', 'oponentura.yml', 'oprava-z-review.yml', 'otazka.yml', 'slouceni.yml', 'tydenni-prehled.yml', 'veletrhy-snimek.yml'];
+const S_APP = ['csi-weekly-refresh.yml', 'datova-linka.yml', 'oponentura.yml', 'oprava-z-review.yml', 'otazka.yml', 'review.yml', 'slouceni.yml', 'tydenni-prehled.yml', 'veletrhy-snimek.yml'];
 // Spouštěče, které běží nad kódem z main (nebo z větve, kterou spustil člověk s právem zápisu), ne nad kódem PR.
-const BEZPECNE_SPOUSTECE = new Set(['schedule', 'workflow_dispatch', 'workflow_run', 'issues', 'issue_comment']);
+// pull_request_target spouští definici z main; job s tokenem App pak nesmí stáhnout hlavu PR (kontrola níže, #455).
+const BEZPECNE_SPOUSTECE = new Set(['schedule', 'workflow_dispatch', 'workflow_run', 'issues', 'issue_comment', 'pull_request_target']);
 
 const workflow = Object.fromEntries(fs.readdirSync(SLOZKA).filter((f) => /\.ya?ml$/.test(f)).map((f) => {
   const text = fs.readFileSync(`${SLOZKA}/${f}`, 'utf8');
@@ -77,6 +78,21 @@ test('Oprava z review (#410): token App jen v jobu Zápis, ne v jobu, který spo
   assert.ok(poradi.indexOf('app') > poradi.indexOf('veto') && poradi.indexOf('app') < poradi.indexOf('push'));
   assert.equal(app.if, zapis.find((x) => x.id === 'push').if);
   assert.ok(!JSON.stringify(data.jobs.oprava).includes('PRIJIMACKY_AI'));
+});
+
+test('Review (#455): token App jen v jobu Zápis, který nestahuje hlavu PR ani nevolá model', () => {
+  const { data } = workflow['review.yml'];
+  const sTokenem = kroky(data).filter((j) => j.kroky.some((x) => String(x.uses ?? '').startsWith(AKCE))).map((j) => j.id);
+  assert.deepEqual(sTokenem, ['zapis']);
+  const zapis = JSON.stringify(data.jobs.zapis);
+  assert.ok(!zapis.includes('KIMI_API_KEY') && !zapis.includes('claude'), 'model jen v jobu review');
+  for (const krok of data.jobs.zapis.steps.filter((x) => String(x.uses ?? '').startsWith('actions/checkout@'))) assert.equal(krok.with?.ref, 'main');
+  assert.ok(!JSON.stringify(data.jobs.review).includes('PRIJIMACKY_AI'));
+  // Model dostane jen svůj klíč přes env -i a jen nástroje pro čtení.
+  const model = data.jobs.review.steps.find((x) => x.name === 'Review (Kimi K3)');
+  assert.match(model.run, /env -i/);
+  assert.match(model.run, /--allowedTools Read Glob Grep/);
+  assert.deepEqual(Object.keys(model.env), ['KIMI_API_KEY']);
 });
 
 // Vyhodnotí podmínku jobu deploy pro daný kontext (jen operátory, které podmínka používá).

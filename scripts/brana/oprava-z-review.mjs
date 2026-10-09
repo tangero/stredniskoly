@@ -11,7 +11,7 @@ import fs from 'node:fs';
 import { execFileSync } from 'node:child_process';
 import { matchesGlob } from 'node:path';
 import { pathToFileURL } from 'node:url';
-import { BOT, duveryhodny, stopPlati } from './brana.mjs';
+import { BOT, duveryhodny, odRecenzenta, stopPlati } from './brana.mjs';
 import { REPO, vytvorApi, nactiKonfig, nactiPr, nactiIssue } from './data.mjs';
 
 export const STITEK_CLOVEK = 'potrebuje-cloveka';
@@ -34,7 +34,10 @@ export function rozhodniOpravu({ komentar, pr, issues = [], konfig }) {
   const max = Number(konfig.rezimy.review?.max_kol_oprav) || VYCHOZI_MAX_KOL;
   const nic = (duvod) => ({ akce: 'nic', duvod, max });
   if (!SPOUSTEC.test(komentar.telo || '')) return nic('komentář neobsahuje @claude');
-  if (!duveryhodny(komentar.autor, konfig)) return nic(`komentář napsal účet ${komentar.autor || 'neznámý'}, ne vlastník ani asistent zadání`);
+  // Automatika smí jen se značkou automatického review (#455); jinak vlastník nebo asistent zadání.
+  if (!duveryhodny(komentar.autor, konfig) && !odRecenzenta(komentar, konfig)) {
+    return nic(`komentář napsal účet ${komentar.autor || 'neznámý'}, ne vlastník, asistent zadání ani automatické review`);
+  }
   if (!duveryhodny(pr.autor, konfig)) return nic(`PR založil účet ${pr.autor || 'neznámý'}, ne vlastník ani asistent zadání`);
   if (!pr.hlavaRepo || pr.hlavaRepo !== pr.zakladnaRepo) return nic('PR je z forku');
   if (pr.stav !== 'open') return nic('PR není otevřený');

@@ -56,6 +56,10 @@ vlastníka, proto se některá pravidla níže vynucují technicky.
 
 ## Review a oponentury
 
+Od 9. 10. 2026 (#455, RA50) píše review ke každé nové hlavě PR automaticky workflow Review (model Kimi K3, účet
+`prijimacky-ai[bot]`) ve stejném tvaru a při P1 nebo P2 samo napíše `@claude`. Tvoje review dál platí a rozhoduje
+naposledy napsané review k hlavě; napiš ho, když s automatickým nesouhlasíš.
+
 1. Review piš jako komentář do PR s verdiktem, číslem commitu, ke kterému se vztahuje, a nálezy
    podle závažnosti (P1 blokuje, P2 opravit, P3 poznámka). Brána ho čte strojově, proto drž tvar:
    nadpis `## Review`, řádek `Verdikt: Bez P1 a P2` (nebo jiný verdikt, když P1 či P2 jsou)

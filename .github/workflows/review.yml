@@ -1,0 +1,222 @@
+# Automatické review PR modelem Kimi K3 (#455, docs/navrh-rizeni-vyvoje-2027.md, oddíl 9d). Nahrazuje review
+# asistenta zadání: pro každou novou hlavu PR napíše komentář „## Review“ s verdiktem a řádkem `Commit:`, který
+# brána uzná (značka `review.znacka_automatiky` v rezimy.yml), a při nálezu P1 nebo P2 komentář `@claude`,
+# na který workflow Oprava z review nálezy opraví.
+#
+# Pojistky:
+# - Definice běží vždy z main (pull_request_target); review dostane jen PR z tohoto repozitáře od vlastníka,
+#   asistenta nebo automatiky, ne draft a ne hlava, ke které review už je (scripts/brana/review.mjs priprav).
+# - Kód větve se nespouští: hlava PR se jen stáhne do .review/kod ke čtení (bez .git, .claude, .mcp.json a CLAUDE.md,
+#   aby Claude Code nenačetl nastavení, hooky ani pokyny z větve). Pracovní složka modelu je main.
+# - Model (Kimi K3 přes Claude Code, stejně jako Oponentura) běží přes `env -i` jen se svým klíčem a jen
+#   s nástroji Read, Glob a Grep; žádný token GitHubu. Vrací JSON s nálezy; komentář, verdikt a značku skládá
+#   skript z main, text modelu zbaví zmínek a HTML komentářů. Neplatný výstup = review bez verdiktu „Bez P1 a P2“.
+# - Komentáře píše token App prijimacky-ai (komentář z GITHUB_TOKEN by nespustil bránu ani opravu), a to
+#   v samostatném jobu Zápis, který hlavu PR nestahuje a model nespouští; výstup modelu dostane jako artefakt.
+#   Zápis se vynechá, když se hlava mezitím změnila nebo výstup modelu obsahuje klíč.
+# - Nic neslučuje a štítky nemění. Cesty K a H2 dál potřebují `schvaleno` vlastníka.
+name: Review
+
+on:
+  pull_request_target:
+    types: [opened, synchronize, reopened, ready_for_review]
+  workflow_dispatch:
+    inputs:
+      pr:
+        description: "Číslo PR"
+        required: true
+
+permissions: {}
+
+# Novější hlava ruší review starší hlavy téhož PR (to by brána stejně nepočítala).
+concurrency:
+  group: review-${{ github.event.pull_request.number || inputs.pr }}
+  cancel-in-progress: true
+
+jobs:
+  review:
+    name: Review
+    if: github.event_name == 'workflow_dispatch' || github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    permissions:
+      contents: read
+      issues: read
+      pull-requests: read
+    outputs:
+      smi: ${{ steps.priprav.outputs.smi }}
+      sha: ${{ steps.priprav.outputs.sha }}
+    env:
+      CISLO: ${{ github.event.pull_request.number || inputs.pr }}
+      GH_TOKEN: ${{ github.token }}
+      GH_REPO: ${{ github.repository }}
+      # Stejné rozhraní a model jako Oponentura (docs/spoluprace-na-githubu.md, oddíl 3).
+      KIMI_URL: ${{ vars.KIMI_BASE_URL || 'https://api.kimi.ai/coding/' }}
+      KIMI_MODEL: k3-256k
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          persist-credentials: false
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+
+      - name: Závislosti skriptů (main)
+        run: npm ci --ignore-scripts --no-audit --no-fund
+
+      - name: Rozhodnutí a podklady
+        id: priprav
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          [[ "$CISLO" =~ ^[0-9]+$ ]] || { echo "::error::Číslo PR není číslo."; exit 1; }
+          node scripts/brana/review.mjs priprav "$CISLO" .review
+
+      - name: Hlava PR ke čtení
+        if: steps.priprav.outputs.smi == 'true'
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ steps.priprav.outputs.sha }}
+          path: .review/kod
+          fetch-depth: 0
+          persist-credentials: false
+
+      # Diff proti main; velké soubory (data) se zkrátí, aby se vešel do kontextu modelu.
+      - name: Diff
+        if: steps.priprav.outputs.smi == 'true'
+        run: |
+          git -C .review/kod fetch --quiet origin main
+          zaklad=$(git -C .review/kod merge-base FETCH_HEAD HEAD)
+          git -C .review/kod diff --no-color --stat "$zaklad" HEAD > .review/diff-souhrn.txt
+          git -C .review/kod diff --no-color "$zaklad" HEAD > "$RUNNER_TEMP/diff.patch"
+          python3 - "$RUNNER_TEMP/diff.patch" .review/diff.patch <<'PY'
+          import re, sys
+          text = open(sys.argv[1], encoding="utf-8", errors="replace").read()
+          casti = re.split(r"(?m)^(?=diff --git )", text)
+          MAX_SOUBOR, MAX_CELKEM = 40_000, 400_000
+          vystup, celkem = [], 0
+          for c in casti:
+              if len(c) > MAX_SOUBOR:
+                  c = c[:MAX_SOUBOR] + f"\n[… změna souboru zkrácena, celkem {len(c)} znaků; plná podoba v .review/kod]\n"
+              if celkem + len(c) > MAX_CELKEM:
+                  vystup.append("\n[… další soubory vynechány, jejich seznam je v .review/diff-souhrn.txt]\n")
+                  break
+              vystup.append(c); celkem += len(c)
+          open(sys.argv[2], "w", encoding="utf-8").write("".join(vystup))
+          PY
+          rm -rf .review/kod/.git .review/kod/.claude .review/kod/.mcp.json .review/kod/CLAUDE.md
+          echo "diff: $(wc -c < .review/diff.patch) znaků"
+
+      # Připnutá verze jako v Oponentuře; novou připni až po ověření s Kimi.
+      - name: Claude Code
+        if: steps.priprav.outputs.smi == 'true'
+        env:
+          VERZE: "2.1.289"
+        run: |
+          npm install -g "@anthropic-ai/claude-code@$VERZE" --ignore-scripts --no-audit --no-fund
+          node "$(npm root -g)/@anthropic-ai/claude-code/install.cjs"
+          claude --version
+
+      - name: Review (Kimi K3)
+        if: steps.priprav.outputs.smi == 'true'
+        continue-on-error: true
+        env:
+          KIMI_API_KEY: ${{ secrets.KIMI_API_KEY }}
+        run: |
+          [ -n "${KIMI_API_KEY:-}" ] || { echo "::error::Chybí secret KIMI_API_KEY."; exit 1; }
+          nastaveni="$RUNNER_TEMP/nastaveni-review.json"
+          printf '{"permissions":{"deny":["Bash","Edit","MultiEdit","Write","NotebookEdit","Task","Agent","WebFetch","WebSearch","Read(//proc/**)","Read(//sys/**)","Read(//etc/**)","Read(//tmp/**)","Read(//root/**)","Read(//home/runner/.*/**)","Read(//home/runner/work/_temp/**)","Read(//home/runner/work/_actions/**)"]}}' > "$nastaveni"
+          prostredi=(HOME="$HOME" PATH="$PATH" CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC=1
+            ANTHROPIC_BASE_URL="$KIMI_URL" ANTHROPIC_API_KEY="$KIMI_API_KEY"
+            ANTHROPIC_MODEL="$KIMI_MODEL" ANTHROPIC_DEFAULT_OPUS_MODEL="$KIMI_MODEL" ANTHROPIC_DEFAULT_SONNET_MODEL="$KIMI_MODEL"
+            ANTHROPIC_DEFAULT_HAIKU_MODEL="$KIMI_MODEL" ANTHROPIC_DEFAULT_FABLE_MODEL="$KIMI_MODEL" CLAUDE_CODE_SUBAGENT_MODEL="$KIMI_MODEL"
+            CLAUDE_CODE_EFFORT_LEVEL=high CLAUDE_CODE_AUTO_COMPACT_WINDOW=262144 CLAUDE_CODE_MAX_CONTEXT_TOKENS=262144)
+          surovy="$RUNNER_TEMP/review-surovy.json"
+          for pokus in 1 2; do
+            if env -i "${prostredi[@]}" claude -p "$(cat scripts/brana/review-zadani.md)" --settings "$nastaveni" \
+                --allowedTools Read Glob Grep --max-turns 40 --output-format json > "$surovy" \
+               && jq -e '.is_error | not' "$surovy" > /dev/null \
+               && jq -r '.result // empty' "$surovy" > "$RUNNER_TEMP/review.txt" && [ -s "$RUNNER_TEMP/review.txt" ]; then
+              echo "Kimi: $(wc -c < "$RUNNER_TEMP/review.txt") znaků"; exit 0
+            fi
+            echo "::warning::Kimi, pokus $pokus selhal: $(jq -r '.result // .' "$surovy" 2>/dev/null | head -c 300)"
+            sleep 30
+          done
+          rm -f "$RUNNER_TEMP/review.txt"; exit 1
+
+      # Výstup s klíčem se nezapíše vůbec (ani jako neplatné review).
+      - name: Kontrola úniku klíče
+        if: steps.priprav.outputs.smi == 'true'
+        env:
+          KIMI_API_KEY: ${{ secrets.KIMI_API_KEY }}
+        run: |
+          if [ -n "${KIMI_API_KEY:-}" ] && [ -f "$RUNNER_TEMP/review.txt" ] && grep -qF -- "$KIMI_API_KEY" "$RUNNER_TEMP/review.txt"; then
+            echo "::error::Výstup modelu obsahuje klíč, review se nezapíše."; rm -f "$RUNNER_TEMP/review.txt"; exit 1
+          fi
+
+      - name: Výstup modelu pro zápis
+        if: steps.priprav.outputs.smi == 'true'
+        run: mkdir -p "$RUNNER_TEMP/vystup" && { [ ! -f "$RUNNER_TEMP/review.txt" ] || cp "$RUNNER_TEMP/review.txt" "$RUNNER_TEMP/vystup/"; }
+
+      - uses: actions/upload-artifact@v4
+        if: steps.priprav.outputs.smi == 'true'
+        with:
+          name: review-${{ steps.priprav.outputs.sha }}
+          path: ${{ runner.temp }}/vystup/
+          if-no-files-found: ignore
+          retention-days: 1
+
+  # Zápis běží v samostatném jobu bez kódu PR: token App nikdy nesdílí job se staženou hlavou PR ani s modelem.
+  zapis:
+    name: Zápis review
+    needs: review
+    if: needs.review.result == 'success' && needs.review.outputs.smi == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: read
+    env:
+      CISLO: ${{ github.event.pull_request.number || inputs.pr }}
+      SHA: ${{ needs.review.outputs.sha }}
+      KIMI_MODEL: k3-256k
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          persist-credentials: false
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+
+      - name: Závislosti skriptů (main)
+        run: npm ci --ignore-scripts --no-audit --no-fund
+
+      # Chybějící výstup (model selhal) zapíše review bez verdiktu „Bez P1 a P2“.
+      - uses: actions/download-artifact@v4
+        continue-on-error: true
+        with:
+          name: review-${{ needs.review.outputs.sha }}
+          path: ${{ runner.temp }}/vystup
+
+      - name: Token App prijimacky-ai
+        id: app
+        uses: actions/create-github-app-token@v3
+        with:
+          client-id: ${{ secrets.PRIJIMACKY_AI_CLIENT_ID }}
+          private-key: ${{ secrets.PRIJIMACKY_AI_PRIVATE_KEY }}
+          # contents: read kvůli rezimy.yml a labeler.yml z main (nactiKonfig přes API).
+          permission-contents: read
+          permission-issues: write
+          permission-pull-requests: write
+
+      - name: Zápis review
+        env:
+          GITHUB_TOKEN: ${{ steps.app.outputs.token }}
+        run: |
+          [[ "$CISLO" =~ ^[0-9]+$ && "$SHA" =~ ^[0-9a-f]{40}$ ]] || { echo "::error::Neplatné číslo PR nebo sha."; exit 1; }
+          node scripts/brana/review.mjs zapis "$CISLO" "$SHA" "$RUNNER_TEMP/vystup/review.txt"
