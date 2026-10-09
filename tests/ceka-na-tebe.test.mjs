@@ -74,7 +74,7 @@ test('pomocné funkce', () => {
   assert.equal(potrebujeSouhlas(undefined), false);
 });
 
-test('hlášení od veřejnosti jako skupina, hlášení škol a trvalá issue ne (#461)', () => {
+test('hlášení od veřejnosti jako skupina, včetně hlášení škol, trvalá issue ne (#461)', () => {
   const g = skupiny({ issues: [
     issue({ cislo: 30, stitky: ['bug-report', 'oblast:detail'] }),
     issue({ cislo: 31, stitky: ['bug-report', 'schvaleno'] }),

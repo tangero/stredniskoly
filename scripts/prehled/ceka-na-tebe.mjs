@@ -21,7 +21,7 @@ const MAX_DELKA = 3900; // limit Telegramu je 4096 znaků
 
 export const html = (t = '') => String(t).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 const zkrat = (t, n = MAX_TEXTU) => (t.length > n ? `${t.slice(0, n - 1).trimEnd()}…` : t);
-export const STITKY_VEREJNYCH = ['bug-report', 'feature-request', 'puvod:hlaseni', 'puvod:email'];
+export const STITKY_VEREJNYCH = ['bug-report', 'feature-request', 'puvod:hlaseni', 'puvod:email', 'portal-skoly'];
 
 /** Markdown z komentáře jako jeden odstavec: bez nadpisů, tabulek, tučného písma a odkazů (#461). */
 export function jedenOdstavec(t = '') {
@@ -94,7 +94,7 @@ export function sestavSkupiny({ prs = [], issues = [], ucty, dnes, ted }) {
       s[hotova ? 'oponentura' : 'navrh'].push({ ...zaklad, radky: [html(uvodIssue(i.telo))].filter(Boolean) });
       continue;
     }
-    // Hlášení od veřejnosti bez rozhodnutí; hlášení škol z portálu realizuje rutina (RA51).
+    // Hlášení od veřejnosti bez rozhodnutí, i hlášení škol z portálu: bez schvaleno je nerealizuje nikdo, dokud PR #464 nepustí opravy údajů škol.
     if (STITKY_VEREJNYCH.some((h) => st.has(h)) && !st.has('schvaleno')) {
       s.hlaseni.push({ ...zaklad, radky: [] });
       continue;

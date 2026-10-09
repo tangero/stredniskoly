@@ -71,8 +71,13 @@ async function main() {
   });
   if (!t.ok) throw new Error(`Telegram: ${t.status}`);
   const telo = textKontroly(new Date(ted).toISOString());
-  if (stav.kontrola) await api(`repos/${REPO}/issues/comments/${stav.kontrola}`, { method: 'PATCH', body: { body: telo } });
-  else await api(`repos/${REPO}/issues/${ISSUE_TEPU}/comments`, { method: 'POST', body: { body: telo } });
+  try {
+    if (stav.kontrola) await api(`repos/${REPO}/issues/comments/${stav.kontrola}`, { method: 'PATCH', body: { body: telo } });
+    else await api(`repos/${REPO}/issues/${ISSUE_TEPU}/comments`, { method: 'POST', body: { body: telo } });
+  } catch (e) {
+    // Zpráva už odešla; selhání zápisu stavu nesmí shodit běh (příště by upozornění přišlo znovu).
+    console.error(`Zápis stavu upozornění selhal: ${e.message}`);
+  }
 }
 
 if (import.meta.url === pathToFileURL(process.argv[1] || '').href) {
