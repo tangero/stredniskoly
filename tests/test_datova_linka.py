@@ -607,7 +607,7 @@ class TestDatovaLinka(unittest.TestCase):
         os.environ["LINKA_DNES"] = "2026-12-14"
         fronta, _ = self.zjisti()
         u = self.ulohy_podle_sady(fronta)["doprava-gtfs"]
-        u["vytvoreno"] = "2026-12-14T05:30:00+00:00"  # referenční pondělí se odvozuje i z data založení
+        u["historie"][-1]["cas"] = "2026-12-14T05:30:00+00:00"  # referenční pondělí se odvozuje i z data otevření
         return fronta, u
 
     def priprav_jizdni_rady(self, u, stavajici: Path | None = None):
@@ -619,6 +619,9 @@ class TestDatovaLinka(unittest.TestCase):
         self.sada_jizdnich_radu()
         fronta, _ = self.zjisti()  # 13. 9. 2026: platí jízdní řád od 14. 12. 2025, na webu je únor 2026
         self.assertNotIn("doprava-gtfs", self.ulohy_podle_sady(fronta))
+        os.environ["LINKA_DNES"] = "2026-12-08"  # ruční běh v týdnu před změnou úlohu ještě nezaloží
+        fronta, _ = self.zjisti()
+        self.assertNotIn("doprava-gtfs", self.ulohy_podle_sady(fronta))
         jadro.uloz_frontu(fronta)
         fronta, u = self.uloha_jizdnich_radu()
         self.assertEqual((u["druh"], u["obdobi"]), ("nove_obdobi", "2026-12-13"))
@@ -629,6 +632,26 @@ class TestDatovaLinka(unittest.TestCase):
         os.environ["LINKA_DNES"] = "2026-12-21"
         _, beh = self.zjisti()
         self.assertEqual(beh["nove_ulohy"], [])
+
+    def test_selhana_priprava_jizdnich_radu_se_zkusi_znovu(self):
+        self.sada_jizdnich_radu()
+        fronta, u = self.uloha_jizdnich_radu()
+        jadro.zmen_stav(u, "selhalo", "zdroj ještě nepokrývá nové pondělí")
+        jadro.uloz_frontu(fronta)
+        os.environ["LINKA_DNES"] = "2026-12-21"
+        fronta, beh = self.zjisti()
+        self.assertEqual(beh["nove_ulohy"], [u["kod"]])
+        self.assertEqual(fronta["ulohy"][u["kod"]]["stav"], "zjisteno")
+
+    def test_znovu_otevrena_uloha_jizdnich_radu_vezme_cerstve_pondeli(self):
+        self.sada_jizdnich_radu()
+        _, u = self.uloha_jizdnich_radu()
+        jadro.zmen_stav(u, "selhalo", "předání: výstup se od schválení změnil")
+        jadro.znovu_otevri(u, "referenční pondělí už zdroj nepokrývá")
+        u["historie"][-1]["cas"] = "2027-01-05T08:00:00+00:00"
+        self.priprav_jizdni_rady(u)
+        graf = json.loads(Path(next(iter(u["priprava"]["zpracovani"]["predani"]))).read_text(encoding="utf-8"))
+        self.assertEqual(graf["metadata"]["reference_date"], "2027-01-11")
 
     def test_zmizely_zdroj_jizdnich_radu_se_ohlasi_hned(self):
         self.sada_jizdnich_radu()

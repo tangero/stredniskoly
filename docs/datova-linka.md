@@ -39,7 +39,7 @@ zjisteno → pripraveno → oznameno → schvaleno → predano
 | `revize` | Soubor pro zobrazené období se změnil po datu, kdy jsme ho převzali |
 | `zmizelo` | Zdroj, který dříve existoval, vrací 404 |
 
-**Zdroj s pevnou adresou, který vychází denně** (jízdní řády, `aktualizace.obdobi: "jizdni-rad"` v registru): období se neodvozuje ze souboru, ale z data. Je jím začátek jízdního řádu platného v nejbližší pondělí (druhá neděle v prosinci), takže úloha vznikne jednou ročně po celostátní změně. Kód úlohy u takové sady nezahrnuje datum změny souboru, aby každé denní vydání nezaložilo novou úlohu. Při předání v pozdějším běhu se zdroj stáhne znovu a jiný otisk ZIPu se nepovažuje za změnu; shodovat se musí otisk grafu (`otisk_vystupu`), jinak předání skončí chybou a úlohu je třeba otevřít příkazem `znovu`.
+**Zdroj s pevnou adresou, který vychází denně** (jízdní řády, `aktualizace.obdobi: "jizdni-rad"` v registru): období se neodvozuje ze souboru, ale z data. Je jím začátek jízdního řádu platného v den běhu (druhá neděle v prosinci), takže úloha vznikne jednou ročně až po celostátní změně. Kód úlohy u takové sady nezahrnuje datum změny souboru, aby každé denní vydání nezaložilo novou úlohu; selhanou přípravu proto linka při dalším zjištění sama otevře znovu. Referenční pondělí grafu se odvozuje z posledního otevření úlohy. Při předání v pozdějším běhu se zdroj stáhne znovu a jiný otisk ZIPu se nepovažuje za změnu; shodovat se musí otisk grafu (`otisk_vystupu`). Jinak předání skončí chybou, neschválený výstup se zahodí a úlohu je třeba otevřít příkazem `znovu`, který vezme čerstvé pondělí a vyžádá nové schválení.
 
 Úlohy vznikají jen pro sady s použitím `web` nebo `planovano`. Ostatní sady linka jen zapíše do přehledu, aby oznámení nezahlcovala.
 

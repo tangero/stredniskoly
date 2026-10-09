@@ -306,8 +306,10 @@ def zpracuj_jizdni_rady(uloha: dict, soubor: Path, prace: Path, struktura: dict,
         stavajici: Graf na webu, proti kterému se kontroluje pokrytí. Výchozí je
             `data/transit_graph.json`; testy sem dávají vlastní soubor.
 
-    Referenční pondělí se odvozuje z období a z data založení úlohy, ne z dneška,
-    aby předání v pozdějším běhu postavilo graf pro týž den.
+    Referenční pondělí se odvozuje z období a z data posledního otevření úlohy, ne
+    z dneška, aby předání v pozdějším běhu postavilo graf pro týž den. Když ho už
+    zdroj nepokrývá (PID jen asi dva týdny dopředu), předání selže a příkaz `znovu`
+    úlohu otevře s čerstvým pondělím a novým schválením.
     """
     chybi = [s for s in GTFS_POVINNE if s not in struktura["soubory"]]
     if chybi:
@@ -320,7 +322,8 @@ def zpracuj_jizdni_rady(uloha: dict, soubor: Path, prace: Path, struktura: dict,
                 with zf.open(jmeno) as src, open(gtfs / jmeno, "wb") as dst:
                     shutil.copyfileobj(src, dst)
 
-    od = max(dt.date.fromisoformat(str(uloha["obdobi"])), dt.date.fromisoformat(uloha["vytvoreno"][:10]))
+    otevreno = [h["cas"] for h in uloha.get("historie", []) if h["stav"] == "zjisteno"] or [uloha["vytvoreno"]]
+    od = max(dt.date.fromisoformat(str(uloha["obdobi"])), dt.date.fromisoformat(otevreno[-1][:10]))
     vystup = prace / "transit_graph.json"
     if stavajici is None:
         stavajici = jadro.KOREN / "data" / "transit_graph.json"

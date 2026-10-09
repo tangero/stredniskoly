@@ -175,10 +175,10 @@ def zacatek_jizdniho_radu(den: dt.date) -> dt.date:
 def obdobi_jizdniho_radu(den: dt.date) -> str:
     """Období sady s pevnou adresou, která se publikuje denně (`aktualizace.obdobi: jizdni-rad`).
 
-    Obdobím je začátek jízdního řádu platného v nejbližší pondělí, takže nová úloha
-    vznikne jednou za rok po celostátní změně, ne s každým denním vydáním.
+    Obdobím je začátek jízdního řádu platného v den běhu, takže nová úloha vznikne
+    jednou za rok až po celostátní změně, ne s každým denním vydáním ani před změnou.
     """
-    return zacatek_jizdniho_radu(den + dt.timedelta(days=(7 - den.weekday()) % 7)).isoformat()
+    return zacatek_jizdniho_radu(den).isoformat()
 
 
 def porovnej(a: str | None, b: str | None) -> int | None:
@@ -269,6 +269,11 @@ def zjisti(registr: dict, fronta: dict, head_fn=head) -> dict:
                 beh["informace"].append(zaznam)
                 continue
             if k in fronta["ulohy"]:
+                # Jízdní řád má jednu úlohu na rok; selhaná příprava (zdroj ještě nepokrýval nové
+                # pondělí, výpadek) se proto zkusí znovu při dalším zjištění.
+                if jizdni_rad and fronta["ulohy"][k]["stav"] == "selhalo":
+                    znovu_otevri(fronta["ulohy"][k], "nový pokus po selhání přípravy")
+                    beh["nove_ulohy"].append(k)
                 continue
             uloha = {"kod": k, **zaznam, "vytvoreno": ted(), "zobrazene_obdobi": zobrazeno}
             zmen_stav(uloha, "zjisteno")
