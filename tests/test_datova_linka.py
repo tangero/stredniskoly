@@ -630,6 +630,12 @@ class TestDatovaLinka(unittest.TestCase):
         _, beh = self.zjisti()
         self.assertEqual(beh["nove_ulohy"], [])
 
+    def test_zmizely_zdroj_jizdnich_radu_se_ohlasi_hned(self):
+        self.sada_jizdnich_radu()
+        del self.server.soubory["/J/gtfs.zip"]
+        fronta, _ = self.zjisti()
+        self.assertEqual(self.ulohy_podle_sady(fronta)["doprava-gtfs"]["druh"], "zmizelo")
+
     def test_priprava_jizdnich_radu_postavi_graf(self):
         self.sada_jizdnich_radu()
         _, u = self.uloha_jizdnich_radu()

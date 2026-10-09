@@ -18,6 +18,9 @@ ahead, other operators until the end of the yearly timetable. Before writing,
 the graph is compared with the current one (--srovnat): the build fails when
 stations with departures drop below 85 % overall or below 50 % in any map cell
 of 0.25° x 0.5° with at least 30 stations, e.g. a missing region or Prague.
+Service volume is checked too: trips in the morning window must stay at 85 %
+(when the current graph records them) and at most 30 % of shared routes may
+double their headway, e.g. a feed with only a few trips per route.
 
 The data come from the data pipeline (scripts/linka/, sada doprava-gtfs), which
 downloads the feed after a timetable change and runs this script:
@@ -44,6 +47,9 @@ CELL_LAT, CELL_LON = 0.25, 0.5
 MIN_SHARE_TOTAL = 0.85
 MIN_SHARE_CELL = 0.5
 MIN_CELL_STATIONS = 30
+MIN_SHARE_TRIPS = 0.85
+MAX_SHARE_SLOWER_ROUTES = 0.3
+MIN_SHARED_ROUTES = 50
 
 WEEKDAYS = ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"]
 HOUR_START = 7
@@ -191,6 +197,14 @@ def coverage_problems(new: dict, reference: dict) -> list[str]:
             lat, lon = cell[0] * CELL_LAT, cell[1] * CELL_LON
             problems.append(f"area {lat:.2f}-{lat + CELL_LAT:.2f} N, {lon:.1f}-{lon + CELL_LON:.1f} E "
                             f"(e.g. {names.get(cell, '?')}): {new_cells.get(cell, 0)} stations vs {count}")
+    trips_new, trips_ref = new["metadata"].get("trips_in_window"), reference.get("metadata", {}).get("trips_in_window")
+    if trips_new is not None and trips_ref and trips_new < MIN_SHARE_TRIPS * trips_ref:
+        problems.append(f"trips in the 6:30-9:00 window: {trips_new} vs {trips_ref} in the current graph")
+    shared = [r for r in reference.get("headways", {}) if r in new.get("headways", {})]
+    if len(shared) >= MIN_SHARED_ROUTES:
+        slower = sum(1 for r in shared if new["headways"][r] >= 2 * reference["headways"][r])
+        if slower > MAX_SHARE_SLOWER_ROUTES * len(shared):
+            problems.append(f"headway doubled on {slower} of {len(shared)} shared routes")
     return problems
 
 
@@ -303,10 +317,12 @@ def main(argv: list[str] | None = None):
 
     # Process trip by trip
     current_trip_id = None
-    trip_stops = []  # [(stop_id, arrival_sec, departure_sec), ...]
+    trip_stops = []
+    trips_in_window = 0  # [(stop_id, arrival_sec, departure_sec), ...]
 
     def process_trip(trip_id, stops_list):
         """Process a complete trip: extract consecutive edges and headway data."""
+        nonlocal trips_in_window
         route_short = trip_to_route_short.get(trip_id)
         if not route_short:
             return
@@ -323,6 +339,7 @@ def main(argv: list[str] | None = None):
         min_dep = min(dep_times)
         if min_dep < 6.5 * 3600 or min_dep >= 9 * 3600:  # 6:30-9:00
             return
+        trips_in_window += 1
 
         for i in range(len(stops_list) - 1):
             sid_from, _, dep_sec_from = stops_list[i]
@@ -486,6 +503,7 @@ def main(argv: list[str] | None = None):
             "directed_edges": total_edges,
             "avg_out_degree": round(total_edges / max(1, len(edges_out)), 1),
             "routes_with_headway": len(headways_out),
+            "trips_in_window": trips_in_window,
             "version": 2,
         },
         "stops": dict(sorted(stops_out.items())),

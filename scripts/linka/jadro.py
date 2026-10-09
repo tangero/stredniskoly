@@ -221,7 +221,8 @@ def zjisti(registr: dict, fronta: dict, head_fn=head) -> dict:
         for vzor in vzory:
             dostupne = []
             for obdobi, url in rozvin(vzor, den):
-                if obdobi is None and jizdni_rad:
+                pevna = obdobi is None
+                if pevna and jizdni_rad:
                     obdobi = obdobi_jizdniho_radu(den)
                 stav, zmena = head_fn(url)
                 zname = fronta["zname"].get(url)
@@ -229,7 +230,7 @@ def zjisti(registr: dict, fronta: dict, head_fn=head) -> dict:
                     dostupne.append((obdobi, url, zmena))
                 elif stav == 404:
                     # Zmizelý zdroj: pevná adresa, nebo adresa, která dříve existovala.
-                    if obdobi is None or (zname and zname.get("stav") == 200):
+                    if pevna or (zname and zname.get("stav") == 200):
                         kandidati.append(("zmizelo", obdobi or zobrazeno, url, ""))
                     fronta["zname"][url] = {"stav": 404, "zjisteno": den.isoformat()}
                     continue
