@@ -19,7 +19,7 @@ the graph is compared with the current one (--srovnat): the build fails when
 stations with departures drop below 85 % overall or below 50 % in any map cell
 of 0.25° x 0.5° with at least 30 stations, e.g. a missing region or Prague.
 Service volume is checked too: trips in the morning window must stay at 85 %
-(when the current graph records them) and at most 30 % of shared routes may
+(or above a fixed floor when the current graph does not record them) and at most 30 % of shared routes may
 double their headway, e.g. a feed with only a few trips per route.
 
 The data come from the data pipeline (scripts/linka/, sada doprava-gtfs), which
@@ -48,6 +48,9 @@ MIN_SHARE_TOTAL = 0.85
 MIN_SHARE_CELL = 0.5
 MIN_CELL_STATIONS = 30
 MIN_SHARE_TRIPS = 0.85
+# Until the current graph records trips_in_window (graphs before October 2026 do not):
+# the whole country had ~25,500 trips in the window on 2026-10-12, without Prague ~16,900.
+FALLBACK_MIN_TRIPS = 21_000
 MAX_SHARE_SLOWER_ROUTES = 0.3
 MIN_SHARED_ROUTES = 50
 
@@ -200,6 +203,8 @@ def coverage_problems(new: dict, reference: dict) -> list[str]:
     trips_new, trips_ref = new["metadata"].get("trips_in_window"), reference.get("metadata", {}).get("trips_in_window")
     if trips_new is not None and trips_ref and trips_new < MIN_SHARE_TRIPS * trips_ref:
         problems.append(f"trips in the 6:30-9:00 window: {trips_new} vs {trips_ref} in the current graph")
+    elif trips_new is not None and not trips_ref and trips_new < FALLBACK_MIN_TRIPS:
+        problems.append(f"trips in the 6:30-9:00 window: {trips_new}, expected at least {FALLBACK_MIN_TRIPS}")
     shared = [r for r in reference.get("headways", {}) if r in new.get("headways", {})]
     if len(shared) >= MIN_SHARED_ROUTES:
         slower = sum(1 for r in shared if new["headways"][r] >= 2 * reference["headways"][r])

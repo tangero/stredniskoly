@@ -93,6 +93,7 @@ def predej(uloha: dict, registr: dict, nanecisto: bool, runner=subprocess.run, s
         return {"plan": p, "prikazy": prikazy}
 
     zajisti_vystupy(uloha, registr, stahni_fn=stahni_fn)
+    p = plan(uloha)  # po nové přípravě: otisk zdroje v popisu PR patří k předávaným souborům
 
     def spust(prikaz: list[str], **kw) -> str:
         r = runner(prikaz, capture_output=True, text=True, cwd=jadro.KOREN, **kw)

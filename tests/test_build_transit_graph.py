@@ -90,10 +90,13 @@ class PokrytiTest(unittest.TestCase):
         self.assertEqual(graf.coverage_problems(uplny, reference), [])
         malo_spoju = {**reference, "metadata": {"trips_in_window": 500}}
         self.assertIn("trips in the 6:30-9:00 window", graf.coverage_problems(malo_spoju, reference)[0])
-        # Starší graf bez počtu spojů: ubývání prozradí intervaly (jeden spoj na linku = 60 min).
+        # Starší graf bez počtu spojů: pevná spodní hranice a intervaly (jeden spoj na linku = 60 min).
         reference_bez_poctu = {**reference, "metadata": {}}
         ridke = {**reference, "metadata": {"trips_in_window": 60}, "headways": {str(i): 60.0 for i in range(60)}}
-        self.assertIn("headway doubled on 60 of 60", graf.coverage_problems(ridke, reference_bez_poctu)[0])
+        problemy = graf.coverage_problems(ridke, reference_bez_poctu)
+        self.assertIn("expected at least 21000", problemy[0])
+        self.assertIn("headway doubled on 60 of 60", problemy[1])
+        self.assertEqual(graf.coverage_problems({**reference, "metadata": {"trips_in_window": 25000}}, reference_bez_poctu), [])
 
     def test_mala_oblast_se_nehodnoti(self):
         reference = graf_se_stanicemi({**{f"B{i}": (49.2, 16.6) for i in range(200)}, "X": (50.1, 14.4)})

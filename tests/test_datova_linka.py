@@ -9,6 +9,7 @@ from __future__ import annotations
 
 import datetime as dt
 import functools
+import hashlib
 import http.server
 import json
 import os
@@ -681,7 +682,7 @@ class TestDatovaLinka(unittest.TestCase):
         _, u = self.uloha_jizdnich_radu()
         self.priprav_jizdni_rady(u, stavajici=web)
         self.assertEqual(u["stav"], "selhalo")
-        self.assertIn("Coverage check", u["priprava"]["chyba"])
+        self.assertIn("stations with departures: 2 vs 40", u["priprava"]["chyba"])
 
     def test_predani_jizdnich_radu_porovna_otisk_grafu(self):
         self.sada_jizdnich_radu()
@@ -707,6 +708,8 @@ class TestDatovaLinka(unittest.TestCase):
             vysledek = predani.predej(u, self.registr, nanecisto=False, runner=runner)
         self.assertEqual(u["stav"], "predano")
         self.assertEqual(list(vysledek["plan"]["soubory"].values()), ["data/transit_graph.json"])
+        self.assertIn(u["priprava"]["stazeno"]["sha256"], vysledek["plan"]["telo"], "popis PR nese otisk znovu staženého zdroje")
+        self.assertIn(hashlib.sha256((self.tmp / "gtfs.zip").read_bytes()).hexdigest(), vysledek["plan"]["telo"])
         self.assertTrue(vysledek["plan"]["vetev"].startswith("data/doprava-gtfs-2026-12-13-"))
 
     # ------------------------------------------------------------ příkazová řádka
