@@ -1,6 +1,6 @@
 # Školní novinky z RSS/Atom feedů – návrh implementace
 
-**Verze:** 1.14 (zprávy z výpisu aktualit na stránce školy; výpis aktualit jako druhý typ zdroje; plán běží z nastavení služby Railway, ne z repozitáře; provozní opravy z prvních běhů; text návrhu po páté oponentuře – [oponentura 1.4](oponentura-skolske-novinky-rss-2027-v1.4.md); starší: [čtvrtá](oponentura-skolske-novinky-rss-2027-v1.3.md), [třetí](oponentura-skolske-novinky-rss-2027-v1.2.md), [druhá](oponentura-skolske-novinky-rss-2027-v1.1.md), [první](oponentura-skolske-novinky-rss-2027.md))
+**Verze:** 1.15 (zprávy o přijímacím řízení z minulého cyklu nejsou po 31. 8. kartou, #451; zprávy z výpisu aktualit na stránce školy; výpis aktualit jako druhý typ zdroje; plán běží z nastavení služby Railway, ne z repozitáře; provozní opravy z prvních běhů; text návrhu po páté oponentuře – [oponentura 1.4](oponentura-skolske-novinky-rss-2027-v1.4.md); starší: [čtvrtá](oponentura-skolske-novinky-rss-2027-v1.3.md), [třetí](oponentura-skolske-novinky-rss-2027-v1.2.md), [druhá](oponentura-skolske-novinky-rss-2027-v1.1.md), [první](oponentura-skolske-novinky-rss-2027.md))
 **Datum:** 20. 9. 2026
 **Podklady:** sonda feedů (`docs/rss-webu-skol-sonda-2026.md`, data `data/sondy/rss-webu-skol-20260919.json`), reprodukovatelné měření klasifikace (`scripts/rss-klasifikace-mereni.py --offline`; manifest `data/sondy/rss-klasifikace-manifest80.json`, vzorek `data/sondy/rss-klasifikace-vzorek80.json` + `…-doplneni.json`, ruční reference `data/sondy/rss-klasifikace-reference.json`), regresní testy `tests/test_rss_klasifikace.py`.
 **Prověření dřívějších rozhodnutí (20. 9. 2026):** [Překonaná rozhodnutí kolem sklízení školních novinek](prehodnoceni-rozhodnuti-rss-2027.md) – sedm rozhodnutí, která okolí návrhu překonalo (mrtvý InspIS, strop pokrytí 49 %, hotové úložiště odběrů, dvojí model události, pole v portálu, role modelu, sezóna), a osm, která po prověření platí dál. Tento návrh zatím neměním; přehled je podklad k rozhodnutí zadavatele.
@@ -88,6 +88,15 @@ Oddělit **stáří článku**, **stav informace** a **jednotlivé termíny**:
 | volná místa | publikování + 7 dní – jde o limit **stáří sdělení, ne potvrzení dostupnosti**; karta říká „škola {datum} hlásila volná místa", nikdy „škola má volná místa". „Naposledy ověřen zdroj" ≠ „škola potvrdila, že místa zbývají". |
 | výsledky / kola / kritéria | do uzávěrky daného kola (ne do konce celého přijímacího období, když uzávěrka uplynula); kolo bez data uzávěrky = novinka s `konec_platnosti` dle `prijimaci_obdobi` z registru. |
 | ostatní | publikování + 60 dní |
+
+**Konec cyklu přijímacího řízení (#451, rozhodnutí vlastníka 9. 10. 2026).** Zpráva třídy výsledky, přijímací řízení
+(vyhlášení kol) nebo kritéria **přestane být kartou po 31. 8.** cyklu, ke kterému patří: vydaná od ledna do srpna
+patří k cyklu končícímu 31. 8. téhož roku, vydaná od září k cyklu končícímu 31. 8. následujícího roku (rok z data
+vydání, nikdy napevno; u položky bez data vydání z data, kdy jsme ji poprvé viděli). Důvod: výsledky 4. kola ze
+16. 8. by jinak byly kartou do 15. 10. a rodič, který v říjnu vybírá školu na příští rok, by je četl jako aktuální.
+Pravidlo platí **při čtení** (`konecCyklu` a `naPolozku` v `src/lib/skolni-novinky.ts`), takže i pro položky uložené
+dřív; data v databázi ani `konec_platnosti` se nemění. Karta klesne na odkaz v „Dalších zprávách k přijímačkám“
+a zmizí jako ostatní položky po `konec_platnosti`. Kartou zůstává zpráva s přečteným termínem, který teprve bude, a zpráva, která má i jinou třídu (přijímačky nanečisto, talentové zkoušky, dny otevřených dveří): ta už zve k dalšímu cyklu.
 
 **Datum vydání v budoucnosti se nebere vážně (nález z provozu 20. 9. 2026).** Pravidla výše hlídala data *akce*, ale ne datum *vydání* samotné položky. V prvním ostrém běhu přišel článek „Operační program Jan Amos Komenský" s `pubDate` **11. 11. 2031**. Dvě škody najednou: rodiči se u zprávy ukazuje rok 2031, což je nepravda, a položka by se řadila na začátek seznamu a trvale držela jedno z pěti míst v bloku — až do roku 2032. Od 20. 9. 2026 platí: datum vydání, které předbíhá sklizeň o víc než `TOLERANCE_BUDOUCIHO_DATA_DNU` (1 den, kryje časové zóny), **se zahodí a položka se tváří jako bez data**. Zprávu nezahazujeme, jen o ní přestaneme tvrdit, kdy vyšla.
 
