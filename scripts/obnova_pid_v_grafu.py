@@ -141,7 +141,7 @@ def linky_pid(stary_interval, uzel):
     for podle_linky in hrany.values():
         for k in podle_linky:
             if k not in intervaly:
-                intervaly[k] = stary_interval.get(k, 60.0)
+                intervaly[k] = stary_interval.get(f"PID:{k}", stary_interval.get(k, 60.0))
 
     vysledek = {}
     for (ua, ub), podle_linky in hrany.items():
@@ -162,6 +162,8 @@ def nazev_zastavky(skupina):
 
 def mimo_pid(nazev, linky_feedu):
     """Původní linka, kterou PID neprovozuje a která na hraně zůstane."""
+    if nazev.startswith("PID:"):
+        return False
     if nazev in linky_feedu:
         return False
     if re.fullmatch(r"\d{6}", nazev):
@@ -226,13 +228,16 @@ def main():
         if a not in graf["stops"] or b not in graf["stops"]:
             continue
         stara = puvodni[a].get(b)
-        puvodni[a][b] = [b, t, sorted(set(linky) | set(stara[2] if stara else []))]
+        # Označení linky není celostátně jedinečné: PID 26 nesmí přepsat plzeňskou 26.
+        puvodni[a][b] = [b, t, sorted({f"PID:{x}" for x in linky} | set(stara[2] if stara else []))]
         nahrazene += 1
 
     hrany = {a: sorted(v.values(), key=lambda e: e[0]) for a, v in puvodni.items() if v}
     pouzite = {x for seznam in hrany.values() for _, _, linky in seznam for x in linky}
     intervaly_grafu = {k: v for k, v in graf["headways"].items() if k in pouzite}
-    intervaly_grafu.update({k: v for k, v in intervaly.items() if k in pouzite})
+    intervaly_grafu.update({f"PID:{k}": v for k, v in intervaly.items() if f"PID:{k}" in pouzite})
+    nazvy_linek = {k: v for k, v in graf.get("route_names", {}).items() if k in pouzite}
+    nazvy_linek.update({f"PID:{k}": k for k in intervaly if f"PID:{k}" in pouzite})
 
     ve_hranach = set(hrany) | {b for seznam in hrany.values() for b, _, _ in seznam}
     zastavky = {k: v for k, v in graf["stops"].items() if k in ve_hranach}
@@ -249,6 +254,7 @@ def main():
     graf["stops"] = dict(sorted(zastavky.items()))
     graf["edges"] = dict(sorted(hrany.items()))
     graf["headways"] = dict(sorted(intervaly_grafu.items()))
+    graf["route_names"] = dict(sorted(nazvy_linek.items()))
     with open(GRAF, "w", encoding="utf-8") as f:
         json.dump(graf, f, ensure_ascii=False, separators=(",", ":"))
 

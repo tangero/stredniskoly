@@ -251,6 +251,12 @@ a Středočeský kraj) se obnovuje zvlášť z otevřeného feedu PID: stáhnout
 přepíše `public/pid_stops_compact.json`; zbytek republiky nechá (#426). Feed PID platí dva týdny, takže graf zachytí
 i dočasné výluky a náhradní dopravu v daném týdnu.
 
+Linky z obnovy PID mají v hranách a tabulce intervalů samostatný klíč `PID:<označení>`.
+Stejně označené linky mimo PID si ponechají původní klíč i interval; například plzeňská `26`
+se nepřepíše intervalem pražské `PID:26`. Pole `route_names` v grafu převádí interní klíče na
+označení linek pro odpovědi API a web (v obou případech „26“). Výpočet přestupů pracuje s interními
+klíči. Opakovaná obnova PID nahrazuje i dříve vložené klíče PID.
+
 ### 2.10 Odvozené soubory v `public/`
 
 | Soubor | Vzniká z | Skript | Poznámka |

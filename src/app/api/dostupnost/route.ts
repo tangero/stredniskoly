@@ -7,12 +7,13 @@ import { createSlug } from '@/lib/utils';
 
 type Point = { lat: number; lon: number };
 
-type EdgeV2 = [string, number, string[]]; // [dest, travelTimeMin, routeShorts]
+type EdgeV2 = [string, number, string[]]; // [dest, travelTimeMin, routeIds]
 
 type TransitGraphData = {
   stops: Record<string, [string, number, number]>;
   edges: Record<string, EdgeV2[]>;
-  headways: Record<string, number>; // routeShort → headway minutes
+  headways: Record<string, number>; // routeId → headway minutes
+  route_names?: Record<string, string>; // internal routeId → displayed line name
 };
 
 type SchoolLocationsData = {
@@ -650,7 +651,7 @@ export async function POST(request: NextRequest) {
             totalMinutes: Math.round(totalMin * 10) / 10,
             waitMinutes: Math.round(dijkResult.waitMinutes * 10) / 10,
             transfers: dijkResult.transfers,
-            usedRoutes: dijkResult.usedRoutes,
+            usedRoutes: dijkResult.usedRoutes.map((route) => graph.route_names?.[route] ?? route),
             stopId: reachableStopId,
             stopName,
           });
