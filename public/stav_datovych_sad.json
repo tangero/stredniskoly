@@ -720,14 +720,16 @@
    "cyklus": "rucni",
    "pouziti": "web",
    "zobrazeno": {
-    "obdobi": "2026-02-07",
-    "soubor": "data/PID_GTFS.zip"
+    "obdobi": "2026-10-09",
+    "soubor": "data/PID/PID_GTFS.zip",
+    "sha256": "097f7e86479bb2defcbf11af70070e55b5def19ea9afc6794f1b66bf34cd79a7",
+    "prepnuto": "2026-10-09"
    },
    "ocekavano": {
     "obdobi": null,
     "kdy": null,
     "jistota": "neznamo",
-    "zduvodneni": "Jízdní řády se mění s každým vydáním."
+    "zduvodneni": "Jízdní řády se mění s každým vydáním; celou sadu obnovuje datová linka po prosincové změně jízdních řádů a část PID je od 9. 10. 2026 z feedu PID (#426)."
    },
    "obnovit_nejpozdeji": "2027-01-31",
    "po_prepnuti": "Nahrazuje se celý.",
@@ -747,7 +749,13 @@
     ],
     "revize_oznamovat": false,
     "obdobi": "jizdni-rad"
-   }
+   },
+   "historie_obdobi": [
+    {
+     "obdobi": "2026-02-07",
+     "soubor": "data/PID_GTFS.zip"
+    }
+   ]
   },
   "katalog-historie": {
    "nazev": "Katalog, historické ročníky 2024 a 2025",
@@ -1188,6 +1196,13 @@
    "z": "2026-09-07",
    "na": "2026-10-05",
    "doklad": "PR #379, týdenní workflow CSI Weekly Refresh 2026-10-05, commit fb977a3"
+  },
+  {
+   "datum": "2026-10-09",
+   "sada": "doprava-gtfs",
+   "z": "2026-02-07",
+   "na": "2026-10-09",
+   "doklad": "Rozhodnutí vlastníka v #426 (9. 10. 2026): přestavět graf z aktuálních dat. Část PID z feedu PID platného 9.–22. 10. 2026 (scripts/obnova_pid_v_grafu.py); celostátní část mimo PID zůstává z GTFS spojenka.cz z 7. 2. 2026."
   }
  ]
 }

@@ -249,6 +249,20 @@ Graf bere jen spoje, které jedou v referenční pondělí (`calendar.txt` i vý
 
 Zdroj obsahuje spoje jen na dobu, na kterou je dopravci zveřejnili, PID asi dva týdny dopředu. Před zápisem se proto nový graf porovná s grafem na webu: skript ho nepostaví, když stanic s odjezdy ubude pod 85 % celkem nebo pod 50 % v některém čtverci mapy 0,25° × 0,5° s aspoň 30 stanicemi (chybějící Praha nebo kraj). Hlídá i objem: spojů v ranním okně 6:30–9:00 musí zůstat aspoň 85 % (když je graf na webu uvádí) a nejvýš 30 % společných linek smí mít dvojnásobný interval. Metadata grafu nesou `reference_date`, `source_published` a `trips_in_window`.
 
+**Mimořádná obnova části PID.** Mezi obnovami přes datovou linku lze obnovit jen část PID (Praha
+a Středočeský kraj) z otevřeného feedu PID: stáhnout `https://data.pid.cz/PID_GTFS.zip` (rozbalit do
+`data/PID/` bez `shapes.txt`) a `https://data.pid.cz/stops/json/stops.json` do `data/PID/`, pak
+`python3 scripts/obnova_pid_v_grafu.py`. Skript v grafu nahradí hrany mezi zastávkami, které feed PID obsluhuje, a
+přepíše `public/pid_stops_compact.json`; zbytek republiky nechá (#426). Feed PID platí dva týdny, takže graf zachytí
+i dočasné výluky a náhradní dopravu v daném týdnu. Je to jen mimořádný krok: další přestavba grafu přes linku
+nahradí klíče `PID:` i `route_names` údaji ze spojenka.cz.
+
+Linky z obnovy PID mají v hranách a tabulce intervalů samostatný klíč `PID:<označení>`.
+Stejně označené linky mimo PID si ponechají původní klíč i interval; například plzeňská `26`
+se nepřepíše intervalem pražské `PID:26`. Pole `route_names` v grafu převádí interní klíče na
+označení linek pro odpovědi API a web (v obou případech „26“). Výpočet přestupů pracuje s interními
+klíči. Opakovaná obnova PID nahrazuje i dříve vložené klíče PID.
+
 ### 2.10 Odvozené soubory v `public/`
 
 | Soubor | Vzniká z | Skript | Poznámka |
@@ -730,7 +744,7 @@ _Vygenerováno z `public/stav_datovych_sad.json` dne 2026-10-09. Neupravovat ru�
 | `csi-inspekce` | web | 2026-10-05 | `data/csi_snapshots/csi_inspections_2026-10-05T12-16-15-633Z.json` | — | — | 2026-10neznámo | Starší snímky zůstávají v data/csi_snapshots s manifestem. |
 | `csi-extrakce` | web | 2026-06-16 | `data/inspection_extractions.json` | — | — | 2026-11, odhad | Starší zpráva téže školy zůstává sbalená pod novější. |
 | `csi-inspis` | web | 2026-02-11 | `data/inspis_school_profiles.json` | — | — | neznámo | Nahrazuje se celý. |
-| `doprava-gtfs` | web | 2026-02-07 | `data/PID_GTFS.zip` | — | — | neznámo | Nahrazuje se celý. |
+| `doprava-gtfs` | web | 2026-10-09 | `data/PID/PID_GTFS.zip` | — | — | neznámo | Nahrazuje se celý. |
 | `katalog-historie` | web | 2025 | `public/schools_data.json` | — | — | neznámo | Nepřepíná se. |
 | `school-analysis-legacy` | nezobrazovat | 2025 | `public/school_analysis.json` | — | — | neznámo | Nepřepíná se. |
 | `cermat-kolo2-agregaty` | web | 2026 | `PZ2026_kolo2_skolobory_vysledky.xlsx` | — | 2027 | 2027-09, odhad | Předchozí rok zůstává ve výstupu a na stránce slouží k větě, zda škola 2. kolo vypsala i tehdy. |
