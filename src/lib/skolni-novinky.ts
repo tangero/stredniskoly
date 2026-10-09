@@ -147,6 +147,25 @@ function dataAkce(v: unknown): string[] {
     .filter((d): d is string => typeof d === 'string');
 }
 
+/**
+ * Třídy zpráv, které patří k jednomu cyklu přijímacího řízení: výsledky, vyhlášení kol a kritéria (#451).
+ */
+const TRIDY_CYKLU = new Set(['vysledky_prijm', 'prijimaci_rizeni', 'kriteria']);
+
+/**
+ * Poslední den cyklu přijímacího řízení, ke kterému zpráva vydaná `vydano` (ISO datum) patří.
+ *
+ * Cyklus pro účel karty končí 31. 8. (rozhodnutí vlastníka 9. 10. 2026, #451): poslední kola
+ * proběhnou v létě a od září školy zveřejňují informace k dalšímu ročníku. Zpráva vydaná od ledna
+ * do srpna tedy patří k cyklu, který končí 31. 8. téhož roku, zpráva vydaná od září k cyklu
+ * končícímu 31. 8. následujícího roku. Rok se bere z data vydání, ne napevno.
+ */
+export function konecCyklu(vydano: string): string {
+  const rok = Number(vydano.slice(0, 4));
+  const mesic = Number(vydano.slice(5, 7));
+  return `${mesic >= 9 ? rok + 1 : rok}-08-31`;
+}
+
 /** Přepínače jako mapa klíč → hodnota; klíč `trida:dod` vypíná zvýrazňování třídy. */
 export async function nactiPrepinace(): Promise<Map<string, unknown>> {
   const { rows } = await dotaz<{ klic: string; hodnota: unknown }>(
@@ -215,6 +234,18 @@ export function naPolozku(
   const terminyAkce = dataAkce(r.terminy_akce);
   const souhrnPlati = r.souhrn != null && terminyAkce.some((t) => t >= dnes);
   if (zobrazeni === 'karta' && terminyAkce.length > 0 && !souhrnPlati) zobrazeni = 'odkaz';
+  // Zpráva o přijímacím řízení z cyklu, který už skončil, není aktuální zprávou k přijímačkám
+  // (#451): výsledky kol z léta by v říjnu působily jako novinka k příštímu ročníku. Karta klesne
+  // na odkaz v „Dalších zprávách k přijímačkám“, kde zůstane do konce své platnosti. Platí při
+  // čtení, takže i pro položky uložené dřív. Karta s termínem, který teprve bude, zůstává, a stejně tak
+  // zpráva, která má i jinou třídu (přijímačky nanečisto, talentové zkoušky…): ta už zve k příštímu cyklu.
+  const vydano = naIso(r.publikovano) ?? naIso(r.vytvoreno);
+  if (
+    zobrazeni === 'karta' && vydano && !jesteBude && !souhrnPlati
+    && tridy.length > 0 && tridy.every((t) => TRIDY_CYKLU.has(t)) && dnes > konecCyklu(vydano)
+  ) {
+    zobrazeni = 'odkaz';
+  }
   const publikovano = naIso(r.publikovano);
   return {
     id: r.id,
