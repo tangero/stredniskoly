@@ -23,6 +23,17 @@ test('podobnost: přeformulování je nad 80 %, jiný text pod', () => {
   assert.ok(podobnost(A, B) < 0.3);
 });
 
+test('stagnace porovnává soubor i při uvedení řádku nebo rozsahu v review', () => {
+  for (const misto of ['src/lib/skola.ts:42', 'src/lib/skola.ts:42-48']) {
+    const sRadkem = A2.replace('src/lib/skola.ts', misto);
+    assert.equal(nalezy(review(sRadkem).telo)[0].soubor, 'src/lib/skola.ts');
+    const komentare = [review(A.replace('src/lib/skola.ts', 'src/lib/skola.ts:10')), review(sRadkem)];
+    assert.equal(rozhodniStagnaci({ akce: 'oprava', duvod: 'kolo 2' }, komentare, ASISTENT).akce, 'strop');
+    const jinySoubor = sRadkem.replace('src/lib/skola.ts', 'src/lib/jina.ts');
+    assert.equal(opakovanyNalez([review(A), review(jinySoubor)], ASISTENT).stagnace, false);
+  }
+});
+
 test('K4: stejný nález ve dvou review po sobě je stagnace a rozhodnutí se změní na strop', () => {
   const komentare = [review(A), { autor: 'tangero', telo: '@claude oprav' }, review(A2)];
   assert.equal(opakovanyNalez(komentare, ASISTENT).stagnace, true);

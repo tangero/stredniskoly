@@ -349,6 +349,10 @@ Po otevření nebo aktualizaci PR od vlastníka napíše asistent zadání revie
   na cestu H2 a při šestém `@claude`; další `@claude` se nespustí a PR vypíše týdenní přehled (i jeho krátká verze
   v Telegramu). Smyčku zastaví i `stop` na PR nebo propojeném issue (ověřuje se i před začátkem kola a před pushem);
   přidat ho smí vlastník i asistent.
+- **Stagnace:** dvě po sobě jdoucí review asistenta se stejným souborem a podobností textu nálezu P1/P2
+  nad 80 % zastaví další opravu rozhodnutím `strop`. Cesta v apostrofech může nést číslo řádku nebo
+  rozsah (`src/lib/skola.ts:42`, `src/lib/skola.ts:42-48`); při porovnání se použije jen cesta souboru,
+  protože se řádky při opravě mohou posunout. Nález v jiném souboru se za stagnaci nepovažuje.
 - **Brána:** u PR, které mění web, vyžaduje pro aktuální hlavu review od účtu `asistent` s verdiktem
   „Bez P1 a P2“ a řádkem `Commit:` (`review.vyzadovat`). Review od vlastníka se nepočítá, protože přes
   jeho účet pracuje Claude Code, který PR připravil. Výjimky: změny bez dopadu na web (`bez_preview`)

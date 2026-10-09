@@ -16,7 +16,7 @@ export const DUVOD_STAGNACE = 'opakovaný nález';
 
 const NADPIS = /^#{2,4}\s*(P[12])\b/i;
 const DALSI_NADPIS = /^#{1,4}\s+\S/;
-const SOUBOR = /`([\w@.\-/\[\]()]+\.[A-Za-z0-9]{1,6}|[\w@.\-/\[\]()]+\/[\w@.\-/\[\]()]+)`/;
+const SOUBOR = /`([\w@.\-/\[\]()]+\.[A-Za-z0-9]{1,6}|[\w@.\-/\[\]()]+\/[\w@.\-/\[\]()]+)(?::\d+(?:-\d+)?)?`/;
 
 /** Normalizovaný text: malá písmena bez diakritiky a bez markdownu, slova delší než 2 znaky. */
 function slova(text) {
