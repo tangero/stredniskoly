@@ -8,6 +8,8 @@ nad syntetickým souborem uchazečů, aby test pokryl i zpracování.
 from __future__ import annotations
 
 import datetime as dt
+import functools
+import hashlib
 import http.server
 import json
 import os
@@ -16,6 +18,7 @@ import subprocess
 import sys
 import tempfile
 import threading
+import zipfile
 from unittest import mock
 import unittest
 from pathlib import Path
@@ -57,6 +60,30 @@ def syntetika_uchazecu(cesta: Path, list_: str = "Sheet 1", bez_sloupce: str | N
             radek.update(ss1_prijat=prijat_jako(2), ss1_duvod_neprijeti="prijat_na_vyssi_prioritu", c_m_procentni_skor=180)
         ws.append([radek.get(s) for s in hlavicka])
     wb.save(cesta)
+
+
+def syntetika_gtfs(cesta: Path, odjezdy: tuple[str, ...] = ("07:00:00", "07:20:00"), navic: str = "") -> bytes:
+    """Linka 1 přes tři smyšlené zastávky, každý den od prosince 2026 do konce roku 2027."""
+    trips = "".join(f"1,VSE,T{i}\n" for i in range(len(odjezdy)))
+    stop_times = ""
+    for i, odjezd in enumerate(odjezdy):
+        h, m, _ = odjezd.split(":")
+        for poradi, (zastavka, posun) in enumerate((("A", 0), ("B", 4), ("C", 9))):
+            cas = f"{int(h):02d}:{int(m) + posun:02d}:00"
+            stop_times += f"T{i},{cas},{cas},{zastavka},{poradi + 1}\n"
+    soubory = {
+        "routes.txt": "route_id,route_short_name\n1,1\n",
+        "trips.txt": "route_id,service_id,trip_id\n" + trips,
+        "stops.txt": "stop_id,stop_name,stop_lat,stop_lon\nA,Alfa,50.1,14.4\nB,Beta,50.11,14.41\nC,Gama,50.12,14.42\n",
+        "stop_times.txt": "trip_id,arrival_time,departure_time,stop_id,stop_sequence\n" + stop_times,
+        "calendar.txt": "service_id,monday,tuesday,wednesday,thursday,friday,saturday,sunday,start_date,end_date\n"
+                        "VSE,1,1,1,1,1,1,1,20261201,20271231\n",
+        "feed_info.txt": f"feed_publisher_name\ntest{navic}\n",
+    }
+    with zipfile.ZipFile(cesta, "w") as zf:
+        for jmeno, obsah in soubory.items():
+            zf.writestr(jmeno, obsah)
+    return cesta.read_bytes()
 
 
 class FalesnyServer:
@@ -486,6 +513,11 @@ class TestDatovaLinka(unittest.TestCase):
         with self.assertRaises(RuntimeError):
             predani.predej(u, self.registr, nanecisto=True)
 
+    def test_schvalena_uloha_bez_chyby_predani_se_neotevre(self):
+        _, u = self.schvalena_uloha_uchazecu()
+        with self.assertRaises(ValueError):
+            jadro.znovu_otevri(u, "úloha ještě neselhala")
+
     def test_predani_nanecisto_nevola_git(self):
         _, u = self.schvalena_uloha_uchazecu()
 
@@ -534,8 +566,9 @@ class TestDatovaLinka(unittest.TestCase):
         syntetika_uchazecu(self.tmp / "jiny.xlsx", list_="jiny")
         self.server.soubory["/U/PZ2026_uchazeci.xlsx"] = (200, (self.tmp / "jiny.xlsx").read_bytes(), "Thu, 21 May 2026 10:00:00 GMT")
         runner = lambda *a, **kw: SimpleNamespace(returncode=0, stdout="", stderr="")  # noqa: E731
-        with self.assertRaisesRegex(RuntimeError, "zdroj se od schválení změnil"):
-            predani.predej(u, self.registr, nanecisto=False, runner=runner)
+        for _ in range(2):  # ani opakované předání neschválený soubor nepředá
+            with self.assertRaisesRegex(RuntimeError, "zdroj se od schválení změnil"):
+                predani.predej(u, self.registr, nanecisto=False, runner=runner)
         self.assertEqual(u["stav"], "schvaleno")
 
     def test_nepodporovana_sada_se_preda_bez_souboru(self):
@@ -562,6 +595,179 @@ class TestDatovaLinka(unittest.TestCase):
         self.assertIn("predani_chyba", ulozena)
         hlaseni = [z["text"] for z in self.server.telegram_odeslano if "předání selhalo" in z["text"]]
         self.assertEqual(len(hlaseni), 1, "stejná chyba se hlásí jen jednou")
+
+    # ------------------------------------------------------------ jízdní řády
+
+    def sada_jizdnich_radu(self):
+        """Sada doprava-gtfs: pevná adresa, zdroj vychází denně, období podle jízdního řádu."""
+        self.server.soubory["/J/gtfs.zip"] = (200, syntetika_gtfs(self.tmp / "gtfs.zip"), "Mon, 14 Dec 2026 03:00:00 GMT")
+        self.registr["sady"]["doprava-gtfs"] = {
+            "nazev": "test", "dokumentace": "docs/zdroje-dat.md", "cyklus": "rucni", "pouziti": "web",
+            "zobrazeno": {"obdobi": "2026-02-07"}, "ocekavano": {"obdobi": None, "kdy": None, "jistota": "neznamo"},
+            "po_prepnuti": "", "vystupy": [], "ukazatele": [],
+            "aktualizace": {"automatizace": "priprava", "lidsky_krok": "", "sledovat": [self.server.adresa + "/J/gtfs.zip"],
+                            "revize_oznamovat": False, "obdobi": "jizdni-rad"},
+        }
+
+    def uloha_jizdnich_radu(self):
+        os.environ["LINKA_DNES"] = "2026-12-14"
+        fronta, _ = self.zjisti()
+        u = self.ulohy_podle_sady(fronta)["doprava-gtfs"]
+        u["historie"][-1]["cas"] = "2026-12-14T05:30:00+00:00"  # referenční pondělí se odvozuje i z data otevření
+        return fronta, u
+
+    def priprav_jizdni_rady(self, u, stavajici: Path | None = None):
+        zpracovatel = functools.partial(zpracovani.zpracuj_jizdni_rady, stavajici=stavajici or self.tmp / "zadny-graf.json")
+        with mock.patch.dict(zpracovani.ZPRACOVATELE, {"doprava-gtfs": zpracovatel}):
+            zpracovani.priprav(u, self.registr)
+
+    def test_jizdni_rady_zalozi_ulohu_jen_po_zmene_jizdniho_radu(self):
+        self.sada_jizdnich_radu()
+        fronta, _ = self.zjisti()  # 13. 9. 2026: platí jízdní řád od 14. 12. 2025, na webu je únor 2026
+        self.assertNotIn("doprava-gtfs", self.ulohy_podle_sady(fronta))
+        os.environ["LINKA_DNES"] = "2026-12-08"  # ruční běh v týdnu před změnou úlohu ještě nezaloží
+        fronta, _ = self.zjisti()
+        self.assertNotIn("doprava-gtfs", self.ulohy_podle_sady(fronta))
+        jadro.uloz_frontu(fronta)
+        fronta, u = self.uloha_jizdnich_radu()
+        self.assertEqual((u["druh"], u["obdobi"]), ("nove_obdobi", "2026-12-13"))
+        jadro.uloz_frontu(fronta)
+        # Zdroj vyjde další den znovu: tatáž úloha, žádná nová.
+        stav, data, _ = self.server.soubory["/J/gtfs.zip"]
+        self.server.soubory["/J/gtfs.zip"] = (stav, data, "Tue, 15 Dec 2026 03:00:00 GMT")
+        os.environ["LINKA_DNES"] = "2026-12-21"
+        _, beh = self.zjisti()
+        self.assertEqual(beh["nove_ulohy"], [])
+
+    def test_selhana_priprava_jizdnich_radu_se_zkusi_znovu(self):
+        self.sada_jizdnich_radu()
+        fronta, u = self.uloha_jizdnich_radu()
+        jadro.zmen_stav(u, "selhalo", "zdroj ještě nepokrývá nové pondělí")
+        jadro.uloz_frontu(fronta)
+        os.environ["LINKA_DNES"] = "2026-12-21"
+        fronta, beh = self.zjisti()
+        self.assertEqual(beh["nove_ulohy"], [u["kod"]])
+        self.assertEqual(fronta["ulohy"][u["kod"]]["stav"], "zjisteno")
+
+    def test_znovu_otevrena_uloha_jizdnich_radu_vezme_cerstve_pondeli(self):
+        self.sada_jizdnich_radu()
+        _, u = self.uloha_jizdnich_radu()
+        jadro.zmen_stav(u, "selhalo", "předání: výstup se od schválení změnil")
+        jadro.znovu_otevri(u, "referenční pondělí už zdroj nepokrývá")
+        u["historie"][-1]["cas"] = "2027-01-05T08:00:00+00:00"
+        self.priprav_jizdni_rady(u)
+        graf = json.loads(Path(next(iter(u["priprava"]["zpracovani"]["predani"]))).read_text(encoding="utf-8"))
+        self.assertEqual(graf["metadata"]["reference_date"], "2027-01-11")
+
+    def test_zmizely_zdroj_jizdnich_radu_se_ohlasi_hned(self):
+        self.sada_jizdnich_radu()
+        del self.server.soubory["/J/gtfs.zip"]
+        fronta, _ = self.zjisti()
+        self.assertEqual(self.ulohy_podle_sady(fronta)["doprava-gtfs"]["druh"], "zmizelo")
+
+    def test_priprava_jizdnich_radu_postavi_graf(self):
+        self.sada_jizdnich_radu()
+        _, u = self.uloha_jizdnich_radu()
+        self.priprav_jizdni_rady(u)
+        self.assertEqual(u["stav"], "pripraveno", u.get("priprava"))
+        zpr = u["priprava"]["zpracovani"]
+        graf = json.loads(Path(next(iter(zpr["predani"]))).read_text(encoding="utf-8"))
+        self.assertEqual(list(zpr["predani"].values()), ["data/transit_graph.json"])
+        self.assertEqual(graf["metadata"]["reference_date"], "2026-12-14")
+        self.assertEqual(graf["metadata"]["source_published"], "2026-12-14")
+        self.assertEqual(sorted(graf["stops"]), ["A", "B", "C"])
+        self.assertFalse((self.tmp / "prace" / u["kod"] / "GTFS").exists(), "rozbalená data se po stavbě mažou")
+        self.assertIn("referenční pondělí 2026-12-14", komunikace.text_ulohy(u))
+
+    def test_jizdni_rady_neprevezmou_soubory_z_predchoziho_pokusu(self):
+        self.sada_jizdnich_radu()
+        _, u = self.uloha_jizdnich_radu()
+        zbytky = self.tmp / "prace" / u["kod"] / "GTFS"
+        zbytky.mkdir(parents=True)
+        # Výjimka ze starého vydání by spoj v referenční pondělí zrušila.
+        (zbytky / "calendar_dates.txt").write_text("service_id,date,exception_type\nVSE,20261214,2\n")
+        self.priprav_jizdni_rady(u)
+        self.assertEqual(u["stav"], "pripraveno", u.get("priprava"))
+        self.assertFalse(zbytky.exists())
+
+    def test_jizdni_rady_s_mensim_pokrytim_nez_web_selzou(self):
+        self.sada_jizdnich_radu()
+        web = self.tmp / "web-graf.json"
+        stanice = {f"S{i}": [f"S{i}", 49.2, 16.6] for i in range(40)}
+        web.write_text(json.dumps({"metadata": {}, "stops": stanice, "edges": {s: [] for s in stanice}, "headways": {}}))
+        _, u = self.uloha_jizdnich_radu()
+        self.priprav_jizdni_rady(u, stavajici=web)
+        self.assertEqual(u["stav"], "selhalo")
+        self.assertIn("stations with departures: 2 vs 40", u["priprava"]["chyba"])
+
+    def test_predani_jizdnich_radu_porovna_otisk_grafu(self):
+        self.sada_jizdnich_radu()
+        fronta, u = self.uloha_jizdnich_radu()
+        self.priprav_jizdni_rady(u)
+        komunikace.oznam(fronta, [], nanecisto=False)
+        komunikace.uplatni_rozhodnuti(fronta, [{"od": "t", "povoleny": True, "cas": jadro.ted(), "text": f"schvaluji {u['kod']}"}], "test")
+        runner = lambda prikaz, **kw: SimpleNamespace(returncode=0, stdout="https://github.com/test/pr/2" if prikaz[:2] == ["gh", "pr"] else "", stderr="")  # noqa: E731
+        zpracovatel = functools.partial(zpracovani.zpracuj_jizdni_rady, stavajici=self.tmp / "zadny-graf.json")
+        # Pracovní soubory chybí (další běh v GitHub Actions) a zdroj mezitím vyšel znovu s jiným otiskem.
+        shutil.rmtree(self.tmp / "prace")
+        self.server.soubory["/J/gtfs.zip"] = (200, syntetika_gtfs(self.tmp / "gtfs.zip", odjezdy=("07:30:00",)), "Wed, 16 Dec 2026 03:00:00 GMT")
+        with mock.patch.dict(zpracovani.ZPRACOVATELE, {"doprava-gtfs": zpracovatel}):
+            schvaleny_otisk = u["priprava"]["zpracovani"]["otisk_vystupu"]
+            for _ in range(2):  # ani opakované předání neschválený graf nepředá
+                with self.assertRaisesRegex(RuntimeError, "výstup se od schválení změnil"):
+                    predani.predej(u, self.registr, nanecisto=False, runner=runner)
+            self.assertEqual(u["stav"], "schvaleno")
+            self.assertEqual(u["priprava"]["zpracovani"]["otisk_vystupu"], schvaleny_otisk)
+            self.assertFalse(any(Path(z).exists() for z in u["priprava"]["zpracovani"]["predani"]))
+            # Nové vydání beze změny spojů: graf je stejný, předá se, i když se otisk ZIPu liší.
+            self.server.soubory["/J/gtfs.zip"] = (200, syntetika_gtfs(self.tmp / "gtfs.zip", navic=" 2"), "Thu, 17 Dec 2026 03:00:00 GMT")
+            vysledek = predani.predej(u, self.registr, nanecisto=False, runner=runner)
+        self.assertEqual(u["stav"], "predano")
+        self.assertEqual(list(vysledek["plan"]["soubory"].values()), ["data/transit_graph.json"])
+        self.assertIn(u["priprava"]["stazeno"]["sha256"], vysledek["plan"]["telo"], "popis PR nese otisk znovu staženého zdroje")
+        self.assertIn(hashlib.sha256((self.tmp / "gtfs.zip").read_bytes()).hexdigest(), vysledek["plan"]["telo"])
+        self.assertTrue(vysledek["plan"]["vetev"].startswith("data/doprava-gtfs-2026-12-13-"))
+
+    def test_zmeneny_graf_lze_po_chybe_predani_znovu_otevrit_prikazem(self):
+        self.sada_jizdnich_radu()
+        fronta, u = self.uloha_jizdnich_radu()
+        self.priprav_jizdni_rady(u)
+        komunikace.oznam(fronta, [], nanecisto=False)
+        komunikace.uplatni_rozhodnuti(fronta, [{"od": "t", "povoleny": True, "cas": jadro.ted(), "text": f"schvaluji {u['kod']}"}], "test")
+        stare_rozhodnuti = u["rozhodnuti"].copy()
+        # CLI běží nad stejným syntetickým grafem a skutečnými skripty, bez gitu a vnější sítě.
+        (self.tmp / "data").mkdir()
+        shutil.copyfile(next(iter(u["priprava"]["zpracovani"]["predani"])), self.tmp / "data/transit_graph.json")
+        (self.tmp / "scripts").symlink_to(KOREN / "scripts", target_is_directory=True)
+        Path(os.environ["LINKA_REGISTR"]).write_text(json.dumps(self.registr), encoding="utf-8")
+        jadro.uloz_frontu(fronta)
+        shutil.rmtree(self.tmp / "prace")
+        self.server.soubory["/J/gtfs.zip"] = (200, syntetika_gtfs(self.tmp / "gtfs.zip", odjezdy=("07:30:00",)), "Wed, 16 Dec 2026 03:00:00 GMT")
+        prikaz = [sys.executable, str(KOREN / "scripts/datova-linka.py")]
+        env = {**os.environ, "LINKA_KOREN": str(self.tmp)}
+        r = subprocess.run([*prikaz, "predej", u["kod"]], capture_output=True, text=True, env=env)
+        self.assertNotEqual(r.returncode, 0)
+        self.assertIn("výstup se od schválení změnil", r.stderr)
+        ulozena = jadro.nacti_frontu()["ulohy"][u["kod"]]
+        self.assertEqual(ulozena["stav"], "schvaleno")
+        self.assertIn("predani_chyba", ulozena)
+        r = subprocess.run([*prikaz, "znovu", u["kod"], "--duvod", "zdroj už nepokrývá původní pondělí"], capture_output=True, text=True, env=env)
+        self.assertEqual(r.returncode, 0, r.stderr)
+        fronta = jadro.nacti_frontu()
+        u = fronta["ulohy"][u["kod"]]
+        self.assertEqual(u["stav"], "zjisteno")
+        self.assertNotIn("rozhodnuti", u)
+        self.assertNotIn("predani_chyba", u)
+        self.assertIn("predani_chyba", u["predchozi_kola"][-1])
+        u["historie"][-1]["cas"] = "2027-01-05T08:00:00+00:00"
+        self.server.soubory["/J/gtfs.zip"] = (200, syntetika_gtfs(self.tmp / "gtfs.zip"), "Tue, 5 Jan 2027 03:00:00 GMT")
+        self.priprav_jizdni_rady(u)
+        graf = json.loads(Path(next(iter(u["priprava"]["zpracovani"]["predani"]))).read_text())
+        self.assertEqual(graf["metadata"]["reference_date"], "2027-01-11")
+        komunikace.oznam(fronta, [], nanecisto=False)
+        u["oznameni"]["cas"] = "2027-01-05T09:00:00+00:00"
+        komunikace.uplatni_rozhodnuti(fronta, [{"od": "t", "povoleny": True, "cas": stare_rozhodnuti["cas"], "text": f"schvaluji {u['kod']}"}], "test")
+        self.assertEqual(u["stav"], "oznameno", "staré rozhodnutí nové oznámení neschválí")
 
     # ------------------------------------------------------------ příkazová řádka
 

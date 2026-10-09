@@ -127,16 +127,17 @@ ZNOVU_OTEVRITELNE = ("predano", "bez_zmeny", "zamitnuto", "selhalo")
 
 
 def znovu_otevri(uloha: dict, duvod: str) -> None:
-    """Vrátí uzavřenou úlohu do stavu zjisteno, například když sada mezitím dostala zpracovatele.
+    """Vrátí uzavřenou úlohu nebo schválenou úlohu s chybou předání do stavu zjisteno.
 
     Předchozí přípravu, oznámení a rozhodnutí úloha nezapomene: přesunou se do předchozích kol.
     Nové schválení platí jen pro nové oznámení, starší zprávy se ignorují.
     """
     if not duvod.strip():
         raise ValueError("znovuotevření vyžaduje důvod")
-    if uloha["stav"] not in ZNOVU_OTEVRITELNE:
-        raise ValueError(f"{uloha['kod']}: znovu otevřít lze jen úlohu ve stavu {', '.join(ZNOVU_OTEVRITELNE)}, stav je {uloha['stav']}")
-    kolo = {k: uloha.pop(k) for k in ("priprava", "oznameni", "issue", "rozhodnuti", "predani") if k in uloha}
+    selhalo_predani = uloha["stav"] == "schvaleno" and bool(uloha.get("predani_chyba"))
+    if uloha["stav"] not in ZNOVU_OTEVRITELNE and not selhalo_predani:
+        raise ValueError(f"{uloha['kod']}: znovu otevřít lze jen úlohu ve stavu {', '.join(ZNOVU_OTEVRITELNE)} nebo schválenou s chybou předání, stav je {uloha['stav']}")
+    kolo = {k: uloha.pop(k) for k in ("priprava", "oznameni", "issue", "rozhodnuti", "predani", "predani_chyba") if k in uloha}
     kolo["stav"] = uloha["stav"]
     uloha.setdefault("predchozi_kola", []).append(kolo)
     zmen_stav(uloha, "zjisteno", f"znovu otevřeno: {duvod.strip()}")
@@ -161,6 +162,24 @@ def rozvin(vzor: str, den: dt.date) -> list[tuple[str | None, str]]:
                     konce.append(datum.isoformat())
         return [(k, vzor.replace("{ctvrtleti}", k)) for k in konce[-5:]]
     return [(None, vzor)]
+
+
+def zacatek_jizdniho_radu(den: dt.date) -> dt.date:
+    """Začátek ročního jízdního řádu platného v daný den: druhá neděle v prosinci."""
+    def druha_nedele(rok: int) -> dt.date:
+        prvni = dt.date(rok, 12, 1)
+        return prvni + dt.timedelta(days=(6 - prvni.weekday()) % 7 + 7)
+    zacatek = druha_nedele(den.year)
+    return zacatek if den >= zacatek else druha_nedele(den.year - 1)
+
+
+def obdobi_jizdniho_radu(den: dt.date) -> str:
+    """Období sady s pevnou adresou, která se publikuje denně (`aktualizace.obdobi: jizdni-rad`).
+
+    Obdobím je začátek jízdního řádu platného v den běhu, takže nová úloha vznikne
+    jednou za rok až po celostátní změně, ne s každým denním vydáním ani před změnou.
+    """
+    return zacatek_jizdniho_radu(den).isoformat()
 
 
 def porovnej(a: str | None, b: str | None) -> int | None:
@@ -198,17 +217,21 @@ def zjisti(registr: dict, fronta: dict, head_fn=head) -> dict:
             continue
         zobrazeno = sada.get("zobrazeno", {}).get("obdobi")
         reference = referencni_datum(sada)
+        jizdni_rad = akt.get("obdobi") == "jizdni-rad"
         kandidati = []  # (druh, obdobi, url, last_modified)
         for vzor in vzory:
             dostupne = []
             for obdobi, url in rozvin(vzor, den):
+                pevna = obdobi is None
+                if pevna and jizdni_rad:
+                    obdobi = obdobi_jizdniho_radu(den)
                 stav, zmena = head_fn(url)
                 zname = fronta["zname"].get(url)
                 if stav == 200:
                     dostupne.append((obdobi, url, zmena))
                 elif stav == 404:
                     # Zmizelý zdroj: pevná adresa, nebo adresa, která dříve existovala.
-                    if obdobi is None or (zname and zname.get("stav") == 200):
+                    if pevna or (zname and zname.get("stav") == 200):
                         kandidati.append(("zmizelo", obdobi or zobrazeno, url, ""))
                     fronta["zname"][url] = {"stav": 404, "zjisteno": den.isoformat()}
                     continue
@@ -219,8 +242,8 @@ def zjisti(registr: dict, fronta: dict, head_fn=head) -> dict:
             for obdobi, url, zmena in dostupne:
                 zname = fronta["zname"].get(url)
                 cmp = porovnej(obdobi, zobrazeno)
-                if zname and zname.get("last_modified") == zmena:
-                    pass
+                if zname and zname.get("last_modified") == zmena and not jizdni_rad:
+                    pass  # u jízdního řádu určuje období datum, ne soubor; duplicitu hlídá kód úlohy
                 elif obdobi is not None and (zobrazeno is None or cmp == 1):
                     kandidati.append(("nove_obdobi", obdobi, url, zmena))
                 elif cmp == 0 or obdobi is None:
@@ -240,12 +263,18 @@ def zjisti(registr: dict, fronta: dict, head_fn=head) -> dict:
             kandidati = [k for k in kandidati if k[0] != "revize"]
 
         for druh, obdobi, url, zmena in kandidati:
-            k = kod(sid, str(obdobi), druh, url, zmena)
+            # Denně publikovaný zdroj: jedna úloha na období, ne na každé vydání.
+            k = kod(sid, str(obdobi), druh, url, "" if jizdni_rad else zmena)
             zaznam = {"sada": sid, "druh": druh, "obdobi": obdobi, "url": url, "last_modified": zmena}
             if sada.get("pouziti") not in UKOLOVE_POUZITI:
                 beh["informace"].append(zaznam)
                 continue
             if k in fronta["ulohy"]:
+                # Jízdní řád má jednu úlohu na rok; selhaná příprava (zdroj ještě nepokrýval nové
+                # pondělí, výpadek) se proto zkusí znovu při dalším zjištění.
+                if jizdni_rad and fronta["ulohy"][k]["stav"] == "selhalo":
+                    znovu_otevri(fronta["ulohy"][k], "nový pokus po selhání přípravy")
+                    beh["nove_ulohy"].append(k)
                 continue
             uloha = {"kod": k, **zaznam, "vytvoreno": ted(), "zobrazene_obdobi": zobrazeno}
             zmen_stav(uloha, "zjisteno")
