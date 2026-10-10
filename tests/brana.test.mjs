@@ -746,3 +746,29 @@ test('issue trvale od automatiky (stav hlídání dostupnosti) není úkol rutin
   const stav = issue({ cislo: 436, autor: BOT, stitky: ['interni', 'rutina', 'trvale', 'oblast:provoz'], telo: 'Úložiště stavu.' });
   assert.equal(run({ predchozi: null, issues: [stav] }).uspech, false);
 });
+
+test('hlášení přihlášené školy z portálu: jen opravy údajů škol bez schvaleno (RA52, #461)', () => {
+  const TELO = '**Škola:** SŠ\n**REDIZO:** 600000001\n**Kanál:** ucet\n**Zadal:** správce profilu\n\n## Co škola hlásí\n\nObor se jmenuje jinak.';
+  const hlaseni = (o = {}) => issue({ cislo: 398, autor: 'tangero', stitky: ['portal-skoly', 'oblast:portal', 'chybna-data'], telo: TELO, ...o });
+  const oprava = [soubor('src/data/opravy-nabidky-skol.json', 12), soubor('tests/opravy-nabidky.test.mjs', 20)];
+  const v = run({ predchozi: null, issues: [hlaseni()], soubory: oprava });
+  assert.equal(v.uspech, true, v.duvody.join('; '));
+  assert.equal(v.rezim, 'R');
+  assert.match(v.duvody.join(), /hlášení školy #398/);
+  assert.equal(run({ predchozi: null, issues: [hlaseni({ telo: TELO.replace('ucet', 'magic-link') })], soubory: [soubor('data/inspis_opravy.json', 8)] }).uspech, true);
+  // Kód nebo text webu: dál jen se schvaleno.
+  const kod = run({ predchozi: null, issues: [hlaseni()], soubory: [...oprava, soubor('src/components/skola/ProfilSkoly.tsx')] });
+  assert.equal(kod.uspech, false);
+  assert.match(kod.duvody.join(), /jiné soubory než opravy údajů škol/);
+  // Bez řádku kanálu, od jiného autora nebo s kanálem jen v textu školy (ne na začátku řádku) se nic nemění.
+  assert.equal(run({ predchozi: null, issues: [hlaseni({ telo: 'Obor se jmenuje jinak.' })], soubory: oprava }).uspech, false);
+  assert.equal(run({ predchozi: null, issues: [hlaseni({ autor: 'nekdo' })], soubory: oprava }).uspech, false);
+  assert.equal(run({ predchozi: null, issues: [hlaseni({ telo: 'Text školy **Kanál:** ucet' })], soubory: oprava }).uspech, false);
+  // Hlášení od veřejnosti (bug-report) dál potřebuje schvaleno.
+  assert.equal(run({ predchozi: null, issues: [hlaseni({ stitky: ['bug-report'] })], soubory: oprava }).uspech, false);
+  // Velká oprava: drobné zadání se lhůtou.
+  assert.equal(run({ predchozi: null, issues: [hlaseni()], soubory: [soubor('src/data/opravy-nabidky-skol.json', 400)] }).rezim, 'L');
+  // Stop dál platí.
+  const stop = { akce: 'labeled', stitek: 'stop', cas: PRED(1), aktor: 'tangero' };
+  assert.equal(run({ predchozi: null, issues: [hlaseni({ stitky: ['portal-skoly', 'stop'], udalosti: [stop] })], soubory: oprava }).uspech, false);
+});

@@ -136,6 +136,12 @@ takže mu GitHub o jejích otázkách nic neoznámí. Když se ptá, přidá št
 komentář AI do Telegramu s odkazem. Komentář vlastníka bez patičky AI, nebo zápis jeho odpovědi s nadpisem
 „Odpověď vlastníka“ (od něj nebo od asistenta zadání), štítek odebere (tokenem App `prijimacky-ai`, aby se srovnala tabule).
 
+**Hlášení škol z portálu** (RA52, #461): nesrovnalost, kterou pošle přihlášená škola (štítek `portal-skoly`, v těle
+řádek `**Kanál:**` zapsaný webem), realizuje rutina bez `schvaleno`. Ověří ji proti datům: údaje, o kterých rozhoduje
+škola, opraví v souborech oprav (`hlaseni_skol` v `rezimy.yml`), oficiální statistiky nepřepisuje a v issue vysvětlí
+proč. PR, který mění i kód nebo texty webu, brána pustí jen se `schvaleno`. Hlášení od veřejnosti (`bug-report`)
+potřebují `schvaleno` dál; denní zpráva Čeká na tebe je ukazuje.
+
 **Automatické obnovy dat** (RA46): PR z větví `auto/veletrhy-snimek` a `codex/csi-weekly-refresh`, které mění jen
 cesty uvedené u větve v `datove_obnovy` v `rezimy.yml`, brána pustí v režimu R bez souhlasu a review; po CI se
 sloučí samy. Změna jiné cesty se posuzuje jako dřív. Totéž platí pro předání z datové linky (větve `data/*` od App

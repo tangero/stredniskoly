@@ -68,6 +68,12 @@ Termín: RRRR-MM-DD
 
 S / M / L
 
+### Závisí na
+
+<!-- Nepovinné. Řádek `Závisí na #N` (jedno nebo víc čísel); issue se nerealizuje, dokud není závislost zavřená. Nic nezávisí → oddíl smaž. -->
+
+Závisí na #N
+
 ### Související odkazy
 
 …
