@@ -29,10 +29,18 @@ export function jeOdpoved(k, { vlastnik, asistent }) {
   return k.autor === asistent && ODPOVED.test(telo);
 }
 
-/** Text otázky: poslední komentář vlastníka nebo asistenta s patičkou AI, který není odpovědí; bez patičky, zkrácený. */
+// Komentář, který se opravdu ptá: nadpis nebo věta s „otázka“, nebo řádek končící otazníkem (#461). Bez něj
+// by se poslal poslední komentář AI, třeba ohlášení stahování.
+const PTA_SE = /otázk|^[^\n]*\?\s*$/im;
+
+/**
+ * Text otázky: poslední komentář vlastníka nebo asistenta s patičkou AI, který není odpovědí a ptá se; když se
+ * žádný neptá, poslední komentář AI. Bez patičky, zkrácený.
+ */
 export function textOtazky(komentare, ucty) {
-  const otazka = [...komentare].reverse().find((k) => [ucty.vlastnik, ucty.asistent].includes(k.autor)
+  const kandidati = [...komentare].reverse().filter((k) => [ucty.vlastnik, ucty.asistent].includes(k.autor)
     && PATICKA_AI.test(k.telo || '') && !ODPOVED.test(k.telo || ''));
+  const otazka = kandidati.find((k) => PTA_SE.test(k.telo.split(/\n-{3,}\s*\n/)[0])) || kandidati[0];
   if (!otazka) return '';
   const t = otazka.telo.split(/\n-{3,}\s*\n/)[0].replace(/<!--[\s\S]*?-->/g, '').replace(/\*\*/g, '').replace(/`/g, '').trim();
   return t.length > MAX_TEXT ? `${t.slice(0, MAX_TEXT - 1)}…` : t;

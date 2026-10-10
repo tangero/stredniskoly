@@ -25,7 +25,7 @@ Zadání píše Eduarda jako issue se štítkem `interni` (formulář `.github/I
 tělo `.github/INTERNAL_TEMPLATES/interni-zadani.md`), schvaluje je Patrick. Štítky, formuláře, tabuli projektu
 a ochranu `main` popisuje `docs/spoluprace-na-githubu.md`. Pro práci platí:
 
-- **Nerealizuj** issue se štítkem `navrh`, `zamitnuto`, `stop` nebo `oponentura`, připomínku (`pripominka`)
+- **Nerealizuj** issue se štítkem `navrh`, `zamitnuto`, `stop`, `oponentura` nebo `trvale` (úložiště stavu automatiky, nezavírat), připomínku (`pripominka`)
   před termínem a do PR se štítkem `potrebuje-cloveka` nepiš další `@claude`.
 - **Štítky `schvaleno` a `zamitnuto` nepřidávej nikdy**; `stop` odebírá jen ten, kdo ho přidal, nebo Patrick.
 

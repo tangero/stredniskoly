@@ -708,6 +708,7 @@ ověří ho měřítka.
 | RA44 | Oponentura jen při rozjezdu nového projektu, ručně štítkem `oponentura`: vlastník popíše problém bez řešení, Claude Code ho prozkoumá (i na webu), Claude a Kimi K3 nezávisle navrhnou řešení, navzájem je anonymně posoudí z pohledu hodnot projektu a person a syntéza předloží 2 až 3 varianty s rozhodujícím testem; vlastník vybere. Nahrazuje jednokrokovou oponenturu z RA43 | **ano** (rozhodnutí vlastníka) |
 | RA45 | Protokol z preview se nevyžaduje: PR se změnou webu se slučuje automaticky po bráně (CI, review); vlastník po nasazení dostane do Telegramu oddíl „Pro vlastníka“ z popisu PR (2 až 3 věty) s adresami na webu, každý PR jednou. Blokuje jen protokol s „nesplněno“. Nahrazuje RA42 | **ano** (rozhodnutí vlastníka) |
 | RA49 | Autonomní trasy (#440): issue se štítkem `rutina` od automatiky repozitáře (github-actions[bot]: výpadek, regrese) se realizuje bez dokladu „Zdroj:“, v limitu rutiny jako R, jinak L; předání z datové linky (větev `data/*` od App, jen výstupy linky) projde jako automatická obnova dat, potvrzení kódem je souhlas; denní zpráva „Čeká na tebe“ do Telegramu; selhání oponentury do Telegramu a odebrání štítku; tep rutiny s upozorněním po 12 h ticha; nápady AI jdou přes `navrh` k vlastníkovi a bez souhlasu se nerealizují (nahrazuje lhůtu od představení z RA22) | **ano** (rozhodnutí vlastníka, 8. 10. 2026) |
+| RA51 | Plánovač (#461): plánované úlohy spouští cron-job.org každých 5 minut přes workflow Plánovač (jemný token vlastníka jen s právem Actions, mimo repozitář), plány GitHubu jsou záloha; tep rutiny jako úprava komentáře v issue Tep rutiny; issue `trvale` nejsou úkoly | **ano** (rozhodnutí vlastníka, 9. 10. 2026) |
 | RA52 | Hlášení přihlášené školy z portálu (#461) je oprava od školy: realizuje se bez `schvaleno`, PR smí měnit jen soubory s opravami údajů škol (`hlaseni_skol`), v limitu rutiny R, jinak L. Údaje, o kterých rozhoduje škola, AI opraví; oficiální statistiky podle tvrzení školy nepřepisuje a vysvětlí proč. Změna kódu nebo textů webu dál se `schvaleno` | **ano** (rozhodnutí vlastníka, 9. 10. 2026) |
 | RA50 | Automatické review PR modelem Kimi K3 (#455) místo asistentky zadání: workflow Review píše pro každou novou hlavu PR review v tvaru, který brána čte, a při P1/P2 žádost `@claude` o opravu; brána ho uzná od App `prijimacky-ai` jen se značkou `review.znacka_automatiky`; model jen čte, verdikt skládá skript; cesty K a H2 dál se souhlasem vlastníka (oddíl 9d) | **ano** (rozhodnutí vlastníka, 9. 10. 2026) |
 | RA48 | Drobné úkoly projektu jako zaškrtávací seznam v oddílu Etapy issue projektu (mimo Rozsah), PR „Souvisí s #N“; sub-issue jen pro úkol s vlastním rozhodnutím a pro hlášení (RA39). Nástěnka: hlavní pohled `no:parent-issue`, automatické archivování zavřených položek. Upravuje RA38 | **ano** (rozhodnutí vlastníka, 7. 10. 2026) |
@@ -742,6 +743,8 @@ Po čtyřech týdnech provozu části A:
 
 ## Změny návrhu
 
+- **0.13q** (9. 10. 2026, rozhodnutí vlastníka, zadání #461): plánovač přes cron-job.org, tep rutiny přes komentář,
+  issue `trvale` nejsou úkoly (RA51).
 - **0.13r** (9. 10. 2026, rozhodnutí vlastníka, zadání #461): hlášení přihlášené školy bez `schvaleno`, jen opravy
   údajů škol (RA52).
 - **0.13o** (8. 10. 2026, rozhodnutí vlastníka, zadání #440): rutina z automatického zjištění bez dokladu,

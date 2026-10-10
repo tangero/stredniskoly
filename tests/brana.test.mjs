@@ -742,6 +742,11 @@ test('review: automatické review nepustí cestu K bez souhlasu vlastníka (#455
   assert.equal(v.uspech, false);
 });
 
+test('issue trvale od automatiky (stav hlídání dostupnosti) není úkol rutiny (#461)', () => {
+  const stav = issue({ cislo: 436, autor: BOT, stitky: ['interni', 'rutina', 'trvale', 'oblast:provoz'], telo: 'Úložiště stavu.' });
+  assert.equal(run({ predchozi: null, issues: [stav] }).uspech, false);
+});
+
 test('hlášení přihlášené školy z portálu: jen opravy údajů škol bez schvaleno (RA52, #461)', () => {
   const TELO = '**Škola:** SŠ\n**REDIZO:** 600000001\n**Kanál:** ucet\n**Zadal:** správce profilu\n\n## Co škola hlásí\n\nObor se jmenuje jinak.';
   const hlaseni = (o = {}) => issue({ cislo: 398, autor: 'tangero', stitky: ['portal-skoly', 'oblast:portal', 'chybna-data'], telo: TELO, ...o });
