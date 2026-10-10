@@ -286,6 +286,25 @@ export function datovaObnova(pr, soubory, konfig, issues = []) {
   return soubory.every((s) => [s.nazev, s.puvodni].filter(Boolean).every((c) => shoda(c, povolene)));
 }
 
+// Řádek, který do těla issue píše jen server webu (src/app/api/portal-skoly/route.ts) podle ověřeného přístupu školy.
+const KANAL_SKOLY = /^\*\*Kanál:\*\*[ \t]*(ucet|magic-link|kod)[ \t]*$/m;
+
+/**
+ * Hlášení nesrovnalosti od školy z portálu (RA52, #461): štítek `portal-skoly`, issue založil web účtem vlastníka
+ * a v těle je kanál ověřeného přístupu školy (účet, odkaz na rejstříkovou adresu, přihlašovací kód). Text školy
+ * je jen podnět. Bez `schvaleno` smí PR měnit jen soubory s opravami údajů škol (`hlaseni_skol` v rezimy.yml).
+ */
+export function hlaseniSkoly(issue, konfig) {
+  return Boolean(issue) && (issue.stitky || []).includes('portal-skoly') && issue.autor === konfig.rezimy.vlastnik
+    && KANAL_SKOLY.test(issue.telo || '');
+}
+
+/** Mění PR jen soubory s opravami údajů škol? */
+export function jenOpravySkol(soubory, konfig) {
+  const povolene = konfig.rezimy.hlaseni_skol || [];
+  return soubory.length > 0 && soubory.every((s) => [s.nazev, s.puvodni].filter(Boolean).every((c) => shoda(c, povolene)));
+}
+
 /**
  * Issue, které založila automatika repozitáře se štítkem `rutina`: výpadek z hlídání dostupnosti
  * (scripts/provoz/dostupnost.mjs) nebo regrese z ověření v produkci (scripts/brana/overeni-produkce.mjs).
@@ -491,6 +510,13 @@ export function vyhodnot({ pr, soubory, issues, konfig, zamrznuti, ted, predchoz
           // projektu, text hlášení ji neřídí.
           ri = 'E';
           info.push(`hlášení #${i.cislo} patří ke schválenému projektu #${i.rodic.cislo}`);
+        } else if (hlaseniSkoly(i, konfig) && jenOpravySkol(soubory, konfig)) {
+          // Rozhodnutí vlastníka 9. 10. 2026 (RA52): hlášení přihlášené školy je oprava od školy.
+          ri = vRozsahuRutiny ? 'R' : 'L';
+          info.push(`hlášení školy #${i.cislo} z portálu, jen opravy údajů škol (RA52)${ri === 'L' ? '; přesahuje limit rutiny, běží jako drobné zadání' : ''}`);
+        } else if (hlaseniSkoly(i, konfig)) {
+          ri = 'K';
+          blokuje.push(`hlášení školy #${i.cislo}: PR mění i jiné soubory než opravy údajů škol (hlaseni_skol v rezimy.yml), potřebuje schvaleno (${s.duvod})`);
         } else {
           ri = 'K';
           blokuje.push(`issue #${i.cislo} pochází z hlášení; ve fázi 1 potřebuje schvaleno, nebo připojení ke schválenému projektu (${s.duvod})`);

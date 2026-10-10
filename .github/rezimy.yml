@@ -130,6 +130,14 @@ datove_obnovy:
     - public/maturita_skoly.json
     - data/transit_graph.json
 
+# Hlášení škol z portálu (RA52, #461): PR k hlášení přihlášené školy (štítek `portal-skoly`, kanál ověřeného přístupu
+# v těle issue od webu) projde bez `schvaleno`, jen když mění tyto cesty: soubory s opravami údajů škol a testy.
+# V limitu rutiny jako R, jinak L. Změna kódu nebo textů webu potřebuje `schvaleno` jako dřív.
+hlaseni_skol:
+  - src/data/opravy-nabidky-skol.json
+  - data/inspis_opravy.json
+  - tests/**
+
 # Změny jen v těchto cestách nepotřebují protokol z preview (web se nemění).
 bez_preview:
   - docs/**
