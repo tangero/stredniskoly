@@ -187,6 +187,9 @@ jobs:
         with:
           claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
           github_token: ${{ github.token }}
+          # Žádost o opravu z automatického review píše App (#455); akce boty jinak odmítne. Zda komentář
+          # opravu smí spustit, rozhodl už job Rozhodnutí skriptem z main (značka review).
+          allowed_bots: prijimacky-ai
           claude_args: >-
             --max-turns 80
             --allowedTools "Read,Edit,MultiEdit,Write,Glob,Grep,Bash(git status:*),Bash(git diff:*),Bash(git log:*),Bash(git add:*),Bash(git commit:*),Bash(npm test:*),Bash(npm run test:js:*),Bash(npm run test:mesto:*),Bash(npx tsc:*),Bash(npx eslint:*),Bash(node --experimental-strip-types --test:*)"
