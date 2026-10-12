@@ -408,6 +408,22 @@ export function ProfilSkoly({ data, skola, odkazy }: ProfilSkolyProps) {
           <Karta><p className="text-slate-700">Škola v 1. kole {rok} nevypsala obor s jednotnou přijímací zkouškou, který bychom měli v datech.</p></Karta>
         )}
 
+        {data.nedenniNastavby.length > 0 && (
+          <div id="nastavby" className="space-y-2 rounded-2xl border border-slate-200 bg-white p-5">
+            <h3 className="text-[18px] font-bold text-[#16325c]">Studium pro absolventy s výučním listem</h3>
+            <p className="text-[15px] text-slate-600">Škola nabízí také nástavbu, po které se skládá maturita, v dálkové, kombinované nebo distanční formě. Je určená těm, kdo už mají výuční list; přijímání jde mimo jednotnou zkoušku a v přehledu oborů výše ji proto nehledejte.</p>
+            <ul className="divide-y divide-slate-100">
+              {data.nedenniNastavby.map(n => (
+                <li key={`${n.obor}-${n.forma}`} className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-0.5 py-2">
+                  <span className="font-semibold text-slate-900">{n.obor}</span>
+                  <span className="text-[14px] text-slate-700">{n.forma} studium{n.delka !== null ? ` · ${delkaSlovy(n.delka)}` : ''}{n.kapacita !== null ? ` · ${pocetMist(n.kapacita, cislo)}` : ''}</span>
+                </li>
+              ))}
+            </ul>
+            <p className="text-[13px] text-slate-500">Zdroj: výsledky 1. kola {rok}, CERMAT.</p>
+          </div>
+        )}
+
         {(pole('kriteria_vlastnimi_slovy') || pole('odkaz_kriteria') || pole('dny_otevrenych_dveri') || pole('pripravne_kurzy')) ? (
           <div className="space-y-3 rounded-2xl border border-[#b5e0d4] bg-[#e6f5f1] p-5">
             <div className="flex flex-wrap items-baseline justify-between gap-2">
