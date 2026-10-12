@@ -19,10 +19,18 @@ test('PR uzavírá issue slovy Closes/Fixes/Resolves', () => {
   assert.deepEqual(uzavreneIssue('Souvisí s #5'), []);
 });
 
-test('věta o opravě vynechá pokyny pro vlastníka, jinak obecná věta', () => {
-  const telo = '## Pro vlastníka\nNa stránce školy už je správný počet míst. Ověříš na /skola/1-x.\n\n## Kontroly\n';
-  assert.equal(vetaOOprave(telo), 'Na stránce školy už je správný počet míst.');
-  assert.match(vetaOOprave('Closes #1'), /jsme opravili/);
+test('věta o opravě je z oddílu Pro oznamovatele celá, i s daty; Pro vlastníka se nepoužije', () => {
+  const telo = '## Pro vlastníka\nNa stránce školy uvidíš správný počet míst.\n\n'
+    + '## Pro oznamovatele\nTermín přijímacích zkoušek 1. kola je opravený na 30. 8. 2026 a 9. třída už vidí správné datum.\n\n## Kontroly\n';
+  assert.equal(vetaOOprave(telo), 'Termín přijímacích zkoušek 1. kola je opravený na 30. 8. 2026 a 9. třída už vidí správné datum.');
+  assert.equal(vetaOOprave('Closes #1\n\n## Pro vlastníka\nNa stránce uvidíš správný počet míst.'), '');
+  assert.equal(vetaOOprave('## Pro oznamovatele\nPočet míst je opravený. https://www.prijimackynaskolu.cz/skola/1-x'), 'Počet míst je opravený.');
+});
+
+test('bez věty e-mail nezdvojuje obecnou větu', () => {
+  const o = obsahEmailu({ veta: '', adresa: '' });
+  assert.equal((o.text.match(/nahlásili/g) || []).length, 1);
+  assert.doesNotMatch(o.text, /na webu\. \n/);
 });
 
 test('e-mail má větu o opravě a adresu, HTML je uvozené', () => {

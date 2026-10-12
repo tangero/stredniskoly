@@ -11,13 +11,13 @@
 import { pathToFileURL } from 'node:url';
 import { BOT } from './brana.mjs';
 import { REPO, vytvorApi } from './data.mjs';
-import { OKNO, cestyNaWebu, textProVlastnika } from './oznameni-nasazeni.mjs';
+import { OKNO, cestyNaWebu, oddil } from './oznameni-nasazeni.mjs';
 
 export const OD = Date.parse('2026-10-12T00:00:00Z');
 export const ZASTUPNY_TEXT = 'smazáno po vyřízení';
 export const LHUTA_DNI = 90;
 export const ZNACKA = (issue) => `<!-- oznameni-opravy issue=${issue} -->`;
-const OBECNA_VETA = 'Chybu, kterou jste nám nahlásili, jsme opravili.';
+export const MAX_VETA = 400;
 
 /** Čísla issue, která PR uzavírá (Closes/Fixes/Resolves #N), bez duplicit. */
 export function uzavreneIssue(telo = '') {
@@ -26,22 +26,21 @@ export function uzavreneIssue(telo = '') {
 }
 
 /**
- * Věta o opravě pro oznamovatele: oddíl „Pro vlastníka“ bez vět, které oslovují vlastníka (ověřování, kontrola).
- * Když nezbude nic, obecná věta.
+ * Věta o opravě pro oznamovatele: oddíl „Pro oznamovatele“ v popisu PR (vyká, bez adres). „Pro vlastníka“ se
+ * nepoužívá, protože tyká a mluví k vlastníkovi. Bez oddílu prázdný řetězec a e-mail má jen obecnou větu.
  */
 export function vetaOOprave(telo = '') {
-  const vety = textProVlastnika(telo)
-    .split(/(?<=[.!?])\s+/)
-    .filter((v) => v && !/^(ověř|zkontroluj|podívej|ověříš|uvidíš)/i.test(v) && !/https?:\/\/|\/api\//i.test(v));
-  const text = vety.join(' ').trim();
-  return text || OBECNA_VETA;
+  const text = oddil(telo, 'Pro oznamovatele')
+    .replace(/`/g, '').replace(/\*\*/g, '').replace(/\[([^\]]+)\]\([^)]+\)/g, '$1')
+    .replace(/https?:\/\/\S+/g, '').replace(/\s+/g, ' ').trim();
+  return text.length > MAX_VETA ? `${text.slice(0, MAX_VETA - 1)}…` : text;
 }
 
 const esc = (t) => String(t).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 
 export function obsahEmailu({ veta, adresa }) {
-  const text = `Dobrý den,\n\nchyba, kterou jste nám nahlásili, je opravená a oprava je na webu. ${veta}${adresa ? `\n\nOpravu uvidíte tady: ${adresa}` : ''}\n\nDěkujeme, že jste nám dali vědět.\nPřijímačky na školu`;
-  const html = `<p>Dobrý den,</p><p>chyba, kterou jste nám nahlásili, je opravená a oprava je na webu. ${esc(veta)}</p>${adresa ? `<p>Opravu uvidíte tady: <a href="${esc(adresa)}">${esc(adresa)}</a></p>` : ''}<p>Děkujeme, že jste nám dali vědět.<br>Přijímačky na školu</p>`;
+  const text = `Dobrý den,\n\nchyba, kterou jste nám nahlásili, je opravená a oprava je na webu.${veta ? ` ${veta}` : ''}${adresa ? `\n\nOpravu uvidíte tady: ${adresa}` : ''}\n\nDěkujeme, že jste nám dali vědět.\nPřijímačky na školu`;
+  const html = `<p>Dobrý den,</p><p>chyba, kterou jste nám nahlásili, je opravená a oprava je na webu.${veta ? ` ${esc(veta)}` : ''}</p>${adresa ? `<p>Opravu uvidíte tady: <a href="${esc(adresa)}">${esc(adresa)}</a></p>` : ''}<p>Děkujeme, že jste nám dali vědět.<br>Přijímačky na školu</p>`;
   return { predmet: 'Chyba, kterou jste nahlásili, je opravená', text, html };
 }
 
@@ -61,8 +60,11 @@ export async function oznamIssue(s, issue, { veta, adresa, posli, nanecisto = fa
     const { predmet, text, html } = obsahEmailu({ veta, adresa });
     const ok = await posli({ to: h.email, subject: predmet, text, html, klic: `hlaseni-oprava-${h.id}` });
     if (!ok) { selhalo += 1; continue; }
-    await s.dotaz(`update hlaseni_chyby set oznameno = now(), email = $2 where id = $1`, [h.id, ZASTUPNY_TEXT]);
     odeslano += 1;
+    // E-mail už odešel: selhání zápisu nesmí vést k dalšímu odeslání. Značka v issue to zastaví, id jde do výpisu
+    // k ručnímu smazání adresy.
+    await s.dotaz(`update hlaseni_chyby set oznameno = now(), email = $2 where id = $1`, [h.id, ZASTUPNY_TEXT])
+      .catch((e) => console.error(`Hlášení ${h.id}: e-mail odešel, zápis do databáze selhal (${e?.name ?? 'Error'}), adresu smaž ručně.`));
   }
   return { odeslano, selhalo };
 }
@@ -123,11 +125,11 @@ async function main() {
           veta: vetaOOprave(p.body || ''), adresa: cesta ? `${zakladni}${cesta}` : '', posli, nanecisto,
         });
         celkem += odeslano;
-        // Komentář bez adresy a bez počtu příjemců: jen značka, že se issue už vyřídilo.
-        // Při selhání odeslání značka chybí, další běh to zkusí znovu.
-        if (!nanecisto && !selhalo) {
+        // Komentář bez adresy a bez počtu příjemců: jen značka, že se issue už vyřídilo. Píše se jen po odeslání,
+        // takže issue bez hlášení v databázi neoznačí. Při selhání odeslání značka chybí, další běh to zkusí znovu.
+        if (!nanecisto && odeslano && !selhalo) {
           await api(`repos/${REPO}/issues/${cislo}/comments`, { method: 'POST', body: { body:
-            `Oznamovatel byl o opravě informován (pokud zadal platný e-mail).\n\n${ZNACKA(cislo)}\n\n— workflow Ověření v produkci (#441)` } });
+            `Oznamovatel dostal e-mail, že oprava je na webu.\n\n${ZNACKA(cislo)}\n\n— workflow Ověření v produkci (#441)` } });
         }
       }
     }
