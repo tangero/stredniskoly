@@ -17,6 +17,19 @@
         "zdroj": "oprava od školy 2026-10-08",
         "datum": "2026-10-08"
       }
+    },
+    "600005089": {
+      "vyuka_jazyku": {
+        "hodnota": [
+          "anglický",
+          "francouzský",
+          "latinský",
+          "německý",
+          "španělský"
+        ],
+        "zdroj": "hlášení z webu #466, 2026-10-10",
+        "datum": "2026-10-10"
+      }
     }
   }
 }
