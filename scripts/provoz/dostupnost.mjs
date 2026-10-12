@@ -214,7 +214,8 @@ export async function ulozStav(api, ulozeni, stav) {
     const i = await api(`repos/${REPO}/issues`, { method: 'POST', body: {
       title: NAZEV_STAVU,
       body: 'Úložiště stavu kontroly dostupnosti (#355). Komentář níže přepisuje workflow Dostupnost každých 5 minut; issue neupravovat ani nezavírat.',
-      labels: ['interni', 'rutina', 'oblast:provoz'],
+      // `trvale`: úložiště stavu, ne úkol pro rutinu (#461).
+      labels: ['interni', 'trvale', 'oblast:provoz'],
     } });
     issue = i.number;
   }

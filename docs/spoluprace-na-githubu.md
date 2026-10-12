@@ -154,12 +154,34 @@ pustí v režimu R (přes limit rutiny jako L).
 **Čeká na tebe** (`.github/workflows/ceka-na-tebe.yml`, `scripts/prehled/ceka-na-tebe.mjs`, #440): denně v 8:52
 jedna zpráva do Telegramu, jen když něco čeká na vlastníka. Skupiny: PR ke schválení (věta z oddílu „Pro vlastníka“
 a odkaz na stránku v náhledu), otázky, hotové oponentury, návrhy, splatné připomínky, uvízlé opravy z review
-a oponentury. Pod každou skupinou pokyn, co udělat, pod zprávou tlačítka na PR nebo issue. Ručně ji spustíš
-v Actions (Čeká na tebe, Run workflow).
+a oponentury a hlášení od veřejnosti bez rozhodnutí (#461). Pod každou skupinou pokyn, co udělat, pod zprávou
+tlačítka na PR nebo issue. Spouští ji Plánovač; ručně v Actions (Čeká na tebe, Run workflow).
 
-**Tep rutiny** (`.github/workflows/tep-rutiny.yml`, `scripts/provoz/tep-rutiny.mjs`, #440): rutina Claude Code na
-začátku každého běhu spustí workflow Tep rutiny. Kontrola každou hodinu: po 12 hodinách bez tepu přijde zpráva do
-Telegramu, pak jednou denně, dokud tep nepřijde. Dokud rutina tep neposílá, kontrola mlčí.
+**Tep rutiny** (`.github/workflows/tep-rutiny.yml`, `scripts/provoz/tep-rutiny.mjs`, #440, #461): rutina Claude Code
+na začátku každého běhu přepíše komentář se značkou `tep-rutiny` v issue #462 (štítek `trvale`); spustit workflow
+neumí (403). Kontrola (Plánovač každou hodinu) počítá ticho od poslední úpravy komentáře: po 12 hodinách přijde
+zpráva do Telegramu, pak jednou denně, dokud tep nepřijde. Kdy naposledy hlásila, si pamatuje ve vlastním komentáři.
+
+**Plánovač** (`.github/workflows/planovac.yml`, `scripts/provoz/planovac.mjs`, #461): GitHub spouští plánované běhy
+tohoto repozitáře jen 4 až 5krát denně (měřeno 5. až 9. 10. 2026: hlídání dostupnosti místo 288 běhů 5). Workflow
+Plánovač proto každých 5 minut spouští cron-job.org a Plánovač spustí, co je na řadě podle doby od posledního běhu:
+Dostupnost (5 min), Datová linka ve kroku schválení (15 min), Brána, Triáž, Tep rutiny (hodina) a Čeká na tebe
+(denně 6:52 UTC). Plány GitHubu u workflow zůstávají jako záloha (kromě Čeká na tebe, ta by přišla dvakrát).
+
+Nastavení cron-job.org (vlastník, jednou, asi 10 minut):
+
+1. GitHub, Settings, Developer settings, Fine-grained tokens, Generate new token: název `cron-job-planovac`,
+   platnost 1 rok, Repository access jen `tangero/stredniskoly`, Permissions: Actions **Read and write** (nic dalšího).
+   Token zkopíruj; do repozitáře ani secrets nepatří.
+2. cron-job.org, Create cronjob: URL
+   `https://api.github.com/repos/tangero/stredniskoly/actions/workflows/planovac.yml/dispatches`, rozvrh každých
+   5 minut. V Advanced: metoda **POST**, hlavičky `Authorization: Bearer <token>`,
+   `Accept: application/vnd.github+json`, `X-GitHub-Api-Version: 2022-11-28`, tělo `{"ref":"main"}`. Úspěch je
+   odpověď 204. Zapni upozornění e-mailem při selhání.
+3. Ověř v Actions, že Plánovač běží každých 5 minut a spouští Dostupnost.
+
+Únik tokenu dovolí jen spouštět a rušit workflow v tomto repozitáři (ne číst secrets ani měnit kód); token pak
+zruš v nastavení GitHubu a vytvoř nový. Expiraci hlídej podle data v názvu úkolu na cron-job.org.
 
 **Selhání oponentury** (#440): workflow odebere štítek `oponentura`, napíše do issue a pošle zprávu do Telegramu;
 znovu ji spustíš přidáním štítku.
