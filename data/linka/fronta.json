@@ -681,6 +681,69 @@
         },
         "poznamka": "Bez souborů k předání. Další krok: Jednou ročně dohledat identifikátor nového ročníku. Po každém přepnutí snímku spustit scripts/build-nazvy-oboru-rejstrik.py a commitnout data/msmt_rejstrik/nazvy-oboru.json; bez toho generátory souběhu a kontextu přihlášek odmítnou běžet."
       }
+    },
+    "3JHAT": {
+      "kod": "3JHAT",
+      "sada": "doprava-gtfs",
+      "druh": "revize",
+      "obdobi": "2025-12-14",
+      "url": "https://www.spojenka.cz/jrdata/jizdnirady-gtfs.zip",
+      "last_modified": "",
+      "vytvoreno": "2026-10-12T17:02:06+00:00",
+      "zobrazene_obdobi": "2026-02-07",
+      "stav": "oznameno",
+      "historie": [
+        {
+          "cas": "2026-10-12T17:02:06+00:00",
+          "stav": "zjisteno",
+          "poznamka": "ručně: ruční spuštění workflow (tangero)"
+        },
+        {
+          "cas": "2026-10-12T17:02:48+00:00",
+          "stav": "pripraveno"
+        },
+        {
+          "cas": "2026-10-12T17:02:54+00:00",
+          "stav": "oznameno"
+        }
+      ],
+      "priprava": {
+        "cas": "2026-10-12T17:02:28+00:00",
+        "stazeno": {
+          "velikost": 78524078,
+          "sha256": "4e6a4f33f78b7ba304c077074aa5bd4fc303a8074b2b08ac29e2d9881134f087",
+          "last_modified": "Mon, 12 Oct 2026 02:35:55 GMT"
+        },
+        "zmeny_struktury": [],
+        "zpracovani": {
+          "zpracovatel": "doprava-gtfs",
+          "vystupy_skriptu": [
+            "Output: /home/runner/work/stredniskoly/stredniskoly/data/linka/prace/3JHAT/transit_graph.json (3.8 MB)\n  Stops: 32352\n  Edges: 69369\n  Routes with headway: 1417\n  Median headway (all routes): 60.0 min"
+          ],
+          "srovnani": {
+            "popis": "referenční pondělí 2026-10-12, zastávek 32352, hran 69369, linek s intervalem 1417 (na webu 30810, 65279 a 1357, referenční den neuveden)"
+          },
+          "predani": {
+            "/home/runner/work/stredniskoly/stredniskoly/data/linka/prace/3JHAT/transit_graph.json": "data/transit_graph.json"
+          },
+          "otisk_vystupu": "5e07a432a77725680afa19a0b4789c42a21054602f48d660c4f624a084162c52",
+          "dopad": "Přepíše data/transit_graph.json, ze kterého web počítá dojezdy. Po sloučení přepni sadu doprava-gtfs v registru. Našeptávač zastávek public/pid_stops_compact.json se nemění."
+        },
+        "dopad": "Přepíše data/transit_graph.json, ze kterého web počítá dojezdy. Po sloučení přepni sadu doprava-gtfs v registru. Našeptávač zastávek public/pid_stops_compact.json se nemění."
+      },
+      "issue": "https://github.com/tangero/stredniskoly/issues/473",
+      "oznameni": {
+        "cas": "2026-10-12T17:02:54+00:00",
+        "kanaly": [
+          "soubor",
+          "github",
+          "telegram"
+        ],
+        "nanecisto": false,
+        "telegram_zpravy": [
+          451
+        ]
+      }
     }
   },
   "behy": [
@@ -787,6 +850,18 @@
     },
     {
       "cas": "2026-10-12T13:22:44+00:00",
+      "nove_ulohy": [],
+      "informace": [],
+      "nedostupne": [],
+      "inspekce": {
+        "problemy": [],
+        "skol_s_novejsi_inspekci": 0,
+        "priklady": [],
+        "pr": null
+      }
+    },
+    {
+      "cas": "2026-10-12T17:02:06+00:00",
       "nove_ulohy": [],
       "informace": [],
       "nedostupne": [],
