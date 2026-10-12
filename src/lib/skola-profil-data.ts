@@ -12,7 +12,7 @@ import { zobrazeneObdobi, platnostObdobi } from '@/lib/stav-datovych-sad';
 import { createSlug } from '@/lib/utils';
 import opravyNabidky from '@/data/opravy-nabidky-skol.json';
 import { nazevSZamerenim, type OpravaNabidky } from '@/lib/opravy-nabidky';
-import { domovyMladeze, druhOboruBezJpz, obtiznostBezJpz, type DomovMladeze } from '@/lib/obory-bez-jpz';
+import { domovyMladeze, druhOboruBezJpz, nastavbyNedenni, obtiznostBezJpz, type DomovMladeze } from '@/lib/obory-bez-jpz';
 import { zarazeniObtiznosti, soutezicichUchazecu, nazevOboruZKlice, type ZarazeniObtiznosti } from '@/lib/obor-profil';
 import {
   nazevSkupinyMaturity, proKohoObor, shrnutiMaturity, smerStupne, vzdalenostKm,
@@ -105,10 +105,14 @@ export interface RadekSoubehu {
   vyssiPriorita: number | null;
 }
 
+const FORMY_NASTAVEB: Record<string, string> = { dal: 'dálková', komb: 'kombinovaná', dist: 'distanční' };
+
 export interface ProfilSkolyData {
   redizo: string;
   /** Domovy mládeže a internáty, které rejstřík škol MŠMT vede pod REDIZO školy (issue #244, etapa 3b). */
   domovy: DomovMladeze[];
+  /** Nedenní nástavby školy (dálková, kombinovaná, distanční) pro oddíl „Studium pro absolventy s výučním listem“ (#425). */
+  nedenniNastavby: { obor: string; forma: string; delka: number | null; kapacita: number | null }[];
   rok: number | null;
   platnostDat: string | null;
   obory: OborSkoly[];
@@ -437,6 +441,9 @@ export async function getProfilSkoly(
     } : null,
     inspekceSeznam: csi,
     domovy: await domovyMladeze(redizo),
+    nedenniNastavby: (await nastavbyNedenni(redizo, '', '')).skoly
+      .map(x => ({ obor: x.obor, forma: FORMY_NASTAVEB[x.forma] ?? x.forma, delka: x.delka, kapacita: x.kapacita }))
+      .sort((a, b) => a.obor.localeCompare(b.obor, 'cs') || a.forma.localeCompare(b.forma, 'cs')),
     inspis,
     portal,
     web,

@@ -427,6 +427,10 @@ se přidají jako pokračování, ne jako nabídka pro deváťáky (oddíl 1, bo
 Denní nástavby se z katalogu nevyřazují, přestože nejsou pro uchazeče z 9. třídy:
 mají existující stránky a adresy a rušení by byla jiná dávka.
 
+Doplněno 12. 10. 2026 (#425, rozhodnutí vlastníka): nedenní nástavby školy se ukazují i na stránce
+školy, v oddílu „Studium pro absolventy s výučním listem“ pod seznamem oborů (název, forma, délka,
+místa; bez odkazů, bez ukazatelů přijetí). Zůstávají mimo karty, filtry a přehledy pro uchazeče z 9. třídy.
+
 ## 11. Dopad na stránky
 
 - **Stránka školy.** Přibudou učební obory s plnými čísly (oddíl 10.1) a bez

@@ -421,3 +421,17 @@ test('simulátor: katalog nese všechny denní nabídky bez JPZ s údaji 1. kola
   assert.ok(ruzne, 'v datech je obor se dvěma zaměřeními a různými počty');
   assert.notDeepEqual(ruzne[0].bez_jpz, ruzne[1].bez_jpz);
 });
+
+test('stránka školy nese nedenní nástavby školy (#425): Strážnice má dálkové Podnikání, škola bez nich prázdný seznam', async () => {
+  const redizo = '600014690';
+  const { skola, jpz, bez } = await programySkoly(redizo);
+  const profil = await getProfilSkoly(redizo, skola.nazev, jpz, new Set(jpz.map(p => p.id)), bez);
+  const podnikani = profil.nedenniNastavby.find(n => /Podnikání/.test(n.obor));
+  assert.ok(podnikani, 'dálková nástavba Podnikání chybí');
+  assert.equal(podnikani.forma, 'dálková');
+  assert.equal(podnikani.kapacita, 30);
+  assert.equal(podnikani.delka, 3);
+  const bezNastaveb = await programySkoly('600014231');
+  const jinaProfil = await getProfilSkoly('600014231', bezNastaveb.skola.nazev, bezNastaveb.jpz, new Set(bezNastaveb.jpz.map(p => p.id)), bezNastaveb.bez);
+  assert.ok(jinaProfil.nedenniNastavby.every(n => n.forma !== 'denní'));
+});
