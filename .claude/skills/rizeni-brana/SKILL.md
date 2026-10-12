@@ -80,6 +80,14 @@ Totéž dělá automaticky workflow **Sloučení** (`.github/workflows/slouceni.
 brány sloučí všechny otevřené PR, jejichž poslední kontrola prošla. Ruční spuštění skriptu je potřeba jen
 tehdy, když nechceš čekat na další běh brány.
 
+## Změny pravidel AI
+
+PR, který mění `CLAUDE.md`, `.claude/claude.md`, skilly nebo zadání rutiny, uvede v popisu výsledek kontrolních situací
+(#468): spusť workflow Kontrolní situace s větví PR (`vetev`, `pr`) a vlož souhrn porovnání s `main`. Zkrácení pravidel
+se přijme jen tehdy, když skóre nezhorší. Nové pravidlo nebo výjimka přidá i novou situaci do
+`tests/pravidla/kontrolni-situace.json` a změní-li se pravidlo záměrně, změní se ve stejném PR očekávaná odpověď.
+Model situace jen hodnotí (`scripts/pravidla/vyhodnot.mjs`), neshody je potřeba přečíst, ne jen sečíst.
+
 ## Šablona popisu PR
 
 ```
