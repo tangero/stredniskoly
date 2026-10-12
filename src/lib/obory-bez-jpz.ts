@@ -1,7 +1,8 @@
 import { promises as fs } from 'fs';
 import path from 'path';
 import { zobrazeneObdobi } from '@/lib/stav-datovych-sad';
-import { MIN_SOUTEZICICH_PRO_ZARAZENI, type ZarazeniObtiznosti } from '@/lib/obor-profil';
+import { MIN_SOUTEZICICH_PRO_ZARAZENI, kohortaPozice, nazevSkupiny, type KohortaPozice, type ZarazeniObtiznosti } from '@/lib/obor-profil';
+import { SKUPINY_KKOV } from '@/lib/smery-studia';
 
 /**
  * Nabídky bez jednotné přijímací zkoušky (issue #244, etapa 3a; docs/navrh-obory-bez-jpz-2027.md).
@@ -46,9 +47,14 @@ export interface NabidkaBezJpz {
   index_poptavky: number | null;
   podil_prijatych_ze_soutezicich: number | null;
   zarazeni_obtiznosti: ZarazeniObtiznosti | null;
+  /** Srovnatelná skupina kohorty (etapa 6): `H_23` u učebních oborů, `SOS_4`/`SOU_4` u uměleckých, jinak null. */
+  skupina_kohorty?: string | null;
+  /** Kohorta podle pozice na přihlášce bez prahu; práh uplatní `kohortaBezJpz`. */
+  kohorta_pozice?: KohortaPozice | null;
   rok_2025: null | {
     kapacita: number | null; prihlasky: number | null; prijati: number | null;
     prihlasky_priorita: (number | null)[]; podil_prvnich_voleb: number | null; jistota: string; shoda: string;
+    kohorta_pozice?: KohortaPozice | null;
   };
   kolo_2: null | { id_sof: string; kapacita: number | null; prihlasky: number | null; prijati: number | null; zbyla_mista: number | null };
 }
@@ -76,6 +82,8 @@ interface SouborBezJpz {
   nastavby: NabidkaBezJpz[];
   domovy: Record<string, DomovMladeze[]>;
   skoly?: Record<string, SkolaBezJpz>;
+  /** Velikost srovnatelných skupin kohorty podle ročníku (podklad prahu 30 nabídek). */
+  skupiny_kohorty?: Record<string, Record<string, number>>;
 }
 
 let cache: Promise<SouborBezJpz | null> | null = null;
@@ -191,6 +199,46 @@ export function obtiznostBezJpz(n: Pick<NabidkaBezJpz, 'kategorie' | 'prijati' |
   if (n.prijati === null || n.nepr_kapacita === null) return null;
   if (n.prijati + n.nepr_kapacita < MIN_SOUTEZICICH_PRO_ZARAZENI) return null;
   return n.zarazeni_obtiznosti;
+}
+
+/** Kohorta nabídky bez JPZ, jak ji smí ukázat stránka, s předchozím ročníkem a skupinou srovnání. */
+export interface KohortaBezJpz {
+  aktualni: KohortaPozice | null;
+  predchozi: KohortaPozice | null;
+  /** Klíč skupiny (`H_23`, `SOS_4`), jen když se kohorta zobrazuje. */
+  skupina: string | null;
+}
+
+/**
+ * Kohorta podle pozice na přihlášce u nabídek bez JPZ (#244, etapa 6; návrh, oddíl 13): učební obory H
+ * se srovnávají v kategorii × prvním dvojčíslí KKOV, umělecké M a L se skupinou oborů se zkouškou.
+ * C, E, J a P kohortu nemají. Pod prahem 30 nabídek ve skupině se nezobrazuje (jako u oborů se zkouškou).
+ */
+export function kohortaZeSkupin(
+  n: Pick<NabidkaBezJpz, 'skupina_kohorty' | 'kohorta_pozice' | 'rok_2025'>,
+  skupiny: Record<string, Record<string, number>> | undefined,
+  rok: number,
+): KohortaBezJpz {
+  const s = n.skupina_kohorty;
+  const velikost = (r: number) => (s && skupiny?.[String(r)]?.[s]) || 0;
+  const aktualni = s ? kohortaPozice({ kohorta_pozice: n.kohorta_pozice ?? undefined }, velikost(rok)) : null;
+  if (!aktualni) return { aktualni: null, predchozi: null, skupina: null };
+  const predchozi = n.rok_2025 ? kohortaPozice({ kohorta_pozice: n.rok_2025.kohorta_pozice ?? undefined }, velikost(rok - 1)) : null;
+  return { aktualni, predchozi, skupina: s ?? null };
+}
+
+export async function kohortaBezJpz(n: NabidkaBezJpz): Promise<KohortaBezJpz> {
+  const data = await nacti();
+  return kohortaZeSkupin(n, data?.skupiny_kohorty, data?.rok ?? 0);
+}
+
+/** Skupina srovnání v textu: „učebních oborů ze skupiny strojírenství“, u uměleckých název skupiny souhrnů. */
+export function nazevSkupinyKohorty(skupina: string): string {
+  if (skupina.startsWith('H_')) {
+    const nazev = SKUPINY_KKOV[skupina.slice(2)];
+    return nazev ? `učebních oborů ze skupiny ${nazev}` : 'učebních oborů stejné oborové skupiny';
+  }
+  return nazevSkupiny(skupina);
 }
 
 /** Pojmenování oboru podle kategorie (slovník pojmů): učební obor, obor E, konzervatoř… */

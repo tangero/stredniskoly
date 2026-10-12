@@ -28,7 +28,7 @@ import importlib.util
 import io
 import json
 import re
-from collections import Counter
+from collections import Counter, defaultdict
 from pathlib import Path
 
 import openpyxl
@@ -233,6 +233,67 @@ def spojit_s_druhym_kolem(nabidky: list[dict], r1: list[dict], r2: list[dict], d
     return pocty
 
 
+def skupina_kohorty(n: dict) -> str | None:
+    """Srovnatelná skupina pro kohortu podle pozice na přihlášce (návrh, oddíl 13; etapa 6).
+
+    Učební obory H: kategorie × první dvojčíslí KKOV (`H_23` strojírenství, `H_65` gastronomie…).
+    Umělecké M a L: skupina oborů se zkouškou podle typu školy a délky (`SOS_4`, `SOU_4`).
+    C, E, J a P kohortu nemají (oddíl 17, O9; rozhodnutí z etapy 0)."""
+    if n["kategorie"] == "H":
+        return f"H_{n['kkov'][:2]}"
+    if n["kategorie"] in ("M", "L") and n.get("typ_skoly") and n.get("delka"):
+        return f"{n['typ_skoly']}_{n['delka']}"
+    return None
+
+
+def rozdeleni_podilu(hodnoty: list[tuple[str | None, float | None]]) -> dict[str, list[float]]:
+    """Seřazené podíly prvních voleb podle skupiny; nabídky bez skupiny nebo bez podílu se vynechají."""
+    podle: dict[str, list[float]] = defaultdict(list)
+    for skupina, podil_ in hodnoty:
+        if skupina is not None and podil_ is not None:
+            podle[skupina].append(podil_)
+    return {k: sorted(v) for k, v in sorted(podle.items())}
+
+
+def doplnit_kohorty(nabidky: list[dict], r25: list[dict], souhrny) -> dict[str, dict[str, int]]:
+    """Doplní kohortu podle pozice na přihlášce za 2026 a 2025 (etapa 6, slovník ukazatelů).
+
+    Skupiny H se počítají z celého ročníku nabídek bez JPZ (2025 z celého ročníku 2025, ne jen
+    ze spárovaných nabídek), skupiny M a L z rozdělení oborů se zkouškou ze souhrnů 1. kola.
+    Percentil a kohorta stejným výpočtem jako `scripts/build-souhrny-kolo1.py`; práh 30 nabídek
+    ve skupině uplatňuje web. Vrací velikosti skupin podle ročníku (podklad prahu)."""
+    roz = {
+        "2026": rozdeleni_podilu([(skupina_kohorty(n), n["podil_prvnich_voleb"]) for n in nabidky
+                                  if n["kategorie"] == "H"]),
+        "2025": rozdeleni_podilu([(f"H_{str(r['KKOV'])[:2]}", minule_cisla(r)["podil_prvnich_voleb"]) for r in r25
+                                  if kategorie(str(r["KKOV"] or "")) == "H"]),
+    }
+    for rok, soubor in (("2026", KOLO1_2026), ("2025", KOLO1_2025)):
+        rocnik = souhrny.nacti_rocnik(soubor, int(rok))
+        for skupina, hodnoty in souhrny.doplnit_kohorty(rocnik).items():
+            roz[rok].setdefault(skupina, hodnoty)
+
+    def zarad(rok: str, skupina: str | None, x: float | None) -> dict:
+        # Ukládá se jen kohorta; percentil je mezivýpočet (výstup nenese percentily, viz test).
+        if skupina is None or x is None or not roz[rok].get(skupina):
+            return {"kohorta_pozice": None}
+        pct = round(souhrny.percentil_ve_skupine(x, roz[rok][skupina]), 1)
+        return {"kohorta_pozice": souhrny.kohorta_pozice(pct)}
+
+    pouzite: dict[str, set[str]] = {"2026": set(), "2025": set()}
+    for n in nabidky:
+        skupina = skupina_kohorty(n)
+        n["skupina_kohorty"] = skupina
+        n.update(zarad("2026", skupina, n["podil_prvnich_voleb"]))
+        if skupina:
+            pouzite["2026"].add(skupina)
+        if n.get("rok_2025"):
+            n["rok_2025"].update(zarad("2025", skupina, n["rok_2025"]["podil_prvnich_voleb"]))
+            if skupina:
+                pouzite["2025"].add(skupina)
+    return {rok: {k: len(roz[rok][k]) for k in sorted(pouzite[rok]) if k in roz[rok]} for rok in ("2026", "2025")}
+
+
 def domovy_mladeze(cesta: Path) -> dict[str, list[dict]]:
     """Domovy mládeže (H22) a internáty (H21) podle REDIZO. Jen název, druh, kapacita a obec."""
     data = json.loads(cesta.read_text(encoding="utf-8"))
@@ -336,6 +397,7 @@ def sestavit() -> dict:
     kolo2 = spojit_s_druhym_kolem(nabidky, denni, nacti(KOLO2_2026), dk)
     for n in nabidky_nastavby:
         n["kolo_2"] = None
+    skupiny_kohorty = doplnit_kohorty(nabidky, r25_denni, souhrny)
 
     domovy = domovy_mladeze(REJSTRIK)
     skoly = skoly_nabidek(REJSTRIK, {n["redizo"] for n in nabidky + nabidky_nastavby})
@@ -351,6 +413,7 @@ def sestavit() -> dict:
             "druhe_kolo": dict(sorted(kolo2.items())),
             "skol_s_domovem_nebo_internatem": len(domovy),
         },
+        "skupiny_kohorty": skupiny_kohorty,
         "nabidky": nabidky,
         "nastavby": nabidky_nastavby,
         "domovy": domovy,

@@ -29,6 +29,18 @@ def radek(kkov="29-54-H/01", forma="den", zkracene="ne", jpz=2, **dalsi):
     return r
 
 
+class Kohorty(unittest.TestCase):
+    def test_skupina_kohorty(self):
+        self.assertEqual(bj.skupina_kohorty({"kategorie": "H", "kkov": "23-51-H/01"}), "H_23")
+        self.assertEqual(bj.skupina_kohorty({"kategorie": "M", "kkov": "82-41-M/01", "typ_skoly": "SOS", "delka": 4}), "SOS_4")
+        for k in "CEJP":
+            self.assertIsNone(bj.skupina_kohorty({"kategorie": k, "kkov": "x", "typ_skoly": "SOS", "delka": 2}))
+
+    def test_rozdeleni_bez_prazdnych_hodnot(self):
+        self.assertEqual(bj.rozdeleni_podilu([("H_23", 0.5), ("H_23", 0.1), (None, 0.3), ("H_65", None)]),
+                         {"H_23": [0.1, 0.5]})
+
+
 class VyberNabidek(unittest.TestCase):
     def test_denni_bez_jpz_a_nastavby(self):
         radky = [
@@ -116,6 +128,23 @@ class Vystup(unittest.TestCase):
         text = json.dumps(self.d, ensure_ascii=False)
         for zakazano in ("percentil", "skor", "reditel", "email"):
             self.assertNotIn(zakazano, text.lower())
+
+    def test_kohorta_jen_h_a_umelecke_ve_skupinach(self):
+        """Etapa 6: kohorta u H podle kategorie × dvojčíslí KKOV, u M a L podle skupin souhrnů, C/E/J/P bez ní."""
+        sk = self.d["skupiny_kohorty"]
+        self.assertEqual(sum(1 for k, n in sk["2026"].items() if k.startswith("H_") and n >= 30), 11)
+        for n in self.d["nabidky"]:
+            if n["kategorie"] in "CEJP":
+                self.assertIsNone(n["skupina_kohorty"])
+                self.assertIsNone(n["kohorta_pozice"])
+            elif n["kategorie"] == "H":
+                self.assertEqual(n["skupina_kohorty"], f"H_{n['kkov'][:2]}")
+            if n["kohorta_pozice"] is not None:
+                self.assertIn(n["kohorta_pozice"], ("skola_prvni_volby", "smisena_pozice", "zalozni_volba"))
+                self.assertIn(n["skupina_kohorty"], sk["2026"])
+        h = [n["kohorta_pozice"] for n in self.d["nabidky"] if n["kategorie"] == "H" and n["kohorta_pozice"]]
+        for k in ("skola_prvni_volby", "smisena_pozice", "zalozni_volba"):
+            self.assertGreater(h.count(k), len(h) / 4)
 
     def test_ukazatele_jako_souhrny_kola(self):
         """Etapa 3a: tlak a podíl prvních voleb, přihlášky na místo a obtížnost stejným výpočtem jako souhrny."""

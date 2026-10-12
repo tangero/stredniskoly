@@ -1,8 +1,8 @@
 import Link from 'next/link';
 import type { ReactNode } from 'react';
 import type { ProfilUcebnihoOboruData, Nastavba } from '@/lib/ucebni-obor-profil-data';
-import { BEZ_OBTIZNOSTI, type KategorieBezJpz } from '@/lib/obory-bez-jpz';
-import { ZARAZENI_POPISEK, VYSVETLENI_SOUTEZICICH, bezPrijatychJinam, cislo, zOd } from '@/lib/obor-profil';
+import { BEZ_OBTIZNOSTI, nazevSkupinyKohorty, type KategorieBezJpz } from '@/lib/obory-bez-jpz';
+import { ZARAZENI_POPISEK, VYSVETLENI_SOUTEZICICH, KOHORTA_NENI_KVALITA, KOHORTA_POPISEK, KOHORTA_VETA, bezPrijatychJinam, cislo, zOd } from '@/lib/obor-profil';
 import { RozpadPrihlasek, SloupceSoutezicich, VysledekUchazecu } from '@/components/obor/grafy';
 import { Dukaz, Odpoved, Otazka, Proc, TabulkaOboruNaPrihlasce, Zdroj } from '@/components/obor/ProfilOboru';
 import { SoubezneObceObsah } from '@/components/obor/SoubezneObce';
@@ -205,6 +205,22 @@ export function ProfilUcebnihoOboru({ data, adresa, obec, skolaHref }: Props) {
               </div>
               <Zdroj>CERMAT, souhrny 1. kola.{minule ? ` Rok ${predchoziRok} jen u nabídky, kterou jde mezi roky přiřadit.` : ''}</Zdroj>
             </Dukaz>
+
+            {data.kohorta.aktualni && data.kohorta.skupina && (() => {
+              const k = data.kohorta.aktualni;
+              const driv = minule ? data.kohorta.predchozi : null;
+              return (
+                <Dukaz nadpis="Kam si obor uchazeči píší na přihlášku" rok={driv ? `${predchoziRok}–${rok}` : String(rok)}>
+                  <Proc>
+                    <b className="text-[#16325c]">{KOHORTA_POPISEK[k][0].toLocaleUpperCase('cs-CZ') + KOHORTA_POPISEK[k].slice(1)}</b>: {KOHORTA_VETA[k]}
+                    {n.podil_prvnich_voleb !== null && <> (jako 1. volbu ho mělo {cislo(Math.round(n.podil_prvnich_voleb * 100))} % přihlášek)</>}
+                    {driv && (driv === k ? <>; v roce {predchoziRok} také</> : <>; v roce {predchoziRok} {KOHORTA_POPISEK[driv]}</>)}.
+                  </Proc>
+                  <Proc>Srovnává se jen s obory podobného zaměření v celé zemi ({nazevSkupinyKohorty(data.kohorta.skupina)}). {KOHORTA_NENI_KVALITA} Neříká ani, jak těžké je se dostat.</Proc>
+                  <Zdroj>CERMAT, souhrny 1. kola: přihlášky s prioritou 1 ku všem přihláškám, horní a dolní třetina skupiny.</Zdroj>
+                </Dukaz>
+              );
+            })()}
           </div>
         </Otazka>
 

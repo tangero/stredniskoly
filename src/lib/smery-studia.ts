@@ -124,3 +124,13 @@ export function mistaPodleDruhu(obory: { vzdelani: DruhVzdelani; mista: number |
   }
   return { skupiny: skupiny.filter(s => s.oboru > 0), celkem: skupiny.reduce((a, s) => a + s.mista, 0), bezUdaje };
 }
+
+/** Skupiny kmenových oborů (první dvojčíslí KKOV) podle číselníku MŠMT, zkrácené na štítek. */
+export const SKUPINY_KKOV: Record<string, string> = {
+  '16': 'ekologie', '18': 'informatika', '21': 'hornictví a hutnictví', '23': 'strojírenství', '26': 'elektrotechnika',
+  '28': 'chemie', '29': 'potravinářství', '31': 'textil a oděvnictví', '32': 'kožedělná výroba', '33': 'dřevo a nábytek',
+  '34': 'polygrafie', '36': 'stavebnictví', '37': 'doprava', '39': 'speciální technické obory', '41': 'zemědělství a lesnictví',
+  '43': 'veterinářství', '53': 'zdravotnictví', '61': 'teologie', '63': 'ekonomika a administrativa', '64': 'podnikání',
+  '65': 'gastronomie a cestovní ruch', '66': 'obchod', '68': 'právo a veřejná správa', '69': 'osobní služby',
+  '72': 'publicistika a knihovnictví', '75': 'pedagogika a sociální péče', '78': 'lycea', '79': 'gymnázia', '82': 'umění',
+};

@@ -866,3 +866,17 @@ kódem oboru jako zvažovaný učební obor), práh 10 soutěžících platí, a
 - **Předchozí ročník:** data nabídek bez JPZ pro rok 2025 nenesou nepřijaté kvůli kapacitě, proto věta
   „Rok předtím také“ zatím chybí (doplněk ji připouští jen u spárované nabídky s doloženými počty).
 - **Kritéria:** web je u učebních oborů nepřepisuje, věta odkazuje na web školy.
+
+### 16.11 Etapa 6: pozice na přihlášce u učebních a uměleckých oborů (12. 10. 2026)
+
+Rozhodnutí vlastníka 12. 10. 2026 (issue #244): kritérium „Kohorta podle kategorie × dvojčíslí KKOV, pod prahem 30
+skrytá“ se dodělá. Oddíl 13 platí beze změny.
+
+- **Data:** `scripts/build-obory-bez-jpz.py` doplní `skupina_kohorty` a `kohorta_pozice` (2026 i `rok_2025`)
+  a velikosti skupin `skupiny_kohorty`. Skupiny H z celého ročníku nabídek bez JPZ (2025 z celého ročníku 2025),
+  M a L z rozdělení oborů se zkouškou ze souhrnů 1. kola (`SOS_4`, `SOU_4`). Percentil se do souboru neukládá.
+- **Práh:** 11 z 18 skupin H má aspoň 30 nabídek; pod prahem se kohorta neukazuje (`kohortaZeSkupin`).
+- **Web:** stránka učebního oboru má v otázce „Stojí o obor někdo“ blok „Kam si obor uchazeči píší na přihlášku“
+  se skupinou srovnání slovy („učebních oborů ze skupiny strojírenství“), přehled kraje odznak, pruh a filtr.
+  Stránka města se v této etapě nemění.
+- **C, E, J, P:** bez kohorty (oddíl 17, O9; etapa 0).
