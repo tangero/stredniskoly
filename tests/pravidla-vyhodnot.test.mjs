@@ -35,9 +35,29 @@ test('model, který odpoví pořád stejně, neprojde ani na jedné polovině', 
   assert.equal(v.ne.ok, 0);
 });
 
-test('chyba modelu se počítá jako špatná odpověď', async () => {
+test('chyba modelu se počítá zvlášť a znehodnotí měření', async () => {
   const v = await vyhodnot({ situace, pravidla: '', model: async () => { throw new Error('x'); }, opakovani: 3 });
-  assert.equal(v.neshody.length, 2);
+  assert.equal(v.chyby.pocet, 6);
+  assert.deepEqual(v.chyby.situace, ['S01', 'S02']);
+  assert.equal(v.platne, false);
+  assert.deepEqual(v.nestalych, []);
+  assert.match(souhrn(v, 'main'), /NEPLATNÉ MĚŘENÍ: 6.*S01, S02/);
+});
+
+test('jednou selhavší model: chyba je započtena, nestálost ne, měření je neplatné', async () => {
+  let n = 0;
+  const model = async () => { n += 1; if (n === 2) throw new Error('limit'); return '{"odpoved":"ano"}'; };
+  const v = await vyhodnot({ situace: [situace[0]], pravidla: '', model, opakovani: 3 });
+  assert.deepEqual(v.chyby, { pocet: 1, situace: ['S01'] });
+  assert.equal(v.platne, false);
+  assert.equal(v.vysledky[0].spravne, 2);
+  assert.equal(v.nestalych.length, 0);
+});
+
+test('bezchybné měření je platné', async () => {
+  const v = await vyhodnot({ situace, pravidla: '', model: async () => '{"odpoved":"ano"}', opakovani: 1 });
+  assert.equal(v.platne, true);
+  assert.equal(v.chyby.pocet, 0);
 });
 
 test('nactiPravidla čte CLAUDE.md, .claude/claude.md a skilly repozitáře', () => {
