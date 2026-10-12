@@ -152,7 +152,8 @@ export default async function RegionPage({ params }: Props) {
               </Vysvetlivka>
               <Vysvetlivka title="Co je pozice na přihlášce?">
                 Porovnává podíl uchazečů, kteří si obor zapsali jako první volbu, s obory stejného typu v celé zemi
-                (osmiletá gymnázia s osmiletými, nástavby s nástavbami). <b>Škola první volby</b> je v horní třetině
+                (osmiletá gymnázia s osmiletými, nástavby s nástavbami, učební obory s učebními obory stejné oborové
+                skupiny, například strojírenství se strojírenstvím). <b>Škola první volby</b> je v horní třetině
                 svého typu, <b>záložní volba</b> v dolní třetině, mezi nimi je <b>smíšená pozice</b>. Srovnává se jen
                 uvnitř typu, protože podíl prvních voleb se mezi typy liší: u nástaveb je medián 57 %, u lyceí 26 %.
                 {' '}{KOHORTA_NENI_KVALITA} Neříká ani, jak těžké je se dostat: obor, který si skoro všichni dávají

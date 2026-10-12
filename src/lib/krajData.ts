@@ -5,7 +5,7 @@ import { nabidkyKraje, type SouhrnNabidkyKraje } from './souhrny-kolo1';
 import { adresaPrehledu } from './adresa-oboru.mjs';
 import { druheKoloPodleRedizo, klicDruhehoKola, rokDruhehoKola } from './druhe-kolo';
 import { getSchoolAnalysis } from './data';
-import { nabidkyBezJpzVKraji, obtiznostBezJpz, typBezJpz } from './obory-bez-jpz';
+import { kohortaBezJpz, nabidkyBezJpzVKraji, obtiznostBezJpz, typBezJpz } from './obory-bez-jpz';
 import { zamereniBezKodu } from './adresa-oboru.mjs';
 import { druhVzdelani, type DruhVzdelani } from './smery-studia';
 import { getWebSkoly } from './skoly-web';
@@ -202,8 +202,8 @@ async function spoctiKrajPrehled(
   if (skoly.size === 0) return null;
 
   // Nabídky bez jednotné zkoušky (issue #244, etapa 3c-2): učební obory, umělecké obory, konzervatoře
-  // a praktické školy, i u škol mimo katalog. Bez kohorty a pořadí v kraji (nemají srovnatelnou skupinu
-  // se souhrny 1. kola); obtížnost jen podle pravidel návrhu (oddíl 10.1).
+  // a praktické školy, i u škol mimo katalog. Kohorta jen u H (skupina kategorie × dvojčíslí KKOV) a uměleckých
+  // M a L (skupina souhrnů), etapa 6; bez pořadí v kraji; obtížnost jen podle pravidel návrhu (oddíl 10.1).
   for (const { nabidka: b, skola: sb } of await nabidkyBezJpzVKraji(krajKod)) {
     const nabidka: NabidkaKraje = {
       klic: b.id, redizo: b.redizo, obor: b.obor,
@@ -213,7 +213,7 @@ async function spoctiKrajPrehled(
       zarazeni: obtiznostBezJpz(b), zarazeniPredchozi: null, predchoziRok: null,
       soutezici: b.prijati !== null && b.nepr_kapacita !== null ? b.prijati + b.nepr_kapacita : null,
       vyssiPriorita: b.nepr_vyssi_priorita,
-      prijati: b.prijati, nesplniliPodminky: b.nepr_podminky, kohorta: null,
+      prijati: b.prijati, nesplniliPodminky: b.nepr_podminky, kohorta: (await kohortaBezJpz(b)).aktualni,
       novaNabidka: b.rok_2025 === null, meloDruheKolo: b.kolo_2 !== null,
       poradiZajem: null, poradiVysledky: null,
     };

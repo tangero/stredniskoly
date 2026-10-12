@@ -1,6 +1,6 @@
 # Slovník ukazatelů
 
-Verze 1.62 · 7. 10. 2026 · **Závazný soupis. Nový ukazatel se nezavádí bez zápisu sem.**
+Verze 1.63 · 12. 10. 2026 · **Závazný soupis. Nový ukazatel se nezavádí bez zápisu sem.**
 
 Každý ukazatel má jeden název, jednu definici a jeden způsob výpočtu. Když se veličina objeví na webu, v datech, v API nebo v dokumentaci, používá se jméno z tohoto soupisu. Když se způsob výpočtu změní, změní se tady a zároveň se přepíše verze.
 
@@ -13,7 +13,7 @@ Pravidlo pro celý projekt: **údaj bez doloženého výpočtu se nezobrazuje.**
 ### Kapacita míst
 Počet míst, které škola pro obor v daném kole vypsala. Zdroj: CERMAT, sloupec `KAPACITA`. Pole `kapacita`.
 
-**Platnost pro nabídky bez jednotné zkoušky** (issue #244, etapa 3a, návrh oddíl 10.1): beze změny názvu, vzorce i jednotky platí i pro učební obory a ostatní nabídky bez zkoušky *Kapacita míst*, *Přihlášky celkem*, *Přihlášky podle priority*, *První priority*, *Podíl prvních voleb*, *Přihlášky na místo*, *Tlak prvních voleb*, *Přijatí*, *Nepřijatí kvůli kapacitě*, *Nepřijatí pro nesplnění podmínek*, *Přijati na vyšší prioritu*, *Vzdali se přijetí*, *Soutěžící o obor*, *Podíl přijatých ze soutěžících* a *Obtížnost přijetí slovy* (s přísnějším pravidlem zobrazení u ní). Počítá je `scripts/build-obory-bez-jpz.py` stejnými vzorci jako souhrny 1. kola. Ukazatele postavené na bodech jednotné zkoušky (oddíl 10.2 návrhu) u nich nejsou. *Kohorta podle pozice na přihlášce* a pořadí v kraji podle zájmu u nich zatím nejsou: potřebují vlastní srovnatelné skupiny (kategorie × první dvojčíslí KKOV), které přijdou s další etapou.
+**Platnost pro nabídky bez jednotné zkoušky** (issue #244, etapa 3a, návrh oddíl 10.1): beze změny názvu, vzorce i jednotky platí i pro učební obory a ostatní nabídky bez zkoušky *Kapacita míst*, *Přihlášky celkem*, *Přihlášky podle priority*, *První priority*, *Podíl prvních voleb*, *Přihlášky na místo*, *Tlak prvních voleb*, *Přijatí*, *Nepřijatí kvůli kapacitě*, *Nepřijatí pro nesplnění podmínek*, *Přijati na vyšší prioritu*, *Vzdali se přijetí*, *Soutěžící o obor*, *Podíl přijatých ze soutěžících* a *Obtížnost přijetí slovy* (s přísnějším pravidlem zobrazení u ní). Počítá je `scripts/build-obory-bez-jpz.py` stejnými vzorci jako souhrny 1. kola. Ukazatele postavené na bodech jednotné zkoušky (oddíl 10.2 návrhu) u nich nejsou. Pořadí v kraji podle zájmu u nich není. *Kohortu podle pozice na přihlášce* mají od etapy 6 (12. 10. 2026) učební obory H a umělecké obory M a L, viz u ukazatele; C, E, J a P ji nemají.
 
 ### Zbylá místa po 1. kole
 `kapacita míst − přijatí` za nabídku a ročník. Pole `zbyla_mista` v `src/data/obory-bez-jpz-2026.json` (generátor `scripts/build-obory-bez-jpz.py`). Zdroj: CERMAT, sloupce `KAPACITA` a `PŘIJATÍ` souhrnů 1. kola. Jednotka: místa. Zavedeno s etapou 3a fáze 2 oborů bez jednotné zkoušky (issue #244, [návrh](navrh-obory-bez-jpz-2027.md), oddíl 14) a je **prvním údajem stránky učebního oboru** („Po 1. kole 2026 zbylo 5 míst ze 14“) a řádku oboru na stránce školy („Zbylá místa po 1. kole: 5 ze 14“).
@@ -69,6 +69,8 @@ Kohorta je stabilní: mezi roky 2025 a 2026 zůstalo ve stejné třetině 64,5 %
 **Kde se počítá.** Od 23. 9. 2026 ji počítá `scripts/build-souhrny-kolo1.py` do souhrnů 1. kola: pole `podil_prvnich_voleb`, `percentil_podilu_prvnich_voleb` a `kohorta_pozice` v každém ročníku nabídky a rozdělení `skupiny.{rok}.{skupina}.podil_prvnich_voleb`. Percentil je podíl nabídek skupiny s hodnotou menší nebo rovnou (oddíl 4), prahy jsou ostré: nad 67 a pod 33. Dělba je stejná jako u obtížnosti přijetí: generátor nese hodnotu i ve skupině pod prahem, **práh 30 nabídek ve skupině uplatňuje `kohortaPozice` v `src/lib/obor-profil.ts`**. V ročnících 2025 a 2026 práh splňují všechny skupiny (nejmenší jsou šestiletá gymnázia se 71 nabídkami). Rozdělení 2026: 1 022 škol první volby, 1 061 smíšených, 1 008 záložních.
 
 **Kde se zobrazuje:** přehled kraje a přehled města (odznak u nabídky, pruh a filtr v přehledu kraje) a stránka oboru (blok „Kam si obor uchazeči píší na přihlášku“, s předchozím ročníkem). Odznak má neutrální modrý obrys, nikdy semafor.
+
+**Nabídky bez jednotné zkoušky** (issue #244, etapa 6, návrh oddíl 13). Učební obory H se srovnávají ve skupině **kategorie × první dvojčíslí KKOV** (`H_23` strojírenství, `H_65` gastronomie a cestovní ruch…), ne s obory se zkouškou: Kadeřník se nesrovnává se Zedníkem. Ze 18 skupin H splňuje práh 30 nabídek 11 (2025 i 2026). Umělecké obory M a L se řadí k rozdělení oborů se zkouškou své skupiny souhrnů (`SOS_4`, `SOU_4`). Obory C, E, J a P kohortu nemají (návrh, oddíl 17, O9; rozhodnutí z etapy 0). Počítá `scripts/build-obory-bez-jpz.py` (funkce `doplnit_kohorty`) stejným percentilem a prahy jako souhrny; rozdělení roku 2025 je z celého ročníku 2025, ne jen ze spárovaných nabídek. Do `src/data/obory-bez-jpz-2026.json` jde jen `skupina_kohorty`, `kohorta_pozice` (i v `rok_2025`) a velikosti skupin `skupiny_kohorty`; práh uplatňuje `kohortaZeSkupin` v `src/lib/obory-bez-jpz.ts`. Rozdělení 2026 nad prahem: H 570 škol první volby, 581 smíšených, 556 záložních; M a L 178, 42 a 25 (umělecké obory si uchazeči píší jako první volbu výrazně častěji než ostatní čtyřleté obory SOŠ). U nabídek bez zkoušky se zobrazuje na stránce oboru a v přehledu kraje.
 
 **Neříká nic o kvalitě školy.** Záložní volba znamená, že si ji uchazeči píší jako pojistku, nikoli že je horší. Typicky jde o obory, které lidé volí podle dostupnosti.
 
@@ -852,6 +854,7 @@ Například „Vyvážený obor“. Způsob zařazení není dohledaný. Platí 
 
 | Verze | Změna |
 |---|---|
+| 1.63 | *Kohorta podle pozice na přihlášce* platí i pro učební obory H (skupina kategorie × první dvojčíslí KKOV, práh 30 nabídek) a umělecké M a L (skupiny souhrnů); C, E, J a P bez kohorty (12. 10. 2026, issue #244, etapa 6, rozhodnutí vlastníka). |
 | 1.62 | *Soutěžící o obor*: vysvětlení pojmu na stránce sjednoceno se slovníkem pojmů 1.49 („nebyli přijati jinam podle vyšší priority na přihlášce“). Definice, výpočet ani pole beze změny (7. 10. 2026, issue #428). |
 | 1.61 | Nový ukazatel *Místa podle druhu studia*: součet kapacity míst za město a kraj ve čtyřech skupinách přepínače (6. 10. 2026, issue #244, etapa 3c-4, rozhodnutí vlastníka). |
 | 1.60 | *Obtížnost přijetí slovy*: v simulátoru stupeň „kapacita nerozhodovala“ s prahem 10 soutěžících určuje pojistku bez bodů u učebních oborů H a E (7. 10. 2026, issue #244, etapa 5). Výpočet beze změny. |

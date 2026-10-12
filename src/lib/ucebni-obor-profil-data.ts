@@ -6,8 +6,8 @@ import { adresaPrehledu, adresySkolyMapa } from '@/lib/adresa-oboru.mjs';
 import { kanonickeNazvySkol, nazvySkolKatalogu } from '@/lib/okruhy-podklad';
 import { getSchoolsData, type SchoolProgram } from '@/lib/data';
 import {
-  domovyMladeze, nastavbyNedenni, obtiznostBezJpz, rokBezJpz,
-  type DomovMladeze, type NabidkaBezJpz,
+  domovyMladeze, kohortaBezJpz, nastavbyNedenni, obtiznostBezJpz, rokBezJpz,
+  type DomovMladeze, type KohortaBezJpz, type NabidkaBezJpz,
 } from '@/lib/obory-bez-jpz';
 import type { ZarazeniObtiznosti } from '@/lib/obor-profil';
 
@@ -31,6 +31,8 @@ export interface ProfilUcebnihoOboruData {
   predchoziRok: number;
   nabidka: NabidkaBezJpz;
   zarazeni: ZarazeniObtiznosti | null;
+  /** Pozice na přihlášce (etapa 6): jen H a umělecké M, L ve skupině nad prahem 30 nabídek. */
+  kohorta: KohortaBezJpz;
   soutezici: number | null;
   kontext: ProfilOboruData['kontext'];
   soubezneObce: SoubezneObce | null;
@@ -92,6 +94,7 @@ export async function getProfilUcebnihoOboru(program: SchoolProgram, programySko
     predchoziRok: rok - 1,
     nabidka: n,
     zarazeni: obtiznostBezJpz(n),
+    kohorta: await kohortaBezJpz(n),
     soutezici: n.prijati !== null && n.nepr_kapacita !== null ? n.prijati + n.nepr_kapacita : null,
     kontext: await kontextNaStranku(kontextVysledek),
     soubezneObce,

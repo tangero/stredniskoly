@@ -19,7 +19,7 @@ import { mistaPodleDruhu } from '../src/lib/smery-studia.ts';
 import { MistaPodleDruhu } from '../src/components/MistaPodleDruhu.tsx';
 import { zrizovatelPodleRedizo } from '../src/lib/simulator-filter.ts';
 import { nazvySkolKatalogu, kanonickeNazvySkol } from '../src/lib/okruhy-podklad.ts';
-import { obtiznostBezJpz, rokBezJpz, typBezJpz } from '../src/lib/obory-bez-jpz.ts';
+import { kohortaZeSkupin, nazevSkupinyKohorty, obtiznostBezJpz, rokBezJpz, typBezJpz } from '../src/lib/obory-bez-jpz.ts';
 import { getKrajPrehled } from '../src/lib/krajData.ts';
 import { adresaPrehledu, adresyBezJpzMapa, adresySkolyMapa, obsazeneAdresy, zamereniBezKodu } from '../src/lib/adresa-oboru.mjs';
 import { buildSitemapPaths } from '../scripts/generate-sitemap.mjs';
@@ -312,17 +312,18 @@ test('město: škola, kterou katalog nevede, má kartu s názvem a odkazem na p�
 // Etapa 3c-2: přehled kraje
 // ---------------------------------------------------------------------------
 
-test('kraj: všechny denní nabídky bez JPZ v kraji jsou v přehledu, bez kohorty a pořadí, i školy mimo katalog', async () => {
+test('kraj: všechny denní nabídky bez JPZ v kraji jsou v přehledu, bez pořadí, kohorta jen u H, M a L, i školy mimo katalog', async () => {
   const kraj = 'CZ064';
   const prehled = await getKrajPrehled(kraj);
   const nabidky = prehled.skoly.flatMap(s => s.nabidky);
   const bez = nabidky.filter(n => ['UCEBNI', 'UMELECKY', 'KONZ', 'PRAKT'].includes(n.skupina));
   const ocekavane = DATA.nabidky.filter(n => DATA.skoly[n.redizo]?.kraj_kod === kraj);
   assert.equal(bez.length, ocekavane.length);
-  assert.ok(bez.every(n => n.kohorta === null && n.poradiZajem === null && n.poradiVysledky === null));
+  assert.ok(bez.every(n => n.poradiZajem === null && n.poradiVysledky === null));
   for (const n of bez) {
     const b = ocekavane.find(x => x.id === n.klic);
     assert.equal(n.skupina, typBezJpz(b.kategorie));
+    assert.equal(n.kohorta, 'HML'.includes(b.kategorie) ? kohortaZeSkupin(b, DATA.skupiny_kohorty, DATA.rok).aktualni : null, n.klic);
     assert.equal(n.zarazeni, obtiznostBezJpz(b), n.klic);
   }
   // Nedenní nástavby do přehledu nepatří.
@@ -336,6 +337,39 @@ test('kraj: všechny denní nabídky bez JPZ v kraji jsou v přehledu, bez kohor
 // ---------------------------------------------------------------------------
 // Etapa 3c-4: Místa podle druhu studia (město a kraj)
 // ---------------------------------------------------------------------------
+
+// ---------------------------------------------------------------------------
+// Etapa 6: pozice na přihlášce (kohorta) u učebních a uměleckých oborů
+// ---------------------------------------------------------------------------
+
+test('kohorta bez JPZ: práh 30 nabídek ve skupině, předchozí rok jen s aktuálním, C/E/J/P nikdy', () => {
+  const skupiny = { 2026: { H_23: 412, H_21: 2 }, 2025: { H_23: 413 } };
+  const n = { skupina_kohorty: 'H_23', kohorta_pozice: 'zalozni_volba', rok_2025: { kohorta_pozice: 'smisena_pozice' } };
+  assert.deepEqual(kohortaZeSkupin(n, skupiny, 2026), { aktualni: 'zalozni_volba', predchozi: 'smisena_pozice', skupina: 'H_23' });
+  assert.deepEqual(kohortaZeSkupin({ ...n, skupina_kohorty: 'H_21' }, skupiny, 2026), { aktualni: null, predchozi: null, skupina: null });
+  assert.equal(kohortaZeSkupin({ ...n, rok_2025: null }, skupiny, 2026).predchozi, null);
+  assert.equal(kohortaZeSkupin({ ...n, kohorta_pozice: 'nesmysl' }, skupiny, 2026).aktualni, null);
+  assert.equal(nazevSkupinyKohorty('H_23'), 'učebních oborů ze skupiny strojírenství');
+  assert.match(nazevSkupinyKohorty('SOS_4'), /čtyřletých oborů středních odborných škol/);
+  for (const x of DATA.nabidky.filter(x => 'CEJP'.includes(x.kategorie))) {
+    assert.equal(kohortaZeSkupin(x, DATA.skupiny_kohorty, DATA.rok).aktualni, null, x.id);
+  }
+  // Nad prahem je 11 skupin H (návrh, oddíl 13).
+  assert.equal(Object.entries(DATA.skupiny_kohorty[String(DATA.rok)]).filter(([k, v]) => k.startsWith('H_') && v >= 30).length, 11);
+});
+
+test('stránka učebního oboru H ve skupině nad prahem ukáže pozici na přihlášce se skupinou srovnání; obor E ne', async () => {
+  const { n, html } = await vykresli(x => x.kategorie === 'H' && x.kkov.startsWith('23') && x.kohorta_pozice === 'skola_prvni_volby');
+  assert.match(html, /Kam si obor uchazeči píší na přihlášku/);
+  assert.match(html, /Škola první volby/);
+  assert.match(html, /učebních oborů ze skupiny strojírenství/);
+  assert.match(html, /Neříká nic o kvalitě školy/);
+  assert.ok(n.kohorta_pozice);
+  const e = await vykresli(x => x.kategorie === 'E');
+  assert.doesNotMatch(e.html, /Kam si obor uchazeči píší na přihlášku/);
+  const malaSkupina = await vykresli(x => x.kategorie === 'H' && (DATA.skupiny_kohorty[String(DATA.rok)][x.skupina_kohorty] ?? 0) < 30);
+  assert.doesNotMatch(malaSkupina.html, /Kam si obor uchazeči píší na přihlášku/);
+});
 
 test('kraj: místa podle druhu studia sčítají kapacitu všech nabídek, učební obory ve skupině S výučním listem', async () => {
   const prehled = await getKrajPrehled('CZ064');

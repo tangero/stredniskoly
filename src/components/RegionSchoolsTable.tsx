@@ -350,7 +350,8 @@ export function RegionSchoolsTable({ skoly, krajNazev, rok, rokDruhehoKola }: Pr
           <h2 className="mb-1 font-semibold text-slate-900">Kam se hlásí jako na první volbu</h2>
           <p className="mb-4 text-sm text-slate-600">
             Pozice na přihlášce srovnává, jak často si uchazeči obor zapsali jako nejžádanější,
-            s obory stejného typu v celé zemi. {KOHORTA_NENI_KVALITA}
+            s obory stejného typu v celé zemi; učební obory se srovnávají s učebními obory stejné oborové skupiny.
+            {' '}{KOHORTA_NENI_KVALITA}
           </p>
           {pruh(PORADI_KOHORT, KOHORTA_POPISEK, pocty.kohorta, filtr.kohorta, k => zmen({ kohorta: k }))}
           <p className="mt-3 text-xs text-slate-500">

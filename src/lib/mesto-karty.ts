@@ -4,7 +4,7 @@ import { adresaPrehledu } from '@/lib/adresa-oboru.mjs';
 import { naPomeziOkruhu, nazevSkolyProRadek, popisOboruOkruhu, uliceZAdresy, type OkruhMesta, type ZaznamKataloguProOkruh } from '@/lib/okruhy-oboru';
 import type { ZarazeniObtiznosti } from '@/lib/obor-profil';
 import { KATEGORIE_BEZ_JPZ, kategorieOboru } from '@/lib/kontext-prihlasek';
-import { druhVzdelani, jeNastavba, jeVyucniList, smerOboru, SMERY_STUDIA } from '@/lib/smery-studia';
+import { druhVzdelani, jeNastavba, jeVyucniList, smerOboru, SKUPINY_KKOV, SMERY_STUDIA } from '@/lib/smery-studia';
 import type { NabidkaBezJpzVeMeste } from '@/lib/data';
 import { obtiznostBezJpz } from '@/lib/obory-bez-jpz';
 import { druhZrizovatele } from '@/lib/simulator-filter';
@@ -280,16 +280,6 @@ export interface PodkladOkruhu {
     identifikace: Record<string, { adresa: string }>;
   };
 }
-
-/** Skupiny kmenových oborů (první dvojčíslí KKOV) podle číselníku MŠMT, zkrácené na štítek. */
-const SKUPINY_KKOV: Record<string, string> = {
-  '16': 'ekologie', '18': 'informatika', '21': 'hornictví a hutnictví', '23': 'strojírenství', '26': 'elektrotechnika',
-  '28': 'chemie', '29': 'potravinářství', '31': 'textil a oděvnictví', '32': 'kožedělná výroba', '33': 'dřevo a nábytek',
-  '34': 'polygrafie', '36': 'stavebnictví', '37': 'doprava', '39': 'speciální technické obory', '41': 'zemědělství a lesnictví',
-  '43': 'veterinářství', '53': 'zdravotnictví', '61': 'teologie', '63': 'ekonomika a administrativa', '64': 'podnikání',
-  '65': 'gastronomie a cestovní ruch', '66': 'obchod', '68': 'právo a veřejná správa', '69': 'osobní služby',
-  '72': 'publicistika a knihovnictví', '75': 'pedagogika a sociální péče', '78': 'lycea', '79': 'gymnázia', '82': 'umění',
-};
 
 type ObVaha = { klic: string; uchazecu: number };
 
