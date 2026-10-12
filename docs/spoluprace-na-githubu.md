@@ -261,6 +261,15 @@ Před merge se dělá review přes `codex review --base origin/main`, nejvýš 1
   (viz komentář v `tests/veletrhy-api-trasy.test.mjs`).
 - **Saved replies** jsou osobní pro každý účet (Settings → Saved replies), přes API se nastavit nedají.
 
+## 5a. Kontrolní situace pro pravidla AI (#468)
+
+Měření, zda zkrácená pravidla vedou AI ke stejným rozhodnutím. `tests/pravidla/kontrolni-situace.json` obsahuje
+situace ze skutečných případů (otázka ano/ne, správná odpověď, akce, pravidlo). `scripts/pravidla/vyhodnot.mjs`
+položí každou situaci modelu (Claude Code bez nástrojů) jen s pravidly (`CLAUDE.md`, `.claude/claude.md`, skilly)
+a spočítá skóre zvlášť pro „ano“ a „ne“, nestálost a neshody. Workflow Kontrolní situace (ruční spuštění) porovná
+`main` se zadanou větví a výsledek zapíše do souhrnu běhu a komentářem do PR. Zadání rutiny leží mimo repozitář,
+proto se do měření nezapočítává. Klíč `CLAUDE_CODE_OAUTH_TOKEN` dostane jen krok s modelem.
+
 ## 6. Otevřené
 
 - **Nález secret scanningu č. 1:** klíč Google Maps JavaScript API v

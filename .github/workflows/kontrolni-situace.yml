@@ -1,0 +1,93 @@
+# Kontrolní situace pro pravidla AI (#468): ruční spuštění. Vyhodnocovač (vždy z main) položí modelu situace
+# z tests/pravidla/kontrolni-situace.json s pravidly z main a s pravidly ze zadané větve a porovná skóre.
+# Model běží v Claude Code bez nástrojů a dostane jen svůj klíč. Výsledek jde do souhrnu běhu a, když je zadané
+# číslo PR, komentářem do PR. Nic neslučuje, štítky nemění.
+name: Kontrolní situace
+
+on:
+  workflow_dispatch:
+    inputs:
+      vetev:
+        description: "Větev s pravidly k porovnání s main (prázdné = jen main)"
+        required: false
+      pr:
+        description: "Číslo PR pro komentář s výsledkem (nepovinné)"
+        required: false
+      opakovani:
+        description: "Kolikrát se položí každá situace"
+        required: false
+        default: "3"
+
+permissions: {}
+
+concurrency:
+  group: kontrolni-situace
+  cancel-in-progress: false
+
+jobs:
+  vyhodnoceni:
+    name: Kontrolní situace
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    permissions:
+      contents: read
+      pull-requests: write
+    env:
+      GH_TOKEN: ${{ github.token }}
+      GH_REPO: ${{ github.repository }}
+      VETEV: ${{ inputs.vetev }}
+      PR: ${{ inputs.pr }}
+      OPAKOVANI: ${{ inputs.opakovani }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          path: main
+          persist-credentials: false
+
+      - uses: actions/checkout@v4
+        if: inputs.vetev != ''
+        with:
+          ref: ${{ inputs.vetev }}
+          path: vetev
+          persist-credentials: false
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Claude Code
+        run: |
+          npm install -g "@anthropic-ai/claude-code" --ignore-scripts --no-audit --no-fund
+          node "$(npm root -g)/@anthropic-ai/claude-code/install.cjs"
+          claude --version
+
+      - name: Vyhodnocení
+        env:
+          CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+        run: |
+          [[ "${OPAKOVANI:-3}" =~ ^[1-9]$ ]] || { echo "::error::Opakování musí být 1 až 9."; exit 1; }
+          [ -z "$PR" ] || [[ "$PR" =~ ^[0-9]+$ ]] || { echo "::error::PR není číslo."; exit 1; }
+          # Situace i vyhodnocovač se berou z main; z větve jen pravidla.
+          cp main/tests/pravidla/kontrolni-situace.json "$RUNNER_TEMP/situace.json"
+          vyhodnot() { # <složka s pravidly> <název> <výstup>
+            mkdir -p "$1/tests/pravidla"; cp "$RUNNER_TEMP/situace.json" "$1/tests/pravidla/kontrolni-situace.json"
+            env -i PATH="$PATH" HOME="$HOME" CLAUDE_CODE_OAUTH_TOKEN="$CLAUDE_CODE_OAUTH_TOKEN" \
+              node main/scripts/pravidla/vyhodnot.mjs --koren "$1" --nazev "$2" --opakovani "${OPAKOVANI:-3}" --vystup "$3"
+          }
+          {
+            echo "## Kontrolní situace"; echo
+            vyhodnot main main "$RUNNER_TEMP/main.json"; echo
+            if [ -n "$VETEV" ]; then vyhodnot vetev "$VETEV" "$RUNNER_TEMP/vetev.json"; echo; fi
+            echo "_Model hodnotí jen shodu s očekávanou odpovědí; neshody je potřeba přečíst, ne jen sečíst (výsledky: artefakt běhu)._"
+          } | tee "$RUNNER_TEMP/souhrn.md" >> "$GITHUB_STEP_SUMMARY"
+          if [ -n "$PR" ]; then gh pr comment "$PR" --body-file "$RUNNER_TEMP/souhrn.md"; fi
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: kontrolni-situace
+          path: |
+            ${{ runner.temp }}/main.json
+            ${{ runner.temp }}/vetev.json
+          if-no-files-found: ignore
