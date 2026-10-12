@@ -137,7 +137,7 @@ jobs:
           surovy="$RUNNER_TEMP/review-surovy.json"
           for pokus in 1 2; do
             if env -i "${prostredi[@]}" claude -p "$(cat scripts/brana/review-zadani.md)" --settings "$nastaveni" \
-                --allowedTools Read Glob Grep --max-turns 40 --output-format json > "$surovy" \
+                --allowedTools Read Glob Grep --max-turns 80 --output-format json > "$surovy" \
                && jq -e '.is_error | not' "$surovy" > /dev/null \
                && jq -r '.result // empty' "$surovy" > "$RUNNER_TEMP/review.txt" && [ -s "$RUNNER_TEMP/review.txt" ]; then
               echo "Kimi: $(wc -c < "$RUNNER_TEMP/review.txt") znaků"; exit 0

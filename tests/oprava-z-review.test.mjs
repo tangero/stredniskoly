@@ -152,3 +152,9 @@ test('automatické review (App se značkou, #455) spustí kolo; App bez značky 
   // PR od automatiky (obnova dat) smyčka oprav dál neopravuje.
   assert.equal(rozhodni({ komentar: komentar({ autor: app, telo: `@claude ${znacka}` }), pr: pr({ autor: app }) }).akce, 'nic');
 });
+
+test('akce Claude ve smyčce oprav pustí App z automatického review (#455), jiné boty ne', () => {
+  const wf = yaml.load(fs.readFileSync('.github/workflows/oprava-z-review.yml', 'utf8'));
+  const krok = Object.values(wf.jobs).flatMap((j) => j.steps ?? []).find((s) => String(s.uses ?? '').startsWith('anthropics/claude-code-action@'));
+  assert.equal(krok.with.allowed_bots, konfig.rezimy.automatika.replace(/\[bot\]$/, ''));
+});
