@@ -61,6 +61,7 @@ const PORTAL_DATA = [
   './data/portal/pilot.json',
   './data/inspis_school_profiles.json',
   './data/msmt_rejstrik/nazvy-oboru.json',
+  './src/data/opravy-nazvu-skol.json',
 ];
 
 const nextConfig: NextConfig = {
@@ -71,10 +72,12 @@ const nextConfig: NextConfig = {
     '/admin': ['./data/portal/pilot.json'],
     // Ruční opravy profilů InspIS (src/lib/data.ts) a nabídky bez JPZ (src/lib/obory-bez-jpz.ts, #244)
     // se čtou za běhu i při revalidaci.
-    '/skola/[slug]': ['./data/inspis_school_profiles.json', './data/inspis_opravy.json', './src/data/obory-bez-jpz-2026.json'],
+    '/skola/[slug]': ['./data/inspis_school_profiles.json', './data/inspis_opravy.json', './src/data/obory-bez-jpz-2026.json', './src/data/opravy-nazvu-skol.json'],
     // Otevřená data školy čtou týž profil ve vlastních funkcích, ne ve funkci stránky.
     '/api/skola/[slug]/json': ['./data/inspis_school_profiles.json', './data/inspis_opravy.json', './src/data/obory-bez-jpz-2026.json'],
     '/api/skola/[slug]/md': ['./data/inspis_school_profiles.json', './data/inspis_opravy.json', './src/data/obory-bez-jpz-2026.json'],
+    // Ruční opravy úředního názvu školy (src/lib/opravy-nazvu-skol.ts, #476) čte i stránka města (karty škol).
+    '/mesto/[mesto]': ['./src/data/opravy-nazvu-skol.json'],
     // Portál čte data/ za běhu (fs.readFile), Next je sám nepřibalí. Bez nich
     // se každý kód tváří jako neplatný a rejstříková adresa jako neznámá.
     '/pro-skoly/**': PORTAL_DATA,
