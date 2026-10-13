@@ -1,5 +1,6 @@
 import { promises as fs } from 'fs';
 import path from 'path';
+import { opravenyNazevSkoly } from './opravy-nazvu-skol';
 
 // ============================================================================
 // Plný název školy z rejstříku škol MŠMT pro nadpis a titulek stránky školy.
@@ -25,8 +26,10 @@ function nactiIdentifikaci(): Promise<Record<string, { uplny_nazev?: string }>> 
   return cache;
 }
 
-/** Plný název z rejstříku, nebo null, když škola v indexu není nebo index nejde načíst. */
+/** Plný název z rejstříku (přebije ho ruční oprava z src/data/opravy-nazvu-skol.json), nebo null, když škola v indexu není nebo index nejde načíst. */
 export async function uplnyNazevZRejstriku(redizo: string): Promise<string | null> {
+  const oprava = await opravenyNazevSkoly(redizo);
+  if (oprava) return oprava;
   try {
     return (await nactiIdentifikaci())[redizo]?.uplny_nazev?.trim() || null;
   } catch (e) {

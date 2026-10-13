@@ -24,3 +24,10 @@ ve kterém na něj narazíš (krátce: co se stane, proč, co s tím). Oprava, k
   adresy je Search Console hlásí jako „Duplicitní stránka bez kanonické verze vybrané uživatelem“. Odpovědi proto nesou
   hlavičku `Link: <…/skola/{slug}>; rel="canonical"` (`hlavickyOtevrenychDat` v `src/lib/skola-otevrena-data.ts`, #405).
   Nová strojová podoba stránky potřebuje tutéž hlavičku.
+
+## Název školy
+
+- **Úřední název školy po přejmenování nebo sloučení opravuje `src/data/opravy-nazvu-skol.json` (#476).** Rejstřík
+  MŠMT (`nazvy-oboru.json`) se obnovuje po čtvrtletích, takže nový název se v něm objeví se zpožděním. Oprava přebije
+  `uplny_nazev` v nadpisu stránky školy a v identifikaci v portálu. Zkrácený název v katalogu a adresa stránky se
+  nemění (zkratku katalogu tvoří datová linka). Až rejstřík ponese stejný název, záznam se odstraní.
