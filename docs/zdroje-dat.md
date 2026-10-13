@@ -42,6 +42,7 @@ Ukazatel se pak zavádí podle [slovníku ukazatelů](slovnik-ukazatelu.md). Ten
 | Hranice krajů, RÚIAN | ČÚZK, SHP za celý stát (`services.cuzk.gov.cz/shp/stat/epsg-5514/1.zip`), vrstva `VUSC_P`, CC BY 4.0 → `src/data/mapa-kraju.json` | 14 krajů | kód NUTS 3 (`CZ0xx`) | ručně, při změně hranic |
 | Microsoft Clarity, souhrny simulátoru | Clarity Data Export API (`www.clarity.ms/export-data/api/v1/project-live-insights`), měřicí skript jen na `/simulator` a stránkách škol a oborů | jen stránka simulátoru, od 5. 10. 2026 | adresa stránky × dimenze | denně skriptem `scripts/clarity-export.mjs` do soukromého repozitáře signálů (#326); web z něj nic nezobrazuje |
 | Ruční opravy nabídky od škol | hlášení škol z portálu, `src/data/opravy-nabidky-skol.json` | 4 opravy (#371) | REDIZO + KKOV | ručně, podle hlášení |
+| Ruční opravy úředního názvu školy | hlášení školy a ČŠI diff, `src/data/opravy-nazvu-skol.json` | 1 oprava (#476) | RED IZO | ručně, do převzetí názvu rejstříkem MŠMT |
 
 **Co v repozitáři není.** Zdroj patří do soupisu i tehdy, když jeho soubor na disku neleží. Takových je několik:
 
@@ -544,6 +545,17 @@ Soubor `src/data/opravy-nabidky-skol.json` (čtení v `src/lib/opravy-nabidky.ts
 | `neotevira` (`plati_pro: 2027`) | škola obor pro přijímání 2027 neotevírá | jen uloženo pro opravu nabídky 2027, web ji zatím nečte (Hronov) |
 
 Rozhodnutí vlastníka 5. 10. 2026: kapacita Boskovic a neotevíraný obor v Hronově se do webu dostanou až s nabídkou 2027. Obor 26-41-L/01 v Bohumíně v datech 2026 není a zdroj, proč, nemáme; soubor ho proto neobsahuje.
+
+### 2.19a Ruční opravy úředního názvu školy
+
+Soubor `src/data/opravy-nazvu-skol.json` (čtení v `src/lib/opravy-nazvu-skol.ts`) drží úřední název školy, který rejstřík škol MŠMT (`data/msmt_rejstrik/nazvy-oboru.json`) ještě nenese, například po sloučení škol (zadání #476, Čáslav). Oprava pochází z hlášení školy a z rozdílu ČŠI (`data/csi_diff_latest.json`); každý záznam nese RED IZO (klíč), `uplny_nazev`, `platne_od`, `zdroj` a číslo issue. Osobní údaje se do souboru nezapisují.
+
+| Pole | Obsah | Používáme |
+|---|---|---|
+| `uplny_nazev` | úřední název, který přebije název z rejstříku | ano, nadpis a název s adresou na stránce školy (`rejstrik-nazev-skoly.ts`), identifikace v portálu (`portal-identifikace.ts`, `portal-skol.ts`) |
+| `platne_od`, `zdroj`, `issue` | doklad a původ opravy | jen uloženo |
+
+Katalog (zkrácený název, adresa stránky) se nemění. Až rejstřík ponese stejný název, záznam se odstraní.
 
 ### 2.20 Matomo, týdenní souhrn signálů
 
