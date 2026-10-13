@@ -567,7 +567,8 @@ export async function getNazevSAdresou(redizo: string): Promise<string> {
 export async function getNazevSkoly(redizo: string): Promise<string> {
   try {
     const radek = (await katalogZobrazenehoObdobi()).find((s) => String(s.redizo) === redizo);
-    return radek ? String(radek.nazev) : '';
+    if (!radek) return '';
+    return (await opravenyNazevSkoly(redizo)) || String(radek.nazev);
   } catch {
     return '';
   }
