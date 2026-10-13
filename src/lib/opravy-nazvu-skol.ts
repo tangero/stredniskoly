@@ -18,6 +18,19 @@ function nactiOpravy(): Promise<Record<string, { uplny_nazev?: string }>> {
   return cache;
 }
 
+/** Všechny opravy (REDIZO → úřední název); prázdný objekt, když soubor nejde načíst. */
+export async function vsechnyOpravyNazvu(): Promise<Record<string, string>> {
+  try {
+    const opravy = await nactiOpravy();
+    return Object.fromEntries(
+      Object.entries(opravy).flatMap(([redizo, o]) => (o.uplny_nazev?.trim() ? [[redizo, o.uplny_nazev.trim()]] : [])),
+    );
+  } catch (e) {
+    console.error('❌ src/data/opravy-nazvu-skol.json nejde načíst', e);
+    return {};
+  }
+}
+
 /** Opravený úřední název školy, nebo null, když oprava není (nebo soubor nejde načíst). */
 export async function opravenyNazevSkoly(redizo: string): Promise<string | null> {
   try {
