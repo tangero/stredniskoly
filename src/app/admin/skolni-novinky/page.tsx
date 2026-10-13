@@ -1,11 +1,10 @@
 import { Metadata } from 'next';
-import { notFound } from 'next/navigation';
-import { cookies } from 'next/headers';
 import fs from 'fs/promises';
 import path from 'path';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
-import { formatDatumCasCz, formatDatumCz, overAdminToken } from '@/lib/admin';
+import { formatDatumCasCz, formatDatumCz } from '@/lib/admin';
+import { vyzadujAdmina } from '@/lib/admin-relace';
 import { jeDbNastavena } from '@/lib/novinky-db';
 import {
   souhrnNovinek,
@@ -28,7 +27,7 @@ import {
 // tady je vidět i cesta k němu – třída zprávy, jistota, stav sdělení, termíny
 // a důvod, proč položka skončila kartou, odkazem nebo v seznamu.
 //
-// Neveřejná stránka: `robots: noindex` a bez platného `admin_token` vrací 404,
+// Neveřejná stránka: `robots: noindex` a bez přihlášení do administrace (#479) přesměruje na přihlášení,
 // stejně jako zbytek administrace.
 // ============================================================================
 
@@ -177,7 +176,7 @@ async function nazvySkol(): Promise<Map<string, string>> {
 }
 
 export default async function Stranka({ searchParams }: Props) {
-  if (!overAdminToken((await cookies()).get('admin_token')?.value)) notFound();
+  await vyzadujAdmina();
   const filtr = await searchParams;
 
   if (!jeDbNastavena()) {

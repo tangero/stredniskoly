@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { overAdminToken } from '@/lib/admin';
+import { adminZPozadavku } from '@/lib/admin-relace';
 import { jeDbNastavena, vTransakci } from '@/lib/novinky-db';
 import { jeNasPuvod } from '@/lib/portal-relace';
 import { posliTelegram } from '@/lib/portal-oznameni';
@@ -13,7 +13,7 @@ import { odkazDoTelegramu, type KodVysledku } from '@/lib/veletrhy-schvaleni';
 // ============================================================================
 // Schválení nebo zamítnutí návrhu změny veletrhů (docs/veletrhy-api-2027.md,
 // oddíl 4.3). Oprávnění dává buď podepsaný token z e-mailu (pole `t`),
-// nebo cookie admin_token (pole `id`). Token Eduardy sem nemá přístup.
+// nebo přihlášení do administrace (pole `id`, #479). Token Eduardy sem nemá přístup.
 // Leží pod /admin, aby dostal cookie (path /admin).
 // ============================================================================
 
@@ -26,7 +26,7 @@ export async function POST(request: NextRequest) {
   const pole = (k: string) => String(f.get(k) ?? '').trim();
 
   const t = pole('t');
-  const jeAdmin = overAdminToken(request.cookies.get('admin_token')?.value);
+  const jeAdmin = Boolean(await adminZPozadavku(request));
   const navrhId = t ? navrhZTokenu(t) : jeAdmin ? pole('id') : null;
   if (!navrhId) return new NextResponse('Not found', { status: 404 });
 

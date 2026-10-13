@@ -1,12 +1,12 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { overAdminToken } from '@/lib/admin';
+import { adminZPozadavku } from '@/lib/admin-relace';
 import { dotaz, jeDbNastavena } from '@/lib/novinky-db';
 import { jeNasPuvod } from '@/lib/portal-relace';
 
 /** Ruční skrytí či obnovení článku, auditované v tabulce přepínačů. */
 export async function POST(request: NextRequest) {
-  if (!overAdminToken(request.cookies.get('admin_token')?.value)) {
-    return new NextResponse('Not found', { status: 404 });
+  if (!(await adminZPozadavku(request))) {
+    return new NextResponse('Nejsi přihlášený do administrace.', { status: 401 });
   }
   if (!jeNasPuvod(request)) return new NextResponse('Špatný původ požadavku.', { status: 403 });
   const f = await request.formData();

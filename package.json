@@ -29,6 +29,8 @@
     "@dnd-kit/sortable": "^10.0.0",
     "@dnd-kit/utilities": "^3.2.2",
     "@neondatabase/serverless": "^1.0.2",
+    "@simplewebauthn/browser": "13.3.0",
+    "@simplewebauthn/server": "13.3.3",
     "@vercel/analytics": "^1.6.1",
     "clsx": "^2.1.1",
     "lucide-react": "^0.563.0",
