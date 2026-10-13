@@ -6,7 +6,8 @@
 # Pojistky:
 # - Spouští se z main (workflow_run po Testech na main, plán, ruční spuštění); kód větví se nespouští.
 # - Jen čtení produkce: nejvýš 60 načtení stránky na běh, postupně s prodlevou 2 s, bez souběhu.
-# - Oprávnění jen pro komentáře a issue; secrets jen pro Telegram. Produkční secrets ani VERCEL_TOKEN ne.
+# - Oprávnění jen pro komentáře a issue; secrets jen pro Telegram a pro oznámení opravy oznamovateli (#441:
+#   HLASENI_DATABASE_URL a RESEND_API_KEY, jen v tom jednom kroku). VERCEL_TOKEN ne.
 name: Ověření v produkci
 
 on:
@@ -80,3 +81,14 @@ jobs:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
         run: node scripts/brana/oznameni-nasazeni.mjs
+
+      # Oznámení oznamovateli chyby, že oprava je nasazená (#441): jeden e-mail na hlášení, adresa se po odeslání
+      # v databázi nahradí zástupným textem a nikdy nejde do výpisu. Jen po nasazení main.
+      - name: Oznámit opravu oznamovateli
+        if: github.event_name == 'workflow_run' && !cancelled()
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          PRODUKCE_SHA: ${{ github.event.workflow_run.head_sha }}
+          HLASENI_DATABASE_URL: ${{ secrets.HLASENI_DATABASE_URL }}
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+        run: node scripts/brana/oznameni-opravy.mjs

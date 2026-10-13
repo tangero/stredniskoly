@@ -24,3 +24,5 @@ ve kterém na něj narazíš (krátce: co se stane, proč, co s tím). Oprava, k
   adresy je Search Console hlásí jako „Duplicitní stránka bez kanonické verze vybrané uživatelem“. Odpovědi proto nesou
   hlavičku `Link: <…/skola/{slug}>; rel="canonical"` (`hlavickyOtevrenychDat` v `src/lib/skola-otevrena-data.ts`, #405).
   Nová strojová podoba stránky potřebuje tutéž hlavičku.
+
+- **Oznámení opravy oznamovateli (#441):** workflow Ověření v produkci má jediný krok s produkční databází (`HLASENI_DATABASE_URL`) a Resendem; kód větví se tam nespouští, jen `main`. Skript nesmí do výpisu vypsat text výjimky z databáze (může nést adresu). Postup: `docs/oznameni-opravy-oznamovateli.md`.

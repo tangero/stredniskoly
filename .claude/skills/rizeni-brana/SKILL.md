@@ -106,6 +106,9 @@ Oddíl **Pro vlastníka** je u PR se zadáním, které mění web, povinný: bez
 vlastníkovi do Telegramu. Piš ho z pohledu návštěvníka webu: co na stránce uvidí jinak, jednou až třemi větami,
 bez názvů souborů, funkcí a technických slov. Na zvláštní řádek dej adresu (nebo adresy) na webu, kde změnu uvidí.
 
+PR, který opravuje hlášení `bug-report`, má navíc oddíl `## Pro oznamovatele`: jedna až dvě věty s vykáním pro
+člověka, který chybu nahlásil, bez adres. Po nasazení je dostane e-mailem (`docs/oznameni-opravy-oznamovateli.md`).
+
 ```
 ## Jak ověřit na náhledu (nepovinné)
 1. Otevři <adresa náhledu>/skola/<slug> …
