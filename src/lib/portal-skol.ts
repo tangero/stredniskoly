@@ -4,6 +4,7 @@ import path from 'path';
 // Relativně s příponou: tenhle modul běží i pod `node --experimental-strip-types`
 // v testech, kde se alias `@/` nerozřeší (stejně jako v admin.ts).
 import { zobrazeneObdobi } from './stav-datovych-sad.ts';
+import { opravenyNazevSkoly } from './opravy-nazvu-skol.ts';
 
 // ============================================================================
 // Portál pro školy (pilot 2027) – typy, validace kódů, validace payloadu
@@ -509,7 +510,11 @@ export async function getPredvyplnenyProfil(
   return {
     redizo,
     nazev: String(prvni.nazev),
-    nazev_s_adresou: nazevSAdresou(String(prvni.nazev), String(prvni.ulice || ''), String(prvni.obec || '')),
+    nazev_s_adresou: nazevSAdresou(
+      (await opravenyNazevSkoly(redizo)) || String(prvni.nazev),
+      String(prvni.ulice || ''),
+      String(prvni.obec || ''),
+    ),
     obec: String(prvni.obec || ''),
     kraj: String(prvni.kraj || ''),
     obory,
@@ -545,7 +550,9 @@ export function nazevSAdresou(nazev: string, ulice: string, obec: string): strin
 export async function getNazevSAdresou(redizo: string): Promise<string> {
   try {
     const radek = (await katalogZobrazenehoObdobi()).find((s) => String(s.redizo) === redizo);
-    return radek ? nazevSAdresou(String(radek.nazev), String(radek.ulice || ''), String(radek.obec || '')) : '';
+    if (!radek) return '';
+    const nazev = (await opravenyNazevSkoly(redizo)) || String(radek.nazev);
+    return nazevSAdresou(nazev, String(radek.ulice || ''), String(radek.obec || ''));
   } catch {
     return '';
   }
