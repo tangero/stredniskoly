@@ -30,6 +30,13 @@
         "zdroj": "hlášení z webu #466, 2026-10-10",
         "datum": "2026-10-10"
       }
+    },
+    "600171388": {
+      "aktualni_pocet_zaku": {
+        "hodnota": 1010,
+        "zdroj": "hlášení z webu #376, 2026-10-05",
+        "datum": "2026-10-05"
+      }
     }
   }
 }
