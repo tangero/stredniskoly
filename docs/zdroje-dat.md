@@ -42,6 +42,7 @@ Ukazatel se pak zavádí podle [slovníku ukazatelů](slovnik-ukazatelu.md). Ten
 | Hranice krajů, RÚIAN | ČÚZK, SHP za celý stát (`services.cuzk.gov.cz/shp/stat/epsg-5514/1.zip`), vrstva `VUSC_P`, CC BY 4.0 → `src/data/mapa-kraju.json` | 14 krajů | kód NUTS 3 (`CZ0xx`) | ručně, při změně hranic |
 | Microsoft Clarity, souhrny simulátoru | Clarity Data Export API (`www.clarity.ms/export-data/api/v1/project-live-insights`), měřicí skript jen na `/simulator` a stránkách škol a oborů | jen stránka simulátoru, od 5. 10. 2026 | adresa stránky × dimenze | denně skriptem `scripts/clarity-export.mjs` do soukromého repozitáře signálů (#326); web z něj nic nezobrazuje |
 | Ruční opravy nabídky od škol | hlášení škol z portálu, `src/data/opravy-nabidky-skol.json` | 4 opravy (#371) | REDIZO + KKOV | ručně, podle hlášení |
+| Ruční opravy úředního názvu školy | hlášení školy a ČŠI diff, `src/data/opravy-nazvu-skol.json` | 1 oprava (#476) | RED IZO | ručně, do převzetí názvu rejstříkem MŠMT |
 
 **Co v repozitáři není.** Zdroj patří do soupisu i tehdy, když jeho soubor na disku neleží. Takových je několik:
 
@@ -162,7 +163,7 @@ Rozdělení výsledků všech uchazečů o obor tenhle soubor **není** jediný 
 
 Dvě podoby téhož. **JSON-LD snímky** (`data/msmt_rejstrik/rssz-*.jsonld`, čtvrtletní, v gitu ignorované kvůli velikosti) se používají na návaznost oborů mezi roky a na doplnění názvů oborů bez jednotné zkoušky. **CSV export** (`data/Rejstrik_skol/`) je jednorázový.
 
-**Index názvů** `data/msmt_rejstrik/nazvy-oboru.json` (v gitu, asi 0,9 MB) vzniká skriptem `scripts/build-nazvy-oboru-rejstrik.py` ze snímku, který určuje registr (`msmt-rejstrik-snimky`, `zobrazeno.soubor`), a nese celý záznam `zobrazeno` z registru a otisk sha256 snímku. Obsahuje jen `redIzo` s názvem školy (`zkracenyNazev`, jinak `uplnyNazev`) a obcí sídla, a kódy a názvy oborů (`skolyAZarizeni[].obory[].kod`, `.nazev`). Od verze 1.12 nese i oddíl `identifikace`: u středních škol a konzervatoří (`skolyAZarizeni[].druh` C00, D00) `uplnyNazev`, `ico` a adresu sídla. Ten čte portál pro školy, aby ten, kdo uplatňuje kód, poznal, ke které škole se hlásí (`src/lib/portal-identifikace.ts`). Index dál čtou generátory souběžných přihlášek a kontextu přihlášek (`scripts/nazvy_oboru.py`), takže je má i datová linka v CI, kde snímky nejsou. Otisk snímku zapisuje do registru příkaz `stav-datovych-sad.py prepni` u každého lokálního souboru; generátor indexu odmítne snímek s jiným otiskem. Po každém přepnutí snímku, i po převzetí revize téhož čtvrtletí, se index musí přegenerovat; generátory index, jehož záznam `zobrazeno` včetně otisku neodpovídá registru, odmítnou.
+**Index názvů** `data/msmt_rejstrik/nazvy-oboru.json` (v gitu, asi 0,9 MB) vzniká skriptem `scripts/build-nazvy-oboru-rejstrik.py` ze snímku, který určuje registr (`msmt-rejstrik-snimky`, `zobrazeno.soubor`), a nese celý záznam `zobrazeno` z registru a otisk sha256 snímku. Obsahuje jen `redIzo` s názvem školy (`zkracenyNazev`, jinak `uplnyNazev`) a obcí sídla, a kódy a názvy oborů (`skolyAZarizeni[].obory[].kod`, `.nazev`). Od verze 1.12 nese i oddíl `identifikace`: u středních škol a konzervatoří (`skolyAZarizeni[].druh` C00, D00) `uplnyNazev`, `ico` a adresu sídla. Ten čte portál pro školy, aby ten, kdo uplatňuje kód, poznal, ke které škole se hlásí (`src/lib/portal-identifikace.ts`). Stránka školy z oddílu `identifikace` doplňuje do zobrazené adresy orientační číslo (`src/lib/adresa-skoly.ts`): katalog nese adresu jen s číslem popisným, rejstřík i orientační, a doplní se jen při shodě ulice a čísla popisného (#396). Index dál čtou generátory souběžných přihlášek a kontextu přihlášek (`scripts/nazvy_oboru.py`), takže je má i datová linka v CI, kde snímky nejsou. Otisk snímku zapisuje do registru příkaz `stav-datovych-sad.py prepni` u každého lokálního souboru; generátor indexu odmítne snímek s jiným otiskem. Po každém přepnutí snímku, i po převzetí revize téhož čtvrtletí, se index musí přegenerovat; generátory index, jehož záznam `zobrazeno` včetně otisku neodpovídá registru, odmítnou.
 
 Zajímavé sloupce JSON-LD, mimo adresu a názvy:
 
@@ -544,6 +545,17 @@ Soubor `src/data/opravy-nabidky-skol.json` (čtení v `src/lib/opravy-nabidky.ts
 | `neotevira` (`plati_pro: 2027`) | škola obor pro přijímání 2027 neotevírá | jen uloženo pro opravu nabídky 2027, web ji zatím nečte (Hronov) |
 
 Rozhodnutí vlastníka 5. 10. 2026: kapacita Boskovic a neotevíraný obor v Hronově se do webu dostanou až s nabídkou 2027. Obor 26-41-L/01 v Bohumíně v datech 2026 není a zdroj, proč, nemáme; soubor ho proto neobsahuje.
+
+### 2.19a Ruční opravy úředního názvu školy
+
+Soubor `src/data/opravy-nazvu-skol.json` (čtení v `src/lib/opravy-nazvu-skol.ts`) drží úřední název školy, který rejstřík škol MŠMT (`data/msmt_rejstrik/nazvy-oboru.json`) ještě nenese, například po sloučení škol (zadání #476, Čáslav). Oprava pochází z hlášení školy a z rozdílu ČŠI (`data/csi_diff_latest.json`); každý záznam nese RED IZO (klíč), `uplny_nazev`, `platne_od`, `zdroj` a číslo issue. Osobní údaje se do souboru nezapisují.
+
+| Pole | Obsah | Používáme |
+|---|---|---|
+| `uplny_nazev` | úřední název, který přebije název z rejstříku | ano, nadpis a název s adresou na stránce školy (`rejstrik-nazev-skoly.ts`), identifikace v portálu (`portal-identifikace.ts`, `portal-skol.ts`) |
+| `platne_od`, `zdroj`, `issue` | doklad a původ opravy | jen uloženo |
+
+Katalog (zkrácený název, adresa stránky) se nemění. Až rejstřík ponese stejný název, záznam se odstraní.
 
 ### 2.20 Matomo, týdenní souhrn signálů
 

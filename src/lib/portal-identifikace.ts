@@ -2,6 +2,7 @@ import { promises as fs } from 'fs';
 import path from 'path';
 import { adresaPrehledu } from '@/lib/adresa-oboru.mjs';
 import { getSchoolsByRedizo } from '@/lib/data';
+import { opravenyNazevSkoly } from './opravy-nazvu-skol';
 
 // ============================================================================
 // Identifikace školy na vstupu do portálu (docs/ucty-portalu-skol-2027.md, 2.2).
@@ -63,11 +64,11 @@ async function nactiNabidky(redizo: string) {
 
 /** Plný název, IČO a adresa z rejstříku; bez záznamu v rejstříku název a adresa z katalogu. */
 export async function getIdentifikaceSkoly(redizo: string, nazevKatalog: string): Promise<IdentifikaceSkoly> {
-  const [rejstrik, nabidky] = await Promise.all([nactiZRejstriku(redizo), nactiNabidky(redizo)]);
+  const [rejstrik, nabidky, oprava] = await Promise.all([nactiZRejstriku(redizo), nactiNabidky(redizo), opravenyNazevSkoly(redizo)]);
   const prvni = nabidky[0];
   return {
     redizo,
-    nazev: rejstrik?.uplny_nazev || nazevKatalog,
+    nazev: oprava || rejstrik?.uplny_nazev || nazevKatalog,
     ico: rejstrik?.ico || '',
     adresa: rejstrik?.adresa || prvni?.adresa || '',
     profil: prvni ? `/skola/${adresaPrehledu(redizo, prvni.nazev)}` : null,
