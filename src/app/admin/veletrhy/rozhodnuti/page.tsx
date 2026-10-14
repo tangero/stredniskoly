@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
-import { cookies } from 'next/headers';
 import { notFound } from 'next/navigation';
-import { overAdminToken, formatDatumCasCz } from '@/lib/admin';
+import { formatDatumCasCz } from '@/lib/admin';
+import { adminZCookies } from '@/lib/admin-relace';
 import { dotaz, jeDbNastavena } from '@/lib/novinky-db';
 import { diffNavrhu, navrh, vraceniNavrhu } from '@/lib/veletrhy-sklad';
 import { diffTextem, navrhZTokenu, VYSLEDKY } from '@/lib/veletrhy-schvaleni';
@@ -11,7 +11,7 @@ import { cesskyDen } from '@/lib/veletrhy-pocty';
 // Rozhodnutí o návrhu změny veletrhů (docs/veletrhy-api-2027.md, oddíl 4.3).
 //
 // Vstup buď podepsaným odkazem z e-mailu (?t=…), nebo z /admin (?id=…
-// s cookie admin_token). GET nic nemění: poštovní skenery odkazy otevírají
+// s přihlášením do administrace, #479). GET nic nemění: poštovní skenery odkazy otevírají
 // předem. Rozhoduje až POST formuláře na /admin/veletrhy/akce.
 // ============================================================================
 
@@ -37,8 +37,7 @@ interface Props {
 export default async function RozhodnutiPage({ searchParams }: Props) {
   const { t, id, v: kod } = await searchParams;
   const vysledek = kod && Object.hasOwn(VYSLEDKY, kod) ? VYSLEDKY[kod as keyof typeof VYSLEDKY] : null;
-  const jar = await cookies();
-  const jeAdmin = overAdminToken(jar.get('admin_token')?.value);
+  const jeAdmin = Boolean(await adminZCookies());
   const navrhId = t ? navrhZTokenu(t) : jeAdmin ? id ?? null : null;
   if (!navrhId) {
     if (t) {

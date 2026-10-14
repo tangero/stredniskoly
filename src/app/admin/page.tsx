@@ -1,10 +1,7 @@
 import { Metadata } from 'next';
-import { notFound, redirect } from 'next/navigation';
-import { cookies } from 'next/headers';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import {
-  overAdminToken,
   getStavDatovychSad,
   getHlaseni,
   getPortalPrehled,
@@ -18,6 +15,7 @@ import {
   StavSady,
 } from '@/lib/admin';
 import { jeDbNastavena } from '@/lib/novinky-db';
+import { vyzadujAdmina } from '@/lib/admin-relace';
 import { nactiPilot, stavSkolPortalu, type PilotSkola, type StavSkolyPortalu } from '@/lib/portal-admin';
 import { cteni } from '@/lib/portal-relace';
 import { dotaz } from '@/lib/novinky-db';
@@ -41,10 +39,6 @@ export const metadata: Metadata = {
   title: 'Administrace',
   robots: { index: false, follow: false },
 };
-
-interface Props {
-  searchParams: Promise<{ k?: string }>;
-}
 
 const STAV_BADGE: Record<StavSady, string> = {
   OK: 'bg-green-50 text-green-700 border-green-200',
@@ -92,20 +86,9 @@ function odberateleSlovy(n: number): string {
   return `${n} odběratelů`;
 }
 
-export default async function AdminPage({ searchParams }: Props) {
-  const { k } = await searchParams;
-
-  // Vstup s tokenem v URL: přesměrovat na /admin/auth, který token ověří,
-  // nastaví HttpOnly cookie a přesměruje zpět na čisté /admin. Redirect
-  // response nemá tělo, takže se token nedostane do žádného HTML.
-  if (k !== undefined) {
-    redirect(`/admin/auth?k=${encodeURIComponent(k)}`);
-  }
-
-  const jar = await cookies();
-  if (!overAdminToken(jar.get('admin_token')?.value)) {
-    notFound();
-  }
+export default async function AdminPage() {
+  // Přihlášení passkey nebo účtem vlastníka na GitHubu (#479); token v adrese je zrušený.
+  await vyzadujAdmina();
 
   const dnes = new Date();
   const [sady, portal, navrhy, hlaseni, linka, behyActions, novinky] = await Promise.all([
@@ -144,6 +127,10 @@ export default async function AdminPage({ searchParams }: Props) {
                 ? 'běhy automatizací neznámé'
                 : `poslední běh automatizací ${posledniBehOk ? 'OK' : 'selhal'}`}
             </p>
+            <nav className="mt-3 flex flex-wrap gap-4 text-sm" aria-label="Administrace">
+              <a href="/admin/provoz" className="text-slate-900 underline">Provoz projektu</a>
+              <a href="/admin/zabezpeceni" className="text-slate-900 underline">Zabezpečení a passkey</a>
+            </nav>
           </div>
 
           {/* 0. Oslovené školy portálu */}

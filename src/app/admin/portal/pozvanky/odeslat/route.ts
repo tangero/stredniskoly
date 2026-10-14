@@ -1,12 +1,12 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { overAdminToken } from '@/lib/admin';
+import { adminZPozadavku } from '@/lib/admin-relace';
 import { jeNasPuvod } from '@/lib/portal-relace';
 import { posliPozvankuDoPilotu } from '@/lib/portal-email';
 import { kodProSkolu, nactiPozvanky, zapisOdeslano } from '@/lib/portal-pozvanky';
 
 // ============================================================================
 // Odeslání pozvánek do pilotu z administrace. Leží pod /admin, aby dostalo
-// cookie `admin_token` (path /admin).
+// cookie relace administrace `admin_relace` (path /admin, #479).
 //
 // Ostrá rozesílka se potvrzuje opsáním počtu škol: tlačítko „ano“ se dá
 // odkliknout omylem, číslo ne. Jedno potvrzení odešle nejvýš ADMIN_DAVKA škol. Zkouška na vlastní adresu datum nezapisuje,
@@ -14,8 +14,8 @@ import { kodProSkolu, nactiPozvanky, zapisOdeslano } from '@/lib/portal-pozvanky
 // ============================================================================
 
 export async function POST(request: NextRequest) {
-  if (!overAdminToken(request.cookies.get('admin_token')?.value)) {
-    return new NextResponse('Not found', { status: 404 });
+  if (!(await adminZPozadavku(request))) {
+    return new NextResponse('Nejsi přihlášený do administrace.', { status: 401 });
   }
   if (!jeNasPuvod(request)) return new NextResponse('Špatný původ požadavku.', { status: 403 });
 

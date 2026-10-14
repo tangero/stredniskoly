@@ -1,10 +1,9 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
-import { notFound } from 'next/navigation';
-import { cookies } from 'next/headers';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
-import { formatDatumCasCz, overAdminToken } from '@/lib/admin';
+import { formatDatumCasCz } from '@/lib/admin';
+import { vyzadujAdmina } from '@/lib/admin-relace';
 import { jeDbNastavena } from '@/lib/novinky-db';
 import { stavSkolPortalu, udalostiSkoly } from '@/lib/portal-admin';
 import { getNazevSkoly, PORTAL_POLE } from '@/lib/portal-skol';
@@ -62,7 +61,7 @@ function UdajeOsoby({ role }: { role?: PortalRole }) {
 }
 
 export default async function AdminPortalPage({ searchParams }: Props) {
-  if (!overAdminToken((await cookies()).get('admin_token')?.value)) notFound();
+  await vyzadujAdmina();
   const { redizo, ok, chyba } = await searchParams;
 
   if (!jeDbNastavena()) {

@@ -16,6 +16,8 @@ import { snimekAkci, SEZONA, zobrazitelneAkce } from '../src/lib/veletrhy.ts';
 import { nactiAkce } from '../src/lib/veletrhy-zdroj.ts';
 import { odkazNaRozhodnuti } from '../src/lib/veletrhy-schvaleni.ts';
 import { vytvorToken } from '../src/lib/novinky-token.ts';
+import fs from 'node:fs';
+import { zalozRelaci } from '../src/lib/admin-relace-jadro.ts';
 import * as akce from '../src/app/api/veletrhy/akce/route.ts';
 import * as detailAkce from '../src/app/api/veletrhy/akce/[id]/route.ts';
 import * as navrhy from '../src/app/api/veletrhy/navrhy/route.ts';
@@ -34,11 +36,12 @@ const BASE = 'https://www.prijimackynaskolu.cz';
 process.env.DATABASE_URL = 'postgres://test';
 process.env.VELETRHY_EDA_TOKEN = TOKEN;
 process.env.VELETRHY_SECRET = 'tajemstvi-odkazu';
-process.env.ADMIN_TOKEN = 'admin-token';
 delete process.env.RESEND_API_KEY;
 delete process.env.TELEGRAM_BOT_TOKEN;
 
 let db;
+// Relace administrace (#479) místo dřívějšího tokenu admin_token.
+let ADMIN_COOKIE;
 
 /** PGlite jako Pool: jedno spojení, `begin/commit` jdou přes něj. */
 function poolZPglite(pg) {
@@ -54,6 +57,8 @@ before(async () => {
   for (const p of MIGRACE_VELETRHU) await db.exec(p);
   const pool = poolZPglite(db);
   await seed({ dotaz: pool.query }, snimekAkci(), SEZONA);
+  await db.exec(fs.readFileSync('db/migrace/008-admin-prihlaseni.sql', 'utf8'));
+  ADMIN_COOKIE = `admin_relace=${await zalozRelaci({ dotaz: pool.query }, { zpusob: 'passkey' })}`;
   nastavPoolProTesty(pool);
 });
 
@@ -212,8 +217,8 @@ async function novyNavrh(klic, id) {
 
 test('admin s cookie rozhoduje přes id; zamítnutí bez důvodu neprojde; bez Origin 403', async () => {
   const id = await novyNavrh('admin-cookie', 'admin-cookie-2099');
-  const cookie = { cookie: 'admin_token=admin-token', origin: BASE };
-  assert.equal((await formular({ id, akce: 'zamitnout' }, { cookie: 'admin_token=admin-token' })).status, 403);
+  const cookie = { cookie: ADMIN_COOKIE, origin: BASE };
+  assert.equal((await formular({ id, akce: 'zamitnout' }, { cookie: ADMIN_COOKIE })).status, 403);
   const bezDuvodu = await formular({ id, akce: 'zamitnout' }, cookie);
   assert.equal(new URL(bezDuvodu.headers.get('location')).searchParams.get('v'), 'chybi-duvod');
   const ok = await formular({ id, akce: 'zamitnout', duvod: 'duplicita' }, cookie);
@@ -261,7 +266,7 @@ test('automatické zveřejnění: vypnuté čeká na člověka, zapnuté provede
     const detail = await (await detailAkce.GET(pozadavek(`/api/veletrhy/akce/${cil.id}`), params(cil.id))).json();
     assert.equal(detail.akce.cas, '9:00–13:00');
 
-    const vraceni = await formular({ id: telo.id, akce: 'vratit', duvod: 'test' }, { cookie: 'admin_token=admin-token', origin: BASE });
+    const vraceni = await formular({ id: telo.id, akce: 'vratit', duvod: 'test' }, { cookie: ADMIN_COOKIE, origin: BASE });
     assert.equal(new URL(vraceni.headers.get('location')).searchParams.get('v'), 'vraceno');
     const poVraceni = await (await detailAkce.GET(pozadavek(`/api/veletrhy/akce/${cil.id}`), params(cil.id))).json();
     assert.equal(poVraceni.akce.cas, cil.cas);
@@ -272,7 +277,7 @@ test('automatické zveřejnění: vypnuté čeká na člověka, zapnuté provede
 
 test('vrácení bez důvodu neprojde', async () => {
   const provedeny = (await (await navrhy.GET(pozadavek('/api/veletrhy/navrhy?stav=provedeno'))).json()).navrhy[0];
-  const r = await formular({ id: provedeny.id, akce: 'vratit' }, { cookie: 'admin_token=admin-token', origin: BASE });
+  const r = await formular({ id: provedeny.id, akce: 'vratit' }, { cookie: ADMIN_COOKIE, origin: BASE });
   assert.equal(new URL(r.headers.get('location')).searchParams.get('v'), 'chybi-duvod');
 });
 
