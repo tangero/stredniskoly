@@ -12,6 +12,8 @@ export interface PilotSkola {
   mesto: string;
   typ: string;
   pozvanka_odeslana: string | null;
+  /** Vlna pozvánek (data/portal/pilot.json); chybí jen u starších záznamů pilotu. */
+  vlna?: number;
 }
 
 export async function nactiPilot(): Promise<PilotSkola[]> {

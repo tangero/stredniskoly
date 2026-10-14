@@ -14,7 +14,7 @@ Navazuje na [portál pro školy](portal-pro-skoly-2027.md) (v1.5). Ten dnes prac
 | Odpovědi školám | Eduarda (AI asistentka, přiznává to v podpisu) odpovídá sama; kódy nezná, změny účtů dělá jen člověk (Patrick Zandl) |
 | Rozeslání | z `eda@prijimackynaskolu.cz`, kód v textu, 20 škol ze seznamu zadavatele; další vlny: 100 škol 23. 9. ([druhá vlna](podklady/pozvanka-druha-vlna.md)), 665 škol 1. 10. 2026 ([třetí vlna](podklady/pozvanka-treti-vlna.md)), čtvrtá se soukromými a církevními školami se chystá. **Od 20. 9. 2026 programově** skriptem `scripts/portal-posli-pozvanky.mjs` přes Resend, ne ručně; podpis zůstává lidský (oddíl 5). Postup i to, co musí být na počítači, ze kterého se odesílá, je v [pozvánce](podklady/pozvanka-pilot-uctu-portalu.md) |
 | Právní posouzení oslovení | **externí souhlas zadavatele 20. 9. 2026.** [Návrh portálu](portal-pro-skoly-2027.md) žádal před rozesílkou posouzení obchodního sdělení podle zákona 480/2004 Sb.; zadavatel je vyřešil mimo projekt a rozesílku schválil. 1. 10. 2026 zadavatel potvrdil, že posouzení platí i pro plošné oslovení; pozvánka je jednorázová žádost o spolupráci, odkaz na odhlášení nemá ([třetí vlna](podklady/pozvanka-treti-vlna.md)) |
-| Sledování | přehled 20 škol v `/admin` a upozornění na Telegram |
+| Sledování | přehled oslovených škol v `/admin/portal/oslovene` (od #488, předtím tabulka přímo v `/admin`) a upozornění na Telegram |
 | Otevřená data a odznak | v pilotu se nestaví, v e-mailu jen „připravujeme“ |
 | Termín rozeslání | do dvou týdnů, cíl začátek října (školy vypisují dny otevřených dveří) |
 
