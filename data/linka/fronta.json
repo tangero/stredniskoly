@@ -735,6 +735,11 @@
           "cas": "2026-10-14T19:44:46+00:00",
           "stav": "selhalo",
           "poznamka": "build_transit_graph_v2.py skončil chybou: vice, Hlína): 32 stations vs 295\n  area 50.00-50.25 N, 14.0-14.5 E (e.g. Horní Bezděkov, Křižovatka): 77 stations vs 1511\n  area 50.00-50.25 N, 14.5-15.0 E (e"
+        },
+        {
+          "cas": "2026-10-14T22:33:59+00:00",
+          "stav": "selhalo",
+          "poznamka": "build_transit_graph_v2.py skončil chybou: vice, Hlína): 32 stations vs 295\n  area 50.00-50.25 N, 14.0-14.5 E (e.g. Horní Bezděkov, Křižovatka): 77 stations vs 1511\n  area 50.00-50.25 N, 14.5-15.0 E (e"
         }
       ],
       "priprava": {
