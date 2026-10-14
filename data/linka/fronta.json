@@ -720,6 +720,11 @@
           "cas": "2026-10-14T15:21:08+00:00",
           "stav": "selhalo",
           "poznamka": "HTTP Error 503: Service Unavailable"
+        },
+        {
+          "cas": "2026-10-14T15:32:15+00:00",
+          "stav": "selhalo",
+          "poznamka": "HTTP Error 503: Service Unavailable"
         }
       ],
       "priprava": {
