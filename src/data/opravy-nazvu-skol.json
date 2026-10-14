@@ -6,6 +6,12 @@
       "platne_od": "2026-09-01",
       "zdroj": "e-mail školy 2026-10-13 + ČŠI (data/csi_diff_latest.json)",
       "issue": 476
+    },
+    "600005089": {
+      "uplny_nazev": "Gymnázium, Praha 4, Postupická 3150",
+      "platne_od": "2026-09-01",
+      "zdroj": "hlášení z webu #319, 2026-10-04 (shoduje se s názvem v rejstříku MŠMT)",
+      "issue": 319
     }
   }
 }
