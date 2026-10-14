@@ -16,8 +16,7 @@ import {
 } from '@/lib/admin';
 import { jeDbNastavena } from '@/lib/novinky-db';
 import { vyzadujAdmina } from '@/lib/admin-relace';
-import { nactiPilot, stavSkolPortalu, type PilotSkola, type StavSkolyPortalu } from '@/lib/portal-admin';
-import { cteni } from '@/lib/portal-relace';
+import { nactiOsloveneSeStavem } from '@/lib/portal-oslovene-stav';
 import { dotaz } from '@/lib/novinky-db';
 import { navrhy as navrhyVeletrhu, type Navrh as NavrhVeletrhu } from '@/lib/veletrhy-sklad';
 
@@ -61,20 +60,6 @@ function Sekce({ titulek, children }: { titulek: string; children: React.ReactNo
   );
 }
 
-/** Pilot účtů portálu (docs/ucty-portalu-skol-2027.md, oddíl 4): 20 škol a jejich aktivita. */
-async function getPilot(): Promise<{ skola: PilotSkola; stav: StavSkolyPortalu | null }[] | null> {
-  const pilot = await nactiPilot();
-  if (pilot.length === 0) return [];
-  if (!jeDbNastavena()) return null;
-  try {
-    const stav = new Map((await stavSkolPortalu(cteni, pilot.map((p) => p.redizo))).map((s) => [s.redizo, s]));
-    return pilot.map((skola) => ({ skola, stav: stav.get(skola.redizo) ?? null }));
-  } catch (e) {
-    console.error('❌ Admin: stav pilotu', e);
-    return null;
-  }
-}
-
 function Poznamka({ children }: { children: React.ReactNode }) {
   return <p className="text-sm text-slate-500 italic">{children}</p>;
 }
@@ -100,7 +85,7 @@ export default async function AdminPage() {
     getBehyActions(),
     getNovinkyPrehled(),
   ]);
-  const pilot = await getPilot();
+  const pilot = await nactiOsloveneSeStavem();
   const navrhyVeletrhu = await getNavrhyVeletrhu();
 
   const sadyPoTerminu = sady.filter((s) => s.stav !== 'OK').length;
@@ -129,6 +114,7 @@ export default async function AdminPage() {
             </p>
             <nav className="mt-3 flex flex-wrap gap-4 text-sm" aria-label="Administrace">
               <a href="/admin/provoz" className="text-slate-900 underline">Provoz projektu</a>
+              <a href="/admin/portal/oslovene" className="text-slate-900 underline">Oslovené školy portálu</a>
               <a href="/admin/zabezpeceni" className="text-slate-900 underline">Zabezpečení a passkey</a>
             </nav>
           </div>
@@ -140,47 +126,13 @@ export default async function AdminPage() {
             ) : pilot.length === 0 ? (
               <Poznamka>Seznam oslovených škol (data/portal/pilot.json) není k dispozici.</Poznamka>
             ) : (
-              <div className="overflow-x-auto">
-                <p className="text-sm text-slate-500 mb-3">
-                  {pilot.filter((p) => p.stav?.spravce).length} z {pilot.length} škol má správce ·{' '}
-                  {pilot.filter((p) => (p.stav?.navrhy ?? 0) > 0).length} poslalo návrh ·{' '}
-                  <a href="/admin/portal" className="underline">všechny účty</a>{' '}·{' '}
-                  <a href="/admin/portal/pozvanky" className="underline">pozvánky školám</a>
-                </p>
-                <table className="w-full text-sm">
-                  <thead>
-                    <tr className="text-left text-slate-500 border-b border-slate-100">
-                      <th className="py-2 pr-4 font-medium">Škola</th>
-                      <th className="py-2 pr-4 font-medium">Pozvánka</th>
-                      <th className="py-2 pr-4 font-medium">Správce</th>
-                      <th className="py-2 pr-4 font-medium">Editoři</th>
-                      <th className="py-2 pr-4 font-medium">Poslední přihlášení</th>
-                      <th className="py-2 font-medium">Návrhy</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {pilot.map(({ skola, stav }) => (
-                      <tr key={skola.redizo} className="border-b border-slate-50">
-                        <td className="py-2 pr-4">
-                          <a href={`/admin/portal?redizo=${skola.redizo}`} className="text-blue-600 hover:underline">
-                            {skola.nazev}
-                          </a>
-                          <span className="block text-xs text-slate-500">
-                            {skola.mesto} · {skola.typ}
-                          </span>
-                        </td>
-                        <td className="py-2 pr-4">{skola.pozvanka_odeslana ? formatDatumCz(skola.pozvanka_odeslana) : '–'}</td>
-                        <td className="py-2 pr-4">{stav?.spravce ?? '–'}</td>
-                        <td className="py-2 pr-4">{stav?.editori ?? 0}</td>
-                        <td className="py-2 pr-4">
-                          {stav?.posledni_prihlaseni ? formatDatumCasCz(new Date(stav.posledni_prihlaseni).toISOString()) : '–'}
-                        </td>
-                        <td className="py-2">{stav?.navrhy ?? 0}</td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
+              <p className="text-sm text-slate-500">
+                {pilot.length} oslovených škol · {pilot.filter((p) => p.stav?.spravce).length} má správce ·{' '}
+                {pilot.filter((p) => (p.stav?.navrhy ?? 0) > 0).length} poslalo návrh ·{' '}
+                <a href="/admin/portal/oslovene" className="underline">seznam oslovených škol</a>{' '}·{' '}
+                <a href="/admin/portal" className="underline">všechny účty</a>{' '}·{' '}
+                <a href="/admin/portal/pozvanky" className="underline">pozvánky školám</a>
+              </p>
             )}
           </Sekce>
 

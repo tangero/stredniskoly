@@ -12,6 +12,7 @@ export interface PilotSkola {
   mesto: string;
   typ: string;
   pozvanka_odeslana: string | null;
+  vlna: number;
 }
 
 export async function nactiPilot(): Promise<PilotSkola[]> {

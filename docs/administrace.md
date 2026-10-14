@@ -9,6 +9,7 @@ Administrace webu je na `/admin`. Přístup má jen vlastník. Od #479 se do ní
 | `/admin` | stav datových sad, portálu, hlášení, datové linky, automatizací a novinek |
 | `/admin/provoz` | přehled provozu projektu: co čeká na vlastníka, běh automatických tras, sloučené a otevřené PR, regrese, projekty, hlášení, náklady (zatím bez zdroje) |
 | `/admin/zabezpeceni` | passkey (přidání, zrušení), odhlášení, posledních 20 událostí přihlášení |
+| `/admin/portal/oslovene` | všech oslovených škol portálu: souhrn po vlnách a tabulka s filtrem (všechny, jen se správcem, podle vlny); `/admin` ukazuje jen počty |
 | `/admin/portal`, `/admin/portal/pozvanky` | účty a pozvánky portálu škol |
 | `/admin/skolni-novinky` | moderace školních novinek |
 | `/admin/veletrhy/rozhodnuti` | rozhodnutí o návrhu změny veletrhů (i podepsaným odkazem z e-mailu) |
