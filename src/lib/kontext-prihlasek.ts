@@ -1,5 +1,6 @@
 import { promises as fs } from 'fs';
 import path from 'path';
+import { vsechnyOpravyNazvu } from '@/lib/opravy-nazvu-skol';
 import { zobrazeneObdobi } from '@/lib/stav-datovych-sad';
 import type { OdvozenaHranice, ZnackaMimoPrehled } from '@/lib/obor-profil';
 
@@ -109,8 +110,13 @@ export async function nactiIndexRejstriku(): Promise<IndexRejstriku> {
       path.join(process.cwd(), 'data', 'msmt_rejstrik', 'nazvy-oboru.json'), 'utf-8',
     );
     const json = JSON.parse(obsah);
+    const identifikace: IndexRejstriku['identifikace'] = json.identifikace ?? {};
+    // Ruční opravy úředního názvu přebijí rejstřík i ve výpisech škol (karty města, okruhy).
+    for (const [redizo, uplny_nazev] of Object.entries(await vsechnyOpravyNazvu())) {
+      if (identifikace[redizo]) identifikace[redizo] = { ...identifikace[redizo], uplny_nazev };
+    }
     indexRejstriku = {
-      skoly: json.skoly ?? {}, obory: json.obory ?? {}, nabidky: json.nabidky ?? {}, identifikace: json.identifikace ?? {},
+      skoly: json.skoly ?? {}, obory: json.obory ?? {}, nabidky: json.nabidky ?? {}, identifikace,
     };
   } catch {
     indexRejstriku = { skoly: {}, obory: {}, nabidky: {}, identifikace: {} };

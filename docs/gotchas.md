@@ -26,3 +26,10 @@ ve kterém na něj narazíš (krátce: co se stane, proč, co s tím). Oprava, k
   Nová strojová podoba stránky potřebuje tutéž hlavičku.
 
 - **Oznámení opravy oznamovateli (#441):** workflow Ověření v produkci má jediný krok s produkční databází (`HLASENI_DATABASE_URL`) a Resendem; kód větví se tam nespouští, jen `main`. Skript nesmí do výpisu vypsat text výjimky z databáze (může nést adresu). Postup: `docs/oznameni-opravy-oznamovateli.md`.
+
+## Název školy
+
+- **Úřední název školy po přejmenování nebo sloučení opravuje `src/data/opravy-nazvu-skol.json` (#476).** Rejstřík
+  MŠMT (`nazvy-oboru.json`) se obnovuje po čtvrtletích, takže nový název se v něm objeví se zpožděním. Oprava přebije
+  `uplny_nazev` v nadpisu stránky školy a v identifikaci v portálu. Zkrácený název v katalogu a adresa stránky se
+  nemění (zkratku katalogu tvoří datová linka). Až rejstřík ponese stejný název, záznam se odstraní.
