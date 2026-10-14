@@ -132,7 +132,7 @@ async function sendEmailNotification(email: string, issueUrl: string, issueNumbe
                   <a href="${issueUrl}" class="button">Sledovat opravu</a>
                 </div>
 
-                <p>Jakmile bude chyba opravena a nasazena do produkce, budeme vás informovat dalším emailem.</p>
+                <p>Když chybu opravíme, pošleme vám jeden další e-mail, jakmile bude oprava na webu. Hlášení, která se ukážou jako duplicita nebo nejde o chybu, zavíráme bez dalšího e-mailu.</p>
 
                 <p style="margin-top: 30px;">
                   S pozdravem,<br>

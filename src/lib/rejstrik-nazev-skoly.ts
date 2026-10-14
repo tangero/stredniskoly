@@ -1,6 +1,7 @@
 import { promises as fs } from 'fs';
 import path from 'path';
 import { opravenyNazevSkoly } from './opravy-nazvu-skol';
+import { doplnOrientacniCislo } from './adresa-skoly';
 
 // ============================================================================
 // Plný název školy z rejstříku škol MŠMT pro nadpis a titulek stránky školy.
@@ -11,13 +12,13 @@ import { opravenyNazevSkoly } from './opravy-nazvu-skol';
 // (portal-identifikace.ts); index má skoro megabajt, proto se cachuje příslib.
 // ============================================================================
 
-let cache: Promise<Record<string, { uplny_nazev?: string }>> | null = null;
+let cache: Promise<Record<string, { uplny_nazev?: string; adresa?: string }>> | null = null;
 
-function nactiIdentifikaci(): Promise<Record<string, { uplny_nazev?: string }>> {
+function nactiIdentifikaci(): Promise<Record<string, { uplny_nazev?: string; adresa?: string }>> {
   if (!cache) {
     cache = fs
       .readFile(path.join(process.cwd(), 'data', 'msmt_rejstrik', 'nazvy-oboru.json'), 'utf-8')
-      .then((obsah) => (JSON.parse(obsah) as { identifikace?: Record<string, { uplny_nazev?: string }> }).identifikace ?? {})
+      .then((obsah) => (JSON.parse(obsah) as { identifikace?: Record<string, { uplny_nazev?: string; adresa?: string }> }).identifikace ?? {})
       .catch((e) => {
         cache = null; // po výpadku zkusit znovu
         throw e;
@@ -35,5 +36,15 @@ export async function uplnyNazevZRejstriku(redizo: string): Promise<string | nul
   } catch (e) {
     console.error('❌ Stránka školy: data/msmt_rejstrik/nazvy-oboru.json nejde načíst', e);
     return null;
+  }
+}
+
+/** Katalogová adresa doplněná o orientační číslo z rejstříku; při výpadku indexu adresa beze změny. */
+export async function adresaSkolyZRejstriku(redizo: string, adresaKatalog: string): Promise<string> {
+  try {
+    return doplnOrientacniCislo(adresaKatalog, (await nactiIdentifikaci())[redizo]?.adresa);
+  } catch (e) {
+    console.error('❌ Stránka školy: data/msmt_rejstrik/nazvy-oboru.json nejde načíst', e);
+    return adresaKatalog;
   }
 }
