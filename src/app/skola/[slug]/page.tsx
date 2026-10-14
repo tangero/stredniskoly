@@ -37,7 +37,7 @@ import { druhOboruBezJpz, rokBezJpz } from '@/lib/obory-bez-jpz';
 import { VeletrhVMeste } from '@/components/veletrhy/VeletrhVMeste';
 import { UlozitObor } from '@/components/obor/UlozitObor';
 import { createSlug } from '@/lib/utils';
-import { uplnyNazevZRejstriku } from '@/lib/rejstrik-nazev-skoly';
+import { adresaSkolyZRejstriku, uplnyNazevZRejstriku } from '@/lib/rejstrik-nazev-skoly';
 import { nazevSkolyNadpis } from '@/lib/skola-vyklad';
 import { krajNames } from '@/types/school';
 
@@ -184,6 +184,7 @@ export default async function SchoolDetailPage({ params }: Props) {
   const school = pageInfo.school;
   const redizo = pageInfo.redizo;
   const krajSlug = createSlug(krajNames[school.kraj_kod] || school.kraj);
+  const adresaSkoly = await adresaSkolyZRejstriku(redizo, school.adresa_plna || school.adresa);
 
   // =====================
   // PŘEHLED ŠKOLY
@@ -211,7 +212,7 @@ export default async function SchoolDetailPage({ params }: Props) {
               skola={{
                 nazev: overview.nazev,
                 nadpis: nazevSkolyNadpis(uplnyNazev, overview.nazev, overview.obec),
-                adresa: overview.adresa_plna || overview.adresa,
+                adresa: adresaSkoly,
                 obec: overview.obec,
                 okres: overview.okres,
                 kraj: krajNames[overview.kraj_kod] || overview.kraj,
@@ -337,7 +338,7 @@ export default async function SchoolDetailPage({ params }: Props) {
       addressLocality: school.obec,
       addressRegion: krajNames[school.kraj_kod] || school.kraj,
       addressCountry: 'CZ',
-      streetAddress: school.adresa,
+      streetAddress: adresaSkoly,
     },
   };
 
@@ -412,7 +413,7 @@ export default async function SchoolDetailPage({ params }: Props) {
           )}
 
           {profil && <ProfilOboru data={profil} inspekceHref={extractions.length > 0 ? `/skola/${overviewSlug}/inspekce` : null} skolaHref={`/skola/${overviewSlug}`} obec={school.obec} />}
-          {ucebni && <ProfilUcebnihoOboru data={ucebni} adresa={school.adresa_plna || school.adresa} obec={school.obec} skolaHref={`/skola/${overviewSlug}`} />}
+          {ucebni && <ProfilUcebnihoOboru data={ucebni} adresa={adresaSkoly} obec={school.obec} skolaHref={`/skola/${overviewSlug}`} />}
 
           <div className="mx-auto max-w-6xl space-y-6 px-4 pb-12">
             <SchoolPortalSection zaznam={portalZaznam} spravce={spravceProfiluSkoly} />
@@ -421,7 +422,7 @@ export default async function SchoolDetailPage({ params }: Props) {
               <div>
                 <h2 className="mb-3 text-[20px] font-bold text-[#16325c]">Kontakt</h2>
                 <dl className="grid grid-cols-[auto_1fr] gap-x-4 gap-y-1.5 text-[15px]">
-                  <dt className="text-slate-500">Adresa</dt><dd className="text-slate-900">{school.adresa_plna || school.adresa}</dd>
+                  <dt className="text-slate-500">Adresa</dt><dd className="text-slate-900">{adresaSkoly}</dd>
                   <dt className="text-slate-500">Okres</dt><dd className="text-slate-900">{school.okres}</dd>
                   <dt className="text-slate-500">Kraj</dt><dd className="text-slate-900">{krajNazev}</dd>
                   <dt className="text-slate-500">Zřizovatel</dt><dd className="text-slate-900">{school.zrizovatel}</dd>
@@ -651,7 +652,7 @@ export default async function SchoolDetailPage({ params }: Props) {
           <div className="bg-white p-6 rounded-xl shadow-sm mb-8">
             <h2 className="text-xl font-semibold mb-4">Kontakt</h2>
             <div className="space-y-2 text-slate-600">
-              <p><strong>Adresa:</strong> {school.adresa_plna || school.adresa}</p>
+              <p><strong>Adresa:</strong> {adresaSkoly}</p>
               <p><strong>Okres:</strong> {school.okres}</p>
               <p><strong>Kraj:</strong> {krajNames[school.kraj_kod] || school.kraj}</p>
               <p><strong>Zřizovatel:</strong> {school.zrizovatel}</p>
