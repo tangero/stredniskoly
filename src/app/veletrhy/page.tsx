@@ -7,23 +7,28 @@ import {
   overSezonuProtiRegistru,
   overenoK,
 } from '@/lib/veletrhy';
-import { cesskyDen, formatujDen } from '@/lib/veletrhy-pocty';
+import { cesskyDen, formatujDen, metaVeletrhu } from '@/lib/veletrhy-pocty';
 import { nactiAkce } from '@/lib/veletrhy-zdroj';
 import { VeletrhySeznam, type VeletrhKarta } from './VeletrhySeznam';
 
 // Rozložení je varianta B z #420: pás nejbližších akcí, kraje, otázky ke stánku vedle seznamu
 // a jedno tlačítko k nahlášení. Veřejnou stránkou je od 7. 10. 2026 rozhodnutím vlastníka (#429).
 
-export const metadata: Metadata = {
-  alternates: { canonical: '/veletrhy' },
-  title: 'Veletrhy a přehlídky středních škol — přehled akcí',
-  description:
-    'Kde se dá potkat víc středních škol najednou: veletrhy a přehlídky po krajích, s městy, termíny a odkazy na pořadatele.',
-  openGraph: {
-    title: 'Veletrhy a přehlídky středních škol',
-    description: 'Přehled akcí, kde se na jednom místě představí střední školy z kraje.',
-  },
-};
+export async function generateMetadata(): Promise<Metadata> {
+  // Stejná podmínka jako v těle stránky: bez shody s registrem se akce neukazují, tedy ani v titulku.
+  const sezonaSedi = (await overSezonuProtiRegistru()) !== null;
+  const akce = sezonaSedi ? zobrazitelneAkce(new Date(), await nactiAkce()) : [];
+  const { title, description } = metaVeletrhu(
+    akce.map((a) => ({ start: a.start!, end: (a.end ?? a.start)!, krajKod: a.krajKod })),
+  );
+  return {
+    alternates: { canonical: '/veletrhy' },
+    // Sezónní titulek bez šablony layoutu, aby výsledný <title> zůstal do 60 znaků (#483).
+    title: akce.length > 0 ? { absolute: title } : title,
+    description,
+    openGraph: { title, description },
+  };
+}
 
 // Seznam se mění tím, jak akce probíhají, ne tím, že se změní data.
 // Bez revalidace by stránka zůstala v podobě, v jaké se postavila při
