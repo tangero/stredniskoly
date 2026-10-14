@@ -691,7 +691,7 @@
       "last_modified": "",
       "vytvoreno": "2026-10-12T17:02:06+00:00",
       "zobrazene_obdobi": "2026-02-07",
-      "stav": "oznameno",
+      "stav": "schvaleno",
       "historie": [
         {
           "cas": "2026-10-12T17:02:06+00:00",
@@ -705,6 +705,16 @@
         {
           "cas": "2026-10-12T17:02:54+00:00",
           "stav": "oznameno"
+        },
+        {
+          "cas": "2026-10-14T13:43:09+00:00",
+          "stav": "schvaleno",
+          "poznamka": "github, tangero"
+        },
+        {
+          "cas": "2026-10-14T13:43:14+00:00",
+          "stav": "selhalo",
+          "poznamka": "HTTP Error 503: Service Unavailable"
         }
       ],
       "priprava": {
@@ -743,6 +753,16 @@
         "telegram_zpravy": [
           451
         ]
+      },
+      "rozhodnuti": {
+        "cas": "2026-10-14T13:42:35Z",
+        "rozhodnuti": "schvaleno",
+        "kanal": "github",
+        "od": "tangero"
+      },
+      "predani_chyba": {
+        "cas": "2026-10-14T13:43:14+00:00",
+        "chyba": "výstup se od schválení změnil: 5e07a432a777… → HTTP Error 503: Service Unavailable; úlohu znovu otevři příkazem znovu"
       }
     }
   },
@@ -874,6 +894,7 @@
     }
   ],
   "zpracovane_zpravy": {
-    "telegram:180939664": "2026-10-05T18:30:41+00:00"
+    "telegram:180939664": "2026-10-05T18:30:41+00:00",
+    "github:https://github.com/tangero/stredniskoly/issues/473#issuecomment-6169772305": "2026-10-14T13:43:09+00:00"
   }
 }
