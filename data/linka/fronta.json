@@ -725,6 +725,11 @@
           "cas": "2026-10-14T15:32:15+00:00",
           "stav": "selhalo",
           "poznamka": "HTTP Error 503: Service Unavailable"
+        },
+        {
+          "cas": "2026-10-14T19:18:10+00:00",
+          "stav": "selhalo",
+          "poznamka": "build_transit_graph_v2.py skončil chybou: vice, Hlína): 32 stations vs 295\n  area 50.00-50.25 N, 14.0-14.5 E (e.g. Horní Bezděkov, Křižovatka): 77 stations vs 1511\n  area 50.00-50.25 N, 14.5-15.0 E (e"
         }
       ],
       "priprava": {
@@ -771,8 +776,8 @@
         "od": "tangero"
       },
       "predani_chyba": {
-        "cas": "2026-10-14T13:43:14+00:00",
-        "chyba": "výstup se od schválení změnil: 5e07a432a777… → HTTP Error 503: Service Unavailable; úlohu znovu otevři příkazem znovu"
+        "cas": "2026-10-14T19:18:10+00:00",
+        "chyba": "výstup se od schválení změnil: 5e07a432a777… → build_transit_graph_v2.py skončil chybou: vice, Hlína): 32 s; úlohu znovu otevři příkazem znovu"
       }
     }
   },
