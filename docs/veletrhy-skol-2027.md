@@ -141,6 +141,8 @@ Návrh **novou třídu nezavádí**. Důvod: klasifikace čte weby škol a škol
 
 `/veletrhy` — jedna stránka, statická, generovaná při buildu. Bez podstránek pro kraj a město v první dávce; filtrování je klientské nad úplným seznamem. Důvod: ~40 akcí je málo na to, aby se dělily do 14 krajských URL, a sezóna trvá tři měsíce, takže by SEO hodnota podstránek stejně nestihla vzniknout.
 
+Titulek, popisek a openGraph (#483) se generují z nadcházejících akcí (`metaVeletrhu()` v `src/lib/veletrhy-pocty.ts`): rozmezí měsíců, ročník, počet akcí a krajů. Bez nadcházejících akcí (konec sezóny, rozchod s registrem) zůstane obecné znění bez měsíců. Titulek se drží do 60 znaků.
+
 ### 5.2 Co na stránce je
 
 **Nahoře jedna věta o tom, co veletrh je**, protože pojem se musí vysvětlit při prvním výskytu v bloku.
