@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-10-05",
+  "checkedAt": "2026-10-14",
   "sezona": "2027",
   "zdroj": "docs/prijimacky-veletrhy-poradatele-2026.xlsx",
   "poznamka": "Rozpis pořadatelů na jednotlivé akce. Zobrazuje se jen akce s terminPotvrzen: true. Popis viz docs/veletrhy-skol-2027.md.",
@@ -283,7 +283,7 @@
       "poznamkaTerminu": "Termín jsme převzali z agregátoru akcí. Web pořadatele ho zatím neuvádí, proto jsme ho u něj nemohli ověřit.",
       "url": "https://www.smartee.cz/veletrhy-strednich-a-vysokych-skol-brno-2022/tpost/artl00e411-stedocesk-kraj-z-listopad-2026",
       "zdrojOvereni": "smartee.cz",
-      "overeno": "2026-09-24"
+      "overeno": "2026-10-14"
     },
     {
       "id": "burza-tabor-2026",
@@ -376,11 +376,10 @@
       "end": "2026-10-14",
       "datum": "14. října 2026",
       "cas": "9:00–15:00",
-      "terminPotvrzen": false,
-      "url": "https://kutnohorskelisty.cz/oznameni/kam-na-stredni-skolu-v-kutne-hore-se-uskutecni-veletrh-ucebnich-a-studijnich-oboru-14-rijna",
-      "zdrojOvereni": "kutnohorskelisty.cz",
-      "overeno": "2026-09-24",
-      "cekaNa": "Termín 14. 10. 2026 zatím jen ve zpravodajství (kutnohorskelisty.cz, 23. 9. 2026) a na webu vystavující SPŠ Čáslav; Úřad práce ho nezveřejnil."
+      "terminPotvrzen": true,
+      "url": "https://www.kdlorec.cz/akce/",
+      "zdrojOvereni": "kdlorec.cz (kalendář KD Lorec: Veletrh škol 14. 10. 2026); kutnohorskelisty.cz; smartee.cz",
+      "overeno": "2026-10-14"
     },
     {
       "id": "veletrh-strednich-skol-horni-pocernice-2026",
@@ -484,14 +483,15 @@
       "poradatel": "Krajská hospodářská komora Střední Čechy",
       "mesto": "Čelákovice",
       "krajKod": "CZ020",
-      "misto": "regionální kulturní dům",
+      "misto": "Kulturní dům Čelákovice, Sady 17. listopadu 1380",
       "start": "2026-10-15",
       "end": "2026-10-15",
       "datum": "15. října 2026",
+      "cas": "9:00–15:00",
       "terminPotvrzen": true,
       "url": "https://www.khkstrednicechy.cz/",
-      "zdrojOvereni": "khkstrednicechy.cz",
-      "overeno": "2026-09-22"
+      "zdrojOvereni": "khkstrednicechy.cz; místo a čas smartee.cz (Středočeský kraj, listopad 2026)",
+      "overeno": "2026-10-14"
     },
     {
       "id": "prehlidka-skol-holesov-2026",
@@ -585,11 +585,10 @@
       "end": "2026-10-19",
       "datum": "18.–19. října 2026",
       "cas": "ne 12:00–16:00, po 9:00–16:00",
-      "terminPotvrzen": false,
-      "url": "https://www.ssstp.cz/2026/09/10/sance-2026/",
-      "zdrojOvereni": "ssstp.cz",
-      "overeno": "2026-09-24",
-      "cekaNa": "Termín 18.–19. 10. 2026 zatím jen na webu vystavující školy (ssstp.cz); u pořadatele (město Teplice) chybí."
+      "terminPotvrzen": true,
+      "url": "https://www.teplice.cz/sance-2026-regionalni-veletrh-stredniho-vzdelavani",
+      "zdrojOvereni": "teplice.cz (pořadatel) + nahlášení formulářem 2026-10-13; hodiny i na ssstp.cz",
+      "overeno": "2026-10-13"
     },
     {
       "id": "burza-pisek-2026",
@@ -788,14 +787,15 @@
       "poradatel": "Krajská hospodářská komora Střední Čechy",
       "mesto": "Nymburk",
       "krajKod": "CZ020",
-      "misto": "regionální kulturní dům",
+      "misto": "SOŠ a SOU Nymburk, V Kolonii 1804",
       "start": "2026-10-22",
       "end": "2026-10-22",
       "datum": "22. října 2026",
+      "cas": "9:00–15:30",
       "terminPotvrzen": true,
       "url": "https://www.khkstrednicechy.cz/",
-      "zdrojOvereni": "khkstrednicechy.cz",
-      "overeno": "2026-09-22"
+      "zdrojOvereni": "khkstrednicechy.cz; místo a čas smartee.cz (Středočeský kraj, listopad 2026)",
+      "overeno": "2026-10-14"
     },
     {
       "id": "scholaris-jesenik-2026",
@@ -925,14 +925,14 @@
       "poradatel": "Krajská hospodářská komora Střední Čechy",
       "mesto": "Rakovník",
       "krajKod": "CZ020",
-      "misto": "regionální kulturní dům",
+      "misto": "Kulturní centrum Rakovník, Na Sekyře 2377",
       "start": "2026-11-04",
       "end": "2026-11-04",
       "datum": "4. listopadu 2026",
       "terminPotvrzen": true,
       "url": "https://www.khkstrednicechy.cz/",
-      "zdrojOvereni": "khkstrednicechy.cz",
-      "overeno": "2026-09-22"
+      "zdrojOvereni": "khkstrednicechy.cz; místo a čas smartee.cz (Středočeský kraj, listopad 2026)",
+      "overeno": "2026-10-14"
     },
     {
       "id": "veletrh-vzdelavani-zlin-2026",
@@ -1157,14 +1157,15 @@
       "poradatel": "Krajská hospodářská komora Střední Čechy",
       "mesto": "Mělník",
       "krajKod": "CZ020",
-      "misto": "regionální kulturní dům",
+      "misto": "Masarykův kulturní dům, U Sadů 323, Mělník",
       "start": "2026-11-12",
       "end": "2026-11-12",
       "datum": "12. listopadu 2026",
+      "cas": "9:00–15:00",
       "terminPotvrzen": true,
       "url": "https://www.khkstrednicechy.cz/",
-      "zdrojOvereni": "khkstrednicechy.cz",
-      "overeno": "2026-09-22"
+      "zdrojOvereni": "khkstrednicechy.cz; místo a čas smartee.cz (Středočeský kraj, listopad 2026)",
+      "overeno": "2026-10-14"
     },
     {
       "id": "vzdelavani-zatec-2026",
