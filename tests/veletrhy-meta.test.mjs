@@ -14,8 +14,16 @@ test('sezóna přes přelom roku: měsíce, ročník a počet krajů z dat', () 
   ]);
   assert.equal(m.title, 'Veletrhy středních škol po krajích: říjen–leden 2026/27');
   assert.ok(m.title.length <= 60);
-  assert.match(m.description, /3 akce v 2 krajích \(říjen–leden\)/);
+  assert.match(m.description, /3 akce ve 2 krajích \(říjen–leden\)/);
   assert.ok(m.description.length <= 160);
+});
+
+test('předložka „ve“ před počty čtenými dvě/tři/čtyři…, jinak „v“', () => {
+  const kraje = (n) =>
+    metaVeletrhu(Array.from({ length: n }, (_, i) => akce('2026-11-12', '2026-11-12', `K${i}`))).description;
+  for (const n of [2, 3, 4, 12, 13, 14]) assert.match(kraje(n), new RegExp(`ve ${n} krajích`));
+  for (const n of [5, 7, 11]) assert.match(kraje(n), new RegExp(`akcí v ${n} krajích`));
+  assert.match(kraje(1), /akce v 1 kraji/);
 });
 
 test('jediný měsíc a jedna akce', () => {

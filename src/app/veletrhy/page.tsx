@@ -23,7 +23,8 @@ export async function generateMetadata(): Promise<Metadata> {
   );
   return {
     alternates: { canonical: '/veletrhy' },
-    title,
+    // Sezónní titulek bez šablony layoutu, aby výsledný <title> zůstal do 60 znaků (#483).
+    title: akce.length > 0 ? { absolute: title } : title,
     description,
     openGraph: { title, description },
   };

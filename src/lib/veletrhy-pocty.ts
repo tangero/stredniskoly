@@ -53,12 +53,17 @@ const MESICE = [
   'červenec', 'srpen', 'září', 'říjen', 'listopad', 'prosinec',
 ];
 
-/** Nejdelší titulek, který Google ukáže celý (~60 znaků). */
+/** Nejdelší titulek, který Google ukáže celý (~60 znaků); platí pro výsledný `<title>` (u řetězce i se šablonou layoutu). */
 const TITULEK_MAX = 60;
 
 export const TITULEK_VELETRHU = 'Veletrhy a přehlídky středních škol — přehled akcí';
 export const POPISEK_VELETRHU =
   'Kde se dá potkat víc středních škol najednou: veletrhy a přehlídky po krajích, s městy, termíny a odkazy na pořadatele.';
+
+/** „ve“ před počty čtenými dvě/tři/čtyři… (2–4, 12–14, 20, 22–24 …), jinak „v“. */
+function predlozkaV(n: number): string {
+  return [2, 3, 4].includes(n % 10) || [20, 30, 40].includes(n) ? 've' : 'v';
+}
 
 /**
  * Titulek a popisek stránky /veletrhy ze zobrazených akcí (#483): měsíce, kraje a počet
@@ -80,7 +85,7 @@ export function metaVeletrhu(akce: { start: string; end: string; krajKod: string
   if (title.length > TITULEK_MAX) title = `Veletrhy středních škol po krajích: ${mesice}`;
   const krajuText = `${kraju} ${tvar(kraju, 'kraji', 'krajích', 'krajích')}`;
   const description =
-    `${akci(akce.length)} v ${krajuText} (${mesice}): veletrhy a přehlídky středních škol ` +
+    `${akci(akce.length)} ${predlozkaV(kraju)} ${krajuText} (${mesice}): veletrhy a přehlídky středních škol ` +
     'po krajích, s městy, termíny a odkazy na pořadatele.';
   return { title, description };
 }
