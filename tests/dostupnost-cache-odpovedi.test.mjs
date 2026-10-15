@@ -8,6 +8,7 @@
 
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
+import { readFileSync } from 'node:fs';
 import { zavadec } from './_zavadec.mjs';
 
 const nextServer = {
@@ -61,8 +62,12 @@ const bezCache = (body) => {
   return kopie;
 };
 
-// Zastávka z data/transit_graph.json (Plzeň, Hlavní nádraží).
-const CELOSTATNI = { stopId: 'CISJR:53408|CRZ:33145|IDPK:58768|IDPK:58769|PMDP_GTFS:362', maxMinutes: 30, page: 1 };
+// Zastávka z data/transit_graph.json (Plzeň, Hlavní nádraží). ID se hledá podle názvu, protože
+// obnova grafu ze spojenka.cz ID zastávek mění (#426).
+const graf = JSON.parse(readFileSync(new URL('../data/transit_graph.json', import.meta.url), 'utf-8'));
+const plzenHlNadrazi = Object.keys(graf.stops).find((id) => graf.stops[id][0] === 'Plzeň, Hlavní nádraží');
+assert.ok(plzenHlNadrazi, 'graf nemá zastávku Plzeň, Hlavní nádraží');
+const CELOSTATNI = { stopId: plzenHlNadrazi, maxMinutes: 30, page: 1 };
 const PRAHA = { address: 'Náměstí Míru', maxMinutes: 30, page: 1, coverageMode: 'praha' };
 
 const TRASY = [
