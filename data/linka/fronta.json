@@ -790,6 +790,11 @@
           "cas": "2026-10-15T15:05:30+00:00",
           "stav": "selhalo",
           "poznamka": "build_transit_graph_v2.py skončil chybou: tek): 32 stations vs 289\n  area 50.00-50.25 N, 14.0-14.5 E (e.g. Tuchoměřice, Ke Kopanině): 77 stations vs 1508\n  area 50.00-50.25 N, 14.5-15.0 E (e.g. Praha,"
+        },
+        {
+          "cas": "2026-10-15T15:07:06+00:00",
+          "stav": "selhalo",
+          "poznamka": "build_transit_graph_v2.py skončil chybou: tek): 32 stations vs 289\n  area 50.00-50.25 N, 14.0-14.5 E (e.g. Tuchoměřice, Ke Kopanině): 77 stations vs 1508\n  area 50.00-50.25 N, 14.5-15.0 E (e.g. Praha,"
         }
       ],
       "priprava": {
@@ -895,6 +900,10 @@
         },
         {
           "cas": "2026-10-15T15:06:03+00:00",
+          "stav": "pripraveno"
+        },
+        {
+          "cas": "2026-10-15T15:07:32+00:00",
           "stav": "pripraveno"
         }
       ],
