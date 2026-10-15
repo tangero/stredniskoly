@@ -1,6 +1,6 @@
 {
  "verze": 1,
- "aktualizovano": "2026-10-09",
+ "aktualizovano": "2026-10-15",
  "popis": "Registr stavu datových sad. Pro každou sadu říká, které období web zobrazuje, odkud je, jaké období čekáme a kdy, co se stane se starými daty po přepnutí a které ukazatele ze slovníku na sadě stojí. Postup a pravidla: docs/zdroje-dat.md, oddíl Stav datových sad. Měnit jen přes scripts/stav-datovych-sad.py.",
  "pravidla": {
   "jistota": "znamo = datum doložené zdrojem; odhad = odvozeno z předchozího období, uveď zdůvodnění; neznamo = nelze odhadnout",
@@ -720,14 +720,15 @@
    "cyklus": "rucni",
    "pouziti": "web",
    "zobrazeno": {
-    "obdobi": "2026-02-07",
-    "soubor": "data/PID_GTFS.zip"
+    "obdobi": "2026-10-15",
+    "soubor": "https://www.spojenka.cz/jrdata/jizdnirady-gtfs.zip",
+    "prepnuto": "2026-10-15"
    },
    "ocekavano": {
     "obdobi": null,
-    "kdy": null,
-    "jistota": "neznamo",
-    "zduvodneni": "Jízdní řády se mění s každým vydáním."
+    "kdy": "2026-12",
+    "jistota": "odhad",
+    "zduvodneni": "Celou sadu obnovuje datová linka po celostátní změně jízdního řádu druhou neděli v prosinci."
    },
    "obnovit_nejpozdeji": "2027-01-31",
    "po_prepnuti": "Nahrazuje se celý.",
@@ -747,7 +748,13 @@
     ],
     "revize_oznamovat": false,
     "obdobi": "jizdni-rad"
-   }
+   },
+   "historie_obdobi": [
+    {
+     "obdobi": "2026-02-07",
+     "soubor": "data/PID_GTFS.zip"
+    }
+   ]
   },
   "katalog-historie": {
    "nazev": "Katalog, historické ročníky 2024 a 2025",
@@ -1188,6 +1195,13 @@
    "z": "2026-09-07",
    "na": "2026-10-05",
    "doklad": "PR #379, týdenní workflow CSI Weekly Refresh 2026-10-05, commit fb977a3"
+  },
+  {
+   "datum": "2026-10-15",
+   "sada": "doprava-gtfs",
+   "z": "2026-02-07",
+   "na": "2026-10-15",
+   "doklad": "Úloha datové linky MUCR9 (#497, PR #498), schválená vlastníkem 15. 10. 2026; rozhodnutí vlastníka o obnově všech dat v #426 z 12. 10. 2026"
   }
  ]
 }
