@@ -34,4 +34,7 @@ ve kterém na něj narazíš (krátce: co se stane, proč, co s tím). Oprava, k
 - **Úřední název školy po přejmenování nebo sloučení opravuje `src/data/opravy-nazvu-skol.json` (#476).** Rejstřík
   MŠMT (`nazvy-oboru.json`) se obnovuje po čtvrtletích, takže nový název se v něm objeví se zpožděním. Oprava přebije
   `uplny_nazev` v nadpisu stránky školy a v identifikaci v portálu. Zkrácený název v katalogu a adresa stránky se
-  nemění (zkratku katalogu tvoří datová linka). Až rejstřík ponese stejný název, záznam se odstraní.
+  nemění (zkratku katalogu tvoří datová linka). Záznam má dva důvody: (1) rejstřík název ještě nenese, pak se záznam
+  odstraní, až ho rejstřík ponese; (2) portál (`src/lib/portal-skol.ts`, `getNazevSAdresou`/`getNazevSkoly`) bere
+  název z katalogu, ne z rejstříku, a záznam ho tam opravuje i tehdy, když ho rejstřík už nese (600005089, #319);
+  takový záznam se odstraní, až portál převezme název z rejstříku.
