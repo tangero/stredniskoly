@@ -94,6 +94,7 @@ export default function RootLayout({
             __html: `
               if (window.location.hostname === '${new URL(SITE_URL).hostname}') {
               var _paq = window._paq = window._paq || [];
+              _paq.push(['enableHeartBeatTimer']);
               _paq.push(['trackPageView']);
               _paq.push(['enableLinkTracking']);
               (function() {
