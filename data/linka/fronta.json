@@ -691,7 +691,7 @@
       "last_modified": "",
       "vytvoreno": "2026-10-12T17:02:06+00:00",
       "zobrazene_obdobi": "2026-02-07",
-      "stav": "schvaleno",
+      "stav": "zamitnuto",
       "historie": [
         {
           "cas": "2026-10-12T17:02:06+00:00",
@@ -795,6 +795,11 @@
           "cas": "2026-10-15T15:07:06+00:00",
           "stav": "selhalo",
           "poznamka": "build_transit_graph_v2.py skončil chybou: tek): 32 stations vs 289\n  area 50.00-50.25 N, 14.0-14.5 E (e.g. Tuchoměřice, Ke Kopanině): 77 stations vs 1508\n  area 50.00-50.25 N, 14.5-15.0 E (e.g. Praha,"
+        },
+        {
+          "cas": "2026-10-15T15:37:05+00:00",
+          "stav": "zamitnuto",
+          "poznamka": "github, tangero, po chybě předání"
         }
       ],
       "priprava": {
@@ -835,14 +840,20 @@
         ]
       },
       "rozhodnuti": {
-        "cas": "2026-10-14T13:42:35Z",
-        "rozhodnuti": "schvaleno",
+        "cas": "2026-10-15T15:04:26Z",
+        "rozhodnuti": "zamitnuto",
         "kanal": "github",
         "od": "tangero"
       },
       "predani_chyba": {
         "cas": "2026-10-15T10:07:17+00:00",
         "chyba": "výstup se od schválení změnil: 5e07a432a777… → build_transit_graph_v2.py skončil chybou: tek): 32 stations ; úlohu znovu otevři příkazem znovu"
+      },
+      "predchozi_rozhodnuti": {
+        "cas": "2026-10-14T13:42:35Z",
+        "rozhodnuti": "schvaleno",
+        "kanal": "github",
+        "od": "tangero"
       }
     },
     "VYXMR": {
@@ -854,7 +865,7 @@
       "last_modified": "",
       "vytvoreno": "2026-10-14T19:21:13+00:00",
       "zobrazene_obdobi": "2026-02-07",
-      "stav": "schvaleno",
+      "stav": "zamitnuto",
       "historie": [
         {
           "cas": "2026-10-14T19:21:13+00:00",
@@ -905,6 +916,11 @@
         {
           "cas": "2026-10-15T15:07:32+00:00",
           "stav": "pripraveno"
+        },
+        {
+          "cas": "2026-10-15T15:37:05+00:00",
+          "stav": "zamitnuto",
+          "poznamka": "github, tangero, po chybě předání"
         }
       ],
       "priprava": {
@@ -945,14 +961,20 @@
         ]
       },
       "rozhodnuti": {
-        "cas": "2026-10-15T05:11:37Z",
-        "rozhodnuti": "schvaleno",
+        "cas": "2026-10-15T15:04:43Z",
+        "rozhodnuti": "zamitnuto",
         "kanal": "github",
         "od": "tangero"
       },
       "predani_chyba": {
         "cas": "2026-10-15T05:13:01+00:00",
         "chyba": "výstup se od schválení změnil: 34fb4c860ae9… → 452e542353ddbaacf03982135f88049bf569cfd37f42757e1310e324c32f; úlohu znovu otevři příkazem znovu"
+      },
+      "predchozi_rozhodnuti": {
+        "cas": "2026-10-15T05:11:37Z",
+        "rozhodnuti": "schvaleno",
+        "kanal": "github",
+        "od": "tangero"
       }
     },
     "MUCR9": {
@@ -1205,6 +1227,14 @@
     "telegram:180939664": "2026-10-05T18:30:41+00:00",
     "github:https://github.com/tangero/stredniskoly/issues/473#issuecomment-6169772305": "2026-10-14T13:43:09+00:00",
     "github:https://github.com/tangero/stredniskoly/issues/492#issuecomment-6184934445": "2026-10-15T05:12:10+00:00",
-    "github:https://github.com/tangero/stredniskoly/issues/497#issuecomment-6185132071": "2026-10-15T05:28:12+00:00"
+    "github:https://github.com/tangero/stredniskoly/issues/497#issuecomment-6185132071": "2026-10-15T05:28:12+00:00",
+    "github:https://github.com/tangero/stredniskoly/issues/473#issuecomment-6169783776": "2026-10-15T15:37:05+00:00",
+    "github:https://github.com/tangero/stredniskoly/issues/473#issuecomment-6169785440": "2026-10-15T15:37:05+00:00",
+    "github:https://github.com/tangero/stredniskoly/issues/473#issuecomment-6176380637": "2026-10-15T15:37:05+00:00",
+    "github:https://github.com/tangero/stredniskoly/issues/492#issuecomment-6184941647": "2026-10-15T15:37:05+00:00",
+    "github:https://github.com/tangero/stredniskoly/issues/492#issuecomment-6184952206": "2026-10-15T15:37:05+00:00",
+    "github:https://github.com/tangero/stredniskoly/issues/473#issuecomment-6189595068": "2026-10-15T15:37:05+00:00",
+    "github:https://github.com/tangero/stredniskoly/issues/473#issuecomment-6195266050": "2026-10-15T15:37:05+00:00",
+    "github:https://github.com/tangero/stredniskoly/issues/492#issuecomment-6195272140": "2026-10-15T15:37:05+00:00"
   }
 }
