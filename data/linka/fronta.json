@@ -760,6 +760,11 @@
           "cas": "2026-10-15T05:12:35+00:00",
           "stav": "selhalo",
           "poznamka": "build_transit_graph_v2.py skončil chybou: vice, Hlína): 32 stations vs 295\n  area 50.00-50.25 N, 14.0-14.5 E (e.g. Horní Bezděkov, Křižovatka): 77 stations vs 1511\n  area 50.00-50.25 N, 14.5-15.0 E (e"
+        },
+        {
+          "cas": "2026-10-15T05:28:33+00:00",
+          "stav": "selhalo",
+          "poznamka": "build_transit_graph_v2.py skončil chybou: vice, Hlína): 32 stations vs 295\n  area 50.00-50.25 N, 14.0-14.5 E (e.g. Horní Bezděkov, Křižovatka): 77 stations vs 1511\n  area 50.00-50.25 N, 14.5-15.0 E (e"
         }
       ],
       "priprava": {
@@ -842,6 +847,10 @@
         {
           "cas": "2026-10-15T05:13:01+00:00",
           "stav": "pripraveno"
+        },
+        {
+          "cas": "2026-10-15T05:28:54+00:00",
+          "stav": "pripraveno"
         }
       ],
       "priprava": {
@@ -901,7 +910,7 @@
       "last_modified": "",
       "vytvoreno": "2026-10-15T05:15:53+00:00",
       "zobrazene_obdobi": "2026-02-07",
-      "stav": "oznameno",
+      "stav": "predano",
       "historie": [
         {
           "cas": "2026-10-15T05:15:53+00:00",
@@ -915,10 +924,24 @@
         {
           "cas": "2026-10-15T05:16:37+00:00",
           "stav": "oznameno"
+        },
+        {
+          "cas": "2026-10-15T05:28:12+00:00",
+          "stav": "schvaleno",
+          "poznamka": "github, tangero"
+        },
+        {
+          "cas": "2026-10-15T05:29:15+00:00",
+          "stav": "pripraveno"
+        },
+        {
+          "cas": "2026-10-15T05:29:22+00:00",
+          "stav": "predano",
+          "poznamka": "https://github.com/tangero/stredniskoly/pull/498"
         }
       ],
       "priprava": {
-        "cas": "2026-10-15T05:16:15+00:00",
+        "cas": "2026-10-15T05:28:54+00:00",
         "stazeno": {
           "velikost": 83247263,
           "sha256": "4ffc28d829f66c7f3588e462067a69ecc1952ff751a81a100e0a9bb54627d55c",
@@ -953,6 +976,23 @@
         "telegram_zpravy": [
           475
         ]
+      },
+      "rozhodnuti": {
+        "cas": "2026-10-15T05:27:41Z",
+        "rozhodnuti": "schvaleno",
+        "kanal": "github",
+        "od": "tangero"
+      },
+      "predani": {
+        "plan": {
+          "vetev": "data/doprava-gtfs-2025-12-14-mucr9",
+          "soubory": {
+            "/home/runner/work/stredniskoly/stredniskoly/data/linka/prace/MUCR9/transit_graph.json": "data/transit_graph.json"
+          },
+          "nadpis": "data: doprava-gtfs 2025-12-14 (MUCR9)",
+          "telo": "Připravila datová linka, schváleno 2026-10-15T05:27:41Z přes github.\n\nZdroj: https://www.spojenka.cz/jrdata/jizdnirady-gtfs.zip\nsha256: 4ffc28d829f66c7f3588e462067a69ecc1952ff751a81a100e0a9bb54627d55c\n\nPřepíše data/transit_graph.json, ze kterého web počítá dojezdy. Po sloučení přepni sadu doprava-gtfs v registru. Našeptávač zastávek public/pid_stops_compact.json se nemění.\n\nPo sloučení přepni období v registru: `python3 scripts/stav-datovych-sad.py prepni …`."
+        },
+        "pull_request": "https://github.com/tangero/stredniskoly/pull/498"
       }
     }
   },
@@ -1110,6 +1150,7 @@
   "zpracovane_zpravy": {
     "telegram:180939664": "2026-10-05T18:30:41+00:00",
     "github:https://github.com/tangero/stredniskoly/issues/473#issuecomment-6169772305": "2026-10-14T13:43:09+00:00",
-    "github:https://github.com/tangero/stredniskoly/issues/492#issuecomment-6184934445": "2026-10-15T05:12:10+00:00"
+    "github:https://github.com/tangero/stredniskoly/issues/492#issuecomment-6184934445": "2026-10-15T05:12:10+00:00",
+    "github:https://github.com/tangero/stredniskoly/issues/497#issuecomment-6185132071": "2026-10-15T05:28:12+00:00"
   }
 }
