@@ -139,7 +139,9 @@ test('Jeseník: druhá akce v témž městě není chyba', () => {
   const jesenik = SNIMEK.akce.filter((a) => a.mesto === 'Jeseník' && a.terminPotvrzen);
   assert.ok(jesenik.length >= 2, 'snímek má v Jeseníku dvě akce');
   const stav = new Map(jesenik.slice(0, 1).map((a) => [a.id, { data: a, verze: 1, smazano: false }]));
-  const r = overNavrh([{ op: 'pridat', akce: jesenik[1], povolitMinulou: true }], stav, DNES);
+  // Ke dni exportu snímku, ne k pevnému DNES: akce ověřená po DNES by jinak měla `overeno` v budoucnosti.
+  const denSnimku = SNIMEK.checkedAt > DNES ? SNIMEK.checkedAt : DNES;
+  const r = overNavrh([{ op: 'pridat', akce: jesenik[1], povolitMinulou: true }], stav, denSnimku);
   assert.deepEqual(r.chyby, [], 'dvě různé akce v jednom městě nejsou chyba');
 });
 
