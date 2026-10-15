@@ -6,6 +6,7 @@ větev vzniká v dočasném git worktree. Bez stavu `schvaleno` se nic nestane.
 from __future__ import annotations
 
 import copy
+import hashlib
 import os
 import shutil
 import subprocess
@@ -31,19 +32,58 @@ def plan(uloha: dict) -> dict:
     return {"vetev": vetev, "soubory": soubory, "nadpis": nadpis, "telo": telo}
 
 
-def zajisti_vystupy(uloha: dict, registr: dict, stahni_fn=jadro.stahni) -> None:
-    """Pracovní soubory mohou chybět, například v dalším běhu GitHub Actions; připraví se znovu.
+def stahni_artefakt(beh: str, nazev: str, cil: Path, runner=subprocess.run) -> None:
+    """Stáhne artefakt běhu workflow Datová linka (`gh run download`, potřebuje oprávnění actions: read)."""
+    r = runner(["gh", "run", "download", beh, "-n", nazev, "-D", str(cil)], capture_output=True, text=True, cwd=jadro.KOREN)
+    if r.returncode != 0:
+        raise RuntimeError(f"artefakt {nazev} se nepodařilo stáhnout: {r.stderr.strip()[:200]}")
 
-    Znovu stažený soubor musí mít stejný otisk jako při oznámení, jinak by se
-    předalo něco jiného, než správce schválil. Zdroj, který vychází denně
-    (jízdní řády), se mění vždy; u něj zpracovatel uvádí otisk výstupu a musí
-    se shodovat ten.
+
+def sha256(cesta: Path) -> str:
+    return hashlib.sha256(cesta.read_bytes()).hexdigest()
+
+
+def obnov_z_artefaktu(uloha: dict, stahni_artefakt_fn=stahni_artefakt) -> None:
+    """Vrátí na místo výstupy, které příprava uložila do artefaktu, a ověří jejich schválené otisky."""
+    priprava = uloha["priprava"]
+    zpr = priprava["zpracovani"]
+    otisky = zpr.get("otisky_predani") or {}
+    docasny = Path(tempfile.mkdtemp(prefix="linka-artefakt-"))
+    try:
+        stahni_artefakt_fn(priprava["artefakt"]["beh"], priprava["artefakt"]["nazev"], docasny)
+        for zdroj in zpr["predani"]:
+            jmeno = Path(zdroj).name
+            nalezene = [c for c in docasny.rglob(jmeno) if c.parent.name == uloha["kod"]]
+            if not nalezene:
+                raise RuntimeError(f"artefakt {priprava['artefakt']['nazev']} neobsahuje {uloha['kod']}/{jmeno}")
+            if otisky.get(jmeno) != sha256(nalezene[0]):
+                raise RuntimeError(f"{jmeno} v artefaktu nemá schválený otisk")
+            Path(zdroj).parent.mkdir(parents=True, exist_ok=True)
+            shutil.copyfile(nalezene[0], zdroj)
+    finally:
+        shutil.rmtree(docasny, ignore_errors=True)
+
+
+def zajisti_vystupy(uloha: dict, registr: dict, stahni_fn=jadro.stahni, stahni_artefakt_fn=stahni_artefakt) -> None:
+    """Pracovní soubory mohou chybět, například v dalším běhu GitHub Actions.
+
+    U zdroje, který vychází denně (jízdní řády; zpracovatel uvádí otisk výstupu), se nejdřív vezmou
+    výstupy z artefaktu běhu, který úlohu připravil: přesně ty, které správce schválil (#500). Když
+    artefakt není, výstupy se připraví znovu a musí mít stejný otisk jako při oznámení, jinak by se
+    předalo něco jiného, než správce schválil. U ostatních zdrojů musí mít stejný otisk znovu stažený soubor.
     """
     zpr = uloha.get("priprava", {}).get("zpracovani") or {}
     if all(Path(zdroj).exists() for zdroj in zpr.get("predani", {})):
         return
-    schvalena = copy.deepcopy(uloha.get("priprava", {}))
     otisk_vystupu = zpr.get("otisk_vystupu")
+    chyba_artefaktu = None
+    if otisk_vystupu and uloha["priprava"].get("artefakt"):
+        try:
+            obnov_z_artefaktu(uloha, stahni_artefakt_fn)
+            return
+        except RuntimeError as e:
+            chyba_artefaktu = str(e)
+    schvalena = copy.deepcopy(uloha.get("priprava", {}))
     otisk = schvalena.get("stazeno", {}).get("sha256")
     stav = uloha["stav"]
     zpracovani.priprav(uloha, registr, stahni_fn=stahni_fn)
@@ -52,8 +92,10 @@ def zajisti_vystupy(uloha: dict, registr: dict, stahni_fn=jadro.stahni) -> None:
     if otisk_vystupu:
         novy = (nova.get("zpracovani") or {}).get("otisk_vystupu")
         chyba = None if novy == otisk_vystupu else (
-            f"výstup se od schválení změnil: {otisk_vystupu[:12]}… → {(novy or nova.get('chyba') or '')[:60]}; "
-            "úlohu znovu otevři příkazem znovu")
+            f"výstup se od schválení změnil: {otisk_vystupu[:12]}… → {(novy or nova.get('chyba') or '')[:60]}"
+            + (f" ({chyba_artefaktu})" if chyba_artefaktu else "")
+            + f"; zamítni ji („zamítám {uloha['kod']}“) a založ novou úlohu (workflow Datová linka, krok beh, "
+              f"zalozit={uloha['sada']}), kterou schválíš týž den")
     else:
         novy = nova.get("stazeno", {}).get("sha256")
         chyba = f"zdroj se od schválení změnil: sha256 {otisk[:12]}… → {(novy or '')[:12]}…" if otisk and novy != otisk else None
@@ -65,7 +107,8 @@ def zajisti_vystupy(uloha: dict, registr: dict, stahni_fn=jadro.stahni) -> None:
         raise RuntimeError(chyba)
 
 
-def predej(uloha: dict, registr: dict, nanecisto: bool, runner=subprocess.run, stahni_fn=jadro.stahni) -> dict:
+def predej(uloha: dict, registr: dict, nanecisto: bool, runner=subprocess.run, stahni_fn=jadro.stahni,
+          stahni_artefakt_fn=stahni_artefakt) -> dict:
     if uloha["stav"] != "schvaleno":
         raise RuntimeError(f"{uloha['kod']}: předat lze jen schválenou úlohu, stav je {uloha['stav']}")
     p = plan(uloha)
@@ -92,7 +135,7 @@ def predej(uloha: dict, registr: dict, nanecisto: bool, runner=subprocess.run, s
     if nanecisto:
         return {"plan": p, "prikazy": prikazy}
 
-    zajisti_vystupy(uloha, registr, stahni_fn=stahni_fn)
+    zajisti_vystupy(uloha, registr, stahni_fn=stahni_fn, stahni_artefakt_fn=stahni_artefakt_fn)
     p = plan(uloha)  # po nové přípravě: otisk zdroje v popisu PR patří k předávaným souborům
 
     def spust(prikaz: list[str], **kw) -> str:

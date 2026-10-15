@@ -2,6 +2,15 @@
 
 Záznam změn chování systému: požadavek, co se změnilo a proč, datum. Nejnovější nahoře.
 
+## 2026-10-15: datová linka předává schválený graf spojení a přepočítá zastávky škol (#500)
+
+- **Požadavek:** interní zadání #500 po obnově grafu v #426.
+- **Co:** předání úlohy `doprava-gtfs` bere výstupy z artefaktu běhu, který úlohu připravil, místo nového stažení;
+  zpracování přepočte zastávky škol (`data/school_locations.json`) a oznámení hlásí změnu ID zastávek a školy se
+  vzdálenou zastávkou; `zamítám KÓD` ukončí schválenou úlohu s chybou předání.
+- **Proč:** schválení s odstupem přes noc nešlo předat (zdroj vychází denně), PR linky neprošel testy po změně
+  ID zastávek a úlohy s chybou předání shazovaly každý běh linky.
+
 ## 2026-10-15: graf spojení z aktuálních jízdních řádů (#426)
 
 - **Požadavek:** hlášení #426 (Dostupnost nabízela zaniklou linku XB od Divadla Gong) a rozhodnutí vlastníka
