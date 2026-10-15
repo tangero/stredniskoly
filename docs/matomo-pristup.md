@@ -74,3 +74,10 @@ Připravený API klient neznamená opravu měření aplikace. Události Mého v�
 ## Druhý zdroj: Vercel Web Analytics
 
 Doplněno 11. 9. 2026: uživatel poskytl také Vercel dashboard. [Stav přístupu a postup](vercel-analytics-pristup.md) rozlišuje ověřený projekt od dosud nenačtených statistik. Při srovnání použít stejné dokončené dny, domény a metriky podle [analýzy §10](analyza-navstevnosti-2026.md#10-vercel-web-analytics-jako-druhý-zdroj). Token ani klient Matomo neopravňují k Vercel API.
+
+## Doba na stránce (heartbeat od 15. 10. 2026)
+
+Měřicí skript v `src/app/layout.tsx` zapíná `enableHeartBeatTimer` (#493). Matomo pak posílá `ping=1`
+a změří dobu na stránce i u návštěvy s jedinou stránkou, která dřív vycházela 0 s. Řady délky návštěvy
+a doby na stránce před nasazením heartbeatu a po něm proto nejsou srovnatelné: nárůst po nasazení není
+změna chování návštěvníků. Den nasazení se doplní z data sloučení PR.
