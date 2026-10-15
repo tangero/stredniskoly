@@ -27,6 +27,8 @@ ve kterém na něj narazíš (krátce: co se stane, proč, co s tím). Oprava, k
 
 - **Oznámení opravy oznamovateli (#441):** workflow Ověření v produkci má jediný krok s produkční databází (`HLASENI_DATABASE_URL`) a Resendem; kód větví se tam nespouští, jen `main`. Skript nesmí do výpisu vypsat text výjimky z databáze (může nést adresu). Postup: `docs/oznameni-opravy-oznamovateli.md`.
 
+- **Přihlášení do administrace (#479):** `src/lib/admin-relace.ts` importuje `next/headers`, který v testech pod plain node neprojde (`ERR_MODULE_NOT_FOUND`); testy proto importují `admin-relace-jadro.ts` bez Next.js. Passkey je vázaný na doménu (rpID = hostname požadavku), takže passkey z produkce na náhledu Vercelu nefunguje a OAuth aplikace GitHubu má callback jen na produkci: administrace na náhledech přihlásit nejde.
+
 ## Název školy
 
 - **Úřední název školy po přejmenování nebo sloučení opravuje `src/data/opravy-nazvu-skol.json` (#476).** Rejstřík

@@ -286,6 +286,7 @@ def zpracuj_maturitu(uloha: dict, soubor: Path, prace: Path, struktura: dict, st
 
 
 GTFS_POVINNE = ("routes.txt", "trips.txt", "stops.txt", "stop_times.txt", "calendar.txt")
+MAX_CHUZE_KM = 1.5  # MAX_WALK_DISTANCE_KM v src/app/api/dostupnost/route.ts
 
 
 def otisk_grafu(cesta: Path) -> str:
@@ -295,7 +296,49 @@ def otisk_grafu(cesta: Path) -> str:
     return hashlib.sha256(json.dumps(obsah, ensure_ascii=False, sort_keys=True).encode()).hexdigest()
 
 
-def zpracuj_jizdni_rady(uloha: dict, soubor: Path, prace: Path, struktura: dict, stavajici: Path | None = None) -> dict:
+def zastavky_skol(graf: dict, stary_graf: dict | None, skoly_cesta: Path, vystup: Path) -> dict:
+    """Přepočte nejbližší zastávku škol na nový graf (scripts/prepocet_zastavek_skol.py) a vrátí souhrn do oznámení.
+
+    Obnova grafu může změnit ID zastávek (spojenka.cz je v říjnu 2026 změnila celé), a pak by školy
+    v `data/school_locations.json` odkazovaly na zastávky, které v grafu nejsou (#500).
+    """
+    sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+    from prepocet_zastavek_skol import prepocitej
+
+    skoly = json.loads(skoly_cesta.read_text(encoding="utf-8"))
+    puvodni = {k: v.get("distance_km") for k, v in skoly["schools"].items()}
+    prepocitej(skoly, graf)
+    with open(vystup, "w", encoding="utf-8") as f:
+        json.dump(skoly, f, ensure_ascii=False, indent=2)
+    nove = skoly["schools"]
+    souhrn = {
+        "skol": len(nove),
+        "dal_nez_chuze": sum(1 for z in nove.values() if z["distance_km"] > MAX_CHUZE_KM),
+        "dal_o_200_m": sum(1 for k, z in nove.items()
+                           if puvodni.get(k) is not None and z["distance_km"] > puvodni[k] + 0.2),
+    }
+    if stary_graf:
+        stara_id = set(stary_graf.get("stops", {}))
+        souhrn["chybejici_id"] = len(stara_id - set(graf["stops"]))
+        souhrn["id_na_webu"] = len(stara_id)
+    return souhrn
+
+
+def popis_zastavek_skol(s: dict) -> str:
+    def c(n: int) -> str:
+        return f"{n:,}".replace(",", " ")
+
+    text = (f"zastávky {c(s['skol'])} škol přepočtené na nový graf, dál než {str(MAX_CHUZE_KM).replace('.', ',')} km "
+            f"pěšky {c(s['dal_nez_chuze'])}, o víc než 200 m dál než dosud {c(s['dal_o_200_m'])}")
+    if s.get("id_na_webu"):
+        text += f"; ID zastávek grafu na webu, která nový graf nemá: {c(s['chybejici_id'])} z {c(s['id_na_webu'])}"
+        if s["chybejici_id"] > 0.5 * s["id_na_webu"]:
+            text += " (POZOR: zdroj změnil ID zastávek)"
+    return text
+
+
+def zpracuj_jizdni_rady(uloha: dict, soubor: Path, prace: Path, struktura: dict, stavajici: Path | None = None,
+                        skoly: Path | None = None) -> dict:
     """GTFS CIS JŘ: dopravní graf pro první školní pondělí nového jízdního řádu.
 
     Args:
@@ -305,6 +348,8 @@ def zpracuj_jizdni_rady(uloha: dict, soubor: Path, prace: Path, struktura: dict,
         struktura: Soubory v archivu.
         stavajici: Graf na webu, proti kterému se kontroluje pokrytí. Výchozí je
             `data/transit_graph.json`; testy sem dávají vlastní soubor.
+        skoly: Polohy škol s nejbližší zastávkou, které se přepočtou na nový graf. Výchozí je
+            `data/school_locations.json`; když soubor chybí, přepočet se vynechá.
 
     Referenční pondělí se odvozuje z období a z data posledního otevření úlohy, ne
     z dneška, aby předání v pozdějším běhu postavilo graf pro týž den. Když ho už
@@ -339,27 +384,52 @@ def zpracuj_jizdni_rady(uloha: dict, soubor: Path, prace: Path, struktura: dict,
     finally:
         shutil.rmtree(gtfs, ignore_errors=True)  # rozbalená data mají stovky MB
 
-    meta = json.loads(vystup.read_text(encoding="utf-8"))["metadata"]
-    web = json.loads(stavajici.read_text(encoding="utf-8"))["metadata"] if stavajici.exists() else None
+    graf = json.loads(vystup.read_text(encoding="utf-8"))
+    meta = graf["metadata"]
+    stary_graf = json.loads(stavajici.read_text(encoding="utf-8")) if stavajici.exists() else None
+    web = stary_graf["metadata"] if stary_graf else None
+    popis = (f"referenční pondělí {meta['reference_date']}, zastávek {meta['parent_stations']}, "
+             f"hran {meta['directed_edges']}, linek s intervalem {meta['routes_with_headway']}"
+             + (f" (na webu {web['parent_stations']}, {web['directed_edges']} a {web['routes_with_headway']}"
+                f", referenční den {web.get('reference_date', 'neuveden')})" if web else ""))
+    predani = {str(vystup): "data/transit_graph.json"}
+    if skoly is None:
+        skoly = jadro.KOREN / "data" / "school_locations.json"
+    zastavky = None
+    if skoly.exists():
+        skoly_vystup = prace / "school_locations.json"
+        zastavky = zastavky_skol(graf, stary_graf, skoly, skoly_vystup)
+        predani[str(skoly_vystup)] = "data/school_locations.json"
+        popis += "; " + popis_zastavek_skol(zastavky)
     return {
         "zpracovatel": "doprava-gtfs",
         "vystupy_skriptu": ["\n".join(zprava.splitlines()[-5:])],
-        "srovnani": {
-            "popis": f"referenční pondělí {meta['reference_date']}, zastávek {meta['parent_stations']}, "
-                     f"hran {meta['directed_edges']}, linek s intervalem {meta['routes_with_headway']}"
-                     + (f" (na webu {web['parent_stations']}, {web['directed_edges']} a {web['routes_with_headway']}"
-                        f", referenční den {web.get('reference_date', 'neuveden')})" if web else ""),
-        },
-        "predani": {str(vystup): "data/transit_graph.json"},
+        "srovnani": {"popis": popis, **({"zastavky_skol": zastavky} if zastavky else {})},
+        "predani": predani,
         "otisk_vystupu": otisk_grafu(vystup),
-        "dopad": "Přepíše data/transit_graph.json, ze kterého web počítá dojezdy. Po sloučení přepni sadu doprava-gtfs "
-                 "v registru. Našeptávač zastávek public/pid_stops_compact.json se nemění.",
+        "dopad": "Přepíše data/transit_graph.json, ze kterého web počítá dojezdy"
+                 + (", a data/school_locations.json s nejbližší zastávkou škol přepočtenou na nový graf" if zastavky else "")
+                 + ". Po sloučení přepni sadu doprava-gtfs v registru. Našeptávač zastávek public/pid_stops_compact.json "
+                   "se nemění.",
     }
 
 
 ZPRACOVATELE = {"cermat-uchazeci-kolo1": zpracuj_uchazeci, "cermat-kolo2-agregaty": zpracuj_druhe_kolo,
                 "cermat-maturita": zpracuj_maturitu, "doprava-gtfs": zpracuj_jizdni_rady}
 S_DALSIMI_SOUBORY = (zpracuj_druhe_kolo, zpracuj_maturitu, zpracuj_uchazeci)
+
+
+def zaznamenej_vystupy(priprava: dict) -> None:
+    """Otisk každého výstupu k předání a artefakt běhu GitHub Actions, který výstupy uložil.
+
+    Předání pak u zdroje, který vychází denně, vezme výstupy z artefaktu místo nové přípravy (#500).
+    Běh workflow Datová linka nastavuje LINKA_BEH_ID; mimo něj (testy, ruční běh) se artefakt nezapisuje.
+    """
+    zpr = priprava["zpracovani"]
+    zpr["otisky_predani"] = {Path(z).name: hashlib.sha256(Path(z).read_bytes()).hexdigest() for z in zpr.get("predani", {})}
+    beh = os.environ.get("LINKA_BEH_ID")
+    if beh and zpr.get("predani"):
+        priprava["artefakt"] = {"beh": beh, "nazev": f"datova-linka-{beh}"}
 
 
 def priprav(uloha: dict, registr: dict, stahni_fn=jadro.stahni) -> None:
@@ -407,6 +477,7 @@ def priprav(uloha: dict, registr: dict, stahni_fn=jadro.stahni) -> None:
             else:
                 priprava["zpracovani"] = zpracovatel(uloha, soubor, prace, struktura)
             priprava["dopad"] = priprava["zpracovani"]["dopad"]
+            zaznamenej_vystupy(priprava)
         else:
             priprava["dopad"] = "Soubor je stažený a zkontrolovaný; sada nemá automatické zpracování. " + sada.get("aktualizace", {}).get("lidsky_krok", "")
         jadro.zmen_stav(uloha, "pripraveno")

@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-10-05",
+  "checkedAt": "2026-10-15",
   "sezona": "2027",
   "zdroj": "docs/prijimacky-veletrhy-poradatele-2026.xlsx",
   "poznamka": "Rozpis pořadatelů na jednotlivé akce. Zobrazuje se jen akce s terminPotvrzen: true. Popis viz docs/veletrhy-skol-2027.md.",
@@ -283,7 +283,7 @@
       "poznamkaTerminu": "Termín jsme převzali z agregátoru akcí. Web pořadatele ho zatím neuvádí, proto jsme ho u něj nemohli ověřit.",
       "url": "https://www.smartee.cz/veletrhy-strednich-a-vysokych-skol-brno-2022/tpost/artl00e411-stedocesk-kraj-z-listopad-2026",
       "zdrojOvereni": "smartee.cz",
-      "overeno": "2026-09-24"
+      "overeno": "2026-10-14"
     },
     {
       "id": "burza-tabor-2026",
@@ -376,11 +376,10 @@
       "end": "2026-10-14",
       "datum": "14. října 2026",
       "cas": "9:00–15:00",
-      "terminPotvrzen": false,
-      "url": "https://kutnohorskelisty.cz/oznameni/kam-na-stredni-skolu-v-kutne-hore-se-uskutecni-veletrh-ucebnich-a-studijnich-oboru-14-rijna",
-      "zdrojOvereni": "kutnohorskelisty.cz",
-      "overeno": "2026-09-24",
-      "cekaNa": "Termín 14. 10. 2026 zatím jen ve zpravodajství (kutnohorskelisty.cz, 23. 9. 2026) a na webu vystavující SPŠ Čáslav; Úřad práce ho nezveřejnil."
+      "terminPotvrzen": true,
+      "url": "https://www.kdlorec.cz/akce/",
+      "zdrojOvereni": "kdlorec.cz (kalendář KD Lorec: Veletrh škol 14. 10. 2026); kutnohorskelisty.cz; smartee.cz",
+      "overeno": "2026-10-14"
     },
     {
       "id": "veletrh-strednich-skol-horni-pocernice-2026",
@@ -476,7 +475,7 @@
       "terminPotvrzen": true,
       "url": "https://spsostrov.cz/prijdte-se-podivat",
       "zdrojOvereni": "spsostrov.cz",
-      "overeno": "2026-09-22"
+      "overeno": "2026-10-15"
     },
     {
       "id": "prehlidka-celakovice-2026",
@@ -484,14 +483,15 @@
       "poradatel": "Krajská hospodářská komora Střední Čechy",
       "mesto": "Čelákovice",
       "krajKod": "CZ020",
-      "misto": "regionální kulturní dům",
+      "misto": "Kulturní dům Čelákovice, Sady 17. listopadu 1380",
       "start": "2026-10-15",
       "end": "2026-10-15",
       "datum": "15. října 2026",
+      "cas": "9:00–15:00",
       "terminPotvrzen": true,
-      "url": "https://www.khkstrednicechy.cz/",
-      "zdrojOvereni": "khkstrednicechy.cz",
-      "overeno": "2026-09-22"
+      "url": "https://www.khkstrednicechy.cz/akce/prehlidka-strednich-skol-celakovice-2026/",
+      "zdrojOvereni": "khkstrednicechy.cz (stránka akce)",
+      "overeno": "2026-10-15"
     },
     {
       "id": "prehlidka-skol-holesov-2026",
@@ -520,11 +520,10 @@
       "end": "2026-10-15",
       "datum": "15. října 2026",
       "cas": "9:00–17:00",
-      "terminPotvrzen": false,
-      "url": "https://www.spse.cz/akce/uchazec-ss/2026-10-16-vystava-skol-schola-bohemia-ideon-pardubice",
-      "zdrojOvereni": "spse.cz",
-      "overeno": "2026-09-24",
-      "cekaNa": "Termín 15. 10. 2026 zatím jen na webech vystavujících škol (spse.cz, plán roku SZŠ Svitavy); Úřad práce ani město ho nezveřejnily, místo je z ročníku 2025."
+      "terminPotvrzen": true,
+      "url": "https://www.svitavy.cz/kalendar-akci/prehlidka-skol-svitavy-2026",
+      "zdrojOvereni": "svitavy.cz (kalendář akcí města)",
+      "overeno": "2026-10-15"
     },
     {
       "id": "trh-vzdelavani-trinec-2026",
@@ -569,10 +568,11 @@
       "start": "2026-10-16",
       "end": "2026-10-17",
       "datum": "16.–17. října 2026",
+      "cas": "pá 9:00–18:00, so 8:00–12:00",
       "terminPotvrzen": true,
       "url": "https://vybiramstredni.cz/program",
       "zdrojOvereni": "vybiramstredni.cz",
-      "overeno": "2026-09-22"
+      "overeno": "2026-10-15"
     },
     {
       "id": "sance-teplice-2026",
@@ -585,11 +585,10 @@
       "end": "2026-10-19",
       "datum": "18.–19. října 2026",
       "cas": "ne 12:00–16:00, po 9:00–16:00",
-      "terminPotvrzen": false,
-      "url": "https://www.ssstp.cz/2026/09/10/sance-2026/",
-      "zdrojOvereni": "ssstp.cz",
-      "overeno": "2026-09-24",
-      "cekaNa": "Termín 18.–19. 10. 2026 zatím jen na webu vystavující školy (ssstp.cz); u pořadatele (město Teplice) chybí."
+      "terminPotvrzen": true,
+      "url": "https://www.teplice.cz/sance-2026-regionalni-veletrh-stredniho-vzdelavani",
+      "zdrojOvereni": "teplice.cz (pořadatel) + nahlášení formulářem 2026-10-13; hodiny i na ssstp.cz",
+      "overeno": "2026-10-13"
     },
     {
       "id": "burza-pisek-2026",
@@ -649,10 +648,11 @@
       "start": "2026-10-20",
       "end": "2026-10-20",
       "datum": "20. října 2026",
+      "cas": "8:00–17:00",
       "terminPotvrzen": true,
       "url": "https://nevim-kam.cz/veletrhy/",
       "zdrojOvereni": "nevim-kam.cz",
-      "overeno": "2026-09-24"
+      "overeno": "2026-10-15"
     },
     {
       "id": "veletrh-perspektivy-remesel-stod-2026",
@@ -780,7 +780,7 @@
       "terminPotvrzen": true,
       "url": "https://spsostrov.cz/prijdte-se-podivat",
       "zdrojOvereni": "spsostrov.cz",
-      "overeno": "2026-09-22"
+      "overeno": "2026-10-15"
     },
     {
       "id": "prehlidka-nymburk-2026",
@@ -788,14 +788,15 @@
       "poradatel": "Krajská hospodářská komora Střední Čechy",
       "mesto": "Nymburk",
       "krajKod": "CZ020",
-      "misto": "regionální kulturní dům",
+      "misto": "SOŠ a SOU Nymburk, V Kolonii 1804",
       "start": "2026-10-22",
       "end": "2026-10-22",
       "datum": "22. října 2026",
+      "cas": "9:00–15:30",
       "terminPotvrzen": true,
-      "url": "https://www.khkstrednicechy.cz/",
-      "zdrojOvereni": "khkstrednicechy.cz",
-      "overeno": "2026-09-22"
+      "url": "https://www.khkstrednicechy.cz/akce/prehlidka-strednich-skol-nymburk-2026/",
+      "zdrojOvereni": "khkstrednicechy.cz (stránka akce)",
+      "overeno": "2026-10-15"
     },
     {
       "id": "scholaris-jesenik-2026",
@@ -803,14 +804,15 @@
       "poradatel": "Schola Servis",
       "mesto": "Jeseník",
       "krajKod": "CZ071",
-      "misto": "regionální škola",
+      "misto": "Střední škola gastronomie, farmářství a služeb Jeseník, U Jatek 916/8 (tělocvična)",
       "start": "2026-10-22",
       "end": "2026-10-22",
       "datum": "22. října 2026",
+      "cas": "8:00–15:30",
       "terminPotvrzen": true,
-      "url": "http://scholarisburzaskol.cz/",
+      "url": "http://scholarisburzaskol.cz/scholaris-prehlidka-strednich-skol/",
       "zdrojOvereni": "scholarisburzaskol.cz",
-      "overeno": "2026-09-22"
+      "overeno": "2026-10-15"
     },
     {
       "id": "tak-kam-vyskov-2026",
@@ -822,10 +824,11 @@
       "start": "2026-10-22",
       "end": "2026-10-22",
       "datum": "22. října 2026",
+      "cas": "9:30–17:00",
       "terminPotvrzen": true,
       "url": "https://nevim-kam.cz/veletrhy/",
       "zdrojOvereni": "nevim-kam.cz",
-      "overeno": "2026-09-24"
+      "overeno": "2026-10-15"
     },
     {
       "id": "vybiram-stredni-rychnov-2026",
@@ -837,10 +840,11 @@
       "start": "2026-10-23",
       "end": "2026-10-24",
       "datum": "23.–24. října 2026",
+      "cas": "pá 9:00–18:00, so 8:00–12:00",
       "terminPotvrzen": true,
       "url": "https://vybiramstredni.cz/program",
       "zdrojOvereni": "vybiramstredni.cz",
-      "overeno": "2026-09-22"
+      "overeno": "2026-10-15"
     },
     {
       "id": "burza-skol-ceska-lipa-2026",
@@ -875,19 +879,38 @@
       "overeno": "2026-09-24"
     },
     {
+      "id": "mozaika-pelhrimov-2026",
+      "nazev": "Mozaika středních škol",
+      "poradatel": "KD Máj Pelhřimov",
+      "mesto": "Pelhřimov",
+      "krajKod": "CZ063",
+      "misto": "KD Máj, třída Legií 1115, Pelhřimov",
+      "start": "2026-11-03",
+      "end": "2026-11-03",
+      "datum": "3. listopadu 2026",
+      "cas": "9:00–16:30",
+      "terminPotvrzen": true,
+      "zdrojJenAgregator": true,
+      "poznamkaTerminu": "Termín jsme převzali z agregátoru akcí. Web pořadatele ho zatím neuvádí, proto jsme ho u něj nemohli ověřit.",
+      "url": "https://www.smartee.cz/veletrhy-strednich-a-vysokych-skol-brno-2022/tpost/0kztyxl0d1-vysocina-jen-listopad-2026",
+      "zdrojOvereni": "smartee.cz a atlasskolstvi.cz (agregátory)",
+      "overeno": "2026-10-15"
+    },
+    {
       "id": "scholaris-sumperk-2026",
       "nazev": "Scholaris Šumperk",
       "poradatel": "Schola Servis",
       "mesto": "Šumperk",
       "krajKod": "CZ071",
-      "misto": "regionální škola",
+      "misto": "Gymnázium Šumperk, Masarykovo nám. 8 (tělocvična)",
       "start": "2026-11-03",
       "end": "2026-11-03",
       "datum": "3. listopadu 2026",
+      "cas": "8:00–17:00",
       "terminPotvrzen": true,
-      "url": "http://scholarisburzaskol.cz/",
+      "url": "http://scholarisburzaskol.cz/scholaris-prehlidka-strednich-skol/",
       "zdrojOvereni": "scholarisburzaskol.cz",
-      "overeno": "2026-09-22"
+      "overeno": "2026-10-15"
     },
     {
       "id": "tak-kam-blansko-2026",
@@ -899,10 +922,11 @@
       "start": "2026-11-03",
       "end": "2026-11-03",
       "datum": "3. listopadu 2026",
+      "cas": "9:00–17:00",
       "terminPotvrzen": true,
       "url": "https://nevim-kam.cz/veletrhy/",
       "zdrojOvereni": "nevim-kam.cz",
-      "overeno": "2026-09-24"
+      "overeno": "2026-10-15"
     },
     {
       "id": "vystava-vzdelavani-chomutov-2026",
@@ -925,14 +949,31 @@
       "poradatel": "Krajská hospodářská komora Střední Čechy",
       "mesto": "Rakovník",
       "krajKod": "CZ020",
-      "misto": "regionální kulturní dům",
+      "misto": "Kulturní centrum Rakovník, Na Sekyře 2377",
       "start": "2026-11-04",
       "end": "2026-11-04",
       "datum": "4. listopadu 2026",
+      "cas": "9:00–16:00",
       "terminPotvrzen": true,
-      "url": "https://www.khkstrednicechy.cz/",
-      "zdrojOvereni": "khkstrednicechy.cz",
-      "overeno": "2026-09-22"
+      "url": "https://www.khkstrednicechy.cz/akce/prehlidka-strednich-skol-rakovnik-2026/",
+      "zdrojOvereni": "khkstrednicechy.cz (stránka akce)",
+      "overeno": "2026-10-15"
+    },
+    {
+      "id": "veletrh-futurum-ostrava-2026",
+      "nazev": "Veletrh středních škol v OC Futurum",
+      "poradatel": "OC Futurum Ostrava (místo konání)",
+      "mesto": "Ostrava",
+      "krajKod": "CZ080",
+      "misto": "OC Futurum, Novinářská 6a, Ostrava",
+      "start": "2026-11-04",
+      "end": "2026-11-04",
+      "datum": "4. listopadu 2026",
+      "cas": "9:00–17:00",
+      "terminPotvrzen": true,
+      "url": "https://www.futurumostrava.cz/",
+      "zdrojOvereni": "futurumostrava.cz (web místa konání); kalendář kampaně MSK Řemeslo má respekt; stav-ova.cz",
+      "overeno": "2026-10-15"
     },
     {
       "id": "veletrh-vzdelavani-zlin-2026",
@@ -947,7 +988,7 @@
       "terminPotvrzen": true,
       "url": "https://www.khkzk.cz/veletrh-vzdelavani-zlin-2026",
       "zdrojOvereni": "khkzk.cz",
-      "overeno": "2026-09-22"
+      "overeno": "2026-10-15"
     },
     {
       "id": "volba-povolani-havirov-2026",
@@ -955,16 +996,17 @@
       "poradatel": "Úřad práce ČR, město Havířov a OHK Karviná",
       "mesto": "Havířov",
       "krajKod": "CZ080",
-      "misto": "Sportovní hala Slavia, Havířov",
+      "misto": "Sportovní hala Slavia, Astronautů 2, Havířov",
       "start": "2026-11-04",
       "end": "2026-11-04",
       "datum": "4. listopadu 2026",
       "cas": "9:00–17:00",
-      "terminPotvrzen": false,
-      "url": "https://gkh.cz/dod-online/",
-      "zdrojOvereni": "gkh.cz",
-      "overeno": "2026-09-24",
-      "cekaNa": "Termín 4. 11. 2026 zatím jen na webech vystavujících škol (gkh.cz, sps-karvina.cz) a v kalendáři kampaně MSK; Úřad práce ho nezveřejnil."
+      "terminPotvrzen": true,
+      "zdrojJenAgregator": true,
+      "poznamkaTerminu": "Termín jsme převzali z agregátoru akcí. Web pořadatele ho zatím neuvádí, proto jsme ho u něj nemohli ověřit.",
+      "url": "https://www.smartee.cz/veletrhy-strednich-a-vysokych-skol-brno-2022/tpost/aiv4mi8c61-veletrhy-v-moravskoslezskm-kraji-2026",
+      "zdrojOvereni": "smartee.cz a atlasskolstvi.cz (agregátory); kalendář kampaně MSK Řemeslo má respekt; weby vystavujících škol",
+      "overeno": "2026-10-15"
     },
     {
       "id": "festival-vzdelavani-zdar-2026",
@@ -980,7 +1022,7 @@
       "terminPotvrzen": true,
       "url": "https://www.dodzr.cz/den-otevrenych-dveri",
       "zdrojOvereni": "dodzr.cz",
-      "overeno": "2026-09-24"
+      "overeno": "2026-10-15"
     },
     {
       "id": "posvit-si-na-budoucnost-plzen-2026",
@@ -1004,14 +1046,15 @@
       "poradatel": "Schola Servis",
       "mesto": "Prostějov",
       "krajKod": "CZ071",
-      "misto": "Společenský dům Prostějov",
+      "misto": "Společenský dům Prostějov, Komenského 6",
       "start": "2026-11-05",
       "end": "2026-11-05",
       "datum": "5. listopadu 2026",
+      "cas": "8:00–17:00",
       "terminPotvrzen": true,
-      "url": "http://scholarisburzaskol.cz/",
+      "url": "http://scholarisburzaskol.cz/scholaris-prehlidka-strednich-skol/",
       "zdrojOvereni": "scholarisburzaskol.cz",
-      "overeno": "2026-09-22"
+      "overeno": "2026-10-15"
     },
     {
       "id": "vzdelani-a-remeslo-cb-2026",
@@ -1038,10 +1081,11 @@
       "start": "2026-11-06",
       "end": "2026-11-07",
       "datum": "6.–7. listopadu 2026",
+      "cas": "pá 9:00–18:00, so 8:00–12:00",
       "terminPotvrzen": true,
       "url": "https://vybiramstredni.cz/program",
       "zdrojOvereni": "vybiramstredni.cz",
-      "overeno": "2026-09-22"
+      "overeno": "2026-10-15"
     },
     {
       "id": "vystava-skol-techdays-litomerice-2026",
@@ -1064,14 +1108,15 @@
       "poradatel": "Okresní hospodářská komora Most",
       "mesto": "Most",
       "krajKod": "CZ042",
-      "misto": "Most",
+      "misto": "Sportovní hala Most",
       "start": "2026-11-08",
       "end": "2026-11-09",
       "datum": "8.–9. listopadu 2026",
+      "cas": "ne 12:00–17:00, po 9:00–13:00",
       "terminPotvrzen": true,
       "url": "https://www.ohk-most.cz/sokrates-31/sokrates-1-regionalni-veletrh-stredniho-vzdelavani/",
-      "zdrojOvereni": "ohk-most.cz",
-      "overeno": "2026-09-22"
+      "zdrojOvereni": "ohk-most.cz (plakát SOKRATES 2026)",
+      "overeno": "2026-10-15"
     },
     {
       "id": "burza-semily-2026",
@@ -1095,14 +1140,15 @@
       "poradatel": "Schola Servis",
       "mesto": "Přerov",
       "krajKod": "CZ071",
-      "misto": "regionální škola",
+      "misto": "Střední škola technická, Kouřílkova 1028/8, Přerov (tělocvična)",
       "start": "2026-11-10",
       "end": "2026-11-10",
       "datum": "10. listopadu 2026",
+      "cas": "8:00–17:00",
       "terminPotvrzen": true,
-      "url": "http://scholarisburzaskol.cz/",
+      "url": "http://scholarisburzaskol.cz/scholaris-prehlidka-strednich-skol/",
       "zdrojOvereni": "scholarisburzaskol.cz",
-      "overeno": "2026-09-22"
+      "overeno": "2026-10-15"
     },
     {
       "id": "tak-kam-znojmo-2026",
@@ -1114,10 +1160,27 @@
       "start": "2026-11-10",
       "end": "2026-11-10",
       "datum": "10. listopadu 2026",
+      "cas": "9:00–17:00",
       "terminPotvrzen": true,
       "url": "https://nevim-kam.cz/veletrhy/",
       "zdrojOvereni": "nevim-kam.cz",
-      "overeno": "2026-09-24"
+      "overeno": "2026-10-15"
+    },
+    {
+      "id": "akademie-remesel-klatovy-2026",
+      "nazev": "Akademie řemesel",
+      "poradatel": "OHK Klatovy a Úřad práce ČR",
+      "mesto": "Klatovy",
+      "krajKod": "CZ032",
+      "misto": "Městské kulturní středisko Klatovy, Domažlická 767",
+      "start": "2026-11-11",
+      "end": "2026-11-11",
+      "datum": "11. listopadu 2026",
+      "cas": "9:00–15:00",
+      "terminPotvrzen": true,
+      "url": "https://www.ohkklatovy.cz/aktuality/akademie-remesel-2026",
+      "zdrojOvereni": "ohkklatovy.cz (termín); místo a čas smartee.cz a atlasskolstvi.cz",
+      "overeno": "2026-10-15"
     },
     {
       "id": "burza-blatna-2026",
@@ -1136,6 +1199,56 @@
       "overeno": "2026-09-24"
     },
     {
+      "id": "burza-bystrice-pod-hostynem-2026",
+      "nazev": "Burza středních škol Bystřice pod Hostýnem",
+      "poradatel": "ZŠ Bratrství Čechů a Slováků a ZŠ T. G. Masaryka ve spolupráci s městem Bystřice pod Hostýnem",
+      "mesto": "Bystřice pod Hostýnem",
+      "krajKod": "CZ072",
+      "misto": "Společenský dům Sušil, Bystřice pod Hostýnem",
+      "start": "2026-11-11",
+      "end": "2026-11-11",
+      "datum": "11. listopadu 2026",
+      "terminPotvrzen": true,
+      "url": "https://bystriceph.cz/default/report/475524_burza-strednich-skol-se-uskutecni-11-listopadu",
+      "zdrojOvereni": "bystriceph.cz (oficiální stránky města)",
+      "overeno": "2026-10-15"
+    },
+    {
+      "id": "den-kariery-koprivnice-2026",
+      "nazev": "Den tvé kariéry",
+      "poradatel": "Město Kopřivnice",
+      "mesto": "Kopřivnice",
+      "krajKod": "CZ080",
+      "misto": "Kulturní dům Kopřivnice",
+      "start": "2026-11-11",
+      "end": "2026-11-11",
+      "datum": "11. listopadu 2026",
+      "terminPotvrzen": true,
+      "zdrojJenAgregator": true,
+      "poznamkaTerminu": "Termín jsme převzali z agregátoru akcí. Web pořadatele ho zatím neuvádí, proto jsme ho u něj nemohli ověřit.",
+      "url": "https://www.smartee.cz/veletrhy-strednich-a-vysokych-skol-brno-2022/tpost/aiv4mi8c61-veletrhy-v-moravskoslezskm-kraji-2026",
+      "zdrojOvereni": "smartee.cz a stredniskoly.cz (agregátory); kalendář kampaně MSK Řemeslo má respekt",
+      "overeno": "2026-10-15"
+    },
+    {
+      "id": "ksul-usti-2026",
+      "nazev": "Veletrh vzdělávání „Kam na střední školu?“",
+      "poradatel": "Kulturní středisko města Ústí nad Labem",
+      "mesto": "Ústí nad Labem",
+      "krajKod": "CZ042",
+      "misto": "Dům kultury Ústí nad Labem, Velká Hradební 19",
+      "start": "2026-11-11",
+      "end": "2026-11-12",
+      "datum": "11.–12. listopadu 2026",
+      "cas": "9:00–16:00",
+      "terminPotvrzen": true,
+      "zdrojJenAgregator": true,
+      "poznamkaTerminu": "Termín jsme převzali z agregátoru akcí. Web pořadatele ho zatím neuvádí, proto jsme ho u něj nemohli ověřit.",
+      "url": "https://www.smartee.cz/veletrhy-strednich-a-vysokych-skol-brno-2022/tpost/gsicj2exx1-steck-kraj-jen-listopad-2026",
+      "zdrojOvereni": "smartee.cz a atlasskolstvi.cz (agregátory)",
+      "overeno": "2026-10-15"
+    },
+    {
       "id": "veletrh-vzdelavani-uherske-hradiste-2026",
       "nazev": "Veletrh vzdělávání Uherské Hradiště",
       "poradatel": "Krajská hospodářská komora Zlínského kraje",
@@ -1152,19 +1265,38 @@
       "overeno": "2026-09-24"
     },
     {
+      "id": "artifex-bruntal-2026",
+      "nazev": "ARTIFEX – veletrh středních škol a zaměstnanosti",
+      "poradatel": "SPŠ a OA Bruntál a Úřad práce ČR",
+      "mesto": "Bruntál",
+      "krajKod": "CZ080",
+      "misto": "SPŠ a OA Bruntál, Kavalcova 814/1",
+      "start": "2026-11-12",
+      "end": "2026-11-12",
+      "datum": "12. listopadu 2026",
+      "cas": "9:00–16:00",
+      "terminPotvrzen": true,
+      "zdrojJenAgregator": true,
+      "poznamkaTerminu": "Termín jsme převzali z agregátoru akcí. Web pořadatele ho zatím neuvádí, proto jsme ho u něj nemohli ověřit.",
+      "url": "https://www.smartee.cz/veletrhy-strednich-a-vysokych-skol-brno-2022/tpost/aiv4mi8c61-veletrhy-v-moravskoslezskm-kraji-2026",
+      "zdrojOvereni": "atlasskolstvi.cz a smartee.cz (agregátory); kalendář kampaně MSK Řemeslo má respekt",
+      "overeno": "2026-10-15"
+    },
+    {
       "id": "prehlidka-melnik-2026",
       "nazev": "Přehlídka středních škol Mělník",
       "poradatel": "Krajská hospodářská komora Střední Čechy",
       "mesto": "Mělník",
       "krajKod": "CZ020",
-      "misto": "regionální kulturní dům",
+      "misto": "Masarykův kulturní dům, U Sadů 323, Mělník",
       "start": "2026-11-12",
       "end": "2026-11-12",
       "datum": "12. listopadu 2026",
+      "cas": "9:00–15:00",
       "terminPotvrzen": true,
-      "url": "https://www.khkstrednicechy.cz/",
-      "zdrojOvereni": "khkstrednicechy.cz",
-      "overeno": "2026-09-22"
+      "url": "https://www.khkstrednicechy.cz/akce/prehlidka-strednich-skol-melnik-2026/",
+      "zdrojOvereni": "khkstrednicechy.cz (stránka akce)",
+      "overeno": "2026-10-15"
     },
     {
       "id": "vzdelavani-zatec-2026",
@@ -1176,11 +1308,11 @@
       "start": "2026-11-12",
       "end": "2026-11-12",
       "datum": "12. listopadu 2026",
-      "cas": "9:00–16:00",
+      "cas": "9:00–14:00",
       "terminPotvrzen": true,
       "url": "https://www.oazszatec.cz/dny-otevrenych-dveri/",
       "zdrojOvereni": "oazszatec.cz; e-mail pořadatele",
-      "overeno": "2026-09-25"
+      "overeno": "2026-10-15"
     },
     {
       "id": "prehlidka-vysocina-jihlava-2026",
@@ -1192,10 +1324,11 @@
       "start": "2026-11-13",
       "end": "2026-11-13",
       "datum": "13. listopadu 2026",
+      "cas": "8:00–18:00",
       "terminPotvrzen": true,
       "url": "https://www.dko.cz/program/679-prehlidka-strednich-skol",
       "zdrojOvereni": "dko.cz",
-      "overeno": "2026-09-22"
+      "overeno": "2026-10-15"
     },
     {
       "id": "vybiram-stredni-hradec-2026",
@@ -1207,10 +1340,11 @@
       "start": "2026-11-13",
       "end": "2026-11-14",
       "datum": "13.–14. listopadu 2026",
+      "cas": "pá 9:00–18:00, so 8:00–12:00",
       "terminPotvrzen": true,
       "url": "https://vybiramstredni.cz/program",
       "zdrojOvereni": "vybiramstredni.cz",
-      "overeno": "2026-09-22"
+      "overeno": "2026-10-15"
     },
     {
       "id": "tak-kam-tisnov-2026",
@@ -1226,7 +1360,7 @@
       "terminPotvrzen": true,
       "url": "https://nevim-kam.cz/veletrhy/",
       "zdrojOvereni": "nevim-kam.cz",
-      "overeno": "2026-09-24"
+      "overeno": "2026-10-15"
     },
     {
       "id": "volba-povolani-karvina-2026",
@@ -1242,7 +1376,40 @@
       "terminPotvrzen": true,
       "url": "https://www.medk.cz/akce/volba-povolani-4585",
       "zdrojOvereni": "medk.cz",
-      "overeno": "2026-09-24"
+      "overeno": "2026-10-15"
+    },
+    {
+      "id": "breclavsky-fortel-2026",
+      "nazev": "Břeclavský fortel",
+      "poradatel": "OHK Břeclav",
+      "mesto": "Břeclav",
+      "krajKod": "CZ064",
+      "misto": "Dům školství Břeclav, 17. listopadu 1a",
+      "start": "2026-11-19",
+      "end": "2026-11-19",
+      "datum": "19. listopadu 2026",
+      "cas": "8:00–16:00",
+      "terminPotvrzen": true,
+      "poznamkaTerminu": "Dopoledne hlavně pro žáky 9. tříd se školou, odpoledne otevřeno i veřejnosti.",
+      "url": "https://www.ohkbreclav.cz/projekty/breclavsky-fortel-2026/",
+      "zdrojOvereni": "ohkbreclav.cz",
+      "overeno": "2026-10-15"
+    },
+    {
+      "id": "festival-vzdelavani-velke-mezirici-2026",
+      "nazev": "Festival vzdělávání – přehlídka středních škol Velké Meziříčí",
+      "poradatel": "Jupiter club, Velké Meziříčí",
+      "mesto": "Velké Meziříčí",
+      "krajKod": "CZ063",
+      "misto": "Jupiter club, velký sál, Náměstí 17, Velké Meziříčí",
+      "start": "2026-11-19",
+      "end": "2026-11-19",
+      "datum": "19. listopadu 2026",
+      "cas": "15:00–17:00",
+      "terminPotvrzen": true,
+      "url": "https://www.jupiterclub.cz/aktuality/591-vzdelani",
+      "zdrojOvereni": "jupiterclub.cz",
+      "overeno": "2026-10-15"
     },
     {
       "id": "hitparada-skol-pardubice-2026",
@@ -1250,15 +1417,15 @@
       "poradatel": "Krajská hospodářská komora Pardubického kraje",
       "mesto": "Pardubice",
       "krajKod": "CZ053",
-      "misto": "Pardubice",
+      "misto": "enteria arena Pardubice",
       "start": "2026-11-20",
       "end": "2026-11-20",
       "datum": "20. listopadu 2026",
+      "cas": "9:00–17:00",
       "terminPotvrzen": true,
-      "poznamkaTerminu": "Místo konání pořadatel pro letošní ročník zatím neuvedl; loni se akce konala v enteria areně.",
-      "url": "https://www.khkpce.cz/clanek.php?id=421",
-      "zdrojOvereni": "khkpce.cz",
-      "overeno": "2026-09-24"
+      "url": "https://www.khkpce.cz/akce/9866/",
+      "zdrojOvereni": "khkpce.cz; čas paradnikraj.cz",
+      "overeno": "2026-10-15"
     },
     {
       "id": "online-veletrh-msk-2026",
@@ -1277,6 +1444,22 @@
       "url": "https://veletrh-skol.msk.cz/",
       "zdrojOvereni": "veletrh-skol.msk.cz",
       "overeno": "2026-09-22"
+    },
+    {
+      "id": "od-vzdelani-domazlice-2026",
+      "nazev": "Od vzdělání k zaměstnání",
+      "poradatel": "Okresní hospodářská komora Domažlice",
+      "mesto": "Domažlice",
+      "krajKod": "CZ032",
+      "misto": "Městské kulturní středisko Domažlice, nám. Míru 51",
+      "start": "2026-11-23",
+      "end": "2026-11-23",
+      "datum": "23. listopadu 2026",
+      "cas": "9:00–15:00",
+      "terminPotvrzen": true,
+      "url": "https://ohkdomazlice.cz/index.php/2026/09/08/zmena-terminu-od-vzdelani-k-zamestnani/",
+      "zdrojOvereni": "ohkdomazlice.cz (pořadatel oznámil změnu termínu na 23. 11. 2026); místo a čas posvitsinabudoucnost.cz",
+      "overeno": "2026-10-15"
     },
     {
       "id": "veletrh-vzdelavani-vsetin-2026",
@@ -1300,14 +1483,50 @@
       "poradatel": "Schola Servis / SŠP Olomouc",
       "mesto": "Olomouc",
       "krajKod": "CZ071",
-      "misto": "Rooseveltova 79, Olomouc",
+      "misto": "Střední škola polytechnická, Rooseveltova 79, Olomouc",
       "start": "2026-11-25",
       "end": "2026-11-26",
       "datum": "25.–26. listopadu 2026",
+      "cas": "st 9:00–18:00, čt 8:00–16:00",
       "terminPotvrzen": true,
-      "url": "http://scholarisburzaskol.cz/",
+      "url": "http://scholarisburzaskol.cz/scholaris-prehlidka-strednich-skol/",
       "zdrojOvereni": "scholarisburzaskol.cz",
-      "overeno": "2026-09-22"
+      "overeno": "2026-10-15"
+    },
+    {
+      "id": "volba-povolani-orlova-2026",
+      "nazev": "Volba povolání Orlová",
+      "poradatel": "Úřad práce ČR a město Orlová",
+      "mesto": "Orlová",
+      "krajKod": "CZ080",
+      "misto": "Dům kultury města Orlové",
+      "start": "2026-11-25",
+      "end": "2026-11-25",
+      "datum": "25. listopadu 2026",
+      "terminPotvrzen": true,
+      "zdrojJenAgregator": true,
+      "poznamkaTerminu": "Termín jsme převzali z agregátoru akcí. Web pořadatele ho zatím neuvádí, proto jsme ho u něj nemohli ověřit.",
+      "url": "https://www.smartee.cz/veletrhy-strednich-a-vysokych-skol-brno-2022/tpost/aiv4mi8c61-veletrhy-v-moravskoslezskm-kraji-2026",
+      "zdrojOvereni": "smartee.cz (agregátor); kalendář kampaně MSK Řemeslo má respekt",
+      "overeno": "2026-10-15"
+    },
+    {
+      "id": "vystava-louny-2026",
+      "nazev": "Výstava Vzdělávání Louny",
+      "poradatel": "OA a SOŠ gen. F. Fajtla Louny",
+      "mesto": "Louny",
+      "krajKod": "CZ042",
+      "misto": "Obchodní akademie a SOŠ gen. F. Fajtla, Osvoboditelů 380, Louny",
+      "start": "2026-11-25",
+      "end": "2026-11-25",
+      "datum": "25. listopadu 2026",
+      "cas": "10:00–16:00",
+      "terminPotvrzen": true,
+      "zdrojJenAgregator": true,
+      "poznamkaTerminu": "Termín jsme převzali z agregátoru akcí. Web pořadatele ho zatím neuvádí, proto jsme ho u něj nemohli ověřit.",
+      "url": "https://www.smartee.cz/veletrhy-strednich-a-vysokych-skol-brno-2022/tpost/gsicj2exx1-steck-kraj-jen-listopad-2026",
+      "zdrojOvereni": "smartee.cz a atlasskolstvi.cz (agregátory)",
+      "overeno": "2026-10-15"
     },
     {
       "id": "schola-pragensis-2026",
@@ -1335,10 +1554,11 @@
       "start": "2026-11-27",
       "end": "2026-11-28",
       "datum": "27.–28. listopadu 2026",
+      "cas": "pá 9:00–18:00, so 9:00–17:00",
       "terminPotvrzen": true,
       "url": "https://nevim-kam.cz/veletrhy/",
       "zdrojOvereni": "nevim-kam.cz",
-      "overeno": "2026-09-24"
+      "overeno": "2026-10-15"
     },
     {
       "id": "student-a-job-ostrava-2026",
@@ -1356,118 +1576,6 @@
       "overeno": "2026-09-22"
     },
     {
-      "id": "akademie-remesel-klatovy-2026",
-      "nazev": "Akademie řemesel",
-      "poradatel": "OHK Klatovy a Úřad práce ČR",
-      "mesto": "Klatovy",
-      "krajKod": "CZ032",
-      "misto": "Klatovy",
-      "start": null,
-      "end": null,
-      "datum": null,
-      "terminPotvrzen": false,
-      "url": "https://posvitsinabudoucnost.cz/regionalni-akce/",
-      "zdrojOvereni": null,
-      "overeno": null,
-      "cekaNa": "Termín 2026 nezveřejněn; loni 12. 11. 2025 v MKS Klatovy."
-    },
-    {
-      "id": "artifex-bruntal-2026",
-      "nazev": "ARTIFEX – veletrh středních škol a zaměstnanosti",
-      "poradatel": "SPŠ a OA Bruntál a Úřad práce ČR",
-      "mesto": "Bruntál",
-      "krajKod": "CZ080",
-      "misto": "Bruntál",
-      "start": null,
-      "end": null,
-      "datum": null,
-      "terminPotvrzen": false,
-      "url": "https://remeslomarespekt.msk.cz/kalendar-akci-2026/",
-      "zdrojOvereni": null,
-      "overeno": null,
-      "cekaNa": "Termín 12. 11. 2026 jen v kalendáři kampaně MSK Řemeslo má respekt; u pořadatele chybí."
-    },
-    {
-      "id": "breclavsky-fortel-2026",
-      "nazev": "Břeclavský fortel",
-      "poradatel": "OHK Břeclav",
-      "mesto": "Břeclav",
-      "krajKod": "CZ064",
-      "misto": "Břeclav",
-      "start": null,
-      "end": null,
-      "datum": null,
-      "terminPotvrzen": false,
-      "url": null,
-      "zdrojOvereni": null,
-      "overeno": null,
-      "cekaNa": "Termín 2026 nezveřejněn; loni 11. 11. 2025."
-    },
-    {
-      "id": "den-kariery-koprivnice-2026",
-      "nazev": "Den tvé kariéry",
-      "poradatel": "Město Kopřivnice",
-      "mesto": "Kopřivnice",
-      "krajKod": "CZ080",
-      "misto": "Kopřivnice",
-      "start": null,
-      "end": null,
-      "datum": null,
-      "terminPotvrzen": false,
-      "url": "https://remeslomarespekt.msk.cz/kalendar-akci-2026/",
-      "zdrojOvereni": null,
-      "overeno": null,
-      "cekaNa": "Termín 11. 11. 2026 jen v kalendáři kampaně MSK Řemeslo má respekt; u pořadatele chybí."
-    },
-    {
-      "id": "ksul-usti-2026",
-      "nazev": "Veletrh vzdělávání „Kam na střední školu?“",
-      "poradatel": "Kulturní středisko města Ústí nad Labem",
-      "mesto": "Ústí nad Labem",
-      "krajKod": "CZ042",
-      "misto": "Ústí nad Labem",
-      "start": null,
-      "end": null,
-      "datum": null,
-      "terminPotvrzen": false,
-      "url": "https://www.ksul.cz/",
-      "zdrojOvereni": null,
-      "overeno": null,
-      "cekaNa": "Termín 2026 nezveřejněn; loni 14.–15. 10. 2025 v Domě kultury."
-    },
-    {
-      "id": "mozaika-pelhrimov-2026",
-      "nazev": "Mozaika středních škol",
-      "poradatel": "KD Máj Pelhřimov",
-      "mesto": "Pelhřimov",
-      "krajKod": "CZ063",
-      "misto": "Pelhřimov",
-      "start": null,
-      "end": null,
-      "datum": null,
-      "terminPotvrzen": false,
-      "url": null,
-      "zdrojOvereni": null,
-      "overeno": null,
-      "cekaNa": "Termín 2026 nenalezen; loni 4. 11. 2025."
-    },
-    {
-      "id": "od-vzdelani-domazlice-2026",
-      "nazev": "Od vzdělání k zaměstnání",
-      "poradatel": "Okresní hospodářská komora Domažlice",
-      "mesto": "Domažlice",
-      "krajKod": "CZ032",
-      "misto": "Domažlice",
-      "start": null,
-      "end": null,
-      "datum": null,
-      "terminPotvrzen": false,
-      "url": "https://posvitsinabudoucnost.cz/regionalni-akce/domazlice/",
-      "zdrojOvereni": null,
-      "overeno": null,
-      "cekaNa": "Rozpor: detail akce uvádí 27. 10. 2026, přehled na témže webu 23. 11. 2026."
-    },
-    {
       "id": "prehlidka-veseli-2026",
       "nazev": "Přehlídka středních škol Veselí nad Moravou",
       "poradatel": "Veselské kulturní centrum",
@@ -1481,39 +1589,7 @@
       "url": null,
       "zdrojOvereni": null,
       "overeno": null,
-      "cekaNa": "Termín 2026 nezveřejněn; loni 22. 10. 2025."
-    },
-    {
-      "id": "volba-povolani-orlova-2026",
-      "nazev": "Volba povolání Orlová",
-      "poradatel": "Úřad práce ČR a město Orlová",
-      "mesto": "Orlová",
-      "krajKod": "CZ080",
-      "misto": "Orlová",
-      "start": null,
-      "end": null,
-      "datum": null,
-      "terminPotvrzen": false,
-      "url": "https://remeslomarespekt.msk.cz/kalendar-akci-2026/",
-      "zdrojOvereni": null,
-      "overeno": null,
-      "cekaNa": "Termín 25. 11. 2026 jen v kalendáři kampaně MSK; škola uvádí jen „listopad 2026“."
-    },
-    {
-      "id": "vystava-louny-2026",
-      "nazev": "Výstava Vzdělávání Louny",
-      "poradatel": "OA a SOŠ gen. F. Fajtla Louny",
-      "mesto": "Louny",
-      "krajKod": "CZ042",
-      "misto": "Louny",
-      "start": null,
-      "end": null,
-      "datum": null,
-      "terminPotvrzen": false,
-      "url": null,
-      "zdrojOvereni": null,
-      "overeno": null,
-      "cekaNa": "Termín 2026 nenalezen; loni 26. 11. 2025."
+      "cekaNa": "Termín 2026 nezveřejněn (kalendář Veselského kulturního centra a agregátory ověřeny 15. 10. 2026); loni 22. 10. 2025."
     }
   ],
   "katalogy": [

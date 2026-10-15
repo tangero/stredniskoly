@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { overAdminToken } from '@/lib/admin';
+import { adminZPozadavku } from '@/lib/admin-relace';
 import { jeDbNastavena, vTransakci } from '@/lib/novinky-db';
 import { jeNasPuvod } from '@/lib/portal-relace';
 import {
@@ -19,15 +19,15 @@ import { posliTelegram } from '@/lib/portal-oznameni';
 
 // ============================================================================
 // Zásahy administrace do účtů (docs/ucty-portalu-skol-2027.md, 2.4). Leží pod
-// /admin, aby dostaly cookie admin_token (path /admin). Každý zásah má důvod
+// /admin, aby dostaly cookie relace administrace (path /admin, #479). Každý zásah má důvod
 // a vytvoří nový záznam, starý zneplatní.
 // ============================================================================
 
 const KDO = 'zandl';
 
 export async function POST(request: NextRequest) {
-  if (!overAdminToken(request.cookies.get('admin_token')?.value)) {
-    return new NextResponse('Not found', { status: 404 });
+  if (!(await adminZPozadavku(request))) {
+    return new NextResponse('Nejsi přihlášený do administrace.', { status: 401 });
   }
   if (!jeNasPuvod(request)) return new NextResponse('Špatný původ požadavku.', { status: 403 });
   const f = await request.formData();

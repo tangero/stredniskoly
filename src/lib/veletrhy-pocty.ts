@@ -47,3 +47,45 @@ export function seskupPodleKraje<T extends { krajKod: string }>(akce: T[]): Map<
 export function akci(n: number): string {
   return `${n} ${tvar(n, 'akce', 'akce', 'akcí')}`;
 }
+
+const MESICE = [
+  'leden', 'únor', 'březen', 'duben', 'květen', 'červen',
+  'červenec', 'srpen', 'září', 'říjen', 'listopad', 'prosinec',
+];
+
+/** Nejdelší titulek, který Google ukáže celý (~60 znaků); platí pro výsledný `<title>` (u řetězce i se šablonou layoutu). */
+const TITULEK_MAX = 60;
+
+export const TITULEK_VELETRHU = 'Veletrhy a přehlídky středních škol — přehled akcí';
+export const POPISEK_VELETRHU =
+  'Kde se dá potkat víc středních škol najednou: veletrhy a přehlídky po krajích, s městy, termíny a odkazy na pořadatele.';
+
+/** „ve“ před počty čtenými dvě/tři/čtyři… (2–4, 12–14, 20, 22–24 …), jinak „v“. */
+function predlozkaV(n: number): string {
+  return [2, 3, 4].includes(n % 10) || [20, 30, 40].includes(n) ? 've' : 'v';
+}
+
+/**
+ * Titulek a popisek stránky /veletrhy ze zobrazených akcí (#483): měsíce, kraje a počet
+ * se berou z dat, takže po skončení sezóny (žádná nadcházející akce) zůstane obecné znění bez měsíců.
+ */
+export function metaVeletrhu(akce: { start: string; end: string; krajKod: string }[]): {
+  title: string;
+  description: string;
+} {
+  if (akce.length === 0) return { title: TITULEK_VELETRHU, description: POPISEK_VELETRHU };
+  const prvni = akce.reduce((m, a) => (a.start < m ? a.start : m), akce[0].start);
+  const posledni = akce.reduce((m, a) => (a.end > m ? a.end : m), akce[0].end);
+  const [r1, m1] = prvni.split('-').map(Number);
+  const [r2, m2] = posledni.split('-').map(Number);
+  const mesice = m1 === m2 && r1 === r2 ? MESICE[m1 - 1] : `${MESICE[m1 - 1]}–${MESICE[m2 - 1]}`;
+  const rok = r1 === r2 ? `${r1}` : `${r1}/${String(r2).slice(2)}`;
+  const kraju = new Set(akce.map((a) => a.krajKod)).size;
+  let title = `Veletrhy středních škol po krajích: ${mesice} ${rok}`;
+  if (title.length > TITULEK_MAX) title = `Veletrhy středních škol po krajích: ${mesice}`;
+  const krajuText = `${kraju} ${tvar(kraju, 'kraji', 'krajích', 'krajích')}`;
+  const description =
+    `${akci(akce.length)} ${predlozkaV(kraju)} ${krajuText} (${mesice}): veletrhy a přehlídky středních škol ` +
+    'po krajích, s městy, termíny a odkazy na pořadatele.';
+  return { title, description };
+}

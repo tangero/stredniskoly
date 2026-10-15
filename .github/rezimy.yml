@@ -129,6 +129,7 @@ datove_obnovy:
     - public/druhe_kolo.json
     - public/maturita_skoly.json
     - data/transit_graph.json
+    - data/school_locations.json
 
 # Hlášení škol z portálu (RA52, #461): PR k hlášení přihlášené školy (štítek `portal-skoly`, kanál ověřeného přístupu
 # v těle issue od webu) projde bez `schvaleno`, jen když mění tyto cesty: soubory s opravami údajů škol a testy.

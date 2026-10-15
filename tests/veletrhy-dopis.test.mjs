@@ -142,12 +142,15 @@ test('textová verze má odkaz jako adresu jednou, ne dvakrát, a bez značek', 
 // Varianta bez termínu: akce bez potvrzeného termínu na webu není. Dopis
 // o termín prosí a nesmí tvrdit, že akci už vedeme nebo na ni odkazujeme.
 
+// Akce bez termínu se bere z dat, ne napevno: revize jí termín časem doplní.
+const AKCE_BEZ_TERMINU = cekajiciAkce().find((a) => !a.datum && !a.online);
 const BEZ = {
-  id: 'zkouska', email: 'x@example.cz', osloveni: 'Dobrý den', predmet: 'Mozaika středních škol',
-  akce: ['mozaika-pelhrimov-2026'], kraj: '/regiony/vysocina', varianta: 'bezTerminu',
+  id: 'zkouska', email: 'x@example.cz', osloveni: 'Dobrý den', predmet: 'Přehlídka středních škol',
+  akce: [AKCE_BEZ_TERMINU?.id], kraj: '/regiony/vysocina', varianta: 'bezTerminu',
 };
 
 test('dopis bez termínu prosí o termín a netvrdí, že akci vedeme', () => {
+  assert.ok(AKCE_BEZ_TERMINU, 'Test počítá s akcí bez termínu v datech.');
   const { subject, html } = dopisPoradateli(BEZ);
   const text = textDopisu(html);
   assert.ok(text.includes('letošní termín jsme zatím nenašli. Pošlete mi ho prosím'));

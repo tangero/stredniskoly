@@ -156,6 +156,7 @@ class TestDatovaLinka(unittest.TestCase):
         self.server.telegram_odeslano.clear()
         self.server.telegram_aktualizace.clear()
         self.puvodni_env = dict(os.environ)
+        os.environ.pop("LINKA_BEH_ID", None)  # artefakt skutečného běhu workflow testy nesmí použít
         os.environ.update({
             "LINKA_REGISTR": str(self.tmp / "registr.json"),
             "LINKA_FRONTA": str(self.tmp / "fronta.json"),
@@ -616,8 +617,9 @@ class TestDatovaLinka(unittest.TestCase):
         u["historie"][-1]["cas"] = "2026-12-14T05:30:00+00:00"  # referenční pondělí se odvozuje i z data otevření
         return fronta, u
 
-    def priprav_jizdni_rady(self, u, stavajici: Path | None = None):
-        zpracovatel = functools.partial(zpracovani.zpracuj_jizdni_rady, stavajici=stavajici or self.tmp / "zadny-graf.json")
+    def priprav_jizdni_rady(self, u, stavajici: Path | None = None, skoly: Path | None = None):
+        zpracovatel = functools.partial(zpracovani.zpracuj_jizdni_rady, stavajici=stavajici or self.tmp / "zadny-graf.json",
+                                        skoly=skoly or self.tmp / "zadne-skoly.json")
         with mock.patch.dict(zpracovani.ZPRACOVATELE, {"doprava-gtfs": zpracovatel}):
             zpracovani.priprav(u, self.registr)
 
@@ -726,7 +728,8 @@ class TestDatovaLinka(unittest.TestCase):
         komunikace.oznam(fronta, [], nanecisto=False)
         komunikace.uplatni_rozhodnuti(fronta, [{"od": "t", "povoleny": True, "cas": jadro.ted(), "text": f"schvaluji {u['kod']}"}], "test")
         runner = lambda prikaz, **kw: SimpleNamespace(returncode=0, stdout="https://github.com/test/pr/2" if prikaz[:2] == ["gh", "pr"] else "", stderr="")  # noqa: E731
-        zpracovatel = functools.partial(zpracovani.zpracuj_jizdni_rady, stavajici=self.tmp / "zadny-graf.json")
+        zpracovatel = functools.partial(zpracovani.zpracuj_jizdni_rady, stavajici=self.tmp / "zadny-graf.json",
+                                        skoly=self.tmp / "zadne-skoly.json")
         # Pracovní soubory chybí (další běh v GitHub Actions) a zdroj mezitím vyšel znovu s jiným otiskem.
         shutil.rmtree(self.tmp / "prace")
         self.server.soubory["/J/gtfs.zip"] = (200, syntetika_gtfs(self.tmp / "gtfs.zip", odjezdy=("07:30:00",)), "Wed, 16 Dec 2026 03:00:00 GMT")
@@ -787,6 +790,128 @@ class TestDatovaLinka(unittest.TestCase):
         u["oznameni"]["cas"] = "2027-01-05T09:00:00+00:00"
         komunikace.uplatni_rozhodnuti(fronta, [{"od": "t", "povoleny": True, "cas": stare_rozhodnuti["cas"], "text": f"schvaluji {u['kod']}"}], "test")
         self.assertEqual(u["stav"], "oznameno", "staré rozhodnutí nové oznámení neschválí")
+
+    def schvalena_uloha_jizdnich_radu(self, **priprava):
+        self.sada_jizdnich_radu()
+        fronta, u = self.uloha_jizdnich_radu()
+        self.priprav_jizdni_rady(u, **priprava)
+        self.assertEqual(u["stav"], "pripraveno", u.get("priprava"))
+        komunikace.oznam(fronta, [], nanecisto=False)
+        komunikace.uplatni_rozhodnuti(fronta, [{"od": "t", "povoleny": True, "cas": jadro.ted(), "text": f"schvaluji {u['kod']}"}], "test")
+        return fronta, u
+
+    def skoly(self, *zaznamy: tuple[str, float, float, float]) -> Path:
+        """Smyšlené polohy škol: (RED IZO, šířka, délka, dosavadní vzdálenost k zastávce)."""
+        cesta = self.tmp / "skoly.json"
+        cesta.write_text(json.dumps({"metadata": {}, "schools": {
+            r: {"stop_id": "CISJR:1|CRZ:1", "stop_name": "stará", "lat": lat, "lon": lon, "distance_km": d, "method": "address"}
+            for r, lat, lon, d in zaznamy}}), encoding="utf-8")
+        return cesta
+
+    def test_predani_jizdnich_radu_vezme_schvaleny_graf_z_artefaktu(self):
+        # K1 (#500): schválení druhý den. Zdroj mezitím vyšel s jinými spoji, předání přesto vezme schválený graf.
+        os.environ["LINKA_BEH_ID"] = "4242"
+        fronta, u = self.schvalena_uloha_jizdnich_radu()
+        del os.environ["LINKA_BEH_ID"]
+        self.assertEqual(u["priprava"]["artefakt"], {"beh": "4242", "nazev": "datova-linka-4242"})
+        # Artefakt má strukturu jako upload-artifact z data/linka: prace/<KÓD>/…
+        artefakt = self.tmp / "artefakt"
+        shutil.copytree(self.tmp / "prace", artefakt / "prace", ignore=shutil.ignore_patterns("*.zip"))
+        schvaleny = Path(next(iter(u["priprava"]["zpracovani"]["predani"]))).read_bytes()
+        shutil.rmtree(self.tmp / "prace")
+        self.server.soubory["/J/gtfs.zip"] = (200, syntetika_gtfs(self.tmp / "gtfs.zip", odjezdy=("07:30:00",)), "Tue, 15 Dec 2026 03:00:00 GMT")
+        stazene = []
+
+        def stahni_artefakt(beh, nazev, cil):
+            stazene.append((beh, nazev))
+            shutil.copytree(artefakt, cil, dirs_exist_ok=True)
+
+        runner = lambda prikaz, **kw: SimpleNamespace(returncode=0, stdout="https://github.com/test/pr/3" if prikaz[:2] == ["gh", "pr"] else "", stderr="")  # noqa: E731
+        vysledek = predani.predej(u, self.registr, nanecisto=False, runner=runner, stahni_artefakt_fn=stahni_artefakt)
+        self.assertEqual(stazene, [("4242", "datova-linka-4242")])
+        self.assertEqual(u["stav"], "predano")
+        self.assertEqual(Path(next(iter(vysledek["plan"]["soubory"]))).read_bytes(), schvaleny)
+
+    def test_predani_bez_artefaktu_poradi_novou_ulohu(self):
+        # K2 (#500): artefakt chybí (vypršel) a znovu postavený graf je jiný: chyba radí zamítnutí a novou úlohu.
+        os.environ["LINKA_BEH_ID"] = "4243"
+        _, u = self.schvalena_uloha_jizdnich_radu()
+        del os.environ["LINKA_BEH_ID"]
+        shutil.rmtree(self.tmp / "prace")
+        self.server.soubory["/J/gtfs.zip"] = (200, syntetika_gtfs(self.tmp / "gtfs.zip", odjezdy=("07:30:00",)), "Tue, 15 Dec 2026 03:00:00 GMT")
+
+        def chybi(beh, nazev, cil):
+            raise RuntimeError(f"artefakt {nazev} se nepodařilo stáhnout: no artifact matches")
+
+        zpracovatel = functools.partial(zpracovani.zpracuj_jizdni_rady, stavajici=self.tmp / "zadny-graf.json",
+                                        skoly=self.tmp / "zadne-skoly.json")
+        with mock.patch.dict(zpracovani.ZPRACOVATELE, {"doprava-gtfs": zpracovatel}):
+            with self.assertRaises(RuntimeError) as chyba:
+                predani.predej(u, self.registr, nanecisto=False, runner=lambda *a, **kw: self.fail("bez gitu"),
+                               stahni_artefakt_fn=chybi)
+        text = str(chyba.exception)
+        self.assertIn("výstup se od schválení změnil", text)
+        self.assertIn("no artifact matches", text)
+        self.assertIn(f"zamítám {u['kod']}", text)
+        self.assertIn("zalozit=doprava-gtfs", text)
+        self.assertEqual(u["stav"], "schvaleno")
+
+    def test_artefakt_s_jinym_otiskem_se_nepreda(self):
+        os.environ["LINKA_BEH_ID"] = "4244"
+        _, u = self.schvalena_uloha_jizdnich_radu()
+        del os.environ["LINKA_BEH_ID"]
+        graf = next(iter(u["priprava"]["zpracovani"]["predani"]))
+        artefakt = self.tmp / "artefakt" / "prace" / u["kod"]
+        artefakt.mkdir(parents=True)
+        (artefakt / Path(graf).name).write_text("{}")
+        shutil.rmtree(self.tmp / "prace")
+        with self.assertRaisesRegex(RuntimeError, "nemá schválený otisk"):
+            predani.obnov_z_artefaktu(u, lambda beh, nazev, cil: shutil.copytree(self.tmp / "artefakt", cil, dirs_exist_ok=True))
+        self.assertFalse(Path(graf).exists())
+
+    def test_jizdni_rady_prepocitaji_zastavky_skol(self):
+        # K3 a K4 (#500): PR nese i přepočtené zastávky škol, oznámení hlásí změnu ID a vzdálené zastávky.
+        web = self.tmp / "web-graf.json"
+        # Graf na webu má stejné pokrytí (2 stanice s odjezdy, 2 spoje), ale stará ID zastávek.
+        web.write_text(json.dumps({"metadata": {"parent_stations": 3, "directed_edges": 2, "routes_with_headway": 1,
+                                                "trips_in_window": 2},
+                                   "stops": {f"CISJR:{i}": [f"S{i}", 50.1, 14.4] for i in range(3)},
+                                   "edges": {f"CISJR:{i}": [] for i in range(2)}, "headways": {}}))
+        skoly = self.skoly(("600000001", 50.1001, 14.4, 0.05), ("600000002", 50.2, 14.4, 0.1))
+        _, u = self.schvalena_uloha_jizdnich_radu(stavajici=web, skoly=skoly)
+        zpr = u["priprava"]["zpracovani"]
+        self.assertEqual(sorted(zpr["predani"].values()), ["data/school_locations.json", "data/transit_graph.json"])
+        prepoctene = json.loads(Path(next(z for z, c in zpr["predani"].items() if c == "data/school_locations.json")).read_text())
+        self.assertEqual(prepoctene["schools"]["600000001"]["stop_id"], "A")
+        self.assertEqual(json.loads(skoly.read_text())["schools"]["600000001"]["stop_id"], "CISJR:1|CRZ:1", "vstup se nemění")
+        self.assertEqual(zpr["srovnani"]["zastavky_skol"],
+                         {"skol": 2, "dal_nez_chuze": 1, "dal_o_200_m": 1, "chybejici_id": 3, "id_na_webu": 3})
+        text = komunikace.text_ulohy(u)
+        self.assertIn("ID zastávek grafu na webu, která nový graf nemá: 3 z 3 (POZOR: zdroj změnil ID zastávek)", text)
+        self.assertIn("dál než 1,5 km pěšky 1", text)
+        self.assertIn("data/school_locations.json", text)
+        plan = predani.predej(u, self.registr, nanecisto=True)["plan"]
+        self.assertIn("data/school_locations.json", plan["soubory"].values())
+
+    def test_zamitnuti_ukonci_schvalenou_ulohu_s_chybou_predani(self):
+        # K5 (#500): schválenou úlohu, kterou nejde předat, ukončí „zamítám KÓD“; bez chyby předání to nejde.
+        fronta, u = self.schvalena_uloha_uchazecu()
+        zprava = {"od": "t", "povoleny": True, "cas": jadro.ted(), "text": f"zamítám {u['kod']}"}
+        self.assertEqual([e["druh"] for e in komunikace.zpracuj_zpravy(fronta, [zprava], "test")], ["nelze"])
+        self.assertEqual(u["stav"], "schvaleno")
+        u["predani_chyba"] = {"cas": jadro.ted(), "chyba": "výstup se od schválení změnil"}
+        udalosti = komunikace.zpracuj_zpravy(fronta, [{**zprava, "cas": jadro.ted()}], "test")
+        self.assertEqual([e["druh"] for e in udalosti], ["zamitnuto"])
+        self.assertEqual(u["stav"], "zamitnuto")
+        self.assertEqual(u["predchozi_rozhodnuti"]["rozhodnuti"], "schvaleno")
+        self.assertIn("Nic se nepředá", komunikace.text_potvrzeni(u))
+        # Komentář v issue úlohy, která čeká jen na předání, linka čte také.
+        u2 = self.ulohy_podle_sady(fronta)["sada-revize"]
+        u2.update(stav="schvaleno", issue="https://github.com/test/repo/issues/7", predani_chyba={"chyba": "x"})
+        komentar = {"comments": [{"url": "c1", "author": {"login": "vlastnik"}, "authorAssociation": "OWNER",
+                                  "createdAt": jadro.ted(), "body": f"zamítám {u2['kod']}"}]}
+        runner = lambda *a, **kw: SimpleNamespace(returncode=0, stdout=json.dumps(komentar), stderr="")  # noqa: E731
+        self.assertEqual([z["uloha"] for z in komunikace.zpravy_githubu(fronta, runner=runner)], [u2["kod"]])
 
     # ------------------------------------------------------------ příkazová řádka
 

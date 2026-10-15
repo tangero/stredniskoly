@@ -1,10 +1,9 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
-import { notFound } from 'next/navigation';
-import { cookies } from 'next/headers';
+import { formatDatumCz } from '@/lib/admin';
+import { vyzadujAdmina } from '@/lib/admin-relace';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
-import { formatDatumCz, overAdminToken } from '@/lib/admin';
 import { ADMIN_DAVKA, nactiPozvanky, kodProSkolu } from '@/lib/portal-pozvanky';
 import { pozvankaDoPilotu } from '@/lib/portal-email';
 
@@ -23,7 +22,7 @@ const TLACITKO = 'rounded bg-slate-800 px-3 py-1.5 text-sm font-medium text-whit
 const VSTUP = 'rounded border border-slate-300 px-2 py-1 text-sm';
 
 export default async function AdminPozvankyPage({ searchParams }: Props) {
-  if (!overAdminToken((await cookies()).get('admin_token')?.value)) notFound();
+  await vyzadujAdmina();
   const { nahled, ok, chyba } = await searchParams;
 
   const { radky, chybi, pocty } = await nactiPozvanky();
