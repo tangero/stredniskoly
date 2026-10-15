@@ -755,6 +755,11 @@
           "cas": "2026-10-15T00:58:25+00:00",
           "stav": "selhalo",
           "poznamka": "build_transit_graph_v2.py skončil chybou: vice, Hlína): 32 stations vs 295\n  area 50.00-50.25 N, 14.0-14.5 E (e.g. Horní Bezděkov, Křižovatka): 77 stations vs 1511\n  area 50.00-50.25 N, 14.5-15.0 E (e"
+        },
+        {
+          "cas": "2026-10-15T05:12:35+00:00",
+          "stav": "selhalo",
+          "poznamka": "build_transit_graph_v2.py skončil chybou: vice, Hlína): 32 stations vs 295\n  area 50.00-50.25 N, 14.0-14.5 E (e.g. Horní Bezděkov, Křižovatka): 77 stations vs 1511\n  area 50.00-50.25 N, 14.5-15.0 E (e"
         }
       ],
       "priprava": {
@@ -814,7 +819,7 @@
       "last_modified": "",
       "vytvoreno": "2026-10-14T19:21:13+00:00",
       "zobrazene_obdobi": "2026-02-07",
-      "stav": "oznameno",
+      "stav": "schvaleno",
       "historie": [
         {
           "cas": "2026-10-14T19:21:13+00:00",
@@ -828,6 +833,15 @@
         {
           "cas": "2026-10-14T19:22:10+00:00",
           "stav": "oznameno"
+        },
+        {
+          "cas": "2026-10-15T05:12:10+00:00",
+          "stav": "schvaleno",
+          "poznamka": "github, tangero"
+        },
+        {
+          "cas": "2026-10-15T05:13:01+00:00",
+          "stav": "pripraveno"
         }
       ],
       "priprava": {
@@ -866,6 +880,16 @@
         "telegram_zpravy": [
           472
         ]
+      },
+      "rozhodnuti": {
+        "cas": "2026-10-15T05:11:37Z",
+        "rozhodnuti": "schvaleno",
+        "kanal": "github",
+        "od": "tangero"
+      },
+      "predani_chyba": {
+        "cas": "2026-10-15T05:13:01+00:00",
+        "chyba": "výstup se od schválení změnil: 34fb4c860ae9… → 452e542353ddbaacf03982135f88049bf569cfd37f42757e1310e324c32f; úlohu znovu otevři příkazem znovu"
       }
     }
   },
@@ -1010,6 +1034,7 @@
   ],
   "zpracovane_zpravy": {
     "telegram:180939664": "2026-10-05T18:30:41+00:00",
-    "github:https://github.com/tangero/stredniskoly/issues/473#issuecomment-6169772305": "2026-10-14T13:43:09+00:00"
+    "github:https://github.com/tangero/stredniskoly/issues/473#issuecomment-6169772305": "2026-10-14T13:43:09+00:00",
+    "github:https://github.com/tangero/stredniskoly/issues/492#issuecomment-6184934445": "2026-10-15T05:12:10+00:00"
   }
 }
