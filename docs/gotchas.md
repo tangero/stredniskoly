@@ -35,13 +35,3 @@ ve kterém na něj narazíš (krátce: co se stane, proč, co s tím). Oprava, k
   MŠMT (`nazvy-oboru.json`) se obnovuje po čtvrtletích, takže nový název se v něm objeví se zpožděním. Oprava přebije
   `uplny_nazev` v nadpisu stránky školy a v identifikaci v portálu. Zkrácený název v katalogu a adresa stránky se
   nemění (zkratku katalogu tvoří datová linka). Až rejstřík ponese stejný název, záznam se odstraní.
-
-## Datová linka
-
-- **Úloha `doprava-gtfs` se předá jen tentýž den, kdy byla připravená.** Předání stáhne zdroj ze spojenka.cz znovu,
-  postaví graf a porovná jeho otisk se schváleným. Spojenka soubor vydává denně a mění i spoje budoucích dnů, takže
-  schválení s odstupem přes noc skončí chybou „výstup se od schválení změnil“ (VYXMR, 15. 10. 2026). Starší úloha
-  navíc staví graf pro referenční pondělí, které už z feedu vypadlo, a neprojde kontrolou pokrytí (3JHAT). Pomůže
-  jen nová úloha (`zalozit`) a schválení komentářem v issue hned po oznámení.
-- **Obnova grafu může změnit ID zastávek.** Po sloučení nového grafu spusť `scripts/prepocet_zastavek_skol.py`,
-  jinak školy v `data/school_locations.json` odkazují na zastávky, které v grafu nejsou (docs/zdroje-dat.md, 2.9).

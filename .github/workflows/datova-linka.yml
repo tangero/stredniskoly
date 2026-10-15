@@ -31,6 +31,7 @@ permissions:
   contents: write
   issues: write
   pull-requests: write
+  actions: read   # předání stahuje artefakt běhu, který úlohu připravil (scripts/linka/predani.py, #500)
 
 concurrency:
   group: datova-linka
@@ -113,6 +114,10 @@ jobs:
 
       - name: Zjištění, příprava, oznámení
         if: steps.krok.outputs.krok == 'beh'
+        env:
+          # Příprava si zapíše artefakt tohoto běhu, předání z něj vezme schválené výstupy (#500).
+          # Jen v krocích linky, ne v testech: ty se artefaktů ani GitHubu dotýkat nesmí.
+          LINKA_BEH_ID: ${{ github.run_id }}
         run: python3 scripts/datova-linka.py ${{ steps.krok.outputs.nanecisto }} beh ${{ steps.krok.outputs.kanaly }}
 
       # Token App prijimacky-ai (#440, RA49): PR z předání založí App, takže na něm běží povinné kontroly a brána
@@ -133,6 +138,7 @@ jobs:
         env:
           # Jen pro `gh pr create` v předání (scripts/linka/predani.py); komentáře a issue píše dál GITHUB_TOKEN.
           PREDANI_GH_TOKEN: ${{ steps.app.outputs.token }}
+          LINKA_BEH_ID: ${{ github.run_id }}
         run: |
           git config user.name "datova-linka[bot]"
           git config user.email "datova-linka@users.noreply.github.com"
@@ -163,6 +169,8 @@ jobs:
           git -C /tmp/stav commit -m "linka: stav fronty $(date -u +'%F %H:%M')"
           git -C /tmp/stav push origin linka/stav
 
+      # Název artefaktu skládá i scripts/linka/zpracovani.py (zaznamenej_vystupy); výstupy přípravy v něm
+      # předání najde pod prace/<KÓD>/. Stažené zdroje (ZIP, XLSX) se neukládají.
       - name: Oznámení a pracovní soubory jako artefakt
         if: always() && (steps.krok.outputs.krok == 'beh' || steps.fronta.outputs.ceka == 'ano')
         uses: actions/upload-artifact@v4
@@ -171,4 +179,7 @@ jobs:
           path: |
             data/linka/fronta.json
             data/linka/oznameni/
+            data/linka/prace/
+            !data/linka/prace/**/*.zip
+            !data/linka/prace/**/*.xlsx
           if-no-files-found: ignore

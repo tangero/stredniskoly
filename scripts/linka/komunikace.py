@@ -238,7 +238,8 @@ def zpravy_telegramu() -> list[dict]:
 def zpravy_githubu(fronta: dict, runner=subprocess.run) -> list[dict]:
     vysledek = []
     for u in fronta["ulohy"].values():
-        if u["stav"] != "oznameno" or not u.get("issue"):
+        ceka = u["stav"] == "oznameno" or (u["stav"] == "schvaleno" and u.get("predani_chyba"))
+        if not ceka or not u.get("issue"):
             continue
         cislo = cislo_issue(u["issue"])
         data = json.loads(gh("issue", "view", cislo, "--json", "comments", runner=runner))
@@ -332,6 +333,12 @@ def zpracuj_zpravy(fronta: dict, zpravy: list[dict], kanal: str) -> list[dict]:
                 u["rozhodnuti"] = {"cas": z["cas"], "rozhodnuti": rozhodnuti, "kanal": kanal, "od": z["od"]}
                 jadro.zmen_stav(u, rozhodnuti, f"{kanal}, {z['od']}")
                 udalost(rozhodnuti, k)
+            elif rozhodnuti == "zamitnuto" and u["stav"] == "schvaleno" and u.get("predani_chyba"):
+                # Schválenou úlohu, kterou nejde předat, správce ukončí zamítnutím; schválení zůstane v historii (#500).
+                u["predchozi_rozhodnuti"] = u.get("rozhodnuti")
+                u["rozhodnuti"] = {"cas": z["cas"], "rozhodnuti": rozhodnuti, "kanal": kanal, "od": z["od"]}
+                jadro.zmen_stav(u, rozhodnuti, f"{kanal}, {z['od']}, po chybě předání")
+                udalost(rozhodnuti, k)
             elif u.get("rozhodnuti", {}).get("rozhodnuti") == rozhodnuti:
                 udalost("uz_rozhodnuto", k)  # stejné rozhodnutí podruhé, třeba v druhém kanálu
             else:
@@ -399,7 +406,8 @@ def text_odpovedi(e: dict, fronta: dict) -> str:
     if druh == "nelze":
         u = fronta["ulohy"][k]
         return (f"{k} nelze {SLOVESO[e['rozhodnuti']]}: je ve stavu {CESKY_STAV.get(u['stav'], u['stav'])}. "
-                "Změnu rozhodnutí udělá jen správce příkazem znovu.")
+                "Změnu rozhodnutí udělá jen správce příkazem znovu; schválenou úlohu, kterou se nepodařilo předat, "
+                "ukončí zpráva „zamítám KÓD“.")
     if druh == "nejasne":
         return f"Zpráva nemá kód a na rozhodnutí čeká víc úloh: {cekaji}. Napiš „schvaluji KÓD“, nebo „schvaluji vše“."
     if druh == "nic_neceka":

@@ -740,9 +740,9 @@
    "aktualizace": {
     "zdroj": "https://www.spojenka.cz/jrdata/jizdnirady-gtfs.zip (GTFS CIS JŘ, obsahuje i PID); zastávky PID pro našeptávač z https://data.pid.cz/PID_GTFS.zip",
     "detekce": "Zdroj vychází denně, linka proto sleduje období jízdního řádu (aktualizace.obdobi = jizdni-rad): úloha vznikne v týdnu po celostátní změně druhou neděli v prosinci.",
-    "import": "Datová linka (zpracovatel doprava-gtfs) stáhne GTFS a scripts/build_transit_graph_v2.py postaví data/transit_graph.json jen ze spojů prvního školního pondělí nového jízdního řádu; pokrytí kontroluje proti grafu na webu.",
+    "import": "Datová linka (zpracovatel doprava-gtfs) stáhne GTFS a scripts/build_transit_graph_v2.py postaví data/transit_graph.json jen ze spojů prvního školního pondělí nového jízdního řádu; pokrytí kontroluje proti grafu na webu. Zastávky škol v data/school_locations.json přepočte na nový graf (scripts/prepocet_zastavek_skol.py).",
     "automatizace": "priprava",
-    "lidsky_krok": "Schválit úlohu linky, sloučit její PR a přepnout sadu příkazem stav-datovych-sad.py prepni doprava-gtfs <období>. Našeptávač public/pid_stops_compact.json linka neobnovuje.",
+    "lidsky_krok": "Schválit úlohu linky, sloučit její PR (graf a přepočtené zastávky škol) a přepnout sadu příkazem stav-datovych-sad.py prepni doprava-gtfs <období>. Našeptávač public/pid_stops_compact.json linka neobnovuje (scripts/build_pid_stops_compact.py).",
     "sledovat": [
      "https://www.spojenka.cz/jrdata/jizdnirady-gtfs.zip"
     ],
