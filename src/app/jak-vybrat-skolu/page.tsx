@@ -4,7 +4,9 @@ import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import calendar from '@/data/admissions-2027.json';
 import { zobrazeneObdobi } from '@/lib/stav-datovych-sad';
-import { formatujDen } from '@/lib/veletrhy-pocty';
+import { cesskyDen, formatujDen } from '@/lib/veletrhy-pocty';
+import { SITE_URL } from '@/lib/site.mjs';
+import { DrobeckyJsonLd } from '@/components/DrobeckyJsonLd';
 
 /**
  * Průvodce výběrem školy: jeden návod místo dvou stránek.
@@ -13,6 +15,8 @@ import { formatujDen } from '@/lib/veletrhy-pocty';
  * se sem trvale přesměrovává, proto krok „Jak se rozhoduje o přijetí“ nese její obsah celý
  * i její slova v nadpisu; míří na něj odkazy ze stránky školy a oboru (kotva #jak-se-rozhoduje).
  *
+ * Struktura (#494): nahoře kroky výběru školy, mechanika přijímání (kotva #jak-se-rozhoduje) níž.
+ *
  * Pravidla, která tahle stránka drží (návrh, oddíl 4):
  * - žádný letopočet napevno: ročník z registru, termíny z harmonogramu MŠMT;
  * - bodová škála 0 až 100, tedy 50 za češtinu a 50 za matematiku;
@@ -20,32 +24,59 @@ import { formatujDen } from '@/lib/veletrhy-pocty';
  * - žádná osobní predikce přijetí, žádná „hranice přijetí“, žádný žebříček.
  */
 
+/** Blok „Co dělat teď“ závisí na dnešním dni, proto se stránka jednou denně přepočítá. */
+export const revalidate = 86400;
+
+/** Datum poslední věcné úpravy textu; jde do viditelného řádku i do `dateModified`. Při úpravě textu ho změň. */
+const AKTUALIZOVANO = '2026-10-15';
+
+const TITULEK = 'Jak vybrat střední školu: průvodce pro rodiče a deváťáky';
+
 export const metadata: Metadata = {
   alternates: { canonical: '/jak-vybrat-skolu' },
-  // Začíná dotazem „přijímací řízení“ (#405, kontrolní SEO audit #414: CTR 0,3 % při pozici 7,6).
-  title: { absolute: 'Přijímací řízení na střední školu: jak vybrat a podat přihlášku' },
+  // #494: titulek míří na výběr školy; dosavadní „přijímací řízení“ (#405, #414) nese krok Jak funguje přijímací řízení.
+  title: { absolute: TITULEK },
   description:
-    'Návod krok za krokem: kdy co podat, jak se rozhoduje o přijetí, jak najít a posoudit školu '
-    + 'a jak sestavit tři přihlášky. Včetně toho, co o školách víme a co ne.',
+    'Jaký typ školy, co dítě baví, na co se ptát na dni otevřených dveří a jak funguje přijímací řízení. '
+    + 'Průvodce s daty o školách i s tím, co z nich neplyne.',
   openGraph: {
-    title: 'Přijímací řízení na střední školu: jak vybrat a podat přihlášku',
-    description: 'Návod krok za krokem od prvního hledání po tři obory na přihlášce.',
+    title: TITULEK,
+    description: 'Od prvního výběru po tři obory na přihlášce, s daty o školách.',
     type: 'article',
     url: '/jak-vybrat-skolu',
   },
 };
 
-const KROKY = [
-  { id: 'kalendar', cislo: 0, nadpis: 'Kdy co bude' },
-  { id: 'jak-se-rozhoduje', cislo: 1, nadpis: 'Jak funguje přijímací řízení' },
-  { id: 'kriteria', cislo: 2, nadpis: 'Co škola zveřejní a co z toho neplyne' },
-  { id: 'kandidati', cislo: 3, nadpis: 'Najít kandidáty' },
-  { id: 'posoudit', cislo: 4, nadpis: 'Posoudit jednu školu' },
-  { id: 'prihlasky', cislo: 5, nadpis: 'Sestavit tři přihlášky' },
-  { id: 'porovnat', cislo: 6, nadpis: 'Porovnat kandidáty vedle sebe' },
-  { id: 'priprava', cislo: 7, nadpis: 'Připravit se na zkoušku' },
-  { id: 'druhe-kolo', cislo: 8, nadpis: 'Když to nevyjde' },
+const FAQ: { otazka: string; odpoved: string }[] = [
+  { otazka: 'Jak vybrat střední školu?', odpoved: 'Začni tím, co dítě baví a kam je ochotné dojíždět, pak si vyber typ školy a zúž výběr na několik oborů. Kritéria přijetí si přečti na webu každé školy, protože jen ta jsou závazná.' },
+  { otazka: 'Kdy se rozhoduje o výběru střední školy?', odpoved: 'Přihlášky se podávají v jednom krátkém okně na začátku února; školy před tím zveřejňují kritéria přijetí. Dny otevřených dveří a veletrhy škol bývají na podzim a v zimě.' },
+  { otazka: 'Jaký je rozdíl mezi gymnáziem, lyceem a odbornou školou?', odpoved: 'Gymnázium a lyceum dávají všeobecné vzdělání s maturitou, lyceum je zaměřené na určitou oblast. Odborná škola s maturitou přidává odbornou přípravu a učební obor končí výučním listem bez maturity.' },
+  { otazka: 'Na co se zeptat na dni otevřených dveří?', odpoved: 'Na kritéria přijetí, na školní přijímací zkoušku, na praxi, cizí jazyky, dojíždění a na to, co dělají absolventi školy.' },
+  { otazka: 'Dá se podle známek poznat, na jakou školu se dítě dostane?', odpoved: 'Ne. Body za prospěch v datech nemáme. U oborů ukazujeme, jak dopadli uchazeči v jednotné přijímací zkoušce, a to je popis minulého ročníku, ne předpověď.' },
+  { otazka: 'Záleží na pořadí škol na přihlášce?', odpoved: 'O přijetí ne: každá škola řadí uchazeče jen podle svých kritérií. Pořadí určuje, kam nastoupíš, když tě přijme víc škol.' },
+  { otazka: 'Co když dítě nepřijmou?', odpoved: 'Školy s volnými místy vypisují druhé kolo s vlastními termíny. Výsledek jednotné zkoušky z prvního kola se v něm použije znovu.' },
 ];
+
+const KROKY = [
+  { id: 'typ-skoly', nadpis: 'Jaký typ školy' },
+  { id: 'zajmy', nadpis: 'Co dítě baví' },
+  { id: 'dny-otevrenych', nadpis: 'Dny otevřených dveří a veletrhy' },
+  { id: 'znamky', nadpis: 'Jakou školu podle známek' },
+  { id: 'kalendar', nadpis: 'Kdy co bude' },
+  { id: 'jak-se-rozhoduje', nadpis: 'Jak funguje přijímací řízení' },
+  { id: 'kriteria', nadpis: 'Co škola zveřejní a co z toho neplyne' },
+  { id: 'kandidati', nadpis: 'Najít kandidáty' },
+  { id: 'posoudit', nadpis: 'Posoudit jednu školu' },
+  { id: 'prihlasky', nadpis: 'Sestavit tři přihlášky' },
+  { id: 'porovnat', nadpis: 'Porovnat kandidáty vedle sebe' },
+  { id: 'priprava', nadpis: 'Připravit se na zkoušku' },
+  { id: 'druhe-kolo', nadpis: 'Když to nevyjde' },
+].map((k, i) => ({ ...k, cislo: i + 1 }));
+
+/** Sezóna výběru školy (měsíce), ve které blok „Co dělat teď“ ukazuje čtyři kroky. */
+const SEZONA_OD_MESICE = 10;
+const SEZONA_DO_MESICE = 2;
+
 
 /** Čtyři milníky prvního kola z harmonogramu MŠMT; datum se nikdy nepíše do kódu. */
 const MILNIKY = ['ss-kriteria', 'ss-prihlasky', 'jpz-4-1', 'ss-vysledky'];
@@ -58,9 +89,10 @@ function udalost(id: string) {
   return null;
 }
 
-function Krok({ id, cislo, nadpis, otazka, children }: {
-  id: string; cislo: number; nadpis: string; otazka: string; children: React.ReactNode;
+function Krok({ id, nadpis, otazka, children }: {
+  id: string; nadpis: string; otazka: string; children: React.ReactNode;
 }) {
+  const cislo = KROKY.find(k => k.id === id)?.cislo;
   return (
     <section id={id} className="scroll-mt-24">
       <div className="flex items-baseline gap-3">
@@ -95,8 +127,39 @@ export default async function JakVybratSkoluPage() {
   const milniky = MILNIKY.map(udalost).filter((e): e is NonNullable<typeof e> => e !== null);
   const druheKolo = calendar.groups.find(g => g.id === 'druhe-kolo');
 
+  // „Co dělat teď“: v sezóně výběru čtyři kroky, jinak nejbližší krok podle kalendáře, jinak nic.
+  const dnes = cesskyDen();
+  const mesic = Number(dnes.slice(5, 7));
+  const vSezone = mesic >= SEZONA_OD_MESICE || mesic <= SEZONA_DO_MESICE;
+  const kriteria = udalost('ss-kriteria');
+  const prihlasky = udalost('ss-prihlasky');
+  const dalsiKrok = [kriteria, prihlasky, udalost('ss-vysledky')]
+    .filter((e): e is NonNullable<typeof e> => e !== null && e.start >= dnes)
+    .sort((a, b) => a.start.localeCompare(b.start))[0] ?? null;
+  const datumAktualizace = formatujDen(AKTUALIZOVANO);
+
+  const jsonLd = [
+    {
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: FAQ.map(f => ({ '@type': 'Question', name: f.otazka, acceptedAnswer: { '@type': 'Answer', text: f.odpoved } })),
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'Article',
+      headline: TITULEK,
+      dateModified: AKTUALIZOVANO,
+      mainEntityOfPage: `${SITE_URL}/jak-vybrat-skolu`,
+      publisher: { '@type': 'Organization', name: 'Přijímačky na školu', url: SITE_URL },
+    },
+  ];
+
   return (
     <div className="flex min-h-screen flex-col bg-[#f4f7fb]">
+      {jsonLd.map(j => (
+        <script key={j['@type']} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(j).replace(/</g, '\\u003c') }} />
+      ))}
+      <DrobeckyJsonLd polozky={[{ nazev: 'Domů', cesta: '/' }, { nazev: 'Jak vybrat školu' }]} />
       <Header />
       <main className="flex-1">
         <div className="mx-auto max-w-4xl px-4 py-8 md:py-12">
@@ -107,19 +170,38 @@ export default async function JakVybratSkoluPage() {
           </nav>
 
           <h1 className="mt-4 text-[34px] font-bold leading-[1.1] text-[#16325c] [text-wrap:balance] md:text-[44px]">
-            Jak vybrat střední školu
+            Jak vybrat střední školu: průvodce pro rodiče a deváťáky
           </h1>
           <p className="mt-4 max-w-[70ch] text-[20px] leading-relaxed text-slate-700">
-            Návod v osmi krocích: od prvního hledání až po tři obory na přihlášce. U každého kroku je
+            Návod od prvního výběru až po tři obory na přihlášce. U každého kroku je
             odkaz na místo, kde si to na tomhle webu ověříš daty.
           </p>
           <p className="mt-3 max-w-[70ch] text-[16px] leading-relaxed text-slate-600">
             Čísla o školách na webu popisují{rocnikDat ? <> přijímací řízení <b className="text-[#16325c]">{rocnikDat}</b></> : <> poslední zveřejněné přijímací řízení</>}.
             Je to popis toho, jak dopadli uchazeči tehdy, ne předpověď pro tvůj ročník.
           </p>
+          <p className="mt-2 text-[14px] text-slate-500">Aktualizováno {datumAktualizace}</p>
+
+          {(vSezone || dalsiKrok) && (
+            <section aria-labelledby="co-ted" className="mt-8 rounded-2xl border border-[#cfe0f7] bg-[#eef5ff] p-5">
+              <h2 id="co-ted" className="text-[20px] font-bold text-[#16325c]">Co dělat teď</h2>
+              {vSezone ? (
+                <ol className="mt-3 list-decimal space-y-2 pl-5 text-[16px] leading-relaxed text-slate-800">
+                  <li>Projdi <Link href="/veletrhy" className="font-semibold text-[#0074e4] hover:underline">veletrhy středních škol</Link> a dny otevřených dveří ve svém okolí.</li>
+                  <li>Z mnoha škol udělej užší výběr: <a href="#typ-skoly" className="text-[#0074e4] hover:underline">typ školy</a>, <a href="#zajmy" className="text-[#0074e4] hover:underline">co dítě baví</a> a <a href="#kandidati" className="text-[#0074e4] hover:underline">kam je ochotné dojíždět</a>.</li>
+                  {kriteria && <li>Přečti si kritéria přijetí na webech škol. Školy je zveřejní {kriteria.date}.</li>}
+                  {prihlasky && <li>Podej přihlášky: {prihlasky.date}. <a href="#kalendar" className="text-[#0074e4] hover:underline">Všechny termíny</a>.</li>}
+                </ol>
+              ) : dalsiKrok && (
+                <p className="mt-3 text-[16px] leading-relaxed text-slate-800">
+                  Nejbližší krok: <b>{dalsiKrok.title}</b>, {dalsiKrok.date}. <a href="#kalendar" className="text-[#0074e4] hover:underline">Všechny termíny</a>.
+                </p>
+              )}
+            </section>
+          )}
 
           <nav aria-label="Obsah návodu" className="mt-8 rounded-2xl border border-slate-200 bg-white p-5">
-            <h2 className="text-[15px] font-bold uppercase tracking-wide text-slate-500">Osm kroků</h2>
+            <h2 className="text-[15px] font-bold uppercase tracking-wide text-slate-500">Kroky</h2>
             <ol className="mt-3 grid gap-x-6 gap-y-2 md:grid-cols-2">
               {KROKY.map(k => (
                 <li key={k.id} className="text-[16px]">
@@ -133,8 +215,99 @@ export default async function JakVybratSkoluPage() {
 
           <div className="mt-12 space-y-14">
 
+            {/* ---------------------------------------------------------------- typ školy */}
+            <Krok id="typ-skoly" nadpis="Jaký typ školy" otazka="Čtyři hlavní cesty se liší tím, co škola dává a čím studium končí. Žádná není lepší nebo horší; liší se tím, komu sedí.">
+              <div className="overflow-x-auto rounded-2xl border border-slate-200 bg-white">
+                <table className="w-full min-w-[560px] text-left text-[15px]">
+                  <thead className="bg-slate-50 text-[13px] uppercase tracking-wide text-slate-500">
+                    <tr><th className="p-3">Typ</th><th className="p-3">Pro koho</th><th className="p-3">Studium končí</th><th className="p-3">Délka</th></tr>
+                  </thead>
+                  <tbody className="divide-y divide-slate-100 text-slate-700">
+                    {[
+                      ['Gymnázium', 'pro toho, kdo chce široké všeobecné vzdělání a o povolání se ještě nerozhodl', 'maturitou', '4 roky; víceletá 6 nebo 8 let (přijímačky z 5. nebo 7. třídy)'],
+                      ['Lyceum', 'pro toho, koho baví určitá oblast (technická, přírodovědná, humanitní, umělecká), a chce zároveň všeobecný základ', 'maturitou', '4 roky'],
+                      ['Odborná škola s maturitou', 'pro toho, kdo už ví, v jakém oboru chce pracovat, a chce k tomu maturitu', 'maturitou', '4 roky'],
+                      ['Učební obor', 'pro toho, koho baví praktická práce v řemesle nebo službách', 'výučním listem, bez maturity; maturitu lze doplnit nástavbou', '3 roky; nástavba 2 roky'],
+                    ].map(([typ, komu, konci, delka]) => (
+                      <tr key={typ}>
+                        <th scope="row" className="p-3 font-semibold text-[#16325c]">{typ}</th>
+                        <td className="p-3">{komu}</td><td className="p-3">{konci}</td><td className="p-3">{delka}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <Dal href="/skoly" popis="obory všech typů; typ školy poznáte u každého oboru, filtrovat podle něj zatím nejde">Přehled oborů</Dal>
+              <Dal href="/regiony" popis="školy podle krajů a typů nabídky">Školy v kraji</Dal>
+              <Dal href="/mesto" popis="školy ve městě s filtrem podle toho, čím studium končí">Školy ve městě</Dal>
+            </Krok>
+
+            {/* ---------------------------------------------------------------- zájmy */}
+            <Krok id="zajmy" nadpis="Co dítě baví" otazka="Škola, která na papíře vypadá dobře, nepomůže, když dítě nebaví obor. Začni rozhovorem a pak si můžeš pomoct bezplatným testem zájmů.">
+              <Karta>
+                <p className="text-[17px] font-semibold text-[#16325c]">Otázky pro dítě</p>
+                <ul className="mt-2 list-disc space-y-1 pl-5 text-[16px] leading-relaxed text-slate-700">
+                  <li>Které předměty a činnosti ti jdou a při kterých ti uteče čas?</li>
+                  <li>Chceš po škole pokračovat dál ve studiu, nebo se co nejdřív uplatnit v oboru?</li>
+                  <li>Co by sis chtěl vyzkoušet, než se rozhodneš? Brigáda, kroužek, den ve škole nanečisto.</li>
+                  <li>Jak daleko jsi ochotný jezdit a jak brzy vstávat?</li>
+                </ul>
+              </Karta>
+              <Karta>
+                <p className="text-[16px] leading-relaxed text-slate-700">
+                  Test zájmů je jen orientační. Poradit se můžeš také s výchovným poradcem na základní škole nebo
+                  s pedagogicko-psychologickou poradnou.
+                </p>
+                <p className="mt-3 text-[16px]">
+                  <a href="https://www.infoabsolvent.cz/Profitest" target="_blank" rel="noopener noreferrer" className="font-semibold text-[#0074e4] hover:underline">Profitest na Infoabsolventu →</a>
+                  <span className="ml-2 text-slate-600">bezplatný orientační test zájmů, e-mail se neuvádí povinně</span>
+                </p>
+                <p className="mt-2 text-[16px]">
+                  <a href="https://www.infoabsolvent.cz/" target="_blank" rel="noopener noreferrer" className="font-semibold text-[#0074e4] hover:underline">Infoabsolvent →</a>
+                  <span className="ml-2 text-slate-600">obory, školy a povolání; provozuje státní instituce, ne tento web</span>
+                </p>
+              </Karta>
+            </Krok>
+
+            {/* ---------------------------------------------------------------- dny otevřených dveří */}
+            <Krok id="dny-otevrenych" nadpis="Dny otevřených dveří a veletrhy" otazka="Den otevřených dveří pořádá škola u sebe, veletrh středních škol je akce, kde se na jednom místě představí školy z kraje najednou. Obojí je příležitost zeptat se.">
+              <Karta>
+                <p className="text-[17px] font-semibold text-[#16325c]">Na co se zeptat školy</p>
+                <ul className="mt-2 list-disc space-y-1 pl-5 text-[16px] leading-relaxed text-slate-700">
+                  <li>Jak vypadají <b>kritéria přijetí</b> a kdy je škola zveřejní?</li>
+                  <li>Pořádá škola <b>vlastní školní přijímací zkoušku</b> a kdy?</li>
+                  <li>Kolik je praxe a kde probíhá?</li>
+                  <li>Jaké cizí jazyky se učí a od kdy?</li>
+                  <li>Jak se tam dá dojíždět a jak dlouho to trvá?</li>
+                  <li>Co dělají absolventi: pokračují ve studiu, nebo jdou pracovat?</li>
+                </ul>
+              </Karta>
+              <Dal href="/veletrhy" popis="přehled veletrhů středních škol podle krajů">Veletrhy středních škol</Dal>
+              <Dal href="/skoly" popis="stránka školy ukazuje data o přijetí a odkaz na web školy">Stránky škol</Dal>
+            </Krok>
+
+            {/* ---------------------------------------------------------------- známky */}
+            <Krok id="znamky" nadpis="Jakou školu podle známek" otazka="Na tuhle otázku data odpoví jen částečně, a je dobré vědět, co z nich neplyne.">
+              <Karta barva="vystraha">
+                <p className="text-[16px] leading-relaxed text-slate-800">
+                  <b>Body za prospěch ani vysvědčení v datech nemáme.</b> Školy je ke kritériím přidávají samy a nikdo
+                  je centrálně nezveřejňuje. Proto z průměru známek neřekneme, na kterou školu se dítě dostane.
+                </p>
+              </Karta>
+              <Karta>
+                <p className="text-[16px] leading-relaxed text-slate-700">
+                  Máme výsledky jednotné přijímací zkoušky přijatých uchazečů. Na stránce oboru a v simulátoru
+                  je najdeš pod názvy <b>Průměr JPZ přijatých</b>, <b>Nejnižší výsledek JPZ mezi přijatými</b> a
+                  <b> Obtížnost přijetí slovy</b>. Popisují minulé kolo, ne předpověď, a týkají se jen
+                  jednotné zkoušky.
+                </p>
+              </Karta>
+              <Dal href="/simulator" popis="vlastní body vedle výsledků přijatých v minulém kole">Simulátor přijímaček</Dal>
+              <Dal href="#kriteria" popis="co škola ještě zohledňuje">Co škola zveřejní</Dal>
+            </Krok>
+
             {/* ---------------------------------------------------------------- 0 */}
-            <Krok id="kalendar" cislo={0} nadpis="Kdy co bude" otazka="Přijímací řízení má pevný harmonogram. Tyhle čtyři termíny stačí znát na začátku; zbytek je v kalendáři.">
+            <Krok id="kalendar" nadpis="Kdy co bude" otazka="Přijímací řízení má pevný harmonogram. Tyhle čtyři termíny stačí znát na začátku; zbytek je v kalendáři.">
               <ol className="grid gap-3 md:grid-cols-2">
                 {milniky.map(e => (
                   <li key={e.id} className="rounded-2xl border border-slate-200 bg-white p-4">
@@ -156,7 +329,7 @@ export default async function JakVybratSkoluPage() {
             </Krok>
 
             {/* ---------------------------------------------------------------- 1 */}
-            <Krok id="jak-se-rozhoduje" cislo={1} nadpis="Jak funguje přijímací řízení" otazka="Tohle je jediná část, kterou se vyplatí přečíst celou. Většina rad, které kolují mezi rodiči, stojí na nepochopení jednoho pravidla.">
+            <Krok id="jak-se-rozhoduje" nadpis="Jak funguje přijímací řízení" otazka="Tohle je jediná část, kterou se vyplatí přečíst celou. Většina rad, které kolují mezi rodiči, stojí na nepochopení jednoho pravidla.">
               <Karta barva="modra">
                 <p className="text-[19px] font-bold text-[#16325c]">O přijetí rozhodují jen výsledky, ne pořadí na přihlášce.</p>
                 <p className="mt-2 text-[17px] leading-relaxed text-slate-800">
@@ -233,7 +406,7 @@ export default async function JakVybratSkoluPage() {
             </Krok>
 
             {/* ---------------------------------------------------------------- 2 */}
-            <Krok id="kriteria" cislo={2} nadpis="Co škola zveřejní a co z toho neplyne" otazka="Kritéria přijetí vyhlašuje každá škola sama a jsou závazná. Najdeš je na jejím webu, ne u nás.">
+            <Krok id="kriteria" nadpis="Co škola zveřejní a co z toho neplyne" otazka="Kritéria přijetí vyhlašuje každá škola sama a jsou závazná. Najdeš je na jejím webu, ne u nás.">
               <Karta barva="vystraha">
                 <p className="text-[18px] font-bold text-[#16325c]">O přijetí často nerozhoduje jen jednotná zkouška.</p>
                 <p className="mt-2 text-[17px] leading-relaxed text-slate-800">
@@ -262,7 +435,7 @@ export default async function JakVybratSkoluPage() {
             </Krok>
 
             {/* ---------------------------------------------------------------- 3 */}
-            <Krok id="kandidati" cislo={3} nadpis="Najít kandidáty" otazka="Než začneš porovnávat, potřebuješ seznam škol, které přicházejí v úvahu. Rozhodují dvě věci: co chce dítě dělat a jak daleko je ochotné jezdit.">
+            <Krok id="kandidati" nadpis="Najít kandidáty" otazka="Než začneš porovnávat, potřebuješ seznam škol, které přicházejí v úvahu. Rozhodují dvě věci: co chce dítě dělat a jak daleko je ochotné jezdit.">
               <div className="grid gap-4 md:grid-cols-2">
                 <Karta>
                   <p className="text-[17px] font-semibold text-[#16325c]">Podle místa</p>
@@ -298,7 +471,7 @@ export default async function JakVybratSkoluPage() {
             </Krok>
 
             {/* ---------------------------------------------------------------- 4 */}
-            <Krok id="posoudit" cislo={4} nadpis="Posoudit jednu školu" otazka="U konkrétní školy se dá zjistit víc, než kolik lidí se tam hlásí. Stránka školy odpovídá na pět otázek, stránka oboru na tři.">
+            <Krok id="posoudit" nadpis="Posoudit jednu školu" otazka="U konkrétní školy se dá zjistit víc, než kolik lidí se tam hlásí. Stránka školy odpovídá na pět otázek, stránka oboru na tři.">
               <div className="grid gap-4 md:grid-cols-2">
                 <Karta>
                   <p className="text-[17px] font-semibold text-[#16325c]">Stránka školy</p>
@@ -338,7 +511,7 @@ export default async function JakVybratSkoluPage() {
             </Krok>
 
             {/* ---------------------------------------------------------------- 5 */}
-            <Krok id="prihlasky" cislo={5} nadpis="Sestavit tři přihlášky" otazka="Přihlášky se podávají až na tři obory. Protože pořadí nerozhoduje o přijetí, nejlepší strategie je rozptýlit ambice.">
+            <Krok id="prihlasky" nadpis="Sestavit tři přihlášky" otazka="Přihlášky se podávají až na tři obory. Protože pořadí nerozhoduje o přijetí, nejlepší strategie je rozptýlit ambice.">
               <ol className="space-y-3">
                 {[
                   ['Škola, kterou dítě opravdu chce', 'I když to vypadá nadsazeně. Když se nedostane, systém ho sám posune dál a nic tím neztratí.'],
@@ -364,7 +537,7 @@ export default async function JakVybratSkoluPage() {
             </Krok>
 
             {/* ---------------------------------------------------------------- 6 */}
-            <Krok id="porovnat" cislo={6} nadpis="Porovnat kandidáty vedle sebe" otazka="Když máš užší výběr, vyplatí se položit obory vedle sebe. U každého oboru je tlačítko „Uložit mezi zvažované“ a uložené obory se porovnají v jedné tabulce.">
+            <Krok id="porovnat" nadpis="Porovnat kandidáty vedle sebe" otazka="Když máš užší výběr, vyplatí se položit obory vedle sebe. U každého oboru je tlačítko „Uložit mezi zvažované“ a uložené obory se porovnají v jedné tabulce.">
               <Karta>
                 <p className="text-[16px] leading-relaxed text-slate-700">
                   V porovnání můžeš zadat, kolik bodů dítě psalo v testech nanečisto, a uvidíš rozdíl proti
@@ -380,7 +553,7 @@ export default async function JakVybratSkoluPage() {
             </Krok>
 
             {/* ---------------------------------------------------------------- 7 */}
-            <Krok id="priprava" cislo={7} nadpis="Připravit se na zkoušku" otazka="Jednotná zkouška je jeden test z češtiny a jeden z matematiky, každý za 50 bodů. Píše se ve dvou termínech a počítá se lepší výsledek.">
+            <Krok id="priprava" nadpis="Připravit se na zkoušku" otazka="Jednotná zkouška je jeden test z češtiny a jeden z matematiky, každý za 50 bodů. Píše se ve dvou termínech a počítá se lepší výsledek.">
               <div className="grid gap-4 md:grid-cols-2">
                 <Karta>
                   <p className="text-[17px] font-semibold text-[#16325c]">Postup, který funguje</p>
@@ -412,7 +585,7 @@ export default async function JakVybratSkoluPage() {
             </Krok>
 
             {/* ---------------------------------------------------------------- 8 */}
-            <Krok id="druhe-kolo" cislo={8} nadpis="Když to nevyjde" otazka="Nepřijetí v prvním kole není konec. Školy, kterým zůstala volná místa, vypisují druhé kolo a to má vlastní termíny.">
+            <Krok id="druhe-kolo" nadpis="Když to nevyjde" otazka="Nepřijetí v prvním kole není konec. Školy, kterým zůstala volná místa, vypisují druhé kolo a to má vlastní termíny.">
               {druheKolo && (
                 <ol className="grid gap-3 md:grid-cols-2">
                   {druheKolo.events.map(e => (
@@ -438,6 +611,18 @@ export default async function JakVybratSkoluPage() {
               </Karta>
             </Krok>
           </div>
+
+          <section aria-labelledby="faq" className="mt-14">
+            <h2 id="faq" className="text-[26px] font-bold leading-tight text-[#16325c]">Často kladené otázky</h2>
+            <div className="mt-4 space-y-3">
+              {FAQ.map(f => (
+                <div key={f.otazka} className="rounded-2xl border border-slate-200 bg-white p-5">
+                  <h3 className="text-[17px] font-semibold text-[#16325c]">{f.otazka}</h3>
+                  <p className="mt-1 text-[16px] leading-relaxed text-slate-700">{f.odpoved}</p>
+                </div>
+              ))}
+            </div>
+          </section>
 
           <div className="mt-14 rounded-2xl bg-[#16325c] p-6 text-white md:p-8">
             <h2 className="text-[24px] font-bold">Začni u seznamu kandidátů</h2>

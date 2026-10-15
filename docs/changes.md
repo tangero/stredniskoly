@@ -2,6 +2,13 @@
 
 Záznam změn chování systému: požadavek, co se změnilo a proč, datum. Nejnovější nahoře.
 
+## 2026-10-15: průvodce /jak-vybrat-skolu míří na výběr školy (#494)
+
+- **Požadavek:** interní zadání #494 (stránka byla v Search Console daleko na dotazy o výběru školy).
+- **Co:** nahoře blok Co dělat teď a čtyři kroky výběru (typ školy, co dítě baví, dny otevřených dveří a veletrhy,
+  jakou školu podle známek), mechanika přijímání níž se stejnými kotvami; nový titulek, FAQ a strukturovaná data.
+- **Proč:** stránka odpovídala hlavně na „jak funguje přijímací řízení“, ne na „jak vybrat školu“.
+
 ## 2026-10-15: datová linka předává schválený graf spojení a přepočítá zastávky škol (#500)
 
 - **Požadavek:** interní zadání #500 po obnově grafu v #426.
