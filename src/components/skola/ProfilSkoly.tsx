@@ -338,7 +338,7 @@ export function ProfilSkoly({ data, skola, odkazy }: ProfilSkolyProps) {
               } : null,
               (maturita || inspekce) ? {
                 href: '#vede', q: 'Jak dobrá škola je',
-                a: <>{maturita?.celkem?.passed !== undefined && maturita.celkem.registered ? <>maturitu {maturita.celkem.rok} udělalo <b>{cislo(maturita.celkem.passed)} {zOd(maturita.celkem.registered)} {cislo(maturita.celkem.registered)}</b> přihlášených{jakCastoNadStredem(maturita.skupiny) ? <>, v češtině <b>{jakCastoNadStredem(maturita.skupiny)} nad středem podobných škol</b></> : null}</> : null}{maturita && inspekce ? '; ' : ''}{inspekce ? (novejsi
+                a: <>{maturita?.celkem?.passed !== undefined && maturita.celkem.registered ? <>maturitu {maturita.celkem.rok} udělalo <b>{cislo(maturita.celkem.passed)} {zOd(maturita.celkem.registered)} {cislo(maturita.celkem.registered)}</b> přihlášených{maturita.celkem.took && maturita.celkem.took !== maturita.celkem.registered ? <> ({cislo(maturita.celkem.passed)} {zOd(maturita.celkem.took)} {cislo(maturita.celkem.took)} z těch, kdo ke zkoušce šli{passRateOfTakers(maturita.celkem) !== null ? `, ${procentoMaturity(passRateOfTakers(maturita.celkem)!)}` : ''})</> : null}{jakCastoNadStredem(maturita.skupiny) ? <>, v češtině <b>{jakCastoNadStredem(maturita.skupiny)} nad středem podobných škol</b></> : null}</> : null}{maturita && inspekce ? '; ' : ''}{inspekce ? (novejsi
                   ? <>poslední inspekce {formatDatumCz(novejsi.datum)}, shrnutí její zprávy zatím nemáme</>
                   : <>inspekce {rokyInspekce}: přednost „{malePismeno(inspekce.silne[0]?.tag ?? '')}“{inspekce.rizika[0] ? <>, výtka „{malePismeno(inspekce.rizika[0].tag)}“</> : null}</>) : null}</>,
               } : null,
