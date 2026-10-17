@@ -13,6 +13,15 @@ Záznam změn chování systému: požadavek, co se změnilo a proč, datum. Nej
 - **Proč:** stránky škol nesly úřední názvy ze stavu k 30. 6. 2026, takže změny od 1. 9. 2026 (sloučení Gymnázia
   Čáslav, přejmenování Smíchovské SŠ, SŠ v Kolíně a dalších) chyběly.
 
+## 2026-10-17: čerstvost dat hlídá i sady bez očekávaného období a porovnává období podle data (#507)
+
+- **Požadavek:** interní zadání #507 (rozhodnutí vlastníka po review PR #506).
+- **Co:** `scripts/provoz/cerstvost.mjs` hlásí i sadu s uplynulým `ocekavano.kdy` bez `ocekavano.obdobi`
+  („termín minul, nové období nezjištěno“, Telegram ji pošle jednou za sadu a termín). Období se porovnávají podle
+  konce (rok, měsíc, den), ne jako text; nerozpoznatelný tvar se nehlásí a vypíše se varováním.
+- **Proč:** sady jako `csi-inspekce` nebo `cermat-maturita` administrace po termínu ukazovala, ale přehled ani
+  Telegram ne; textové porovnání smíšených tvarů (`2026` proti `2026-09-30`) mohlo vyjít špatně.
+
 ## 2026-10-17: upozornění na data po očekávaném termínu (#355, etapa 3)
 
 - **Požadavek:** projekt #355, etapa 3 (čerstvost dat), kritéria K16 a K17.
