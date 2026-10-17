@@ -15,7 +15,7 @@ import { REPO, NAZEV_KONTROLY, vytvorApi } from '../brana/data.mjs';
 import { nactiMeritka, spocitejMeritka, kratkaMeritka, oddilMeritka } from './meritka.mjs';
 import { nactiStav, souhrnTydne } from '../provoz/dostupnost.mjs';
 import { souhrnHlaseni } from '../provoz/triaz.mjs';
-import { nactiRegistr, sadyPoTerminu } from '../provoz/cerstvost.mjs';
+import { nactiRegistr, sadyPoTerminu, popisOcekavani } from '../provoz/cerstvost.mjs';
 
 const DEN = 24 * 60 * 60 * 1000;
 export const STITKY_ROZHODNUTI = ['schvaleno', 'zamitnuto', 'stop'];
@@ -191,10 +191,11 @@ export function oddilCerstvost(c) {
   if (c.chyba) return ['## Čerstvost dat', `- nepodařilo se přečíst registr: ${c.chyba}`, ''];
   return [
     '## Čerstvost dat',
-    'Sady, které web používá, jejichž očekávaný termín v `public/stav_datovych_sad.json` minul a web pořád ukazuje starší období.',
+    'Sady, které web používá, jejichž očekávaný termín v `public/stav_datovych_sad.json` minul a web pořád ukazuje starší období, '
+      + 'nebo se nové období ani nezjistilo.',
     '',
     ...(c.sady.length
-      ? c.sady.map((s) => `- ${s.nazev} (\`${s.sada}\`): web ukazuje ${s.zobrazeno}, období ${s.ocekavano} se čekalo do ${s.kdy}`)
+      ? c.sady.map((s) => `- ${s.nazev} (\`${s.sada}\`): web ukazuje ${s.zobrazeno}, ${popisOcekavani(s)}`)
       : ['- žádná sada po termínu']),
     '',
   ];
