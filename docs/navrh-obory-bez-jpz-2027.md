@@ -642,6 +642,9 @@ nemění (omezení zadání); přepnutí období se řídí stávajícími sadam
    od `ID_SOF` v obou kolech stejné a jednoznačně by spárovalo 145 ze 197
    nespárovaných. Jako doplněk klíče ho ale etapa 1 nezavádí, protože by změnil
    i párování oborů se zkouškou. Patří do samostatného zadání.
+   Od 17. 10. 2026 (#282) páruje `sparuj` zbylé nabídky ještě bez zaměření, jen
+   jednoznačně: 2. kolo má 1 412 nabídek; všech 151 nových párů potvrzuje `ID_SO`
+   ([druhé kolo, oddíl 7](druhe-kolo.md)).
 5. **Generátory souběhu a kontextu:** řeší etapa 2.
 6. Vyřešeno: doplněk návrhu simulátoru je sloučený (PR #246).
 7. **Rešerše o odborném výcviku a stipendiích (2. 10. 2026, způsob schválený

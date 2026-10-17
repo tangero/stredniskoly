@@ -7249,7 +7249,13 @@
    "kategorie": "E",
    "kkov": "41-55-E/01",
    "kohorta_pozice": null,
-   "kolo_2": null,
+   "kolo_2": {
+    "id_sof": "651819cf-75e2-4852-a204-b768c1bb5c2c",
+    "kapacita": 7,
+    "prihlasky": 10,
+    "prijati": 5,
+    "zbyla_mista": 2
+   },
    "kraj": "Středočeský",
    "maturitni_status": "nematuritní",
    "nepr_kapacita": 0,
@@ -7381,7 +7387,13 @@
    "kategorie": "E",
    "kkov": "65-51-E/01",
    "kohorta_pozice": null,
-   "kolo_2": null,
+   "kolo_2": {
+    "id_sof": "fc1b85e1-99d1-49a8-aa7c-df052c2cd440",
+    "kapacita": 5,
+    "prihlasky": 6,
+    "prijati": 4,
+    "zbyla_mista": 1
+   },
    "kraj": "Středočeský",
    "maturitni_status": "nematuritní",
    "nepr_kapacita": 0,
@@ -7444,7 +7456,13 @@
    "kategorie": "H",
    "kkov": "66-51-H/01",
    "kohorta_pozice": "zalozni_volba",
-   "kolo_2": null,
+   "kolo_2": {
+    "id_sof": "76dea3dd-81b1-4d91-93c9-938d1a89b7fa",
+    "kapacita": 7,
+    "prihlasky": 7,
+    "prijati": 3,
+    "zbyla_mista": 4
+   },
    "kraj": "Středočeský",
    "maturitni_status": "nematuritní",
    "nepr_kapacita": 0,
@@ -9001,7 +9019,13 @@
    "kategorie": "E",
    "kkov": "29-51-E/01",
    "kohorta_pozice": null,
-   "kolo_2": null,
+   "kolo_2": {
+    "id_sof": "0c384722-dea4-46c3-993c-5035ead39959",
+    "kapacita": 2,
+    "prihlasky": null,
+    "prijati": null,
+    "zbyla_mista": null
+   },
    "kraj": "Jihočeský",
    "maturitni_status": "nematuritní",
    "nepr_kapacita": 0,
@@ -9685,7 +9709,13 @@
    "kategorie": "H",
    "kkov": "23-51-H/01",
    "kohorta_pozice": "smisena_pozice",
-   "kolo_2": null,
+   "kolo_2": {
+    "id_sof": "5a120eb4-1440-4876-8b8a-3657dcd438f8",
+    "kapacita": 6,
+    "prihlasky": 1,
+    "prijati": 0,
+    "zbyla_mista": 6
+   },
    "kraj": "Jihočeský",
    "maturitni_status": "nematuritní",
    "nepr_kapacita": 0,
@@ -12967,7 +12997,13 @@
    "kategorie": "H",
    "kkov": "23-51-H/01",
    "kohorta_pozice": "zalozni_volba",
-   "kolo_2": null,
+   "kolo_2": {
+    "id_sof": "3c5ee6cf-1825-4399-92b3-eec059ccace0",
+    "kapacita": 2,
+    "prihlasky": 5,
+    "prijati": 2,
+    "zbyla_mista": 0
+   },
    "kraj": "Královéhradecký",
    "maturitni_status": "nematuritní",
    "nepr_kapacita": 0,
@@ -13753,7 +13789,13 @@
    "kategorie": "E",
    "kkov": "41-52-E/01",
    "kohorta_pozice": null,
-   "kolo_2": null,
+   "kolo_2": {
+    "id_sof": "23215c18-23dc-4fd5-aa5f-d9a93bf240bf",
+    "kapacita": 18,
+    "prihlasky": 6,
+    "prijati": 2,
+    "zbyla_mista": 16
+   },
    "kraj": "Královéhradecký",
    "maturitni_status": "nematuritní",
    "nepr_kapacita": 0,
@@ -13816,7 +13858,13 @@
    "kategorie": "H",
    "kkov": "41-52-H/01",
    "kohorta_pozice": "zalozni_volba",
-   "kolo_2": null,
+   "kolo_2": {
+    "id_sof": "ad9f9f96-1d0a-4154-9ce2-3508cfa10ad6",
+    "kapacita": 4,
+    "prihlasky": null,
+    "prijati": null,
+    "zbyla_mista": null
+   },
    "kraj": "Královéhradecký",
    "maturitni_status": "nematuritní",
    "nepr_kapacita": 0,
@@ -14143,7 +14191,13 @@
    "kategorie": "M",
    "kkov": "82-41-M/03",
    "kohorta_pozice": "skola_prvni_volby",
-   "kolo_2": null,
+   "kolo_2": {
+    "id_sof": "97b21823-a75f-416f-bbc8-02d98c8429c6",
+    "kapacita": 8,
+    "prihlasky": 3,
+    "prijati": 3,
+    "zbyla_mista": 5
+   },
    "kraj": "Pardubický",
    "maturitni_status": "maturitní",
    "nepr_kapacita": 0,
@@ -18040,7 +18094,13 @@
    "kategorie": "H",
    "kkov": "82-51-H/02",
    "kohorta_pozice": "zalozni_volba",
-   "kolo_2": null,
+   "kolo_2": {
+    "id_sof": "cf3ceac4-0465-4e0d-8c51-228dd686e761",
+    "kapacita": 7,
+    "prihlasky": 10,
+    "prijati": 3,
+    "zbyla_mista": 4
+   },
    "kraj": "Jihomoravský",
    "maturitni_status": "nematuritní",
    "nepr_kapacita": 0,
@@ -20248,7 +20308,13 @@
    "kategorie": "L",
    "kkov": "82-51-L/01",
    "kohorta_pozice": "skola_prvni_volby",
-   "kolo_2": null,
+   "kolo_2": {
+    "id_sof": "61bab043-0631-4639-a54a-4ab61df2c781",
+    "kapacita": 2,
+    "prihlasky": null,
+    "prijati": null,
+    "zbyla_mista": null
+   },
    "kraj": "Kraj Vysočina",
    "maturitni_status": "maturitní",
    "nepr_kapacita": 0,
@@ -26740,7 +26806,13 @@
    "kategorie": "H",
    "kkov": "65-51-H/01",
    "kohorta_pozice": "skola_prvni_volby",
-   "kolo_2": null,
+   "kolo_2": {
+    "id_sof": "62f652bf-dbe8-4f41-a200-82fe5d5639be",
+    "kapacita": 16,
+    "prihlasky": 6,
+    "prijati": 4,
+    "zbyla_mista": 12
+   },
    "kraj": "Jihočeský",
    "maturitni_status": "nematuritní",
    "nepr_kapacita": 0,
@@ -26803,7 +26875,13 @@
    "kategorie": "H",
    "kkov": "69-51-H/01",
    "kohorta_pozice": "skola_prvni_volby",
-   "kolo_2": null,
+   "kolo_2": {
+    "id_sof": "7d5e2864-0962-4c3d-a00e-b83a26438bce",
+    "kapacita": 2,
+    "prihlasky": 10,
+    "prijati": 2,
+    "zbyla_mista": 0
+   },
    "kraj": "Jihočeský",
    "maturitni_status": "nematuritní",
    "nepr_kapacita": 0,
@@ -28180,7 +28258,13 @@
    "kategorie": "H",
    "kkov": "29-51-H/01",
    "kohorta_pozice": "zalozni_volba",
-   "kolo_2": null,
+   "kolo_2": {
+    "id_sof": "333aff30-717f-4b93-8c80-c020a17f1be9",
+    "kapacita": 7,
+    "prihlasky": 4,
+    "prijati": 2,
+    "zbyla_mista": 5
+   },
    "kraj": "Jihočeský",
    "maturitni_status": "nematuritní",
    "nepr_kapacita": 0,
@@ -31639,7 +31723,13 @@
    "kategorie": "H",
    "kkov": "33-56-H/01",
    "kohorta_pozice": "zalozni_volba",
-   "kolo_2": null,
+   "kolo_2": {
+    "id_sof": "f3101c29-c650-4edf-b6e4-756eb12573bb",
+    "kapacita": 12,
+    "prihlasky": 10,
+    "prijati": 4,
+    "zbyla_mista": 8
+   },
    "kraj": "Ústecký",
    "maturitni_status": "nematuritní",
    "nepr_kapacita": 0,
@@ -31702,7 +31792,13 @@
    "kategorie": "H",
    "kkov": "65-51-H/01",
    "kohorta_pozice": "smisena_pozice",
-   "kolo_2": null,
+   "kolo_2": {
+    "id_sof": "1116fbd1-2a26-41de-8781-c08f849699e0",
+    "kapacita": 8,
+    "prihlasky": 20,
+    "prijati": 8,
+    "zbyla_mista": 0
+   },
    "kraj": "Ústecký",
    "maturitni_status": "nematuritní",
    "nepr_kapacita": 0,
@@ -36046,7 +36142,13 @@
    "kategorie": "H",
    "kkov": "41-51-H/01",
    "kohorta_pozice": "skola_prvni_volby",
-   "kolo_2": null,
+   "kolo_2": {
+    "id_sof": "337dbf5f-6635-455b-80de-adc06e55661d",
+    "kapacita": 1,
+    "prihlasky": 4,
+    "prijati": 1,
+    "zbyla_mista": 0
+   },
    "kraj": "Jihočeský",
    "maturitni_status": "nematuritní",
    "nepr_kapacita": 0,
@@ -37708,7 +37810,13 @@
    "kategorie": "E",
    "kkov": "66-51-E/01",
    "kohorta_pozice": null,
-   "kolo_2": null,
+   "kolo_2": {
+    "id_sof": "fc9d8a7b-3e86-4f06-93af-19cf8d157ad4",
+    "kapacita": 13,
+    "prihlasky": 5,
+    "prijati": 3,
+    "zbyla_mista": 10
+   },
    "kraj": "Jihočeský",
    "maturitni_status": "nematuritní",
    "nepr_kapacita": 0,
@@ -38668,7 +38776,13 @@
    "kategorie": "H",
    "kkov": "23-56-H/01",
    "kohorta_pozice": "smisena_pozice",
-   "kolo_2": null,
+   "kolo_2": {
+    "id_sof": "b7a573ac-c602-44fa-b428-b260493acd93",
+    "kapacita": 2,
+    "prihlasky": null,
+    "prijati": null,
+    "zbyla_mista": null
+   },
    "kraj": "Olomoucký",
    "maturitni_status": "nematuritní",
    "nepr_kapacita": 0,
@@ -39793,7 +39907,13 @@
    "kategorie": "H",
    "kkov": "66-51-H/01",
    "kohorta_pozice": "smisena_pozice",
-   "kolo_2": null,
+   "kolo_2": {
+    "id_sof": "a291fffb-8e11-4fec-b72f-303642eb19f5",
+    "kapacita": 6,
+    "prihlasky": 13,
+    "prijati": 6,
+    "zbyla_mista": 0
+   },
    "kraj": "Moravskoslezský",
    "maturitni_status": "nematuritní",
    "nepr_kapacita": 0,
@@ -45133,7 +45253,13 @@
    "kategorie": "M",
    "kkov": "82-41-M/12",
    "kohorta_pozice": "smisena_pozice",
-   "kolo_2": null,
+   "kolo_2": {
+    "id_sof": "ede1853e-2d65-4b71-89c6-292a55dc1ac1",
+    "kapacita": 2,
+    "prihlasky": 5,
+    "prijati": 2,
+    "zbyla_mista": 0
+   },
    "kraj": "Hlavní město Praha",
    "maturitni_status": "maturitní",
    "nepr_kapacita": 0,
@@ -49009,7 +49135,13 @@
    "kategorie": "E",
    "kkov": "29-51-E/02",
    "kohorta_pozice": null,
-   "kolo_2": null,
+   "kolo_2": {
+    "id_sof": "58ceab40-fcda-42e7-95dc-376547d0f2a1",
+    "kapacita": 6,
+    "prihlasky": null,
+    "prijati": null,
+    "zbyla_mista": null
+   },
    "kraj": "Olomoucký",
    "maturitni_status": "nematuritní",
    "nepr_kapacita": 0,
@@ -49072,7 +49204,13 @@
    "kategorie": "E",
    "kkov": "41-52-E/01",
    "kohorta_pozice": null,
-   "kolo_2": null,
+   "kolo_2": {
+    "id_sof": "0ed27be1-2229-46bd-a2cb-45a6301e8df9",
+    "kapacita": 12,
+    "prihlasky": null,
+    "prijati": null,
+    "zbyla_mista": null
+   },
    "kraj": "Olomoucký",
    "maturitni_status": "nematuritní",
    "nepr_kapacita": 0,
@@ -49135,7 +49273,13 @@
    "kategorie": "E",
    "kkov": "65-51-E/01",
    "kohorta_pozice": null,
-   "kolo_2": null,
+   "kolo_2": {
+    "id_sof": "e6803543-886a-494c-a3d6-6a3b6f3f35e9",
+    "kapacita": 10,
+    "prihlasky": null,
+    "prijati": null,
+    "zbyla_mista": null
+   },
    "kraj": "Olomoucký",
    "maturitni_status": "nematuritní",
    "nepr_kapacita": 0,
@@ -49261,7 +49405,13 @@
    "kategorie": "E",
    "kkov": "75-41-E/01",
    "kohorta_pozice": null,
-   "kolo_2": null,
+   "kolo_2": {
+    "id_sof": "249c1207-9fc2-4e02-8f2c-3de3104a2218",
+    "kapacita": 3,
+    "prihlasky": null,
+    "prijati": null,
+    "zbyla_mista": null
+   },
    "kraj": "Olomoucký",
    "maturitni_status": "nematuritní",
    "nepr_kapacita": 0,
@@ -49525,7 +49675,13 @@
    "kategorie": "M",
    "kkov": "82-41-M/11",
    "kohorta_pozice": "skola_prvni_volby",
-   "kolo_2": null,
+   "kolo_2": {
+    "id_sof": "16947d0d-9c03-416b-9020-ef77cef89842",
+    "kapacita": 6,
+    "prihlasky": 7,
+    "prijati": 0,
+    "zbyla_mista": 6
+   },
    "kraj": "Olomoucký",
    "maturitni_status": "maturitní",
    "nepr_kapacita": 0,
@@ -50725,7 +50881,13 @@
    "kategorie": "H",
    "kkov": "36-64-H/01",
    "kohorta_pozice": "zalozni_volba",
-   "kolo_2": null,
+   "kolo_2": {
+    "id_sof": "1986a89f-c539-4d61-9973-e233ca8031f0",
+    "kapacita": 4,
+    "prihlasky": 3,
+    "prijati": 1,
+    "zbyla_mista": 3
+   },
    "kraj": "Zlínský",
    "maturitni_status": "nematuritní",
    "nepr_kapacita": 0,
@@ -54550,7 +54712,13 @@
    "kategorie": "H",
    "kkov": "23-51-H/01",
    "kohorta_pozice": "zalozni_volba",
-   "kolo_2": null,
+   "kolo_2": {
+    "id_sof": "70e6b58e-e275-4123-9afa-09bc8bcdaf72",
+    "kapacita": 6,
+    "prihlasky": 6,
+    "prijati": 4,
+    "zbyla_mista": 2
+   },
    "kraj": "Středočeský",
    "maturitni_status": "nematuritní",
    "nepr_kapacita": 0,
@@ -55009,7 +55177,13 @@
    "kategorie": "H",
    "kkov": "23-56-H/01",
    "kohorta_pozice": "zalozni_volba",
-   "kolo_2": null,
+   "kolo_2": {
+    "id_sof": "c7f94ba0-11c9-4525-9a9e-ab44cb3885e4",
+    "kapacita": 10,
+    "prihlasky": 6,
+    "prijati": 3,
+    "zbyla_mista": 7
+   },
    "kraj": "Moravskoslezský",
    "maturitni_status": "nematuritní",
    "nepr_kapacita": 0,
@@ -56122,7 +56296,13 @@
    "kategorie": "H",
    "kkov": "23-51-H/01",
    "kohorta_pozice": "smisena_pozice",
-   "kolo_2": null,
+   "kolo_2": {
+    "id_sof": "24c411d5-9c74-4169-a10e-408229979426",
+    "kapacita": 8,
+    "prihlasky": 1,
+    "prijati": 0,
+    "zbyla_mista": 8
+   },
    "kraj": "Jihočeský",
    "maturitni_status": "nematuritní",
    "nepr_kapacita": 0,
@@ -56185,7 +56365,13 @@
    "kategorie": "H",
    "kkov": "23-56-H/01",
    "kohorta_pozice": "smisena_pozice",
-   "kolo_2": null,
+   "kolo_2": {
+    "id_sof": "4fa77d24-c445-4b9a-b63a-fed16050cb86",
+    "kapacita": 5,
+    "prihlasky": null,
+    "prijati": null,
+    "zbyla_mista": null
+   },
    "kraj": "Jihočeský",
    "maturitni_status": "nematuritní",
    "nepr_kapacita": 0,
@@ -56248,7 +56434,13 @@
    "kategorie": "H",
    "kkov": "26-51-H/01",
    "kohorta_pozice": "zalozni_volba",
-   "kolo_2": null,
+   "kolo_2": {
+    "id_sof": "7f40d2ec-d257-4167-bcec-7790fb51942e",
+    "kapacita": 3,
+    "prihlasky": 6,
+    "prijati": 2,
+    "zbyla_mista": 1
+   },
    "kraj": "Jihočeský",
    "maturitni_status": "nematuritní",
    "nepr_kapacita": 0,
@@ -56311,7 +56503,13 @@
    "kategorie": "H",
    "kkov": "26-52-H/01",
    "kohorta_pozice": "zalozni_volba",
-   "kolo_2": null,
+   "kolo_2": {
+    "id_sof": "862c7250-15d2-42f5-a548-fefe7c2db6e1",
+    "kapacita": 3,
+    "prihlasky": 3,
+    "prijati": 1,
+    "zbyla_mista": 2
+   },
    "kraj": "Jihočeský",
    "maturitni_status": "nematuritní",
    "nepr_kapacita": 0,
@@ -56374,7 +56572,13 @@
    "kategorie": "H",
    "kkov": "66-53-H/01",
    "kohorta_pozice": "skola_prvni_volby",
-   "kolo_2": null,
+   "kolo_2": {
+    "id_sof": "06b6af96-6d07-44c9-918b-ec22e2bcf444",
+    "kapacita": 3,
+    "prihlasky": 3,
+    "prijati": 0,
+    "zbyla_mista": 3
+   },
    "kraj": "Jihočeský",
    "maturitni_status": "nematuritní",
    "nepr_kapacita": 0,
@@ -57007,7 +57211,13 @@
    "kategorie": "H",
    "kkov": "23-55-H/01",
    "kohorta_pozice": "smisena_pozice",
-   "kolo_2": null,
+   "kolo_2": {
+    "id_sof": "80e311f6-687e-4a25-95f9-c56df8f1121c",
+    "kapacita": 4,
+    "prihlasky": 14,
+    "prijati": 4,
+    "zbyla_mista": 0
+   },
    "kraj": "Moravskoslezský",
    "maturitni_status": "nematuritní",
    "nepr_kapacita": 0,
@@ -59158,7 +59368,13 @@
    "kategorie": "H",
    "kkov": "26-51-H/01",
    "kohorta_pozice": "zalozni_volba",
-   "kolo_2": null,
+   "kolo_2": {
+    "id_sof": "daf69143-cdf5-4754-b097-1f211f0cca02",
+    "kapacita": 17,
+    "prihlasky": 18,
+    "prijati": 10,
+    "zbyla_mista": 7
+   },
    "kraj": "Moravskoslezský",
    "maturitni_status": "nematuritní",
    "nepr_kapacita": 0,
@@ -61201,7 +61417,13 @@
    "kategorie": "E",
    "kkov": "23-51-E/01",
    "kohorta_pozice": null,
-   "kolo_2": null,
+   "kolo_2": {
+    "id_sof": "82a655cb-8b65-412f-90eb-94651c781317",
+    "kapacita": 4,
+    "prihlasky": 20,
+    "prijati": 4,
+    "zbyla_mista": 0
+   },
    "kraj": "Středočeský",
    "maturitni_status": "nematuritní",
    "nepr_kapacita": 0,
@@ -62233,7 +62455,13 @@
    "kategorie": "H",
    "kkov": "26-59-H/01",
    "kohorta_pozice": "zalozni_volba",
-   "kolo_2": null,
+   "kolo_2": {
+    "id_sof": "95312ffd-34a9-4bcd-beac-472433715de3",
+    "kapacita": 10,
+    "prihlasky": 18,
+    "prijati": 6,
+    "zbyla_mista": 4
+   },
    "kraj": "Olomoucký",
    "maturitni_status": "nematuritní",
    "nepr_kapacita": 0,
@@ -63025,7 +63253,13 @@
    "kategorie": "H",
    "kkov": "82-51-H/01",
    "kohorta_pozice": "zalozni_volba",
-   "kolo_2": null,
+   "kolo_2": {
+    "id_sof": "cebf1c0a-7243-43b7-806e-99d956032cb9",
+    "kapacita": 2,
+    "prihlasky": 4,
+    "prijati": 0,
+    "zbyla_mista": 2
+   },
    "kraj": "Hlavní město Praha",
    "maturitni_status": "nematuritní",
    "nepr_kapacita": 0,
@@ -67168,7 +67402,13 @@
    "kategorie": "H",
    "kkov": "23-51-H/01",
    "kohorta_pozice": "zalozni_volba",
-   "kolo_2": null,
+   "kolo_2": {
+    "id_sof": "b736f3ab-2ab9-4e15-934a-631b3868158a",
+    "kapacita": 23,
+    "prihlasky": 19,
+    "prijati": 4,
+    "zbyla_mista": 19
+   },
    "kraj": "Plzeňský",
    "maturitni_status": "nematuritní",
    "nepr_kapacita": 0,
@@ -67231,7 +67471,13 @@
    "kategorie": "H",
    "kkov": "23-56-H/01",
    "kohorta_pozice": "zalozni_volba",
-   "kolo_2": null,
+   "kolo_2": {
+    "id_sof": "5d35c271-946c-45f8-8bf6-8bf7a3d429f1",
+    "kapacita": 27,
+    "prihlasky": 13,
+    "prijati": 5,
+    "zbyla_mista": 22
+   },
    "kraj": "Plzeňský",
    "maturitni_status": "nematuritní",
    "nepr_kapacita": 0,
@@ -67420,7 +67666,13 @@
    "kategorie": "H",
    "kkov": "41-56-H/01",
    "kohorta_pozice": "zalozni_volba",
-   "kolo_2": null,
+   "kolo_2": {
+    "id_sof": "3c23b1fb-c925-4723-be48-fcddc790b645",
+    "kapacita": 12,
+    "prihlasky": 5,
+    "prijati": 0,
+    "zbyla_mista": 12
+   },
    "kraj": "Plzeňský",
    "maturitni_status": "nematuritní",
    "nepr_kapacita": 0,
@@ -67483,7 +67735,13 @@
    "kategorie": "H",
    "kkov": "65-51-H/01",
    "kohorta_pozice": "skola_prvni_volby",
-   "kolo_2": null,
+   "kolo_2": {
+    "id_sof": "5bd252b2-825f-4e39-917d-3220850b005f",
+    "kapacita": 24,
+    "prihlasky": 22,
+    "prijati": 10,
+    "zbyla_mista": 14
+   },
    "kraj": "Plzeňský",
    "maturitni_status": "nematuritní",
    "nepr_kapacita": 0,
@@ -67546,7 +67804,13 @@
    "kategorie": "H",
    "kkov": "66-51-H/01",
    "kohorta_pozice": "skola_prvni_volby",
-   "kolo_2": null,
+   "kolo_2": {
+    "id_sof": "874a6e75-df19-4701-b35a-a11579ab006f",
+    "kapacita": 10,
+    "prihlasky": 16,
+    "prijati": 7,
+    "zbyla_mista": 3
+   },
    "kraj": "Plzeňský",
    "maturitni_status": "nematuritní",
    "nepr_kapacita": 0,
@@ -67987,7 +68251,13 @@
    "kategorie": "H",
    "kkov": "41-55-H/01",
    "kohorta_pozice": "skola_prvni_volby",
-   "kolo_2": null,
+   "kolo_2": {
+    "id_sof": "23ab7efc-01c5-4d78-b331-10fa274b7979",
+    "kapacita": 4,
+    "prihlasky": 4,
+    "prijati": 1,
+    "zbyla_mista": 3
+   },
    "kraj": "Ústecký",
    "maturitni_status": "nematuritní",
    "nepr_kapacita": 0,
@@ -70201,7 +70471,13 @@
    "kategorie": "M",
    "kkov": "82-41-M/04",
    "kohorta_pozice": "zalozni_volba",
-   "kolo_2": null,
+   "kolo_2": {
+    "id_sof": "b7928c6b-e97e-4893-b90b-8b90f52e34b0",
+    "kapacita": 25,
+    "prihlasky": 16,
+    "prijati": 5,
+    "zbyla_mista": 20
+   },
    "kraj": "Středočeský",
    "maturitni_status": "maturitní",
    "nepr_kapacita": 0,
@@ -70264,7 +70540,13 @@
    "kategorie": "M",
    "kkov": "82-41-M/05",
    "kohorta_pozice": "skola_prvni_volby",
-   "kolo_2": null,
+   "kolo_2": {
+    "id_sof": "0576260e-4a0e-4223-a734-7b03ca15a9b1",
+    "kapacita": 4,
+    "prihlasky": 19,
+    "prijati": 4,
+    "zbyla_mista": 0
+   },
    "kraj": "Středočeský",
    "maturitni_status": "maturitní",
    "nepr_kapacita": 0,
@@ -75307,7 +75589,13 @@
    "kategorie": "H",
    "kkov": "69-53-H/01",
    "kohorta_pozice": "zalozni_volba",
-   "kolo_2": null,
+   "kolo_2": {
+    "id_sof": "b87aef1e-833a-42a7-9339-a5b50d78eadb",
+    "kapacita": 5,
+    "prihlasky": 12,
+    "prijati": 5,
+    "zbyla_mista": 0
+   },
    "kraj": "Olomoucký",
    "maturitni_status": "nematuritní",
    "nepr_kapacita": 0,
@@ -79279,7 +79567,13 @@
    "kategorie": "M",
    "kkov": "82-41-M/16",
    "kohorta_pozice": "skola_prvni_volby",
-   "kolo_2": null,
+   "kolo_2": {
+    "id_sof": "aca0567c-e2fd-4029-be65-90e9cb813348",
+    "kapacita": 5,
+    "prihlasky": null,
+    "prijati": null,
+    "zbyla_mista": null
+   },
    "kraj": "Jihočeský",
    "maturitni_status": "maturitní",
    "nepr_kapacita": 0,
@@ -82387,7 +82681,13 @@
    "kategorie": "C",
    "kkov": "78-62-C/02",
    "kohorta_pozice": null,
-   "kolo_2": null,
+   "kolo_2": {
+    "id_sof": "6c1addce-e7ef-411a-ba43-02e4977bbb20",
+    "kapacita": 3,
+    "prihlasky": 11,
+    "prijati": 3,
+    "zbyla_mista": 0
+   },
    "kraj": "Hlavní město Praha",
    "maturitni_status": "nematuritní",
    "nepr_kapacita": 0,
@@ -83035,7 +83335,13 @@
    "kategorie": "M",
    "kkov": "82-41-M/11",
    "kohorta_pozice": "skola_prvni_volby",
-   "kolo_2": null,
+   "kolo_2": {
+    "id_sof": "2d8cf9e8-5e66-434e-afa8-651c446b9e78",
+    "kapacita": 5,
+    "prihlasky": 2,
+    "prijati": 0,
+    "zbyla_mista": 5
+   },
    "kraj": "Jihočeský",
    "maturitni_status": "maturitní",
    "nepr_kapacita": 0,
@@ -90889,7 +91195,13 @@
    "kategorie": "C",
    "kkov": "78-62-C/01",
    "kohorta_pozice": null,
-   "kolo_2": null,
+   "kolo_2": {
+    "id_sof": "7ac0dc2a-cc8a-4668-a4a4-7b999baa9ac5",
+    "kapacita": 1,
+    "prihlasky": 1,
+    "prijati": 1,
+    "zbyla_mista": 0
+   },
    "kraj": "Středočeský",
    "maturitni_status": "nematuritní",
    "nepr_kapacita": 0,
@@ -90952,7 +91264,13 @@
    "kategorie": "C",
    "kkov": "78-62-C/02",
    "kohorta_pozice": null,
-   "kolo_2": null,
+   "kolo_2": {
+    "id_sof": "d0640a81-3b2e-4dee-b395-6b1eb5a39d65",
+    "kapacita": 5,
+    "prihlasky": 1,
+    "prijati": 1,
+    "zbyla_mista": 4
+   },
    "kraj": "Středočeský",
    "maturitni_status": "nematuritní",
    "nepr_kapacita": null,
@@ -91015,7 +91333,13 @@
    "kategorie": "E",
    "kkov": "26-51-E/01",
    "kohorta_pozice": null,
-   "kolo_2": null,
+   "kolo_2": {
+    "id_sof": "933984c8-0194-4384-8f5d-7deeac04ef7c",
+    "kapacita": 4,
+    "prihlasky": 11,
+    "prijati": 4,
+    "zbyla_mista": 0
+   },
    "kraj": "Středočeský",
    "maturitni_status": "nematuritní",
    "nepr_kapacita": 0,
@@ -91078,7 +91402,13 @@
    "kategorie": "E",
    "kkov": "29-51-E/01",
    "kohorta_pozice": null,
-   "kolo_2": null,
+   "kolo_2": {
+    "id_sof": "e5b75343-fb9c-4b3c-bd8a-29bf44f3e55c",
+    "kapacita": 8,
+    "prihlasky": 18,
+    "prijati": 6,
+    "zbyla_mista": 2
+   },
    "kraj": "Středočeský",
    "maturitni_status": "nematuritní",
    "nepr_kapacita": 0,
@@ -91141,7 +91471,13 @@
    "kategorie": "E",
    "kkov": "29-51-E/02",
    "kohorta_pozice": null,
-   "kolo_2": null,
+   "kolo_2": {
+    "id_sof": "273b8154-1c74-4cb8-b9fe-1855d3500b41",
+    "kapacita": 14,
+    "prihlasky": 4,
+    "prijati": 1,
+    "zbyla_mista": 13
+   },
    "kraj": "Středočeský",
    "maturitni_status": "nematuritní",
    "nepr_kapacita": 0,
@@ -91189,7 +91525,13 @@
    "kategorie": "E",
    "kkov": "33-56-E/01",
    "kohorta_pozice": null,
-   "kolo_2": null,
+   "kolo_2": {
+    "id_sof": "17a19cc3-e7c7-4380-969a-45b7c2630176",
+    "kapacita": 7,
+    "prihlasky": 9,
+    "prijati": 3,
+    "zbyla_mista": 4
+   },
    "kraj": "Středočeský",
    "maturitni_status": "nematuritní",
    "nepr_kapacita": 0,
@@ -91252,7 +91594,13 @@
    "kategorie": "E",
    "kkov": "36-57-E/01",
    "kohorta_pozice": null,
-   "kolo_2": null,
+   "kolo_2": {
+    "id_sof": "d35a1769-88fa-4463-8e37-8b3d8146404b",
+    "kapacita": 8,
+    "prihlasky": 11,
+    "prijati": 7,
+    "zbyla_mista": 1
+   },
    "kraj": "Středočeský",
    "maturitni_status": "nematuritní",
    "nepr_kapacita": 0,
@@ -91378,7 +91726,13 @@
    "kategorie": "E",
    "kkov": "36-67-E/02",
    "kohorta_pozice": null,
-   "kolo_2": null,
+   "kolo_2": {
+    "id_sof": "2773ad05-4183-4bcd-af70-623b6975ea91",
+    "kapacita": 14,
+    "prihlasky": null,
+    "prijati": null,
+    "zbyla_mista": null
+   },
    "kraj": "Středočeský",
    "maturitni_status": "nematuritní",
    "nepr_kapacita": 0,
@@ -91426,7 +91780,13 @@
    "kategorie": "E",
    "kkov": "41-52-E/01",
    "kohorta_pozice": null,
-   "kolo_2": null,
+   "kolo_2": {
+    "id_sof": "77286eca-54d2-41a1-a6ff-c86815c84bd9",
+    "kapacita": 17,
+    "prihlasky": 13,
+    "prijati": 8,
+    "zbyla_mista": 9
+   },
    "kraj": "Středočeský",
    "maturitni_status": "nematuritní",
    "nepr_kapacita": 0,
@@ -91489,7 +91849,13 @@
    "kategorie": "E",
    "kkov": "41-52-E/02",
    "kohorta_pozice": null,
-   "kolo_2": null,
+   "kolo_2": {
+    "id_sof": "340cea15-2856-415e-883b-9f7f0c072381",
+    "kapacita": 5,
+    "prihlasky": 2,
+    "prijati": 1,
+    "zbyla_mista": 4
+   },
    "kraj": "Středočeský",
    "maturitni_status": "nematuritní",
    "nepr_kapacita": 0,
@@ -91552,7 +91918,13 @@
    "kategorie": "E",
    "kkov": "65-51-E/01",
    "kohorta_pozice": null,
-   "kolo_2": null,
+   "kolo_2": {
+    "id_sof": "746da5b5-af9c-4b7a-a04e-92dcd3fede8d",
+    "kapacita": 23,
+    "prihlasky": 15,
+    "prijati": 4,
+    "zbyla_mista": 19
+   },
    "kraj": "Středočeský",
    "maturitni_status": "nematuritní",
    "nepr_kapacita": 0,
@@ -91615,7 +91987,13 @@
    "kategorie": "E",
    "kkov": "65-51-E/02",
    "kohorta_pozice": null,
-   "kolo_2": null,
+   "kolo_2": {
+    "id_sof": "33c46bf4-414b-42e7-b774-979ffdbad4d2",
+    "kapacita": 9,
+    "prihlasky": 1,
+    "prijati": 0,
+    "zbyla_mista": 9
+   },
    "kraj": "Středočeský",
    "maturitni_status": "nematuritní",
    "nepr_kapacita": 0,
@@ -91678,7 +92056,13 @@
    "kategorie": "E",
    "kkov": "66-51-E/01",
    "kohorta_pozice": null,
-   "kolo_2": null,
+   "kolo_2": {
+    "id_sof": "51574e57-f2f6-4efb-a6f7-4ab28ddcfe83",
+    "kapacita": 4,
+    "prihlasky": 7,
+    "prijati": 2,
+    "zbyla_mista": 2
+   },
    "kraj": "Středočeský",
    "maturitni_status": "nematuritní",
    "nepr_kapacita": 0,
@@ -91741,7 +92125,13 @@
    "kategorie": "E",
    "kkov": "75-41-E/01",
    "kohorta_pozice": null,
-   "kolo_2": null,
+   "kolo_2": {
+    "id_sof": "c0c787e0-7e96-40b8-bb7b-aef510e6ad06",
+    "kapacita": 2,
+    "prihlasky": 3,
+    "prijati": 1,
+    "zbyla_mista": 1
+   },
    "kraj": "Středočeský",
    "maturitni_status": "nematuritní",
    "nepr_kapacita": 0,
@@ -91804,7 +92194,13 @@
    "kategorie": "C",
    "kkov": "78-62-C/02",
    "kohorta_pozice": null,
-   "kolo_2": null,
+   "kolo_2": {
+    "id_sof": "ce0eac2b-9e4a-43fc-b53b-8209e37197a0",
+    "kapacita": 23,
+    "prihlasky": 1,
+    "prijati": 0,
+    "zbyla_mista": 23
+   },
    "kraj": "Středočeský",
    "maturitni_status": "nematuritní",
    "nepr_kapacita": 0,
@@ -93199,7 +93595,13 @@
    "kategorie": "E",
    "kkov": "23-51-E/01",
    "kohorta_pozice": null,
-   "kolo_2": null,
+   "kolo_2": {
+    "id_sof": "50160cd1-b4d8-40d1-bef8-73f731d83101",
+    "kapacita": 3,
+    "prihlasky": 1,
+    "prijati": 1,
+    "zbyla_mista": 2
+   },
    "kraj": "Olomoucký",
    "maturitni_status": "nematuritní",
    "nepr_kapacita": 0,
@@ -93310,7 +93712,13 @@
    "kategorie": "E",
    "kkov": "33-56-E/01",
    "kohorta_pozice": null,
-   "kolo_2": null,
+   "kolo_2": {
+    "id_sof": "85ddfc29-8d8d-48a3-a66f-4dd3922aa0d2",
+    "kapacita": 1,
+    "prihlasky": 1,
+    "prijati": 1,
+    "zbyla_mista": 0
+   },
    "kraj": "Olomoucký",
    "maturitni_status": "nematuritní",
    "nepr_kapacita": 0,
@@ -93823,7 +94231,13 @@
    "kategorie": "C",
    "kkov": "78-62-C/01",
    "kohorta_pozice": null,
-   "kolo_2": null,
+   "kolo_2": {
+    "id_sof": "73772922-70ea-405a-9476-bedc7897de3d",
+    "kapacita": 2,
+    "prihlasky": 3,
+    "prijati": 2,
+    "zbyla_mista": 0
+   },
    "kraj": "Olomoucký",
    "maturitni_status": "nematuritní",
    "nepr_kapacita": null,
@@ -93886,7 +94300,13 @@
    "kategorie": "C",
    "kkov": "78-62-C/02",
    "kohorta_pozice": null,
-   "kolo_2": null,
+   "kolo_2": {
+    "id_sof": "58a2c93a-0d24-4b95-a9eb-448a2a449d36",
+    "kapacita": 4,
+    "prihlasky": 3,
+    "prijati": 3,
+    "zbyla_mista": 1
+   },
    "kraj": "Olomoucký",
    "maturitni_status": "nematuritní",
    "nepr_kapacita": 0,
@@ -98011,7 +98431,13 @@
    "kategorie": "E",
    "kkov": "29-51-E/01",
    "kohorta_pozice": null,
-   "kolo_2": null,
+   "kolo_2": {
+    "id_sof": "2adbd157-ebae-40da-bc0d-75bcad98cc98",
+    "kapacita": 9,
+    "prihlasky": 6,
+    "prijati": 0,
+    "zbyla_mista": 9
+   },
    "kraj": "Středočeský",
    "maturitni_status": "nematuritní",
    "nepr_kapacita": 0,
@@ -98185,7 +98611,13 @@
    "kategorie": "H",
    "kkov": "41-55-H/01",
    "kohorta_pozice": "smisena_pozice",
-   "kolo_2": null,
+   "kolo_2": {
+    "id_sof": "3f5b3001-d8e9-44bc-a599-e3cfb5b38afb",
+    "kapacita": 8,
+    "prihlasky": 12,
+    "prijati": 7,
+    "zbyla_mista": 1
+   },
    "kraj": "Středočeský",
    "maturitni_status": "nematuritní",
    "nepr_kapacita": 0,
@@ -98248,7 +98680,13 @@
    "kategorie": "H",
    "kkov": "65-51-H/01",
    "kohorta_pozice": "zalozni_volba",
-   "kolo_2": null,
+   "kolo_2": {
+    "id_sof": "375d8725-0ea3-4628-8b54-25bb0975f664",
+    "kapacita": 9,
+    "prihlasky": 15,
+    "prijati": 8,
+    "zbyla_mista": 1
+   },
    "kraj": "Středočeský",
    "maturitni_status": "nematuritní",
    "nepr_kapacita": 0,
@@ -98764,7 +99202,13 @@
    "kategorie": "H",
    "kkov": "29-54-H/01",
    "kohorta_pozice": "skola_prvni_volby",
-   "kolo_2": null,
+   "kolo_2": {
+    "id_sof": "b5eae996-8a7a-4afa-9d2c-1bfda532aba6",
+    "kapacita": 11,
+    "prihlasky": 24,
+    "prijati": 10,
+    "zbyla_mista": 1
+   },
    "kraj": "Středočeský",
    "maturitni_status": "nematuritní",
    "nepr_kapacita": 0,
@@ -98827,7 +99271,13 @@
    "kategorie": "H",
    "kkov": "65-51-H/01",
    "kohorta_pozice": "skola_prvni_volby",
-   "kolo_2": null,
+   "kolo_2": {
+    "id_sof": "87262078-66ae-47f5-9924-75e502ee8038",
+    "kapacita": 22,
+    "prihlasky": 32,
+    "prijati": 19,
+    "zbyla_mista": 3
+   },
    "kraj": "Středočeský",
    "maturitni_status": "nematuritní",
    "nepr_kapacita": 0,
@@ -99556,7 +100006,13 @@
    "kategorie": "H",
    "kkov": "66-51-H/01",
    "kohorta_pozice": "skola_prvni_volby",
-   "kolo_2": null,
+   "kolo_2": {
+    "id_sof": "429e8e23-73f9-44d7-96dc-22158734ec83",
+    "kapacita": 2,
+    "prihlasky": 2,
+    "prijati": 2,
+    "zbyla_mista": 0
+   },
    "kraj": "Jihočeský",
    "maturitni_status": "nematuritní",
    "nepr_kapacita": 0,
@@ -100009,7 +100465,13 @@
    "kategorie": "H",
    "kkov": "66-53-H/01",
    "kohorta_pozice": "skola_prvni_volby",
-   "kolo_2": null,
+   "kolo_2": {
+    "id_sof": "8308d25a-b7c4-4161-9e43-fddc4a655b8c",
+    "kapacita": 3,
+    "prihlasky": 2,
+    "prijati": 1,
+    "zbyla_mista": 2
+   },
    "kraj": "Jihočeský",
    "maturitni_status": "nematuritní",
    "nepr_kapacita": 0,
@@ -100072,7 +100534,13 @@
    "kategorie": "H",
    "kkov": "23-68-H/01",
    "kohorta_pozice": "skola_prvni_volby",
-   "kolo_2": null,
+   "kolo_2": {
+    "id_sof": "ccc5eb31-be71-4b10-84fc-9f5eaefb6f51",
+    "kapacita": 8,
+    "prihlasky": 4,
+    "prijati": 1,
+    "zbyla_mista": 7
+   },
    "kraj": "Jihočeský",
    "maturitni_status": "nematuritní",
    "nepr_kapacita": 0,
@@ -100135,7 +100603,13 @@
    "kategorie": "H",
    "kkov": "41-55-H/01",
    "kohorta_pozice": "smisena_pozice",
-   "kolo_2": null,
+   "kolo_2": {
+    "id_sof": "705f58a4-1dee-4612-b2b3-2d0dd10c7bec",
+    "kapacita": 6,
+    "prihlasky": 2,
+    "prijati": 1,
+    "zbyla_mista": 5
+   },
    "kraj": "Jihočeský",
    "maturitni_status": "nematuritní",
    "nepr_kapacita": 0,
@@ -100267,7 +100741,13 @@
    "kategorie": "M",
    "kkov": "82-41-M/07",
    "kohorta_pozice": "skola_prvni_volby",
-   "kolo_2": null,
+   "kolo_2": {
+    "id_sof": "91d8eaca-e090-4678-8f8b-b76398d61097",
+    "kapacita": 3,
+    "prihlasky": 3,
+    "prijati": 3,
+    "zbyla_mista": 0
+   },
    "kraj": "Jihočeský",
    "maturitni_status": "maturitní",
    "nepr_kapacita": 0,
@@ -100330,7 +100810,13 @@
    "kategorie": "M",
    "kkov": "82-41-M/13",
    "kohorta_pozice": "skola_prvni_volby",
-   "kolo_2": null,
+   "kolo_2": {
+    "id_sof": "36d401d9-6dba-49db-b6f7-c3b5f2b7d6c2",
+    "kapacita": 2,
+    "prihlasky": null,
+    "prijati": null,
+    "zbyla_mista": null
+   },
    "kraj": "Jihočeský",
    "maturitni_status": "maturitní",
    "nepr_kapacita": 0,
@@ -101398,7 +101884,13 @@
    "kategorie": "H",
    "kkov": "41-55-H/01",
    "kohorta_pozice": "smisena_pozice",
-   "kolo_2": null,
+   "kolo_2": {
+    "id_sof": "69f23c4c-ccb0-41c9-8045-cbadcf3d92f9",
+    "kapacita": 4,
+    "prihlasky": 2,
+    "prijati": 1,
+    "zbyla_mista": 3
+   },
    "kraj": "Plzeňský",
    "maturitni_status": "nematuritní",
    "nepr_kapacita": 0,
@@ -101461,7 +101953,13 @@
    "kategorie": "H",
    "kkov": "65-51-H/01",
    "kohorta_pozice": "smisena_pozice",
-   "kolo_2": null,
+   "kolo_2": {
+    "id_sof": "bde3ea75-9de8-4679-999f-2cecd41d9a32",
+    "kapacita": 9,
+    "prihlasky": 2,
+    "prijati": 1,
+    "zbyla_mista": 8
+   },
    "kraj": "Plzeňský",
    "maturitni_status": "nematuritní",
    "nepr_kapacita": 0,
@@ -103000,7 +103498,13 @@
    "kategorie": "E",
    "kkov": "36-67-E/01",
    "kohorta_pozice": null,
-   "kolo_2": null,
+   "kolo_2": {
+    "id_sof": "95ee0c39-4627-4585-8071-3a4f59bef346",
+    "kapacita": 6,
+    "prihlasky": 8,
+    "prijati": 5,
+    "zbyla_mista": 1
+   },
    "kraj": "Ústecký",
    "maturitni_status": "nematuritní",
    "nepr_kapacita": 0,
@@ -103786,7 +104290,13 @@
    "kategorie": "E",
    "kkov": "66-51-E/01",
    "kohorta_pozice": null,
-   "kolo_2": null,
+   "kolo_2": {
+    "id_sof": "f5e46810-a116-4ab3-a61f-27c4d8d8fe79",
+    "kapacita": 1,
+    "prihlasky": 4,
+    "prijati": 1,
+    "zbyla_mista": 0
+   },
    "kraj": "Ústecký",
    "maturitni_status": "nematuritní",
    "nepr_kapacita": 0,
@@ -104056,7 +104566,13 @@
    "kategorie": "E",
    "kkov": "75-41-E/01",
    "kohorta_pozice": null,
-   "kolo_2": null,
+   "kolo_2": {
+    "id_sof": "9fa74706-9088-4bc4-8f7e-84f77bb25e1d",
+    "kapacita": 5,
+    "prihlasky": 5,
+    "prijati": 2,
+    "zbyla_mista": 3
+   },
    "kraj": "Ústecký",
    "maturitni_status": "nematuritní",
    "nepr_kapacita": 0,
@@ -108055,7 +108571,13 @@
    "kategorie": "H",
    "kkov": "28-58-H/01",
    "kohorta_pozice": "smisena_pozice",
-   "kolo_2": null,
+   "kolo_2": {
+    "id_sof": "b528d83a-4b9d-4403-8068-069853afe731",
+    "kapacita": 6,
+    "prihlasky": 23,
+    "prijati": 6,
+    "zbyla_mista": 0
+   },
    "kraj": "Liberecký",
    "maturitni_status": "nematuritní",
    "nepr_kapacita": 0,
@@ -108307,7 +108829,13 @@
    "kategorie": "H",
    "kkov": "65-51-H/01",
    "kohorta_pozice": "smisena_pozice",
-   "kolo_2": null,
+   "kolo_2": {
+    "id_sof": "c00d4b69-1ad3-424a-8f44-f37f5129165f",
+    "kapacita": 16,
+    "prihlasky": 73,
+    "prijati": 15,
+    "zbyla_mista": 1
+   },
    "kraj": "Liberecký",
    "maturitni_status": "nematuritní",
    "nepr_kapacita": 0,
@@ -109909,7 +110437,13 @@
    "kategorie": "H",
    "kkov": "65-51-H/01",
    "kohorta_pozice": "smisena_pozice",
-   "kolo_2": null,
+   "kolo_2": {
+    "id_sof": "7dad2fdb-987f-42b8-a29c-5ab3046fba11",
+    "kapacita": 17,
+    "prihlasky": 24,
+    "prijati": 13,
+    "zbyla_mista": 4
+   },
    "kraj": "Zlínský",
    "maturitni_status": "nematuritní",
    "nepr_kapacita": 0,
@@ -112546,7 +113080,13 @@
    "kategorie": "E",
    "kkov": "23-51-E/01",
    "kohorta_pozice": null,
-   "kolo_2": null,
+   "kolo_2": {
+    "id_sof": "25fc5719-b216-464b-a2a0-ea7dd25633da",
+    "kapacita": 13,
+    "prihlasky": null,
+    "prijati": null,
+    "zbyla_mista": null
+   },
    "kraj": "Zlínský",
    "maturitni_status": "nematuritní",
    "nepr_kapacita": 0,
@@ -112609,7 +113149,13 @@
    "kategorie": "E",
    "kkov": "29-51-E/01",
    "kohorta_pozice": null,
-   "kolo_2": null,
+   "kolo_2": {
+    "id_sof": "ed5de1a6-3d1a-4514-b275-0545ec02648a",
+    "kapacita": 14,
+    "prihlasky": 3,
+    "prijati": 2,
+    "zbyla_mista": 12
+   },
    "kraj": "Zlínský",
    "maturitni_status": "nematuritní",
    "nepr_kapacita": 0,
@@ -113155,7 +113701,13 @@
    "kategorie": "H",
    "kkov": "65-51-H/01",
    "kohorta_pozice": "smisena_pozice",
-   "kolo_2": null,
+   "kolo_2": {
+    "id_sof": "155ff865-a5ff-43e8-969d-5b5768a41599",
+    "kapacita": 26,
+    "prihlasky": 6,
+    "prijati": 0,
+    "zbyla_mista": 26
+   },
    "kraj": "Zlínský",
    "maturitni_status": "nematuritní",
    "nepr_kapacita": 0,
@@ -113287,7 +113839,13 @@
    "kategorie": "H",
    "kkov": "66-51-H/01",
    "kohorta_pozice": "zalozni_volba",
-   "kolo_2": null,
+   "kolo_2": {
+    "id_sof": "641b0d10-411d-48d3-8945-2adc09789aaf",
+    "kapacita": 8,
+    "prihlasky": 2,
+    "prijati": 0,
+    "zbyla_mista": 8
+   },
    "kraj": "Zlínský",
    "maturitni_status": "nematuritní",
    "nepr_kapacita": 0,
@@ -115051,7 +115609,13 @@
    "kategorie": "H",
    "kkov": "23-56-H/01",
    "kohorta_pozice": "skola_prvni_volby",
-   "kolo_2": null,
+   "kolo_2": {
+    "id_sof": "f081df57-bb84-410d-aeea-1d0b73fd9ef8",
+    "kapacita": 5,
+    "prihlasky": 5,
+    "prijati": 1,
+    "zbyla_mista": 4
+   },
    "kraj": "Jihomoravský",
    "maturitni_status": "nematuritní",
    "nepr_kapacita": 0,
@@ -118864,7 +119428,13 @@
    "kategorie": "H",
    "kkov": "65-51-H/01",
    "kohorta_pozice": "smisena_pozice",
-   "kolo_2": null,
+   "kolo_2": {
+    "id_sof": "6b9f6731-05f6-4b10-b8cc-92c64cf8aba7",
+    "kapacita": 23,
+    "prihlasky": 6,
+    "prijati": 2,
+    "zbyla_mista": 21
+   },
    "kraj": "Moravskoslezský",
    "maturitni_status": "nematuritní",
    "nepr_kapacita": 0,
@@ -121207,7 +121777,13 @@
    "kategorie": "H",
    "kkov": "66-53-H/01",
    "kohorta_pozice": "skola_prvni_volby",
-   "kolo_2": null,
+   "kolo_2": {
+    "id_sof": "18c2fec3-2b03-404e-a531-0ea6772c3ae5",
+    "kapacita": 4,
+    "prihlasky": 5,
+    "prijati": 0,
+    "zbyla_mista": 4
+   },
    "kraj": "Ústecký",
    "maturitni_status": "nematuritní",
    "nepr_kapacita": 0,
@@ -121471,7 +122047,13 @@
    "kategorie": "E",
    "kkov": "66-51-E/01",
    "kohorta_pozice": null,
-   "kolo_2": null,
+   "kolo_2": {
+    "id_sof": "b8a60674-0de7-4539-92c2-d94e513ae8a7",
+    "kapacita": 12,
+    "prihlasky": 9,
+    "prijati": 3,
+    "zbyla_mista": 9
+   },
    "kraj": "Ústecký",
    "maturitni_status": "nematuritní",
    "nepr_kapacita": 0,
@@ -121534,7 +122116,13 @@
    "kategorie": "H",
    "kkov": "66-51-H/01",
    "kohorta_pozice": "skola_prvni_volby",
-   "kolo_2": null,
+   "kolo_2": {
+    "id_sof": "2b9c0109-1e5d-44ba-b31c-5998a3ebb38b",
+    "kapacita": 9,
+    "prihlasky": 19,
+    "prijati": 9,
+    "zbyla_mista": 0
+   },
    "kraj": "Ústecký",
    "maturitni_status": "nematuritní",
    "nepr_kapacita": 0,
@@ -122119,7 +122707,13 @@
    "kategorie": "L",
    "kkov": "82-51-L/02",
    "kohorta_pozice": "skola_prvni_volby",
-   "kolo_2": null,
+   "kolo_2": {
+    "id_sof": "76e20445-c614-4475-bb11-20b5bf0370e4",
+    "kapacita": 9,
+    "prihlasky": 2,
+    "prijati": 1,
+    "zbyla_mista": 8
+   },
    "kraj": "Olomoucký",
    "maturitni_status": "maturitní",
    "nepr_kapacita": 0,
@@ -124393,7 +124987,13 @@
    "kategorie": "H",
    "kkov": "65-51-H/01",
    "kohorta_pozice": "skola_prvni_volby",
-   "kolo_2": null,
+   "kolo_2": {
+    "id_sof": "56719ed9-00b1-41ed-89a9-7db5e5dca1f9",
+    "kapacita": 26,
+    "prihlasky": 104,
+    "prijati": 26,
+    "zbyla_mista": 0
+   },
    "kraj": "Hlavní město Praha",
    "maturitni_status": "nematuritní",
    "nepr_kapacita": 0,
@@ -127078,7 +127678,13 @@
    "kategorie": "H",
    "kkov": "69-51-H/01",
    "kohorta_pozice": "zalozni_volba",
-   "kolo_2": null,
+   "kolo_2": {
+    "id_sof": "d7846509-0007-4664-8d94-2fd3f802e4fd",
+    "kapacita": 19,
+    "prihlasky": 21,
+    "prijati": 7,
+    "zbyla_mista": 12
+   },
    "kraj": "Ústecký",
    "maturitni_status": "nematuritní",
    "nepr_kapacita": 0,
@@ -131674,7 +132280,13 @@
    "kategorie": "H",
    "kkov": "66-52-H/01",
    "kohorta_pozice": "zalozni_volba",
-   "kolo_2": null,
+   "kolo_2": {
+    "id_sof": "b33e5d27-a745-4e1e-80c1-b9d5ff3af4be",
+    "kapacita": 10,
+    "prihlasky": 110,
+    "prijati": 10,
+    "zbyla_mista": 0
+   },
    "kraj": "Hlavní město Praha",
    "maturitni_status": "nematuritní",
    "nepr_kapacita": 0,
@@ -131800,7 +132412,13 @@
    "kategorie": "M",
    "kkov": "82-41-M/05",
    "kohorta_pozice": "zalozni_volba",
-   "kolo_2": null,
+   "kolo_2": {
+    "id_sof": "8691b125-8b10-4bc5-9307-f96912998c6c",
+    "kapacita": 15,
+    "prihlasky": 34,
+    "prijati": 6,
+    "zbyla_mista": 9
+   },
    "kraj": "Hlavní město Praha",
    "maturitni_status": "maturitní",
    "nepr_kapacita": 0,
@@ -134437,7 +135055,13 @@
    "kategorie": "H",
    "kkov": "33-56-H/01",
    "kohorta_pozice": "smisena_pozice",
-   "kolo_2": null,
+   "kolo_2": {
+    "id_sof": "083c2dc1-4674-4938-8629-cc86e49aa145",
+    "kapacita": 8,
+    "prihlasky": 8,
+    "prijati": 7,
+    "zbyla_mista": 1
+   },
    "kraj": "Jihomoravský",
    "maturitni_status": "nematuritní",
    "nepr_kapacita": 0,
@@ -134500,7 +135124,13 @@
    "kategorie": "H",
    "kkov": "65-51-H/01",
    "kohorta_pozice": "zalozni_volba",
-   "kolo_2": null,
+   "kolo_2": {
+    "id_sof": "6d123f9d-b039-4caa-9c13-1575b285c30c",
+    "kapacita": 19,
+    "prihlasky": 15,
+    "prijati": 3,
+    "zbyla_mista": 16
+   },
    "kraj": "Jihomoravský",
    "maturitni_status": "nematuritní",
    "nepr_kapacita": 0,
@@ -134563,7 +135193,13 @@
    "kategorie": "H",
    "kkov": "66-51-H/01",
    "kohorta_pozice": "zalozni_volba",
-   "kolo_2": null,
+   "kolo_2": {
+    "id_sof": "9e407b15-300f-4dc4-ac2c-9ba961ae60ba",
+    "kapacita": 20,
+    "prihlasky": 8,
+    "prijati": 4,
+    "zbyla_mista": 16
+   },
    "kraj": "Jihomoravský",
    "maturitni_status": "nematuritní",
    "nepr_kapacita": 0,
@@ -135970,7 +136606,13 @@
    "kategorie": "H",
    "kkov": "65-51-H/01",
    "kohorta_pozice": "smisena_pozice",
-   "kolo_2": null,
+   "kolo_2": {
+    "id_sof": "3d663250-6682-458e-b44c-82485696cf7e",
+    "kapacita": 11,
+    "prihlasky": 10,
+    "prijati": 3,
+    "zbyla_mista": 8
+   },
    "kraj": "Olomoucký",
    "maturitni_status": "nematuritní",
    "nepr_kapacita": 0,
@@ -143347,7 +143989,13 @@
    "kategorie": "E",
    "kkov": "75-41-E/01",
    "kohorta_pozice": null,
-   "kolo_2": null,
+   "kolo_2": {
+    "id_sof": "dce4f302-b823-448c-bde9-fc5d36e19bd0",
+    "kapacita": 3,
+    "prihlasky": 7,
+    "prijati": 3,
+    "zbyla_mista": 0
+   },
    "kraj": "Jihomoravský",
    "maturitni_status": "nematuritní",
    "nepr_kapacita": 0,
@@ -145957,7 +146605,13 @@
    "kategorie": "H",
    "kkov": "23-52-H/01",
    "kohorta_pozice": "zalozni_volba",
-   "kolo_2": null,
+   "kolo_2": {
+    "id_sof": "2759a283-d4e0-41b1-ad59-e9b888f36e33",
+    "kapacita": 13,
+    "prihlasky": 8,
+    "prijati": 4,
+    "zbyla_mista": 9
+   },
    "kraj": "Královéhradecký",
    "maturitni_status": "nematuritní",
    "nepr_kapacita": 0,
@@ -147037,7 +147691,13 @@
    "kategorie": "H",
    "kkov": "23-51-H/01",
    "kohorta_pozice": "smisena_pozice",
-   "kolo_2": null,
+   "kolo_2": {
+    "id_sof": "f9c688dd-f13e-4ffc-a239-5bb1f3397e63",
+    "kapacita": 5,
+    "prihlasky": 2,
+    "prijati": 1,
+    "zbyla_mista": 4
+   },
    "kraj": "Pardubický",
    "maturitni_status": "nematuritní",
    "nepr_kapacita": 0,
@@ -147100,7 +147760,13 @@
    "kategorie": "H",
    "kkov": "26-51-H/01",
    "kohorta_pozice": "skola_prvni_volby",
-   "kolo_2": null,
+   "kolo_2": {
+    "id_sof": "06d09d1b-4622-4f36-9e69-674171fef403",
+    "kapacita": 2,
+    "prihlasky": 12,
+    "prijati": 2,
+    "zbyla_mista": 0
+   },
    "kraj": "Pardubický",
    "maturitni_status": "nematuritní",
    "nepr_kapacita": 0,
@@ -147163,7 +147829,13 @@
    "kategorie": "H",
    "kkov": "33-56-H/01",
    "kohorta_pozice": "zalozni_volba",
-   "kolo_2": null,
+   "kolo_2": {
+    "id_sof": "8f8bc753-d3e7-4215-bd2a-3c0395e82bc0",
+    "kapacita": 7,
+    "prihlasky": 7,
+    "prijati": 4,
+    "zbyla_mista": 3
+   },
    "kraj": "Pardubický",
    "maturitni_status": "nematuritní",
    "nepr_kapacita": 0,
@@ -147226,7 +147898,13 @@
    "kategorie": "H",
    "kkov": "29-51-H/01",
    "kohorta_pozice": "zalozni_volba",
-   "kolo_2": null,
+   "kolo_2": {
+    "id_sof": "2b571a29-ff9a-4a81-ac78-3229a66a8d7e",
+    "kapacita": 5,
+    "prihlasky": 1,
+    "prijati": 1,
+    "zbyla_mista": 4
+   },
    "kraj": "Ústecký",
    "maturitni_status": "nematuritní",
    "nepr_kapacita": 0,
@@ -147934,7 +148612,13 @@
    "kategorie": "H",
    "kkov": "53-41-H/01",
    "kohorta_pozice": "skola_prvni_volby",
-   "kolo_2": null,
+   "kolo_2": {
+    "id_sof": "c8cabbf4-1c4d-4d3e-bc49-f45baa39ec95",
+    "kapacita": 12,
+    "prihlasky": 5,
+    "prijati": 2,
+    "zbyla_mista": 10
+   },
    "kraj": "Ústecký",
    "maturitni_status": "nematuritní",
    "nepr_kapacita": 0,
@@ -149932,7 +150616,13 @@
    "kategorie": "E",
    "kkov": "23-51-E/01",
    "kohorta_pozice": null,
-   "kolo_2": null,
+   "kolo_2": {
+    "id_sof": "99e90f20-5c41-4a2d-b438-172738c7df72",
+    "kapacita": 5,
+    "prihlasky": null,
+    "prijati": null,
+    "zbyla_mista": null
+   },
    "kraj": "Kraj Vysočina",
    "maturitni_status": "nematuritní",
    "nepr_kapacita": 0,
@@ -150202,7 +150892,13 @@
    "kategorie": "H",
    "kkov": "29-56-H/01",
    "kohorta_pozice": "skola_prvni_volby",
-   "kolo_2": null,
+   "kolo_2": {
+    "id_sof": "0fb37261-40e1-4492-a0c9-c079f9099626",
+    "kapacita": 3,
+    "prihlasky": 2,
+    "prijati": 0,
+    "zbyla_mista": 3
+   },
    "kraj": "Kraj Vysočina",
    "maturitni_status": "nematuritní",
    "nepr_kapacita": 0,
@@ -150391,7 +151087,13 @@
    "kategorie": "H",
    "kkov": "33-56-H/01",
    "kohorta_pozice": "skola_prvni_volby",
-   "kolo_2": null,
+   "kolo_2": {
+    "id_sof": "ed54e3f9-bb1b-4123-b833-92d84d636b17",
+    "kapacita": 3,
+    "prihlasky": 3,
+    "prijati": 1,
+    "zbyla_mista": 2
+   },
    "kraj": "Kraj Vysočina",
    "maturitni_status": "nematuritní",
    "nepr_kapacita": 0,
@@ -150523,7 +151225,13 @@
    "kategorie": "E",
    "kkov": "41-52-E/01",
    "kohorta_pozice": null,
-   "kolo_2": null,
+   "kolo_2": {
+    "id_sof": "3d67d188-f4fb-4f20-991c-807679f1fa78",
+    "kapacita": 5,
+    "prihlasky": 7,
+    "prijati": 3,
+    "zbyla_mista": 2
+   },
    "kraj": "Kraj Vysočina",
    "maturitni_status": "nematuritní",
    "nepr_kapacita": 0,
@@ -150586,7 +151294,13 @@
    "kategorie": "H",
    "kkov": "41-52-H/01",
    "kohorta_pozice": "zalozni_volba",
-   "kolo_2": null,
+   "kolo_2": {
+    "id_sof": "ed9fea21-64e2-4aee-bf7c-d201327a2d0c",
+    "kapacita": 5,
+    "prihlasky": 11,
+    "prijati": 5,
+    "zbyla_mista": 0
+   },
    "kraj": "Kraj Vysočina",
    "maturitni_status": "nematuritní",
    "nepr_kapacita": 0,
@@ -150649,7 +151363,13 @@
    "kategorie": "H",
    "kkov": "53-41-H/01",
    "kohorta_pozice": "skola_prvni_volby",
-   "kolo_2": null,
+   "kolo_2": {
+    "id_sof": "6057c046-c3df-4244-ae90-006f8b9026c0",
+    "kapacita": 3,
+    "prihlasky": 9,
+    "prijati": 3,
+    "zbyla_mista": 0
+   },
    "kraj": "Kraj Vysočina",
    "maturitni_status": "nematuritní",
    "nepr_kapacita": 0,
@@ -151033,7 +151753,13 @@
    "kategorie": "C",
    "kkov": "78-62-C/01",
    "kohorta_pozice": null,
-   "kolo_2": null,
+   "kolo_2": {
+    "id_sof": "5d77cc3c-440d-4442-91a5-a76228edebc0",
+    "kapacita": 5,
+    "prihlasky": null,
+    "prijati": null,
+    "zbyla_mista": null
+   },
    "kraj": "Kraj Vysočina",
    "maturitni_status": "nematuritní",
    "nepr_kapacita": null,
@@ -151423,7 +152149,13 @@
    "kategorie": "M",
    "kkov": "82-41-M/16",
    "kohorta_pozice": "skola_prvni_volby",
-   "kolo_2": null,
+   "kolo_2": {
+    "id_sof": "e333c97e-c908-4a92-9f7d-985e28357e61",
+    "kapacita": 5,
+    "prihlasky": 2,
+    "prijati": 2,
+    "zbyla_mista": 3
+   },
    "kraj": "Plzeňský",
    "maturitni_status": "maturitní",
    "nepr_kapacita": 0,
@@ -154582,7 +155314,13 @@
    "kategorie": "H",
    "kkov": "26-51-H/02",
    "kohorta_pozice": "zalozni_volba",
-   "kolo_2": null,
+   "kolo_2": {
+    "id_sof": "57853882-9fa9-44f1-9507-eafdb865fb3b",
+    "kapacita": 3,
+    "prihlasky": 5,
+    "prijati": 2,
+    "zbyla_mista": 1
+   },
    "kraj": "Jihomoravský",
    "maturitni_status": "nematuritní",
    "nepr_kapacita": 0,
@@ -154645,7 +155383,13 @@
    "kategorie": "H",
    "kkov": "33-56-H/01",
    "kohorta_pozice": "zalozni_volba",
-   "kolo_2": null,
+   "kolo_2": {
+    "id_sof": "0432fdd1-a59b-4e57-b8cb-4b6ded266a5a",
+    "kapacita": 5,
+    "prihlasky": 7,
+    "prijati": 2,
+    "zbyla_mista": 3
+   },
    "kraj": "Jihomoravský",
    "maturitni_status": "nematuritní",
    "nepr_kapacita": 0,
@@ -156751,7 +157495,13 @@
    "kategorie": "H",
    "kkov": "41-52-H/01",
    "kohorta_pozice": "zalozni_volba",
-   "kolo_2": null,
+   "kolo_2": {
+    "id_sof": "ac052c77-3f16-41d5-a27d-b22abc3008a8",
+    "kapacita": 15,
+    "prihlasky": 4,
+    "prijati": 4,
+    "zbyla_mista": 11
+   },
    "kraj": "Jihomoravský",
    "maturitni_status": "nematuritní",
    "nepr_kapacita": 0,
@@ -156814,7 +157564,13 @@
    "kategorie": "H",
    "kkov": "66-51-H/01",
    "kohorta_pozice": "smisena_pozice",
-   "kolo_2": null,
+   "kolo_2": {
+    "id_sof": "e914e84a-e0be-4e6e-a5a7-f981e8c786e5",
+    "kapacita": 8,
+    "prihlasky": 8,
+    "prijati": 0,
+    "zbyla_mista": 8
+   },
    "kraj": "Jihomoravský",
    "maturitni_status": "nematuritní",
    "nepr_kapacita": 0,
@@ -157339,7 +158095,13 @@
    "kategorie": "C",
    "kkov": "78-62-C/02",
    "kohorta_pozice": null,
-   "kolo_2": null,
+   "kolo_2": {
+    "id_sof": "32c50c13-7f74-4f08-91ad-8433c1b7c627",
+    "kapacita": 10,
+    "prihlasky": null,
+    "prijati": null,
+    "zbyla_mista": null
+   },
    "kraj": "Jihomoravský",
    "maturitni_status": "nematuritní",
    "nepr_kapacita": 0,
@@ -157780,7 +158542,13 @@
    "kategorie": "E",
    "kkov": "34-57-E/01",
    "kohorta_pozice": null,
-   "kolo_2": null,
+   "kolo_2": {
+    "id_sof": "41122c08-e697-4754-a1b2-3abb8f3f20ff",
+    "kapacita": 2,
+    "prihlasky": 6,
+    "prijati": 2,
+    "zbyla_mista": 0
+   },
    "kraj": "Hlavní město Praha",
    "maturitni_status": "nematuritní",
    "nepr_kapacita": 0,
@@ -162166,7 +162934,13 @@
    "kategorie": "P",
    "kkov": "82-46-P/01",
    "kohorta_pozice": null,
-   "kolo_2": null,
+   "kolo_2": {
+    "id_sof": "30f448c2-5ec6-497f-a480-ab2db3cb3ea5",
+    "kapacita": 11,
+    "prihlasky": 11,
+    "prijati": 5,
+    "zbyla_mista": 6
+   },
    "kraj": "Hlavní město Praha",
    "maturitni_status": "maturitní",
    "nepr_kapacita": 0,
@@ -162229,7 +163003,13 @@
    "kategorie": "E",
    "kkov": "29-51-E/01",
    "kohorta_pozice": null,
-   "kolo_2": null,
+   "kolo_2": {
+    "id_sof": "dbb83f57-74ab-41f2-b25f-fbcfebabd205",
+    "kapacita": 5,
+    "prihlasky": null,
+    "prijati": null,
+    "zbyla_mista": null
+   },
    "kraj": "Ústecký",
    "maturitni_status": "nematuritní",
    "nepr_kapacita": 0,
@@ -162958,7 +163738,13 @@
    "kategorie": "H",
    "kkov": "82-51-H/01",
    "kohorta_pozice": "smisena_pozice",
-   "kolo_2": null,
+   "kolo_2": {
+    "id_sof": "415762d7-694f-4ba6-b125-aaa471733d3a",
+    "kapacita": 1,
+    "prihlasky": 5,
+    "prijati": 1,
+    "zbyla_mista": 0
+   },
    "kraj": "Pardubický",
    "maturitni_status": "nematuritní",
    "nepr_kapacita": 0,
@@ -163537,7 +164323,13 @@
    "kategorie": "H",
    "kkov": "66-51-H/01",
    "kohorta_pozice": "smisena_pozice",
-   "kolo_2": null,
+   "kolo_2": {
+    "id_sof": "daef95ba-5655-46db-9aca-3f60632824e0",
+    "kapacita": 6,
+    "prihlasky": 27,
+    "prijati": 6,
+    "zbyla_mista": 0
+   },
    "kraj": "Moravskoslezský",
    "maturitni_status": "nematuritní",
    "nepr_kapacita": 0,
@@ -164128,7 +164920,13 @@
    "kategorie": "H",
    "kkov": "66-52-H/01",
    "kohorta_pozice": "zalozni_volba",
-   "kolo_2": null,
+   "kolo_2": {
+    "id_sof": "126a0ff9-198a-4cb7-8553-1c1d43440f4a",
+    "kapacita": 13,
+    "prihlasky": 21,
+    "prijati": 13,
+    "zbyla_mista": 0
+   },
    "kraj": "Moravskoslezský",
    "maturitni_status": "nematuritní",
    "nepr_kapacita": 0,
@@ -167689,7 +168487,13 @@
    "kategorie": "H",
    "kkov": "29-51-H/01",
    "kohorta_pozice": "skola_prvni_volby",
-   "kolo_2": null,
+   "kolo_2": {
+    "id_sof": "81d27e35-61ae-436a-9fa1-b952c34616e5",
+    "kapacita": 6,
+    "prihlasky": 2,
+    "prijati": 1,
+    "zbyla_mista": 5
+   },
    "kraj": "Královéhradecký",
    "maturitni_status": "nematuritní",
    "nepr_kapacita": 0,
@@ -168028,7 +168832,13 @@
    "kategorie": "H",
    "kkov": "65-51-H/01",
    "kohorta_pozice": "zalozni_volba",
-   "kolo_2": null,
+   "kolo_2": {
+    "id_sof": "7e27af03-fc3a-412d-8456-c739d1731e4d",
+    "kapacita": 17,
+    "prihlasky": 14,
+    "prijati": 9,
+    "zbyla_mista": 8
+   },
    "kraj": "Královéhradecký",
    "maturitni_status": "nematuritní",
    "nepr_kapacita": 0,
@@ -172264,7 +173074,13 @@
    "kategorie": "H",
    "kkov": "31-58-H/01",
    "kohorta_pozice": "smisena_pozice",
-   "kolo_2": null,
+   "kolo_2": {
+    "id_sof": "6171204a-6d0b-400c-b2a4-c02e433b3415",
+    "kapacita": 4,
+    "prihlasky": 4,
+    "prijati": 4,
+    "zbyla_mista": 0
+   },
    "kraj": "Ústecký",
    "maturitni_status": "nematuritní",
    "nepr_kapacita": 0,
@@ -174262,7 +175078,13 @@
    "kategorie": "H",
    "kkov": "23-56-H/01",
    "kohorta_pozice": "zalozni_volba",
-   "kolo_2": null,
+   "kolo_2": {
+    "id_sof": "39873bef-92cf-4ef8-b572-8b6c02429403",
+    "kapacita": 8,
+    "prihlasky": 1,
+    "prijati": 0,
+    "zbyla_mista": 8
+   },
    "kraj": "Olomoucký",
    "maturitni_status": "nematuritní",
    "nepr_kapacita": 0,
@@ -175255,7 +176077,13 @@
    "kategorie": "H",
    "kkov": "65-51-H/01",
    "kohorta_pozice": "zalozni_volba",
-   "kolo_2": null,
+   "kolo_2": {
+    "id_sof": "397a2367-708e-4590-994b-837d3ffab988",
+    "kapacita": 11,
+    "prihlasky": 20,
+    "prijati": 7,
+    "zbyla_mista": 4
+   },
    "kraj": "Olomoucký",
    "maturitni_status": "nematuritní",
    "nepr_kapacita": 0,
@@ -178108,7 +178936,13 @@
    "kategorie": "E",
    "kkov": "65-51-E/02",
    "kohorta_pozice": null,
-   "kolo_2": null,
+   "kolo_2": {
+    "id_sof": "8c62c8eb-2afa-4dd8-8ac2-672374d829f6",
+    "kapacita": 4,
+    "prihlasky": 3,
+    "prijati": 3,
+    "zbyla_mista": 1
+   },
    "kraj": "Hlavní město Praha",
    "maturitni_status": "nematuritní",
    "nepr_kapacita": 0,
@@ -178720,7 +179554,13 @@
    "kategorie": "E",
    "kkov": "29-51-E/02",
    "kohorta_pozice": null,
-   "kolo_2": null,
+   "kolo_2": {
+    "id_sof": "952ced9b-df34-4740-b96d-36b80b65c6b3",
+    "kapacita": 6,
+    "prihlasky": 17,
+    "prijati": 6,
+    "zbyla_mista": 0
+   },
    "kraj": "Karlovarský",
    "maturitni_status": "nematuritní",
    "nepr_kapacita": 0,
@@ -180373,7 +181213,13 @@
    "kategorie": "H",
    "kkov": "23-55-H/01",
    "kohorta_pozice": "smisena_pozice",
-   "kolo_2": null,
+   "kolo_2": {
+    "id_sof": "486f183c-17f9-459f-90ec-19867e4f534c",
+    "kapacita": 10,
+    "prihlasky": 3,
+    "prijati": 2,
+    "zbyla_mista": 8
+   },
    "kraj": "Královéhradecký",
    "maturitni_status": "nematuritní",
    "nepr_kapacita": 0,
@@ -180700,7 +181546,13 @@
    "kategorie": "P",
    "kkov": "82-44-P/01",
    "kohorta_pozice": null,
-   "kolo_2": null,
+   "kolo_2": {
+    "id_sof": "77cad665-f403-408b-9467-381f887dcf5e",
+    "kapacita": 4,
+    "prihlasky": 3,
+    "prijati": 2,
+    "zbyla_mista": 2
+   },
    "kraj": "Moravskoslezský",
    "maturitni_status": "maturitní",
    "nepr_kapacita": 0,
@@ -184768,7 +185620,13 @@
    "kategorie": "C",
    "kkov": "78-62-C/02",
    "kohorta_pozice": null,
-   "kolo_2": null,
+   "kolo_2": {
+    "id_sof": "bc8b8a52-f365-456a-bead-595cd86148c6",
+    "kapacita": 3,
+    "prihlasky": null,
+    "prijati": null,
+    "zbyla_mista": null
+   },
    "kraj": "Středočeský",
    "maturitni_status": "nematuritní",
    "nepr_kapacita": 0,
@@ -185068,7 +185926,13 @@
    "kategorie": "C",
    "kkov": "78-62-C/01",
    "kohorta_pozice": null,
-   "kolo_2": null,
+   "kolo_2": {
+    "id_sof": "b8ef5c3e-588b-4550-a0ee-6227a2f0668b",
+    "kapacita": 3,
+    "prihlasky": null,
+    "prijati": null,
+    "zbyla_mista": null
+   },
    "kraj": "Kraj Vysočina",
    "maturitni_status": "nematuritní",
    "nepr_kapacita": 0,
@@ -186271,7 +187135,13 @@
    "kategorie": "H",
    "kkov": "26-51-H/02",
    "kohorta_pozice": "zalozni_volba",
-   "kolo_2": null,
+   "kolo_2": {
+    "id_sof": "10eb94fc-3675-4a66-8090-553ba98d18ce",
+    "kapacita": 4,
+    "prihlasky": 5,
+    "prijati": 3,
+    "zbyla_mista": 1
+   },
    "kraj": "Jihočeský",
    "maturitni_status": "nematuritní",
    "nepr_kapacita": 0,
@@ -187132,7 +188002,13 @@
    "kategorie": "H",
    "kkov": "23-51-H/01",
    "kohorta_pozice": "zalozni_volba",
-   "kolo_2": null,
+   "kolo_2": {
+    "id_sof": "c1396634-8a11-4d71-9cd6-202b886a88cb",
+    "kapacita": 8,
+    "prihlasky": 4,
+    "prijati": 4,
+    "zbyla_mista": 4
+   },
    "kraj": "Jihočeský",
    "maturitni_status": "nematuritní",
    "nepr_kapacita": 0,
@@ -188263,7 +189139,13 @@
    "kategorie": "C",
    "kkov": "78-62-C/01",
    "kohorta_pozice": null,
-   "kolo_2": null,
+   "kolo_2": {
+    "id_sof": "617dcc4d-0726-4e52-aed7-fb9d8cd0f86c",
+    "kapacita": 2,
+    "prihlasky": 1,
+    "prijati": 1,
+    "zbyla_mista": 1
+   },
    "kraj": "Ústecký",
    "maturitni_status": "nematuritní",
    "nepr_kapacita": null,
@@ -189931,7 +190813,13 @@
    "kategorie": "C",
    "kkov": "78-62-C/01",
    "kohorta_pozice": null,
-   "kolo_2": null,
+   "kolo_2": {
+    "id_sof": "83b03115-8682-4db9-a9ec-857e5a89d607",
+    "kapacita": 2,
+    "prihlasky": null,
+    "prijati": null,
+    "zbyla_mista": null
+   },
    "kraj": "Plzeňský",
    "maturitni_status": "nematuritní",
    "nepr_kapacita": 0,
@@ -189979,7 +190867,13 @@
    "kategorie": "C",
    "kkov": "78-62-C/02",
    "kohorta_pozice": null,
-   "kolo_2": null,
+   "kolo_2": {
+    "id_sof": "6cb4521a-178b-4c9f-8645-1ae49ea00455",
+    "kapacita": 2,
+    "prihlasky": null,
+    "prijati": null,
+    "zbyla_mista": null
+   },
    "kraj": "Plzeňský",
    "maturitni_status": "nematuritní",
    "nepr_kapacita": 0,
@@ -192082,7 +192976,13 @@
    "kategorie": "C",
    "kkov": "78-62-C/02",
    "kohorta_pozice": null,
-   "kolo_2": null,
+   "kolo_2": {
+    "id_sof": "e3e57f84-0924-4c8a-8af7-d2ec254aedcd",
+    "kapacita": 5,
+    "prihlasky": 5,
+    "prijati": 5,
+    "zbyla_mista": 0
+   },
    "kraj": "Zlínský",
    "maturitni_status": "nematuritní",
    "nepr_kapacita": 0,
@@ -192544,7 +193444,13 @@
    "kategorie": "H",
    "kkov": "23-56-H/01",
    "kohorta_pozice": "smisena_pozice",
-   "kolo_2": null,
+   "kolo_2": {
+    "id_sof": "21b26303-e59d-496f-82eb-a3e25ed09c6d",
+    "kapacita": 5,
+    "prihlasky": 1,
+    "prijati": 1,
+    "zbyla_mista": 4
+   },
    "kraj": "Kraj Vysočina",
    "maturitni_status": "nematuritní",
    "nepr_kapacita": 0,
@@ -205068,8 +205974,9 @@
    "P": 146
   },
   "druhe_kolo": {
-   "bez_2_kola": 1641,
-   "vypsano": 1261
+   "bez_2_kola": 1490,
+   "vypsano": 1412,
+   "vypsano_bez_zamereni": 151
   },
   "nastavby_nedenni": 72,
   "parovani_2025": {
