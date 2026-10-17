@@ -74,7 +74,7 @@ export function StatsTab({ program, extendedStats, data2026, result2026, souhrn 
         <h3 className="font-semibold text-slate-900">Údaje z přijímacího řízení {rokUdaju}</h3>
         <dl className="mt-4 grid gap-6 sm:grid-cols-2">
           <div>
-            <dt className="text-sm text-slate-600">Počet přihlášek</dt>
+            <dt className="text-sm text-slate-600">Počet přihlášek v 1. kole</dt>
             <dd className="mt-1 text-2xl font-bold text-slate-900">{count(program.prihlasky)}</dd>
           </div>
           <div>
@@ -101,9 +101,9 @@ export function StatsTab({ program, extendedStats, data2026, result2026, souhrn 
                 <th scope="col" className="pb-2 text-right font-medium">{srovnani.rok}</th>
               </tr></thead>
               <tbody>
-                <Radek label="Přihlášky celkem" predchozi={pocet(srovnani.predchozi!.prihlasky)} aktualni={pocet(srovnani.aktualni.prihlasky)} />
+                <Radek label="Přihlášky celkem (1. kolo)" predchozi={pocet(srovnani.predchozi!.prihlasky)} aktualni={pocet(srovnani.aktualni.prihlasky)} />
                 <Radek label="Kapacita míst" predchozi={pocet(srovnani.predchozi!.kapacita)} aktualni={pocet(srovnani.aktualni.kapacita)} />
-                <Radek label="Přijatí" predchozi={pocet(srovnani.predchozi!.prijati)} aktualni={pocet(srovnani.aktualni.prijati)} />
+                <Radek label="Přijatí (1. kolo)" predchozi={pocet(srovnani.predchozi!.prijati)} aktualni={pocet(srovnani.aktualni.prijati)} />
                 <Radek label="Přihlášky na místo" predchozi={nasobek(srovnani.predchozi!.index_poptavky)} aktualni={nasobek(srovnani.aktualni.index_poptavky)} />
                 <Radek label="Tlak prvních voleb" predchozi={nasobek(srovnani.predchozi!.tlak_prvnich_voleb)} aktualni={nasobek(srovnani.aktualni.tlak_prvnich_voleb)} />
                 <Radek label="Průměrné percentilové umístění přijatých" predchozi={umisteni(srovnani.predchozi!)} aktualni={umisteni(srovnani.aktualni)} />
@@ -131,8 +131,8 @@ export function StatsTab({ program, extendedStats, data2026, result2026, souhrn 
               ))}</tbody>
             </table>
             <p className="mt-4 text-sm text-slate-600">
-              Kolik uchazečů si obor zapsalo jako první, druhou a další volbu.
-              {prijati2026 !== undefined && ` Přijato bylo ${count(prijati2026)} uchazečů.`}
+              Kolik uchazečů si obor zapsalo jako první, druhou a další volbu. Počty přihlášek a přijatých jsou z 1. kola.
+              {prijati2026 !== undefined && ` V 1. kole bylo přijato ${count(prijati2026)} uchazečů.`}
               {' '}Kolik přijatých mělo kterou prioritu, CERMAT za rok 2026 zveřejňuje, ale na webu to zatím nezobrazujeme.
             </p>
           </div>
@@ -166,8 +166,8 @@ export function StatsTab({ program, extendedStats, data2026, result2026, souhrn 
             <table className="mt-4 w-full text-left text-sm">
               <thead><tr className="text-slate-600">
                 <th scope="col" className="pb-2 font-medium">Priorita</th>
-                <th scope="col" className="pb-2 text-right font-medium">Přihlášky</th>
-                <th scope="col" className="pb-2 text-right font-medium">Přijatí</th>
+                <th scope="col" className="pb-2 text-right font-medium">Přihlášky (1. kolo)</th>
+                <th scope="col" className="pb-2 text-right font-medium">Přijatí (1. kolo)</th>
               </tr></thead>
               <tbody>{priorities.map((priority, index) => (
                 <tr key={index} className="border-t border-slate-100">
