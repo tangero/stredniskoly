@@ -114,7 +114,7 @@ tady jde jen o to, že termín minul a web data pořád nemá.
 - **Zvýšený režim** (stejný jako u dostupnosti: zamrznutí a sezóna 1. 1. až 31. 5.): kontrola dostupnosti každých
   5 minut pošle sadu po termínu do Telegramu, jednou za sadu a očekávané období (u sady bez něj jednou za sadu a termín).
   Odeslaná upozornění drží stav monitoringu v issue #436 (pole `cerstvost`, klíč `sada@obdobi`, u sady bez
-  očekávaného období `sada@termin-RRRR-MM`); po přepnutí sady ze stavu vypadne. Nepovedené
+  očekávaného období `sada@termin-<kdy>`); po přepnutí sady ze stavu vypadne. Nepovedené
   odeslání se zkusí v dalším běhu. V běžném režimu jde sada jen do týdenního přehledu.
 
 Registr, datovou linku ani workflow etapa nemění. Chyba čtení registru nezastaví kontrolu dostupnosti ani přehled,
