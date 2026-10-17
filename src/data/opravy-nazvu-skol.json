@@ -1,5 +1,5 @@
 {
-  "_popis": "Ruční opravy úředního názvu školy, které rejstřík škol MŠMT (data/msmt_rejstrik/nazvy-oboru.json) ještě nenese. Klíč je RED IZO, `uplny_nazev` přebije název z rejstříku v nadpisu stránky školy a v identifikaci v portálu. Katalog (zkrácený název, adresa stránky) se nemění. Záznam má dva důvody. Prvním je název, který rejstřík ještě nenese; takový záznam se odstraní, až ho rejstřík ponese. Druhým je portál, který bere název z katalogu, ne z rejstříku (`src/lib/portal-skol.ts`, `getNazevSAdresou`/`getNazevSkoly`), a záznam ho tam opravuje i tehdy, když ho rejstřík už nese (600005089, #319); takový záznam se odstraní, až portál převezme název z rejstříku.",
+  "_popis": "Ruční opravy úředního názvu školy, které rejstřík škol MŠMT (data/msmt_rejstrik/nazvy-oboru.json) ještě nenese. Klíč je RED IZO, `uplny_nazev` přebije název z rejstříku v nadpisu stránky školy a v identifikaci v portálu. Katalog (zkrácený název, adresa stránky) se nemění. Záznam má dva důvody. Prvním je název, který rejstřík ještě nenese; takový záznam se odstraní, až ho rejstřík ponese. Druhým je portál, který bere název z katalogu, ne z rejstříku (`src/lib/portal-skol.ts`, `getNazevSAdresou`/`getNazevSkoly`), a záznam ho tam opravuje i tehdy, když ho rejstřík už nese (600005089, #319; 600171388, #374); takový záznam se odstraní, až portál převezme název z rejstříku. V portálu (nadpis profilu, přepínač škol) se oprava ukáže tak, jak je, bez doplněné ulice a obce (#374).",
   "skoly": {
     "600007243": {
       "uplny_nazev": "Gymnázium, Střední odborná škola pedagogická a Základní škola Čáslav, příspěvková organizace",
@@ -12,6 +12,12 @@
       "platne_od": "2026-09-01",
       "zdroj": "hlášení z webu #319, 2026-10-04 (shoduje se s názvem v rejstříku MŠMT)",
       "issue": 319
+    },
+    "600171388": {
+      "uplny_nazev": "Střední škola řemesel, Šumperk",
+      "platne_od": "2026-10-05",
+      "zdroj": "hlášení z webu #374, 2026-10-05 (shoduje se s názvem v rejstříku MŠMT); platne_od je den hlášení",
+      "issue": 374
     }
   }
 }

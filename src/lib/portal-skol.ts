@@ -510,11 +510,10 @@ export async function getPredvyplnenyProfil(
   return {
     redizo,
     nazev: String(prvni.nazev),
-    nazev_s_adresou: nazevSAdresou(
-      (await opravenyNazevSkoly(redizo)) || String(prvni.nazev),
-      String(prvni.ulice || ''),
-      String(prvni.obec || ''),
-    ),
+    // Ruční oprava názvu je úplný úřední název; ulice ani obec se k ní nepřidávají (#374).
+    nazev_s_adresou:
+      (await opravenyNazevSkoly(redizo)) ||
+      nazevSAdresou(String(prvni.nazev), String(prvni.ulice || ''), String(prvni.obec || '')),
     obec: String(prvni.obec || ''),
     kraj: String(prvni.kraj || ''),
     obory,
@@ -546,13 +545,17 @@ export function nazevSAdresou(nazev: string, ulice: string, obec: string): strin
   return vysledek;
 }
 
-/** Název s ulicí a obcí z katalogu za zobrazované období; prázdný, když škola v katalogu není. */
+/**
+ * Název s ulicí a obcí z katalogu za zobrazované období; prázdný, když škola v katalogu není.
+ * Ruční oprava názvu (src/data/opravy-nazvu-skol.json) se vrací tak, jak je, bez ulice a obce (#374).
+ */
 export async function getNazevSAdresou(redizo: string): Promise<string> {
   try {
     const radek = (await katalogZobrazenehoObdobi()).find((s) => String(s.redizo) === redizo);
     if (!radek) return '';
-    const nazev = (await opravenyNazevSkoly(redizo)) || String(radek.nazev);
-    return nazevSAdresou(nazev, String(radek.ulice || ''), String(radek.obec || ''));
+    const oprava = await opravenyNazevSkoly(redizo);
+    if (oprava) return oprava;
+    return nazevSAdresou(String(radek.nazev), String(radek.ulice || ''), String(radek.obec || ''));
   } catch {
     return '';
   }

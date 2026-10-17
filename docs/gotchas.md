@@ -36,5 +36,7 @@ ve kterém na něj narazíš (krátce: co se stane, proč, co s tím). Oprava, k
   `uplny_nazev` v nadpisu stránky školy a v identifikaci v portálu. Zkrácený název v katalogu a adresa stránky se
   nemění (zkratku katalogu tvoří datová linka). Záznam má dva důvody: (1) rejstřík název ještě nenese, pak se záznam
   odstraní, až ho rejstřík ponese; (2) portál (`src/lib/portal-skol.ts`, `getNazevSAdresou`/`getNazevSkoly`) bere
-  název z katalogu, ne z rejstříku, a záznam ho tam opravuje i tehdy, když ho rejstřík už nese (600005089, #319);
-  takový záznam se odstraní, až portál převezme název z rejstříku.
+  název z katalogu, ne z rejstříku, a záznam ho tam opravuje i tehdy, když ho rejstřík už nese (600005089, #319;
+  600171388, #374); takový záznam se odstraní, až portál převezme název z rejstříku. V portálu se oprava ukáže
+  přesně tak, jak je zapsaná: `getNazevSAdresou` a `nazev_s_adresou` k ní ulici ani obec nepřidávají (#374), takže
+  `uplny_nazev` musí školu určit sám.

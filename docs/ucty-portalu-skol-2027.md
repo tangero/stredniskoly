@@ -64,7 +64,7 @@ Platí: pro jedno `redizo` smí existovat nejvýš jeden platný záznam `spravc
 
 Stránka kódu i odkazu z rejstříku začíná hlavičkou, ze které je zřejmé, ke které škole se uživatel hlásí: plný název z rejstříku, adresa sídla, IČO, REDIZO a odkaz na profil školy na webu. Katalog nese jen zkrácený název („Gymnázium“), podle kterého se škola poznat nedá. Zdroj je oddíl `identifikace` indexu `data/msmt_rejstrik/nazvy-oboru.json` ([zdroje dat, 2.4](zdroje-dat.md)).
 
-V profilu a v přepínači škol se škola jmenuje názvem z katalogu s ulicí bez čísla popisného a obcí, například „Gymnázium Nad Štolou, Praha“ (`nazevSAdresou` v `src/lib/portal-skol.ts`). Ulice ani obec se neopakují, když je název už obsahuje. Stejný tvar nese titulek a tělo GitHub issue s návrhem, všechny zprávy na Telegram a e-maily s pozvánkou a předáním správcovství. Zveřejněný záznam (`public/portal_skol.json`) dál ukládá název z katalogu.
+V profilu a v přepínači škol se škola jmenuje názvem z katalogu s ulicí bez čísla popisného a obcí, například „Gymnázium Nad Štolou, Praha“ (`nazevSAdresou` v `src/lib/portal-skol.ts`). Ulice ani obec se neopakují, když je název už obsahuje. Škola s ruční opravou názvu (`src/data/opravy-nazvu-skol.json`) se jmenuje přesně tou opravou, bez doplněné ulice a obce (#374). Stejný tvar nese titulek a tělo GitHub issue s návrhem, všechny zprávy na Telegram a e-maily s pozvánkou a předáním správcovství. Zveřejněný záznam (`public/portal_skol.json`) dál ukládá název z katalogu.
 
 Každý požadavek s cookie znovu ověří, že role je platná (`zneplatneno is null`). Zrušení v administraci tedy platí okamžitě, ne až po vypršení cookie.
 
