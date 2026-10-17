@@ -306,10 +306,10 @@ Sloupec `NEÚČAST (%)` a `HRUBÁ NEÚSPĚŠNOST (%)` jsou **jen v bloku společ
 
 | Sloupec v bloku | Obsah | Otázka rodiče | Používáme |
 |---|---|---|---|
-| `PŘIHLÁŠENI`, `KONALI`, `NEKONALI` | velikost populace | z kolika lidí to je | **ano**, jmenovatel u každého podílu |
+| `PŘIHLÁŠENI`, `KONALI`, `NEKONALI` | velikost populace | z kolika lidí to je | **ano**, jmenovatel u každého podílu; z `USPĚLI / KONALI` se od 17. 10. 2026 počítá *Úspěšnost maturity z konajících* (issue #375) |
 | `USPĚLI`, `NEUSPĚLI` | počty | kolik jich maturitu udělalo | **ano** |
 | `PODÍL ÚSPĚŠNÝCH (%)` | úspěšní z přihlášených | jaká je šance maturitu udělat | **ano**, hlavní číslo oddílu „Jak si škola vede“ |
-| `ČISTÁ NEÚSPĚŠNOST (%)` | neuspěli z konajících | kolik jich u zkoušky propadlo | **ne**, kontrakt pro ni nemá pole; viz maturitní návrh, oddíl 10 |
+| `ČISTÁ NEÚSPĚŠNOST (%)` | neuspěli z konajících | kolik jich u zkoušky propadlo | **ne** jako sloupec, kontrakt pro ni nemá pole; její doplněk do sta, *Úspěšnost maturity z konajících*, se od 17. 10. 2026 počítá z počtů `USPĚLI / KONALI` (issue #375), aby nebylo nutné měnit generátor a přegenerovat data |
 | `HRUBÁ NEÚSPĚŠNOST (%)` | neuspěli nebo nekonali z přihlášených | kolik jich maturitu nedokončilo | **ano** do dat, na stránce zatím ne |
 | `NEÚČAST (%)` | nekonali z přihlášených | kolik jich k maturitě vůbec nešlo | **ano od 18. 9. 2026**, sloupec „ke zkoušce nešlo“ v tabulce po letech |
 | `PRŮMĚRNÝ % SKÓR` | průměr z didaktického testu | jak dobře tu píší testy | **ano**, čeština a matematika; veličina celého srovnání s podobnými školami |
