@@ -40,5 +40,6 @@ test('škola bez opravy má název s adresou beze změny', async () => {
   assert.ok(nazev, 'škola není v katalogu');
   assert.equal(profil.nazev_s_adresou, nazev);
   assert.ok(nazev.startsWith(profil.nazev));
-  assert.equal(nazev, 'Gymnázium Litoměřická, Praha');
+  // Bez opravy se k názvu z katalogu dál přidává ulice a obec (#374 se týká jen škol s opravou).
+  assert.ok(nazev.length > profil.nazev.length && nazev.endsWith(`, ${profil.obec}`), nazev);
 });
