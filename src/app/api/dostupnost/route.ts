@@ -673,6 +673,8 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({
         estimates,
         mappedProgramIds: schools.filter(school => coveredGroups.has(school.groupKey)).flatMap(school => school.programs.map(program => program.id)),
+        // Školy s víc místy výuky: nabídku katalogu, jejíž id se nespáruje přesně, nelze přiřadit podle RED IZO (#168).
+        viceMistRedizo: Array.from(Map.groupBy(schools, school => school.redizo)).filter(([, mista]) => mista.length > 1).map(([redizo]) => redizo),
         originName: startName,
         model: 'orientacni-ranni-profil',
         searchedMinutes: routingLimit,
