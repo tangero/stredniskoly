@@ -1,6 +1,6 @@
 # Slovník ukazatelů
 
-Verze 1.64 · 17. 10. 2026 · **Závazný soupis. Nový ukazatel se nezavádí bez zápisu sem.**
+Verze 1.65 · 17. 10. 2026 · **Závazný soupis. Nový ukazatel se nezavádí bez zápisu sem.**
 
 Každý ukazatel má jeden název, jednu definici a jeden způsob výpočtu. Když se veličina objeví na webu, v datech, v API nebo v dokumentaci, používá se jméno z tohoto soupisu. Když se způsob výpočtu změní, změní se tady a zároveň se přepíše verze.
 
@@ -513,7 +513,7 @@ Do 13. 9. 2026 tu stálo, že nemáme ani to minimum. Bylo to nesprávné: pole 
 ### Kapacita 2. kola
 Počet míst, která škola vypsala ve 2. kole přijímacího řízení. Zdroj: CERMAT, `PZ{rok}_kolo2_skolobory_vysledky.xlsx`, sloupec `KAPACITA`. Pole `kapacita` v ročníku souboru `public/druhe_kolo.json`, generuje `scripts/build-druhe-kolo.py`.
 
-**Nedá se dopočítat z 1. kola.** Rozdílu kapacity a přijatých z 1. kola se rovná jen u 47 % nabídek roku 2026, protože se do ní promítají uchazeči, kteří se přijetí vzdali, a rozhodnutí školy. Zobrazuje se jen zveřejněná hodnota.
+**Nedá se dopočítat z 1. kola.** Rozdílu kapacity a přijatých z 1. kola se rovná jen u 46 % nabídek roku 2026, protože se do ní promítají uchazeči, kteří se přijetí vzdali, a rozhodnutí školy. Zobrazuje se jen zveřejněná hodnota.
 
 Popisuje nabídku v jednom roce. Neříká, zda škola 2. kolo vypíše příště.
 
@@ -540,7 +540,7 @@ Není to hranice přijetí; škola mohla vážit i jiná kritéria.
 ### Nevypsané 2. kolo u nenaplněného oboru
 Nabídka, která má ve výsledcích 1. kola méně přijatých uchazečů než míst a 2. kolo nevypsala. Kombinuje souhrn výsledků 1. kola se souhrnem 2. kola téhož roku. Pole `stav` s hodnotou `nenaplneno_bez_2_kola`.
 
-V roce 2026 platí pro 47 % oborů, které ve výsledcích 1. kola mají méně přijatých než míst (768 nabídek; u 300 z nich je přijatých o jednoho méně než míst). Věta na webu proto varuje, že méně přijatých po 1. kole neznamená 2. kolo.
+V roce 2026 platí pro 37 % oborů, které ve výsledcích 1. kola mají méně přijatých než míst (618 nabídek; u 295 z nich je přijatých o jednoho méně než míst). Věta na webu proto varuje, že méně přijatých po 1. kole neznamená 2. kolo.
 
 **Co neříká:** Souhrn 1. kola je stav k datu výsledků. Nezachycuje, jak škola místa obsadila potom, takže neříká, že místa zůstala neobsazená, ani proč škola 2. kolo nevypsala. Věta na webu proto popisuje čísla ze souhrnu a škole nic nepřisuzuje.
 
@@ -867,6 +867,7 @@ Například „Vyvážený obor“. Způsob zařazení není dohledaný. Platí 
 
 | Verze | Změna |
 |---|---|
+| 1.65 | *Kapacita 2. kola* a *Nevypsané 2. kolo u nenaplněného oboru*: počty přepočteny po rozšíření párování nabídek mezi koly o druhý průchod bez zaměření (17. 10. 2026, issue #282, `docs/druhe-kolo.md`, oddíl 7). Definice a výpočet ukazatelů beze změny; mění se jen to, které nabídky 1. a 2. kola se považují za tutéž: 46 místo 47 %, 618 místo 768 nabídek (37 místo 47 %). |
 | 1.64 | Nový ukazatel **Úspěšnost maturity z konajících** (`passed / took`, funkce `passRateOfTakers`), zobrazený na stránce školy vedle úspěšnosti z přihlášených se stejnými mezemi zveřejnění (17. 10. 2026, issue #375, rozhodnutí vlastníka). `passRate` beze změny. |
 | 1.63 | *Kohorta podle pozice na přihlášce* platí i pro učební obory H (skupina kategorie × první dvojčíslí KKOV, práh 30 nabídek) a umělecké M a L (skupiny souhrnů); C, E, J a P bez kohorty (12. 10. 2026, issue #244, etapa 6, rozhodnutí vlastníka). |
 | 1.62 | *Soutěžící o obor*: vysvětlení pojmu na stránce sjednoceno se slovníkem pojmů 1.49 („nebyli přijati jinam podle vyšší priority na přihlášce“). Definice, výpočet ani pole beze změny (7. 10. 2026, issue #428). |
