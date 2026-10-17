@@ -2,6 +2,17 @@
 
 Záznam změn chování systému: požadavek, co se změnilo a proč, datum. Nejnovější nahoře.
 
+## 2026-10-17: počty přihlášek a přijatých na stránce školy označené jako 1. kolo (#226)
+
+- **Požadavek:** hlášení školy #226 (počty přihlášek jsou jen za 1. kolo, školy vypisují i další kola),
+  rozhodnutí vlastníka platné pro všechny školy.
+- **Co:** na přehledu školy řádek oboru říká „v 1. kole přijato …“ (i záložní nadpis „Přijato … v 1. kole“)
+  a úvod oddílu „Co tu lze studovat“ dodává, že počty přihlášek a přijatých jsou z 1. kola a že škola může
+  vypsat 2. kolo, jehož výsledky u oboru uvádíme, kde je máme (řádek 2. kola z `public/druhe_kolo.json` tam
+  už byl). Na stránce oboru má tabulka „Údaje v číslech“ řádek „Přijatí (1. kolo)“; starší podoba stránky
+  oboru má „1. kolo“ v nadpisu přijetí, v počtu přihlášek a ve srovnání ročníků. Slovník pojmů 1.50.
+- **Proč:** počet bez kola působil jako výsledek celého přijímání, i když 2. kolo škola vypsala.
+
 ## 2026-10-17: upozornění na data po očekávaném termínu (#355, etapa 3)
 
 - **Požadavek:** projekt #355, etapa 3 (čerstvost dat), kritéria K16 a K17.

@@ -151,7 +151,7 @@ function RadekOboru({ o, rok }: { o: OborSkoly; rok: number | null }) {
   // Učební obor a ostatní obory bez jednotné zkoušky: prvním údajem jsou zbylá místa po 1. kole (issue #244).
   const nadpis = o.bezJpz && o.bezJpz.zbylaMista !== null && o.kapacita !== null
     ? (o.bezJpz.zbylaMista > 0 ? `Zbylá místa po 1. kole: ${cislo(o.bezJpz.zbylaMista)} ${zOd(o.kapacita)} ${cislo(o.kapacita)}` : 'Po 1. kole obsazeno')
-    : o.zarazeni ? NADPIS_OBTIZNOSTI[o.zarazeni] : o.prijati !== null ? `Přijato ${cislo(o.prijati)}` : 'Údaje o přijímání nemáme';
+    : o.zarazeni ? NADPIS_OBTIZNOSTI[o.zarazeni] : o.prijati !== null ? `Přijato ${cislo(o.prijati)} v 1. kole` : 'Údaje o přijímání nemáme';
   // Každá karta je vlastní mřížka, takže sloupec `auto` by v každé vyšel jinak široký podle obsahu
   // a karty by se rozjely. Poslední sloupec má proto pevnou míru a akce v něm jsou v obou stavech
   // stejně široké (viz kompaktní podoba UlozitObor).
@@ -181,8 +181,8 @@ function RadekOboru({ o, rok }: { o: OborSkoly; rok: number | null }) {
         ) : null}
         <span className="text-[14px] text-slate-600 tabular-nums">
           {o.soutezici && o.zarazeni && o.zarazeni !== 'kapacita_nerozhodovala'
-            ? `přijato ${cislo(o.prijati ?? 0)} ${zOd(o.soutezici)} ${cislo(o.soutezici)} uchazečů, kteří o místo soutěžili`
-            : o.prijati !== null && o.kapacita !== null ? `přijato ${cislo(o.prijati)} na ${pocetMist(o.kapacita, cislo)}` : ''}
+            ? `v 1. kole přijato ${cislo(o.prijati ?? 0)} ${zOd(o.soutezici)} ${cislo(o.soutezici)} uchazečů, kteří o místo soutěžili`
+            : o.prijati !== null && o.kapacita !== null ? `v 1. kole přijato ${cislo(o.prijati)} na ${pocetMist(o.kapacita, cislo)}` : ''}
           {o.bezJpz && o.zarazeni ? ` · ${ZARAZENI_POPISEK[o.zarazeni]}` : ''}
           {o.predchoziRok && o.zarazeniPredchozi ? ` · v roce ${o.predchoziRok} ${ZARAZENI_POPISEK[o.zarazeniPredchozi]}` : ''}
           {o.tlak !== null ? ` · tlak prvních voleb ${cislo(o.tlak, 1)}×` : ''}
@@ -381,7 +381,7 @@ export function ProfilSkoly({ data, skola, odkazy }: ProfilSkolyProps) {
       <Oddil id="obory" nadpis="Co tu lze studovat" stitek={rok ? `1. kolo ${rok}` : undefined}>
         {vypsane.length > 0 ? (
           <>
-            <p className="text-[15px] text-slate-600">Obtížnost přijetí popisuje, kolik soutěžících uchazečů se v 1. kole dostalo; soutěžící uchazeči jsou ti, kdo splnili podmínky přijetí a nebyli přijati jinam podle vyšší priority na přihlášce. Každý obor má vlastní přijímání, za školu se nesčítá.</p>
+            <p className="text-[15px] text-slate-600">Obtížnost přijetí popisuje, kolik soutěžících uchazečů se v 1. kole dostalo; soutěžící uchazeči jsou ti, kdo splnili podmínky přijetí a nebyli přijati jinam podle vyšší priority na přihlášce. Každý obor má vlastní přijímání, za školu se nesčítá. Počty přihlášek a přijatých jsou z 1. kola. Když se obor v 1. kole nenaplní, škola může vypsat 2. kolo; kde jeho výsledky máme, uvádíme je u oboru.</p>
             {vypsane.some(o => o.bezJpz) && (
               <p className="text-[15px] text-slate-600">U učebních oborů, tedy oborů s výučním listem, a ostatních oborů bez jednotné přijímací zkoušky body nejsou, protože se zkouška nekoná; prvním údajem je, kolik míst zbylo po 1. kole.</p>
             )}
