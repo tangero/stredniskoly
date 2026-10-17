@@ -1,7 +1,6 @@
 # Monitoring produkce
 
-Projekt #355. Tento dokument popisuje etapu 1 (dostupnost). Etapy 2 (triáž hlášení) a 3 (čerstvost dat)
-přibudou do něj po realizaci.
+Projekt #355 ve třech etapách: dostupnost webu, triáž hlášení a čerstvost dat.
 
 ## Etapa 1: dostupnost
 
@@ -89,3 +88,30 @@ Chyba modelu (výpadek služby) nic nezapíše, hlášení se zkusí při dalš�
 
 Zakázat workflow Triáž v Actions (nebo smazat soubor). Ruční zkouška bez zápisu:
 `node scripts/provoz/triaz.mjs --nanecisto` (potřebuje `GITHUB_TOKEN` nebo přihlášené `gh` a klíč modelu).
+
+## Etapa 3: čerstvost dat (#355)
+
+Skript `scripts/provoz/cerstvost.mjs` čte registr `public/stav_datovych_sad.json` z checkoutu `main` a vybere sady,
+které jsou **po termínu**: mají `pouziti: web`, vyplněné `ocekavano.obdobi` i `ocekavano.kdy`, termín uplynul
+(`RRRR-MM` po celém měsíci, `RRRR-MM-DD` po celém dni, počítáno v UTC) a `zobrazeno.obdobi` je pořád menší než
+`ocekavano.obdobi`. Sady bez očekávaného období nebo termínu (průběžné, ruční obnovy) se neposuzují, protože není
+s čím porovnat. Nová data dál hlídá Datová linka (`docs/datova-linka.md`); tady jde jen o to, že termín minul a web
+data pořád nemá.
+
+### Co se stane
+
+- **Týdenní přehled:** oddíl Čerstvost dat se sadami po termínu (název, co web ukazuje, jaké období se čekalo a do
+  kdy). V krátké verzi do Telegramu řádek „POZOR, data po termínu“, jen když nějaká sada je po termínu.
+- **Zvýšený režim** (stejný jako u dostupnosti: zamrznutí a sezóna 1. 1. až 31. 5.): kontrola dostupnosti každých
+  5 minut pošle sadu po termínu do Telegramu, jednou za sadu a očekávané období. Odeslaná upozornění drží stav
+  monitoringu v issue #436 (pole `cerstvost`, klíč `sada@obdobi`); po přepnutí sady ze stavu vypadne. Nepovedené
+  odeslání se zkusí v dalším běhu. V běžném režimu jde sada jen do týdenního přehledu.
+
+Registr, datovou linku ani workflow etapa nemění. Chyba čtení registru nezastaví kontrolu dostupnosti ani přehled,
+přehled ji vypíše v oddílu.
+
+### Jak vypnout
+
+Oddíl a upozornění zmizí odebráním volání `sadyPoTerminu` z `scripts/prehled/tydenni.mjs` a `oznamCerstvost`
+ze `scripts/provoz/dostupnost.mjs`. Ruční zkouška: `node scripts/provoz/dostupnost.mjs --nanecisto` vypíše režim a
+sady po termínu.
