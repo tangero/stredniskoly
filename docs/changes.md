@@ -2,6 +2,17 @@
 
 Záznam změn chování systému: požadavek, co se změnilo a proč, datum. Nejnovější nahoře.
 
+## 2026-10-17: úřední názvy škol ze snímku rejstříku MŠMT k 30. 9. 2026 (#478)
+
+- **Požadavek:** interní zadání #478 (hromadná obnova úředních názvů z rejstříku místo ručních oprav), odpověď
+  vlastníka 17. 10. 2026: převzít snímek postupem z `docs/zdroje-dat.md`, oddíl 5.
+- **Co:** sada `msmt-rejstrik-snimky` přepnuta na snímek k 30. 9. 2026, `data/msmt_rejstrik/nazvy-oboru.json`
+  přegenerován; nový skript `scripts/report-nazvy-skol-rejstrik.py` a jeho výstup
+  `docs/podklady/nazvy-skol-rejstrik-2026-06-30-2026-09-30.json` (věcná změna proti rozdílu formátu, duplicitní ruční
+  opravy). Postup čtvrtletní obnovy v `docs/zdroje-dat.md`, oddíl 2.19a.
+- **Proč:** stránky škol nesly úřední názvy ze stavu k 30. 6. 2026, takže změny od 1. 9. 2026 (sloučení Gymnázia
+  Čáslav, přejmenování Smíchovské SŠ, SŠ v Kolíně a dalších) chyběly.
+
 ## 2026-10-17: párování 1. a 2. kola i při změněném zaměření (#282)
 
 - **Požadavek:** hlášení #282 (Lyceum 600007561 neukazovalo 2. kolo) a odpověď vlastníka z 17. 10. 2026.
