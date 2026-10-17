@@ -2,6 +2,17 @@
 
 Záznam změn chování systému: požadavek, co se změnilo a proč, datum. Nejnovější nahoře.
 
+## 2026-10-17: úspěšnost maturity i z těch, kdo zkoušku konali (#375)
+
+- **Požadavek:** issue #375, rozhodnutí vlastníka 17. 10. 2026 „ukázat obě čísla“.
+- **Co:** stránka školy v oddílu o maturitě ukazuje vedle počtu úspěšných z přihlášených i podíl z přihlášených
+  (`passRate`) a nový ukazatel *Úspěšnost maturity z konajících* (`passed / took`, `passRateOfTakers`
+  v `src/lib/skola-vyklad.ts`): souhrnná věta za celou školu a řádek každé skupiny oborů. Podíly se při méně než
+  deseti konajících neukazují (příznak `counts_only`). Zapsáno ve slovníku ukazatelů 1.64, slovníku pojmů 1.50
+  a v registru u sady `cermat-maturita`.
+- **Proč:** škola hlásila, že úspěšnost na webu je nesprávná; čísla CERMAT platí, ale počítají z přihlášených,
+  takže škola s mnoha nekonajícími vypadá hůř, než jak dopadli ti, kdo k maturitě šli.
+
 ## 2026-10-17: upozornění na data po očekávaném termínu (#355, etapa 3)
 
 - **Požadavek:** projekt #355, etapa 3 (čerstvost dat), kritéria K16 a K17.

@@ -9,7 +9,7 @@ import {
 } from '@/lib/obor-profil';
 import {
   delkaSlovy, jakCastoNadStredem, mistaPoOborech, nazevSObci, pocetMist, oboryVetou, pocetCizichJazyku, pocetOboru, podnadpisSkoly,
-  rozdelJazyky, STAV_POPISEK, vetaNejtezsihoPrijeti,
+  passRateOfTakers, procentoMaturity, rozdelJazyky, STAV_POPISEK, vetaNejtezsihoPrijeti,
 } from '@/lib/skola-vyklad';
 import { formatDatumCz } from '@/lib/portal-skol';
 import type { NovejsiInspekce } from '@/lib/inspekce-aktualnost';
@@ -519,7 +519,11 @@ export function ProfilSkoly({ data, skola, odkazy }: ProfilSkolyProps) {
               <Karta className="space-y-3">
                 <p className="max-w-[64ch] text-[19px] leading-relaxed text-slate-800">
                   {celkem?.passed !== undefined && celkem.registered ? (
-                    <>Maturitu v roce {celkem.rok} udělalo <b className="text-[#16325c]">{cislo(celkem.passed)} {zOd(celkem.registered)} {cislo(celkem.registered)}</b> přihlášených maturantů.{' '}</>
+                    <>Maturitu v roce {celkem.rok} udělalo <b className="text-[#16325c]">{cislo(celkem.passed)} {zOd(celkem.registered)} {cislo(celkem.registered)}</b> přihlášených maturantů{celkem.passRate !== undefined ? <>, tedy <b className="text-[#16325c]">{procentoMaturity(celkem.passRate)}</b></> : null}.{' '}</>
+                  ) : null}
+                  {/* Úspěšnost maturity z konajících (issue #375): jen když se konající liší od přihlášených, jinak by opakovala totéž číslo. */}
+                  {celkem?.passed !== undefined && celkem.took && celkem.registered && celkem.took !== celkem.registered ? (
+                    <>Z těch, kdo ke zkoušce skutečně šli, ji udělalo <b className="text-[#16325c]">{cislo(celkem.passed)} {zOd(celkem.took)} {cislo(celkem.took)}</b>{passRateOfTakers(celkem) !== null ? <>, tedy <b className="text-[#16325c]">{procentoMaturity(passRateOfTakers(celkem)!)}</b></> : null}.{' '}</>
                   ) : null}
                   {jakCasto === 'v žádném hodnocení' ? (
                     <>V češtině nebyli maturanti nad středem podobných škol <b className="text-[#16325c]">v žádném hodnocení</b>.</>
@@ -553,7 +557,10 @@ export function ProfilSkoly({ data, skola, odkazy }: ProfilSkolyProps) {
                       </div>
                       <div className="text-[15px]">
                         <span className="text-[12px] text-slate-500 md:hidden">Maturitu udělalo {s.posledni!.rok}: </span>
-                        {sc.passed !== undefined && sc.registered ? <b className="text-[#16325c] tabular-nums">{cislo(sc.passed)} {zOd(sc.registered)} {cislo(sc.registered)}</b> : '—'}
+                        {sc.passed !== undefined && sc.registered ? <><b className="text-[#16325c] tabular-nums">{cislo(sc.passed)} {zOd(sc.registered)} {cislo(sc.registered)}</b>{sc.passRate !== undefined ? ` přihlášených (${procentoMaturity(sc.passRate)})` : ' přihlášených'}</> : '—'}
+                        {sc.passed !== undefined && sc.took && sc.registered && sc.took !== sc.registered ? (
+                          <span className="block text-[13px] text-slate-500">z těch, kdo šli ke zkoušce, {cislo(sc.passed)} {zOd(sc.took)} {cislo(sc.took)}{passRateOfTakers(sc) !== null ? ` (${procentoMaturity(passRateOfTakers(sc)!)})` : ''}</span>
+                        ) : null}
                         {sc.absent ? <span className="block text-[13px] text-slate-500">{cislo(sc.absent)} {sc.absent === 1 ? 'ke zkoušce nešel' : sc.absent < 5 ? 'ke zkoušce nešli' : 'ke zkoušce nešlo'}</span> : null}
                       </div>
                       <div className="text-[15px]">
