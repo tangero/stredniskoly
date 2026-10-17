@@ -202,8 +202,10 @@ def spojit_s_rokem_2025(nabidky: list[dict], r25: list[dict], imp, par) -> Count
 
 
 def spojit_s_druhym_kolem(nabidky: list[dict], r1: list[dict], r2: list[dict], dk) -> Counter:
-    """Doplní `kolo_2` klíčem 2. kola; kolize klíče webu se nehádají (kolo_2 zůstane None)."""
-    m2 = {dk.parovaci_klic(r): r for r in r2}
+    """Doplní `kolo_2` stejným párováním jako `build-druhe-kolo.py` (`dk.sparuj`, včetně druhého
+    průchodu bez zaměření, #282); kolize klíče webu se nehádají (kolo_2 zůstane None)."""
+    m2, _ = dk.sparuj(r1, r2)
+    m2_presne = {dk.parovaci_klic(r) for r in r2}
     podle_webu: Counter = Counter()
     klice = {}
     for r in r1:
@@ -222,6 +224,8 @@ def spojit_s_druhym_kolem(nabidky: list[dict], r1: list[dict], r2: list[dict], d
             pocty["bez_2_kola"] += 1
             continue
         pocty["vypsano"] += 1
+        if pk not in m2_presne:
+            pocty["vypsano_bez_zamereni"] += 1
         n["kolo_2"] = {
             "id_sof": str(d["ID_SOF"]),
             "kapacita": cislo(d["KAPACITA"]),

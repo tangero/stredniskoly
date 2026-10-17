@@ -6,7 +6,8 @@ Návrh a výklad: docs/druhe-kolo.md. Ukazatele: docs/slovnik-ukazatelu.md, odd�
 Pro každou nabídku 1. kola uloží, zda škola vypsala 2. kolo, a pokud ano, jeho
 kapacitu, přihlášky, přijaté a důvody nepřijetí. Nabídky se mezi koly párují podle
 školy, oboru, zaměření, formy, délky, zkráceného studia a jazyka, protože
-identifikátor ID_SOF se mezi koly liší.
+identifikátor ID_SOF se mezi koly liší. Nabídky, které tak zůstanou bez protějšku, se
+v druhém průchodu párují bez zaměření, ale jen jednoznačně (#282).
 
 Výstup nese ročníky jako klíče; název souboru rok neobsahuje. Který rok web
 zobrazí, určuje registr public/stav_datovych_sad.json.
@@ -79,13 +80,51 @@ def parovaci_klic(r: dict) -> tuple:
     return tuple(str(r[s] or "").strip() for s in PAROVACI_SLOUPCE)
 
 
+# Druhý průchod (#282): bez zaměření; povinnost zkoušky navíc, aby se nespárovala nabídka
+# se zkouškou s nabídkou bez ní (scripts/build-obory-bez-jpz.py čte 2. kolo bez filtru).
+DRUHY_PRUCHOD_SLOUPCE = tuple(s for s in PAROVACI_SLOUPCE if s != "ZAMĚŘENÍ OBORU") + ("POVINNOST JPZ",)
+
+
+def klic_bez_zamereni(r: dict) -> tuple:
+    return tuple(str(r[s] or "").strip() for s in DRUHY_PRUCHOD_SLOUPCE)
+
+
+def sparuj(r1: list[dict], r2: list[dict]) -> tuple[dict[tuple, dict], int]:
+    """Párování nabídek 1. a 2. kola: párovací klíč 1. kola → řádek 2. kola.
+
+    1. průchod: shoda všech sloupců PAROVACI_SLOUPCE včetně zaměření.
+    2. průchod jen pro nabídky, které zůstaly bez protějšku na obou stranách: shoda bez
+       zaměření, a to jen když se stejným klíčem zbývá na každé straně právě jedna nabídka.
+       Typicky škola doplní zaměření až ve 2. kole (Lyceum 600007561, #282). Víc kandidátů
+       se nehádá.
+    Vrací mapu a počet dvojic z 2. průchodu."""
+    m2 = {parovaci_klic(r): r for r in r2}
+    parovani = {parovaci_klic(r): m2[parovaci_klic(r)] for r in r1 if parovaci_klic(r) in m2}
+    zbyle1: dict[tuple, list[tuple]] = {}
+    for r in r1:
+        pk = parovaci_klic(r)
+        if pk not in parovani:
+            zbyle1.setdefault(klic_bez_zamereni(r), []).append(pk)
+    zbyle2: dict[tuple, list[dict]] = {}
+    for pk, r in m2.items():
+        if pk not in parovani:
+            zbyle2.setdefault(klic_bez_zamereni(r), []).append(r)
+    druhy = 0
+    for k, kandidati1 in zbyle1.items():
+        kandidati2 = zbyle2.get(k, [])
+        if len(kandidati1) == 1 and len(kandidati2) == 1:
+            parovani[kandidati1[0]] = kandidati2[0]
+            druhy += 1
+    return parovani, druhy
+
+
 def otisk(soubor: Path) -> str:
     return hashlib.sha256(soubor.read_bytes()).hexdigest()
 
 
 def rocnik(kolo1: Path, kolo2: Path) -> tuple[dict, dict]:
     r1, r2 = nacti(kolo1), nacti(kolo2)
-    m2 = {parovaci_klic(r): r for r in r2}
+    parovani, druhy_pruchod = sparuj(r1, r2)
 
     # Klíč webu nezná délku, formu ani jazyk. Kolize se vyřadí, nehádá se.
     podle_webu: dict[str, list[dict]] = {}
@@ -99,7 +138,7 @@ def rocnik(kolo1: Path, kolo2: Path) -> tuple[dict, dict]:
             stavy["kolize_klice"] += 1
             continue
         r = seznam[0]
-        druhe = m2.get(parovaci_klic(r))
+        druhe = parovani.get(parovaci_klic(r))
         if druhe:
             zaznam = {
                 "stav": "vypsano",
@@ -122,12 +161,13 @@ def rocnik(kolo1: Path, kolo2: Path) -> tuple[dict, dict]:
         stavy[zaznam["stav"]] += 1
         data[k] = zaznam
 
-    sparovane = {parovaci_klic(r) for r in r1}
+    sparovane2 = {id(d) for d in parovani.values()}
     meta = {
         "kolo1": kolo1.name, "kolo2": kolo2.name,
         "kolo1_sha256": otisk(kolo1), "kolo2_sha256": otisk(kolo2),
         "nabidek_kolo1": len(r1), "nabidek_kolo2": len(r2),
-        "jen_ve_2_kole": sum(1 for k in m2 if k not in sparovane),
+        "jen_ve_2_kole": sum(1 for r in {parovaci_klic(r): r for r in r2}.values() if id(r) not in sparovane2),
+        "sparovano_bez_zamereni": druhy_pruchod,
         "stavy": dict(stavy),
     }
     return data, meta
@@ -165,7 +205,8 @@ def main() -> None:
         data, meta = rocnik(kolo1, kolo2)
         vysledek["roky"][str(rok)] = data
         vysledek["meta"]["rocniky"][str(rok)] = meta
-        print(f"{rok}: {len(data)} nabídek, stavy {meta['stavy']}, jen ve 2. kole {meta['jen_ve_2_kole']}")
+        print(f"{rok}: {len(data)} nabídek, stavy {meta['stavy']}, jen ve 2. kole {meta['jen_ve_2_kole']}, "
+              f"spárováno bez zaměření {meta['sparovano_bez_zamereni']}")
 
     roky = sorted(int(r) for r in vysledek["roky"])
     vysledek["meta"].update({

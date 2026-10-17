@@ -100,6 +100,46 @@ class TestBuildDruheKolo(unittest.TestCase):
         self.assertEqual(v["meta"]["rocniky"]["2026"]["jen_ve_2_kole"], 1)
         self.assertEqual(v["meta"]["rocniky"]["2026"]["stavy"]["kolize_klice"], 1)
 
+    def test_druhy_pruchod_bez_zamereni_jen_jednoznacne(self):
+        """#282: zaměření jen ve 2. kole se spáruje, jen když zbývá jediný kandidát na obou stranách."""
+        k1 = [
+            radek("1", "79-41-K/41", "Všeobecné"),
+            radek("6", "78-42-M/08", kapacita=30, prijati=20),                       # zaměření doplněné až ve 2. kole
+            radek("7", "63-41-M/01", kapacita=30, prijati=20),                       # ve 2. kole dva kandidáti
+            radek("8", "18-20-M/01", "Programování", kapacita=30, prijati=20),
+            radek("8", "18-20-M/01", "Grafika", kapacita=30, prijati=20),            # v 1. kole dva kandidáti
+        ]
+        k2 = [
+            radek("1", "79-41-K/41", "Všeobecné", kapacita=12, prijati=11),
+            radek("6", "78-42-M/08", "Moderní ekonomika", kapacita=17, prihlasky=64, prijati=17),
+            radek("7", "63-41-M/01", "Cestovní ruch", kapacita=5, prijati=3),
+            radek("7", "63-41-M/01", "Management", kapacita=5, prijati=2),
+            radek("8", "18-20-M/01", "Informatika", kapacita=5, prijati=2),
+        ]
+        uloz(self.tmp / "k1.xlsx", k1)
+        uloz(self.tmp / "k2.xlsx", k2)
+        v = self.spust()
+        d = v["roky"]["2026"]
+        self.assertEqual(d["1_79-41-K/41_vseobecne"]["kapacita"], 12, "přesná shoda má přednost")
+        self.assertEqual(d["6_78-42-M/08"]["stav"], "vypsano")
+        self.assertEqual((d["6_78-42-M/08"]["prihlasky"], d["6_78-42-M/08"]["prijati"]), (64, 17))
+        self.assertEqual(d["7_63-41-M/01"]["stav"], "nenaplneno_bez_2_kola", "dva kandidáti ve 2. kole se nehádají")
+        self.assertEqual(d["8_18-20-M/01_programovani"]["stav"], "nenaplneno_bez_2_kola", "dva kandidáti v 1. kole se nehádají")
+        self.assertEqual(d["8_18-20-M/01_grafika"]["stav"], "nenaplneno_bez_2_kola")
+        meta = v["meta"]["rocniky"]["2026"]
+        self.assertEqual(meta["sparovano_bez_zamereni"], 1)
+        self.assertEqual(meta["jen_ve_2_kole"], 3)
+
+    def test_druhy_pruchod_nemicha_formu_ani_povinnost_zkousky(self):
+        r1 = [radek("6", "78-42-M/08")]
+        jina_delka = radek("6", "78-42-M/08", "X", delka=5)
+        bez_zkousky = radek("6", "78-42-M/08", "Y", jpz=2)
+        parovani, druhy = dk.sparuj(r1, [jina_delka, bez_zkousky])
+        self.assertEqual((parovani, druhy), ({}, 0))
+        parovani, druhy = dk.sparuj(r1, [radek("6", "78-42-M/08", "Z")])
+        self.assertEqual(druhy, 1)
+        self.assertEqual(parovani[dk.parovaci_klic(r1[0])]["ZAMĚŘENÍ OBORU"], "Z")
+
     def test_klic_odpovida_webu(self):
         self.assertEqual(dk.klic_webu("600001661", "79-41-K/41", "Gymnázium"), "600001661_79-41-K/41_gymnazium")
         self.assertEqual(dk.klic_webu("1", "2", "  "), "1_2")
