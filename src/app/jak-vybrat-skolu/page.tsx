@@ -225,7 +225,7 @@ export default async function JakVybratSkoluPage() {
                   <tbody className="divide-y divide-slate-100 text-slate-700">
                     {[
                       ['Gymnázium', 'pro toho, kdo chce široké všeobecné vzdělání a o povolání se ještě nerozhodl', 'maturitou', '4 roky; víceletá 6 nebo 8 let (přijímačky z 5. nebo 7. třídy)'],
-                      ['Lyceum', 'pro toho, koho baví určitá oblast (technická, přírodovědná, humanitní, umělecká), a chce zároveň všeobecný základ', 'maturitou', '4 roky; osmileté lyceum 8 let (přijímačky z 5. třídy)'],
+                      ['Lyceum', 'pro toho, koho baví určitá oblast (technická, přírodovědná, humanitní, umělecká), a chce zároveň všeobecný základ', 'maturitou', '4 roky'],
                       ['Odborná škola s maturitou', 'pro toho, kdo už ví, v jakém oboru chce pracovat, a chce k tomu maturitu', 'maturitou', '4 roky'],
                       ['Učební obor', 'pro toho, koho baví praktická práce v řemesle nebo službách', 'výučním listem, bez maturity; maturitu lze doplnit nástavbou', '3 roky; nástavba 2 roky'],
                     ].map(([typ, komu, konci, delka]) => (
