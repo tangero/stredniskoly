@@ -1,0 +1,572 @@
+{
+ "meta": {
+  "popis": "Rozdíly úředních názvů škol z katalogu mezi dvěma snímky rejstříku MŠMT a proti ČŠI (#478). Vypsány jen školy, kde se něco liší nebo mají ruční opravu. Generuje scripts/report-nazvy-skol-rejstrik.py.",
+  "stary_snimek": {
+   "obdobi": "2026-06-30",
+   "sha256": "e75386ea526241d5d2e5f75131b87ea72fd491514d7bdc5c10830c18ef60c136"
+  },
+  "novy_snimek": {
+   "obdobi": "2026-09-30",
+   "sha256": "e602fdd8f2bf91dad67b7a3ac69f6379dacea2c6af20bc9acb1ad118e8d06fcf"
+  },
+  "csi_snimek": "data/csi_snapshots/csi_inspections_2026-10-05T12-16-15-633Z.json",
+  "skol_v_katalogu": 1120,
+  "pocty": {
+   "rejstrik": {
+    "format": 4,
+    "jen_novy": 4,
+    "jen_stary": 2,
+    "nema_ani_jeden": 7,
+    "shoda": 1091,
+    "vecna": 12
+   },
+   "csi_vs_novy": {
+    "bez_rejstriku": 1,
+    "format": 21,
+    "jen_stary": 20,
+    "nema_ani_jeden": 8,
+    "shoda": 1063,
+    "vecna": 7
+   }
+  },
+  "duplicitni_opravy": [
+   "600005089",
+   "600007243"
+  ],
+  "vyznam": {
+   "shoda": "názvy jsou stejné",
+   "format": "po normalizaci stejné: liší se velikost písmen, právní forma, adresa, obec nebo interpunkce",
+   "vecna": "po normalizaci jiný název",
+   "jen_novy": "škola je jen v novém snímku (nebo jen v rejstříku, ne v ČŠI)",
+   "jen_stary": "škola v novém snímku chybí (nebo ji nemá ČŠI)",
+   "bez_rejstriku": "škola nemá úřední název v novém indexu, ČŠI ano",
+   "nema_ani_jeden": "škola nemá název v žádném z porovnávaných zdrojů"
+  }
+ },
+ "skoly": [
+  {
+   "redizo": "600001661",
+   "rejstrik_stary": "Academic School, Mateřská škola, základní škola a střední škola, s.r.o.",
+   "rejstrik_novy": "Academic School, Gymnázium, Střední odborná škola, Základní škola a Mateřská škola, s.r.o.",
+   "csi_jmeno": "Academic School, Mateřská škola, základní škola a střední škola, s.r.o.",
+   "zmena_v_rejstriku": "vecna",
+   "rozdil_csi_proti_rejstriku": "vecna"
+  },
+  {
+   "redizo": "600005089",
+   "rejstrik_stary": "Gymnázium, Praha 4, Postupická 3150",
+   "rejstrik_novy": "Gymnázium, Praha 4, Postupická 3150",
+   "csi_jmeno": "Gymnázium, Praha 4, Postupická 3150",
+   "zmena_v_rejstriku": "shoda",
+   "rozdil_csi_proti_rejstriku": "shoda",
+   "rucni_oprava": "Gymnázium, Praha 4, Postupická 3150",
+   "oprava_duplicitni_s_rejstrikem": true
+  },
+  {
+   "redizo": "600005348",
+   "rejstrik_stary": "Gymnázium, Praha 4, Budějovická 680",
+   "rejstrik_novy": "Gymnázium, Praha 4, Budějovická 680",
+   "csi_jmeno": null,
+   "zmena_v_rejstriku": "shoda",
+   "rozdil_csi_proti_rejstriku": "jen_stary"
+  },
+  {
+   "redizo": "600005542",
+   "rejstrik_stary": "Smíchovská střední průmyslová škola, gymnázium a hotelová škola Radlická, příspěvková organizace",
+   "rejstrik_novy": "Smíchovská střední škola, příspěvková organizace",
+   "csi_jmeno": "Smíchovská střední škola, příspěvková organizace",
+   "zmena_v_rejstriku": "vecna",
+   "rozdil_csi_proti_rejstriku": "shoda"
+  },
+  {
+   "redizo": "600005631",
+   "rejstrik_stary": null,
+   "rejstrik_novy": null,
+   "csi_jmeno": null,
+   "zmena_v_rejstriku": "nema_ani_jeden",
+   "rozdil_csi_proti_rejstriku": "nema_ani_jeden"
+  },
+  {
+   "redizo": "600005691",
+   "rejstrik_stary": "Gymnázium Jana Keplera, Praha 6, Parléřova 2",
+   "rejstrik_novy": "Gymnázium Jana Keplera, Praha 6, Parléřova 2",
+   "csi_jmeno": null,
+   "zmena_v_rejstriku": "shoda",
+   "rozdil_csi_proti_rejstriku": "jen_stary"
+  },
+  {
+   "redizo": "600006379",
+   "rejstrik_stary": "Střední odborná škola  uměleckořemeslná s.r.o.",
+   "rejstrik_novy": "Střední odborná škola  uměleckořemeslná s.r.o.",
+   "csi_jmeno": "Střední odborná škola uměleckořemeslná s.r.o.",
+   "zmena_v_rejstriku": "shoda",
+   "rozdil_csi_proti_rejstriku": "format"
+  },
+  {
+   "redizo": "600006662",
+   "rejstrik_stary": "Střední škola Futurum, s.r.o.",
+   "rejstrik_novy": "Futurum - Základní škola, Střední škola a Gymnázium, s.r.o.",
+   "csi_jmeno": "Střední škola Futurum, s.r.o.",
+   "zmena_v_rejstriku": "vecna",
+   "rozdil_csi_proti_rejstriku": "vecna"
+  },
+  {
+   "redizo": "600006697",
+   "rejstrik_stary": "Střední průmyslová škola, Vlašim, Komenského 41",
+   "rejstrik_novy": "Střední průmyslová škola Vlašim, příspěvková organizace",
+   "csi_jmeno": "Střední průmyslová škola Vlašim, příspěvková organizace",
+   "zmena_v_rejstriku": "format",
+   "rozdil_csi_proti_rejstriku": "shoda"
+  },
+  {
+   "redizo": "600006760",
+   "rejstrik_stary": "Střední odborná škola a Střední odborné učiliště, Vlašim, Zámek 1",
+   "rejstrik_novy": null,
+   "csi_jmeno": null,
+   "zmena_v_rejstriku": "jen_stary",
+   "rozdil_csi_proti_rejstriku": "nema_ani_jeden"
+  },
+  {
+   "redizo": "600007189",
+   "rejstrik_stary": "Střední odborná škola informatiky a spojů a Střední odborné učiliště, Kolín, Jaselská 826",
+   "rejstrik_novy": "Střední škola informatiky a ekonomiky Kolín, příspěvková organizace",
+   "csi_jmeno": "Střední škola informatiky a ekonomiky Kolín, příspěvková organizace",
+   "zmena_v_rejstriku": "vecna",
+   "rozdil_csi_proti_rejstriku": "shoda"
+  },
+  {
+   "redizo": "600007243",
+   "rejstrik_stary": "Gymnázium a Střední odborná škola pedagogická, Čáslav, Masarykova 248",
+   "rejstrik_novy": "Gymnázium, Střední odborná škola pedagogická a Základní škola Čáslav, příspěvková organizace",
+   "csi_jmeno": "Gymnázium, Střední odborná škola pedagogická a Základní škola Čáslav, příspěvková organizace",
+   "zmena_v_rejstriku": "vecna",
+   "rozdil_csi_proti_rejstriku": "shoda",
+   "rucni_oprava": "Gymnázium, Střední odborná škola pedagogická a Základní škola Čáslav, příspěvková organizace",
+   "oprava_duplicitni_s_rejstrikem": true
+  },
+  {
+   "redizo": "600007545",
+   "rejstrik_stary": "ŠKODA AUTO a.s., Střední odborné učiliště strojírenské, odštěpný závod",
+   "rejstrik_novy": "Škoda Auto a.s., Střední odborné učiliště strojírenské, odštěpný závod",
+   "csi_jmeno": "ŠKODA AUTO a.s., Střední odborné učiliště strojírenské, odštěpný závod",
+   "zmena_v_rejstriku": "format",
+   "rozdil_csi_proti_rejstriku": "format"
+  },
+  {
+   "redizo": "600007731",
+   "rejstrik_stary": "Střední zemědělská škola, Brandýs nad Labem - Stará Boleslav, Zápská 302",
+   "rejstrik_novy": "Střední zemědělská škola a Základní škola Brandýs nad Labem - Stará Boleslav, příspěvková organizace",
+   "csi_jmeno": "Střední zemědělská škola a Základní škola Brandýs nad Labem - Stará Boleslav, příspěvková organizace",
+   "zmena_v_rejstriku": "vecna",
+   "rozdil_csi_proti_rejstriku": "shoda"
+  },
+  {
+   "redizo": "600007936",
+   "rejstrik_stary": null,
+   "rejstrik_novy": null,
+   "csi_jmeno": null,
+   "zmena_v_rejstriku": "nema_ani_jeden",
+   "rozdil_csi_proti_rejstriku": "nema_ani_jeden"
+  },
+  {
+   "redizo": "600008096",
+   "rejstrik_stary": "ČAG - gymnázium a základní škola s.r.o.",
+   "rejstrik_novy": "ČAG - gymnázium a základní škola s.r.o.",
+   "csi_jmeno": "ČAG – gymnázium a základní škola s.r.o.",
+   "zmena_v_rejstriku": "shoda",
+   "rozdil_csi_proti_rejstriku": "format"
+  },
+  {
+   "redizo": "600008886",
+   "rejstrik_stary": "Střední škola spojů a informatiky, Tábor, Bydlinského 2474",
+   "rejstrik_novy": "Střední škola spojů a informatiky, Tábor, Bydlinského 2474",
+   "csi_jmeno": "STŘEDNÍ ŠKOLA SPOJŮ A INFORMATIKY, TÁBOR, BYDLINSKÉHO 2474",
+   "zmena_v_rejstriku": "shoda",
+   "rozdil_csi_proti_rejstriku": "format"
+  },
+  {
+   "redizo": "600010309",
+   "rejstrik_stary": "Střední průmyslová škola stavební a Obchodní akademie, Kadaň, příspěvková organizace",
+   "rejstrik_novy": "Střední průmyslová škola stavební a Obchodní akademie, Kadaň, příspěvková organizace",
+   "csi_jmeno": "Střední průmyslová škola stavební a Obchodní akademie, Kadaň, Komenského 562, příspěvková organizace",
+   "zmena_v_rejstriku": "shoda",
+   "rozdil_csi_proti_rejstriku": "format"
+  },
+  {
+   "redizo": "600011534",
+   "rejstrik_stary": "Gymnázium, Střední odborná škola a Vyšší odborná škola Ledeč nad Sázavou",
+   "rejstrik_novy": "Gymnázium, Střední odborná škola a Vyšší odborná škola Ledeč nad Sázavou",
+   "csi_jmeno": "GYMNÁZIUM, STŘEDNÍ ODBORNÁ ŠKOLA A VYŠŠÍ ODBORNÁ ŠKOLA LEDEČ NAD SÁZAVOU",
+   "zmena_v_rejstriku": "shoda",
+   "rozdil_csi_proti_rejstriku": "format"
+  },
+  {
+   "redizo": "600012123",
+   "rejstrik_stary": "Gymnázium  Jaroslava Žáka, Jaroměř",
+   "rejstrik_novy": "Gymnázium  Jaroslava Žáka, Jaroměř",
+   "csi_jmeno": "Gymnázium Jaroslava Žáka, Jaroměř",
+   "zmena_v_rejstriku": "shoda",
+   "rozdil_csi_proti_rejstriku": "format"
+  },
+  {
+   "redizo": "600012247",
+   "rejstrik_stary": "Střední  zdravotnická škola Náchod  - Evangelická akademie",
+   "rejstrik_novy": "Evangelická vyšší odborná škola sociální a střední zdravotnická škola Náchod, školská právnická osoba",
+   "csi_jmeno": "Střední zdravotnická škola Náchod - Evangelická akademie",
+   "zmena_v_rejstriku": "vecna",
+   "rozdil_csi_proti_rejstriku": "vecna"
+  },
+  {
+   "redizo": "600012271",
+   "rejstrik_stary": "ACADEMIA MERCURII soukromá střední škola,  s.r.o.",
+   "rejstrik_novy": "ACADEMIA MERCURII soukromá střední škola,  s.r.o.",
+   "csi_jmeno": "ACADEMIA MERCURII soukromá střední škola, s.r.o.",
+   "zmena_v_rejstriku": "shoda",
+   "rozdil_csi_proti_rejstriku": "format"
+  },
+  {
+   "redizo": "600013243",
+   "rejstrik_stary": "Obchodní akademie a střední zdravotnická škola Blansko, příspěvková organizace",
+   "rejstrik_novy": "Obchodní akademie a střední zdravotnická škola Blansko, příspěvková organizace",
+   "csi_jmeno": "Obchodní akademie a Střední zdravotnická škola Blansko, příspěvková organizace",
+   "zmena_v_rejstriku": "shoda",
+   "rozdil_csi_proti_rejstriku": "format"
+  },
+  {
+   "redizo": "600013600",
+   "rejstrik_stary": "TRIVIS - Střední škola veřejnoprávní Brno, s.r.o.",
+   "rejstrik_novy": "TRIVIS - Střední škola veřejnoprávní Brno, s.r.o.",
+   "csi_jmeno": "TRIVIS Střední škola veřejnoprávní Brno, s.r.o.",
+   "zmena_v_rejstriku": "shoda",
+   "rozdil_csi_proti_rejstriku": "format"
+  },
+  {
+   "redizo": "600013740",
+   "rejstrik_stary": "Cyrilometodějské gymnázium a střední odborná škola pedagogická Brno",
+   "rejstrik_novy": "Cyrilometodějské gymnázium, střední pedagogická škola a mateřská škola Brno, školská právnická osoba",
+   "csi_jmeno": "Cyrilometodějské gymnázium, střední pedagogická škola a mateřská škola Brno, školská právnická osoba",
+   "zmena_v_rejstriku": "vecna",
+   "rozdil_csi_proti_rejstriku": "shoda"
+  },
+  {
+   "redizo": "600013774",
+   "rejstrik_stary": "TRIVIS - Střední veterinární škola Brno, s.r.o.",
+   "rejstrik_novy": "TRIVIS - Střední veterinární škola Brno, s.r.o.",
+   "csi_jmeno": "TRlVlS - Střední veterinární škola Brno, s.r.o.",
+   "zmena_v_rejstriku": "shoda",
+   "rozdil_csi_proti_rejstriku": "vecna"
+  },
+  {
+   "redizo": "600013782",
+   "rejstrik_stary": "Střední škola informatiky, poštovnictví a finančnictví Brno, příspěvková organizace",
+   "rejstrik_novy": "Střední škola a vyšší odborná škola informatiky a financí Brno, příspěvková organizace",
+   "csi_jmeno": "Střední škola informatiky, poštovnictví a finančnictví Brno, příspěvková organizace",
+   "zmena_v_rejstriku": "vecna",
+   "rozdil_csi_proti_rejstriku": "vecna"
+  },
+  {
+   "redizo": "600013898",
+   "rejstrik_stary": "PORG Brno - gymnázium, základní škola a mateřská škola, o.p.s.",
+   "rejstrik_novy": "PORG Brno - gymnázium, základní škola a mateřská škola, o.p.s.",
+   "csi_jmeno": null,
+   "zmena_v_rejstriku": "shoda",
+   "rozdil_csi_proti_rejstriku": "jen_stary"
+  },
+  {
+   "redizo": "600014011",
+   "rejstrik_stary": "Střední škola a základní škola Tišnov, příspěvková organizace",
+   "rejstrik_novy": "Střední škola a základní škola Tišnov, příspěvková organizace",
+   "csi_jmeno": "Střední škola a Základní škola Tišnov, příspěvková organizace",
+   "zmena_v_rejstriku": "shoda",
+   "rozdil_csi_proti_rejstriku": "format"
+  },
+  {
+   "redizo": "600014258",
+   "rejstrik_stary": "Gymnázium a jazyková škola s právem státní jazykové zkoušky Břeclav, příspěvková  organizace",
+   "rejstrik_novy": "Gymnázium a jazyková škola s právem státní jazykové zkoušky Břeclav, příspěvková  organizace",
+   "csi_jmeno": "Gymnázium a jazyková škola s právem státní jazykové zkoušky Břeclav, příspěvková organizace",
+   "zmena_v_rejstriku": "shoda",
+   "rozdil_csi_proti_rejstriku": "format"
+  },
+  {
+   "redizo": "600014321",
+   "rejstrik_stary": "Gymnázium Jana Pivečky  a Střední odborná škola Slavičín",
+   "rejstrik_novy": "Gymnázium Jana Pivečky  a Střední odborná škola Slavičín",
+   "csi_jmeno": "Gymnázium Jana Pivečky a Střední odborná škola Slavičín",
+   "zmena_v_rejstriku": "shoda",
+   "rozdil_csi_proti_rejstriku": "format"
+  },
+  {
+   "redizo": "600014452",
+   "rejstrik_stary": "Střední škola Baltaci s.r.o.",
+   "rejstrik_novy": "Střední škola AXIS Zlín s.r.o.",
+   "csi_jmeno": "Střední škola AXIS Zlín s.r.o.",
+   "zmena_v_rejstriku": "vecna",
+   "rozdil_csi_proti_rejstriku": "shoda"
+  },
+  {
+   "redizo": "600014622",
+   "rejstrik_stary": "Obchodní akademie a střední škola polytechnická Veselí nad Moravou, příspěvková  organizace",
+   "rejstrik_novy": "Obchodní akademie a střední škola polytechnická Veselí nad Moravou, příspěvková  organizace",
+   "csi_jmeno": "Obchodní akademie a střední škola polytechnická Veselí nad Moravou, příspěvková organizace",
+   "zmena_v_rejstriku": "shoda",
+   "rozdil_csi_proti_rejstriku": "format"
+  },
+  {
+   "redizo": "600017133",
+   "rejstrik_stary": "Střední škola technických profesí Olomouc, Kosinova 4,",
+   "rejstrik_novy": "Střední škola technických profesí Olomouc, Kosinova 4,",
+   "csi_jmeno": "Střední škola technických profesí Olomouc, Kosinova 4",
+   "zmena_v_rejstriku": "shoda",
+   "rozdil_csi_proti_rejstriku": "format"
+  },
+  {
+   "redizo": "600018334",
+   "rejstrik_stary": "Střední průmyslová škola  Jeseník",
+   "rejstrik_novy": "Střední průmyslová škola  Jeseník",
+   "csi_jmeno": "Střední průmyslová škola Jeseník",
+   "zmena_v_rejstriku": "shoda",
+   "rozdil_csi_proti_rejstriku": "format"
+  },
+  {
+   "redizo": "600019683",
+   "rejstrik_stary": "Střední zdravotnická škola, Děčín, Čsl. mládeže 5/9, příspěvková organizace",
+   "rejstrik_novy": "Střední zdravotnická škola Děčín, příspěvková organizace",
+   "csi_jmeno": "Střední zdravotnická škola, Děčín, Čsl. mládeže 5/9, příspěvková organizace",
+   "zmena_v_rejstriku": "format",
+   "rozdil_csi_proti_rejstriku": "format"
+  },
+  {
+   "redizo": "600019861",
+   "rejstrik_stary": "Střední zdravotnická škola a Vyšší odborná škola zdravotnická Brno, Merhautova, příspěvková organizace",
+   "rejstrik_novy": "Střední zdravotnická škola a vyšší odborná škola zdravotnická Brno, Merhautova, příspěvková organizace",
+   "csi_jmeno": "Střední zdravotnická škola a Vyšší odborná škola zdravotnická Brno, Merhautova, příspěvková organizace",
+   "zmena_v_rejstriku": "format",
+   "rozdil_csi_proti_rejstriku": "format"
+  },
+  {
+   "redizo": "610250451",
+   "rejstrik_stary": "Bráfova akademie Třebíč,  střední škola a Jazyková škola s právem státní jazykové zkoušky",
+   "rejstrik_novy": "Bráfova akademie Třebíč,  střední škola a Jazyková škola s právem státní jazykové zkoušky",
+   "csi_jmeno": "Bráfova akademie Třebíč, střední škola a Jazyková škola s právem státní jazykové zkoušky",
+   "zmena_v_rejstriku": "shoda",
+   "rozdil_csi_proti_rejstriku": "format"
+  },
+  {
+   "redizo": "680000011",
+   "rejstrik_stary": "Vyšší policejní škola a Střední policejní škola Ministerstva vnitra v Praze",
+   "rejstrik_novy": "Vyšší policejní škola a Střední policejní škola Ministerstva vnitra v Praze",
+   "csi_jmeno": null,
+   "zmena_v_rejstriku": "shoda",
+   "rozdil_csi_proti_rejstriku": "jen_stary"
+  },
+  {
+   "redizo": "680000054",
+   "rejstrik_stary": "Vyšší policejní škola a Střední policejní škola Ministerstva vnitra v Holešově",
+   "rejstrik_novy": "Vyšší policejní škola a Střední policejní škola Ministerstva vnitra v Holešově",
+   "csi_jmeno": null,
+   "zmena_v_rejstriku": "shoda",
+   "rozdil_csi_proti_rejstriku": "jen_stary"
+  },
+  {
+   "redizo": "680000062",
+   "rejstrik_stary": "Střední odborná škola požární ochrany a Vyšší odborná škola požární ochrany",
+   "rejstrik_novy": "Střední odborná škola požární ochrany a Vyšší odborná škola požární ochrany",
+   "csi_jmeno": null,
+   "zmena_v_rejstriku": "shoda",
+   "rozdil_csi_proti_rejstriku": "jen_stary"
+  },
+  {
+   "redizo": "690000014",
+   "rejstrik_stary": "Vojenská střední škola a Vyšší odborná škola Ministerstva obrany v Moravské Třebové",
+   "rejstrik_novy": "Vojenská střední škola a Vyšší odborná škola Ministerstva obrany v Moravské Třebové",
+   "csi_jmeno": null,
+   "zmena_v_rejstriku": "shoda",
+   "rozdil_csi_proti_rejstriku": "jen_stary"
+  },
+  {
+   "redizo": "691000107",
+   "rejstrik_stary": "Vyšší odborná škola a Střední průmyslová škola, Rychnov nad Kněžnou, U Stadionu 1166",
+   "rejstrik_novy": "Střední průmyslová škola a Střední odborná škola, Rychnov nad Kněžnou, příspěvková organizace",
+   "csi_jmeno": "Vyšší odborná škola a Střední průmyslová škola, Rychnov nad Kněžnou, U Stadionu 1166",
+   "zmena_v_rejstriku": "vecna",
+   "rozdil_csi_proti_rejstriku": "vecna"
+  },
+  {
+   "redizo": "691000735",
+   "rejstrik_stary": "Waldorfská škola  Brno - střední škola, základní škola a mateřská škola, příspěvková organizace",
+   "rejstrik_novy": "Waldorfská škola  Brno - střední škola, základní škola a mateřská škola, příspěvková organizace",
+   "csi_jmeno": "Waldorfská škola Brno - střední škola, základní škola a mateřská škola, příspěvková organizace",
+   "zmena_v_rejstriku": "shoda",
+   "rozdil_csi_proti_rejstriku": "format"
+  },
+  {
+   "redizo": "691007039",
+   "rejstrik_stary": "Základní škola a gymnázium Livingston s.r.o.",
+   "rejstrik_novy": null,
+   "csi_jmeno": "Základní škola Livingston s.r.o.",
+   "zmena_v_rejstriku": "jen_stary",
+   "rozdil_csi_proti_rejstriku": "bez_rejstriku"
+  },
+  {
+   "redizo": "691012431",
+   "rejstrik_stary": "Střední průmyslová škola Otty Wichterleho, příspěvková organizace",
+   "rejstrik_novy": "Střední průmyslová škola Otty Wichterleho, příspěvková organizace",
+   "csi_jmeno": null,
+   "zmena_v_rejstriku": "shoda",
+   "rozdil_csi_proti_rejstriku": "jen_stary"
+  },
+  {
+   "redizo": "691015554",
+   "rejstrik_stary": "Gymnázium Thomase Manna, z. ú.",
+   "rejstrik_novy": "Gymnázium Thomase Manna, z. ú.",
+   "csi_jmeno": null,
+   "zmena_v_rejstriku": "shoda",
+   "rozdil_csi_proti_rejstriku": "jen_stary"
+  },
+  {
+   "redizo": "691016640",
+   "rejstrik_stary": "Digital Academy - Obchodní akademie, s.r.o.",
+   "rejstrik_novy": "Digital Academy - Obchodní akademie, s.r.o.",
+   "csi_jmeno": "Digital academy - Obchodní akademie, s.r.o.",
+   "zmena_v_rejstriku": "shoda",
+   "rozdil_csi_proti_rejstriku": "format"
+  },
+  {
+   "redizo": "691017280",
+   "rejstrik_stary": null,
+   "rejstrik_novy": null,
+   "csi_jmeno": null,
+   "zmena_v_rejstriku": "nema_ani_jeden",
+   "rozdil_csi_proti_rejstriku": "nema_ani_jeden"
+  },
+  {
+   "redizo": "691017301",
+   "rejstrik_stary": null,
+   "rejstrik_novy": null,
+   "csi_jmeno": null,
+   "zmena_v_rejstriku": "nema_ani_jeden",
+   "rozdil_csi_proti_rejstriku": "nema_ani_jeden"
+  },
+  {
+   "redizo": "691017310",
+   "rejstrik_stary": null,
+   "rejstrik_novy": null,
+   "csi_jmeno": null,
+   "zmena_v_rejstriku": "nema_ani_jeden",
+   "rozdil_csi_proti_rejstriku": "nema_ani_jeden"
+  },
+  {
+   "redizo": "691017328",
+   "rejstrik_stary": null,
+   "rejstrik_novy": null,
+   "csi_jmeno": null,
+   "zmena_v_rejstriku": "nema_ani_jeden",
+   "rozdil_csi_proti_rejstriku": "nema_ani_jeden"
+  },
+  {
+   "redizo": "691017344",
+   "rejstrik_stary": null,
+   "rejstrik_novy": null,
+   "csi_jmeno": null,
+   "zmena_v_rejstriku": "nema_ani_jeden",
+   "rozdil_csi_proti_rejstriku": "nema_ani_jeden"
+  },
+  {
+   "redizo": "691017638",
+   "rejstrik_stary": "Evropská akademie vzdělávání, střední odborné učiliště a střední odborná škola s.r.o.",
+   "rejstrik_novy": "Evropská akademie vzdělávání, střední odborné učiliště a střední odborná škola s.r.o.",
+   "csi_jmeno": null,
+   "zmena_v_rejstriku": "shoda",
+   "rozdil_csi_proti_rejstriku": "jen_stary"
+  },
+  {
+   "redizo": "691017832",
+   "rejstrik_stary": "School for Future – gymnázium s.r.o.",
+   "rejstrik_novy": "School for Future – gymnázium a základní škola s.r.o. ",
+   "csi_jmeno": "School for Future – gymnázium s.r.o.",
+   "zmena_v_rejstriku": "vecna",
+   "rozdil_csi_proti_rejstriku": "vecna"
+  },
+  {
+   "redizo": "691018707",
+   "rejstrik_stary": "Gymnázium se sportovní přípravou Šeberov",
+   "rejstrik_novy": "Gymnázium se sportovní přípravou Šeberov",
+   "csi_jmeno": null,
+   "zmena_v_rejstriku": "shoda",
+   "rozdil_csi_proti_rejstriku": "jen_stary"
+  },
+  {
+   "redizo": "691018715",
+   "rejstrik_stary": "ERUNI, univerzitní střední pedagogická škola Brno, s.r.o.",
+   "rejstrik_novy": "ERUNI, univerzitní střední pedagogická škola Brno, s.r.o.",
+   "csi_jmeno": null,
+   "zmena_v_rejstriku": "shoda",
+   "rozdil_csi_proti_rejstriku": "jen_stary"
+  },
+  {
+   "redizo": "691018731",
+   "rejstrik_stary": "ERUNI, univerzitní gymnázium Brno, s.r.o.",
+   "rejstrik_novy": "ERUNI, univerzitní gymnázium Brno, s.r.o.",
+   "csi_jmeno": null,
+   "zmena_v_rejstriku": "shoda",
+   "rozdil_csi_proti_rejstriku": "jen_stary"
+  },
+  {
+   "redizo": "691018791",
+   "rejstrik_stary": "PED Academy gymnázium, s.r.o. \t\n",
+   "rejstrik_novy": "PED Academy gymnázium, s.r.o. \t\n",
+   "csi_jmeno": null,
+   "zmena_v_rejstriku": "shoda",
+   "rozdil_csi_proti_rejstriku": "jen_stary"
+  },
+  {
+   "redizo": "691018871",
+   "rejstrik_stary": null,
+   "rejstrik_novy": "První technické lyceum Nová Paka – střední škola s.r.o.",
+   "csi_jmeno": null,
+   "zmena_v_rejstriku": "jen_novy",
+   "rozdil_csi_proti_rejstriku": "jen_stary"
+  },
+  {
+   "redizo": "691019088",
+   "rejstrik_stary": "Gymnázium KUDYKAMPUS International s.r.o.",
+   "rejstrik_novy": "Gymnázium KUDYKAMPUS International s.r.o.",
+   "csi_jmeno": null,
+   "zmena_v_rejstriku": "shoda",
+   "rozdil_csi_proti_rejstriku": "jen_stary"
+  },
+  {
+   "redizo": "691019258",
+   "rejstrik_stary": "ERUNI, univerzitní gymnázium a střední odborná škola Praha, z.ú.",
+   "rejstrik_novy": "ERUNI, univerzitní gymnázium a střední odborná škola Praha, z.ú.",
+   "csi_jmeno": null,
+   "zmena_v_rejstriku": "shoda",
+   "rozdil_csi_proti_rejstriku": "jen_stary"
+  },
+  {
+   "redizo": "691020035",
+   "rejstrik_stary": null,
+   "rejstrik_novy": "Klinická univerzitní škola EduVia, gymnázium a střední škola pedagogická, příspěvková organizace",
+   "csi_jmeno": null,
+   "zmena_v_rejstriku": "jen_novy",
+   "rozdil_csi_proti_rejstriku": "jen_stary"
+  },
+  {
+   "redizo": "691020060",
+   "rejstrik_stary": null,
+   "rejstrik_novy": "Střední pedagogická škola Inspira z. ú.",
+   "csi_jmeno": null,
+   "zmena_v_rejstriku": "jen_novy",
+   "rozdil_csi_proti_rejstriku": "jen_stary"
+  },
+  {
+   "redizo": "691020094",
+   "rejstrik_stary": null,
+   "rejstrik_novy": "Střední škola Baltimore z. ú.",
+   "csi_jmeno": null,
+   "zmena_v_rejstriku": "jen_novy",
+   "rozdil_csi_proti_rejstriku": "jen_stary"
+  }
+ ]
+}

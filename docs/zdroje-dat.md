@@ -42,7 +42,7 @@ Ukazatel se pak zavádí podle [slovníku ukazatelů](slovnik-ukazatelu.md). Ten
 | Hranice krajů, RÚIAN | ČÚZK, SHP za celý stát (`services.cuzk.gov.cz/shp/stat/epsg-5514/1.zip`), vrstva `VUSC_P`, CC BY 4.0 → `src/data/mapa-kraju.json` | 14 krajů | kód NUTS 3 (`CZ0xx`) | ručně, při změně hranic |
 | Microsoft Clarity, souhrny simulátoru | Clarity Data Export API (`www.clarity.ms/export-data/api/v1/project-live-insights`), měřicí skript jen na `/simulator` a stránkách škol a oborů | jen stránka simulátoru, od 5. 10. 2026 | adresa stránky × dimenze | denně skriptem `scripts/clarity-export.mjs` do soukromého repozitáře signálů (#326); web z něj nic nezobrazuje |
 | Ruční opravy nabídky od škol | hlášení škol z portálu, `src/data/opravy-nabidky-skol.json` | 4 opravy (#371) | REDIZO + KKOV | ručně, podle hlášení |
-| Ruční opravy úředního názvu školy | hlášení školy a ČŠI diff, `src/data/opravy-nazvu-skol.json` | 3 opravy (#476, #319, #374) | RED IZO | ručně, do převzetí názvu rejstříkem MŠMT |
+| Ruční opravy úředního názvu školy | hlášení školy a ČŠI diff, `src/data/opravy-nazvu-skol.json` | 3 opravy (#476, #319, #374), všechny od snímku k 30. 9. 2026 jen kvůli portálu | RED IZO | ručně, do převzetí názvu rejstříkem MŠMT; hromadně čtvrtletně ze snímku rejstříku (#478) |
 
 **Co v repozitáři není.** Zdroj patří do soupisu i tehdy, když jeho soubor na disku neleží. Takových je několik:
 
@@ -561,6 +561,15 @@ Soubor `src/data/opravy-nazvu-skol.json` (čtení v `src/lib/opravy-nazvu-skol.t
 
 Katalog (zkrácený název, adresa stránky) se nemění. Záznam má dva důvody: (1) rejstřík název ještě nenese, pak se záznam odstraní, až ho rejstřík ponese; (2) portál (`src/lib/portal-skol.ts`, `getNazevSAdresou`/`getNazevSkoly`) bere název z katalogu, ne z rejstříku, a záznam ho tam opravuje i tehdy, když ho rejstřík už nese (600005089, #319; 600171388, #374); takový záznam se odstraní, až portál převezme název z rejstříku. V portálu se oprava ukáže tak, jak je, bez doplněné ulice a obce (#374).
 
+**Hromadná obnova názvů z rejstříku (#478).** Úřední názvy škol se obnovují hromadně s každým převzatým snímkem rejstříku MŠMT, tedy čtvrtletně: snímek ke konci čtvrtletí MŠMT zveřejňuje do několika dnů (k 30. 6. 2026 dne 1. 7., k 30. 9. 2026 dne 2. 10.) a datová linka ho hlídá dotazem HEAD (`stav-datovych-sad.py zjisti`). Postup:
+
+1. Stáhnout snímek do `data/msmt_rejstrik/` (necommituje se) a převzít ho: `stav-datovych-sad.py prepni msmt-rejstrik-snimky RRRR-MM-DD --soubor … --doklad …` (oddíl 5).
+2. Přegenerovat index: `python3 scripts/build-nazvy-oboru-rejstrik.py`.
+3. Vytvořit report rozdílů proti dosavadnímu indexu z gitu: `git show <commit>:data/msmt_rejstrik/nazvy-oboru.json > /tmp/stary-index.json` a `python3 scripts/report-nazvy-skol-rejstrik.py --stary /tmp/stary-index.json`. Výstup `docs/podklady/nazvy-skol-rejstrik-<staré>-<nové>.json` pro každou školu z katalogu porovná dosavadní a nový `uplny_nazev` a název z ČŠI (`jmeno` ve snímku inspekcí podle registru, sada `csi-inspekce`) a rozliší věcnou změnu (`vecna`) od rozdílu formátu (`format`: velikost písmen, právní forma, adresa, obec sídla, interpunkce). Report se commituje.
+4. Projít ruční opravy, které report označí `oprava_duplicitni_s_rejstrikem`. Záznam s důvodem (1) se odstraní; záznam s důvodem (2) zůstává, dokud portál bere název z katalogu, a do pole `zdroj` se připíše, že ho rejstřík už nese.
+
+Zkrácený název v katalogu a adresa stránky školy (slug) se obnovou nemění; vznikají v datové lince z katalogu, ne z indexu rejstříku. Škola, která z oddílu `identifikace` vypadne (zánik nebo ztráta druhu C00/D00), ukáže v nadpisu katalogový název. Stahování v CI zatím není, jen detekce; návrh automatizace je v oddílu 5 (vrstva „příprava“).
+
 ### 2.20 Matomo, týdenní souhrn signálů
 
 Zdroj: Matomo na `https://ma.hlidacstatu.cz/` (site ID 7), Reporting API, jen čtení agregátů tokenem `MATOMO_TOKEN` (secret, vytváří vlastník). Skript `scripts/signaly_tyden.py` dělá 7 dotazů jednou týdně s prodlevou 2 s (zadání #326). Plný souhrn jde jen do Telegramu (zkrácený po znacích na 4096). Artefakt workflow `signaly-tyden.yml` (90 dní, ve veřejném repozitáři ke stažení) obsahuje jen verzi bez oddílů hledání, protože hledané výrazy mohou obsahovat jména; obě verze vznikají z jednoho stažení. Do repozitáře se nic nezapisuje. Testy volají jen mock.
@@ -728,7 +737,7 @@ Plné převzetí bez člověka se nedoporučuje: CERMAT soubory přepisuje i mě
 
 <!-- stav-datovych-sad:od -->
 
-_Vygenerováno z `public/stav_datovych_sad.json` dne 2026-10-15. Neupravovat ručně._
+_Vygenerováno z `public/stav_datovych_sad.json` dne 2026-10-17. Neupravovat ručně._
 
 | Sada | Použití | Zobrazujeme | Odkud | Zveřejněno, nepřevzato | Čekáme | Kdy | Po přepnutí |
 |---|---|---|---|---|---|---|---|
@@ -740,7 +749,7 @@ _Vygenerováno z `public/stav_datovych_sad.json` dne 2026-10-15. Neupravovat ru�
 | `cermat-polozkova-jpz` | analýza | 2025 | `data/JPZ2025_M6_polozkova_data.xlsx` | 2026 | 2027 | 2027-05, odhad | Není na webu; slouží dokladu teze 4. |
 | `cermat-maturita` | web | 2026 | `MZ2026j_SC_skolobory.xlsx` | — | — | 2027-08, odhad | Předchozí jarní ročníky zůstávají ve výstupu; stránka školy z nich počítá počet let nad skupinou oborů. |
 | `cermat-jpz-skoly-2017-2023` | nepoužito | nic | `Uzavřená řada, soubory nejsou stažené.` | — | — | neznámo | Nepřepíná se. |
-| `msmt-rejstrik-snimky` | web | 2026-06-30 | `data/msmt_rejstrik/rssz-2026-06-30.jsonld` | 2025-06-30, 2025-09-30 | 2026-09-30 | 2026-10, odhad | Starší snímky zůstávají pro návaznost oborů mezi roky. |
+| `msmt-rejstrik-snimky` | web | 2026-09-30 | `data/msmt_rejstrik/rssz-2026-09-30.jsonld` | 2025-06-30, 2025-09-30 | — | 2027-01, odhad | Starší snímky zůstávají pro návaznost oborů mezi roky. |
 | `msmt-rejstrik-csv` | web | 2026-02-11 | `data/Rejstrik_skol/SkolyAMista.csv` | — | — | neznámo | Nahrazuje se celý. |
 | `msmt-akko` | analýza | 2026-03-08 | `data/AKKO-Kmenové_obory vzdělání (KKOV 5místné).csv` | — | — | neznámo | Nahrazuje se celý. |
 | `csi-inspekce` | web | 2026-10-05 | `data/csi_snapshots/csi_inspections_2026-10-05T12-16-15-633Z.json` | — | — | 2026-10neznámo | Starší snímky zůstávají v data/csi_snapshots s manifestem. |
