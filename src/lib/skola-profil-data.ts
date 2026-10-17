@@ -16,7 +16,7 @@ import { domovyMladeze, druhOboruBezJpz, nastavbyNedenni, obtiznostBezJpz, type 
 import { zarazeniObtiznosti, soutezicichUchazecu, nazevOboruZKlice, type ZarazeniObtiznosti } from '@/lib/obor-profil';
 import {
   nazevSkupinyMaturity, proKohoObor, shrnutiMaturity, smerStupne, vzdalenostKm,
-  type Poloha, type ShrnutiMaturity,
+  type MaturitaPredmet, type Poloha, type ShrnutiMaturity,
 } from '@/lib/skola-vyklad';
 import type { CSISchoolData, InspectionExtraction } from '@/types/school';
 import type { SchoolInspisData } from '@/types/inspis';
@@ -67,8 +67,11 @@ export interface OborSkoly {
 export interface MaturitaSkoly {
   obdobi: 'jaro';
   roky: number[];
-  /** Celá škola v posledním roce: přihlášení, konající, úspěšní, nekonající (úspěšnost počítá CERMAT z přihlášených). */
-  celkem: { rok: number; registered?: number; took?: number; passed?: number; absent?: number } | null;
+  /**
+   * Celá škola v posledním roce: přihlášení, konající, úspěšní, nekonající, úspěšnost z přihlášených (`passRate`,
+   * počítá CERMAT) a příznak kvality, podle kterého se ukazuje i úspěšnost z konajících (`passRateOfTakers`).
+   */
+  celkem: { rok: number; registered?: number; took?: number; passed?: number; absent?: number; passRate?: number; quality?: MaturitaPredmet['quality'] } | null;
   skupiny: (ShrnutiMaturity & {
     nazev: string;
     /** Průměrné výsledky podobných škol z češtiny v posledním roce, pro graf; táž veličina jako střed. */
@@ -338,7 +341,7 @@ export async function getProfilSkoly(
     maturitaVystup = {
       obdobi: 'jaro',
       roky: soubor.meta.roky,
-      celkem: celaSkola ? { rok: Number(posledniRok), registered: celaSkola.registered, took: celaSkola.took, passed: celaSkola.passed, absent: celaSkola.absent } : null,
+      celkem: celaSkola ? { rok: Number(posledniRok), registered: celaSkola.registered, took: celaSkola.took, passed: celaSkola.passed, absent: celaSkola.absent, passRate: celaSkola.passRate, quality: celaSkola.quality } : null,
       skupiny: [...smo16].sort().reverse().map(smo => {
         const sh = shrnutiMaturity(soubor.meta.roky, maturita.roky, smo);
         const ref = soubor.skupiny[posledniRok]?.[smo];
