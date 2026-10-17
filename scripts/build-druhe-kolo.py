@@ -151,7 +151,11 @@ def otisk(soubor: Path) -> str:
 def rocnik(kolo1: Path, kolo2: Path) -> tuple[dict, dict]:
     r1, r2 = nacti(kolo1), nacti(kolo2)
     parovani, druhy_pruchod = sparuj(r1, r2)
-    vypis_rozpory_id_so(rozpory_id_so(r1, parovani), kolo1.name)
+    if not any(str(r.get("ID_SO") or "").strip() for r in r1 + r2):
+        print(f"VAROVÁNÍ {kolo1.name}: sloupec ID_SO chybí nebo je prázdný, kontrola párů neproběhla",
+              file=sys.stderr)
+    else:
+        vypis_rozpory_id_so(rozpory_id_so(r1, parovani), kolo1.name)
 
     # Klíč webu nezná délku, formu ani jazyk. Kolize se vyřadí, nehádá se.
     podle_webu: dict[str, list[dict]] = {}
