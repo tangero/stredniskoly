@@ -13,6 +13,15 @@ Záznam změn chování systému: požadavek, co se změnilo a proč, datum. Nej
 - **Proč:** dojezd se počítá k poloze školy, ne k nabídce; rozdílný zápis id nesmí školu vyřadit z výsledků.
   Navíc dostane dojezd 2 922 nabídek (932 s jednotnou zkouškou, 1 990 bez ní).
 
+## 2026-10-17: čerstvost dat hlídá i sady bez očekávaného období a porovnává období podle data (#507)
+
+- **Požadavek:** interní zadání #507 (rozhodnutí vlastníka po review PR #506).
+- **Co:** `scripts/provoz/cerstvost.mjs` hlásí i sadu s uplynulým `ocekavano.kdy` bez `ocekavano.obdobi`
+  („termín minul, nové období nezjištěno“, Telegram ji pošle jednou za sadu a termín). Období se porovnávají podle
+  konce (rok, měsíc, den), ne jako text; nerozpoznatelný tvar se nehlásí a vypíše se varováním.
+- **Proč:** sady jako `csi-inspekce` nebo `cermat-maturita` administrace po termínu ukazovala, ale přehled ani
+  Telegram ne; textové porovnání smíšených tvarů (`2026` proti `2026-09-30`) mohlo vyjít špatně.
+
 ## 2026-10-17: upozornění na data po očekávaném termínu (#355, etapa 3)
 
 - **Požadavek:** projekt #355, etapa 3 (čerstvost dat), kritéria K16 a K17.
