@@ -297,9 +297,9 @@ export default async function JakVybratSkoluPage() {
               </Karta>
               <Karta>
                 <p className="text-[16px] leading-relaxed text-slate-700">
-                  Máme výsledky jednotné přijímací zkoušky přijatých uchazečů. Na stránce oboru a v simulátoru
-                  je najdeš pod názvy <b>Průměr JPZ přijatých</b>, <b>Nejnižší výsledek JPZ mezi přijatými</b> a
-                  <b> Obtížnost přijetí slovy</b>. Popisují minulé kolo, ne předpověď, a týkají se jen
+                  Máme výsledky jednotné přijímací zkoušky přijatých uchazečů. Na stránce oboru je najdeš
+                  jako <b>Průměr přijatých</b>, <b>Nejníž, s čím se sem někdo dostal</b> a <b>Obtížnost přijetí</b>;
+                  v simulátoru si vedle nich zadáš vlastní body. Popisují minulé kolo, ne předpověď, a týkají se jen
                   jednotné zkoušky.
                 </p>
               </Karta>
