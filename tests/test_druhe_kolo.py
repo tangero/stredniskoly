@@ -4,7 +4,9 @@
 """
 from __future__ import annotations
 
+import contextlib
 import importlib.util
+import io
 import json
 import os
 import subprocess
@@ -139,6 +141,27 @@ class TestBuildDruheKolo(unittest.TestCase):
         parovani, druhy = dk.sparuj(r1, [radek("6", "78-42-M/08", "Z")])
         self.assertEqual(druhy, 1)
         self.assertEqual(parovani[dk.parovaci_klic(r1[0])]["ZAMĚŘENÍ OBORU"], "Z")
+
+    def test_rozpor_id_so_se_vypise_a_parovani_nemeni(self):
+        """#516: pár s různým ID_SO se jen vypíše jako varování; nepáruje se jím ani se nerozpojuje."""
+        r1 = [dict(radek("1", "79-41-K/41", "Všeobecné"), ID_SO="a"),
+              dict(radek("6", "78-42-M/08"), ID_SO="b"),
+              dict(radek("7", "63-41-M/01"), ID_SO="c"),
+              radek("8", "18-20-M/01")]                                          # ID_SO chybí, nekontroluje se
+        r2 = [dict(radek("1", "79-41-K/41", "Všeobecné"), ID_SO="a"),          # shoda
+              dict(radek("6", "78-42-M/08", "Z"), ID_SO="x"),                  # rozpor (2. průchod)
+              dict(radek("7", "63-41-M/01"), ID_SO=""),                        # prázdné, nekontroluje se
+              dict(radek("8", "18-20-M/01"), ID_SO="d")]
+        parovani, druhy = dk.sparuj(r1, r2)
+        self.assertEqual((len(parovani), druhy), (4, 1))
+        rozpory = dk.rozpory_id_so(r1, parovani)
+        self.assertEqual(rozpory, [(dk.parovaci_klic(r1[1]), "b", "x")])
+        self.assertEqual(len(dk.sparuj(r1, r2)[0]), 4, "kontrola párování nemění")
+        with contextlib.redirect_stderr(io.StringIO()) as err, contextlib.redirect_stdout(io.StringIO()) as out:
+            dk.vypis_rozpory_id_so(rozpory, "test")
+        self.assertIn("VAROVÁNÍ test", err.getvalue())
+        self.assertIn("(b × x)", err.getvalue())
+        self.assertIn("rozporů 1", out.getvalue())
 
     def test_klic_odpovida_webu(self):
         self.assertEqual(dk.klic_webu("600001661", "79-41-K/41", "Gymnázium"), "600001661_79-41-K/41_gymnazium")

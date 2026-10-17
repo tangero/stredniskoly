@@ -7,7 +7,9 @@ Pro každou nabídku 1. kola uloží, zda škola vypsala 2. kolo, a pokud ano, j
 kapacitu, přihlášky, přijaté a důvody nepřijetí. Nabídky se mezi koly párují podle
 školy, oboru, zaměření, formy, délky, zkráceného studia a jazyka, protože
 identifikátor ID_SOF se mezi koly liší. Nabídky, které tak zůstanou bez protějšku, se
-v druhém průchodu párují bez zaměření, ale jen jednoznačně (#282).
+v druhém průchodu párují bez zaměření, ale jen jednoznačně (#282). Každý pár se navíc
+kontroluje shodou ID_SO (identifikátor oboru na škole, v obou kolech stejný); rozpor se jen
+vypíše jako varování, párování ani výstup nemění (#516).
 
 Výstup nese ročníky jako klíče; název souboru rok neobsahuje. Který rok web
 zobrazí, určuje registr public/stav_datovych_sad.json.
@@ -22,6 +24,7 @@ import argparse
 import hashlib
 import json
 import re
+import sys
 import unicodedata
 from collections import Counter
 from pathlib import Path
@@ -118,6 +121,29 @@ def sparuj(r1: list[dict], r2: list[dict]) -> tuple[dict[tuple, dict], int]:
     return parovani, druhy
 
 
+def rozpory_id_so(r1: list[dict], parovani: dict[tuple, dict]) -> list[tuple[tuple, str, str]]:
+    """Kontrola párů (#516): páry, jejichž řádky mají vyplněné, ale různé ID_SO.
+
+    ID_SO označuje obor na škole (všechna zaměření oboru ho sdílejí), proto se jím nepáruje,
+    jen se jím páry ověřují. Vrací (párovací klíč 1. kola, ID_SO 1. kola, ID_SO 2. kola)."""
+    rozpory = []
+    for r in r1:
+        pk = parovaci_klic(r)
+        druhe = parovani.get(pk)
+        if druhe is None:
+            continue
+        a, b = str(r.get("ID_SO") or "").strip(), str(druhe.get("ID_SO") or "").strip()
+        if a and b and a != b:
+            rozpory.append((pk, a, b))
+    return rozpory
+
+
+def vypis_rozpory_id_so(rozpory: list[tuple[tuple, str, str]], popis: str) -> None:
+    for pk, a, b in rozpory:
+        print(f"VAROVÁNÍ {popis}: pár {' | '.join(pk)} má různé ID_SO ({a} × {b})", file=sys.stderr)
+    print(f"{popis}: kontrola ID_SO, rozporů {len(rozpory)}")
+
+
 def otisk(soubor: Path) -> str:
     return hashlib.sha256(soubor.read_bytes()).hexdigest()
 
@@ -125,6 +151,7 @@ def otisk(soubor: Path) -> str:
 def rocnik(kolo1: Path, kolo2: Path) -> tuple[dict, dict]:
     r1, r2 = nacti(kolo1), nacti(kolo2)
     parovani, druhy_pruchod = sparuj(r1, r2)
+    vypis_rozpory_id_so(rozpory_id_so(r1, parovani), kolo1.name)
 
     # Klíč webu nezná délku, formu ani jazyk. Kolize se vyřadí, nehádá se.
     podle_webu: dict[str, list[dict]] = {}

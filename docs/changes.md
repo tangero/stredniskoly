@@ -2,6 +2,16 @@
 
 Záznam změn chování systému: požadavek, co se změnilo a proč, datum. Nejnovější nahoře.
 
+## 2026-10-17: kontrola párů 1. a 2. kola shodou ID_SO (#516)
+
+- **Požadavek:** interní zadání #516 a odpověď vlastníka z 17. 10. 2026 („jen kontrola shody“).
+- **Co:** `scripts/build-druhe-kolo.py` (nové funkce `rozpory_id_so` a `vypis_rozpory_id_so`) i
+  `scripts/build-obory-bez-jpz.py` u každého páru nabídek 1. a 2. kola ověří, že oba řádky mají shodné `ID_SO`
+  (pokud je vyplněné), a rozpor vypíší jako varování. Párování ani výstupy se nemění: `public/druhe_kolo.json`
+  a `src/data/obory-bez-jpz-2026.json` jsou po přegenerování bajtově shodné, rozporů je 0.
+- **Proč:** `ID_SO` označuje obor na škole, ne nabídku se zaměřením; jako párovací klíč by nepřidal žádný pár
+  (u oborů bez zkoušky by přidal 12 chybných). Jako nezávislá kontrola ale odhalí případný chybný pár.
+
 ## 2026-10-17: párování 1. a 2. kola i při změněném zaměření (#282)
 
 - **Požadavek:** hlášení #282 (Lyceum 600007561 neukazovalo 2. kolo) a odpověď vlastníka z 17. 10. 2026.
