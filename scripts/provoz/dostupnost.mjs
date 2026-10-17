@@ -5,11 +5,13 @@
 // Stav (počty selhání, otevřené výpadky, histogram odezev za 8 dní) drží jeden komentář v issue „Dostupnost
 // webu: stav monitoringu“ (značka `dostupnost:stav`). Týdenní přehled z něj čte oddíl Dostupnost.
 // Do issue, Telegramu ani stavu nejdou osobní údaje ani IP adresy, jen cesta, stavový kód, doba a čas.
+// Ve zvýšeném režimu pošle i sady z registru po očekávaném termínu (etapa 3, scripts/provoz/cerstvost.mjs).
 //
 //   node scripts/provoz/dostupnost.mjs [--nanecisto]   (ZAMRZNUTI_OD, ZAMRZNUTI_DO = RRRR-MM-DD)
 
 import { pathToFileURL } from 'node:url';
 import { REPO, vytvorApi } from '../brana/data.mjs';
+import { nactiRegistr, sadyPoTerminu, oznamCerstvost } from './cerstvost.mjs';
 
 export const ZAKLADNI = 'https://www.prijimackynaskolu.cz';
 export const ADRESY = [
@@ -267,11 +269,20 @@ async function main() {
   const rezimBehu = rezim(ted, { od: process.env.ZAMRZNUTI_OD || '', do: process.env.ZAMRZNUTI_DO || '' });
   const vysledky = await zkontroluj(ADRESY, nactiSiti);
   for (const v of vysledky) console.log(`${v.ok ? 'OK ' : 'CHYBA'} ${v.cesta} ${v.status} ${v.ms} ms ${v.duvod}`);
+  // Čerstvost dat (#355, etapa 3): chyba čtení registru nesmí zastavit kontrolu dostupnosti.
+  let poTerminu = null;
+  try {
+    poTerminu = sadyPoTerminu(nactiRegistr(), ted);
+    console.log(`Režim ${rezimBehu}, sady po termínu: ${poTerminu.map((s) => s.sada).join(', ') || 'žádné'}`);
+  } catch (e) {
+    console.log(`::warning::Registr datových sad se nepodařilo přečíst: ${e.message}`);
+  }
   if (nanecisto) return;
   const api = vytvorApi();
   const ulozeni = await nactiStav(api);
   const { stav, akce } = posunStav(ulozeni.stav, vysledky, { ted, rezimBehu });
   await provedAkce(akce, stav, { api, telegram: posliTelegram, ted });
+  if (poTerminu) await oznamCerstvost(stav, poTerminu, { rezimBehu, telegram: posliTelegram, ted });
   await ulozStav(api, ulozeni, stav);
 }
 

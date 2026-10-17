@@ -15,6 +15,7 @@ import { REPO, NAZEV_KONTROLY, vytvorApi } from '../brana/data.mjs';
 import { nactiMeritka, spocitejMeritka, kratkaMeritka, oddilMeritka } from './meritka.mjs';
 import { nactiStav, souhrnTydne } from '../provoz/dostupnost.mjs';
 import { souhrnHlaseni } from '../provoz/triaz.mjs';
+import { nactiRegistr, sadyPoTerminu } from '../provoz/cerstvost.mjs';
 
 const DEN = 24 * 60 * 60 * 1000;
 export const STITKY_ROZHODNUTI = ['schvaleno', 'zamitnuto', 'stop'];
@@ -157,7 +158,15 @@ export async function nactiData(api, ted, tokeny = {}, { vlastnik = 'tangero', a
     hlaseni = { chyba: String(e.message || e).slice(0, 200) };
   }
 
-  return { od, ted, slouceno, rozhodnuti, navrhy, zastavene, cekajiNaSouhlas, potrebujiCloveka, cervenaMain, expirace, app, meritka, dostupnost, hlaseni };
+  // Čerstvost dat (#355, etapa 3): sady po očekávaném termínu z registru v checkoutu.
+  let cerstvost = null;
+  try {
+    cerstvost = { sady: sadyPoTerminu(nactiRegistr(), ted) };
+  } catch (e) {
+    cerstvost = { chyba: String(e.message || e).slice(0, 200) };
+  }
+
+  return { od, ted, slouceno, rozhodnuti, navrhy, zastavene, cekajiNaSouhlas, potrebujiCloveka, cervenaMain, expirace, app, meritka, dostupnost, hlaseni, cerstvost };
 }
 
 const ms = (x) => (x == null ? 'bez dat' : `${x} ms`);
@@ -168,6 +177,27 @@ export function kratkaDostupnost(dost) {
   if (!dost || dost.chyba || !dost.adresy.length) return '';
   const nejnizsi = Math.min(...dost.adresy.map((a) => a.dostupnost ?? 100));
   return `Dostupnost webu: nejnižší ${pct(nejnizsi)}, výpadků a pomalých úseků ${dost.vypadky.length}`;
+}
+
+/** Jeden řádek do Telegramu, jen když nějaká sada je po termínu. */
+export function kratkaCerstvost(c) {
+  if (!c || c.chyba || !c.sady.length) return '';
+  return `POZOR, data po termínu (${c.sady.length}): ${c.sady.map((s) => s.sada).join(', ')}`;
+}
+
+/** Oddíl Čerstvost dat dlouhého přehledu (#355, K16): sady s použitím na webu po očekávaném termínu. */
+export function oddilCerstvost(c) {
+  if (!c) return [];
+  if (c.chyba) return ['## Čerstvost dat', `- nepodařilo se přečíst registr: ${c.chyba}`, ''];
+  return [
+    '## Čerstvost dat',
+    'Sady, které web používá, jejichž očekávaný termín v `public/stav_datovych_sad.json` minul a web pořád ukazuje starší období.',
+    '',
+    ...(c.sady.length
+      ? c.sady.map((s) => `- ${s.nazev} (\`${s.sada}\`): web ukazuje ${s.zobrazeno}, období ${s.ocekavano} se čekalo do ${s.kdy}`)
+      : ['- žádná sada po termínu']),
+    '',
+  ];
 }
 
 /** Oddíl Hlášení dlouhého přehledu (#355, K15): nová podle druhu, netříděná, otevřená starší 7 dní. */
@@ -236,6 +266,7 @@ export function sestavPrehled(d, { vlastnik = 'tangero' } = {}) {
     potrebujiCloveka.length ? `PR, kde smyčka oprav z review skončila: ${potrebujiCloveka.length}` : '',
     d.meritka && !d.meritka.chyba ? kratkaMeritka(d.meritka) : '',
     kratkaDostupnost(d.dostupnost),
+    kratkaCerstvost(d.cerstvost),
     d.cervenaMain.length ? `POZOR, červené CI na main: ${d.cervenaMain.join(', ')}\nhttps://github.com/${REPO}/commits/main` : '',
     ...tokenyPozor.map((t) => `POZOR, token ${t}`),
     d.app === 'nefunguje' ? 'POZOR, App prijimacky-ai se nepřihlásí: sloučení, štítky a PR s obnovou dat stojí' : '',
@@ -273,6 +304,7 @@ export function sestavPrehled(d, { vlastnik = 'tangero' } = {}) {
     ...(d.meritka ? [d.meritka.chyba ? `## Měřítka\n- nepodařilo se spočítat: ${d.meritka.chyba}` : oddilMeritka(d.meritka, odkaz), ''] : []),
     ...oddilDostupnost(d.dostupnost, odkaz),
     ...oddilHlaseni(d.hlaseni, odkaz),
+    ...oddilCerstvost(d.cerstvost),
     '## Provoz',
     d.cervenaMain.length ? `- červené CI na main: ${d.cervenaMain.join(', ')}` : '- CI na main bez chyb',
     ...Object.entries(d.expirace).map(([n, e]) => `- token ${n}: ${e === 'chybi' ? 'secret chybí' : e === 'neplatny' ? 'neplatí' : e ? `vyprší ${e}` : 'bez expirace'}`),
