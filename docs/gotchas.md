@@ -39,6 +39,12 @@ ve kterém na něj narazíš (krátce: co se stane, proč, co s tím). Oprava, k
 - **Poloha školy je sídlo podle RED IZO, ne místo výuky oboru.** `data/school_locations.json` má jen školy
   s jednotnou zkouškou z katalogu 2025 (1 088); učební obory a nové školy 2026 polohu nemají.
 
+## Data CERMAT
+
+- **Zaměření oboru se mezi 1. a 2. kolem téhož roku mění.** Škola ho doplní až ve 2. kole, vynechá, změní velikost
+  písmen nebo opraví překlep; `ID_SOF` se mezi koly liší. Párování jen přes přesné zaměření ztratilo 153 ze 1 060
+  nabídek 2. kola 2026. Proto `sparuj` v `scripts/build-druhe-kolo.py` páruje zbytek bez zaměření, jen jednoznačně (#282).
+
 ## Název školy
 
 - **Úřední název školy po přejmenování nebo sloučení opravuje `src/data/opravy-nazvu-skol.json` (#476).** Rejstřík

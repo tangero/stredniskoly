@@ -8,12 +8,12 @@ Podklady: [zdroje dat, oddíl 2.1](zdroje-dat.md#21-cermat-agregovaná-data-za-o
 
 ## 1. Co data říkají
 
-Denní nezkrácené nabídky s povinnou jednotnou zkouškou včetně formy „den2“, stejný výběr jako na webu. Počítáno ze souborů výsledků 1. a 2. kola, nabídky spárovány podle školy, oboru, zaměření, formy, délky, zkráceného studia a jazyka; identifikátor nabídky se mezi koly liší.
+Denní nezkrácené nabídky s povinnou jednotnou zkouškou včetně formy „den2“, stejný výběr jako na webu. Počítáno ze souborů výsledků 1. a 2. kola, nabídky spárovány podle školy, oboru, zaměření, formy, délky, zkráceného studia a jazyka; identifikátor nabídky se mezi koly liší. Nabídky, které tak zůstanou bez protějšku, se v druhém průchodu párují bez zaměření, ale jen jednoznačně (oddíl 7).
 
 | | 2025 | 2026 |
 |---|---|---|
 | Nabídek ve 2. kole | 1 072 | 1 060 |
-| z toho spárováno s 1. kolem | 880 | 886 |
+| z toho spárováno s 1. kolem | 1 042 (880 se shodným zaměřením, 162 bez něj) | 1 039 (886 + 153) |
 | Míst ve 2. kole | 12 248 | 12 034 |
 | Přihlášek | 18 157 | 16 191 |
 | Přijatých | 5 303 | 4 946 |
@@ -22,9 +22,9 @@ Denní nezkrácené nabídky s povinnou jednotnou zkouškou včetně formy „de
 
 Tři zjištění, která určují návrh:
 
-1. **Nenaplněný obor neznamená 2. kolo.** Z oborů, které po 1. kole 2026 neměly plno, vypsalo 2. kolo jen 53 %.
-2. **Kapacitu 2. kola nelze dopočítat.** Rovná se rozdílu kapacity a přijatých z 1. kola jen u 47 % nabídek, protože se do ní promítají uchazeči, kteří se přijetí vzdali, a rozhodnutí školy. Zobrazuje se proto jen zveřejněná kapacita.
-3. **Druhé kolo se u téhož oboru opakuje.** Obor, který měl 2. kolo v roce 2025, ho v roce 2026 vypsal znovu v 66 % případů; obor bez 2. kola 2025 jen v 15 %.
+1. **Nenaplněný obor neznamená 2. kolo.** Z oborů, které po 1. kole 2026 neměly plno, vypsalo 2. kolo jen 63 % (do 17. 10. 2026 uváděno 53 %, než se párovaly i nabídky se zaměřením změněným mezi koly).
+2. **Kapacitu 2. kola nelze dopočítat.** Rovná se rozdílu kapacity a přijatých z 1. kola jen u 46 % nabídek, protože se do ní promítají uchazeči, kteří se přijetí vzdali, a rozhodnutí školy. Zobrazuje se proto jen zveřejněná kapacita.
+3. **Druhé kolo se u téhož oboru opakuje.** Obor, který měl 2. kolo v roce 2025, ho v roce 2026 vypsal znovu v 71 % případů; obor bez 2. kola 2025 jen v 14 % (přepočteno 17. 10. 2026 po rozšíření párování; dříve 66 a 15 %).
 
 Nejnižší výsledek přijatých ve 2. kole je v souhrnu k dispozici, ale aspoň deset přijatých s výsledkem zkoušky má jen 133 nabídek roku 2026.
 
@@ -54,9 +54,9 @@ Ke každé situaci se připojí věta o předchozím roce, pokud je k dispozici:
 
 ### Co blok neříká
 
-- **Nepředpovídá, zda 2. kolo bude.** Opakování v 66 % případů není slib.
+- **Nepředpovídá, zda 2. kolo bude.** Opakování v 71 % případů není slib.
 - **Nemíchá kola.** Čísla 2. kola se nesčítají s čísly 1. kola a netvoří žádný souhrnný ukazatel.
-- **Nabídky jen ve 2. kole** se nezobrazují: 174 nabídek roku 2026 nemá v 1. kole protějšek a web pro ně nemá stránku.
+- **Nabídky jen ve 2. kole** se nezobrazují: 21 nabídek roku 2026 (2025: 30) nemá v 1. kole protějšek ani po druhém průchodu párování a web pro ně nemá stránku. Do 17. 10. 2026 jich bylo 174 (2025: 192).
 
 ## 3. Zvážené nepoužité sloupce
 
@@ -83,7 +83,7 @@ Povinný krok podle `docs/zdroje-dat.md`, oddíl 3.
 ## 5. Ověření 13. 9. 2026
 
 - **Import:** `public/druhe_kolo.json` s ročníky 2025 a 2026. V roce 2026 má 2. kolo 886 nabídek, 768 nenaplněných oborů ho nevypsalo a 1 437 se naplnilo v 1. kole. Na data se napojí všech 3 091 vypsaných nabídek katalogu. První verze importu vynechala čtyři nabídky ve formě „den2“, protože filtr přijímal jen „den“; opraveno.
-- **Testy:** `tests/test_druhe_kolo.py`, šest testů: všechny stavy nabídky, kolize klíče, obor bez povinné zkoušky, nejnižší výsledek jen při deseti přijatých, zachování starších roků, zpracovatel v datové lince včetně pojistky proti prázdnému výsledku.
+- **Testy:** `tests/test_druhe_kolo.py`, šest testů (od 17. 10. 2026 osm, přibyl druhý průchod párování včetně nejednoznačných kandidátů): všechny stavy nabídky, kolize klíče, obor bez povinné zkoušky, nejnižší výsledek jen při deseti přijatých, zachování starších roků, zpracovatel v datové lince včetně pojistky proti prázdnému výsledku.
 - **Web:** blok ověřen na běžícím serveru na ekonomickém lyceu OA Na Příkopech (2. kolo s nevešlými uchazeči a nejnižším přijatým), na osmiletém gymnáziu Jana Palacha (nenaplněno bez 2. kola, loni 2. kolo bylo), na technickém lyceu Gymnázia J. S. Machara (2. kolo v obou letech) a na jeho osmiletém gymnáziu (bez 2. kola). Zobrazený rok bere `src/lib/druhe-kolo.ts` z registru stavu datových sad; je to první místo webu, které se registrem řídí.
 
 Pod blokem zůstává starší blok „Přijetí a kapacita“ s čísly z roku 2025 u oborů bez zaměření. Jde o vadu popsanou v [návrhu aktuálního ročníku dat](navrh-aktualniho-rocniku-dat.md), krok 1.
@@ -96,10 +96,34 @@ Pod blokem zůstává starší blok „Přijetí a kapacita“ s čísly z roku 
 - **Web:** všechny situace ověřeny na lokálním serveru na stránce oboru, stránce školy i v otevřených datech; testy `tests/druhe-kolo-vyklad.test.mjs`.
 - **Nalezená chyba mimo 2. kolo:** obory bez zaměření, které přibyly až v ročníku 2026, neměly detail oboru; odkaz padal na přehled školy (například podnikání a mechanizace na SŠ gastronomie, náměstí Svobody). Opraveno v `getSchoolPageType`.
 
+## 7. Párování bez zaměření (17. 10. 2026, #282)
+
+Škola může zaměření mezi koly zapsat jinak: doplnit ho až ve 2. kole (Lyceum Hotelové školy Komenského, 600007561, 78-42-M/08: v 1. kole bez zaměření, ve 2. kole „Moderní ekonomika a udržitelný rozvoj“, 64 přihlášek a 17 přijatých), vynechat ho, změnit velikost písmen nebo opravit překlep. Přesné párování takové nabídky ztratilo a web u nich 2. kolo neukazoval.
+
+**Pravidlo** (`sparuj` v `scripts/build-druhe-kolo.py`): po přesném párování se nabídky, které zůstaly bez protějšku na obou stranách, párují podle školy, oboru, formy, délky, zkráceného studia, jazyka a povinnosti jednotné zkoušky, tedy bez zaměření. Spáruje se jen tam, kde se stejným klíčem zbývá **právě jedna** nabídka v 1. kole a **právě jedna** ve 2. kole; víc kandidátů se nehádá. Stejné párování používá `scripts/build-obory-bez-jpz.py` pro pole `kolo_2` u oborů bez zkoušky.
+
+| | 2025 | 2026 |
+|---|---|---|
+| Nabídek jen ve 2. kole před změnou | 192 | 174 |
+| z toho nově spárováno bez zaměření | 162 | 153 |
+| zaměření jen ve 2. kole | 22 | 31 |
+| zaměření jen v 1. kole | 80 | 60 |
+| zaměření v obou kolech, jiný text | 60 | 62 |
+| Zůstává jen ve 2. kole | 30 | 21 |
+
+Obory bez zkoušky (2026): 151 nabídek nově s 2. kolem, celkem 1 412 místo 1 261.
+
+**Co pravidlo neříká.** Shodu školy, oboru, formy, délky a jazyka bere jako tutéž nabídku. U většiny párů jde o tentýž text v jiné podobě (velikost písmen, překlep, „ŠVP:“ na začátku), menšina má zaměření pojmenované jinak, například elektrotechnický obor 600005259 („Mechanik elektrotechnik“ v 1. kole, „Elektromechanik pro zařízení a přístroje“ ve 2. kole). Protože jiná nabídka téhož oboru na škole nezbývá, jde o tentýž obor školy; čísla 2. kola se u něj ukazují pod názvem z 1. kola.
+
+**Nezávislá kontrola:** identifikátor `ID_SO` (na rozdíl od `ID_SOF` je v obou kolech stejný) se shoduje u všech 153 nových párů roku 2026 i všech 162 roku 2025. Ze zbylých nabídek jen ve 2. kole by `ID_SO` dál spároval 19 (2026) a 27 (2025), u nich ale na některé straně zbývá víc kandidátů; jeho zavedení jako klíče je samostatné rozhodnutí ([návrh oborů bez zkoušky](navrh-obory-bez-jpz-2027.md), oddíl o párování).
+
+Ručně ověřeno proti `PZ2026_kolo2_skolobory_vysledky.xlsx`: Lyceum 600007561 (64 přihlášek, 17 přijatých, kapacita 17), logistika 600013782 („Logsitika“ → „Logistika“, kapacita 39, 110 přihlášek, 40 přijatých) a elektrotechnický obor 600005259 (kapacita 26, 135 přihlášek, 26 přijatých).
+
 ## Historie
 
 | Verze | Změna |
 |---|---|
+| 1.3 | Druhý průchod párování bez zaměření, jen jednoznačné páry (#282); přepočtené podíly v oddílu 1. |
 | 1.2 | 2. kolo na nové stránce oboru, stránce školy a v otevřených datech ze společné funkce vět; věta o důvodech nepřijetí ve 2. kole; ověření proti zdroji; oprava detailu nových oborů bez zaměření. |
 | 1.1 | Výsledky ověření importu, testů a zobrazení. |
 | 1.0 | Návrh a realizace. |
