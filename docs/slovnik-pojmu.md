@@ -1,6 +1,6 @@
 # Slovník pojmů
 
-Verze 1.50 · 17. 10. 2026 · **Závazný pro všechny texty na webu.** Nový pojem se na stránce nepoužije bez zápisu sem.
+Verze 1.51 · 17. 10. 2026 · **Závazný pro všechny texty na webu.** Nový pojem se na stránce nepoužije bez zápisu sem.
 
 Slovník pojmů říká, **jakými slovy mluvíme k rodičům a uchazečům**, aby tatáž věc nezněla na každé stránce jinak. Doplňuje [slovník ukazatelů](slovnik-ukazatelu.md), který říká, **jak se veličina jmenuje v datech a jak se počítá**. Kde se oba liší, platí: v datech, kódu a API název ze slovníku ukazatelů, v textu stránky pojem odsud.
 
@@ -37,7 +37,7 @@ Slovník pojmů říká, **jakými slovy mluvíme k rodičům a uchazečům**, a
 | **kritéria přijetí** | pravidla, podle kterých škola uchazeče řadí a kdy je nepřijme; vyhlašuje je škola | „kritéria, která škola vyhlašuje na svém webu“ | podmínky přijetí (vyjma citace), pravidla školy |
 | **požadavek školy** | vylučující část kritérií: hranice bodů, zdravotní způsobilost, doklady | viz nedosáhli požadavku školy | podmínky |
 | **hranice úspěšnosti** | minimum bodů z kritérií školy; když ji odvozujeme z dat, vždy „podle výsledků to odpovídá“ | „minimum bodů, bez kterého škola uchazeče nepřijme“ | hranice přijetí (tu nezná nikdo) |
-| **1. kolo**, **2. kolo** | kola přijímacího řízení podle harmonogramu MŠMT | u 2. kola: „když se obor v 1. kole nenaplní, škola může vypsat 2. kolo“ | druhé kolo bez čísla ročníku |
+| **1. kolo**, **2. kolo** | kola přijímacího řízení podle harmonogramu MŠMT | u 2. kola: „když se obor v 1. kole nenaplní, škola může vypsat 2. kolo“; počty přihlášek a přijatých z výsledků 1. kola nesou na stránce školy „v 1. kole“ nebo „(1. kolo)“ a blok dodá „Počty přihlášek a přijatých jsou z 1. kola.“, aby nevypadaly jako výsledek celého přijímání (#226) | druhé kolo bez čísla ročníku; počet přihlášek nebo přijatých bez kola |
 | **místa**, **kapacita** | počet míst, které škola pro obor v kole vypsala | není potřeba | volná místa (jen u 2. kola) |
 | **obor se už nenabírá** | obor vedený v rejstříku jako dobíhající a v zobrazeném ročníku nevypsaný | „škola tenhle obor dokončuje se stávajícími žáky a nové uchazeče do něj nepřijímá“ | zrušený obor, zaniklý obor (dokud to neuvádí škola); jakékoli varování u oboru, který škola v ročníku **vypsala** — mezi vypsanými je dobíhajících nula |
 | **obor bez jednotné zkoušky** | obor, u kterého se jednotná přijímací zkouška nekoná: kategorie C, E, H, J a P a umělecké obory s talentovou zkouškou; od etapy 3a (issue #244) mají obory škol, které web vede, vlastní stránku | v tabulce značka „bez jednotné zkoušky“; na stránce učebního oboru „Body tu nejsou, protože se jednotná přijímací zkouška nekoná“; pod tabulkou oborů na přihlášce „Obory bez odkazu u nás zatím vlastní stránku nemají.“ | obor bez JPZ, obor bez přijímaček, nematuritní obor (není totéž) |
@@ -157,6 +157,7 @@ Slovník pojmů říká, **jakými slovy mluvíme k rodičům a uchazečům**, a
 
 | Verze | Změna |
 |---|---|
+| 1.51 | U pojmu **1. kolo** doplněno: počty přihlášek a přijatých z výsledků 1. kola nesou na stránce školy „v 1. kole“ nebo „(1. kolo)“; počet bez kola se nepoužívá (17. 10. 2026, issue #226). |
 | 1.50 | Pojem **z těch, kdo ke zkoušce skutečně šli, ji udělalo X z Z** pro úspěšnost maturity z konajících; stojí vždy za větou o přihlášených (17. 10. 2026, issue #375, rozhodnutí vlastníka ukázat obě čísla). U pojmu *maturitu udělalo X z Y přihlášených* upřesněn zákaz: nesmí se míchat jmenovatelé, oba podíly se ukazovat smějí. |
 | 1.49 | **Soutěžící uchazeči** nově vysvětleni větou „kdo splnili podmínky přijetí a nebyli přijati jinam podle vyšší priority na přihlášce“ a údaj „přijato X ze Y“ nese u čísla dovětek o přijatých jinam (7. 10. 2026, #428). Školy čtly „přijato 28 ze 49“ jako odmítnutí 21 zájemců, ale dalších 31 se dostalo jinam, kam se hlásili raději. Čísla se nemění. |
 | 1.48 | Skupiny **S maturitou**, **S výučním listem**, **Po vyučení**, **Ostatní** i v souhrnu míst v záhlaví stránky města a kraje (6. 10. 2026, #244, etapa 3c-4). |

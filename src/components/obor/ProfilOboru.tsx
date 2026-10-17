@@ -508,7 +508,7 @@ export function ProfilOboru({ data, inspekceHref, skolaHref, obec }: ProfilOboru
                       ['Přihlášky (1. kolo)', (x: typeof r) => cislo(x.prihlasky ?? 0)],
                       ['Přihlášky na místo', (x: typeof r) => x.index_poptavky !== undefined ? `${cislo(x.index_poptavky, 1)}×` : '—'],
                       ['Tlak prvních voleb', (x: typeof r) => x.tlak_prvnich_voleb !== undefined ? `${cislo(x.tlak_prvnich_voleb, 1)}×` : '—'],
-                      ['Přijatí', (x: typeof r) => cislo(x.prijati ?? 0)],
+                      ['Přijatí (1. kolo)', (x: typeof r) => cislo(x.prijati ?? 0)],
                       ['Nevešli se kvůli kapacitě', (x: typeof r) => cislo(x.capacity_rejected ?? 0)],
                       ['Nedosáhli požadavku školy', (x: typeof r) => cislo(x.conditions_not_met ?? 0)],
                       ['Přijati na obor výš na přihlášce', (x: typeof r) => cislo(x.higher_priority ?? 0)],
