@@ -133,7 +133,7 @@ export default async function JakVybratSkoluPage() {
   const vSezone = mesic >= SEZONA_OD_MESICE || mesic <= SEZONA_DO_MESICE;
   const kriteria = udalost('ss-kriteria');
   const prihlasky = udalost('ss-prihlasky');
-  const dalsiKrok = [kriteria, prihlasky, udalost('ss-vysledky')]
+  const dalsiKrok = [...MILNIKY, 'ss-skolni'].map(udalost)
     .filter((e): e is NonNullable<typeof e> => e !== null && e.start >= dnes)
     .sort((a, b) => a.start.localeCompare(b.start))[0] ?? null;
   const datumAktualizace = formatujDen(AKTUALIZOVANO);
@@ -220,7 +220,7 @@ export default async function JakVybratSkoluPage() {
               <div className="overflow-x-auto rounded-2xl border border-slate-200 bg-white">
                 <table className="w-full min-w-[560px] text-left text-[15px]">
                   <thead className="bg-slate-50 text-[13px] uppercase tracking-wide text-slate-500">
-                    <tr><th className="p-3">Typ</th><th className="p-3">Pro koho</th><th className="p-3">Studium končí</th><th className="p-3">Délka</th></tr>
+                    <tr><th className="p-3">Typ</th><th className="p-3">Pro koho</th><th className="p-3">Studium končí</th><th className="p-3">Délka</th><th className="p-3"><span className="sr-only">Odkaz</span></th></tr>
                   </thead>
                   <tbody className="divide-y divide-slate-100 text-slate-700">
                     {[
@@ -232,6 +232,7 @@ export default async function JakVybratSkoluPage() {
                       <tr key={typ}>
                         <th scope="row" className="p-3 font-semibold text-[#16325c]">{typ}</th>
                         <td className="p-3">{komu}</td><td className="p-3">{konci}</td><td className="p-3">{delka}</td>
+                        <td className="p-3"><Link href="/skoly" className="font-semibold text-[#0074e4] hover:underline">Obory →</Link></td>
                       </tr>
                     ))}
                   </tbody>
@@ -239,7 +240,7 @@ export default async function JakVybratSkoluPage() {
               </div>
               <Dal href="/skoly" popis="obory všech typů; typ školy poznáte u každého oboru, filtrovat podle něj zatím nejde">Přehled oborů</Dal>
               <Dal href="/regiony" popis="školy podle krajů a typů nabídky">Školy v kraji</Dal>
-              <Dal href="/mesto" popis="školy ve městě s filtrem podle toho, čím studium končí">Školy ve městě</Dal>
+              <Dal href="/mesto" popis="školy ve městě seskupené podle směrů studia">Školy ve městě</Dal>
             </Krok>
 
             {/* ---------------------------------------------------------------- zájmy */}
