@@ -92,19 +92,29 @@ Zakázat workflow Triáž v Actions (nebo smazat soubor). Ruční zkouška bez z
 ## Etapa 3: čerstvost dat (#355)
 
 Skript `scripts/provoz/cerstvost.mjs` čte registr `public/stav_datovych_sad.json` z checkoutu `main` a vybere sady,
-které jsou **po termínu**: mají `pouziti: web`, vyplněné `ocekavano.obdobi` i `ocekavano.kdy`, termín uplynul
-(`RRRR-MM` po celém měsíci, `RRRR-MM-DD` po celém dni, počítáno v UTC) a `zobrazeno.obdobi` je pořád menší než
-`ocekavano.obdobi`. Sady bez očekávaného období nebo termínu (průběžné, ruční obnovy) se neposuzují, protože není
-s čím porovnat. Nová data dál hlídá Datová linka (`docs/datova-linka.md`); tady jde jen o to, že termín minul a web
-data pořád nemá.
+které jsou **po termínu**: mají `pouziti: web`, vyplněné `zobrazeno.obdobi` a `ocekavano.kdy` a termín uplynul
+(`RRRR-MM` po celém měsíci, `RRRR-MM-DD` po celém dni, počítáno v UTC). Pak (#507):
+
+- **Se známým očekávaným obdobím** (`ocekavano.obdobi`) se sada hlásí, jen když zobrazené období končí dřív než
+  očekávané. Období se porovnávají podle konce, ne jako text: `RRRR` končí koncem roku, `RRRR-MM` koncem měsíce,
+  `RRRR-MM-DD` tím dnem. `2026` proti `2026-09-30` se tedy nehlásí, `2026-06-30` proti `2026-09-30` a `2025`
+  proti `2026` ano. Nerozpoznatelný tvar (například `prubezne`) se nehlásí a vypíše se jako varování
+  (`::warning::` v logu workflow).
+- **Bez očekávaného období** (`ocekavano.obdobi` je `null`, dnes třeba `csi-inspekce`, `cermat-maturita`,
+  `cermat-uchazeci-kolo1`) se sada po termínu hlásí vždy jako „termín minul, nové období nezjištěno“, ve stejném
+  smyslu jako stav „po termínu“ v administraci (`src/lib/admin.ts`).
+
+Sady bez termínu (průběžné, ruční obnovy) se neposuzují. Nová data dál hlídá Datová linka (`docs/datova-linka.md`);
+tady jde jen o to, že termín minul a web data pořád nemá.
 
 ### Co se stane
 
 - **Týdenní přehled:** oddíl Čerstvost dat se sadami po termínu (název, co web ukazuje, jaké období se čekalo a do
-  kdy). V krátké verzi do Telegramu řádek „POZOR, data po termínu“, jen když nějaká sada je po termínu.
+  kdy, u sady bez očekávaného období „termín minul, nové období nezjištěno“). V krátké verzi do Telegramu řádek „POZOR, data po termínu“, jen když nějaká sada je po termínu.
 - **Zvýšený režim** (stejný jako u dostupnosti: zamrznutí a sezóna 1. 1. až 31. 5.): kontrola dostupnosti každých
-  5 minut pošle sadu po termínu do Telegramu, jednou za sadu a očekávané období. Odeslaná upozornění drží stav
-  monitoringu v issue #436 (pole `cerstvost`, klíč `sada@obdobi`); po přepnutí sady ze stavu vypadne. Nepovedené
+  5 minut pošle sadu po termínu do Telegramu, jednou za sadu a očekávané období (u sady bez něj jednou za sadu a termín).
+  Odeslaná upozornění drží stav monitoringu v issue #436 (pole `cerstvost`, klíč `sada@obdobi`, u sady bez
+  očekávaného období `sada@termin-RRRR-MM`); po přepnutí sady ze stavu vypadne. Nepovedené
   odeslání se zkusí v dalším běhu. V běžném režimu jde sada jen do týdenního přehledu.
 
 Registr, datovou linku ani workflow etapa nemění. Chyba čtení registru nezastaví kontrolu dostupnosti ani přehled,
