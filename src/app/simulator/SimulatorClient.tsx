@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
 import { normalizeSchoolKey } from '@/lib/school-key';
 import { nazevNabidky } from '@/lib/obor-profil';
-import { DRUHY_ZRIZOVATELE, matchesSearchLocation, matchesZrizovatel, splitByCommute, type DruhZrizovatele } from '@/lib/simulator-filter';
+import { DRUHY_ZRIZOVATELE, indexDojezdu, matchesSearchLocation, matchesZrizovatel, splitByCommute, type DruhZrizovatele } from '@/lib/simulator-filter';
 import type { AdmissionContext } from '@/lib/admission-summary';
 import { MAX_SELECTION, readSelection, selectionForShare, shareUrlFor } from '@/lib/simulator-state';
 import { SeznamNabidek, SeznamUcebnichOboru, type NabidkaSimulatoru } from '@/components/simulator/SeznamNabidek';
@@ -59,7 +59,7 @@ interface SearchResponse {
 const button = 'min-h-11 rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm font-medium hover:bg-slate-50 disabled:opacity-40 disabled:cursor-not-allowed focus-visible:outline-2 focus-visible:outline-blue-600';
 interface Stop { stopId: string; name: string; context?: string }
 interface Estimate { programIds: string[]; minutes: number; walkMinutes: number; transfers: number; lines: string[]; stopName: string }
-interface Transit { estimates: Estimate[]; mappedProgramIds: string[]; originName: string }
+interface Transit { estimates: Estimate[]; mappedProgramIds: string[]; viceMistRedizo?: string[]; originName: string }
 const STORAGE_KEY = 'prijimacky-vyber-2027';
 const field = 'mt-1 min-h-11 w-full rounded-lg border border-slate-300 bg-white px-3 py-2 text-base focus-visible:outline-2 focus-visible:outline-blue-600';
 const normalize = (text: string) => text.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
@@ -267,18 +267,10 @@ export function SimulatorClient({ rokPasem, prevod, pravidla, rokKriterii, termi
     () => typeof window === 'undefined' ? selectedIds : selectionForShare(selectedIds, window.location.origin),
     [selectedIds],
   );
-  const estimates = useMemo(() => {
-    const result = new Map<string, Estimate>();
-    const duplicates = new Set<string>();
-    for (const estimate of transit?.estimates ?? []) for (const id of estimate.programIds) {
-      const key = normalizeSchoolKey(id);
-      if (result.has(key)) duplicates.add(key); else result.set(key, estimate);
-    }
-    // Nejednoznačné místo výuky nemá zvolený nejkratší dojezd.
-    for (const key of duplicates) result.delete(key);
-    return { byId: result, duplicates };
-  }, [transit]);
-  const mapped = useMemo(() => new Set((transit?.mappedProgramIds ?? []).map(normalizeSchoolKey).filter(id => !estimates.duplicates.has(id))), [transit, estimates]);
+  // Nejednoznačné místo výuky nemá zvolený nejkratší dojezd; nabídka 2026 bez přesné shody id
+  // dostane odhad své školy, má-li škola jediné místo výuky (#168).
+  const dojezdy = useMemo(() => indexDojezdu(transit?.estimates ?? [], transit?.mappedProgramIds ?? [],
+    transit?.viceMistRedizo ?? [], normalizeSchoolKey), [transit]);
   const availableSubjects = useMemo(() => Array.from(new Set(catalog?.schools.map(s => s.obor).filter(Boolean))).sort((a, b) => a.localeCompare(b, 'cs')), [catalog]);
   const cities = useMemo(() => Array.from(new Set(catalog?.schools.map(s => s.obec.trim()).filter(Boolean))).sort((a, b) => a.localeCompare(b, 'cs')), [catalog]);
   const filtered = useMemo(() => (catalog?.schools ?? []).filter(s => {
@@ -291,14 +283,14 @@ export function SimulatorClient({ rokPasem, prevod, pravidla, rokKriterii, termi
   // Bez zastávky, obce i kraje se celá země neukazuje: 2 800 nabídek by nikomu nepomohlo.
   const needsPlace = !onlySaved && !stop && !city && !region;
   const resultCandidates = onlySaved ? filtered.filter(s => savedKeys.has(normalizeSchoolKey(s.id))) : filtered;
-  const groups = stop ? splitByCommute(resultCandidates, limit, s => estimates.byId.get(normalizeSchoolKey(s.id))?.minutes, s => mapped.has(normalizeSchoolKey(s.id))) : { within: resultCandidates, near: [], unknown: [] };
+  const groups = stop ? splitByCommute(resultCandidates, limit, s => dojezdy.odhad(s.id)?.minutes, s => dojezdy.jeNapojena(s.id)) : { within: resultCandidates, near: [], unknown: [] };
   const pending = !!stop && !transit;
   // Filtr „jen uložené“ platí nad výsledky hledání, nikoli místo nich.
   const shownOffers = onlySaved ? groups.within.filter(s => savedKeys.has(normalizeSchoolKey(s.id))) : groups.within;
   const minPrijatych = pasma?.min_prijatych_pro_hranici ?? 10;
   // Pásmo jen pro nabídky aktuálního katalogu: u starších uložených nemáme doloženou shodu formy studia.
   const radekPasma = (n: { id: string }) => radekPasmaNabidky(n.id, klicePlatnych, normalizeSchoolKey, pasma?.data);
-  const minutyDojezdu = (n: { id: string }) => estimates.byId.get(normalizeSchoolKey(n.id))?.minutes;
+  const minutyDojezdu = (n: { id: string }) => dojezdy.odhad(n.id)?.minutes;
   // Při více testech rozhoduje nejhorší výsledek (rozhodnutí zadavatele 4).
   const bodySkupiny = testy.nejhorsi;
   // Nabídky bez JPZ, které nejsou učební: umělecké obory a konzervatoře mají talentovou zkoušku, C a J
@@ -528,7 +520,7 @@ export function SimulatorClient({ rokPasem, prevod, pravidla, rokKriterii, termi
           {pending ? <div role="status"><p>{transitError || 'Počítám orientační dojezd…'}</p>{transitError && <button className={`${button} mt-3`} onClick={() => { setTransitError(''); setRetry(retry + 1); }}>Zkusit znovu</button>}</div> : <>
             {needsPlace ? <p className="my-5">Zvol město, kraj nebo výchozí zastávku. Obory z celé země najednou neukazujeme.</p> : <>
             <div className="flex flex-wrap items-center justify-between gap-2"><h2 className="text-xl font-semibold" aria-live="polite">{countLabel(shownOffers.length)}{stop ? ` do ${limit} min` : ''}</h2></div>
-            {!!groups.near.length && <div className="my-5 border-l-4 border-amber-500 bg-amber-50 p-4"><h3 className="font-semibold">Ještě {countLabel(groups.near.length)} těsně za limitem</h3><p className="mt-1 text-sm">Nejbližší je o {(estimates.byId.get(normalizeSchoolKey(groups.near[0].id))?.minutes ?? limit) - limit} min dál. Tvůj limit zůstává {limit} min.</p><div className="mt-3 flex flex-wrap gap-2"><a href="#near-schools" className={button}>Prohlédnout další obory</a>{limit < 180 && <button className={button} onClick={() => changeTime(String(Math.min(180, estimates.byId.get(normalizeSchoolKey(groups.near[groups.near.length - 1].id))?.minutes ?? limit + 10)))}>Zvýšit limit na {Math.min(180, estimates.byId.get(normalizeSchoolKey(groups.near[groups.near.length - 1].id))?.minutes ?? limit + 10)} min</button>}</div></div>}
+            {!!groups.near.length && <div className="my-5 border-l-4 border-amber-500 bg-amber-50 p-4"><h3 className="font-semibold">Ještě {countLabel(groups.near.length)} těsně za limitem</h3><p className="mt-1 text-sm">Nejbližší je o {(minutyDojezdu(groups.near[0]) ?? limit) - limit} min dál. Tvůj limit zůstává {limit} min.</p><div className="mt-3 flex flex-wrap gap-2"><a href="#near-schools" className={button}>Prohlédnout další obory</a>{limit < 180 && <button className={button} onClick={() => changeTime(String(Math.min(180, minutyDojezdu(groups.near[groups.near.length - 1]) ?? limit + 10)))}>Zvýšit limit na {Math.min(180, minutyDojezdu(groups.near[groups.near.length - 1]) ?? limit + 10)} min</button>}</div></div>}
             {catalog && !shownOffers.length && <p className="my-5">V zadaných podmínkách není žádný obor. Zkus rozšířit čas, změnit město nebo zrušit některý filtr.</p>}
             <div className="mt-4">{seznam(shownOffers)}</div>
             {!!groups.near.length && <section id="near-schools" className="mt-8 scroll-mt-8"><h2 className="text-xl font-semibold">Těsně za limitem</h2><p className="mt-1 text-sm text-slate-600">Nejvýš o 10 minut dál, ostatní filtry platí.</p><div className="mt-3">{seznam(groups.near)}</div></section>}

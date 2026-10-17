@@ -29,6 +29,16 @@ ve kterém na něj narazíš (krátce: co se stane, proč, co s tím). Oprava, k
 
 - **Přihlášení do administrace (#479):** `src/lib/admin-relace.ts` importuje `next/headers`, který v testech pod plain node neprojde (`ERR_MODULE_NOT_FOUND`); testy proto importují `admin-relace-jadro.ts` bez Next.js. Passkey je vázaný na doménu (rpID = hostname požadavku), takže passkey z produkce na náhledu Vercelu nefunguje a OAuth aplikace GitHubu má callback jen na produkci: administrace na náhledech přihlásit nejde.
 
+## Dojezd
+
+- **Id nabídek dojezdu a katalogu simulátoru se liší (#168).** `api/dostupnost` skládá nabídky ze
+  `schools_data.json` (ročník 2025, id se zaměřením, např. `600001873_79-41-K/81_hudební`), katalog simulátoru
+  z dat CERMAT 2026 (`600001873_79-41-K/81`); `normalizeSchoolKey` je nesjednotí. Simulátor proto páruje přes
+  `indexDojezdu` (`src/lib/simulator-filter.ts`) s náhradou podle RED IZO u škol s jediným místem výuky. Kdo
+  bude dojezd párovat jinde, musí použít totéž, jinak škola tiše spadne do „Dojezd zatím neověřen“.
+- **Poloha školy je sídlo podle RED IZO, ne místo výuky oboru.** `data/school_locations.json` má jen školy
+  s jednotnou zkouškou z katalogu 2025 (1 088); učební obory a nové školy 2026 polohu nemají.
+
 ## Data CERMAT
 
 - **Zaměření oboru se mezi 1. a 2. kolem téhož roku mění.** Škola ho doplní až ve 2. kole, vynechá, změní velikost

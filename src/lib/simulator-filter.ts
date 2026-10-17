@@ -18,6 +18,58 @@ export function splitByCommute<T extends { id: string }>(
   return { within: within.sort(byTime), near: near.sort(byTime), unknown };
 }
 
+/**
+ * Párování nabídek katalogu simulátoru s odhady dojezdu (#168).
+ *
+ * Odhady z /api/dostupnost nesou id nabídek z katalogu `schools_data.json` (se zaměřením, např.
+ * `600001873_79-41-K/81_hudební`), katalog simulátoru id nabídek 2026 z dat CERMAT (`600001873_79-41-K/81`).
+ * Poloha školy je v datech dojezdu po RED IZO, proto když přesné id nesedí, platí odhad školy:
+ * jen když má škola jediné místo výuky (`viceMistRedizo` je nemá) a jediný odhad. Jinak zůstává
+ * nabídka bez dojezdu, jako dosud nejednoznačné místo výuky.
+ */
+export function indexDojezdu<E extends { programIds: string[] }>(
+  odhady: E[],
+  mapovanaId: string[],
+  viceMistRedizo: string[],
+  normalize: (id: string) => string,
+) {
+  const redizoZ = (id: string) => id.split('_')[0];
+  const podleId = new Map<string, E>();
+  const duplicitni = new Set<string>();
+  const podleRedizo = new Map<string, E | null>();
+  const viceMist = new Set(viceMistRedizo);
+  for (const odhad of odhady) {
+    for (const id of odhad.programIds) {
+      const klic = normalize(id);
+      if (podleId.has(klic) && podleId.get(klic) !== odhad) duplicitni.add(klic); else podleId.set(klic, odhad);
+    }
+    for (const redizo of new Set(odhad.programIds.map(redizoZ))) {
+      // Dva odhady pro jedno RED IZO znamenají víc míst výuky: odhad školy pak neexistuje.
+      podleRedizo.set(redizo, podleRedizo.has(redizo) ? null : odhad);
+    }
+  }
+  for (const klic of duplicitni) podleId.delete(klic);
+  const mapovana = new Set(mapovanaId.map(normalize).filter(id => !duplicitni.has(id)));
+  const mapovanaRedizo = new Set(mapovanaId.map(redizoZ));
+  const jednoznacne = (redizo: string) => !viceMist.has(redizo) && podleRedizo.get(redizo) !== null;
+  return {
+    odhad(id: string): E | undefined {
+      const klic = normalize(id);
+      if (podleId.has(klic)) return podleId.get(klic);
+      if (duplicitni.has(klic)) return undefined;
+      const redizo = redizoZ(id);
+      return jednoznacne(redizo) ? podleRedizo.get(redizo) ?? undefined : undefined;
+    },
+    jeNapojena(id: string): boolean {
+      const klic = normalize(id);
+      if (mapovana.has(klic)) return true;
+      if (duplicitni.has(klic)) return false;
+      const redizo = redizoZ(id);
+      return mapovanaRedizo.has(redizo) && jednoznacne(redizo);
+    },
+  };
+}
+
 /** Dojezd překračuje hranice krajů, kraj proto platí jen bez něj; město se s dojezdem kombinuje. */
 export function matchesSearchLocation(
   school: { obec: string; kraj: string },
