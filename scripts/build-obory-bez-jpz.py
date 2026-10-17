@@ -203,8 +203,10 @@ def spojit_s_rokem_2025(nabidky: list[dict], r25: list[dict], imp, par) -> Count
 
 def spojit_s_druhym_kolem(nabidky: list[dict], r1: list[dict], r2: list[dict], dk) -> Counter:
     """Doplní `kolo_2` stejným párováním jako `build-druhe-kolo.py` (`dk.sparuj`, včetně druhého
-    průchodu bez zaměření, #282); kolize klíče webu se nehádají (kolo_2 zůstane None)."""
+    průchodu bez zaměření, #282); kolize klíče webu se nehádají (kolo_2 zůstane None).
+    Páry se ověří shodou ID_SO (`dk.rozpory_id_so`, #516); rozpor se jen vypíše."""
     m2, _ = dk.sparuj(r1, r2)
+    dk.vypis_rozpory_id_so(dk.rozpory_id_so(r1, m2), "obory bez JPZ 2026")
     m2_presne = {dk.parovaci_klic(r) for r in r2}
     podle_webu: Counter = Counter()
     klice = {}

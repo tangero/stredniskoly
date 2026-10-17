@@ -62,7 +62,7 @@ Identifikace a popis nabídky, sloupce 0 až 30:
 
 | Sloupec | Obsah | Otázka rodiče | Používáme |
 |---|---|---|---|
-| `ID_SOF`, `ID_SO` | identifikátor nabídky a oboru | žádná, technické | ano, jako `source_id` |
+| `ID_SOF`, `ID_SO` | identifikátor nabídky (`ID_SOF`) a oboru na škole (`ID_SO`) | žádná, technické | ano: `ID_SOF` jako `source_id`; `ID_SO` ke kontrole párů 1. a 2. kola (#516), nepáruje se jím |
 | `IZO`, `REDIZO` | identifikátor školy | která škola to je | ano |
 | `NÁZEV ŠKOLY`, `ULICE`, `OBEC`, `PSČ` | adresa | kde to je | ano |
 | `KRAJ`, `OKRES`, `ORP` a jejich názvy | územní zařazení | je to v dosahu | ano |
@@ -109,7 +109,7 @@ Soubor výsledků má **91 sloupců** a stejnou stavbu v 1. i 2. kole. Verze 1.4
 
 Verze 1.4 tu tvrdila, že z tohoto zdroje nelze zjistit nejnižší přijatý výsledek a že přijatí podle priority za rok 2026 nejsou zveřejněni. Obojí bylo nepravdivé.
 
-**Druhé kolo** vychází ve stejných třech souborech se stejnou stavbou: `PZ{rok}_kolo2_skolobory_kapacity.xlsx`, `…_prihlasky.xlsx` a `…_vysledky.xlsx`. Identifikátor `ID_SOF` se mezi koly **liší**; nabídky se párují podle `REDIZO`, `KKOV`, `ZAMĚŘENÍ OBORU`, `FORMA VZDĚLÁVÁNÍ`, `DÉLKA STUDIA`, `ZKRÁCENÉ STUDIUM` a `JAZYK STUDIA`. Nabídky, které tak zůstanou bez protějšku, se v druhém průchodu párují bez zaměření, a to jen když na obou stranách zbývá právě jeden kandidát (#282, [druhé kolo, oddíl 7](druhe-kolo.md)). V roce 2026 má 2. kolo 1 060 denních nezkrácených nabídek s povinnou zkouškou, 1 039 z nich se spáruje s 1. kolem (886 se shodným zaměřením, 153 bez něj) a 21 existuje jen ve 2. kole. Denní forma se v souborech vyskytuje i jako „den2“.
+**Druhé kolo** vychází ve stejných třech souborech se stejnou stavbou: `PZ{rok}_kolo2_skolobory_kapacity.xlsx`, `…_prihlasky.xlsx` a `…_vysledky.xlsx`. Identifikátor `ID_SOF` se mezi koly **liší**; nabídky se párují podle `REDIZO`, `KKOV`, `ZAMĚŘENÍ OBORU`, `FORMA VZDĚLÁVÁNÍ`, `DÉLKA STUDIA`, `ZKRÁCENÉ STUDIUM` a `JAZYK STUDIA`. Nabídky, které tak zůstanou bez protějšku, se v druhém průchodu párují bez zaměření, a to jen když na obou stranách zbývá právě jeden kandidát (#282, [druhé kolo, oddíl 7](druhe-kolo.md)). V roce 2026 má 2. kolo 1 060 denních nezkrácených nabídek s povinnou zkouškou, 1 039 z nich se spáruje s 1. kolem (886 se shodným zaměřením, 153 bez něj) a 21 existuje jen ve 2. kole. Denní forma se v souborech vyskytuje i jako „den2“. `ID_SO` je na rozdíl od `ID_SOF` v obou kolech téhož roku stejný (mezi roky se mění), ale označuje **obor na škole**: všechna zaměření oboru ho sdílejí a nerozlišuje ani zkrácené studium. Párovat se jím proto nedá (zbylé nabídky nerozliší, u oborů bez zkoušky by spojil nezkrácené se zkráceným studiem); skripty jím každý pár jen ověřují a rozpor vypíší jako varování (#516, [druhé kolo, oddíl 7](druhe-kolo.md)). Ověřeno 17. 10. 2026: 0 rozporů v obou ročnících i u oborů bez zkoušky.
 
 ### 2.2 CERMAT, data uchazečů
 

@@ -34,6 +34,9 @@ ve kterém na něj narazíš (krátce: co se stane, proč, co s tím). Oprava, k
 - **Zaměření oboru se mezi 1. a 2. kolem téhož roku mění.** Škola ho doplní až ve 2. kole, vynechá, změní velikost
   písmen nebo opraví překlep; `ID_SOF` se mezi koly liší. Párování jen přes přesné zaměření ztratilo 153 ze 1 060
   nabídek 2. kola 2026. Proto `sparuj` v `scripts/build-druhe-kolo.py` páruje zbytek bez zaměření, jen jednoznačně (#282).
+- **`ID_SO` není identifikátor nabídky, ale oboru na škole.** V obou kolech téhož roku je stejný, mezi roky se mění
+  a sdílí ho všechna zaměření oboru (bez filtru i zkrácené a nezkrácené studium). Párovat se jím nedá, slouží jen
+  ke kontrole párů (#516).
 
 ## Název školy
 
