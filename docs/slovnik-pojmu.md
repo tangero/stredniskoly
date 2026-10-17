@@ -1,6 +1,6 @@
 # Slovník pojmů
 
-Verze 1.49 · 7. 10. 2026 · **Závazný pro všechny texty na webu.** Nový pojem se na stránce nepoužije bez zápisu sem.
+Verze 1.50 · 17. 10. 2026 · **Závazný pro všechny texty na webu.** Nový pojem se na stránce nepoužije bez zápisu sem.
 
 Slovník pojmů říká, **jakými slovy mluvíme k rodičům a uchazečům**, aby tatáž věc nezněla na každé stránce jinak. Doplňuje [slovník ukazatelů](slovnik-ukazatelu.md), který říká, **jak se veličina jmenuje v datech a jak se počítá**. Kde se oba liší, platí: v datech, kódu a API název ze slovníku ukazatelů, v textu stránky pojem odsud.
 
@@ -95,7 +95,8 @@ Slovník pojmů říká, **jakými slovy mluvíme k rodičům a uchazečům**, a
 | **nad středem podobných škol**, **nerozlišitelné od středu**, **pod středem podobných škol** | zařazení proti mediánu podobných škol s ohledem na velikost ročníku | „nerozlišitelné: rozdíl je u takto velkého ročníku příliš malý“; u skupiny počet hodnocených let („3 ze 4 let“), za školu dostupná hodnocení všech skupin („ve většině hodnocení“); jediný dostupný rok se neoznačuje „každý rok“ | lepší škola, horší škola, nadprůměrná škola, kvalitní, nad skupinou (v textu pro rodiče) |
 | **v celé zemi lépe než X ze 100 maturantů** | průměrný percentil maturantů školy v předmětu; srovnání se všemi maturanty v zemi, ne s podobnými školami | „maturanti školy měli v průměru stejný nebo lepší výsledek než X ze 100 maturantů v celé zemi“; slova „v celé zemi“ se nevypouštějí | percentil (v hlavním textu), pořadí, lépe než X ze 100 bez určení, proti komu |
 | **% bodů v testu**, **průměrný podíl bodů** | průměrný procentní skór z didaktického testu; veličina, ve které se porovnává se středem podobných škol | „průměrný podíl bodů, které maturanti v testu získali“ | skór, percentil (jsou to jiné veličiny), body (těmi se měří jednotná zkouška)  |
-| **maturitu udělalo X z Y přihlášených** | úspěšní ze všech přihlášených ke společné části (tak ji počítá CERMAT) | u rozdílu přihlášených a konajících: „1 ke zkoušce nešel“ | úspěšnost bez jmenovatele, X z Y konajících vedle podílu z přihlášených |
+| **maturitu udělalo X z Y přihlášených** | úspěšní ze všech přihlášených ke společné části (tak ji počítá CERMAT) | u rozdílu přihlášených a konajících: „1 ke zkoušce nešel“ | úspěšnost bez jmenovatele; podíl z konajících vedle počtu přihlášených (každý podíl nese svůj jmenovatel) |
+| **z těch, kdo ke zkoušce skutečně šli, ji udělalo X z Z** | úspěšní z konajících společné části (ukazatel *Úspěšnost maturity z konajících*); vždy až za větou o přihlášených | pojem se vysvětluje sám; v tabulce zkráceně „z těch, kdo šli ke zkoušce, X z Z“ | úspěšnost bez určení, z koho; z konajících (v textu pro rodiče); samostatně bez čísla z přihlášených |
 | **jak si škola vede** | nadpis oddílu s maturitou a inspekcí | není potřeba | kvalita školy, hodnocení školy |
 | **souběžní uchazeči**, **kam se hlásí stejní uchazeči** | uchazeči, kteří měli na přihlášce tento obor i obor jiné školy | „uchazeči, kteří měli na přihlášce i tento obor“ | konkurence, konkurenční škola |
 | **směr studia** | skupina oborů podle toho, co se v nich učí, podle číselníku oborů MŠMT (první dvojčíslí kódu oboru); lycea podle předmětu, víceletá gymnázia zvlášť (`src/lib/smery-studia.ts`) | „obory seskupené podle toho, co se v nich učí, podle číselníku oborů MŠMT“; u rozcestníku vždy i to, že pořadí směrů nic neříká o obtížnosti přijetí | obor (pro celou skupinu), zaměření (to je část oboru), okruh oborů (ten vzniká z přihlášek), kategorie, žebříček |
@@ -156,6 +157,7 @@ Slovník pojmů říká, **jakými slovy mluvíme k rodičům a uchazečům**, a
 
 | Verze | Změna |
 |---|---|
+| 1.50 | Pojem **z těch, kdo ke zkoušce skutečně šli, ji udělalo X z Z** pro úspěšnost maturity z konajících; stojí vždy za větou o přihlášených (17. 10. 2026, issue #375, rozhodnutí vlastníka ukázat obě čísla). U pojmu *maturitu udělalo X z Y přihlášených* upřesněn zákaz: nesmí se míchat jmenovatelé, oba podíly se ukazovat smějí. |
 | 1.49 | **Soutěžící uchazeči** nově vysvětleni větou „kdo splnili podmínky přijetí a nebyli přijati jinam podle vyšší priority na přihlášce“ a údaj „přijato X ze Y“ nese u čísla dovětek o přijatých jinam (7. 10. 2026, #428). Školy čtly „přijato 28 ze 49“ jako odmítnutí 21 zájemců, ale dalších 31 se dostalo jinam, kam se hlásili raději. Čísla se nemění. |
 | 1.48 | Skupiny **S maturitou**, **S výučním listem**, **Po vyučení**, **Ostatní** i v souhrnu míst v záhlaví stránky města a kraje (6. 10. 2026, #244, etapa 3c-4). |
 | 1.47 | **Pojistka** zahrnuje i učební obor, kde v 1. kole nikoho neodmítli kvůli počtu míst; blok **Učební obory** v simulátoru (7. 10. 2026, #244, etapa 5). |

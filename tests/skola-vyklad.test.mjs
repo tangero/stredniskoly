@@ -3,6 +3,7 @@ import assert from 'node:assert/strict';
 import {
   vzdalenostKm, smerStupne, proKohoObor, delkaSlovy, oboryVetou, pocetOboru, shrnutiMaturity, letNadSlovy, jakCastoNadStredem, nazevSkupinyMaturity,
   nazevSObci, podnadpisSkoly, nazevSkolyNadpis, rozdelJazyky, pocetCizichJazyku, pocetMist, mistaPoOborech, vetaNejtezsihoPrijeti,
+  passRateOfTakers, procentoMaturity,
 } from '../src/lib/skola-vyklad.ts';
 
 const machar = { lat: 50.184405, lon: 14.6701023 };
@@ -147,4 +148,28 @@ test('místa po oborech a obtížnost u konkrétního oboru', () => {
   assert.equal(vetaNejtezsihoPrijeti([{ nazev: 'A', delka: 4 }, { nazev: 'B', delka: 4 }], 'těžké', 2), 'Na všechny obory bylo těžké se dostat.');
   assert.equal(vetaNejtezsihoPrijeti([{ nazev: 'A', delka: 4 }, { nazev: 'B', delka: 4 }, { nazev: 'C', delka: 4 }], 'těžké', 5), 'Nejtěžší bylo dostat se na 3 obory, například A (4leté): těžké.');
   assert.equal(vetaNejtezsihoPrijeti([], 'těžké', 2), '');
+});
+
+test('úspěšnost maturity z konajících (issue #375)', () => {
+  // Škola z issue #375: 76 přihlášených, 54 konalo, 40 uspělo; z přihlášených 52,6 %, z konajících 74 %.
+  const celkem = { registered: 76, took: 54, passed: 40, passRate: 52.63, quality: 'complete' };
+  assert.ok(Math.abs(passRateOfTakers(celkem) - (40 / 54) * 100) < 1e-9);
+  assert.equal(procentoMaturity(passRateOfTakers(celkem)), '74,1 %');
+  assert.equal(procentoMaturity(celkem.passRate), '52,6 %');
+  // Malý ročník (10 až 29 konajících) se ukazuje jako passRate, stránka u něj píše „malý ročník“.
+  assert.ok(Math.abs(passRateOfTakers({ took: 15, passed: 10, quality: 'small_sample' }) - (10 / 15) * 100) < 1e-9);
+  // Pod deseti konajícími a bez dat se podíl nezveřejňuje, stejně jako passRate.
+  assert.equal(passRateOfTakers({ took: 9, passed: 9, quality: 'counts_only' }), null);
+  assert.equal(passRateOfTakers({ took: 9, passed: 9 }), null);
+  assert.equal(passRateOfTakers({ took: 0, passed: 0, quality: 'unavailable' }), null);
+  assert.equal(passRateOfTakers({ took: 20, quality: 'small_sample' }), null);
+  assert.equal(passRateOfTakers(null), null);
+  assert.equal(passRateOfTakers({ took: 20, passed: 21, quality: 'small_sample' }), null);
+});
+
+test('procento maturity netvrdí 100 %, když neuspěli všichni', () => {
+  assert.equal(procentoMaturity(100), '100 %');
+  assert.equal(procentoMaturity(99.97), '99,9 %');
+  assert.equal(procentoMaturity(95.74), '95,7 %');
+  assert.equal(procentoMaturity(50), '50 %');
 });

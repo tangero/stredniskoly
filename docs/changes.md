@@ -13,6 +13,17 @@ Záznam změn chování systému: požadavek, co se změnilo a proč, datum. Nej
 - **Proč:** stránky škol nesly úřední názvy ze stavu k 30. 6. 2026, takže změny od 1. 9. 2026 (sloučení Gymnázia
   Čáslav, přejmenování Smíchovské SŠ, SŠ v Kolíně a dalších) chyběly.
 
+## 2026-10-17: úspěšnost maturity i z těch, kdo zkoušku konali (#375)
+
+- **Požadavek:** issue #375, rozhodnutí vlastníka 17. 10. 2026 „ukázat obě čísla“.
+- **Co:** stránka školy v oddílu o maturitě ukazuje vedle počtu úspěšných z přihlášených i podíl z přihlášených
+  (`passRate`) a nový ukazatel *Úspěšnost maturity z konajících* (`passed / took`, `passRateOfTakers`
+  v `src/lib/skola-vyklad.ts`): souhrnná věta za celou školu a řádek každé skupiny oborů. Podíly se při méně než
+  deseti konajících neukazují (příznak `counts_only`). Zapsáno ve slovníku ukazatelů 1.64, slovníku pojmů 1.50
+  a v registru u sady `cermat-maturita`.
+- **Proč:** škola hlásila, že úspěšnost na webu je nesprávná; čísla CERMAT platí, ale počítají z přihlášených,
+  takže škola s mnoha nekonajícími vypadá hůř, než jak dopadli ti, kdo k maturitě šli.
+
 ## 2026-10-17: čerstvost dat hlídá i sady bez očekávaného období a porovnává období podle data (#507)
 
 - **Požadavek:** interní zadání #507 (rozhodnutí vlastníka po review PR #506).
