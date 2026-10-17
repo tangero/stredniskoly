@@ -175,7 +175,7 @@ function RadekOboru({ o, rok }: { o: OborSkoly; rok: number | null }) {
         <span className="text-[18px] font-bold text-[#16325c]">{nadpis}</span>
         {/* Proužek podílu přijatých ze soutěžících by u učebního oboru pod zbylými místy vypadal jako zaplněnost míst. */}
         {!o.bezJpz && o.soutezici && o.zarazeni && o.zarazeni !== 'kapacita_nerozhodovala' ? (
-          <div className="flex h-2.5 max-w-xs overflow-hidden rounded bg-[#e3e9f1]" role="img" aria-label={textPrijatoZ(o.prijati ?? 0, o.soutezici, o.vyssiPriorita)}>
+          <div className="flex h-2.5 max-w-xs overflow-hidden rounded bg-[#e3e9f1]" role="img" aria-label={`v 1. kole ${textPrijatoZ(o.prijati ?? 0, o.soutezici, o.vyssiPriorita)}`}>
             <span className="bg-[#0074e4]" style={{ width: `${(100 * (o.prijati ?? 0)) / o.soutezici}%` }} />
           </div>
         ) : null}
@@ -868,7 +868,7 @@ export function ProfilSkoly({ data, skola, odkazy }: ProfilSkolyProps) {
                                 <td className="px-2 py-2 text-right">{r.km !== null ? `${cislo(r.km, 1)} km` : '—'}</td>
                                 <td className="py-2 pl-2">
                                   {r.zarazeni ? <span className="whitespace-nowrap rounded-full bg-slate-200/70 px-2 py-0.5 text-[12px] font-semibold text-[#16325c]">{ZARAZENI_POPISEK[r.zarazeni]}</span> : <span className="text-[12px] text-slate-500">bez údaje</span>}
-                                  {r.soutezici && r.zarazeni !== 'kapacita_nerozhodovala' ? <span className="block text-[12px] text-slate-500">{textPrijatoZ(r.prijati ?? 0, r.soutezici, r.vyssiPriorita)}</span> : null}
+                                  {r.soutezici && r.zarazeni !== 'kapacita_nerozhodovala' ? <span className="block text-[12px] text-slate-500">v 1. kole {textPrijatoZ(r.prijati ?? 0, r.soutezici, r.vyssiPriorita)}</span> : null}
                                 </td>
                               </tr>
                             );
