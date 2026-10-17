@@ -109,7 +109,7 @@ Soubor výsledků má **91 sloupců** a stejnou stavbu v 1. i 2. kole. Verze 1.4
 
 Verze 1.4 tu tvrdila, že z tohoto zdroje nelze zjistit nejnižší přijatý výsledek a že přijatí podle priority za rok 2026 nejsou zveřejněni. Obojí bylo nepravdivé.
 
-**Druhé kolo** vychází ve stejných třech souborech se stejnou stavbou: `PZ{rok}_kolo2_skolobory_kapacity.xlsx`, `…_prihlasky.xlsx` a `…_vysledky.xlsx`. Identifikátor `ID_SOF` se mezi koly **liší**; nabídky se párují podle `REDIZO`, `KKOV`, `ZAMĚŘENÍ OBORU`, `FORMA VZDĚLÁVÁNÍ`, `DÉLKA STUDIA`, `ZKRÁCENÉ STUDIUM` a `JAZYK STUDIA`. V roce 2026 má 2. kolo 1 060 denních nezkrácených nabídek s povinnou zkouškou, 886 z nich se spáruje s 1. kolem a 174 existuje jen ve 2. kole. Denní forma se v souborech vyskytuje i jako „den2“.
+**Druhé kolo** vychází ve stejných třech souborech se stejnou stavbou: `PZ{rok}_kolo2_skolobory_kapacity.xlsx`, `…_prihlasky.xlsx` a `…_vysledky.xlsx`. Identifikátor `ID_SOF` se mezi koly **liší**; nabídky se párují podle `REDIZO`, `KKOV`, `ZAMĚŘENÍ OBORU`, `FORMA VZDĚLÁVÁNÍ`, `DÉLKA STUDIA`, `ZKRÁCENÉ STUDIUM` a `JAZYK STUDIA`. Nabídky, které tak zůstanou bez protějšku, se v druhém průchodu párují bez zaměření, a to jen když na obou stranách zbývá právě jeden kandidát (#282, [druhé kolo, oddíl 7](druhe-kolo.md)). V roce 2026 má 2. kolo 1 060 denních nezkrácených nabídek s povinnou zkouškou, 1 039 z nich se spáruje s 1. kolem (886 se shodným zaměřením, 153 bez něj) a 21 existuje jen ve 2. kole. Denní forma se v souborech vyskytuje i jako „den2“.
 
 ### 2.2 CERMAT, data uchazečů
 

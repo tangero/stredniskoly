@@ -13,6 +13,16 @@ Záznam změn chování systému: požadavek, co se změnilo a proč, datum. Nej
 - **Proč:** stránky škol nesly úřední názvy ze stavu k 30. 6. 2026, takže změny od 1. 9. 2026 (sloučení Gymnázia
   Čáslav, přejmenování Smíchovské SŠ, SŠ v Kolíně a dalších) chyběly.
 
+## 2026-10-17: párování 1. a 2. kola i při změněném zaměření (#282)
+
+- **Požadavek:** hlášení #282 (Lyceum 600007561 neukazovalo 2. kolo) a odpověď vlastníka z 17. 10. 2026.
+- **Co:** `scripts/build-druhe-kolo.py` páruje nabídky, které zůstanou bez protějšku po přesném párování, ještě
+  jednou bez zaměření, a to jen když na obou stranách zbývá jediný kandidát (funkce `sparuj`, kterou používá
+  i `scripts/build-obory-bez-jpz.py`). Přegenerovány `public/druhe_kolo.json` (2026: 1 039 nabídek s 2. kolem
+  místo 886, 2025: 1 042 místo 880) a `src/data/obory-bez-jpz-2026.json` (1 412 místo 1 261).
+- **Proč:** školy zaměření mezi koly doplní, vynechají nebo přepíšou (velikost písmen, překlep), a přesné párování
+  takovou nabídku ztratilo; web pak u ní tvrdil, že 2. kolo nevypsala.
+
 ## 2026-10-17: úspěšnost maturity i z těch, kdo zkoušku konali (#375)
 
 - **Požadavek:** issue #375, rozhodnutí vlastníka 17. 10. 2026 „ukázat obě čísla“.
