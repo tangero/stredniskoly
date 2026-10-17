@@ -23,6 +23,7 @@ ke konkrétnímu dni.
 | `rssz-2025-12-31.jsonld` | 31. 12. 2025 | https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-12-31.jsonld |
 | `rssz-2026-03-31.jsonld` | 31. 3. 2026 (období 1. kola JPZ 2026) | https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-03-31.jsonld |
 | `rssz-2026-06-30.jsonld` | 30. 6. 2026 | https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld |
+| `rssz-2026-09-30.jsonld` | 30. 9. 2026 (zveřejněn 2. 10. 2026, převzat 17. 10. 2026, #478) | https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-09-30.jsonld |
 
 Struktura: `list` obsahuje subjekty podle `redIzo`; každý má sídlo
 (s kódem RÚIAN), ředitele, zřizovatele a `skolyAZarizeni` s IZO včetně
@@ -72,3 +73,18 @@ python3 scripts/build-nazvy-oboru-rejstrik.py
 Po každém přepnutí snímku v registru (`msmt-rejstrik-snimky`), i po převzetí revize
 téhož čtvrtletí, index přegenerujte; generátory index, jehož záznam `zobrazeno`
 neodpovídá registru, odmítnou.
+
+## Obnova úředních názvů škol
+
+Plný úřední název na stránce školy a v identifikaci v portálu (`identifikace[redizo].uplny_nazev`)
+se obnovuje hromadně s každým převzatým snímkem, tedy čtvrtletně. Po přegenerování indexu
+vytvořte report rozdílů proti dosavadnímu indexu (z gitu):
+
+```sh
+git show <commit před přegenerováním>:data/msmt_rejstrik/nazvy-oboru.json > /tmp/stary-index.json
+python3 scripts/report-nazvy-skol-rejstrik.py --stary /tmp/stary-index.json
+```
+
+Report (`docs/podklady/nazvy-skol-rejstrik-<staré>-<nové>.json`) odliší věcnou změnu názvu
+od rozdílu formátu a upozorní na ruční opravu v `src/data/opravy-nazvu-skol.json`, kterou
+rejstřík už nese. Postup: `docs/zdroje-dat.md`, oddíl 2.19a.
