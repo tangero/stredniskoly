@@ -131,8 +131,8 @@ export function StatsTab({ program, extendedStats, data2026, result2026, souhrn 
               ))}</tbody>
             </table>
             <p className="mt-4 text-sm text-slate-600">
-              Kolik uchazečů si obor zapsalo jako první, druhou a další volbu.
-              {prijati2026 !== undefined && ` Přijato bylo ${count(prijati2026)} uchazečů.`}
+              Kolik uchazečů si obor zapsalo jako první, druhou a další volbu. Počty přihlášek a přijatých jsou z 1. kola.
+              {prijati2026 !== undefined && ` V 1. kole bylo přijato ${count(prijati2026)} uchazečů.`}
               {' '}Kolik přijatých mělo kterou prioritu, CERMAT za rok 2026 zveřejňuje, ale na webu to zatím nezobrazujeme.
             </p>
           </div>
@@ -166,8 +166,8 @@ export function StatsTab({ program, extendedStats, data2026, result2026, souhrn 
             <table className="mt-4 w-full text-left text-sm">
               <thead><tr className="text-slate-600">
                 <th scope="col" className="pb-2 font-medium">Priorita</th>
-                <th scope="col" className="pb-2 text-right font-medium">Přihlášky</th>
-                <th scope="col" className="pb-2 text-right font-medium">Přijatí</th>
+                <th scope="col" className="pb-2 text-right font-medium">Přihlášky (1. kolo)</th>
+                <th scope="col" className="pb-2 text-right font-medium">Přijatí (1. kolo)</th>
               </tr></thead>
               <tbody>{priorities.map((priority, index) => (
                 <tr key={index} className="border-t border-slate-100">
