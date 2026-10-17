@@ -8,6 +8,14 @@ Záznam změn chování systému: požadavek, co se změnilo a proč, datum. Nej
 - **Co:** nahoře blok Co dělat teď a čtyři kroky výběru (typ školy, co dítě baví, dny otevřených dveří a veletrhy,
   jakou školu podle známek), mechanika přijímání níž se stejnými kotvami; nový titulek, FAQ a strukturovaná data.
 - **Proč:** stránka odpovídala hlavně na „jak funguje přijímací řízení“, ne na „jak vybrat školu“.
+## 2026-10-17: upozornění na data po očekávaném termínu (#355, etapa 3)
+
+- **Požadavek:** projekt #355, etapa 3 (čerstvost dat), kritéria K16 a K17.
+- **Co:** týdenní přehled má oddíl Čerstvost dat se sadami z `public/stav_datovych_sad.json`, jejichž
+  `ocekavano.kdy` minul a web pořád ukazuje starší období; ve zvýšeném režimu je kontrola dostupnosti pošle do
+  Telegramu jednou za sadu a období (`scripts/provoz/cerstvost.mjs`).
+- **Proč:** Datová linka hlídá zveřejnění nových dat, ale nikdo neupozornil, když očekávaný termín minul a web data
+  pořád nemá (například výsledky 1. kola, cíl „na webu do 24 h“).
 
 ## 2026-10-15: datová linka předává schválený graf spojení a přepočítá zastávky škol (#500)
 
