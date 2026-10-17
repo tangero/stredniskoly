@@ -8,6 +8,7 @@ Záznam změn chování systému: požadavek, co se změnilo a proč, datum. Nej
 - **Co:** nahoře blok Co dělat teď a čtyři kroky výběru (typ školy, co dítě baví, dny otevřených dveří a veletrhy,
   jakou školu podle známek), mechanika přijímání níž se stejnými kotvami; nový titulek, FAQ a strukturovaná data.
 - **Proč:** stránka odpovídala hlavně na „jak funguje přijímací řízení“, ne na „jak vybrat školu“.
+
 ## 2026-10-17: upozornění na data po očekávaném termínu (#355, etapa 3)
 
 - **Požadavek:** projekt #355, etapa 3 (čerstvost dat), kritéria K16 a K17.
