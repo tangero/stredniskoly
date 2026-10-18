@@ -670,9 +670,14 @@ export async function POST(request: NextRequest) {
         lines: timing.usedRoutes,
         stopName: timing.stopName,
       }));
+      // Školy s víc místy výuky: nabídku katalogu, jejíž id se nespáruje přesně, nelze přiřadit podle RED IZO (#168).
+      const mistPodleRedizo = new Map<string, number>();
+      for (const school of schools) mistPodleRedizo.set(school.redizo, (mistPodleRedizo.get(school.redizo) ?? 0) + 1);
+      const viceMistRedizo = Array.from(mistPodleRedizo).filter(([, pocet]) => pocet > 1).map(([redizo]) => redizo);
       return NextResponse.json({
         estimates,
         mappedProgramIds: schools.filter(school => coveredGroups.has(school.groupKey)).flatMap(school => school.programs.map(program => program.id)),
+        viceMistRedizo,
         originName: startName,
         model: 'orientacni-ranni-profil',
         searchedMinutes: routingLimit,

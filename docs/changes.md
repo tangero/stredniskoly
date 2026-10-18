@@ -2,6 +2,17 @@
 
 Záznam změn chování systému: požadavek, co se změnilo a proč, datum. Nejnovější nahoře.
 
+## 2026-10-17: simulátor páruje dojezd i s nabídkami 2026 (#168)
+
+- **Požadavek:** hlášení #168 – při hledání podle dojezdu ze zastávky Biskupcova se nenašlo Gymnázium a Hudební
+  škola hl. m. Prahy (Komenského náměstí), ač je asi 9 minut daleko.
+- **Co:** odhady dojezdu z `/api/dostupnost` nesou id nabídek katalogu 2025 se zaměřením, katalog simulátoru id
+  nabídek 2026; nabídka bez přesné shody (3 882 z 5 993) spadla do sbalené skupiny „Dojezd zatím neověřen“.
+  Simulátor teď takové nabídce přiřadí odhad její školy podle RED IZO, má-li škola jediné místo výuky
+  (`indexDojezdu` v `src/lib/simulator-filter.ts`); API posílá seznam škol s víc místy výuky (`viceMistRedizo`).
+- **Proč:** dojezd se počítá k poloze školy, ne k nabídce; rozdílný zápis id nesmí školu vyřadit z výsledků.
+  Navíc dostane dojezd 2 922 nabídek (932 s jednotnou zkouškou, 1 990 bez ní).
+
 ## 2026-10-17: ruční oprava názvu školy v portálu bez ulice a obce (#374)
 
 - **Požadavek:** hlášení #374 (profil RED IZO 600171388 v portálu ukazoval „Střední škola řemesel Gen. Krátkého,
