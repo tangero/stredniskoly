@@ -12,6 +12,27 @@ Záznam změn chování systému: požadavek, co se změnilo a proč, datum. Nej
 - **Proč:** `ID_SO` označuje obor na škole, ne nabídku se zaměřením; jako párovací klíč by nepřidal žádný pár
   (u oborů bez zkoušky by přidal 12 chybných). Jako nezávislá kontrola ale odhalí případný chybný pár.
 
+## 2026-10-17: úřední název školy v portálu z rejstříku MŠMT (#515)
+
+- **Požadavek:** issue #515, rozhodnutí vlastníka ze 17. 10. 2026: portál pro školy má brát úřední název z rejstříku
+  MŠMT, ne z katalogu.
+- **Co:** nadpis profilu (`/pro-skoly/profil`), přepínač škol, `/pro-skoly/kriteria` a titulky issue a zprávy
+  z `/api/portal/ucet` a `/api/portal-skoly` (`getNazevSAdresou`, `nazev_s_adresou` v `src/lib/portal-skol.ts`) berou
+  název v pořadí ruční oprava → úplný název z rejstříku (`identifikace.uplny_nazev` v `data/msmt_rejstrik/nazvy-oboru.json`)
+  → dosavadní katalogový název s ulicí a obcí (škola mimo rejstřík). K názvu z rejstříku se ulice ani obec nepřidávají,
+  sídlo už obsahuje. Veřejná stránka školy, adresy stránek (slug) a zkrácený název v katalogu se nemění.
+- **Ruční opravy (odpověď vlastníka 18. 10. 2026):** tři opravy názvu (600007243 #476, 600005089 #319, 600171388 #374),
+  které rejstřík od snímku k 30. 9. 2026 nese shodně, jsou odstraněné ze `src/data/opravy-nazvu-skol.json`; soubor
+  a mechanismus zůstávají pro budoucí výjimky. Nadpis stránky školy i portál ukazují týž název z rejstříku. E-maily
+  s přihlašovacím odkazem, stránka pozvánky a administrace (`getNazevSkoly`) u těchto tří škol nově ukážou zkrácený
+  název z katalogu jako u ostatních škol. Testy mechanismu oprav běží na smyšlených datech v dočasném adresáři.
+- **Odkaz na stránku školy v issue z `/api/portal-skoly`:** slug se skládá ze zkráceného názvu v katalogu stejně
+  jako na stránce školy (`getAdresaStrankySkoly` v `src/lib/portal-skol.ts`, `adresaPrehledu`), ne z `getNazevSkoly`;
+  s ruční opravou by vznikl jiný slug, než má stránka. Importy v `src/lib/rejstrik-nazev-skoly.ts` mají příponu `.ts`, aby
+  modul šel načíst i z `portal-skol.ts` pod `node --experimental-strip-types` v testech.
+- **Proč:** katalog nese zkrácený název z dat CERMAT, který se po přejmenování školy neobnoví; rejstřík se obnovuje
+  čtvrtletně a ruční opravy kvůli portálu tím přestávají být potřeba.
+
 ## 2026-10-17: simulátor páruje dojezd i s nabídkami 2026 (#168)
 
 - **Požadavek:** hlášení #168 – při hledání podle dojezdu ze zastávky Biskupcova se nenašlo Gymnázium a Hudební

@@ -54,8 +54,11 @@ ve kterém na něj narazíš (krátce: co se stane, proč, co s tím). Oprava, k
   MŠMT (`nazvy-oboru.json`) se obnovuje po čtvrtletích, takže nový název se v něm objeví se zpožděním. Oprava přebije
   `uplny_nazev` v nadpisu stránky školy a v identifikaci v portálu. Zkrácený název v katalogu a adresa stránky se
   nemění (zkratku katalogu tvoří datová linka). Záznam má dva důvody: (1) rejstřík název ještě nenese, pak se záznam
-  odstraní, až ho rejstřík ponese; (2) portál (`src/lib/portal-skol.ts`, `getNazevSAdresou`/`getNazevSkoly`) bere
-  název z katalogu, ne z rejstříku, a záznam ho tam opravuje i tehdy, když ho rejstřík už nese (600005089, #319;
-  600171388, #374); takový záznam se odstraní, až portál převezme název z rejstříku. V portálu se oprava ukáže
-  přesně tak, jak je zapsaná: `getNazevSAdresou` a `nazev_s_adresou` k ní ulici ani obec nepřidávají (#374), takže
-  `uplny_nazev` musí školu určit sám.
+  odstraní, až ho rejstřík ponese; (2) portál bral název z katalogu, ne z rejstříku, a záznam ho tam opravoval
+  i tehdy, když ho rejstřík už nesl (600005089, #319; 600171388, #374). Od #515 bere `getNazevSAdresou`
+  (nadpis profilu, přepínač škol, kritéria, issue a zprávy) název v pořadí oprava → rejstřík → katalog s ulicí
+  a obcí, takže důvod (2) odpadl a všechny tři opravy byly odstraněny (seznam je prázdný). `getNazevSkoly`
+  (e-maily s odkazem, pozvánka, administrace) vrací opravu, jinak zkrácený název z katalogu. Slug v odkazu na
+  stránku školy se nesmí skládat z opravy: stránka školy má slug ze zkráceného názvu v katalogu
+  (`getAdresaStrankySkoly`, #515). V portálu se oprava ukáže přesně tak, jak je zapsaná,
+  bez ulice a obce (#374), takže `uplny_nazev` musí školu určit sám.
