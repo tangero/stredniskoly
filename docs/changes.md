@@ -2,6 +2,16 @@
 
 Záznam změn chování systému: požadavek, co se změnilo a proč, datum. Nejnovější nahoře.
 
+## 2026-10-17: ruční oprava názvu školy v portálu bez ulice a obce (#374)
+
+- **Požadavek:** hlášení #374 (profil RED IZO 600171388 v portálu ukazoval „Střední škola řemesel Gen. Krátkého,
+  Šumperk“ místo „Střední škola řemesel, Šumperk“) a rozhodnutí vlastníka ze 17. 10. 2026.
+- **Co:** když má škola ruční opravu názvu (`src/data/opravy-nazvu-skol.json`), nadpis profilu
+  (`/pro-skoly/profil`), přepínač škol a další místa s `getNazevSAdresou` ukážou opravu přesně, bez doplněné ulice
+  a obce. Týká se i Gymnázia Čáslav (#476). Přibyl záznam opravy pro 600171388 (portál bere název z katalogu, ne
+  z rejstříku). Školy bez opravy mají název s ulicí a obcí beze změny.
+- **Proč:** oprava je úplný úřední název; doplněná ulice z něj dělala jiný, neúřední název.
+
 ## 2026-10-17: počty přihlášek a přijatých na stránce školy označené jako 1. kolo (#226)
 
 - **Požadavek:** hlášení školy #226 (počty přihlášek jsou jen za 1. kolo, školy vypisují i další kola),
