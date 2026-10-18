@@ -200,6 +200,31 @@ export interface RokMaturity {
   stav: StavProtiSkupine | null;
 }
 
+/** Pod tímto počtem konajících se podíly maturity nezveřejňují (příznak `counts_only`, maturitní návrh §7). */
+export const MATURITA_PODILY_OD_KONAJICICH = 10;
+
+/**
+ * Úspěšnost maturity z konajících (slovník ukazatelů, oddíl 5): podíl úspěšných z těch, kdo společnou část
+ * skutečně konali, `passed / took · 100`. Druhé číslo vedle `passRate`, který CERMAT počítá z přihlášených
+ * (issue #375). Platí tytéž meze zveřejnění jako u `passRate`: při příznaku `counts_only` nebo `unavailable`
+ * a pod deseti konajícími vrací null a stránka ukáže jen počty.
+ */
+export function passRateOfTakers(z: Pick<MaturitaPredmet, 'took' | 'passed' | 'quality'> | null | undefined): number | null {
+  if (!z || z.passed === undefined || z.took === undefined || z.took <= 0) return null;
+  if (z.quality === 'counts_only' || z.quality === 'unavailable') return null;
+  if (z.took < MATURITA_PODILY_OD_KONAJICICH || z.passed > z.took) return null;
+  return (z.passed / z.took) * 100;
+}
+
+/**
+ * Podíl maturity pro text stránky: jedno desetinné místo, celé číslo bez „,0“ („52,6 %“, „74,1 %“, „100 %“).
+ * Podíl pod 100 se nikdy nezaokrouhlí na „100 %“, aby stránka netvrdila, že uspěli všichni.
+ */
+export function procentoMaturity(v: number): string {
+  const r = Math.min(Math.round(v * 10) / 10, v < 100 ? 99.9 : 100);
+  return `${r.toLocaleString('cs-CZ', { maximumFractionDigits: 1 })} %`;
+}
+
 export interface ShrnutiMaturity {
   smo16: string;
   roky: RokMaturity[];

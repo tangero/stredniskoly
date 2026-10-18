@@ -107,8 +107,9 @@ class Vystup(unittest.TestCase):
     def test_parovani_a_druhe_kolo_z_mereni(self):
         s = self.d["souhrn"]
         self.assertEqual(sum(v for k, v in s["parovani_2025"].items() if k != "nove"), 2800)
-        self.assertEqual(s["druhe_kolo"]["vypsano"], 1261)
-        self.assertEqual(sum(1 for n in self.d["nabidky"] if n["kolo_2"]), 1261)
+        self.assertEqual(s["druhe_kolo"]["vypsano"], 1412)  # 1261 + 151 druhým průchodem bez zaměření (#282)
+        self.assertEqual(s["druhe_kolo"]["vypsano_bez_zamereni"], 151)
+        self.assertEqual(sum(1 for n in self.d["nabidky"] if n["kolo_2"]), 1412)
 
     def test_zbyla_mista_jen_kdyz_jsou_oba_sloupce(self):
         bez = 0

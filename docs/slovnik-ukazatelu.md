@@ -1,6 +1,6 @@
 # Slovník ukazatelů
 
-Verze 1.63 · 12. 10. 2026 · **Závazný soupis. Nový ukazatel se nezavádí bez zápisu sem.**
+Verze 1.65 · 17. 10. 2026 · **Závazný soupis. Nový ukazatel se nezavádí bez zápisu sem.**
 
 Každý ukazatel má jeden název, jednu definici a jeden způsob výpočtu. Když se veličina objeví na webu, v datech, v API nebo v dokumentaci, používá se jméno z tohoto soupisu. Když se způsob výpočtu změní, změní se tady a zároveň se přepíše verze.
 
@@ -513,7 +513,7 @@ Do 13. 9. 2026 tu stálo, že nemáme ani to minimum. Bylo to nesprávné: pole 
 ### Kapacita 2. kola
 Počet míst, která škola vypsala ve 2. kole přijímacího řízení. Zdroj: CERMAT, `PZ{rok}_kolo2_skolobory_vysledky.xlsx`, sloupec `KAPACITA`. Pole `kapacita` v ročníku souboru `public/druhe_kolo.json`, generuje `scripts/build-druhe-kolo.py`.
 
-**Nedá se dopočítat z 1. kola.** Rozdílu kapacity a přijatých z 1. kola se rovná jen u 47 % nabídek roku 2026, protože se do ní promítají uchazeči, kteří se přijetí vzdali, a rozhodnutí školy. Zobrazuje se jen zveřejněná hodnota.
+**Nedá se dopočítat z 1. kola.** Rozdílu kapacity a přijatých z 1. kola se rovná jen u 46 % nabídek roku 2026, protože se do ní promítají uchazeči, kteří se přijetí vzdali, a rozhodnutí školy. Zobrazuje se jen zveřejněná hodnota.
 
 Popisuje nabídku v jednom roce. Neříká, zda škola 2. kolo vypíše příště.
 
@@ -540,7 +540,7 @@ Není to hranice přijetí; škola mohla vážit i jiná kritéria.
 ### Nevypsané 2. kolo u nenaplněného oboru
 Nabídka, která má ve výsledcích 1. kola méně přijatých uchazečů než míst a 2. kolo nevypsala. Kombinuje souhrn výsledků 1. kola se souhrnem 2. kola téhož roku. Pole `stav` s hodnotou `nenaplneno_bez_2_kola`.
 
-V roce 2026 platí pro 47 % oborů, které ve výsledcích 1. kola mají méně přijatých než míst (768 nabídek; u 300 z nich je přijatých o jednoho méně než míst). Věta na webu proto varuje, že méně přijatých po 1. kole neznamená 2. kolo.
+V roce 2026 platí pro 37 % oborů, které ve výsledcích 1. kola mají méně přijatých než míst (618 nabídek; u 295 z nich je přijatých o jednoho méně než míst). Věta na webu proto varuje, že méně přijatých po 1. kole neznamená 2. kolo.
 
 **Co neříká:** Souhrn 1. kola je stav k datu výsledků. Nezachycuje, jak škola místa obsadila potom, takže neříká, že místa zůstala neobsazená, ani proč škola 2. kolo nevypsala. Věta na webu proto popisuje čísla ze souhrnu a škole nic nepřisuzuje.
 
@@ -613,9 +613,22 @@ Podíl úspěšných **z přihlášených** ke společné části, jak ho počí
 
 Doprovodná pole ze stejného bloku: `registered` přihlášení, `took` konající, `passed` úspěšní, `failed` neúspěšní, `absent` nekonající, `nonParticipationRate` neúčast z přihlášených, `grossFailureRate` hrubá neúspěšnost z přihlášených.
 
+Podíl z těch, kdo zkoušku skutečně konali, je samostatný ukazatel *Úspěšnost maturity z konajících* (od 17. 10. 2026); `passRate` se kvůli němu nemění.
+
 **Změna výpočtu 17. 9. 2026 (dřív podíl z konajících).** Do té doby tenhle soupis tvrdil, že `passRate` je podíl z konajících, a stránka školy vedle procenta vypisovala počet konajících. Vznikl z toho nesoulad: „98,2 %“ vedle „55 z 55“. Zjištěno při revizi maturitního oddílu po zpětné vazbě na Gymnáziu Nad Štolou 14. 9. 2026. Doklad z `public/maturita_skoly.json`: škola s `registered` 47, `took` 46, `passed` 45 má `passRate` 95,74, což je 45/47; z konajících by vyšlo 97,83. Souhlasí i se soupisem zdrojů, oddíl 2.11, kde je `PODÍL ÚSPĚŠNÝCH (%)` definovaný jako úspěšní z přihlášených. **Hodnoty v datech se nemění**, mění se jejich výklad a jmenovatel uváděný na stránce.
 
 **Neříká**, kolik žáků školu dokončí: kdo k maturitě vůbec nešel, je v `absent`, a škola může úspěšnost zvýšit tím, že slabé žáky ke zkoušce nepustí. Proto se vedle podílu uvádí i počet nekonajících, viz Neúčast u maturity.
+
+### Úspěšnost maturity z konajících
+Podíl úspěšných ze žáků, kteří společnou část maturity v jarním období **skutečně konali**: `passed / took · 100`, tedy `USPĚLI / KONALI`. Jednotka procenta, rozsah 0 až 100. Zdroj: CERMAT, `MZ{rok}j_SC_skolobory.xlsx`, blok společné části, sloupce `KONALI` a `USPĚLI` (pole `took` a `passed` v `public/maturita_skoly.json`). Platí pro skupinu oborů školy (`redizo_smo16`) i pro maturitu za celou školu (`CELKEM`).
+
+**Kde se počítá.** V datech se neukládá; počítá ho při zobrazení funkce `passRateOfTakers` v `src/lib/skola-vyklad.ts` z počtů, které soubor nese vždy. Je to doplněk sloupce `ČISTÁ NEÚSPĚŠNOST (%)` do sta (ten CERMAT počítá z konajících, viz [soupis zdrojů](zdroje-dat.md), oddíl 2.11); dopočet z počtů je stejný jako u ostatních podílů ověřených v `docs/podklady/overeni-sloupcu-maturity.json`, proto se sloupec nepřebírá a generátor ani data se kvůli němu nemění.
+
+**Meze zveřejnění** jsou tytéž jako u *Úspěšnosti maturity*: při příznaku `counts_only` (méně než 10 konajících) a `unavailable` se podíl nezobrazuje a zůstanou jen počty; při `small_sample` (10 až 29 konajících) se zobrazí a stránka ročník označí jako malý.
+
+**Na stránce** (rozhodnutí vlastníka 17. 10. 2026, issue #375) stojí vždy **vedle** *Úspěšnosti maturity* z přihlášených, nikdy místo ní, a vždy se svým jmenovatelem: „Z těch, kdo ke zkoušce skutečně šli, ji udělalo 40 z 54, tedy 74,1 %.“ Ukazuje se jen tam, kde se počet konajících liší od počtu přihlášených; jinak jsou obě čísla stejná. Stránka školy: souhrnná věta za celou školu a řádek každé skupiny oborů v oddílu Jak si škola vede.
+
+**Neříká**, kolik přihlášených maturitu udělalo, ani kolik žáků školu dokončí: kdo ke zkoušce nešel (`absent`), ve jmenovateli není. Škola, která slabé žáky ke zkoušce nepustí, má tenhle podíl vysoký, i když velká část ročníku maturitu neudělala; proto se nikdy neukazuje bez úspěšnosti z přihlášených. Neříká ani výsledek podzimního termínu nebo opravných zkoušek; data jsou jen za jaro.
 
 ### Neúčast u maturity
 Podíl přihlášených ke společné části, kteří zkoušku **nekonali**, jak ho počítá CERMAT ve sloupci `NEÚČAST (%)`: `NEKONALI / PŘIHLÁŠENI`. Pole `nonParticipationRate`, počet `absent`, jednotka procenta, rozsah 0 až 100. Zdroj: CERMAT, `MZ{rok}j_SC_skolobory.xlsx`, jen blok společné části; předmětové bloky sloupec nemají. Vzorec ověřen dopočtem z počtů ve všech řádcích ročníků 2021 až 2026 (`docs/podklady/overeni-sloupcu-maturity.json`).
@@ -854,6 +867,8 @@ Například „Vyvážený obor“. Způsob zařazení není dohledaný. Platí 
 
 | Verze | Změna |
 |---|---|
+| 1.65 | *Kapacita 2. kola* a *Nevypsané 2. kolo u nenaplněného oboru*: počty přepočteny po rozšíření párování nabídek mezi koly o druhý průchod bez zaměření (17. 10. 2026, issue #282, `docs/druhe-kolo.md`, oddíl 7). Definice a výpočet ukazatelů beze změny; mění se jen to, které nabídky 1. a 2. kola se považují za tutéž: 46 místo 47 %, 618 místo 768 nabídek (37 místo 47 %). |
+| 1.64 | Nový ukazatel **Úspěšnost maturity z konajících** (`passed / took`, funkce `passRateOfTakers`), zobrazený na stránce školy vedle úspěšnosti z přihlášených se stejnými mezemi zveřejnění (17. 10. 2026, issue #375, rozhodnutí vlastníka). `passRate` beze změny. |
 | 1.63 | *Kohorta podle pozice na přihlášce* platí i pro učební obory H (skupina kategorie × první dvojčíslí KKOV, práh 30 nabídek) a umělecké M a L (skupiny souhrnů); C, E, J a P bez kohorty (12. 10. 2026, issue #244, etapa 6, rozhodnutí vlastníka). |
 | 1.62 | *Soutěžící o obor*: vysvětlení pojmu na stránce sjednoceno se slovníkem pojmů 1.49 („nebyli přijati jinam podle vyšší priority na přihlášce“). Definice, výpočet ani pole beze změny (7. 10. 2026, issue #428). |
 | 1.61 | Nový ukazatel *Místa podle druhu studia*: součet kapacity míst za město a kraj ve čtyřech skupinách přepínače (6. 10. 2026, issue #244, etapa 3c-4, rozhodnutí vlastníka). |
