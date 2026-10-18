@@ -299,7 +299,7 @@ export default async function JakVybratSkoluPage() {
                 <p className="text-[16px] leading-relaxed text-slate-700">
                   Máme výsledky jednotné přijímací zkoušky přijatých uchazečů. Na stránce oboru je najdeš
                   jako <b>Průměr přijatých</b>, <b>Nejníž, s čím se sem někdo dostal</b> a <b>Obtížnost přijetí</b>;
-                  v simulátoru si vedle nich zadáš vlastní body. Popisují minulé kolo, ne předpověď, a týkají se jen
+                  v simulátoru si vedle výsledků přijatých zadáš vlastní body. Popisují minulé kolo, ne předpověď, a týkají se jen
                   jednotné zkoušky.
                 </p>
               </Karta>
