@@ -2,6 +2,21 @@
 
 Záznam změn chování systému: požadavek, co se změnilo a proč, datum. Nejnovější nahoře.
 
+## 2026-10-18: týdenní ponaučení ze selhání agentů (#521)
+
+- **Požadavek:** issue #521, rozhodnutí vlastníka z 18. 10. 2026 převzít z Harness² ponaučení podložená výsledky:
+  pravidla pro AI se mají zlepšovat podle doložených selhání práce agentů, o změně rozhoduje vlastník. Model návrhů
+  podle odpovědi vlastníka: Codex od OpenAI přes OpenRouter.
+- **Co:** týdenní přehled má oddíl „Ponaučení“ (`scripts/prehled/ponauceni.mjs`): signály selhání agentů za týden
+  (PR s `potrebuje-cloveka`, kola oprav z review u sloučených PR, PR zavřená bez sloučení, komentáře vlastníka
+  a „Odpověď vlastníka“, neúspěšné kontroly a review s nálezy), selhání prostředí zvlášť a nepočítaná, a nejvýš 3 návrhy
+  změny `CLAUDE.md` nebo skillu s doklady a navrženým zněním. Návrh bez dvou dokladů nebo věcné škody, s vymyšleným
+  dokladem nebo už navržený či zamítnutý se nepodá. Evidence ve stavovém komentáři issue „Ponaučení: evidence návrhů“,
+  rozhodnutí vlastník zapíše řádkem `zamítnuto: <klíč>` / `přijato: <klíč>`. Do Telegramu jedna věta. Workflow dostal
+  `issues: write` (jen evidence) a `OPENROUTER_API_KEY`; `contents` zůstává čtení. Popis v `docs/spoluprace-na-githubu.md`, oddíl 5b.
+- **Proč:** selhání agentů nechávají stopy, ale nikdo je soustavně nevyhodnocoval, takže se stejná chyba opakovala
+  (například převzetí tvrzení agenta bez ověření v datech, #516).
+
 ## 2026-10-17: úřední název školy v portálu z rejstříku MŠMT (#515)
 
 - **Požadavek:** issue #515, rozhodnutí vlastníka ze 17. 10. 2026: portál pro školy má brát úřední název z rejstříku
