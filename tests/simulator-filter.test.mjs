@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { druhZrizovatele, matchesSearchLocation, matchesZrizovatel, splitByCommute, zrizovatelPodleRedizo } from '../src/lib/simulator-filter.ts';
+import { druhZrizovatele, indexDojezdu, matchesSearchLocation, matchesZrizovatel, splitByCommute, zrizovatelPodleRedizo } from '../src/lib/simulator-filter.ts';
 
 test('dojezd zachová hranice, neznámá data i pořadí podle času', () => {
   const schools = [55, 56, 45, 46, 0, null, undefined].map((minutes, i) => ({ id: String(i), minutes }));
@@ -64,4 +64,38 @@ test('zřizovatel podle RED IZO: nejnovější ročník vyhrává, ostatní klí
   assert.equal(mapa.get('1'), 'soukromé');
   assert.equal(mapa.get('2'), 'církevní');
   assert.equal(mapa.has('3'), false);
+});
+
+// #168: odhad dojezdu nese id katalogu se zaměřením, katalog simulátoru id nabídky 2026 bez něj.
+const klic = id => id.toLowerCase().normalize('NFKD').replace(/[̀-ͯ]/g, '');
+test('nabídka 2026 bez přesné shody id dostane dojezd své školy (#168)', () => {
+  const odhad = { programIds: ['600001873_79-41-K/81_hudební'], minutes: 9 };
+  const index = indexDojezdu([odhad], ['600001873_79-41-K/81_hudební'], [], klic);
+  assert.equal(index.odhad('600001873_79-41-K/81')?.minutes, 9);
+  assert.equal(index.jeNapojena('600001873_79-41-K/81'), true);
+  const skupiny = splitByCommute([{ id: '600001873_79-41-K/81' }], 20, s => index.odhad(s.id)?.minutes, s => index.jeNapojena(s.id));
+  assert.equal(skupiny.within.length, 1);
+  assert.equal(skupiny.unknown.length, 0);
+});
+test('přesná shoda id má přednost před odhadem školy', () => {
+  const index = indexDojezdu([{ programIds: ['1_A_x'], minutes: 5 }, { programIds: ['2_B'], minutes: 30 }], ['1_A_x', '2_B'], [], klic);
+  assert.equal(index.odhad('1_A_x')?.minutes, 5);
+  assert.equal(index.odhad('2_B')?.minutes, 30);
+  assert.equal(index.odhad('3_C'), undefined);
+  assert.equal(index.jeNapojena('3_C'), false);
+});
+test('škola s víc místy výuky odhad podle RED IZO nedostane', () => {
+  const dva = indexDojezdu([{ programIds: ['7_A_praha'], minutes: 10 }, { programIds: ['7_A_ostrava'], minutes: 90 }], ['7_A_praha', '7_A_ostrava'], ['7'], klic);
+  assert.equal(dva.odhad('7_A_praha')?.minutes, 10);
+  assert.equal(dva.odhad('7_B'), undefined);
+  assert.equal(dva.jeNapojena('7_B'), false);
+  // Víc míst výuky, z nichž je dosažitelné jen jedno: ani tak se odhad školy nepřiřadí.
+  const jeden = indexDojezdu([{ programIds: ['7_A_praha'], minutes: 10 }], ['7_A_praha', '7_A_ostrava'], ['7'], klic);
+  assert.equal(jeden.odhad('7_B'), undefined);
+  assert.equal(jeden.jeNapojena('7_B'), false);
+});
+test('škola s polohou bez nalezené cesty zůstává napojená bez dojezdu, ne mezi neověřenými', () => {
+  const index = indexDojezdu([], ['8_A_x'], [], klic);
+  assert.equal(index.odhad('8_B'), undefined);
+  assert.equal(index.jeNapojena('8_B'), true);
 });
