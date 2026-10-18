@@ -2,6 +2,20 @@
 
 Záznam změn chování systému: požadavek, co se změnilo a proč, datum. Nejnovější nahoře.
 
+## 2026-10-17: úřední název školy v portálu z rejstříku MŠMT (#515)
+
+- **Požadavek:** issue #515, rozhodnutí vlastníka ze 17. 10. 2026: portál pro školy má brát úřední název z rejstříku
+  MŠMT, ne z katalogu.
+- **Co:** nadpis profilu (`/pro-skoly/profil`), přepínač škol, `/pro-skoly/kriteria` a titulky issue a zprávy
+  z `/api/portal/ucet` a `/api/portal-skoly` (`getNazevSAdresou`, `nazev_s_adresou` v `src/lib/portal-skol.ts`) berou
+  název v pořadí ruční oprava → úplný název z rejstříku (`identifikace.uplny_nazev` v `data/msmt_rejstrik/nazvy-oboru.json`)
+  → dosavadní katalogový název s ulicí a obcí (škola mimo rejstřík). K názvu z rejstříku se ulice ani obec nepřidávají,
+  sídlo už obsahuje. Veřejná stránka školy, adresy stránek (slug), zkrácený název v katalogu a `getNazevSkoly`
+  (e-maily, pozvánka, administrace) se nemění. Importy v `src/lib/rejstrik-nazev-skoly.ts` mají příponu `.ts`, aby
+  modul šel načíst i z `portal-skol.ts` pod `node --experimental-strip-types` v testech.
+- **Proč:** katalog nese zkrácený název z dat CERMAT, který se po přejmenování školy neobnoví; rejstřík se obnovuje
+  čtvrtletně a ruční opravy kvůli portálu tím přestávají být potřeba.
+
 ## 2026-10-17: ruční oprava názvu školy v portálu bez ulice a obce (#374)
 
 - **Požadavek:** hlášení #374 (profil RED IZO 600171388 v portálu ukazoval „Střední škola řemesel Gen. Krátkého,
