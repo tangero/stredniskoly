@@ -42,7 +42,7 @@ Ukazatel se pak zavádí podle [slovníku ukazatelů](slovnik-ukazatelu.md). Ten
 | Hranice krajů, RÚIAN | ČÚZK, SHP za celý stát (`services.cuzk.gov.cz/shp/stat/epsg-5514/1.zip`), vrstva `VUSC_P`, CC BY 4.0 → `src/data/mapa-kraju.json` | 14 krajů | kód NUTS 3 (`CZ0xx`) | ručně, při změně hranic |
 | Microsoft Clarity, souhrny simulátoru | Clarity Data Export API (`www.clarity.ms/export-data/api/v1/project-live-insights`), měřicí skript jen na `/simulator` a stránkách škol a oborů | jen stránka simulátoru, od 5. 10. 2026 | adresa stránky × dimenze | denně skriptem `scripts/clarity-export.mjs` do soukromého repozitáře signálů (#326); web z něj nic nezobrazuje |
 | Ruční opravy nabídky od škol | hlášení škol z portálu, `src/data/opravy-nabidky-skol.json` | 4 opravy (#371) | REDIZO + KKOV | ručně, podle hlášení |
-| Ruční opravy úředního názvu školy | hlášení školy a ČŠI diff, `src/data/opravy-nazvu-skol.json` | 2 opravy (#476, #319), obě od snímku k 30. 9. 2026 jen kvůli portálu | RED IZO | ručně, do převzetí názvu rejstříkem MŠMT; hromadně čtvrtletně ze snímku rejstříku (#478) |
+| Ruční opravy úředního názvu školy | hlášení školy a ČŠI diff, `src/data/opravy-nazvu-skol.json` | 3 opravy (#476, #319, #374), všechny od snímku k 30. 9. 2026 jen kvůli portálu | RED IZO | ručně, do převzetí názvu rejstříkem MŠMT; hromadně čtvrtletně ze snímku rejstříku (#478) |
 
 **Co v repozitáři není.** Zdroj patří do soupisu i tehdy, když jeho soubor na disku neleží. Takových je několik:
 
@@ -559,7 +559,7 @@ Soubor `src/data/opravy-nazvu-skol.json` (čtení v `src/lib/opravy-nazvu-skol.t
 | `uplny_nazev` | úřední název, který přebije název z rejstříku | ano, nadpis a název s adresou na stránce školy (`rejstrik-nazev-skoly.ts`), identifikace v portálu (`portal-identifikace.ts`, `portal-skol.ts`) |
 | `platne_od`, `zdroj`, `issue` | doklad a původ opravy | jen uloženo |
 
-Katalog (zkrácený název, adresa stránky) se nemění. Záznam má dva důvody: (1) rejstřík název ještě nenese, pak se záznam odstraní, až ho rejstřík ponese; (2) portál (`src/lib/portal-skol.ts`, `getNazevSAdresou`/`getNazevSkoly`) bere název z katalogu, ne z rejstříku, a záznam ho tam opravuje i tehdy, když ho rejstřík už nese (600005089, #319); takový záznam se odstraní, až portál převezme název z rejstříku.
+Katalog (zkrácený název, adresa stránky) se nemění. Záznam má dva důvody: (1) rejstřík název ještě nenese, pak se záznam odstraní, až ho rejstřík ponese; (2) portál (`src/lib/portal-skol.ts`, `getNazevSAdresou`/`getNazevSkoly`) bere název z katalogu, ne z rejstříku, a záznam ho tam opravuje i tehdy, když ho rejstřík už nese (600005089, #319; 600171388, #374); takový záznam se odstraní, až portál převezme název z rejstříku. V portálu se oprava ukáže tak, jak je, bez doplněné ulice a obce (#374).
 
 **Hromadná obnova názvů z rejstříku (#478).** Úřední názvy škol se obnovují hromadně s každým převzatým snímkem rejstříku MŠMT, tedy čtvrtletně: snímek ke konci čtvrtletí MŠMT zveřejňuje do několika dnů (k 30. 6. 2026 dne 1. 7., k 30. 9. 2026 dne 2. 10.) a datová linka ho hlídá dotazem HEAD (`stav-datovych-sad.py zjisti`). Postup:
 
