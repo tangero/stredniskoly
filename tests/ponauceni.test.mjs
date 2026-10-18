@@ -101,10 +101,14 @@ test('K1: sběr signálů z fixture odpovědí API vrátí selhání podle druhu
 // K5
 test('K5: limit modelu, výpadek API a vypršený čas nejsou selhání agenta', async () => {
   const k = (conclusion, output = {}, name = 'TypeScript') => klasifikujKontrolu({ name, conclusion, output });
-  assert.equal(k('failure', { title: 'OpenRouter: 429' }), 'prostredi');
+  assert.equal(k('failure', { title: 'OpenRouter: 429 Too Many Requests' }), 'prostredi');
   assert.equal(k('failure', { summary: 'GitHub API: 502 Bad Gateway' }), 'prostredi');
   assert.equal(k('failure', { summary: 'Kimi: vyčerpaný 5hodinový limit' }), 'prostredi');
   assert.equal(k('timed_out'), 'prostredi');
+  // Čísla issue a počty řádků v textu brány nejsou kódy odpovědi.
+  assert.equal(k('failure', { title: 'Neprošlo (L)', summary: '- propojené issue #429 nemá doklad\nZměněné řádky mimo testy: 503.' }, 'Brána sloučení'), 'kontrola-neprosla');
+  assert.equal(k('failure', { summary: 'gh: Not Found (HTTP 502)' }), 'prostredi');
+  assert.equal(k('failure', { title: 'Neprošlo (L)', summary: '- přes limit rutiny' }, 'Brána sloučení'), 'kontrola-neprosla');
   assert.equal(k('failure', { title: 'AssertionError' }), 'kontrola-neprosla');
   assert.equal(k('failure', { title: 'Čeká na lhůtu (L)' }, 'Brána sloučení'), null);
   assert.equal(k('success'), null);
