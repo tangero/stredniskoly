@@ -6,6 +6,7 @@ import path from 'path';
 import { zobrazeneObdobi } from './stav-datovych-sad.ts';
 import { opravenyNazevSkoly } from './opravy-nazvu-skol.ts';
 import { uplnyNazevZRejstriku } from './rejstrik-nazev-skoly.ts';
+import { adresaPrehledu } from './adresa-oboru.mjs';
 
 // ============================================================================
 // Portál pro školy (pilot 2027) – typy, validace kódů, validace payloadu
@@ -562,6 +563,20 @@ export async function getNazevSAdresou(redizo: string): Promise<string> {
     const radek = (await katalogZobrazenehoObdobi()).find((s) => String(s.redizo) === redizo);
     if (!radek) return '';
     return await nazevSkolyVPortalu(redizo, radek);
+  } catch {
+    return '';
+  }
+}
+
+/**
+ * Adresa stránky školy (`/skola/<redizo>-<slug>`) ze zkráceného názvu v katalogu, stejně jako ji skládá
+ * stránka školy (`adresaPrehledu`). Ne z `getNazevSkoly`: ruční oprava názvu by dala jiný slug (#515).
+ * Prázdná, když škola v katalogu za zobrazované období není.
+ */
+export async function getAdresaStrankySkoly(redizo: string): Promise<string> {
+  try {
+    const radek = (await katalogZobrazenehoObdobi()).find((s) => String(s.redizo) === redizo);
+    return radek ? `/skola/${adresaPrehledu(redizo, String(radek.nazev))}` : '';
   } catch {
     return '';
   }

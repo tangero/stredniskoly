@@ -42,7 +42,7 @@ Ukazatel se pak zavádí podle [slovníku ukazatelů](slovnik-ukazatelu.md). Ten
 | Hranice krajů, RÚIAN | ČÚZK, SHP za celý stát (`services.cuzk.gov.cz/shp/stat/epsg-5514/1.zip`), vrstva `VUSC_P`, CC BY 4.0 → `src/data/mapa-kraju.json` | 14 krajů | kód NUTS 3 (`CZ0xx`) | ručně, při změně hranic |
 | Microsoft Clarity, souhrny simulátoru | Clarity Data Export API (`www.clarity.ms/export-data/api/v1/project-live-insights`), měřicí skript jen na `/simulator` a stránkách škol a oborů | jen stránka simulátoru, od 5. 10. 2026 | adresa stránky × dimenze | denně skriptem `scripts/clarity-export.mjs` do soukromého repozitáře signálů (#326); web z něj nic nezobrazuje |
 | Ruční opravy nabídky od škol | hlášení škol z portálu, `src/data/opravy-nabidky-skol.json` | 4 opravy (#371) | REDIZO + KKOV | ručně, podle hlášení |
-| Ruční opravy úředního názvu školy | hlášení školy a ČŠI diff, `src/data/opravy-nazvu-skol.json` | 3 opravy (#476, #319, #374), všechny od snímku k 30. 9. 2026 shodné s rejstříkem, navržené k odstranění (#515) | RED IZO | ručně, do převzetí názvu rejstříkem MŠMT; hromadně čtvrtletně ze snímku rejstříku (#478) |
+| Ruční opravy úředního názvu školy | hlášení školy a ČŠI diff, `src/data/opravy-nazvu-skol.json` | žádná oprava; tři (#476, #319, #374) odstraněny 18. 10. 2026, rejstřík je od snímku k 30. 9. 2026 nese shodně (#515) | RED IZO | ručně, do převzetí názvu rejstříkem MŠMT; hromadně čtvrtletně ze snímku rejstříku (#478) |
 
 **Co v repozitáři není.** Zdroj patří do soupisu i tehdy, když jeho soubor na disku neleží. Takových je několik:
 
@@ -559,14 +559,14 @@ Soubor `src/data/opravy-nazvu-skol.json` (čtení v `src/lib/opravy-nazvu-skol.t
 | `uplny_nazev` | úřední název, který přebije název z rejstříku | ano, nadpis a název s adresou na stránce školy (`rejstrik-nazev-skoly.ts`), identifikace a název školy v portálu (`portal-identifikace.ts`, `portal-skol.ts`; v portálu před názvem z rejstříku, #515) |
 | `platne_od`, `zdroj`, `issue` | doklad a původ opravy | jen uloženo |
 
-Katalog (zkrácený název, adresa stránky) se nemění. Záznam má dva důvody: (1) rejstřík název ještě nenese, pak se záznam odstraní, až ho rejstřík ponese; (2) portál bral název z katalogu, ne z rejstříku, a záznam ho tam opravoval i tehdy, když ho rejstřík už nesl (600005089, #319; 600171388, #374). Od #515 bere název školy v portálu (`getNazevSAdresou` v `src/lib/portal-skol.ts`) v pořadí oprava → `uplny_nazev` z rejstříku → katalog s ulicí a obcí, takže tam důvod (2) odpadl; zůstává jen u `getNazevSkoly` (e-maily s odkazem, pozvánka, administrace), který bez opravy vrací zkrácený název z katalogu. V portálu se oprava ukáže tak, jak je, bez doplněné ulice a obce (#374).
+Katalog (zkrácený název, adresa stránky) se nemění. Záznam drží jen název, který rejstřík ještě nenese, a odstraní se, až ho rejstřík ponese. Dřívější druhý důvod, portál s názvem z katalogu (600005089, #319; 600171388, #374), odpadl s #515: název školy v portálu (`getNazevSAdresou` v `src/lib/portal-skol.ts`) se bere v pořadí oprava → `uplny_nazev` z rejstříku → katalog s ulicí a obcí. Všechny tři dosavadní opravy (600007243, 600005089, 600171388) rejstřík od snímku k 30. 9. 2026 nese shodně, a proto byly 18. 10. 2026 rozhodnutím vlastníka odstraněny; seznam je prázdný a soubor i mechanismus zůstávají pro budoucí výjimky. `getNazevSkoly` (e-maily s přihlašovacím odkazem, pozvánka, administrace) bez opravy vrací zkrácený název z katalogu. Odkaz na stránku školy v issue z `/api/portal-skoly` se skládá ze zkráceného názvu v katalogu stejně jako na stránce školy (`getAdresaStrankySkoly`), ne z ruční opravy. V portálu se oprava ukáže tak, jak je, bez doplněné ulice a obce (#374).
 
 **Hromadná obnova názvů z rejstříku (#478).** Úřední názvy škol se obnovují hromadně s každým převzatým snímkem rejstříku MŠMT, tedy čtvrtletně: snímek ke konci čtvrtletí MŠMT zveřejňuje do několika dnů (k 30. 6. 2026 dne 1. 7., k 30. 9. 2026 dne 2. 10.) a datová linka ho hlídá dotazem HEAD (`stav-datovych-sad.py zjisti`). Postup:
 
 1. Stáhnout snímek do `data/msmt_rejstrik/` (necommituje se) a převzít ho: `stav-datovych-sad.py prepni msmt-rejstrik-snimky RRRR-MM-DD --soubor … --doklad …` (oddíl 5).
 2. Přegenerovat index: `python3 scripts/build-nazvy-oboru-rejstrik.py`.
 3. Vytvořit report rozdílů proti dosavadnímu indexu z gitu: `git show <commit>:data/msmt_rejstrik/nazvy-oboru.json > /tmp/stary-index.json` a `python3 scripts/report-nazvy-skol-rejstrik.py --stary /tmp/stary-index.json`. Výstup `docs/podklady/nazvy-skol-rejstrik-<staré>-<nové>.json` pro každou školu z katalogu porovná dosavadní a nový `uplny_nazev` a název z ČŠI (`jmeno` ve snímku inspekcí podle registru, sada `csi-inspekce`) a rozliší věcnou změnu (`vecna`) od rozdílu formátu (`format`: velikost písmen, právní forma, adresa, obec sídla, interpunkce). Report se commituje.
-4. Projít ruční opravy, které report označí `oprava_duplicitni_s_rejstrikem`. Záznam s důvodem (1) se odstraní; záznam s důvodem (2) zůstává, dokud portál bere název z katalogu, a do pole `zdroj` se připíše, že ho rejstřík už nese.
+4. Projít ruční opravy, které report označí `oprava_duplicitni_s_rejstrikem`, a odstranit je: portál od #515 bere název z rejstříku, takže důvod je držet už není.
 
 Zkrácený název v katalogu a adresa stránky školy (slug) se obnovou nemění; vznikají v datové lince z katalogu, ne z indexu rejstříku. Škola, která z oddílu `identifikace` vypadne (zánik nebo ztráta druhu C00/D00), ukáže v nadpisu katalogový název. Stahování v CI zatím není, jen detekce; návrh automatizace je v oddílu 5 (vrstva „příprava“).
 
@@ -810,7 +810,7 @@ _Vygenerováno z `public/stav_datovych_sad.json` dne 2026-10-17. Neupravovat ru�
 
 | Verze | Změna |
 |---|---|
-| 1.36 | Oddíl 2.4 a 2.19a: název školy v portálu pro školy z `identifikace.uplny_nazev` rejstříku (po ruční opravě, před katalogem), #515; žádný nový sloupec zdroje. |
+| 1.36 | Oddíl 2.4 a 2.19a: název školy v portálu pro školy z `identifikace.uplny_nazev` rejstříku (po ruční opravě, před katalogem), #515; tři ruční opravy názvu, které rejstřík nese shodně, odstraněny, seznam prázdný; žádný nový sloupec zdroje. |
 | 1.35 | Oddíl 2.10: soubor nabídek bez JPZ nese identitu škol z rejstříku pro školy mimo katalog (etapa 3b, issue #244); oddíl 2.4 `typZrizovatele` a kód okresu nově i pro web. |
 | 1.34 | Oddíl 2.18: Clarity i na stránkách škol a oborů, události čtení a rozbalení oddílů (#386); web z nich nic nezobrazuje. |
 | 1.33 | Oddíl 2.10: odvozený soubor `src/data/obory-bez-jpz-2026.json`, který od etapy 3a (issue #244) čte web; žádný nový sloupec zdroje. |

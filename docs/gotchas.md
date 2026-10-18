@@ -44,6 +44,8 @@ ve kterém na něj narazíš (krátce: co se stane, proč, co s tím). Oprava, k
   odstraní, až ho rejstřík ponese; (2) portál bral název z katalogu, ne z rejstříku, a záznam ho tam opravoval
   i tehdy, když ho rejstřík už nesl (600005089, #319; 600171388, #374). Od #515 bere `getNazevSAdresou`
   (nadpis profilu, přepínač škol, kritéria, issue a zprávy) název v pořadí oprava → rejstřík → katalog s ulicí
-  a obcí, takže důvod (2) tam odpadl. Zůstal jen u `getNazevSkoly` (e-maily s odkazem, pozvánka, administrace),
-  který dál vrací opravu, jinak zkrácený název z katalogu. V portálu se oprava ukáže přesně tak, jak je zapsaná,
+  a obcí, takže důvod (2) odpadl a všechny tři opravy byly odstraněny (seznam je prázdný). `getNazevSkoly`
+  (e-maily s odkazem, pozvánka, administrace) vrací opravu, jinak zkrácený název z katalogu. Slug v odkazu na
+  stránku školy se nesmí skládat z opravy: stránka školy má slug ze zkráceného názvu v katalogu
+  (`getAdresaStrankySkoly`, #515). V portálu se oprava ukáže přesně tak, jak je zapsaná,
   bez ulice a obce (#374), takže `uplny_nazev` musí školu určit sám.

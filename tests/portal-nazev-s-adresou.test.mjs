@@ -4,7 +4,8 @@ import { execFileSync } from 'node:child_process';
 import { mkdirSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import path from 'node:path';
-import { getNazevSAdresou, getPredvyplnenyProfil, nazevSAdresou } from '../src/lib/portal-skol.ts';
+import { getAdresaStrankySkoly, getNazevSAdresou, getPredvyplnenyProfil, nazevSAdresou } from '../src/lib/portal-skol.ts';
+import { createSlug } from '../src/lib/adresa-oboru.mjs';
 
 // Název školy v portálu (/pro-skoly/profil, přepínač škol, kritéria, issue a zprávy) se bere
 // v pořadí: ruční oprava → úplný název z rejstříku MŠMT → katalog s ulicí a obcí (#515).
@@ -14,14 +15,25 @@ import { getNazevSAdresou, getPredvyplnenyProfil, nazevSAdresou } from '../src/l
 const opravy = JSON.parse(readFileSync('src/data/opravy-nazvu-skol.json', 'utf8')).skoly;
 const identifikace = JSON.parse(readFileSync('data/msmt_rejstrik/nazvy-oboru.json', 'utf8')).identifikace ?? {};
 
-test('getNazevSAdresou a nazev_s_adresou nesou opravený název', async () => {
+// Školy, jejichž ruční opravy rejstřík od snímku k 30. 9. 2026 nese shodně a které byly odstraněny (#515).
+const DRIVE_OPRAVENE = {
+  600007243: 'Gymnázium, Střední odborná škola pedagogická a Základní škola Čáslav, příspěvková organizace',
+  600005089: 'Gymnázium, Praha 4, Postupická 3150',
+  600171388: 'Střední škola řemesel, Šumperk',
+};
+
+test('getNazevSAdresou a nazev_s_adresou nesou opravený název, jinak úřední název z rejstříku', async () => {
   for (const [redizo, o] of Object.entries(opravy)) {
-    const nazev = await getNazevSAdresou(redizo);
     // Oprava je úplný úřední název: ulice ani obec se k ní nepřidávají (#374).
-    assert.equal(nazev, o.uplny_nazev, redizo);
-    const profil = await getPredvyplnenyProfil(redizo, null);
-    assert.ok(profil, `${redizo}: škola není v katalogu`);
-    assert.equal(profil.nazev_s_adresou, nazev);
+    assert.equal(await getNazevSAdresou(redizo), o.uplny_nazev, redizo);
+    assert.equal((await getPredvyplnenyProfil(redizo, null))?.nazev_s_adresou, o.uplny_nazev, redizo);
+  }
+  // Bez ruční opravy dají školy dříve opravované stejný název z rejstříku (#476, #319, #374, #515).
+  for (const [redizo, ocekavany] of Object.entries(DRIVE_OPRAVENE)) {
+    const nazev = await getNazevSAdresou(redizo);
+    assert.equal(nazev, opravy[redizo]?.uplny_nazev || identifikace[redizo]?.uplny_nazev, redizo);
+    assert.equal(nazev, ocekavany, redizo);
+    assert.equal((await getPredvyplnenyProfil(redizo, null)).nazev_s_adresou, nazev, redizo);
   }
 });
 
@@ -95,11 +107,13 @@ test('K1–K3 na smyšlených datech: oprava → rejstřík → katalog s ulicí
     zapis('src/data/opravy-nazvu-skol.json', { skoly: { 900000002: { uplny_nazev: 'Gymnázium Nové jméno, Lhota' } } });
     const modul = path.resolve('src/lib/portal-skol.ts');
     const skript = `
-      const { getNazevSAdresou, getPredvyplnenyProfil } = await import(${JSON.stringify(modul)});
+      const { getAdresaStrankySkoly, getNazevSAdresou, getPredvyplnenyProfil } = await import(${JSON.stringify(modul)});
       const vysledek = {};
       for (const r of ['900000001', '900000002', '900000003', '900000009']) {
         vysledek[r] = [await getNazevSAdresou(r), (await getPredvyplnenyProfil(r, null))?.nazev_s_adresou ?? null];
       }
+      vysledek.odkaz = await getAdresaStrankySkoly('900000002');
+      vysledek.odkazMimo = await getAdresaStrankySkoly('900000009');
       console.log(JSON.stringify(vysledek));`;
     const vystup = execFileSync(process.execPath, ['--experimental-strip-types', '--no-warnings', '--input-type=module', '-e', skript], {
       cwd: koren,
@@ -114,7 +128,21 @@ test('K1–K3 na smyšlených datech: oprava → rejstřík → katalog s ulicí
     assert.deepEqual(v['900000003'], ['Střední škola Polní, Ves', 'Střední škola Polní, Ves']);
     // Škola mimo katalog nemá v portálu profil ani název
     assert.deepEqual(v['900000009'], ['', null]);
+    // Odkaz na stránku školy jde ze zkráceného názvu v katalogu, ne z ruční opravy (#515)
+    assert.equal(v.odkaz, '/skola/900000002-gymnazium');
+    assert.equal(v.odkazMimo, '');
   } finally {
     rmSync(koren, { recursive: true, force: true });
   }
+});
+
+test('odkaz na stránku školy v issue má stejný slug jako stránka školy (#515)', async () => {
+  const katalog = JSON.parse(readFileSync('public/schools_data.json', 'utf8'));
+  const rocnik = Object.keys(katalog).filter((k) => /^\d{4}$/.test(k)).sort().at(-1);
+  for (const redizo of Object.keys(DRIVE_OPRAVENE)) {
+    const radek = katalog[rocnik].find((s) => String(s.redizo) === redizo);
+    assert.ok(radek, `${redizo}: škola není v katalogu`);
+    assert.equal(await getAdresaStrankySkoly(redizo), `/skola/${redizo}-${createSlug(radek.nazev)}`);
+  }
+  assert.equal(await getAdresaStrankySkoly('000000000'), '');
 });

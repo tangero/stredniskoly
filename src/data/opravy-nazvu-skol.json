@@ -1,23 +1,4 @@
 {
-  "_popis": "Ruční opravy úředního názvu školy, které rejstřík škol MŠMT (data/msmt_rejstrik/nazvy-oboru.json) ještě nenese. Klíč je RED IZO, `uplny_nazev` přebije název z rejstříku v nadpisu stránky školy a v identifikaci v portálu. Katalog (zkrácený název, adresa stránky) se nemění. Záznam má dva důvody. Prvním je název, který rejstřík ještě nenese; takový záznam se odstraní, až ho rejstřík ponese. Druhým byl portál, který bral název z katalogu, ne z rejstříku (600005089, #319; 600171388, #374). Od #515 bere název v portálu (`src/lib/portal-skol.ts`, `getNazevSAdresou`) v pořadí oprava → rejstřík → katalog, takže tam důvod odpadl; zůstává jen u `getNazevSkoly` (e-maily, pozvánka, administrace), který bez opravy vrací zkrácený název z katalogu. V portálu (nadpis profilu, přepínač škol) se oprava ukáže tak, jak je, bez doplněné ulice a obce (#374).",
-  "skoly": {
-    "600007243": {
-      "uplny_nazev": "Gymnázium, Střední odborná škola pedagogická a Základní škola Čáslav, příspěvková organizace",
-      "platne_od": "2026-09-01",
-      "zdroj": "e-mail školy 2026-10-13 + ČŠI (data/csi_diff_latest.json); od snímku rejstříku MŠMT k 2026-09-30 se s ním shoduje (#478), záznam zůstává kvůli portálu",
-      "issue": 476
-    },
-    "600005089": {
-      "uplny_nazev": "Gymnázium, Praha 4, Postupická 3150",
-      "platne_od": "2026-09-01",
-      "zdroj": "hlášení z webu #319, 2026-10-04 (shoduje se s názvem v rejstříku MŠMT)",
-      "issue": 319
-    },
-    "600171388": {
-      "uplny_nazev": "Střední škola řemesel, Šumperk",
-      "platne_od": "2026-10-05",
-      "zdroj": "hlášení z webu #374, 2026-10-05 (shoduje se s názvem v rejstříku MŠMT); platne_od je den hlášení",
-      "issue": 374
-    }
-  }
+  "_popis": "Ruční opravy úředního názvu školy, které rejstřík škol MŠMT (data/msmt_rejstrik/nazvy-oboru.json) ještě nenese. Klíč je RED IZO, záznam nese `uplny_nazev`, `platne_od`, `zdroj` a `issue`. `uplny_nazev` přebije název z rejstříku v nadpisu stránky školy, v identifikaci a v názvu školy v portálu (`getNazevSAdresou`) a v `getNazevSkoly` (e-maily, pozvánka, administrace). Katalog (zkrácený název, adresa stránky) se nemění. Záznam se odstraní, až název ponese rejstřík. Od #515 bere portál název z rejstříku, takže dřívější důvod držet opravu kvůli portálu odpadl; tři opravy (600007243 #476, 600005089 #319, 600171388 #374), které rejstřík od snímku k 30. 9. 2026 nese shodně, byly odstraněny rozhodnutím vlastníka 18. 10. 2026. Seznam je prázdný a zůstává pro budoucí výjimky.",
+  "skoly": {}
 }

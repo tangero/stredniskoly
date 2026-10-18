@@ -3,12 +3,12 @@ import {
   validatePortalPayload,
   getNazevSkoly,
   getNazevSAdresou,
+  getAdresaStrankySkoly,
   PORTAL_VERZE_PRJIMANI,
   PortalPayload,
 } from '@/lib/portal-skol';
 import { resolvePortalAuth, PortalKanal, PORTAL_PRODUKCNI_BASE_URL } from '@/lib/portal-magic';
 import { posliPotvrzovaciEmail, posliUpozorneniSpravci } from '@/lib/portal-email';
-import { createSlug } from '@/lib/utils';
 import { jeDbNastavena, vTransakci } from '@/lib/novinky-db';
 import { cteni, jeNasPuvod, prihlasenyZPozadavku } from '@/lib/portal-relace';
 import { spravceSkoly, zapisUdalost, type PortalRole } from '@/lib/portal-ucty';
@@ -248,7 +248,9 @@ export async function POST(request: NextRequest) {
   };
 
   const base = (process.env.PORTAL_BASE_URL || PORTAL_PRODUKCNI_BASE_URL).replace(/\/$/, '');
-  const skolaUrl = nazev ? `${base}/skola/${redizo}-${createSlug(nazev)}` : base;
+  // Odkaz na stránku školy jako na webu: slug ze zkráceného názvu v katalogu, ne z ruční opravy (#515).
+  const adresaStranky = await getAdresaStrankySkoly(redizo);
+  const skolaUrl = adresaStranky ? `${base}${adresaStranky}` : base;
   // Zkrácený název („Gymnázium“) školu neurčí; do issue jde s ulicí a obcí.
   const nazevPopis = (await getNazevSAdresou(redizo)) || nazev;
 
