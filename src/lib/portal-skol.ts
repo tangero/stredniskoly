@@ -5,6 +5,8 @@ import path from 'path';
 // v testech, kde se alias `@/` nerozřeší (stejně jako v admin.ts).
 import { zobrazeneObdobi } from './stav-datovych-sad.ts';
 import { opravenyNazevSkoly } from './opravy-nazvu-skol.ts';
+import { uplnyNazevZRejstriku } from './rejstrik-nazev-skoly.ts';
+import { adresaPrehledu } from './adresa-oboru.mjs';
 
 // ============================================================================
 // Portál pro školy (pilot 2027) – typy, validace kódů, validace payloadu
@@ -510,10 +512,7 @@ export async function getPredvyplnenyProfil(
   return {
     redizo,
     nazev: String(prvni.nazev),
-    // Ruční oprava názvu je úplný úřední název; ulice ani obec se k ní nepřidávají (#374).
-    nazev_s_adresou:
-      (await opravenyNazevSkoly(redizo)) ||
-      nazevSAdresou(String(prvni.nazev), String(prvni.ulice || ''), String(prvni.obec || '')),
+    nazev_s_adresou: await nazevSkolyVPortalu(redizo, prvni),
     obec: String(prvni.obec || ''),
     kraj: String(prvni.kraj || ''),
     obory,
@@ -546,16 +545,38 @@ export function nazevSAdresou(nazev: string, ulice: string, obec: string): strin
 }
 
 /**
- * Název s ulicí a obcí z katalogu za zobrazované období; prázdný, když škola v katalogu není.
- * Ruční oprava názvu (src/data/opravy-nazvu-skol.json) se vrací tak, jak je, bez ulice a obce (#374).
+ * Název školy v portálu (nadpis profilu, přepínač škol, kritéria, issue a zprávy, #515), v pořadí:
+ * ruční oprava (src/data/opravy-nazvu-skol.json) → úplný název z rejstříku MŠMT
+ * (data/msmt_rejstrik/nazvy-oboru.json, oddíl identifikace) → název z katalogu s ulicí a obcí.
+ * Oprava i název z rejstříku už sídlo obsahují, ulice ani obec se k nim nepřidávají (#374).
  */
+async function nazevSkolyVPortalu(redizo: string, radek: Record<string, unknown>): Promise<string> {
+  return (
+    (await uplnyNazevZRejstriku(redizo)) ||
+    nazevSAdresou(String(radek.nazev), String(radek.ulice || ''), String(radek.obec || ''))
+  );
+}
+
+/** Název školy v portálu (viz `nazevSkolyVPortalu`); prázdný, když škola v katalogu za zobrazované období není. */
 export async function getNazevSAdresou(redizo: string): Promise<string> {
   try {
     const radek = (await katalogZobrazenehoObdobi()).find((s) => String(s.redizo) === redizo);
     if (!radek) return '';
-    const oprava = await opravenyNazevSkoly(redizo);
-    if (oprava) return oprava;
-    return nazevSAdresou(String(radek.nazev), String(radek.ulice || ''), String(radek.obec || ''));
+    return await nazevSkolyVPortalu(redizo, radek);
+  } catch {
+    return '';
+  }
+}
+
+/**
+ * Adresa stránky školy (`/skola/<redizo>-<slug>`) ze zkráceného názvu v katalogu, stejně jako ji skládá
+ * stránka školy (`adresaPrehledu`). Ne z `getNazevSkoly`: ruční oprava názvu by dala jiný slug (#515).
+ * Prázdná, když škola v katalogu za zobrazované období není.
+ */
+export async function getAdresaStrankySkoly(redizo: string): Promise<string> {
+  try {
+    const radek = (await katalogZobrazenehoObdobi()).find((s) => String(s.redizo) === redizo);
+    return radek ? `/skola/${adresaPrehledu(redizo, String(radek.nazev))}` : '';
   } catch {
     return '';
   }

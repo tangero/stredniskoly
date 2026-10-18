@@ -1,7 +1,7 @@
 import { promises as fs } from 'fs';
 import path from 'path';
-import { opravenyNazevSkoly } from './opravy-nazvu-skol';
-import { doplnOrientacniCislo } from './adresa-skoly';
+import { opravenyNazevSkoly } from './opravy-nazvu-skol.ts';
+import { doplnOrientacniCislo } from './adresa-skoly.ts';
 
 // ============================================================================
 // Plný název školy z rejstříku škol MŠMT pro nadpis a titulek stránky školy.
@@ -9,7 +9,8 @@ import { doplnOrientacniCislo } from './adresa-skoly';
 // zdravotnická škola, Mládeže“), plný název („Střední zdravotnická škola,
 // Beroun, Mládeže 1102“) je v indexu rejstříku, který generuje
 // scripts/build-nazvy-oboru-rejstrik.py. Tentýž soubor čte portál
-// (portal-identifikace.ts); index má skoro megabajt, proto se cachuje příslib.
+// (portal-identifikace.ts, název školy v portal-skol.ts, #515); importy mají
+// příponu .ts, protože portal-skol.ts běží v testech pod --experimental-strip-types; index má skoro megabajt, proto se cachuje příslib.
 // ============================================================================
 
 let cache: Promise<Record<string, { uplny_nazev?: string; adresa?: string }>> | null = null;
