@@ -583,7 +583,33 @@ Zdroj: Matomo na `https://ma.hlidacstatu.cz/` (site ID 7), Reporting API, jen č
 | `VisitsSummary.get` | `nb_visits`, `nb_actions` | celkový rozsah týdne | ano |
 | (stejné metody) | `nb_uniq_visitors`, `avg_time_on_page`, `exit_rate`, `sum_time_spent` | | ne: duplikují návštěvy a odchody, nové otázky nepřidávají |
 
-Zamítnuto: záznamy jednotlivých návštěv, IP adresy a identifikátory návštěvníků (osobní údaje, k otázkám týdenního souhrnu netřeba). Search Console a CrUX přijdou v etapě 2 zadání #326 a zapíšou se sem při zavedení.
+Zamítnuto: záznamy jednotlivých návštěv, IP adresy a identifikátory návštěvníků (osobní údaje, k otázkám týdenního souhrnu netřeba). Rychlost stránek z CrUX je v oddílu 2.21. Search Console se zatím neřeší (rozhodnutí vlastníka 19. 10. 2026); zapíše se sem, až se zavede.
+
+### 2.21 Chrome UX Report (CrUX), oddíl Rychlost týdenního souhrnu
+
+Zdroj: Chrome UX Report API `https://chromeuxreport.googleapis.com/v1/records:queryRecord` (Google), veřejná souhrnná data o rychlosti stránek u skutečných uživatelů Chromu, bez osobních údajů. Přístup API klíčem `CRUX_API_KEY` (secret, vytváří vlastník; klíč jde v hlavičce `X-Goog-Api-Key`, ne v adrese). Skript `scripts/signaly_crux.py`, volaný z `scripts/signaly_tyden.py` (zadání #326, etapa 2): origin `https://www.prijimackynaskolu.cz` a po jedné reprezentativní adrese pro titulku, školu, obor, město a simulátor (konstanta `ADRESY`), každá pro `PHONE` a `DESKTOP`: 12 dotazů týdně s prodlevou 1 s (limit zadání 50). Výsledek je oddíl Rychlost v Telegramu i v artefaktu běhu (data jsou veřejná). Do repozitáře se nic nezapisuje. Testy volají jen mock. Bez klíče, nebo když CrUX dotaz odmítne (400, 401, 403, kvóta), se oddíl vynechá s poznámkou a zbytek souhrnu proběhne.
+
+Data jsou **klouzavé okno 28 dní**, ne týden: mezitýdenní srovnání z nich nejde a změna se projeví až postupně. Adresa s malým počtem návštěv z Chromu v CrUX není (odpověď 404); souhrn ji ukáže jako „bez dat“, nejde o chybu. U webu s jednotkami tisíc návštěv týdně je třeba čekat data nejspíš jen pro origin.
+
+Hodnocení p75 používá prahy Googlu (web.dev, Core Web Vitals), ne vlastní: LCP dobrá do 2,5 s, špatná nad 4 s; INP dobrá do 200 ms, špatná nad 500 ms; CLS dobrá do 0,1, špatná nad 0,25. Údaj je interní, na webu se nezobrazuje, proto není ve slovníku ukazatelů (zadání #326, bod 6).
+
+| Pole odpovědi | Otázka | Používáme |
+|---|---|---|
+| `record.key.origin`, `record.key.url`, `record.key.formFactor` | ke které adrese a zařízení údaj patří | ano (z dotazu) |
+| `record.collectionPeriod.firstDate`, `.lastDate` | za jaké období data jsou | ano, v úvodu oddílu |
+| `metrics.largest_contentful_paint.percentiles.p75` | za jak dlouho se zobrazí hlavní obsah stránky | ano |
+| `metrics.interaction_to_next_paint.percentiles.p75` | jak rychle stránka reaguje na klepnutí | ano |
+| `metrics.cumulative_layout_shift.percentiles.p75` | jestli obsah při načítání neposkakuje | ano |
+| `metrics.*.histogram` (3 koše `start`, `end`, `density`) | jaký podíl návštěv je v pásmu dobrá, ke zlepšení, špatná | ne: p75 s hodnocením stačí na otázku „je stránka pomalá“, tři podíly na řádek by souhrn v Telegramu přeplnily |
+| `metrics.first_contentful_paint` | kdy se objeví první obsah | ne: není Core Web Vital, LCP odpovídá na tutéž otázku lépe |
+| `metrics.experimental_time_to_first_byte` | jak rychle odpoví server | ne: diagnostika serveru, ne zážitek uživatele; při potížích s LCP ho lze doplnit |
+| `metrics.round_trip_time` | jak rychlé připojení uživatelé mají | ne: vlastnost sítě uživatelů, ne webu |
+| `metrics.navigation_types` | podíl načtení z mezipaměti, zpět/vpřed a podobně | ne: k otázce rychlosti stránek nepřidává |
+| `metrics.form_factors` | podíl telefonů a počítačů | ne: vrací se jen bez `formFactor` v dotazu; podíl zařízení dává Matomo |
+| `metrics.largest_contentful_paint_resource_type`, `largest_contentful_paint_image_time_to_first_byte` a další dílčí části LCP | proč je LCP pomalé | ne: diagnostika až při zjištěném problému |
+| `record.metrics.*.fractions` | podíly pásem jako zlomky | ne: stejný důvod jako u `histogram` |
+| `urlNormalizationDetails` | jak CrUX adresu upravil (přesměrování, lomítko) | ne: adresy jsou kanonické ze sitemap |
+| History API `records:queryHistoryRecord` | vývoj za posledních 25 týdnů | ne: zvážit, až budou data; dnes by spotřebovalo dotazy na adresy bez dat |
 
 ## 3. Sloupce, které nepoužíváme
 

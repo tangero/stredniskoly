@@ -2,6 +2,7 @@ name: Signály týdně
 
 # Týdenní souhrn z Matomu (zadání #326, etapa 1b): plný do Telegramu, do artefaktu běhu (90 dní) jen verze bez hledaných výrazů (artefakt je veřejný).
 # Potřebuje secret MATOMO_API_KEY (token Matomo jen pro čtení); bez něj skript skončí chybou a nic nestáhne.
+# Oddíl Rychlost z CrUX (etapa 2) potřebuje secret CRUX_API_KEY (API klíč Google omezený na Chrome UX Report API); bez něj se oddíl vynechá s poznámkou.
 # Do repozitáře se nic nezapisuje.
 
 on:
@@ -29,6 +30,7 @@ jobs:
       - name: Souhrn z Matomu
         env:
           MATOMO_TOKEN: ${{ secrets.MATOMO_API_KEY }}
+          CRUX_API_KEY: ${{ secrets.CRUX_API_KEY }}
         run: |
           python3 scripts/signaly_tyden.py --hlaseni hlaseni.json --bez-hledani souhrn-bez-hledani.md \
             --telegram zprava.txt --odkaz "$GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID" > /dev/null
