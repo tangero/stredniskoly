@@ -1,4 +1,4 @@
-"""Týdenní souhrn signálů z Matomu (zadání #326, etapa 1b).
+"""Týdenní souhrn signálů z Matomu (zadání #326, etapa 1b) a oddíl Rychlost z CrUX (etapa 2, `signaly_crux.py`).
 
 Čte jen agregované počty z Reporting API (7 dotazů, prodleva 2 s) a vypíše souhrn v Markdownu.
 Nic nezapisuje do repozitáře: workflow plný souhrn pošle do Telegramu a jako artefakt běhu uloží jen verzi
@@ -187,11 +187,14 @@ def main(argv: list[str] | None = None) -> int:
         with open(args.hlaseni, encoding="utf-8") as f:
             hlaseni = hlaseni_z_issues(json.load(f))
     data = stahni(fetch_matomo(token), konec)
-    plny = souhrn(data, konec, hlaseni)
+    import signaly_crux  # etapa 2: oddíl Rychlost z CrUX; bez CRUX_API_KEY jen poznámka
+
+    rychlost = signaly_crux.oddil_rychlost()
+    plny = signaly_crux.vloz_oddil(souhrn(data, konec, hlaseni), rychlost)
     print(plny)
     if args.bez_hledani:
         with open(args.bez_hledani, "w", encoding="utf-8") as f:
-            f.write(souhrn(data, konec, hlaseni, s_hledanim=False))
+            f.write(signaly_crux.vloz_oddil(souhrn(data, konec, hlaseni, s_hledanim=False), rychlost))
     if args.telegram:
         with open(args.telegram, "w", encoding="utf-8") as f:
             f.write(zprava_telegram(plny, args.odkaz))

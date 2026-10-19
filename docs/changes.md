@@ -2,6 +2,17 @@
 
 Záznam změn chování systému: požadavek, co se změnilo a proč, datum. Nejnovější nahoře.
 
+## 2026-10-19: oddíl Rychlost z CrUX v týdenním souhrnu signálů (#326, etapa 2)
+
+- **Požadavek:** projekt #326, etapa 2; rozhodnutí vlastníka z 19. 10. 2026 udělat jen CrUX, Search Console zatím neřešit.
+- **Co:** nový `scripts/signaly_crux.py` stáhne z Chrome UX Report API p75 metrik LCP, INP a CLS pro origin a pět
+  hlavních typů stránek (titulka, škola, obor, město, simulátor), telefon i počítač (12 dotazů, prodleva 1 s).
+  `scripts/signaly_tyden.py` vloží oddíl Rychlost hned za úvod souhrnu (aby se vešel do zkrácené zprávy pro
+  Telegram), do plné verze i do artefaktu. Workflow Signály týdně předává secret `CRUX_API_KEY`. Bez klíče nebo
+  při odmítnutí se oddíl vynechá s poznámkou; adresa bez dat v CrUX (404) má řádek „bez dat“. Popis polí
+  v `docs/zdroje-dat.md`, oddíl 2.21.
+- **Proč:** zadání chce v souhrnu rychlost stránek u skutečných uživatelů pro hlavní typy stránek (K8).
+
 ## 2026-10-18: týdenní ponaučení ze selhání agentů (#521)
 
 - **Požadavek:** issue #521, rozhodnutí vlastníka z 18. 10. 2026 převzít z Harness² ponaučení podložená výsledky:
