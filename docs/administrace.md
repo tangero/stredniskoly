@@ -7,7 +7,7 @@ Administrace webu je na `/admin`. Přístup má jen vlastník. Od #479 se do ní
 | adresa | co ukazuje |
 |---|---|
 | `/admin` | souhrn oslovených škol, stav datových sad, portálu, hlášení, datové linky, automatizací a novinek |
-| `/admin/provoz` | přehled provozu projektu: co čeká na vlastníka, běh automatických tras, sloučené a otevřené PR, regrese, projekty, hlášení, náklady (zatím bez zdroje) |
+| `/admin/provoz` | přehled provozu projektu: co čeká na vlastníka, běh automatických tras, sloučené a otevřené PR, regrese, projekty, hlášení, týdenní signály z návštěvnosti a rychlosti webu (#528), náklady (zatím bez zdroje) |
 | `/admin/zabezpeceni` | passkey (přidání, zrušení), odhlášení, posledních 20 událostí přihlášení |
 | `/admin/portal`, `/admin/portal/pozvanky` | účty a pozvánky portálu škol |
 | `/admin/portal/oslovene` | oslovené školy portálu: souhrn po vlnách (osloveno, se správcem, poslalo návrh) a seznam škol s filtrem „jen se správcem“ a podle vlny; na `/admin` je z něj jen řádek s počty (#488) |
@@ -47,4 +47,5 @@ Přihlásit se přes GitHub, v `/admin/zabezpeceni` „Odhlásit všechna zaří
 
 - Na náhledech (preview) Vercelu přihlášení nefunguje: OAuth aplikace má callback jen na produkční doméně a passkey je vázaný na doménu, na které vznikl.
 - Přehled provozu čte GitHub API při každém načtení s mezipamětí 10 minut (asi 170 dotazů bez mezipaměti, token `GITHUB_TOKEN` z Vercelu zvyšuje limit). První načtení po vypršení mezipaměti trvá několik sekund. Náklady AI zatím nemají zdroj.
+- Signály týdně (oddíl 5 přehledu provozu, #528) čte `src/lib/admin-signaly.ts` z artefaktu `signaly-tyden` posledních nejvýš 13 dokončených běhů workflow Signály týdně na `main` (2 dotazy na seznamy a nejvýš 13 stažení ZIP, mezipaměť 10 minut). Bere jen `souhrn.json`, který workflow do artefaktu přidává od #528; starší artefakty mají jen Markdown a ukážou se jako poznámka s odkazem na běh. Hledané výrazy v artefaktu nejsou, z hledání bez výsledku se ukazuje jen počet návštěv a různých výrazů. Stažení artefaktu potřebuje token i u veřejného repozitáře: `GITHUB_TOKEN` ve Vercelu musí mít čtení Actions (fine-grained „Actions: Read“, u klasického tokenu scope `repo` nebo `public_repo`). Bez něj oddíl ukáže poznámku a zbytek přehledu funguje dál.
 - `overAdminToken` v `src/lib/admin.ts` zůstává jen kvůli testům; odstraní se samostatně po ověření nového přihlášení.

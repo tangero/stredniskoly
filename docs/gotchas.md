@@ -8,6 +8,10 @@ ve kterém na něj narazíš (krátce: co se stane, proč, co s tím). Oprava, k
 - **Push tokenem `GITHUB_TOKEN` nespustí testy normálně.** Události z tohoto tokenu nové běhy workflow nezakládají
   nebo je nechají čekat na ruční schválení (`action_required`), takže commit nedostane testy ani bránu. Workflow, která pushují nebo mění štítky, proto používají token App `prijimacky-ai`
   (`docs/spoluprace-na-githubu.md`, oddíl 4a).
+- **Stažení artefaktu přes API potřebuje token i u veřejného repozitáře.** `GET .../actions/artifacts/{id}/zip`
+  bez tokenu vrací 401, fine-grained token potřebuje „Actions: Read“. Odpověď je přesměrování na úložiště
+  artefaktů; `fetch` při něm hlavičku `Authorization` sám zahodí, což je správně. ZIP z `upload-artifact` má
+  velikosti až za daty (datový popisovač), čti je z centrálního adresáře (`src/lib/admin-signaly.ts`, #528).
 - **Každý nový commit v PR restartuje lhůtu L**, i commit, který jen sloučí `main` do větve. Do čekajícího PR
   nepushuj kosmetické změny.
 - **Souhlas `schvaleno` na PR s cestou H2 platí jen pro jeden commit.** Úpravu H2 dodej v jednom commitu;

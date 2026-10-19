@@ -3,10 +3,11 @@
 Čte jen agregované počty z Reporting API (7 dotazů, prodleva 2 s) a vypíše souhrn v Markdownu.
 Nic nezapisuje do repozitáře: workflow plný souhrn pošle do Telegramu a jako artefakt běhu uloží jen verzi
 bez hledaných výrazů (artefakt je ve veřejném repozitáři ke stažení, hledané výrazy mohou obsahovat jména).
-Obě verze vznikají z jednoho stažení.
+Obě verze vznikají z jednoho stažení. Vedle Markdownu jde do artefaktu `souhrn.json` se stejným obsahem
+bez hledaných výrazů; ten čte přehled provozu v administraci (#528).
 
     MATOMO_TOKEN=... python3 scripts/signaly_tyden.py [--datum RRRR-MM-DD] [--hlaseni hlaseni.json] \\
-        [--bez-hledani souhrn-bez-hledani.md] [--telegram zprava.txt --odkaz URL] > souhrn.md
+        [--bez-hledani souhrn-bez-hledani.md] [--json souhrn.json] [--telegram zprava.txt --odkaz URL] > souhrn.md
 """
 from __future__ import annotations
 
@@ -152,7 +153,8 @@ def _vynechano(data: dict[str, Any], oddil: str) -> str | None:
     return "_Oddíl vynechán: Matomo odmítlo dotaz " + "; ".join(f"{k} ({chyby[k]})" for k in selhane) + "._\n"
 
 
-def souhrn(data: dict[str, Any], konec_tydne: date, hlaseni: dict[str, int] | None = None, s_hledanim: bool = True) -> str:
+def _vyber_stranek(data: dict[str, Any]) -> tuple[list[dict[str, Any]], list[tuple[str, float, float]], list[dict[str, Any]]]:
+    """Nejnavštěvovanější, nejrychleji rostoucí a stránky s vysokým podílem odchodů (sdílí Markdown i JSON)."""
     stranky = [r for r in data.get("stranky", []) if isinstance(r, dict)]
     minule = {_stranka(r): _cislo(r, "nb_hits") for r in data.get("stranky_minuly", []) if isinstance(r, dict)}
     top = sorted(stranky, key=lambda r: -_cislo(r, "nb_hits"))[:TOP]
@@ -164,14 +166,23 @@ def souhrn(data: dict[str, Any], konec_tydne: date, hlaseni: dict[str, int] | No
         (r for r in stranky if _cislo(r, "nb_visits") >= MIN_NÁVŠTĚV_ODCHODY and _cislo(r, "bounce_rate") >= PRAH_ODCHODU),
         key=lambda r: -_cislo(r, "nb_visits"),
     )[:TOP]
+    return top, rust, odchody
+
+
+def _udalosti(data: dict[str, Any], klic: str) -> list[list[Any]]:
+    radky = [r for r in data.get(klic, []) if isinstance(r, dict)]
+    return [[r.get("label", "?"), int(_cislo(r, "nb_events"))] for r in sorted(radky, key=lambda r: -_cislo(r, "nb_events"))[:TOP]]
+
+
+def souhrn(data: dict[str, Any], konec_tydne: date, hlaseni: dict[str, int] | None = None, s_hledanim: bool = True) -> str:
+    top, rust, odchody = _vyber_stranek(data)
 
     def hledani(klic: str) -> list[list[Any]]:
         radky = [r for r in data.get(klic, []) if isinstance(r, dict) and _cislo(r, "nb_visits") >= MIN_HLEDANI]
         return [[r.get("label", "?"), int(_cislo(r, "nb_visits"))] for r in sorted(radky, key=lambda r: -_cislo(r, "nb_visits"))[:TOP]]
 
     def udalosti(klic: str) -> list[list[Any]]:
-        radky = [r for r in data.get(klic, []) if isinstance(r, dict)]
-        return [[r.get("label", "?"), int(_cislo(r, "nb_events"))] for r in sorted(radky, key=lambda r: -_cislo(r, "nb_events"))[:TOP]]
+        return _udalosti(data, klic)
 
     def oddil(nazev: str, tabulka: Callable[[], str]) -> str:
         return _vynechano(data, nazev) or tabulka()
@@ -206,6 +217,42 @@ def souhrn(data: dict[str, Any], konec_tydne: date, hlaseni: dict[str, int] | No
     return "\n".join(casti)
 
 
+def souhrn_json(data: dict[str, Any], konec_tydne: date, hlaseni: dict[str, int] | None = None,
+                rychlost: dict[str, Any] | None = None) -> dict[str, Any]:
+    """Strojově čitelný souhrn do artefaktu (`souhrn.json`, #528) se stejným obsahem jako verze bez hledaných výrazů.
+
+    Hledané výrazy v něm nejsou: z hledání bez výsledku jde jen součet návštěv a počet různých výrazů.
+    Oddíl, jehož dotaz Matomo odmítlo, má hodnotu None a důvod ve `vynechano`.
+    """
+    top, rust, odchody = _vyber_stranek(data)
+    chyby = data.get("_chyby") or {}
+    vynechano = {o: ", ".join(k for k in dotazy_ if k in chyby) for o, dotazy_ in ODDILY_DOTAZU.items()
+                 if o not in ("hledani",) and any(k in chyby for k in dotazy_)}
+
+    def nebo_none(oddil: str, hodnota: Any) -> Any:
+        return None if oddil in vynechano else hodnota
+
+    nav = data.get("navstevy") if isinstance(data.get("navstevy"), dict) else {}
+    bez_vysledku = [r for r in data.get("hledani_bez_vysledku", []) if isinstance(r, dict)]
+    return {
+        "verze": 1,
+        "od": (konec_tydne - timedelta(days=6)).isoformat(),
+        "do": konec_tydne.isoformat(),
+        "navstevy": nebo_none("navstevy", {"navstevy": int(_cislo(nav, "nb_visits")), "zobrazeni": int(_cislo(nav, "nb_actions"))}),
+        "stranky": nebo_none("stranky", [{"stranka": _stranka(r), "zobrazeni": int(_cislo(r, "nb_hits"))} for r in top]),
+        "rust": nebo_none("rust", [{"stranka": st, "zobrazeni": int(a), "minuly_tyden": int(b)} for st, a, b in rust]),
+        "odchody": nebo_none("odchody", [{"stranka": _stranka(r), "navstevy": int(_cislo(r, "nb_visits")),
+                                          "podil_odchodu": round(_cislo(r, "bounce_rate"), 3)} for r in odchody]),
+        "udalosti_kategorie": nebo_none("udalosti_kategorie", [{"nazev": n, "pocet": p} for n, p in _udalosti(data, "udalosti_kategorie")]),
+        "udalosti_akce": nebo_none("udalosti_akce", [{"nazev": n, "pocet": p} for n, p in _udalosti(data, "udalosti_akce")]),
+        "hledani_bez_vysledku": nebo_none("hledani_bez_vysledku", {
+            "navstevy": int(sum(_cislo(r, "nb_visits") for r in bez_vysledku)), "vyrazu": len(bez_vysledku)}),
+        "hlaseni": None if hlaseni is None else [{"oblast": k, "pocet": v} for k, v in sorted(hlaseni.items(), key=lambda kv: -kv[1])],
+        "rychlost": rychlost,
+        "vynechano": {o: f"Matomo odmítlo dotaz {k}" for o, k in vynechano.items()},
+    }
+
+
 def zprava_telegram(text: str, odkaz: str, limit: int = LIMIT_TELEGRAM) -> str:
     """Zkrátí souhrn po znacích (ne po bajtech) na konci celého řádku a přidá řádek s odkazem na běh."""
     patka = f"\n\nCelý souhrn: artefakt běhu {odkaz}\n"
@@ -236,6 +283,7 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument("--datum", help="poslední den týdne, výchozí: poslední dokončená neděle")
     ap.add_argument("--hlaseni", help="JSON se seznamem issues z GitHubu (gh issue list --json labels)")
     ap.add_argument("--bez-hledani", help="soubor pro verzi souhrnu bez hledaných výrazů (do veřejného artefaktu)")
+    ap.add_argument("--json", help="soubor pro souhrn.json bez hledaných výrazů (do veřejného artefaktu, čte ho administrace)")
     ap.add_argument("--telegram", help="soubor pro zprávu do Telegramu (plný souhrn zkrácený po znacích)")
     ap.add_argument("--odkaz", default="", help="adresa běhu workflow do patičky zprávy pro Telegram")
     args = ap.parse_args(argv)
@@ -252,12 +300,16 @@ def main(argv: list[str] | None = None) -> int:
     data = stahni(fetch_matomo(token), konec)
     import signaly_crux  # etapa 2: oddíl Rychlost z CrUX; bez CRUX_API_KEY jen poznámka
 
-    rychlost = signaly_crux.oddil_rychlost()
+    rychlost_data = signaly_crux.rychlost()
+    rychlost = signaly_crux.text_rychlosti(rychlost_data)
     plny = signaly_crux.vloz_oddil(souhrn(data, konec, hlaseni), rychlost)
     print(plny)
     if args.bez_hledani:
         with open(args.bez_hledani, "w", encoding="utf-8") as f:
             f.write(signaly_crux.vloz_oddil(souhrn(data, konec, hlaseni, s_hledanim=False), rychlost))
+    if args.json:
+        with open(args.json, "w", encoding="utf-8") as f:
+            json.dump(souhrn_json(data, konec, hlaseni, signaly_crux.json_rychlosti(rychlost_data)), f, ensure_ascii=False, indent=1)
     if args.telegram:
         with open(args.telegram, "w", encoding="utf-8") as f:
             f.write(zprava_telegram(plny, args.odkaz))

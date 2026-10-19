@@ -2,6 +2,19 @@
 
 Záznam změn chování systému: požadavek, co se změnilo a proč, datum. Nejnovější nahoře.
 
+## 2026-10-19: týdenní souhrn signálů v administraci (#528)
+
+- **Požadavek:** issue #528 (zdroj: vlastník, 19. 10. 2026), varianta „z artefaktu workflow“ bez databáze,
+  nových secrets a nových volání Matomo nebo CrUX z webu.
+- **Co:** `scripts/signaly_tyden.py` má přepínač `--json` a workflow Signály týdně přidává do artefaktu
+  `souhrn.json` se stejným obsahem jako Markdown bez hledaných výrazů (z hledání bez výsledku jen počet návštěv
+  a výrazů). CrUX se stahuje jednou pro text i JSON (`signaly_crux.rychlost`). Přehled provozu `/admin/provoz`
+  má v oddílu 5 kartu Signály týdně: posledních nejvýš 13 běhů jako zarovnaný seznam (návštěvy, zobrazení,
+  hledání bez výsledku, odkaz na běh), poslední týden rozbalený na nejnavštěvovanější a nejrychleji rostoucí
+  stránky (top 5), události a rychlost. ZIP artefaktu rozbaluje `node:zlib` bez nové závislosti. Chyba API,
+  chybějící nebo vypršelý artefakt, neúspěšný běh a chybějící oprávnění tokenu se ukážou jako poznámka.
+- **Proč:** vlastník chce souhrn signálů i v administraci, stručně a s předchozími týdny.
+
 ## 2026-10-19: oddíl Rychlost z CrUX v týdenním souhrnu signálů (#326, etapa 2)
 
 - **Požadavek:** projekt #326, etapa 2; rozhodnutí vlastníka z 19. 10. 2026 udělat jen CrUX, Search Console zatím neřešit.

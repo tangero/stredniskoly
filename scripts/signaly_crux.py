@@ -163,18 +163,45 @@ def vynechano(duvod: str) -> str:
     return f"{NADPIS}\n_Oddíl vynechán: {duvod}._\n"
 
 
+def rychlost(klic: str | None = None, fetch: Fetch | None = None,
+             spanek: Callable[[float], None] = time.sleep) -> dict[str, Any]:
+    """Jedno stažení pro text i JSON (#528): {"radky": [...]} nebo {"vynechano": důvod}. Nikdy nevyhodí výjimku z CrUX."""
+    klic = (os.environ.get("CRUX_API_KEY", "") if klic is None else klic).strip()
+    if not klic and fetch is None:
+        return {"vynechano": "chybí secret CRUX_API_KEY"}
+    try:
+        return {"radky": stahni(fetch or fetch_crux(klic), spanek)}
+    except (ChybaCrux, OSError, ValueError, HTTPException) as e:  # OSError: vypršení času; ValueError: nečitelná odpověď; HTTPException: poškozená odpověď
+        print(f"CrUX odmítlo dotaz: {e}", file=sys.stderr)
+        return {"vynechano": f"CrUX odmítlo dotaz ({e})"}
+
+
+def text_rychlosti(vysledek: dict[str, Any]) -> str:
+    return oddil(vysledek["radky"]) if "radky" in vysledek else vynechano(vysledek["vynechano"])
+
+
+def json_rychlosti(vysledek: dict[str, Any]) -> dict[str, Any]:
+    """Oddíl Rychlost pro souhrn.json (#528): p75 za 28 dní (None = bez dat) a hodnocení podle prahů Googlu."""
+    if "radky" not in vysledek:
+        return {"vynechano": vysledek["vynechano"]}
+    nazvy_formatu = dict(FORMATY)
+    radky = []
+    for r in vysledek["radky"]:
+        hodnoty = {m: _p75(r["zaznam"], m) for m in METRIKY}
+        radky.append({
+            "typ": r["typ"],
+            "zarizeni": nazvy_formatu[r["format"]],
+            "bez_dat": r["zaznam"] is None,
+            **{METRIKY[m][0].lower(): h for m, h in hodnoty.items()},
+            "hodnoceni": {METRIKY[m][0].lower(): hodnoceni(m, h) for m, h in hodnoty.items() if h is not None},
+        })
+    return {"obdobi": _obdobi(vysledek["radky"]), "radky": radky}
+
+
 def oddil_rychlost(klic: str | None = None, fetch: Fetch | None = None,
                    spanek: Callable[[float], None] = time.sleep) -> str:
     """Celý oddíl Rychlost; bez klíče nebo při odmítnutí poznámka místo tabulky. Nikdy nevyhodí výjimku z CrUX."""
-    klic = (os.environ.get("CRUX_API_KEY", "") if klic is None else klic).strip()
-    if not klic and fetch is None:
-        return vynechano("chybí secret CRUX_API_KEY")
-    try:
-        radky = stahni(fetch or fetch_crux(klic), spanek)
-    except (ChybaCrux, OSError, ValueError, HTTPException) as e:  # OSError: vypršení času; ValueError: nečitelná odpověď; HTTPException: poškozená odpověď
-        print(f"CrUX odmítlo dotaz: {e}", file=sys.stderr)
-        return vynechano(f"CrUX odmítlo dotaz ({e})")
-    return oddil(radky)
+    return text_rychlosti(rychlost(klic, fetch, spanek))
 
 
 def vloz_oddil(souhrn: str, oddil_text: str) -> str:
