@@ -1,6 +1,6 @@
 # Druhé kolo přijímacího řízení
 
-Verze 1.2 · 14. 9. 2026 · Návrh, realizace a ověření.
+Verze 1.4 · 17. 10. 2026 · Návrh, realizace a ověření.
 
 Otázka rodiče, na kterou web dosud neodpovídal: **když se dítě nedostane v 1. kole, má na tomhle oboru ještě šanci?** A obráceně: dá se se školou počítat jako s pojistkou pro 2. kolo?
 
@@ -115,7 +115,7 @@ Obory bez zkoušky (2026): 151 nabídek nově s 2. kolem, celkem 1 412 místo 1 
 
 **Co pravidlo neříká.** Shodu školy, oboru, formy, délky a jazyka bere jako tutéž nabídku. U většiny párů jde o tentýž text v jiné podobě (velikost písmen, překlep, „ŠVP:“ na začátku), menšina má zaměření pojmenované jinak, například elektrotechnický obor 600005259 („Mechanik elektrotechnik“ v 1. kole, „Elektromechanik pro zařízení a přístroje“ ve 2. kole). Protože jiná nabídka téhož oboru na škole nezbývá, jde o tentýž obor školy; čísla 2. kola se u něj ukazují pod názvem z 1. kola.
 
-**Nezávislá kontrola:** identifikátor `ID_SO` (na rozdíl od `ID_SOF` je v obou kolech stejný) se shoduje u všech 153 nových párů roku 2026 i všech 162 roku 2025. Ze zbylých nabídek jen ve 2. kole by `ID_SO` dál spároval 19 (2026) a 27 (2025), u nich ale na některé straně zbývá víc kandidátů; jeho zavedení jako klíče je samostatné rozhodnutí ([návrh oborů bez zkoušky](navrh-obory-bez-jpz-2027.md), oddíl o párování).
+**Kontrola `ID_SO` (#516):** identifikátor `ID_SO` je na rozdíl od `ID_SOF` v obou kolech stejný, ale označuje obor na škole, ne nabídku se zaměřením. Ve výběru tohoto souboru odpovídá přesně klíči druhého průchodu, takže by žádnou ze zbylých nabídek jen ve 2. kole nespároval (u všech zbývá na některé straně víc zaměření téhož oboru nebo protějšek chybí). Jako klíč se proto nepoužívá (rozhodnutí vlastníka 17. 10. 2026). Oba skripty (`rozpory_id_so` v `scripts/build-druhe-kolo.py`, volá ji i `scripts/build-obory-bez-jpz.py`) u každého páru ověří, že oba řádky mají shodné `ID_SO`, pokud je vyplněné; rozpor vypíší jako varování a pár ani výstup nemění. Stav 17. 10. 2026: 0 rozporů u 1 042 párů 2025, 1 039 párů 2026 i 1 412 párů oborů bez zkoušky.
 
 Ručně ověřeno proti `PZ2026_kolo2_skolobory_vysledky.xlsx`: Lyceum 600007561 (64 přihlášek, 17 přijatých, kapacita 17), logistika 600013782 („Logsitika“ → „Logistika“, kapacita 39, 110 přihlášek, 40 přijatých) a elektrotechnický obor 600005259 (kapacita 26, 135 přihlášek, 26 přijatých).
 
@@ -123,6 +123,7 @@ Ručně ověřeno proti `PZ2026_kolo2_skolobory_vysledky.xlsx`: Lyceum 600007561
 
 | Verze | Změna |
 |---|---|
+| 1.4 | Kontrola párů shodou `ID_SO`, rozpor jen jako varování (#516). |
 | 1.3 | Druhý průchod párování bez zaměření, jen jednoznačné páry (#282); přepočtené podíly v oddílu 1. |
 | 1.2 | 2. kolo na nové stránce oboru, stránce školy a v otevřených datech ze společné funkce vět; věta o důvodech nepřijetí ve 2. kole; ověření proti zdroji; oprava detailu nových oborů bez zaměření. |
 | 1.1 | Výsledky ověření importu, testů a zobrazení. |
