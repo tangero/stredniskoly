@@ -5,6 +5,9 @@ import { nactiSignaly, souborZeZipu, souhrnZArtefaktu, souhrnZJson, MAX_TYDNU } 
 
 // Týdenní souhrn signálů v přehledu provozu (#528). GitHub API nahrazuje mock, ZIP jsou fixtures
 // vyrobené jako u upload-artifact (deflate s datovým popisovačem; jeden archiv bez komprese).
+// Vznikly z mocků v tests/test_signaly_tyden.py a test_signaly_crux.py: souhrn_json() a souhrn(s_hledanim=False),
+// zapsané Pythonem `zipfile` do neposuvného proudu (tím vznikne datový popisovač); do souhrn.json je navíc
+// schválně vložen klíč `hledani` s vymyšleným výrazem kvůli testu P1.
 
 const fixture = (n) => new Uint8Array(readFileSync(new URL(`./fixtures/signaly-tyden/${n}`, import.meta.url)));
 const ZIP = fixture('artefakt.zip');
