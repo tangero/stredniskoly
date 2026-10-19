@@ -13,6 +13,16 @@ Záznam změn chování systému: požadavek, co se změnilo a proč, datum. Nej
   v `docs/zdroje-dat.md`, oddíl 2.21.
 - **Proč:** zadání chce v souhrnu rychlost stránek u skutečných uživatelů pro hlavní typy stránek (K8).
 
+## 2026-10-19: oprava týdenního souhrnu signálů z Matomu (#326, etapa 1b)
+
+- **Požadavek:** projekt #326; workflow Signály týdně při každém běhu spadl na `HTTP Error 400` bez hlášky.
+- **Co:** příčinou byl chybný název metody `Actions.getSiteSearchNoResultKeyword` (správně
+  `Actions.getSiteSearchNoResultKeywords`), na který Matomo 5 odpovídá HTTP 400. `scripts/signaly_tyden.py` nově
+  při chybě přečte tělo odpovědi a vypíše klíč dotazu, metodu a hlášku Matomo (bez tokenu, nejvýš 300 znaků).
+  Odmítnutý dotaz nepřeruší souhrn: jeho oddíl se vynechá s poznámkou. Skript skončí chybou, jen když Matomo
+  odmítne všechny dotazy (například neplatný token).
+- **Proč:** souhrn nikdy nedorazil a z logu nešlo poznat, který dotaz selhal.
+
 ## 2026-10-18: týdenní ponaučení ze selhání agentů (#521)
 
 - **Požadavek:** issue #521, rozhodnutí vlastníka z 18. 10. 2026 převzít z Harness² ponaučení podložená výsledky:

@@ -4,12 +4,15 @@
 """
 from __future__ import annotations
 
+import io
 import os
 import sys
 import unittest
+from contextlib import redirect_stderr
 from datetime import date
 from pathlib import Path
 from unittest import mock
+from urllib.error import HTTPError
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
 import signaly_tyden as s  # noqa: E402
@@ -29,7 +32,7 @@ def falesny_matomo(params: dict[str, str]):
         return [{"label": "/mesto/brno", "nb_hits": 100}, {"label": "/simulator", "nb_hits": 10}]
     if m == "Actions.getSiteSearchKeywords":
         return [{"label": "gymnázium brno", "nb_visits": 9}, {"label": "jan novák", "nb_visits": 4}]
-    if m == "Actions.getSiteSearchNoResultKeyword":
+    if m == "Actions.getSiteSearchNoResultKeywords":
         return [{"label": "xyz", "nb_visits": 5}, {"label": "vzácný", "nb_visits": 1}]
     if m.startswith("Events."):
         return [{"label": "simulator", "nb_events": 33}]
@@ -91,8 +94,62 @@ class SignalyTest(unittest.TestCase):
         self.assertEqual(s.hlaseni_z_issues(issues), {"oblast:detail": 1, "oblast:bez-oblasti": 1})
 
     def test_chyba_matomo_neprozradi_odpoved(self) -> None:
-        with self.assertRaises(RuntimeError):
+        with redirect_stderr(io.StringIO()), self.assertRaises(RuntimeError):
             s.stahni(lambda p: {"result": "error", "message": "tajne"}, KONEC, mock.Mock())
+
+    def test_nazvy_metod_matomo(self) -> None:
+        # Matomo 5 na neexistující metodu odpoví HTTP 400 (getSiteSearchNoResultKeyword bez „s“ shodil běhy workflow)
+        metody = {p["method"] for p in s.dotazy(KONEC).values()}
+        self.assertEqual(metody, {
+            "Actions.getPageUrls", "Actions.getSiteSearchKeywords", "Actions.getSiteSearchNoResultKeywords",
+            "Events.getCategory", "Events.getAction", "VisitsSummary.get",
+        })
+
+    def test_http_400_ukaze_hlasku_matomo_bez_tokenu(self) -> None:
+        telo = b'{"result":"error","message":"Requested report with secondaryDimension\\n not found. token TAJNY"}'
+        chyba = HTTPError("https://ma.example/index.php", 400, "Bad Request", {}, io.BytesIO(telo))  # type: ignore[arg-type]
+        with mock.patch.object(s, "urlopen", side_effect=chyba):
+            with self.assertRaises(s.ChybaMatomo) as ctx:
+                s.fetch_matomo("TAJNY")({"method": "Events.getCategory"})
+        self.assertIn("HTTP 400", str(ctx.exception))
+        self.assertIn("secondaryDimension not found", str(ctx.exception))
+        self.assertNotIn("TAJNY", str(ctx.exception))
+
+    def test_jeden_odmitnuty_dotaz_neshodi_souhrn(self) -> None:
+        def matomo(p: dict[str, str]):
+            if p["method"] == "Events.getCategory":
+                raise s.ChybaMatomo("HTTP 400: nepodporovaný parametr")
+            return falesny_matomo(p)
+
+        log = io.StringIO()
+        with redirect_stderr(log):
+            data = s.stahni(matomo, KONEC, mock.Mock())
+        self.assertIn("udalosti_kategorie (Events.getCategory): HTTP 400: nepodporovaný parametr", log.getvalue())
+        text = s.souhrn(data, KONEC)
+        kategorie = text.split("## Události (kategorie)")[1].split("## Události (akce)")[0]
+        self.assertIn("Oddíl vynechán: Matomo odmítlo dotaz udalosti_kategorie", kategorie)
+        self.assertIn("| simulator | 33 |", text.split("## Události (akce)")[1])
+        self.assertIn("/mesto/brno", text)
+        self.assertIn("Návštěvy: 200", text)
+
+    def test_chyba_json_pri_http_200_vynecha_oddil(self) -> None:
+        def matomo(p: dict[str, str]):
+            if p["method"] == "Actions.getSiteSearchNoResultKeywords":
+                return {"result": "error", "message": "Site search is not enabled"}
+            return falesny_matomo(p)
+
+        with redirect_stderr(io.StringIO()):
+            data = s.stahni(matomo, KONEC, mock.Mock())
+        text = s.souhrn(data, KONEC)
+        self.assertIn("Matomo odmítlo dotaz hledani_bez_vysledku (Site search is not enabled)", text)
+        self.assertIn("gymnázium brno", text)
+        self.assertNotIn("Oddíl vynechán", s.souhrn(data, KONEC, s_hledanim=False))
+
+    def test_vsechny_dotazy_odmitnute_konci_chybou_s_klici(self) -> None:
+        with redirect_stderr(io.StringIO()), self.assertRaises(RuntimeError) as ctx:
+            s.stahni(lambda p: {"result": "error", "message": "token_auth is not valid"}, KONEC, mock.Mock())
+        self.assertIn("stranky: token_auth is not valid", str(ctx.exception))
+        self.assertIn("navstevy:", str(ctx.exception))
 
     def test_bez_tokenu_konci_chybou(self) -> None:
         with mock.patch.dict(os.environ, {"MATOMO_TOKEN": ""}):
