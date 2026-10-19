@@ -1,7 +1,7 @@
 // Týdenní přehled pro vlastníka (docs/navrh-rizeni-vyvoje-2027.md, oddíly 2 a 16): co se sloučilo,
 // všechna rozhodnutí štítky `schvaleno`, `zamitnuto` a `stop` za týden i s účtem, který je udělal,
 // co čeká na vlastníka (i PR, kde smyčka oprav z review skončila štítkem `potrebuje-cloveka`), červené CI na main, expirace tokenů v secrets
-// a měřítka vývoje z oddílu 20 (meritka.mjs). Slouží ke zpětné kontrole
+// a měřítka vývoje z oddílu 20 (meritka.mjs), oddíl Ponaučení ze selhání agentů (ponauceni.mjs, #521). Slouží ke zpětné kontrole
 // rozhodnutí podle RA35: co si vlastník nevybaví, vrátí.
 //
 //   node scripts/prehled/tydenni.mjs --nanecisto   jen vypíše (mimo Actions přes gh) i s počtem volání API
@@ -16,6 +16,7 @@ import { nactiMeritka, spocitejMeritka, kratkaMeritka, oddilMeritka } from './me
 import { nactiStav, souhrnTydne } from '../provoz/dostupnost.mjs';
 import { souhrnHlaseni } from '../provoz/triaz.mjs';
 import { nactiRegistr, sadyPoTerminu, popisOcekavani } from '../provoz/cerstvost.mjs';
+import { pripravPonauceni, ulozEvidenci, kratkaPonauceni, oddilPonauceni } from './ponauceni.mjs';
 
 const DEN = 24 * 60 * 60 * 1000;
 export const STITKY_ROZHODNUTI = ['schvaleno', 'zamitnuto', 'stop'];
@@ -79,7 +80,7 @@ export async function prihlaseniApp(token, fetchFn = globalThis.fetch) {
   return odp.status === 200 ? 'funguje' : 'nefunguje';
 }
 
-export async function nactiData(api, ted, tokeny = {}, { vlastnik = 'tangero', asistent = null, appToken } = {}) {
+export async function nactiData(api, ted, tokeny = {}, { vlastnik = 'tangero', asistent = null, appToken, ponauceni: ucty = null, modelPonauceni } = {}) {
   const od = ted - 7 * DEN;
 
   const zavrene = await strankuj(api, `repos/${REPO}/pulls?state=closed&sort=updated&direction=desc`,
@@ -166,7 +167,17 @@ export async function nactiData(api, ted, tokeny = {}, { vlastnik = 'tangero', a
     cerstvost = { chyba: String(e.message || e).slice(0, 200) };
   }
 
-  return { od, ted, slouceno, rozhodnuti, navrhy, zastavene, cekajiNaSouhlas, potrebujiCloveka, cervenaMain, expirace, app, meritka, dostupnost, hlaseni, cerstvost };
+  // Ponaučení ze selhání agentů (#521): jen když volající předá účty; chyba nesmí zastavit zbytek přehledu.
+  let ponauceni = null;
+  if (ucty) {
+    try {
+      ponauceni = await pripravPonauceni(api, ted, { vlastnik, asistent, ...ucty }, modelPonauceni ? { model: modelPonauceni } : {});
+    } catch (e) {
+      ponauceni = { chyba: String(e.message || e).slice(0, 200) };
+    }
+  }
+
+  return { ponauceni, od, ted, slouceno, rozhodnuti, navrhy, zastavene, cekajiNaSouhlas, potrebujiCloveka, cervenaMain, expirace, app, meritka, dostupnost, hlaseni, cerstvost };
 }
 
 const ms = (x) => (x == null ? 'bez dat' : `${x} ms`);
@@ -268,6 +279,7 @@ export function sestavPrehled(d, { vlastnik = 'tangero' } = {}) {
     d.meritka && !d.meritka.chyba ? kratkaMeritka(d.meritka) : '',
     kratkaDostupnost(d.dostupnost),
     kratkaCerstvost(d.cerstvost),
+    kratkaPonauceni(d.ponauceni),
     d.cervenaMain.length ? `POZOR, červené CI na main: ${d.cervenaMain.join(', ')}\nhttps://github.com/${REPO}/commits/main` : '',
     ...tokenyPozor.map((t) => `POZOR, token ${t}`),
     d.app === 'nefunguje' ? 'POZOR, App prijimacky-ai se nepřihlásí: sloučení, štítky a PR s obnovou dat stojí' : '',
@@ -306,6 +318,7 @@ export function sestavPrehled(d, { vlastnik = 'tangero' } = {}) {
     ...oddilDostupnost(d.dostupnost, odkaz),
     ...oddilHlaseni(d.hlaseni, odkaz),
     ...oddilCerstvost(d.cerstvost),
+    ...oddilPonauceni(d.ponauceni, odkaz),
     '## Provoz',
     d.cervenaMain.length ? `- červené CI na main: ${d.cervenaMain.join(', ')}` : '- CI na main bez chyb',
     ...Object.entries(d.expirace).map(([n, e]) => `- token ${n}: ${e === 'chybi' ? 'secret chybí' : e === 'neplatny' ? 'neplatí' : e ? `vyprší ${e}` : 'bez expirace'}`),
@@ -330,19 +343,21 @@ async function posliTelegram(text) {
 
 async function main() {
   const nanecisto = process.argv.includes('--nanecisto');
-  const { vlastnik, asistent } = yaml.load(fs.readFileSync(new URL('../../.github/rezimy.yml', import.meta.url), 'utf8'));
+  const { vlastnik, asistent, automatika, review } = yaml.load(fs.readFileSync(new URL('../../.github/rezimy.yml', import.meta.url), 'utf8'));
   const api = vytvorApi();
   let volani = 0;
   const pocitaneApi = (...a) => { volani++; return api(...a); };
   const data = await nactiData(pocitaneApi, Date.now(), {
     PROJECT_TOKEN: process.env.PROJECT_TOKEN,
-  }, { vlastnik, asistent, appToken: process.env.APP_TOKEN ?? '' });
+  }, { vlastnik, asistent, appToken: process.env.APP_TOKEN ?? '', ponauceni: { automatika, znacka: review?.znacka_automatiky } });
   const { kratky, dlouhy } = sestavPrehled(data, { vlastnik });
   console.log(dlouhy);
   console.log(`\nVolání GitHub API: ${volani}`);
   if (nanecisto) { console.log(`\n--- krátká verze ---\n${kratky}`); return; }
   if (process.env.GITHUB_STEP_SUMMARY) fs.appendFileSync(process.env.GITHUB_STEP_SUMMARY, `${dlouhy}\n`);
   await posliTelegram(`${kratky}\n\nCelý přehled: ${process.env.GITHUB_SERVER_URL}/${REPO}/actions/runs/${process.env.GITHUB_RUN_ID}`);
+  // Evidence ponaučení až po odeslání přehledu: navržené se počítá jako navržené, jen když ho vlastník dostal.
+  if (data.ponauceni?.novyStav) await ulozEvidenci(api, data.ponauceni.ulozeni, data.ponauceni.novyStav);
 }
 
 if (import.meta.url === pathToFileURL(process.argv[1] || '').href) await main();

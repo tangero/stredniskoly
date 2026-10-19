@@ -292,6 +292,51 @@ a spočítá skóre zvlášť pro „ano“ a „ne“, nestálost a neshody. Wo
 `main` se zadanou větví a výsledek zapíše do souhrnu běhu a komentářem do PR. Zadání rutiny leží mimo repozitář,
 proto se do měření nezapočítává. Klíč `CLAUDE_CODE_OAUTH_TOKEN` dostane jen krok s modelem.
 
+## 5b. Ponaučení ze selhání agentů (#521)
+
+Týdenní přehled (`scripts/prehled/tydenni.mjs`, workflow Týdenní přehled) má oddíl **Ponaučení**: návrhy změny
+pravidel AI (`CLAUDE.md`, skills) podložené doloženými selháními práce agentů za posledních 7 dní. Myšlenka je
+převzatá z Harness² (rozhodnutí vlastníka 18. 10. 2026); samotný nástroj se nenasazuje. Kód je v
+`scripts/prehled/ponauceni.mjs`, testy v `tests/ponauceni.test.mjs`.
+
+**Signály** (jen GitHub tohoto repozitáře, `GITHUB_TOKEN`):
+
+| druh | odkud |
+|---|---|
+| `potrebuje-cloveka` | PR se štítkem `potrebuje-cloveka`, se kterým se v týdnu pracovalo |
+| `kola-oprav` | sloučené PR s komentáři kola Opravy z review (`<!-- oprava-z-review:kolo=N -->`), nejvyšší kolo |
+| `zavreno-bez-slouceni` | PR zavřené bez sloučení. PR od botů (automatické obnovy dat) do signálů nevstupují vůbec |
+| `odpoved-vlastnika` | komentář vlastníka bez patičky AI, nebo zápis s nadpisem „Odpověď vlastníka“ od vlastníka či asistenta (stejné pravidlo jako u štítku `otazka`) |
+| `kontrola-neprosla` | neúspěšná kontrola práce na poslední hlavě PR s věcnou chybou: joby Testy (Python testy a kontroly dat, TypeScript, Integrace katalogu) a Brána sloučení. Nasazení náhledu na Vercel a Tabule se nepočítají (nasazení padá i po smazání větve sloučeného PR) |
+| `review-nalezy` | automatické review s verdiktem „Nálezy k opravě“ |
+
+**Selhání prostředí se nepočítá** jako selhání agenta a vypíše se zvlášť: review „Review se nepodařilo“, kontrola
+s vypršeným časem nebo s textem o limitu, kvótě, odpovědi 429/5xx, výpadku či nedostupnosti. Brána, která čeká
+na souhlas vlastníka nebo na lhůtu, není selhání.
+
+**Návrhy** píše model Codex od OpenAI přes OpenRouter (rozhodnutí vlastníka v #521; klíč `OPENROUTER_API_KEY`
+jako triáž, model v konstantě `MODEL` s přepisem proměnnou `PONAUCENI_MODEL`, ve workflow z proměnné repozitáře
+`vars.PONAUCENI_MODEL`; výchozí `openai/gpt-5.3-codex`, nejnovější Codex v katalogu OpenRouter 18. 10. 2026). Model
+dostane jen druh signálu, číslo PR nebo issue, zkrácený titulek a úryvek komentáře do 200 znaků bez účtů, zmínek,
+e-mailů a telefonů, k tomu `CLAUDE.md` a seznam skills s popisem. Skript výstup ověří: nejvýš 3 návrhy, cíl jen
+`CLAUDE.md` nebo `.claude/skills/<název>/SKILL.md`, doklady jen čísla ze signálů (vymyšlený odkaz se zahodí),
+aspoň dva doklady nebo jeden s popsanou věcnou škodou, klíč, který není v evidenci. Bez klíče, při selhání modelu
+nebo s neplatným výstupem ukáže oddíl jen výpis signálů. Bez signálů napíše „žádné ponaučení“ a model nevolá.
+Do Telegramu jde jedna věta (počet návrhů, nebo počet signálů bez návrhu).
+
+**Evidence návrhů** (vzor stavu Dostupnosti): stavový komentář `<!-- ponauceni:stav -->` v issue „Ponaučení: evidence
+návrhů“ (štítky `interni`, `trvale`, `oblast:provoz`; založí ho první běh s návrhem). Návrh, který šel do přehledu,
+se zapíše jako navržený a znovu se nenavrhuje. Vlastník návrh zamítne nebo přijme komentářem v tom issue s řádkem
+`zamítnuto: <klíč>` nebo `přijato: <klíč>` (platí komentář vlastníka bez patičky AI nebo zápis „Odpověď vlastníka“);
+zamítnutý ani přijatý klíč se už nenavrhne. Evidence se ukládá až po odeslání přehledu, při `--nanecisto` nikdy.
+
+**Co se nemění:** workflow nemá `contents: write` ani `pull-requests: write`, nemění `CLAUDE.md`, `.claude/` ani
+skills a nezakládá PR. Přijatý návrh realizuje AI na pokyn vlastníka jako běžné zadání přes bránu (změna
+`CLAUDE.md` je cesta H2). `issues: write` je jen na stavový komentář evidence.
+
+**Vyhodnocení:** když vlastník do konce roku 2026 nepřijme žádný návrh, oddíl se zruší nebo zúží na výpis signálů
+(odebráním volání `pripravPonauceni` z `nactiData` v `tydenni.mjs`, případně jen modelu).
+
 ## 6. Otevřené
 
 - **Nález secret scanningu č. 1:** klíč Google Maps JavaScript API v

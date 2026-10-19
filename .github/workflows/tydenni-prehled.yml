@@ -5,6 +5,12 @@
 #
 # PROJECT_TOKEN vlastníka se použije jen na dotaz na vlastní expiraci (hlavička odpovědi /rate_limit). Token App
 # prijimacky-ai (#403) jen s právem metadata: přehled ověří, že se App přihlásí. Nic jiného s nimi skript nedělá.
+#
+# Oddíl Ponaučení (#521, scripts/prehled/ponauceni.mjs): signály o selhání agentů z GitHubu tohoto repozitáře
+# a nejvýš 3 návrhy změny pravidel AI od modelu Codex přes OpenRouter (OPENROUTER_API_KEY jako triáž, model
+# v proměnné PONAUCENI_MODEL). Bez klíče nebo při selhání modelu jen výpis signálů. `issues: write` je jen na
+# stavový komentář evidence návrhů (issue „Ponaučení: evidence návrhů“); `contents` zůstává čtení: workflow
+# nemění CLAUDE.md, .claude ani skills a nezakládá PR.
 name: Týdenní přehled
 
 on:
@@ -15,7 +21,7 @@ on:
 
 permissions:
   contents: read
-  issues: read
+  issues: write
   pull-requests: read
   checks: read
 
@@ -23,7 +29,7 @@ jobs:
   prehled:
     name: Týdenní přehled
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
         with:
@@ -54,4 +60,6 @@ jobs:
           APP_TOKEN: ${{ steps.app.outputs.token }}
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          PONAUCENI_MODEL: ${{ vars.PONAUCENI_MODEL }}
         run: node scripts/prehled/tydenni.mjs
