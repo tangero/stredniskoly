@@ -95,6 +95,22 @@ class CruxTest(unittest.TestCase):
         self.assertEqual(pozadavky[0].full_url, c.ENDPOINT)
         self.assertEqual(pozadavky[0].get_header("X-goog-api-key"), "KLIC")
 
+    def test_json_rychlosti_z_jednoho_stazeni(self) -> None:
+        """#528: text i souhrn.json vznikají z jednoho stažení."""
+        volani = []
+        vysledek = c.rychlost("KLIC", lambda t: volani.append(t) or falesny_crux(t), mock.Mock())
+        self.assertEqual(len(volani), 12)
+        j = c.json_rychlosti(vysledek)
+        self.assertEqual(j["obdobi"], "2026-09-20 až 2026-10-17")
+        self.assertEqual(j["radky"][0], {"typ": "celý web", "zarizeni": "telefon", "bez_dat": False, "lcp": 2100.0, "inp": 180.0, "cls": 0.05,
+                                         "hodnoceni": {"lcp": "dobrá", "inp": "dobrá", "cls": "dobrá"}})
+        simulator = next(r for r in j["radky"] if r["typ"] == "simulátor" and r["zarizeni"] == "telefon")
+        self.assertEqual(simulator["hodnoceni"], {"lcp": "špatná", "inp": "ke zlepšení", "cls": "ke zlepšení"})
+        self.assertTrue(j["radky"][2]["bez_dat"])
+        self.assertIsNone(j["radky"][2]["lcp"])
+        self.assertIn("| celý web | telefon | 2100 ms (dobrá)", c.text_rychlosti(vysledek))
+        self.assertEqual(c.json_rychlosti({"vynechano": "chybí secret CRUX_API_KEY"}), {"vynechano": "chybí secret CRUX_API_KEY"})
+
     def test_vlozeni_pred_prvni_oddil(self) -> None:
         souhrn = "# Signály\n\nNávštěvy: 5.\n\n## Nejnavštěvovanější stránky\n\n| a |\n"
         vysledek = c.vloz_oddil(souhrn, c.vynechano("test"))

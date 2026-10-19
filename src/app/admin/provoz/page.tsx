@@ -16,6 +16,7 @@ import {
   tydnyPodleRezimu,
   type StavTrasy,
 } from '@/lib/admin-provoz';
+import { nactiSignaly, type Hodnoceni, type RadekRychlosti, type SouhrnSignalu, type TydenSignalu } from '@/lib/admin-signaly';
 
 export const dynamic = 'force-dynamic';
 
@@ -93,9 +94,111 @@ function Dlazdice({ popis, hodnota, pod, zle }: { popis: string; hodnota: string
   );
 }
 
+const HODNOCENI_TRIDA: Record<Hodnoceni, string> = { dobrá: 'text-green-800', 'ke zlepšení': 'text-amber-800', špatná: 'text-red-700' };
+const datumTydne = (iso: string) => `${den(iso)} ${iso.slice(0, 4)}`;
+const SLOUPCE_TYDNU = 'grid grid-cols-[11rem_6rem_7rem_9rem_minmax(8rem,1fr)] gap-x-3 items-baseline';
+
+/** Hodnota rychlosti s hodnocením podle prahů Googlu, jak je zapsal skript souhrnu. */
+function Metrika({ hodnota, hodnoceni, cls }: { hodnota: number | null; hodnoceni?: Hodnoceni; cls?: boolean }) {
+  if (hodnota === null) return <>–</>;
+  return <span className={hodnoceni ? HODNOCENI_TRIDA[hodnoceni] : ''}>{cls ? hodnota.toLocaleString('cs-CZ', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) : `${cislo(Math.round(hodnota))} ms`}</span>;
+}
+
+function Vynechano({ souhrn, oddil }: { souhrn: SouhrnSignalu; oddil: string }) {
+  return <p className="text-sm text-slate-500">Oddíl vynechán{souhrn.vynechano[oddil] ? `: ${souhrn.vynechano[oddil]}` : ''}.</p>;
+}
+
+/** Podrobnosti jednoho týdne: stránky, růst, události, rychlost. Hledané výrazy artefakt nemá (P1). */
+function TydenSignaluDetail({ s }: { s: SouhrnSignalu }) {
+  const rychlost = s.rychlost && 'radky' in s.rychlost ? s.rychlost : null;
+  const sDaty: RadekRychlosti[] = rychlost ? rychlost.radky.filter((r) => !r.bezDat) : [];
+  const bezDat = rychlost ? [...new Set(rychlost.radky.filter((r) => r.bezDat).map((r) => r.typ))] : [];
+  const udalosti = [
+    ...(s.udalostiAkce || []).slice(0, 5).map((r) => ({ ...r, druh: 'akce' })),
+    ...(s.udalostiKategorie || []).slice(0, 5).map((r) => ({ ...r, druh: 'kategorie' })),
+  ];
+  return (
+    <div className="grid md:grid-cols-2 gap-x-6 gap-y-4 items-start">
+      <div className="space-y-1 min-w-0">
+        <h4 className="text-sm font-medium text-slate-700">Nejnavštěvovanější stránky</h4>
+        {!s.stranky ? <Vynechano souhrn={s} oddil="stranky" /> : (
+          <Tabulka hlavicka={['Stránka', 'Zobrazení']} cisla={[1]}>
+            {s.stranky.slice(0, 5).map((r) => <tr key={r.stranka}><Td trida="break-all">{r.stranka}</Td><Td vpravo>{cislo(r.zobrazeni)}</Td></tr>)}
+          </Tabulka>
+        )}
+      </div>
+      <div className="space-y-1 min-w-0">
+        <h4 className="text-sm font-medium text-slate-700">Nejrychleji rostoucí stránky</h4>
+        {!s.rust ? <Vynechano souhrn={s} oddil="rust" /> : (
+          <Tabulka hlavicka={['Stránka', 'Zobrazení', 'Minulý týden']} cisla={[1, 2]}>
+            {s.rust.slice(0, 5).map((r) => <tr key={r.stranka}><Td trida="break-all">{r.stranka}</Td><Td vpravo>{cislo(r.zobrazeni)}</Td><Td vpravo>{cislo(r.minulyTyden)}</Td></tr>)}
+          </Tabulka>
+        )}
+      </div>
+      <div className="space-y-1 min-w-0">
+        <h4 className="text-sm font-medium text-slate-700">Události</h4>
+        {!s.udalostiAkce && !s.udalostiKategorie ? <Vynechano souhrn={s} oddil="udalosti_akce" /> : (
+          <Tabulka hlavicka={['Akce nebo kategorie', 'Druh', 'Počet']} cisla={[2]}>
+            {udalosti.map((r) => (
+              <tr key={`${r.druh}-${r.nazev}`}><Td trida="break-all">{r.nazev}</Td><Td trida="text-slate-500">{r.druh}</Td><Td vpravo>{cislo(r.pocet)}</Td></tr>
+            ))}
+          </Tabulka>
+        )}
+      </div>
+      <div className="space-y-1 min-w-0">
+        <h4 className="text-sm font-medium text-slate-700">Rychlost u skutečných uživatelů (CrUX)</h4>
+        {!s.rychlost ? <p className="text-sm text-slate-500">Oddíl v souhrnu chybí.</p> : 'vynechano' in s.rychlost ? <p className="text-sm text-slate-500">Oddíl vynechán: {s.rychlost.vynechano}.</p> : (
+          <>
+            <p className="text-xs text-slate-500">Percentil p75 za klouzavých 28 dní{rychlost?.obdobi ? ` (${rychlost.obdobi})` : ''}, barva podle prahů Googlu. Mezitýdenní srovnání z toho nejde.</p>
+            {sDaty.length > 0 && (
+              <Tabulka hlavicka={['Stránka', 'Zařízení', 'LCP', 'INP', 'CLS']} cisla={[2, 3, 4]}>
+                {sDaty.map((r) => (
+                  <tr key={`${r.typ}-${r.zarizeni}`}>
+                    <Td>{r.typ}</Td><Td>{r.zarizeni}</Td>
+                    <Td vpravo><Metrika hodnota={r.lcp} hodnoceni={r.hodnoceni.lcp} /></Td>
+                    <Td vpravo><Metrika hodnota={r.inp} hodnoceni={r.hodnoceni.inp} /></Td>
+                    <Td vpravo><Metrika hodnota={r.cls} hodnoceni={r.hodnoceni.cls} cls /></Td>
+                  </tr>
+                ))}
+              </Tabulka>
+            )}
+            {bezDat.length > 0 && <p className="text-xs text-slate-500">Bez dat (málo návštěv z Chromu): {bezDat.join(', ')}.</p>}
+          </>
+        )}
+      </div>
+    </div>
+  );
+}
+
+/** Řádek seznamu týdnů; stejné sloupce jako hlavička, rozbalí se na podrobnosti. */
+function RadekTydne({ t, otevreny }: { t: TydenSignalu; otevreny: boolean }) {
+  const s = t.souhrn;
+  const bunky = (
+    <>
+      <span>{s ? `${datumTydne(s.od)} až ${den(s.do)}` : `běh ${formatDatumCasCz(t.spusteno)}`}</span>
+      <span className="text-right">{s?.navstevy ? cislo(s.navstevy.navstevy) : '—'}</span>
+      <span className="text-right">{s?.navstevy ? cislo(s.navstevy.zobrazeni) : '—'}</span>
+      <span className="text-right">{s?.hledaniBezVysledku ? `${cislo(s.hledaniBezVysledku.navstevy)} (${cislo(s.hledaniBezVysledku.vyrazu)} výr.)` : '—'}</span>
+      <span className="min-w-0">
+        <a href={t.odkaz} target="_blank" rel="noopener" className="underline">běh</a>
+        {t.poznamka && <span className="text-amber-800"> · {t.poznamka}</span>}
+      </span>
+    </>
+  );
+  const radek = `${SLOUPCE_TYDNU} border-b border-slate-100 px-2 py-1 text-sm tabular-nums`;
+  if (!s) return <div className={radek}>{bunky}</div>;
+  return (
+    <details open={otevreny}>
+      <summary className={`${radek} cursor-pointer list-none hover:bg-slate-50 [&::-webkit-details-marker]:hidden`}>{bunky}</summary>
+      <div className="border-b border-slate-100 px-2 py-3"><TydenSignaluDetail s={s} /></div>
+    </details>
+  );
+}
+
 export default async function ProvozPage() {
   await vyzadujAdmina();
-  const p = await nactiProvoz();
+  const [p, signaly] = await Promise.all([nactiProvoz(), nactiSignaly()]);
+  const prvniSouhrn = signaly.tydny.findIndex((t) => t.souhrn);
   const stavy = p.trasy ? stavTras(p.trasy).sort((a, b) => PORADI_STAVU[a.stav] - PORADI_STAVU[b.stav]) : null;
   const tydny = p.slouceno ? tydnyPodleRezimu(p.slouceno) : null;
   const kvalita = p.slouceno && p.regrese ? kvalitaPoTydnech(p.slouceno, p.regrese) : null;
@@ -229,7 +332,7 @@ export default async function ProvozPage() {
             )}
           </Sekce>
 
-          <Sekce id="smer" titulek="5. Jde to správným směrem?" otazka="Otevřené projekty a hlášení. Signály z návštěvnosti a vyhledávání (#326) zatím chybí.">
+          <Sekce id="smer" titulek="5. Jde to správným směrem?" otazka="Otevřené projekty, hlášení a týdenní signály z návštěvnosti a rychlosti webu (#326).">
             <div className="grid md:grid-cols-2 gap-3">
               <Karta titulek="Projekty" poznamka="Hotové připojené úkoly a dny bez pohybu (červeně přes 14). Projekt bez schvaleno čeká na tebe.">
                 {!p.projekty ? <Nedostupne /> : (
@@ -258,6 +361,19 @@ export default async function ProvozPage() {
                 )}
               </Karta>
             </div>
+            <Karta titulek="Signály týdně" poznamka="Z artefaktu workflow Signály týdně na main, nejvýš 13 posledních běhů. Návštěvy a zobrazení stránek z Matomu za týden od pondělí do neděle. Hledání bez výsledku: počet návštěv, ve kterých hledání na webu nic nenašlo, a počet různých výrazů; samotné výrazy se sem nepřenášejí. Klikni na týden pro podrobnosti.">
+              {signaly.poznamka && <p className="text-sm text-amber-800">{signaly.poznamka}</p>}
+              {signaly.tydny.length > 0 && (
+                <div className="overflow-x-auto">
+                  <div className="min-w-[44rem]">
+                    <div className={`${SLOUPCE_TYDNU} border-b border-slate-200 px-2 py-1 text-sm font-medium text-slate-500`}>
+                      <span>Týden</span><span className="text-right">Návštěvy</span><span className="text-right">Zobrazení</span><span className="text-right">Hledání bez výsl.</span><span>Běh</span>
+                    </div>
+                    {signaly.tydny.map((t, i) => <RadekTydne key={t.behId} t={t} otevreny={i === prvniSouhrn} />)}
+                  </div>
+                </div>
+              )}
+            </Karta>
           </Sekce>
 
           <Sekce id="naklady" titulek="6. Kolik to stojí?" otazka="Náklady AI proti rozpočtu košů.">

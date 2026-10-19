@@ -151,6 +151,56 @@ class SignalyTest(unittest.TestCase):
         self.assertIn("stranky: token_auth is not valid", str(ctx.exception))
         self.assertIn("navstevy:", str(ctx.exception))
 
+    def test_souhrn_json_bez_hledanych_vyrazu(self) -> None:
+        """#528, P1: souhrn.json do artefaktu nese z hledání bez výsledku jen součet, žádné výrazy."""
+        import json
+
+        data = s.stahni(falesny_matomo, KONEC, mock.Mock())
+        j = s.souhrn_json(data, KONEC, {"oblast:data": 2}, {"vynechano": "chybí secret CRUX_API_KEY"})
+        text = json.dumps(j, ensure_ascii=False)
+        for vyraz in ("gymnázium brno", "jan novák", "xyz", "vzácný"):
+            self.assertNotIn(vyraz, text)
+        self.assertEqual(j["verze"], 1)
+        self.assertEqual((j["od"], j["do"]), ("2026-09-28", "2026-10-04"))
+        self.assertEqual(j["navstevy"], {"navstevy": 200, "zobrazeni": 500})
+        self.assertEqual(j["stranky"][0], {"stranka": "/mesto/brno", "zobrazeni": 120})
+        self.assertEqual(j["rust"][0]["stranka"], "/simulator")
+        self.assertEqual(j["odchody"], [{"stranka": "/simulator", "navstevy": 50, "podil_odchodu": 0.8}])
+        self.assertEqual(j["udalosti_akce"], [{"nazev": "simulator", "pocet": 33}])
+        self.assertEqual(j["hledani_bez_vysledku"], {"navstevy": 6, "vyrazu": 2})
+        self.assertEqual(j["hlaseni"], [{"oblast": "oblast:data", "pocet": 2}])
+        self.assertEqual(j["rychlost"], {"vynechano": "chybí secret CRUX_API_KEY"})
+        self.assertEqual(j["vynechano"], {})
+
+    def test_souhrn_json_odmitnuty_dotaz_je_none_s_duvodem(self) -> None:
+        def matomo(p: dict[str, str]):
+            if p["method"] == "Actions.getSiteSearchNoResultKeywords":
+                return {"result": "error", "message": "Site search is not enabled"}
+            return falesny_matomo(p)
+
+        with redirect_stderr(io.StringIO()):
+            j = s.souhrn_json(s.stahni(matomo, KONEC, mock.Mock()), KONEC)
+        self.assertIsNone(j["hledani_bez_vysledku"])
+        self.assertIn("hledani_bez_vysledku", j["vynechano"])
+        self.assertIsNone(j["hlaseni"])
+        self.assertEqual(j["navstevy"]["navstevy"], 200)
+
+    def test_main_zapise_json_do_artefaktu(self) -> None:
+        import json
+        import tempfile
+
+        data = s.stahni(falesny_matomo, KONEC, mock.Mock())
+        with tempfile.TemporaryDirectory() as d, \
+                mock.patch.dict(os.environ, {"MATOMO_TOKEN": "t", "CRUX_API_KEY": ""}), \
+                mock.patch.object(s, "stahni", return_value=data), redirect_stderr(io.StringIO()), \
+                mock.patch("sys.stdout", new_callable=io.StringIO):
+            cil = Path(d) / "souhrn.json"
+            self.assertEqual(s.main(["--datum", "2026-10-04", "--json", str(cil)]), 0)
+            j = json.loads(cil.read_text(encoding="utf-8"))
+        self.assertEqual(j["do"], "2026-10-04")
+        self.assertEqual(j["rychlost"], {"vynechano": "chybí secret CRUX_API_KEY"})
+        self.assertNotIn("gymnázium brno", json.dumps(j, ensure_ascii=False))
+
     def test_bez_tokenu_konci_chybou(self) -> None:
         with mock.patch.dict(os.environ, {"MATOMO_TOKEN": ""}):
             self.assertEqual(s.main(["--datum", "2026-10-04"]), 2)
