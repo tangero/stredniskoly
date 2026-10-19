@@ -56,7 +56,7 @@ def dotazy(konec_tydne: date) -> dict[str, dict[str, str]]:
         "stranky": {**spolecne, "method": "Actions.getPageUrls", "date": tyden, "flat": "1", "filter_limit": "200"},
         "stranky_minuly": {**spolecne, "method": "Actions.getPageUrls", "date": minuly, "flat": "1", "filter_limit": "200"},
         "hledani": {**spolecne, "method": "Actions.getSiteSearchKeywords", "date": tyden, "filter_limit": "200"},
-        "hledani_bez_vysledku": {**spolecne, "method": "Actions.getSiteSearchNoResultKeyword", "date": tyden, "filter_limit": "200"},
+        "hledani_bez_vysledku": {**spolecne, "method": "Actions.getSiteSearchNoResultKeywords", "date": tyden, "filter_limit": "200"},
         "udalosti_kategorie": {**spolecne, "method": "Events.getCategory", "date": tyden, "secondaryDimension": "eventAction", "filter_limit": "100"},
         "udalosti_akce": {**spolecne, "method": "Events.getAction", "date": tyden, "filter_limit": "100"},
         "navstevy": {**spolecne, "method": "VisitsSummary.get", "date": tyden},

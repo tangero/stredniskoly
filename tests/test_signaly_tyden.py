@@ -32,7 +32,7 @@ def falesny_matomo(params: dict[str, str]):
         return [{"label": "/mesto/brno", "nb_hits": 100}, {"label": "/simulator", "nb_hits": 10}]
     if m == "Actions.getSiteSearchKeywords":
         return [{"label": "gymnázium brno", "nb_visits": 9}, {"label": "jan novák", "nb_visits": 4}]
-    if m == "Actions.getSiteSearchNoResultKeyword":
+    if m == "Actions.getSiteSearchNoResultKeywords":
         return [{"label": "xyz", "nb_visits": 5}, {"label": "vzácný", "nb_visits": 1}]
     if m.startswith("Events."):
         return [{"label": "simulator", "nb_events": 33}]
@@ -97,6 +97,14 @@ class SignalyTest(unittest.TestCase):
         with redirect_stderr(io.StringIO()), self.assertRaises(RuntimeError):
             s.stahni(lambda p: {"result": "error", "message": "tajne"}, KONEC, mock.Mock())
 
+    def test_nazvy_metod_matomo(self) -> None:
+        # Matomo 5 na neexistující metodu odpoví HTTP 400 (getSiteSearchNoResultKeyword bez „s“ shodil běhy workflow)
+        metody = {p["method"] for p in s.dotazy(KONEC).values()}
+        self.assertEqual(metody, {
+            "Actions.getPageUrls", "Actions.getSiteSearchKeywords", "Actions.getSiteSearchNoResultKeywords",
+            "Events.getCategory", "Events.getAction", "VisitsSummary.get",
+        })
+
     def test_http_400_ukaze_hlasku_matomo_bez_tokenu(self) -> None:
         telo = b'{"result":"error","message":"Requested report with secondaryDimension\\n not found. token TAJNY"}'
         chyba = HTTPError("https://ma.example/index.php", 400, "Bad Request", {}, io.BytesIO(telo))  # type: ignore[arg-type]
@@ -126,7 +134,7 @@ class SignalyTest(unittest.TestCase):
 
     def test_chyba_json_pri_http_200_vynecha_oddil(self) -> None:
         def matomo(p: dict[str, str]):
-            if p["method"] == "Actions.getSiteSearchNoResultKeyword":
+            if p["method"] == "Actions.getSiteSearchNoResultKeywords":
                 return {"result": "error", "message": "Site search is not enabled"}
             return falesny_matomo(p)
 

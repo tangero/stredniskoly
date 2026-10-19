@@ -578,7 +578,7 @@ Zdroj: Matomo na `https://ma.hlidacstatu.cz/` (site ID 7), Reporting API, jen č
 |---|---|---|---|
 | `Actions.getPageUrls` (tento a minulý týden) | `label`, `nb_hits`, `nb_visits`, `bounce_rate` | které stránky rodiny čtou, které rostou a které opouštějí hned | ano |
 | `Actions.getSiteSearchKeywords` | `label`, `nb_visits` | co lidé na webu hledají | ano, jen výrazy s aspoň 5 hledáními (mohou obsahovat jména) |
-| `Actions.getSiteSearchNoResultKeyword` | `label`, `nb_visits` | co hledají a nenajdou | ano, stejný práh |
+| `Actions.getSiteSearchNoResultKeywords` | `label`, `nb_visits` | co hledají a nenajdou | ano, stejný práh |
 | `Events.getCategory`, `Events.getAction` | `label`, `nb_events` | kolik lidí použilo simulátor a odběr | ano |
 | `VisitsSummary.get` | `nb_visits`, `nb_actions` | celkový rozsah týdne | ano |
 | (stejné metody) | `nb_uniq_visitors`, `avg_time_on_page`, `exit_rate`, `sum_time_spent` | | ne: duplikují návštěvy a odchody, nové otázky nepřidávají |
