@@ -122,6 +122,13 @@ Záznam změn chování systému: požadavek, co se změnilo a proč, datum. Nej
 - **Proč:** sady jako `csi-inspekce` nebo `cermat-maturita` administrace po termínu ukazovala, ale přehled ani
   Telegram ne; textové porovnání smíšených tvarů (`2026` proti `2026-09-30`) mohlo vyjít špatně.
 
+## 2026-10-15: průvodce /jak-vybrat-skolu míří na výběr školy (#494)
+
+- **Požadavek:** interní zadání #494 (stránka byla v Search Console daleko na dotazy o výběru školy).
+- **Co:** nahoře blok Co dělat teď a čtyři kroky výběru (typ školy, co dítě baví, dny otevřených dveří a veletrhy,
+  jakou školu podle známek), mechanika přijímání níž se stejnými kotvami; nový titulek, FAQ a strukturovaná data.
+- **Proč:** stránka odpovídala hlavně na „jak funguje přijímací řízení“, ne na „jak vybrat školu“.
+
 ## 2026-10-17: upozornění na data po očekávaném termínu (#355, etapa 3)
 
 - **Požadavek:** projekt #355, etapa 3 (čerstvost dat), kritéria K16 a K17.

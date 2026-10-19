@@ -1,7 +1,7 @@
 # Průvodce výběrem školy
 
-**Verze:** 1.0
-**Datum:** 18. 9. 2026
+**Verze:** 1.1
+**Datum:** 15. 10. 2026
 **Stav:** návrh ke schválení. Sloučení stránek `/jak-vybrat-skolu` a `/jak-funguje-prijimani` do jednoho návodu na adrese `/jak-vybrat-skolu`; druhá adresa se trvale přesměruje.
 
 Zadavatel 18. 9. 2026: „to jsou prakticky stejné stránky. Chceme to sjednotit, udělat to názorné a přehledné jako návod, jak vybrat správnou školu a jak k tomu použít náš server." Ponechaná adresa a přesměrování podle pravidel SEO schváleny týž den.
@@ -41,6 +41,8 @@ Koho návod obsluhuje:
 | Rodina v květnu, dítě se nedostalo | co teď | 2. kolo |
 
 ## 3. Struktura: osm kroků
+
+> **Od verze 1.1 (#494, 15. 10. 2026)** má stránka nahoře pod úvodem blok **Co dělat teď** (říjen až únor čtyři body, jinak nejbližší krok z `admissions-2027.json`; stránka se přepočítává denně) a **čtyři nové kroky výběru** před dosavadními: Jaký typ školy (tabulka gymnázium, lyceum, odborná škola s maturitou, učební obor), Co dítě baví (otázky a bezplatný Profitest na Infoabsolventu), Dny otevřených dveří a veletrhy (otázky škole, odkaz na `/veletrhy`) a Jakou školu podle známek (body za prospěch nemáme; odkaz na *Průměr JPZ přijatých*, *Nejnižší výsledek JPZ mezi přijatými* a *Obtížnost přijetí slovy* pod jejich názvy, bez nového čísla). Dosavadních osm kroků (tabulka níže) zůstává celých pod nimi, s týmiž kotvami; čísla v nadpisech se posunula, kotvy ne. Stránka má FAQ o sedmi otázkách, JSON-LD `FAQPage`, `Article` (`dateModified` = řádek „Aktualizováno“) a `BreadcrumbList`. Titulek je „Jak vybrat střední školu: průvodce pro rodiče a deváťáky“; dotaz na přijímací řízení nese nadpis kroku Jak funguje přijímací řízení. Při věcné úpravě textu se mění konstanta `AKTUALIZOVANO` v `page.tsx`. Návrh titulku v oddílu 7 bod 4 tím přestává platit.
 
 Návod má jednu časovou osu a osm kroků. Každý krok nese **otázku v hlavičce, odpověď ve dvou větách a odkaz do nástroje**. Pořadí odpovídá tomu, jak věci přicházejí, ne tomu, jak jsou zajímavé.
 
@@ -142,3 +144,4 @@ Použije návod naopak: **harmonogram MŠMT** (`src/data/admissions-2027.json`) 
 | Verze | Změna |
 |---|---|
 | 1.0 | Návrh sloučení dvou průvodců do jednoho návodu o osmi krocích. Zadavatel schválil ponechání adresy `/jak-vybrat-skolu` a trvalé přesměrování druhé. Zapsány dvě věcné vady dnešního stavu (dvě bodové škály, bílý text na bílém pozadí) a inventura nepoužitých zdrojů. |
+| 1.1 | Nová struktura stránky podle zadání #494: blok Co dělat teď, čtyři kroky výběru nahoře, mechanika přijímání níž (kotvy beze změny), nový titulek, FAQ a strukturovaná data. Důvod: stránka byla na dotazy o výběru školy daleko (Search Console, 15. 10. 2026). |
