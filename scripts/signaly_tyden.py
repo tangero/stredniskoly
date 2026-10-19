@@ -18,6 +18,7 @@ import time
 from collections import Counter
 from datetime import date, timedelta
 from typing import Any, Callable
+from urllib.error import HTTPError
 from urllib.parse import urlencode
 from urllib.request import Request, urlopen
 
@@ -29,6 +30,19 @@ MIN_NÁVŠTĚV_ODCHODY = 20
 PRAH_ODCHODU = 0.7
 TOP = 10
 LIMIT_TELEGRAM = 4096
+DELKA_HLASKY = 300
+
+# oddíl souhrnu -> dotazy, na kterých stojí; když dotaz selže, oddíl se vynechá s poznámkou
+ODDILY_DOTAZU = {
+    "navstevy": ("navstevy",),
+    "stranky": ("stranky",),
+    "rust": ("stranky", "stranky_minuly"),
+    "odchody": ("stranky",),
+    "udalosti_kategorie": ("udalosti_kategorie",),
+    "udalosti_akce": ("udalosti_akce",),
+    "hledani": ("hledani",),
+    "hledani_bez_vysledku": ("hledani_bez_vysledku",),
+}
 
 Fetch = Callable[[dict[str, str]], Any]
 
@@ -49,24 +63,60 @@ def dotazy(konec_tydne: date) -> dict[str, dict[str, str]]:
     }
 
 
+class ChybaMatomo(RuntimeError):
+    """Matomo dotaz odmítlo (HTTP 4xx/5xx nebo JSON s "result": "error"); text je hláška Matomo bez tokenu."""
+
+
+def hlaska_matomo(telo: bytes | str | Any, token: str = "") -> str:
+    """Vytáhne z odpovědi Matomo hlášku chyby, odstraní z ní token a zkrátí ji (jde do veřejného logu)."""
+    if isinstance(telo, bytes):
+        telo = telo.decode("utf-8", errors="replace")
+    if isinstance(telo, str):
+        try:
+            telo = json.loads(telo)
+        except ValueError:
+            pass
+    text = str(telo.get("message", telo)) if isinstance(telo, dict) else str(telo)
+    if token:
+        text = text.replace(token, "***")
+    text = " ".join(text.split())
+    return text[:DELKA_HLASKY] or "(prázdná odpověď)"
+
+
 def fetch_matomo(token: str) -> Fetch:
     def fetch(params: dict[str, str]) -> Any:
         # token jde v těle POST, aby nezůstal v adrese ani v logu
         telo = urlencode({**params, "module": "API", "token_auth": token}).encode()
-        with urlopen(Request(ENDPOINT, data=telo), timeout=60) as odpoved:
-            return json.load(odpoved)
+        try:
+            with urlopen(Request(ENDPOINT, data=telo), timeout=60) as odpoved:
+                return json.load(odpoved)
+        except HTTPError as e:
+            # Matomo 5 vrací chyby API jako HTTP 400 s tělem {"result":"error","message":...}
+            raise ChybaMatomo(f"HTTP {e.code}: {hlaska_matomo(e.read(), token)}") from None
     return fetch
 
 
 def stahni(fetch: Fetch, konec_tydne: date, spanek: Callable[[float], None] = time.sleep) -> dict[str, Any]:
+    """Stáhne všechny dotazy. Odmítnutý dotaz zapíše do `_chyby` a pokračuje; selžou-li všechny, skončí chybou."""
     vysledek: dict[str, Any] = {}
-    for i, (klic, params) in enumerate(dotazy(konec_tydne).items()):
+    chyby: dict[str, str] = {}
+    vse = dotazy(konec_tydne)
+    for i, (klic, params) in enumerate(vse.items()):
         if i:
             spanek(PRODLEVA_S)
-        data = fetch(params)
-        if isinstance(data, dict) and data.get("result") == "error":
-            raise RuntimeError(f"Matomo odmítlo dotaz {klic}")
+        try:
+            data = fetch(params)
+            if isinstance(data, dict) and data.get("result") == "error":
+                raise ChybaMatomo(hlaska_matomo(data))
+        except ChybaMatomo as e:
+            chyby[klic] = str(e)
+            print(f"Matomo odmítlo dotaz {klic} ({params['method']}): {e}", file=sys.stderr)
+            continue
         vysledek[klic] = data
+    if len(chyby) == len(vse):
+        raise RuntimeError("Matomo odmítlo všechny dotazy: " + "; ".join(f"{k}: {v}" for k, v in chyby.items()))
+    if chyby:
+        vysledek["_chyby"] = chyby
     return vysledek
 
 
@@ -93,6 +143,15 @@ def _tabulka(hlavicka: list[str], radky: list[list[Any]]) -> str:
     return "\n".join(out) + "\n"
 
 
+def _vynechano(data: dict[str, Any], oddil: str) -> str | None:
+    """Poznámka místo oddílu, jehož dotaz Matomo odmítlo; None, když oddíl data má."""
+    chyby = data.get("_chyby") or {}
+    selhane = [k for k in ODDILY_DOTAZU[oddil] if k in chyby]
+    if not selhane:
+        return None
+    return "_Oddíl vynechán: Matomo odmítlo dotaz " + "; ".join(f"{k} ({chyby[k]})" for k in selhane) + "._\n"
+
+
 def souhrn(data: dict[str, Any], konec_tydne: date, hlaseni: dict[str, int] | None = None, s_hledanim: bool = True) -> str:
     stranky = [r for r in data.get("stranky", []) if isinstance(r, dict)]
     minule = {_stranka(r): _cislo(r, "nb_hits") for r in data.get("stranky_minuly", []) if isinstance(r, dict)}
@@ -114,28 +173,32 @@ def souhrn(data: dict[str, Any], konec_tydne: date, hlaseni: dict[str, int] | No
         radky = [r for r in data.get(klic, []) if isinstance(r, dict)]
         return [[r.get("label", "?"), int(_cislo(r, "nb_events"))] for r in sorted(radky, key=lambda r: -_cislo(r, "nb_events"))[:TOP]]
 
+    def oddil(nazev: str, tabulka: Callable[[], str]) -> str:
+        return _vynechano(data, nazev) or tabulka()
+
     nav = data.get("navstevy") if isinstance(data.get("navstevy"), dict) else {}
     od = (konec_tydne - timedelta(days=6)).isoformat()
     casti = [
         f"# Signály za týden {od} až {konec_tydne.isoformat()}\n",
-        f"Návštěvy: {int(_cislo(nav, 'nb_visits'))}, zobrazení stránek: {int(_cislo(nav, 'nb_actions'))}.\n",
+        _vynechano(data, "navstevy")
+        or f"Návštěvy: {int(_cislo(nav, 'nb_visits'))}, zobrazení stránek: {int(_cislo(nav, 'nb_actions'))}.\n",
         "## Nejnavštěvovanější stránky\n",
-        _tabulka(["Stránka", "Zobrazení"], [[_stranka(r), int(_cislo(r, "nb_hits"))] for r in top]),
+        oddil("stranky", lambda: _tabulka(["Stránka", "Zobrazení"], [[_stranka(r), int(_cislo(r, "nb_hits"))] for r in top])),
         "## Nejrychleji rostoucí stránky (proti minulému týdnu)\n",
-        _tabulka(["Stránka", "Zobrazení", "Minulý týden"], [[s, int(a), int(b)] for s, a, b in rust]),
+        oddil("rust", lambda: _tabulka(["Stránka", "Zobrazení", "Minulý týden"], [[s, int(a), int(b)] for s, a, b in rust])),
         f"## Stránky s vysokým podílem odchodů (aspoň {MIN_NÁVŠTĚV_ODCHODY} návštěv, odchody od {int(PRAH_ODCHODU * 100)} %)\n",
-        _tabulka(["Stránka", "Návštěvy", "Podíl odchodů"], [[_stranka(r), int(_cislo(r, "nb_visits")), f"{_cislo(r, 'bounce_rate') * 100:.0f} %"] for r in odchody]),
+        oddil("odchody", lambda: _tabulka(["Stránka", "Návštěvy", "Podíl odchodů"], [[_stranka(r), int(_cislo(r, "nb_visits")), f"{_cislo(r, 'bounce_rate') * 100:.0f} %"] for r in odchody])),
         "## Události (kategorie)\n",
-        _tabulka(["Kategorie", "Události"], udalosti("udalosti_kategorie")),
+        oddil("udalosti_kategorie", lambda: _tabulka(["Kategorie", "Události"], udalosti("udalosti_kategorie"))),
         "## Události (akce)\n",
-        _tabulka(["Akce", "Události"], udalosti("udalosti_akce")),
+        oddil("udalosti_akce", lambda: _tabulka(["Akce", "Události"], udalosti("udalosti_akce"))),
     ]
     if s_hledanim:
         casti += [
             f"## Hledání na webu (výrazy s aspoň {MIN_HLEDANI} hledáními)\n",
-            _tabulka(["Výraz", "Hledání"], hledani("hledani")),
+            oddil("hledani", lambda: _tabulka(["Výraz", "Hledání"], hledani("hledani"))),
             "## Hledání bez výsledku\n",
-            _tabulka(["Výraz", "Hledání"], hledani("hledani_bez_vysledku")),
+            oddil("hledani_bez_vysledku", lambda: _tabulka(["Výraz", "Hledání"], hledani("hledani_bez_vysledku"))),
         ]
     if hlaseni is not None:
         casti += ["## Hlášení a opravy od škol podle oblasti (otevřená issues)\n",
