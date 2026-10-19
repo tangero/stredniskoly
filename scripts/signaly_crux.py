@@ -12,6 +12,7 @@ import json
 import os
 import sys
 import time
+from http.client import HTTPException
 from typing import Any, Callable
 from urllib.error import HTTPError, URLError
 from urllib.request import Request, urlopen
@@ -170,7 +171,7 @@ def oddil_rychlost(klic: str | None = None, fetch: Fetch | None = None,
         return vynechano("chybí secret CRUX_API_KEY")
     try:
         radky = stahni(fetch or fetch_crux(klic), spanek)
-    except (ChybaCrux, OSError, ValueError) as e:  # OSError: vypršení času; ValueError: nečitelná odpověď
+    except (ChybaCrux, OSError, ValueError, HTTPException) as e:  # OSError: vypršení času; ValueError: nečitelná odpověď; HTTPException: poškozená odpověď
         print(f"CrUX odmítlo dotaz: {e}", file=sys.stderr)
         return vynechano(f"CrUX odmítlo dotaz ({e})")
     return oddil(radky)
