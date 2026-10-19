@@ -20,6 +20,16 @@ ve kterém na něj narazíš (krátce: co se stane, proč, co s tím). Oprava, k
   dostane seznam klíčů z evidence s pokynem nepoužít je ani pod jiným jménem, ale stejné ponaučení pod novým klíčem
   skript nepozná. Kontroly v ponaučení se čtou jen z poslední hlavy PR, selhání dřívějších commitů v signálech chybí.
 
+## Matomo
+
+- **Matomo 5 vrací chybu API jako HTTP 400**, ne jako 200 s `{"result":"error"}`. Python `urlopen` pak vyhodí
+  `HTTPError` a hlášku z těla bez `e.read()` nikdo neuvidí. Stejně (400) dopadne i překlep v názvu metody: týdenní
+  souhrn (#326) padal na `Actions.getSiteSearchNoResultKeyword`, správně je `…Keywords`. Název metody ověř v
+  dokumentaci Reporting API, test s mockem překlep neodhalí.
+- **`Actions.getPageUrls` s `flat=1` vrací řádek `/skola/ - Others`**: Matomo při archivaci ořízne počet řádků
+  tabulky a zbytek sloučí. Adresy navíc nesou parametry kampaní (`?gad_source=…`), takže jedna stránka může být
+  v několika řádcích.
+
 ## Build a testy
 
 - **Lokální `npm run build` může spadnout na limit 60 s pro předgenerování stránky**, když je počítač vytížený
