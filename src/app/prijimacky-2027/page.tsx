@@ -12,6 +12,10 @@ export const metadata: Metadata = {
   alternates: { canonical: '/prijimacky-2027' },
 };
 
+// Stránka obsahuje OdberBlok, který závisí na dnešním datu a na přepínači odběru. Bez revalidate by se
+// vykreslila jednou při sestavení a formulář by se do dalšího nasazení neobjevil ani nezmizel.
+export const revalidate = 3600;
+
 export default function Admissions2027Page() {
   return (
     <>

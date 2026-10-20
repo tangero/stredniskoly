@@ -83,3 +83,11 @@ ve kterém na něj narazíš (krátce: co se stane, proč, co s tím). Oprava, k
   stránku školy se nesmí skládat z opravy: stránka školy má slug ze zkráceného názvu v katalogu
   (`getAdresaStrankySkoly`, #515). V portálu se oprava ukáže přesně tak, jak je zapsaná,
   bez ulice a obce (#374), takže `uplny_nazev` musí školu určit sám.
+
+## Formulář odběru
+
+- **Stránka s `OdberBlok` musí mít `export const revalidate` (#523, E0).** Blok se ptá na přepínač `NOVINKY_ZAPNUTO`
+  a na dnešní datum (zda kalendář má budoucí událost). Stránka bez `revalidate` se vykreslí jednou při sestavení
+  a zůstane taková do dalšího nasazení: `/prijimacky-2027` tak 19. 10. 2026 na produkci formulář neměla, ačkoli
+  titulka, `/novinky` a stránka školy ano. Lokálně s `NOVINKY_ZAPNUTO=1` se vykreslí správně; příčinou je tedy
+  zamrzlé vykreslení z doby sestavení, ne logika bloku.
