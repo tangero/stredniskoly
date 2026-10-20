@@ -217,7 +217,7 @@ export default async function HomePage() {
           <p className="text-center mb-8" style={{ color: '#818c99' }}>
             Hledej podle názvu školy, oboru, města nebo kraje
           </p>
-          <SchoolSearch schools={schools} kraje={kraje} />
+          <SchoolSearch kraje={kraje} />
         </div>
       </section>
 
