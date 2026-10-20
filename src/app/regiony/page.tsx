@@ -4,7 +4,7 @@ import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { SchoolSearch } from '@/components/SchoolSearch';
 import { VibecordingPromo } from '@/components/VibecordingPromo';
-import { getAllKraje, getPolozkyHledani } from '@/lib/data';
+import { getAllKraje } from '@/lib/data';
 import { getKrajPrehled } from '@/lib/krajData';
 import { zobrazeneObdobi } from '@/lib/stav-datovych-sad';
 import { cislo, PORADI_OBTIZNOSTI, ZARAZENI_POPISEK, type ZarazeniObtiznosti } from '@/lib/obor-profil';
@@ -69,7 +69,6 @@ export function RozlozeniObtiznostiKraje({ rozlozeni }: { rozlozeni: Map<Zarazen
  */
 export default async function RegionsPage() {
   const kraje = await getAllKraje();
-  const searchSchools = await getPolozkyHledani();
   const rok = await zobrazeneObdobi('cermat-vysledky');
 
   const krajStats = await Promise.all(
@@ -93,7 +92,7 @@ export default async function RegionsPage() {
             <p className="text-blue-200 mb-8">
               Vyberte kraj: uvidíte školy a jejich obory, jak těžké bylo se na ně dostat{rok ? ` v 1. kole ${rok}` : ''} a kam se hlásí jako na první volbu.
             </p>
-            <SchoolSearch schools={searchSchools} kraje={kraje} />
+            <SchoolSearch kraje={kraje} />
           </div>
         </div>
 

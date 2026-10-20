@@ -91,3 +91,9 @@ ve kterém na něj narazíš (krátce: co se stane, proč, co s tím). Oprava, k
   a zůstane taková do dalšího nasazení: `/prijimacky-2027` tak 19. 10. 2026 na produkci formulář neměla, ačkoli
   titulka, `/novinky` a stránka školy ano. Lokálně s `NOVINKY_ZAPNUTO=1` se vykreslí správně; příčinou je tedy
   zamrzlé vykreslení z doby sestavení, ne logika bloku.
+
+## Hledání škol se stahuje až při prvním použití (#419)
+
+`SchoolSearch` už nedostává položky hledání jako prop. Titulka, `/skoly` a `/regiony` je nevkládají do HTML (bylo to
+přes 3 MB na stránku); pole je stáhne z `/api/hledani` (statický výstup buildu, `getPolozkyHledani`) při prvním
+zaměření. Do zdrojů, které stránky čtou, proto nepatří nic, co by hledání potřebovalo před prvním zaměřením pole.

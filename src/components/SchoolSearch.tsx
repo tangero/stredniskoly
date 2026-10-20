@@ -6,7 +6,6 @@ import type { PolozkaHledani } from '@/types/school';
 import { MESTA } from '@/lib/mesta.mjs';
 
 interface SchoolSearchProps {
-  schools: PolozkaHledani[];
   kraje: { kod: string; nazev: string; slug: string }[];
 }
 
@@ -67,7 +66,23 @@ const SCHOOL_ALIASES: Array<{
   },
 ];
 
-export function SchoolSearch({ schools, kraje }: SchoolSearchProps) {
+// Položky hledání se nevkládají do HTML stránky (byly přes 3 MB); stáhnou se jednou ze statického souboru
+// při prvním zaměření pole nebo psaní a drží se v paměti, aby se nestahovaly při každém použití pole.
+let polozkyHledaniPromise: Promise<PolozkaHledani[]> | null = null;
+function nactiPolozkyHledani(): Promise<PolozkaHledani[]> {
+  if (!polozkyHledaniPromise) {
+    polozkyHledaniPromise = fetch('/api/hledani')
+      .then(r => (r.ok ? (r.json() as Promise<PolozkaHledani[]>) : Promise.reject(new Error(String(r.status)))))
+      .catch(() => {
+        polozkyHledaniPromise = null;
+        return [];
+      });
+  }
+  return polozkyHledaniPromise;
+}
+
+export function SchoolSearch({ kraje }: SchoolSearchProps) {
+  const [schools, setSchools] = useState<PolozkaHledani[]>([]);
   const [query, setQuery] = useState('');
   const [isOpen, setIsOpen] = useState(false);
   const [selectedIndex, setSelectedIndex] = useState(0);
@@ -227,7 +242,10 @@ export function SchoolSearch({ schools, kraje }: SchoolSearchProps) {
             setIsOpen(true);
             setSelectedIndex(0);
           }}
-          onFocus={() => setIsOpen(true)}
+          onFocus={() => {
+            setIsOpen(true);
+            if (schools.length === 0) void nactiPolozkyHledani().then(setSchools);
+          }}
           onKeyDown={handleKeyDown}
           placeholder="Hledat školu, obec, okres nebo kraj..."
           className="w-full px-4 py-3 pl-12 rounded-lg border border-slate-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none text-lg text-slate-900 bg-white"
