@@ -244,8 +244,8 @@ export interface InspectionExtraction {
 }
 
 /**
- * Položka vyhledávání (`SchoolSearch`): jen pole, která vyhledávání čte. Data jdou do prohlížeče na titulce,
- * /regiony a /skoly, proto úsporný tvar místo celého záznamu katalogu (etapa 3c-3, issue #244).
+ * Položka vyhledávání (`SchoolSearch`): jen pole, která vyhledávání čte. Prohlížeč je stahuje z /api/hledani
+ * při prvním zaměření pole (titulka, /regiony a /skoly je už nevkládají do HTML), proto úsporný tvar místo celého záznamu katalogu (etapa 3c-3, issue #244).
  */
 export type PolozkaHledani = Pick<School, 'id' | 'nazev' | 'obor' | 'obec' | 'kraj' | 'kraj_kod' | 'okres' | 'adresa' | 'typ' | 'delka_studia'>
   & Partial<Pick<School, 'nazev_display' | 'zamereni' | 'adresa_stranky'>>
