@@ -90,6 +90,17 @@ export function SchoolSearch({ kraje }: SchoolSearchProps) {
   const inputRef = useRef<HTMLInputElement>(null);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
+  const nactiDataHledani = () => {
+    setStavDat('nacitani');
+    nactiPolozkyHledani().then(
+      data => {
+        setSchools(data);
+        setStavDat('hotovo');
+      },
+      () => setStavDat('chyba'),
+    );
+  };
+
   // Získat unikátní obce a okresy
   const locations = useMemo(() => {
     const obceSet = new Set<string>();
@@ -242,19 +253,12 @@ export function SchoolSearch({ kraje }: SchoolSearchProps) {
             setQuery(e.target.value);
             setIsOpen(true);
             setSelectedIndex(0);
+            // Po chybě načtení stačí psát dál, není nutné pole opouštět a zaměřit znovu.
+            if (stavDat === 'chyba') nactiDataHledani();
           }}
           onFocus={() => {
             setIsOpen(true);
-            if (schools.length === 0) {
-              setStavDat('nacitani');
-              nactiPolozkyHledani().then(
-                data => {
-                  setSchools(data);
-                  setStavDat('hotovo');
-                },
-                () => setStavDat('chyba'),
-              );
-            }
+            if (schools.length === 0) nactiDataHledani();
           }}
           onKeyDown={handleKeyDown}
           placeholder="Hledat školu, obec, okres nebo kraj..."
@@ -447,7 +451,7 @@ export function SchoolSearch({ kraje }: SchoolSearchProps) {
           ) : stavDat === 'chyba' ? (
             <>
               <div className="text-slate-500 text-lg mb-2">Hledání je teď nedostupné</div>
-              <div className="text-sm text-slate-500">Data se nepodařilo načíst. Zkontrolujte připojení a klikněte do pole znovu.</div>
+              <div className="text-sm text-slate-500">Data se nepodařilo načíst. Zkontrolujte připojení a pište dál nebo klikněte do pole znovu.</div>
             </>
           ) : (
             <>
