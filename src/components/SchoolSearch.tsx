@@ -75,7 +75,7 @@ function nactiPolozkyHledani(): Promise<PolozkaHledani[]> {
       .then(r => (r.ok ? (r.json() as Promise<PolozkaHledani[]>) : Promise.reject(new Error(String(r.status)))))
       .catch(() => {
         polozkyHledaniPromise = null;
-        return [];
+        return Promise.reject(new Error('hledani'));
       });
   }
   return polozkyHledaniPromise;
@@ -83,6 +83,7 @@ function nactiPolozkyHledani(): Promise<PolozkaHledani[]> {
 
 export function SchoolSearch({ kraje }: SchoolSearchProps) {
   const [schools, setSchools] = useState<PolozkaHledani[]>([]);
+  const [stavDat, setStavDat] = useState<'nacitani' | 'hotovo' | 'chyba'>('nacitani');
   const [query, setQuery] = useState('');
   const [isOpen, setIsOpen] = useState(false);
   const [selectedIndex, setSelectedIndex] = useState(0);
@@ -244,7 +245,16 @@ export function SchoolSearch({ kraje }: SchoolSearchProps) {
           }}
           onFocus={() => {
             setIsOpen(true);
-            if (schools.length === 0) void nactiPolozkyHledani().then(setSchools);
+            if (schools.length === 0) {
+              setStavDat('nacitani');
+              nactiPolozkyHledani().then(
+                data => {
+                  setSchools(data);
+                  setStavDat('hotovo');
+                },
+                () => setStavDat('chyba'),
+              );
+            }
           }}
           onKeyDown={handleKeyDown}
           placeholder="Hledat školu, obec, okres nebo kraj..."
@@ -432,8 +442,19 @@ export function SchoolSearch({ kraje }: SchoolSearchProps) {
       {/* Žádné výsledky */}
       {isOpen && query.length >= 2 && totalResults === 0 && (
         <div className="absolute z-50 w-full mt-2 bg-white rounded-lg shadow-xl border border-slate-200 p-6 text-center">
-          <div className="text-slate-400 text-lg mb-2">Nic nenalezeno</div>
-          <div className="text-sm text-slate-500">Zkuste jiný výraz nebo zkontrolujte pravopis</div>
+          {stavDat === 'nacitani' ? (
+            <div className="text-slate-500 text-lg">Načítám data hledání…</div>
+          ) : stavDat === 'chyba' ? (
+            <>
+              <div className="text-slate-500 text-lg mb-2">Hledání je teď nedostupné</div>
+              <div className="text-sm text-slate-500">Data se nepodařilo načíst. Zkontrolujte připojení a klikněte do pole znovu.</div>
+            </>
+          ) : (
+            <>
+              <div className="text-slate-400 text-lg mb-2">Nic nenalezeno</div>
+              <div className="text-sm text-slate-500">Zkuste jiný výraz nebo zkontrolujte pravopis</div>
+            </>
+          )}
         </div>
       )}
     </div>
