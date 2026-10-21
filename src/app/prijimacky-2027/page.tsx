@@ -7,7 +7,7 @@ import calendar from '@/data/admissions-2027.json';
 import { formatujDen } from '@/lib/veletrhy-pocty';
 
 export const metadata: Metadata = {
-  title: 'Kalendář přijímaček 2027: přihlášky, JPZ a výsledky',
+  title: 'Termíny přijímaček 2027: přihlášky, JPZ a výsledky',
   description: 'Ověřené termíny přijímacího řízení pro nástup v září 2027. Střední školy, konzervatoře, první i druhé kolo a kalendář ke stažení.',
   alternates: { canonical: '/prijimacky-2027' },
 };
