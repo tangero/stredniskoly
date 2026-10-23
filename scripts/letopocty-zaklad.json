@@ -32,7 +32,7 @@
   "svou střední školu. Přijímání 2027 a historické výsledky škol."
  ],
  "src/app/page.tsx": [
-  "Kalendář přijímaček 2027 →",
+  "Termíny přijímaček 2027 →",
   "MT a historické výsledky škol 2024–2026. Prozkoumej obory, porov",
   "Obnovené výsledky 2026 →",
   "PŘIJÍMAČKY 2027",
@@ -43,7 +43,7 @@
  "src/app/prijimacky-2027/page.tsx": [
   "Historické výsledky 2026 →",
   "Kalendář přijímaček 2027",
-  "Kalendář přijímaček 2027: přihlášky, JPZ a výsledky",
+  "Termíny přijímaček 2027: přihlášky, JPZ a výsledky",
   "MŠMT: sdělení o termínech JPZ 2027 (PDF)",
   "NÁSTUP DO ŠKOLY V ZÁŘÍ 2027",
   "Ověřeno 11. září 2026 · školní rok 2026/2027 ·",

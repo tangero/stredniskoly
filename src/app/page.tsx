@@ -96,7 +96,7 @@ export default async function HomePage() {
             </div>
             <div className="grid sm:grid-cols-2 gap-3">
               <Link href="/prijimacky-2027" className="rounded-lg bg-blue-700 p-5 hover:bg-blue-600">
-                <h3 className="font-bold mb-2">Kalendář přijímaček 2027 →</h3>
+                <h3 className="font-bold mb-2">Termíny přijímaček 2027 →</h3>
                 <p className="text-sm text-blue-100">Přihlášky, JPZ, výsledky i druhé kolo. Termíny MŠMT a kalendář ke stažení.</p>
               </Link>
               <Link href="/vysledky/2026" className="rounded-lg border border-slate-600 p-5 hover:bg-slate-800">
