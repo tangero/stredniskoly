@@ -116,6 +116,7 @@ export default async function AdminPage() {
             </p>
             <nav className="mt-3 flex flex-wrap gap-4 text-sm" aria-label="Administrace">
               <a href="/admin/provoz" className="text-slate-900 underline">Provoz projektu</a>
+              <a href="/admin/novinky-odbery" className="text-slate-900 underline">Odběry podle zdroje</a>
               <a href="/admin/portal/oslovene" className="text-slate-900 underline">Oslovené školy portálu</a>
               <a href="/admin/zabezpeceni" className="text-slate-900 underline">Zabezpečení a passkey</a>
             </nav>

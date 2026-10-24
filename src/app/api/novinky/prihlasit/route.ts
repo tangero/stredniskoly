@@ -5,6 +5,7 @@ import { jeEmailPlatny, normalizujEmail, PRIHLASENI_NEUTRALNI_ODPOVED, jeRezervo
 import { jeResendNastaven } from '@/lib/novinky-email';
 import { zobrazeneObdobi } from '@/lib/stav-datovych-sad';
 import { odesliServisni } from '@/lib/novinky-servisni';
+import { urciZdroj } from '@/lib/novinky-zdroje';
 
 // ============================================================================
 // Přihlášení k odběru novinek (docs/novinky-k-prijimackam-2027.md, krok 1).
@@ -15,20 +16,6 @@ import { odesliServisni } from '@/lib/novinky-servisni';
 // Potvrzovací e-mail se posílá hned v tomto požadavku; fronta je záloha, když
 // se odeslání nepovede (cílová doba doručení je do minuty).
 // ============================================================================
-
-const POVOLENE_ZDROJE = [
-  'titulka-karta',
-  'titulka-pas',
-  'paticka',
-  'kalendar',
-  'novinky',
-  'simulator',
-  'pruvodce',
-  'skola',
-  // Profil školy s kontextovým nadpisem („Termíny a novinky…“). Vlastní zdroj,
-  // aby šlo srovnat s původním „skola“; ten zůstává kvůli dřívějším odběrům.
-  'skola-kontext',
-];
 
 export async function POST(request: NextRequest) {
   if (!jeDbNastavena() || !jeResendNastaven() || !process.env.NOVINKY_SECRET) {
@@ -64,7 +51,7 @@ export async function POST(request: NextRequest) {
     );
   }
 
-  const zdroj = typeof telo.zdroj === 'string' && POVOLENE_ZDROJE.includes(telo.zdroj) ? telo.zdroj : 'neznamy';
+  const zdroj = urciZdroj(telo.zdroj);
   // Ročník se bere z registru, ne z formuláře: odběr je jeden a běží dál.
   const rocnik = (await zobrazeneObdobi('msmt-harmonogram')) ?? '';
   const ip = request.headers.get('x-forwarded-for')?.split(',')[0]?.trim() || 'neznama';
