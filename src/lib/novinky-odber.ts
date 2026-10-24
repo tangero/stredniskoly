@@ -136,6 +136,8 @@ export interface PotvrzeniVysledek {
   duvod?: string;
   odberatelId?: string;
   email?: string;
+  /** Místo, odkud se přihlásil; pro měření (#523). */
+  zdroj?: string;
   uvitaniPolozkaId?: string;
   /** Identifikátor zprávy uvítání; nese `jti`, viz poznámka u potvrzení. */
   uvitaniZprava?: string;
@@ -180,6 +182,7 @@ export async function potvrd(jti: string): Promise<PotvrzeniVysledek> {
       ok: true,
       odberatelId,
       email,
+      zdroj: zadost.zdroj,
       uvitaniPolozkaId: uvitaniPolozkaId ?? undefined,
       uvitaniZprava,
     };
