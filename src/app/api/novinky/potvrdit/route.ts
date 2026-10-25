@@ -84,7 +84,7 @@ export async function POST(request: NextRequest) {
 
   const vysledek = await potvrd(jti);
   const odpoved = vysledek.ok
-    ? NextResponse.json({ success: true })
+    ? NextResponse.json({ success: true, zdroj: vysledek.zdroj })
     : NextResponse.json({ error: vysledek.duvod ?? 'Potvrzení se nepovedlo.' }, { status: 400 });
   odpoved.cookies.delete(COOKIE);
 

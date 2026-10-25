@@ -18,7 +18,7 @@ export function PotvrzeniKlient() {
     setChyba(null);
     try {
       const odpoved = await fetch('/api/novinky/potvrdit', { method: 'POST' });
-      const data = (await odpoved.json().catch(() => ({}))) as { error?: string; rocnik?: string };
+      const data = (await odpoved.json().catch(() => ({}))) as { error?: string; rocnik?: string; zdroj?: string };
       if (!odpoved.ok) {
         setChyba(data.error ?? 'Potvrzení se nepovedlo.');
         setStav('chyba');
@@ -32,7 +32,7 @@ export function PotvrzeniKlient() {
         // Bez úložiště se jen nezapamatuje stav.
       }
       const paq = (window as unknown as { _paq?: unknown[][] })._paq;
-      paq?.push(['trackEvent', 'Novinky', 'odber_potvrzen']);
+      paq?.push(['trackEvent', 'Novinky', 'odber_potvrzen', data.zdroj ?? 'neznamy']);
     } catch {
       setChyba('Nepovedlo se odeslat. Zkontroluj připojení.');
       setStav('chyba');
