@@ -1,6 +1,6 @@
 # Slovník pojmů
 
-Verze 1.51 · 17. 10. 2026 · **Závazný pro všechny texty na webu.** Nový pojem se na stránce nepoužije bez zápisu sem.
+Verze 1.52 · 25. 10. 2026 · **Závazný pro všechny texty na webu.** Nový pojem se na stránce nepoužije bez zápisu sem.
 
 Slovník pojmů říká, **jakými slovy mluvíme k rodičům a uchazečům**, aby tatáž věc nezněla na každé stránce jinak. Doplňuje [slovník ukazatelů](slovnik-ukazatelu.md), který říká, **jak se veličina jmenuje v datech a jak se počítá**. Kde se oba liší, platí: v datech, kódu a API název ze slovníku ukazatelů, v textu stránky pojem odsud.
 
@@ -158,6 +158,7 @@ Slovník pojmů říká, **jakými slovy mluvíme k rodičům a uchazečům**, a
 
 | Verze | Změna |
 |---|---|
+| 1.52 | Pojem **připomínky termínů** pro e-maily před termíny přijímacího řízení a jednu zprávu o výběru školy; nepoužívat „novinky“, „newsletter“, „odběr novinek“ (25. 10. 2026, issue #523, E2). |
 | 1.51 | U pojmu **1. kolo** doplněno: počty přihlášek a přijatých z výsledků 1. kola nesou na stránce školy „v 1. kole“ nebo „(1. kolo)“; počet bez kola se nepoužívá (17. 10. 2026, issue #226). |
 | 1.50 | Pojem **z těch, kdo ke zkoušce skutečně šli, ji udělalo X z Z** pro úspěšnost maturity z konajících; stojí vždy za větou o přihlášených (17. 10. 2026, issue #375, rozhodnutí vlastníka ukázat obě čísla). U pojmu *maturitu udělalo X z Y přihlášených* upřesněn zákaz: nesmí se míchat jmenovatelé, oba podíly se ukazovat smějí. |
 | 1.49 | **Soutěžící uchazeči** nově vysvětleni větou „kdo splnili podmínky přijetí a nebyli přijati jinam podle vyšší priority na přihlášce“ a údaj „přijato X ze Y“ nese u čísla dovětek o přijatých jinam (7. 10. 2026, #428). Školy čtly „přijato 28 ze 49“ jako odmítnutí 21 zájemců, ale dalších 31 se dostalo jinam, kam se hlásili raději. Čísla se nemění. |
