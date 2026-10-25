@@ -21,6 +21,16 @@ export default function Admissions2027Page() {
     <>
       <Header />
       <main className="bg-slate-50 text-slate-800">
+        {/* Stažená kopie kalendáře se sama neaktualizuje, připomínky jsou odpověď na to
+            (docs/novinky-k-prijimackam-2027.md, oddíl 4). Stojí úplně nahoře, před úvodem,
+            aby byla nabídka na telefonu (390 px) vidět bez posouvání (#523, E2, K5). */}
+        <div className="max-w-4xl mx-auto px-4 pt-4 md:pt-6">
+          <OdberBlok
+            zdroj="kalendar-pripominky"
+            varianta="stranka"
+            nadpis="Připomínky termínů ti pošleme e-mailem"
+          />
+        </div>
         <section className="bg-slate-900 text-white px-4 py-12 md:py-16">
           <div className="max-w-4xl mx-auto">
             <p className="text-blue-300 text-sm font-semibold mb-3">NÁSTUP DO ŠKOLY V ZÁŘÍ 2027</p>
@@ -33,16 +43,6 @@ export default function Admissions2027Page() {
           </div>
         </section>
         <div className="max-w-4xl mx-auto px-4 py-8 md:py-12">
-          {/* Stažená kopie kalendáře se sama neaktualizuje, připomínky jsou odpověď na to
-              (docs/novinky-k-prijimackam-2027.md, oddíl 4). Stojí nad kalendářem, aby je
-              rodina potkala dřív než dlouhý seznam termínů (#523, E2). */}
-          <div className="mb-6">
-            <OdberBlok
-              zdroj="kalendar-pripominky"
-              varianta="stranka"
-              nadpis="Připomínky termínů ti pošleme e-mailem"
-            />
-          </div>
           <aside className="bg-amber-50 border border-amber-200 rounded-xl p-5 mb-6">
             <h2 className="font-bold mb-2">Konzervatoř? Přihlášku podej už v listopadu 2026.</h2>
             <p className="text-sm">Na ostatní střední školy je termín 1.–22. února 2027. Kritéria a kapacity jednotlivých škol pro rok 2027 zatím postupně přibudou. Výsledky 2026 na tomto webu popisují minulý ročník.</p>
