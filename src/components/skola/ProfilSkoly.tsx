@@ -925,7 +925,7 @@ export function ProfilSkoly({ data, skola, odkazy }: ProfilSkolyProps) {
             škole a potřebuje důvod, ne popis kanálu. Zdroj `skola-kontext`
             odlišuje tuto verzi od původní v odběrech i v Matomo události
             `formular_odeslan`, aby šlo změřit, jestli nadpis pomohl. */}
-        <OdberBlok id="odber-novinek" zdroj="skola-kontext" varianta="karta" nadpis="Termíny a novinky k přijímačkám e-mailem" samostatna />
+        <OdberBlok id="odber-novinek" zdroj="skola-kontext" varianta="karta" nadpis="Připomínky termínů přijímaček e-mailem" samostatna />
         <div className="flex flex-wrap items-center justify-between gap-3 rounded-2xl bg-white p-5 shadow-[0_1px_0_#dbe3ec]">
           <p className="text-[15px] text-slate-700"><b className="text-[#16325c]">Jste z vedení školy?</b> Doplňte kritéria přijetí, dny otevřených dveří a popis školy. Je to zdarma a údaje uvidí rodiny na této stránce.</p>
           <Link href={EDITACE} className="font-bold text-[#0074e4] underline underline-offset-4">Editujte: pro vedení školy</Link>
