@@ -85,7 +85,7 @@ Nejvíc návštěv měl web v únoru a květnu (4 969 a 4 435 identifikovaných 
 | **Stránka oboru** | **zatím ne** | stránka školy se ověří první; každé další místo je plocha na chyby (totéž zdůvodnění jako u modrého pásu) |
 | **Simulátor a zvažované obory** | **použít** jako větu pod seznamem: „Připomeneme ti termín přihlášek“ | rodině se zvažovanými obory se termín přihlášek hodí nejvíc |
 | **Konec průvodců** `/jak-vybrat-skolu`, `/jak-funguje-prijimani`, `/vysledky/…`, `/mesto/…` | **použít** jako kartu na konci článku | kdo dočte průvodce, zajímá se o celý postup |
-| **Hlavička webu**, odkaz se zvonkem „Termíny e-mailem“ | **použít** | vede na stránku `/novinky` |
+| **Hlavička webu**, odkaz se zvonkem „Termíny e-mailem“ | **použít** | vede na stránku `/novinky` ; v hlavičce od #523 (E2) bez zvonku. Nabídka se od E2 jmenuje „Připomínat termíny“ a slibuje jen zprávy se šablonou, zdroj na `/prijimacky-2027` je `kalendar-pripominky` a stojí nad kalendářem |
 | **Samostatná stránka `/novinky`** | **použít** | adresa pro sdílení a pro výchovné poradce: ukázka e-mailu, přehled obsahu a termínů, formulář, QR kód |
 | Vyskakovací okno při vstupu nebo odchodu | **zavrhnout** | vtíravé, sledování v2.1 ho zamítá ze stejného důvodu; na telefonu zakryje obsah |
 | Lepicí lišta dole na telefonu | **zavrhnout pro první verzi** | dole už plave „Nahlásit chybu“; zvážit v únoru, pokud bude přihlašování slabé |

@@ -33,6 +33,16 @@ export default function Admissions2027Page() {
           </div>
         </section>
         <div className="max-w-4xl mx-auto px-4 py-8 md:py-12">
+          {/* Stažená kopie kalendáře se sama neaktualizuje, připomínky jsou odpověď na to
+              (docs/novinky-k-prijimackam-2027.md, oddíl 4). Stojí nad kalendářem, aby je
+              rodina potkala dřív než dlouhý seznam termínů (#523, E2). */}
+          <div className="mb-6">
+            <OdberBlok
+              zdroj="kalendar-pripominky"
+              varianta="stranka"
+              nadpis="Připomínky termínů ti pošleme e-mailem"
+            />
+          </div>
           <aside className="bg-amber-50 border border-amber-200 rounded-xl p-5 mb-6">
             <h2 className="font-bold mb-2">Konzervatoř? Přihlášku podej už v listopadu 2026.</h2>
             <p className="text-sm">Na ostatní střední školy je termín 1.–22. února 2027. Kritéria a kapacity jednotlivých škol pro rok 2027 zatím postupně přibudou. Výsledky 2026 na tomto webu popisují minulý ročník.</p>
@@ -54,15 +64,6 @@ export default function Admissions2027Page() {
             <Link href="/veletrhy" className="shrink-0 rounded-lg bg-blue-700 text-white px-5 py-3 font-semibold text-center no-underline hover:bg-blue-800">
               Veletrhy podle krajů
             </Link>
-          </div>
-          {/* Stažená kopie se sama neaktualizuje, odběr je odpověď na to
-              (docs/novinky-k-prijimackam-2027.md, oddíl 4). */}
-          <div className="mt-4">
-            <OdberBlok
-              zdroj="kalendar"
-              varianta="stranka"
-              nadpis="Termíny a novinky ti pošleme e-mailem"
-            />
           </div>
           {calendar.groups.map(group => (
             <section key={group.id} id={group.id} className="pt-12 scroll-mt-24">

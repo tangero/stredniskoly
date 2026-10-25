@@ -3,7 +3,7 @@
 import { useState } from 'react';
 
 // ============================================================================
-// Formulář odběru novinek (docs/novinky-k-prijimackam-2027.md, oddíl 4).
+// Formulář odběru připomínek termínů (docs/novinky-k-prijimackam-2027.md, oddíl 4).
 //
 // Odběr je **jeden newsletter**: e-mail a souhlas, nic víc. Žádný ročník,
 // žádný druh studia, žádný kraj — každé pole navíc sníží podíl vyplněných
@@ -101,9 +101,9 @@ export function OdberFormular({ rocnik, zdroj, varianta }: OdberFormularProps) {
   return (
     <form onSubmit={odesli} className="text-left" data-clarity-mask="true">
       <p className={`mb-3 text-sm ${stitek}`}>
-        Pošleme ti s předstihem termíny přijímacího řízení {rocnik} a napíšeme, co je potřeba
-        připravit: kritéria, přihlášky, jednotná zkouška, výsledky a 2. kolo. K tomu zprávu, když na
-        web přibudou nová data.
+        Před důležitými termíny přijímacího řízení {rocnik} ti pošleme připomínku a napíšeme, co je
+        potřeba připravit: kritéria, přihlášky a jejich konec, jednotná zkouška, výsledky a 2. kolo.
+        K tomu jednu zprávu o tom, jak vybírat školu.
       </p>
 
       <div className="flex flex-col gap-2 sm:flex-row">
@@ -115,14 +115,14 @@ export function OdberFormular({ rocnik, zdroj, varianta }: OdberFormularProps) {
           placeholder="tvůj e-mail"
           autoComplete="email"
           className={vstup}
-          aria-label="E-mail pro odběr novinek"
+          aria-label="E-mail pro připomínky termínů"
         />
         <button
           type="submit"
           disabled={stav === 'posilam'}
           className="whitespace-nowrap rounded-lg bg-blue-700 px-4 py-2 font-semibold text-white hover:bg-blue-600 disabled:opacity-60"
         >
-          {stav === 'posilam' ? 'Posílám…' : 'Odebírat novinky'}
+          {stav === 'posilam' ? 'Posílám…' : 'Připomínat termíny'}
         </button>
       </div>
 
