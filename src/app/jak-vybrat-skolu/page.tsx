@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
+import { OdberBlok } from '@/components/novinky/OdberBlok';
 import calendar from '@/data/admissions-2027.json';
 import { zobrazeneObdobi } from '@/lib/stav-datovych-sad';
 import { cesskyDen, formatujDen } from '@/lib/veletrhy-pocty';
@@ -636,6 +637,15 @@ export default async function JakVybratSkoluPage() {
               <Link href="/dostupnost" className="rounded-lg border border-white/40 px-5 py-3 text-[16px] font-semibold text-white hover:bg-white/10">Dojezdovost</Link>
               <Link href="/prijimacky-2027" className="rounded-lg border border-white/40 px-5 py-3 text-[16px] font-semibold text-white hover:bg-white/10">Kalendář termínů</Link>
             </div>
+          </div>
+
+          {/* Karta připomínek na konci průvodce (#523, E3); bez okna a lišty při příchodu či odchodu. */}
+          <div className="mt-8">
+            <OdberBlok
+              zdroj="pruvodce-jak-vybrat"
+              varianta="stranka"
+              nadpis="Připomínky termínů ti pošleme e-mailem"
+            />
           </div>
 
           <p className="mt-8 text-[14px] leading-relaxed text-slate-500">
