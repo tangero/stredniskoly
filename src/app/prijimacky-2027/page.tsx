@@ -21,6 +21,16 @@ export default function Admissions2027Page() {
     <>
       <Header />
       <main className="bg-slate-50 text-slate-800">
+        {/* Stažená kopie kalendáře se sama neaktualizuje, připomínky jsou odpověď na to
+            (docs/novinky-k-prijimackam-2027.md, oddíl 4). Stojí úplně nahoře, před úvodem,
+            aby byla nabídka na telefonu (390 px) vidět bez posouvání (#523, E2, K5). */}
+        <div className="max-w-4xl mx-auto px-4 pt-4 md:pt-6">
+          <OdberBlok
+            zdroj="kalendar-pripominky"
+            varianta="stranka"
+            nadpis="Připomínky termínů ti pošleme e-mailem"
+          />
+        </div>
         <section className="bg-slate-900 text-white px-4 py-12 md:py-16">
           <div className="max-w-4xl mx-auto">
             <p className="text-blue-300 text-sm font-semibold mb-3">NÁSTUP DO ŠKOLY V ZÁŘÍ 2027</p>
@@ -54,15 +64,6 @@ export default function Admissions2027Page() {
             <Link href="/veletrhy" className="shrink-0 rounded-lg bg-blue-700 text-white px-5 py-3 font-semibold text-center no-underline hover:bg-blue-800">
               Veletrhy podle krajů
             </Link>
-          </div>
-          {/* Stažená kopie se sama neaktualizuje, odběr je odpověď na to
-              (docs/novinky-k-prijimackam-2027.md, oddíl 4). */}
-          <div className="mt-4">
-            <OdberBlok
-              zdroj="kalendar"
-              varianta="stranka"
-              nadpis="Termíny a novinky ti pošleme e-mailem"
-            />
           </div>
           {calendar.groups.map(group => (
             <section key={group.id} id={group.id} className="pt-12 scroll-mt-24">

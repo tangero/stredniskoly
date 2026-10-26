@@ -12,9 +12,9 @@ import calendar from '@/data/admissions-2027.json';
 
 export const metadata = {
   alternates: { canonical: '/novinky' },
-  title: 'Novinky k přijímačkám e-mailem',
+  title: 'Připomínky termínů přijímaček e-mailem',
   description:
-    'Pošleme ti termíny přijímacího řízení s předstihem, napíšeme, co je potřeba připravit, a dáme vědět, když na web přibudou nová data o školách a oborech.',
+    'Před důležitými termíny přijímacího řízení ti pošleme připomínku a napíšeme, co je potřeba připravit.',
 };
 
 export const revalidate = 3600;
@@ -36,11 +36,11 @@ export default async function NovinkyPage() {
         <section className="py-12" style={{ backgroundColor: '#ffffff' }}>
           <div className="max-w-3xl mx-auto px-4">
             <h1 className="text-3xl md:text-4xl font-bold mb-4" style={{ color: '#28313b' }}>
-              Novinky k přijímačkám e-mailem
+              Připomínky termínů přijímaček e-mailem
             </h1>
             <p className="text-lg text-slate-600 mb-8">
               {rocnik
-                ? `Pošleme ti s předstihem termíny přijímacího řízení ${rocnik}, napíšeme, co je potřeba připravit, a dáme vědět, když na web přibudou nová data. Jeden odběr, nejvýš pár e-mailů měsíčně, a běží dál i v dalších letech.`
+                ? `Před důležitými termíny přijímacího řízení ${rocnik} ti pošleme připomínku a napíšeme, co je potřeba připravit. Jeden odběr, nejvýš pár e-mailů měsíčně, a běží dál i v dalších letech.`
                 : 'Odběr otevřeme, až MŠMT zveřejní harmonogram dalšího přijímacího řízení.'}
             </p>
 
@@ -67,7 +67,8 @@ export default async function NovinkyPage() {
                 nedostal nikam. Přihlášky do 2. kola se podávají jen několik dní.
               </li>
               <li>
-                <strong>Nová data na webu:</strong> když přibudou obory, místa nebo výsledky.
+                <strong>Jak vybírat školu:</strong> jedna zpráva před zveřejněním kritérií, co si
+                v prosinci projít a ujasnit.
               </li>
             </ul>
 

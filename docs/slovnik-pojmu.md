@@ -1,6 +1,6 @@
 # Slovník pojmů
 
-Verze 1.51 · 17. 10. 2026 · **Závazný pro všechny texty na webu.** Nový pojem se na stránce nepoužije bez zápisu sem.
+Verze 1.52 · 25. 10. 2026 · **Závazný pro všechny texty na webu.** Nový pojem se na stránce nepoužije bez zápisu sem.
 
 Slovník pojmů říká, **jakými slovy mluvíme k rodičům a uchazečům**, aby tatáž věc nezněla na každé stránce jinak. Doplňuje [slovník ukazatelů](slovnik-ukazatelu.md), který říká, **jak se veličina jmenuje v datech a jak se počítá**. Kde se oba liší, platí: v datech, kódu a API název ze slovníku ukazatelů, v textu stránky pojem odsud.
 
@@ -132,6 +132,7 @@ Slovník pojmů říká, **jakými slovy mluvíme k rodičům a uchazečům**, a
 | **potvrzený termín** (u veletrhu) | termín veletrhu, který jsme ověřili na stránce pořadatele nebo jiného doloženého zdroje; jen s ním se akce zobrazuje a počítá | „víme jen o těchto 6 akcích s potvrzeným termínem“ — věta u počtu akcí v kraji; u dne otevřených dveří z článku školy se totéž slovo **nepoužívá** (termín jsme neověřovali, viz *termíny z článku školy*) | ověřený termín, oficiální termín; **potvrzený termín** u novinek škol |
 | **další zprávy k přijímačkám** | nadpis doplňkového seznamu u bloku novinek: zprávy z webu školy, které se přijímacího řízení týkají, ale nedostaly kartu | odkazy vedou na web školy | aktuality (nadpis), zprávy ze školy, novinky |
 | **Emailem: zprávy k přijímačkám** | odkaz v pruhu pod hlavičkou stránky školy na blok odběru v patičce; míří na **e-mail od nás** s termíny a pokyny k přijímacímu řízení, ne na zprávy z webu školy | odkaz vede na kotvu bloku „Vše nové o přijímačkách e-mailem?“, kde je odběr vysvětlený | novinky (to jsou na téže stránce zprávy z webu školy), newsletter, odběr novinek |
+| **připomínky termínů** | e-maily, které web pošle před důležitým termínem přijímacího řízení z kalendáře (kritéria, přihlášky a jejich konec, jednotná zkouška, výsledky a 2. kolo) a jedna zpráva o výběru školy; nic navíc | nadpis a tlačítko odběru „Připomínat termíny“; výčet zpráv odpovídá šablonám v `content/novinky/sablony/` (#523, E2) | novinky, newsletter, odběr novinek (slibuje i zprávy o nových datech, které odběr neposílá) |
 | **ze života školy** | nadpis rubriky na konci stránky: zprávy z webu školy, které se přijímacího řízení **netýkají** – výlet, olympiáda, projektový den | při prvním výskytu větou „Zprávy z webu školy, které se přijímacího řízení netýkají.“ | aktuality, ostatní novinky, nezařazené; nikdy ne jako nadpis nad zprávami k přijímačkám |
 | **objevilo se *datum*** | den, kdy jsme zprávu poprvé viděli v kanálu novinek; píše se **jen** tehdy, když feed neuvedl použitelné datum vydání | u zprávy místo data vydání; v patičce bloku vysvětleno | vydáno, publikováno, zveřejněno (to bychom tvrdili něco, co nevíme) |
 | **zdroj naposledy ověřen *datum*** | kdy se naposled podařilo přečíst kanál novinek školy | vždy u sklizeného údaje | aktualizováno (nejde o aktualizaci údaje), ověřeno školou |
@@ -157,6 +158,7 @@ Slovník pojmů říká, **jakými slovy mluvíme k rodičům a uchazečům**, a
 
 | Verze | Změna |
 |---|---|
+| 1.52 | Pojem **připomínky termínů** pro e-maily před termíny přijímacího řízení a jednu zprávu o výběru školy; nepoužívat „novinky“, „newsletter“, „odběr novinek“ (25. 10. 2026, issue #523, E2). |
 | 1.51 | U pojmu **1. kolo** doplněno: počty přihlášek a přijatých z výsledků 1. kola nesou na stránce školy „v 1. kole“ nebo „(1. kolo)“; počet bez kola se nepoužívá (17. 10. 2026, issue #226). |
 | 1.50 | Pojem **z těch, kdo ke zkoušce skutečně šli, ji udělalo X z Z** pro úspěšnost maturity z konajících; stojí vždy za větou o přihlášených (17. 10. 2026, issue #375, rozhodnutí vlastníka ukázat obě čísla). U pojmu *maturitu udělalo X z Y přihlášených* upřesněn zákaz: nesmí se míchat jmenovatelé, oba podíly se ukazovat smějí. |
 | 1.49 | **Soutěžící uchazeči** nově vysvětleni větou „kdo splnili podmínky přijetí a nebyli přijati jinam podle vyšší priority na přihlášce“ a údaj „přijato X ze Y“ nese u čísla dovětek o přijatých jinam (7. 10. 2026, #428). Školy čtly „přijato 28 ze 49“ jako odmítnutí 21 zájemců, ale dalších 31 se dostalo jinam, kam se hlásili raději. Čísla se nemění. |

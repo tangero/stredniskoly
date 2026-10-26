@@ -27,10 +27,9 @@ export interface PotvrzeniPara {
 /** E-mail s potvrzovacím odkazem. Odkaz jen otevře stránku, odběr nezaloží. */
 export function potvrzovaciEmail(para: PotvrzeniPara): { predmet: string; html: string; text: string } {
   const odkaz = potvrzovaciOdkaz(para.token);
-  const co =
-    'termíny přijímacího řízení, pokyny, co je potřeba připravit, a zprávy o nových datech na webu';
+  const co = 'připomínky důležitých termínů přijímacího řízení a pokyny, co je potřeba připravit';
 
-  const predmet = 'Potvrď odběr novinek k přijímačkám';
+  const predmet = 'Potvrď odběr připomínek termínů přijímaček';
   const html = obalka(
     `<p>Dobrý den,</p>
      <p>někdo zadal tuto adresu, aby dostával ${co}. Odběr začne, až ho potvrdíš:</p>

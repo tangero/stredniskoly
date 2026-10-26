@@ -92,7 +92,7 @@ export default async function HomePage() {
             )}
             <div className="mb-5">
               {/* Odběr termínů: hlavní místo formuláře (návrh novinek, oddíl 4) */}
-              <OdberBlok zdroj="titulka-karta" varianta="karta" nadpis="Novinky k přijímačkám e-mailem" />
+              <OdberBlok zdroj="titulka-karta" varianta="karta" nadpis="Připomínky termínů přijímaček e-mailem" />
             </div>
             <div className="grid sm:grid-cols-2 gap-3">
               <Link href="/prijimacky-2027" className="rounded-lg bg-blue-700 p-5 hover:bg-blue-600">

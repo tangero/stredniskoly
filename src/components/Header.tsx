@@ -71,6 +71,7 @@ export function Header() {
     { href: '/dostupnost', label: 'Dojezdovost MHD' },
     { href: '/regiony', label: 'Regiony' },
     { href: '/jak-vybrat-skolu', label: 'Jak vybrat školu' },
+    { href: '/novinky', label: 'Termíny e-mailem' },
     // Počet je null, dokud se výběr nenačte v prohlížeči; na serveru se proto vykreslí bez závorky
     // a hydratace sedí. Ukládají se obory, ne školy, takže i počet je v oborech.
     { href: '/simulator?vyber=1', label: pocetZvazovanych(vyber) ? `Zvažované obory (${pocetZvazovanych(vyber)})` : 'Zvažované obory' },
