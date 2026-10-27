@@ -1,6 +1,6 @@
 # Sledování škol a hromadná upozornění na změny
 
-Verze 1.2 · 14. 9. 2026, revize 20. 9. 2026 · Návrh; model události rozhodnut a schéma založeno (`db/migrace/004-udalosti.sql`), odesílač ani tlačítko postavené nejsou.
+Verze 1.2 · 14. 9. 2026, revize 20. 9. 2026 · Návrh; model události rozhodnut a schéma založeno (`db/migrace/004-udalosti.sql`), odesílač ani tlačítko postavené nejsou. Podklad (E4 projektu #523): vazba odběratel–škola a účel dokladu (`db/migrace/009-sledovani-skol.sql`), zápis událostí z portálu (`src/lib/portal-udalosti.ts`, `udalosti.ts`) a rozdíl sady (`src/lib/sledovani-rozdil.ts`, `scripts/sledovani-rozdil.mjs`).
 
 Rodina zadá e-mail a dostane upozornění, když se změní údaje škol, které sleduje. Navazuje na [stránku školy](stranka-skoly-2027.md), [registr stavu datových sad](../public/stav_datovych_sad.json), [datovou linku](datova-linka.md) a [portál pro školy](portal-pro-skoly-2027.md).
 

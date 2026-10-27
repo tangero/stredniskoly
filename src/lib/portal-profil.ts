@@ -2,6 +2,8 @@ import { randomUUID } from 'crypto';
 import type { Spojeni } from './novinky-db.ts';
 import type { PortalHodnota, PortalSkolData, PortalZaznam } from './portal-skol.ts';
 import { PortalChyba } from './portal-ucty.ts';
+import { POLE_S_UDALOSTI, popisyZmen, udalostZPortalu } from './portal-udalosti.ts';
+import { zapisUdalostNekriticky } from './udalosti.ts';
 
 // ============================================================================
 // Obsah profilu škol z databáze (tabulka portal_profil).
@@ -146,6 +148,9 @@ export async function zapisUdaje(s: Spojeni, z: ZmenaProfilu): Promise<string[]>
   }
 
   const zmenena: string[] = [];
+  // Pole, jejichž nová neprázdná hodnota je událost pro sledování škol, a id první zapsané verze.
+  const poleUdalosti: string[] = [];
+  let idUdalosti: string | null = null;
   for (const [pole, nova] of Object.entries(z.udaje)) {
     await zamkniPole(s, z.redizo, pole);
 
@@ -191,13 +196,14 @@ export async function zapisUdaje(s: Spojeni, z: ZmenaProfilu): Promise<string[]>
     }
     // I smazání zakládá řádek (prázdná hodnota, rovnou zneplatněná), jinak by se
     // ztratilo, kdo pole smazal a proč, a nebylo by co vracet zpět.
+    const idVerze = randomUUID();
     try {
       await s.dotaz(
         `insert into portal_profil
            (id, redizo, pole, hodnota, nazev, verze_prijimani, zdroj, role_id, nahrazuje_id, zmenu_provedl, duvod, zneplatneno)
          values ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12)`,
         [
-          randomUUID(),
+          idVerze,
           z.redizo,
           pole,
           nova,
@@ -218,6 +224,15 @@ export async function zapisUdaje(s: Spojeni, z: ZmenaProfilu): Promise<string[]>
       throw e;
     }
     zmenena.push(pole);
+    if (pole in POLE_S_UDALOSTI && nova.trim()) {
+      poleUdalosti.push(pole);
+      idUdalosti ??= idVerze;
+    }
+  }
+  // Oprava redakcí ani návrat k předchozí verzi nejsou sdělení školy rodinám.
+  if (idUdalosti && (z.zdroj ?? 'skola') === 'skola') {
+    const udalost = udalostZPortalu(z.redizo, popisyZmen(poleUdalosti), idUdalosti);
+    if (udalost) await zapisUdalostNekriticky(s, udalost);
   }
   return zmenena;
 }

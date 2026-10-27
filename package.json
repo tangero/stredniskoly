@@ -15,6 +15,7 @@
     "test:novinky": "node --experimental-strip-types --test tests/novinky-*.test.mjs",
     "novinky:migrace": "node scripts/novinky-migrace.mjs",
     "novinky:migrace-kontrola": "node scripts/novinky-migrace.mjs --kontrola",
+    "sledovani:migrace-kontrola": "node scripts/sledovani-migrace.mjs --kontrola",
     "portal:export": "node --experimental-strip-types scripts/portal-export.mjs",
     "veletrhy:export": "node --experimental-strip-types scripts/veletrhy-export.mjs",
     "veletrhy:export-kontrola": "node --experimental-strip-types scripts/veletrhy-export.mjs --kontrola",
