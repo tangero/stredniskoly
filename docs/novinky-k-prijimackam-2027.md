@@ -46,7 +46,7 @@ Kalendář 2027 dává pevné body, ke kterým se většina zpráv váže. Sloup
 | E-mail | Spouštěč | Datum odeslání 2027 | Komu | Obsah |
 |---|---|---|---|---|
 | **Uvítání** | potvrzení odběru | okamžik potvrzení, posílá se hned | všem | přehled termínů ročníku, odkaz na kalendář a ICS, co dělat teď podle měsíce. **Podmíněný blok** o datech, která na web přibyla, se vypíše jen tehdy, když od přepnutí sady uplynulo méně než dva měsíce; nový odběratel jinak žádný „poslední e-mail“ nemá |
-| Výběr školy a dny otevřených dveří | redakční datum | **7. 12. 2026**, jen pokud je N2 hotová; jinak se obsah přesune do uvítání | všem | jak vybírat, co se ptát, odkaz na simulátor a stránky škol |
+| Výběr školy a dny otevřených dveří | redakční datum | **10. 11. 2026** (původně 7. 12. 2026; posunuto na začátek sezóny dnů otevřených dveří a veletrhů, rozhodnutí vlastníka 27. 10. 2026) | všem | jak vybírat, co se ptát, odkaz na průvodce `/jak-vybrat-skolu`, veletrhy, přehled oborů a stránku připomínek `/novinky` |
 | **Školy vyhlašují kritéria** | `ss-kriteria` minus 3 dny | **12. 1. 2027** | všem | co v kritériích hledat: požadavek školy, hranice úspěšnosti, školní zkouška. **Nabídku oborů pro rok 2027 zveřejňují školy ve svých kritériích**, web ji bude mít až z otevřených dat CERMATu. **První e-mail, který musí odejít** |
 | **Přihlášky** | `ss-prihlasky` minus 5 dní | **27. 1. 2027** | všem | jak podat přihlášku, pořadí na přihlášce („šanci na přijetí nemění, škola řadí jen podle svých kritérií“), přílohy |
 | **Připomínka přihlášek** | konec `ss-prihlasky` minus 4 dny | **18. 2. 2027** | všem | přihlášky se podávají do 22. 2. 2027 |
@@ -361,8 +361,8 @@ SPF, DKIM a DMARC na hlavní doméně už platí pro dnešní provozní e-maily.
 ```text
 content/novinky/sablony/
   uvitani.md             # spoustec: potvrzeni
-  vyber-skoly.md         # spoustec: redakcni, datum: 12-07, rok_posun: -1
-                         #   (prosinec před ročníkem přijímaček)
+  vyber-skoly.md         # spoustec: redakcni, datum: 11-10, rok_posun: -1
+                         #   (listopad před ročníkem přijímaček)
   kriteria.md            # spoustec: kalendar, udalost: ss-kriteria, predstih_dni: 3,
                          #   konec_uzitecnosti: konec udalosti, segment: [ss, vicelete]
   prihlasky.md           # spoustec: kalendar, udalost: ss-prihlasky, predstih_dni: 5
