@@ -65,7 +65,7 @@ test('obor doplněný školou pro 2027: záznam bez zdroje, adresy nebo data hl�
   assert.ok(chybyDoplnenehoOboru({ ...dobry, zdroj: '' }).includes('chybí zdroj'));
   assert.ok(chybyDoplnenehoOboru({ ...dobry, zdroj_adresa: undefined }).includes('chybí adresa zdroje'));
   assert.ok(chybyDoplnenehoOboru({ ...dobry, hlaseno: '' }).includes('chybí datum hlášení'));
-  assert.ok(chybyDoplnenehoOboru({ ...dobry, plati_pro: 'zobrazeni' }).includes('plati_pro musí být 2027'));
+  assert.ok(chybyDoplnenehoOboru({ ...dobry, plati_pro: 'zobrazeni' }).includes('plati_pro musí odpovídat nabídce, do které se obor doplňuje'));
 });
 
 test('doplněný obor se nečte při zobrazení názvu a ukládá se jen pro 2027', () => {

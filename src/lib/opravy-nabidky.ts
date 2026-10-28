@@ -59,7 +59,7 @@ export function oboryDoplneneSkolou2027(opravy: OpravaNabidky[]): OpravaNabidky[
 export function chybyDoplnenehoOboru(o: OpravaNabidky): string[] {
   const chyby: string[] = [];
   if (o.pole !== 'obor_doplneny') return chyby;
-  if (o.plati_pro !== '2027') chyby.push('plati_pro musí být 2027');
+  if (o.plati_pro !== '2027') chyby.push('plati_pro musí odpovídat nabídce, do které se obor doplňuje');
   if (!/^\d{9}$/.test(o.redizo ?? '')) chyby.push('chybí RED IZO');
   if (!/^\d{2}-\d{2}-[A-Z]\/\d{2}$/.test(o.kkov ?? '')) chyby.push('chybí KKOV');
   if (!o.nazev?.trim()) chyby.push('chybí název');
