@@ -97,3 +97,14 @@ ve kterém na něj narazíš (krátce: co se stane, proč, co s tím). Oprava, k
 `SchoolSearch` už nedostává položky hledání jako prop. Titulka, `/skoly` a `/regiony` je nevkládají do HTML (bylo to
 přes 3 MB na stránku); pole je stáhne z `/api/hledani` (statický výstup buildu, `getPolozkyHledani`) při prvním
 zaměření. Do zdrojů, které stránky čtou, proto nepatří nic, co by hledání potřebovalo před prvním zaměřením pole.
+
+## Události sledování škol z portálu (#523, E4)
+
+- **Uložení profilu a kritérií školy zapisuje událost do `udalost`, ale bez tabulky ji potichu přeskočí.** Zápis běží
+  v bodu uložení (`savepoint`) téže transakce, takže chybějící migrace 004 uložení škole nerozbije; událost se ale
+  ztratí a zpětně se nedoplní. Migrace 004 a 009 spouští vlastník (CLAUDE.md, pravidlo 5), do té doby události
+  nevznikají. Opravu redakcí a návrat k předchozí verzi (`zdroj: redakce`) událost nezakládají.
+- **Hlídání je zatím jen podklad.** Tabulka `odber_skoly` a sloupec `doklad_souhlasu.ucel` (migrace 009) nemají
+  žádný zápis ani čtení, e-maily ani tlačítko neexistují (E5, E6). Rozdílový skript `scripts/sledovani-rozdil.mjs`
+  nad snímky zobrazených hodnot sady zapisuje jen s `--zapis` a nikdo ho zatím nepouští.
+

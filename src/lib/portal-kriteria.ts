@@ -4,6 +4,8 @@ import path from 'path';
 import type { Spojeni } from './novinky-db.ts';
 import { ocekavaneObdobi, zobrazeneObdobi } from './stav-datovych-sad.ts';
 import type { DolozenePravidlo } from './kriteria-stav.ts';
+import { popisyZmen, stejnyObsah, udalostZPortalu } from './portal-udalosti.ts';
+import { zapisUdalostNekriticky } from './udalosti.ts';
 import {
   overStrukturu, souhrnBodovani, strukturaZPrepisu,
   type PrepisProPredvyplneni, type StrukturaKriterii,
@@ -310,7 +312,15 @@ export async function zapisKriteria(s: Spojeni, z: ZadaniKriterii): Promise<Krit
     [id, z.redizo, z.oborKlic, z.rok, z.kolo, z.rezim, z.popis, z.odkaz, z.podkladRok,
       JSON.stringify(z.oborIdentita), z.roleId, previous?.id ?? null, JSON.stringify(z.struktura)],
   );
-  return result.rows[0];
+  const zapsane = result.rows[0];
+  // Opakované uložení téhož obsahu je jen nová verze, ne zpráva pro rodiny.
+  const zmena = !previous || !stejnyObsah(
+    { rezim: previous.rezim, popis: previous.popis, odkaz: previous.odkaz, struktura: previous.struktura },
+    { rezim: z.rezim, popis: z.popis, odkaz: z.odkaz, struktura: z.struktura },
+  );
+  const udalost = zmena ? udalostZPortalu(z.redizo, popisyZmen(['odkaz_kriteria']), zapsane.id) : null;
+  if (udalost) await zapisUdalostNekriticky(s, udalost);
+  return zapsane;
 }
 
 // ---------------------------------------------------------------------------
