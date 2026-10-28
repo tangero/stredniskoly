@@ -482,7 +482,7 @@ export function ProfilSkoly({ data, skola, odkazy }: ProfilSkolyProps) {
             )}
           </Dukaz>
         )}
-        <Zdroj>Nabídka oborů pro další přijímací řízení se zveřejňuje až po uzávěrce škol; údaje o oborech jsou z 1. kola {rok}, CERMAT{data.platnostDat ? `, stav k ${formatDatumCz(data.platnostDat)}` : ''}.</Zdroj>
+        <Zdroj>Nabídka oborů pro další přijímací řízení se zveřejňuje až po uzávěrce škol; údaje o oborech jsou z 1. kola {rok}, CERMAT{data.platnostDat ? `, stav k ${formatDatumCz(data.platnostDat)}` : ''}, a týkají se denní formy studia; obory v dálkové nebo kombinované formě v tomto přehledu zatím neukazujeme{data.nedenniNastavby.length > 0 ? ', nedenní nástavby jsou vypsané zvlášť' : ''}.</Zdroj>
       </Oddil>
 
       {/* 2 · Jak si škola vede */}
