@@ -59,6 +59,7 @@ export function obnovVeletrhy(): void {
   try {
     revalidateTag(TAG_VELETRHY, { expire: 0 });
     revalidatePath('/veletrhy');
+    revalidatePath('/veletrhy/[kraj]', 'page');
   } catch (e) {
     // Mimo požadavek Next.js (testy, skripty) revalidace není k dispozici.
     console.error('❌ Veletrhy: revalidace selhala', e);
