@@ -1,6 +1,6 @@
 # Zdroje dat
 
-Verze 1.36 · 18. 10. 2026 · **Závazný soupis. Před návrhem stránky nebo funkce se prochází celý.**
+Verze 1.37 · 28. 10. 2026 · **Závazný soupis. Před návrhem stránky nebo funkce se prochází celý.**
 
 Tenhle dokument vznikl kvůli konkrétní chybě. Návrh stránky školy jsem sestavil z toho, co web už zobrazoval, místo z toho, co je ve zdrojových souborech. Tři užitečné údaje proto ležely nepoužité v souborech, které jsem měl otevřené: rozpad přihlášek podle priority jako podíl, souběžné přihlášky uchazečů a nejnižší výsledek jednotné zkoušky mezi přijatými. Poslední z nich byl dokonce už spočítaný a uložený v katalogu, zatímco [slovník ukazatelů](slovnik-ukazatelu.md) tvrdil, že ho nemáme.
 
@@ -38,6 +38,7 @@ Ukazatel se pak zavádí podle [slovníku ukazatelů](slovnik-ukazatelu.md). Ten
 | Dopravní data | PID, GTFS ČR, jízdní řády | celá ČR | zastávka a spoj | podle vydání |
 | Harmonogram přijímacího řízení MŠMT | opis termínů z metodiky MŠMT do `src/data/admissions-2027.json` | jedno přijímací řízení, 3 skupiny a 20 událostí | identifikátor události | ručně, jednou ročně |
 | Veletrhy a přehlídky středních škol | vlastní rešerše pořadatelů, `docs/prijimacky-veletrhy-poradatele-2026.xlsx` → tabulka `veletrh_akce` (od 26. 9. 2026, snímek `src/data/veletrhy-2027.json`) | 25 pořadatelů a vlastní rešerše rozepsané na 95 akcí, sezóna podzim 2026 | identifikátor akce | ručně, jednou ročně; průběžně z nahlášení |
+| Seznamy vystavovatelů od pořadatelů veletrhů | PDF od pořadatele, zaslané v rámci mediálního partnerství; v repozitáři neleží | zatím 1 akce: SOKRATES 1, OHK Most (`sokrates-most-2026`), 28 škol a 3 firmy | identifikátor akce + název školy a obec; RED IZO seznam nenese | při doručení od pořadatele; web z něj nic nezobrazuje |
 | RSS/Atom feedy školních webů | weby škol, sklízeč `scripts/sklizec-novinek.py` | 533 z 1 093 škol s feedem | REDIZO + GUID položky | automaticky 2× denně |
 | Hranice krajů, RÚIAN | ČÚZK, SHP za celý stát (`services.cuzk.gov.cz/shp/stat/epsg-5514/1.zip`), vrstva `VUSC_P`, CC BY 4.0 → `src/data/mapa-kraju.json` | 14 krajů | kód NUTS 3 (`CZ0xx`) | ručně, při změně hranic |
 | Microsoft Clarity, souhrny simulátoru | Clarity Data Export API (`www.clarity.ms/export-data/api/v1/project-live-insights`), měřicí skript jen na `/simulator` a stránkách škol a oborů | jen stránka simulátoru, od 5. 10. 2026 | adresa stránky × dimenze | denně skriptem `scripts/clarity-export.mjs` do soukromého repozitáře signálů (#326); web z něj nic nezobrazuje |
@@ -48,6 +49,7 @@ Ukazatel se pak zavádí podle [slovníku ukazatelů](slovnik-ukazatelu.md). Ten
 
 - `PZ2026_kolo1_skolobory_vysledky.xlsx` a `PZ2025_kolo1_skolobory_vysledky.xlsx` se stahují ručně a předávají skriptu přes `--input-dir`. V repozitáři zůstává odvozený `public/cermat_results_2026.json` a otisk sha256 v `public/cermat_results_meta.json`.
 - **Maturitní výsledky** (oddíl 2.11) a **školní agregáty JPZ 2017–2023** (oddíl 2.12) staženy nejsou vůbec. Jejich adresy, kontrolní součty a rozměry ověřuje [podklad oponentury](podklady/oponentura-2027-r1.json) z 11. 9. 2026.
+- **Seznamy vystavovatelů od pořadatelů veletrhů** (oddíl 2.15a) leží jako PDF mimo repozitář, ve sdíleném úložišti projektu. Nesou jen názvy organizací, ale metadata souboru mohou obsahovat jméno autora, a podmínky dalšího užití pořadatel neuvedl.
 - **Veřejné karty a PDF kritérií DiPSy** (oddíl 2.16) nejsou importované do veřejného katalogu. Prototyp portálu čte živý seznam nabídek pro výběr oboru; místní gitignorovaný sběr pokrývá 3 089 z 3 091 nabídek katalogu 2026. Existuje pět ručně připravených pracovních přepisů a sedm od nich oddělených modelových návrhů z malého vzorku; nic není schválené. Dvě nabídky vyžadují řešení chyby zdroje nebo identity. Identifikátor nabídky už z CERMATu máme; dostupnost karet 2027 zatím potvrzena není.
 
 První verze tohoto soupisu obě chybějící skupiny vynechala, protože vznikala procházením adresáře `data/`. To je táž chyba v menším: inventura podle toho, co leží po ruce, místo podle toho, jaké zdroje projekt má.
@@ -445,7 +447,7 @@ Pravidlo „kontakty na web nepatří“ z verze 1.13 tím není zrušeno, ale z
 
 **Pokrytí není úplné a netvrdí se, že je.** Po rešerši 24. 9. 2026 má rozpis 95 záznamů, z toho 77 zobrazitelných, a **všech čtrnáct krajů** aspoň jednu zobrazitelnou akci. Mezery zůstávají tam, kde pořadatel letošní termín ještě nezveřejnil (Ústí nad Labem, Louny, Pelhřimov, Klatovy a další, všechny vedené jako čekající s loňským termínem v `cekaNa`). Revize 15. 10. 2026 přidala 3 akce (Velké Meziříčí, OC Futurum Ostrava, Bystřice pod Hostýnem) a potvrdila 11 čekajících: 4 u pořadatele (Domažlice, Klatovy, Břeclavský fortel, Svitavy) a 7 jen podle agregátorů smartee.cz a atlasskolstvi.cz s příznakem `zdrojJenAgregator` (Ústí nad Labem, Louny, Pelhřimov, Havířov, Orlová, Kopřivnice, Bruntál); čekat zůstává Veselí nad Moravou a proběhlá Česká Třebová. Stránka to říká výslovně a nabízí formulář pro nahlášení chybějící akce.
 
-**Od 24. 9. 2026 se akce ukazují i na stránce školy (oddíl „Kde je a okolí“) a stránce oboru (otázka „Co vám pomůže“), když se ve městě školy koná** — `akceProObec()` ve `src/lib/veletrhy.ts`. Shoda je přesná (`mesto` akce = `obec` školy v katalogu; ověřeno nad všemi městy zdroje vůči katalogu 2026), vázaná na seznam MESTA být nesmí (práh tří škol, veletrh je i v Boskovicích). Z odvozeného souboru se používá `nazev`, `datum`, `cas`, `misto`, `poradatel`, `url`, `poznamkaTerminu` a `overeno`/`checkedAt` jako datum ověření. Zváženo a zamítnuto: **online akce** (`mesto: null`, patří na /veletrhy, ne na detail školy), **akce s příznaky `terminPribligny`/`zdrojJenAgregator`** (na detailu školy jen potvrzené termíny; výhrady zůstávají v přehledu), **vazba na MESTA** (viz výše) a **záložní věta „veletrh ve vašem kraji“** (kraj má akcí málo, blok by se ukazoval skoro všude a přestal by fungovat). Text nikdy netvrdí, že se škola akce účastní — seznam vystavovatelů neexistuje v žádném zdroji (oddíl 3) — a věta o tom, že účast določená není, je součást obou variant.
+**Od 24. 9. 2026 se akce ukazují i na stránce školy (oddíl „Kde je a okolí“) a stránce oboru (otázka „Co vám pomůže“), když se ve městě školy koná** — `akceProObec()` ve `src/lib/veletrhy.ts`. Shoda je přesná (`mesto` akce = `obec` školy v katalogu; ověřeno nad všemi městy zdroje vůči katalogu 2026), vázaná na seznam MESTA být nesmí (práh tří škol, veletrh je i v Boskovicích). Z odvozeného souboru se používá `nazev`, `datum`, `cas`, `misto`, `poradatel`, `url`, `poznamkaTerminu` a `overeno`/`checkedAt` jako datum ověření. Zváženo a zamítnuto: **online akce** (`mesto: null`, patří na /veletrhy, ne na detail školy), **akce s příznaky `terminPribligny`/`zdrojJenAgregator`** (na detailu školy jen potvrzené termíny; výhrady zůstávají v přehledu), **vazba na MESTA** (viz výše) a **záložní věta „veletrh ve vašem kraji“** (kraj má akcí málo, blok by se ukazoval skoro všude a přestal by fungovat). Text nikdy netvrdí, že se škola akce účastní — seznam vystavovatelů pro tyto akce nemáme; jediný, který existuje (SOKRATES 1, oddíl 2.15a), se zatím nikde nepoužívá — a věta o tom, že účast doložená není, je součást obou variant.
 
 **Od 26. 9. 2026 je zdrojem pravdy tabulka `veletrh_akce`** (Neon), nikoli soubor. Sloupce tabulky: `id` (identifikátor akce), `sezona`, `data` (celý objekt akce se stejnými poli jako snímek), `verze` (optimistický zámek pro úpravy), `smazano` (měkké odebrání, id zůstává rezervované), `vytvoreno`, `zmeneno`. Na webu se používá jen `data` neodebraných akcí sezóny; `verze`, `smazano` a časy slouží API a auditu a na web nejdou, protože rodiči neodpovídají na žádnou otázku. Návrhy změn (`veletrh_navrh`) a audit (`veletrh_audit`) nesou i `zdroj_email` a `poznamka` s jmény a adresami lidí u pořadatelů; ty jsou interní a na web ani do snímku nesmějí (pravidlo validátoru: veřejná pole nesmějí obsahovat e-mail ani telefon). Snímek `src/data/veletrhy-2027.json` vzniká exportem (`npm run veletrhy:export`) a má stejná pole jako dřív; počty v tomto oddílu a v registru se aktualizují při exportu. Datum „údaje jsme naposledy ověřovali“ na /veletrhy je nejnovější `overeno` mezi zobrazitelnými akcemi, protože kořenové `checkedAt` souboru v databázi nemá obdobu (bez akce s datem ověření platí `checkedAt` snímku).
 
@@ -464,6 +466,34 @@ Poslední dva stupně vznikly z oponentury 22. 9. 2026: přepis „~21.–30. 11
 Čtyři řádky nejsou pořadatelé, ale katalogy akcí (Smartee, AtlasŠkolství.cz, stredniskoly.cz, ASPŠ). Zůstávají v datech v poli `katalogy` jako zdroj pro dohledání dalších akcí a nezobrazují se — jsou to konkurenční weby.
 
 V registru je jako sada `veletrhy-skol`, období 2027, obnova nejpozději do 15. 9. 2027. Návrh a rozhodnutí jsou v [dokumentu o veletrzích](veletrhy-skol-2027.md).
+
+### 2.15a Seznamy vystavovatelů od pořadatelů veletrhů
+
+Seznam škol a firem, které na konkrétní akci z oddílu 2.15 vystavují. Plán veletrhů ho chce získávat od pořadatelů jako součást mediálního partnerství, aby šlo na stránce školy poctivě napsat, že na veletrhu bude ([veletrhy](veletrhy-skol-2027.md) § 7, bod 14 plánu).
+
+**Zatím jeden seznam.** Okresní hospodářská komora Most nám 27. 10. 2026 poslala v rámci mediálního partnerství PDF „Seznam vystavovatelů 25. ročníku regionálního veletrhu středního vzdělávání SOKRATES 1, 8.–9. 11. 2026, Sportovní hala Most“. Akce je v tabulce `veletrh_akce` jako `sokrates-most-2026`. Stejný soubor (shodný otisk sha256) pořadatel téhož dne zveřejnil na [stránce akce](https://www.ohk-most.cz/sokrates-31/sokrates-1-regionalni-veletrh-stredniho-vzdelavani/).
+
+**Vlastník a oprávnění k užití.** Vlastníkem je pořadatel (OHK Most). Seznam nám poslal sám a je veřejný na jeho webu, ale **podmínky zveřejnění ani dalšího užití neuvedl; otevřené**. Před prvním zobrazením je potřeba potvrdit u pořadatele, že smíme seznam převzít na web (celý, nebo jen jako „škola X vystavuje na akci Y“), a zapsat to sem. Soubor se do repozitáře necommituje (oddíl 1, „Co v repozitáři není“).
+
+| Sloupec | Obsah | Otázka rodiče | Používáme |
+|---|---|---|---|
+| hlavička | ročník, název akce, termín a místo | o jakou akci jde | ne; termín a místo vedeme v `veletrh_akce` z webu pořadatele (oddíl 2.15) |
+| pořadové číslo | 1–31, průběžně přes obě části | žádná | ne |
+| název | název školy nebo firmy, jak ho uvedl pořadatel (ne úřední název z rejstříku) | „Bude tam škola, která mě zajímá?“ | ne |
+| obec | obec v závorce velkými písmeny | „Bude tam škola, která mě zajímá?“, odliší stejnojmenné školy | ne |
+| část ŠKOLY / FIRMY | 28 škol (č. 1–28), 3 firmy a instituce (č. 29–31) | u firem „můžu tam mluvit se zaměstnavatelem?“ | ne |
+
+**Nic z toho se nezobrazuje.** Ani /veletrhy, ani stránka školy či oboru seznam nečtou; text na stránce školy dál netvrdí, že se škola akce účastní (oddíl 2.15).
+
+**Pasti pro budoucí použití:**
+
+- **Bez RED IZO.** Spárovat školu s katalogem jde jen ručně přes název a obec. Názvy jsou zkrácené nebo zvykové a liší se od rejstříku.
+- **Obec chybí nebo je složená.** Jedna škola obec v závorce nemá; jinde je obec s částí obce („LITVÍNOV-HAMR“, „LITVÍNOV, ZÁLUŽÍ“).
+- **Školy z jiných krajů.** Vystavují i školy mimo Ústecký kraj (Mělník, České Budějovice), takže seznam nejde párovat jen proti školám kraje akce.
+- **Stav ke dni vydání.** PDF je z 20. 10. 2026 a do akce se může změnit. Při použití se uvádí datum seznamu a před akcí se ověřuje proti webu pořadatele.
+- **Firmy nejsou školy.** Část FIRMY do párování se školami nepatří.
+
+V registru `public/stav_datovych_sad.json` sada zatím není (oddíl 6, krok 5). Registr se ručně neupravuje a skript `scripts/stav-datovych-sad.py` přidání nové sady nemá; zapíše se, až se seznam začne používat nebo až jich bude víc.
 
 ### 2.16 DiPSy, veřejné karty nabídky a přílohy
 
@@ -639,7 +669,7 @@ Tohle je hlavní důvod existence dokumentu. Seřazeno podle toho, kolik by to d
 | Důvod nepřijetí u jednotlivce | data uchazečů, `ss*_duvod_neprijeti` | rozpad už máme z agregátu | duplicitní |
 | Platnost oboru v číselníku | AKKO, `platnostDo` | obor se ruší celostátně | nezobrazeno |
 | Ředitel a délka jeho funkce | rejstřík, `reditel` | stabilita vedení | sporná vypovídací hodnota |
-| Kdo na veletrhu vystavuje | **v žádném zdroji není** | „Bude tam škola, která mě zajímá?“ Jediný podklad, podle kterého by šlo poctivě upozornit na veletrh na stránce školy | seznamy vystavovatelů zveřejňují pořadatelé nestejně, část až týden před akcí, část vůbec. Chce se získat od pořadatelů jako součást mediálního partnerství, viz [veletrhy](veletrhy-skol-2027.md) § 7 |
+| Kdo na veletrhu vystavuje | **jen pro jednu akci**: seznam SOKRATES 1 od OHK Most, oddíl 2.15a; pro ostatní akce v žádném zdroji není | „Bude tam škola, která mě zajímá?“ Jediný podklad, podle kterého by šlo poctivě upozornit na veletrh na stránce školy | podmínky užití pořadatel neuvedl (otevřené), seznam nenese RED IZO a párování na katalog je ruční; pro ostatní akce ho pořadatelé zveřejňují nestejně, část až týden před akcí, část vůbec. Chce se získat od pořadatelů jako součást mediálního partnerství, viz [veletrhy](veletrhy-skol-2027.md) § 7 |
 | Kontakty na pořadatele veletrhů | veletrhy, `kontaktni_osoba`, `email`, `telefon`; dohledané kontakty v `data/veletrhy/poradatele-kontakty.json` | žádná | na web nepatří ze stejného důvodu jako kontakt na školu. Soubor s dohledanými kontakty (9 organizací, 15 osob) je v `.gitignore` a čte se jen lokálně při obesílání — jsou to jména, služební e-maily a mobily konkrétních lidí |
 | Nepotvrzené termíny veletrhů | veletrhy, 2 z 99 záznamů | „Koná se u nás vůbec něco?“ — všech 14 krajů má k 24. 9. 2026 zobrazitelnou akci, přehled ale není úplný | termín 2026 není potvrzený, u části jde o loňské datum. Zobrazit by znamenalo zopakovat chybu pole `dny_otevrenych_dveri` z § 2.8. Záznamy nesou `cekaNa` s tím, co chybí |
 
@@ -836,6 +866,7 @@ _Vygenerováno z `public/stav_datovych_sad.json` dne 2026-10-17. Neupravovat ru�
 
 | Verze | Změna |
 |---|---|
+| 1.37 | Nový zdroj: seznamy vystavovatelů od pořadatelů veletrhů (oddíl 1, oddíl 2.15a). První je seznam SOKRATES 1 od OHK Most (27. 10. 2026, 28 škol a 3 firmy), zaslaný v rámci mediálního partnerství a zveřejněný i na webu pořadatele. Oprávnění k zobrazení otevřené, v registru zatím není, web z něj nic nezobrazuje. Oddíl 2.15 a 3 opraveny: seznam vystavovatelů už „v žádném zdroji“ není, existuje pro jednu akci. |
 | 1.36 | Oddíl 2.4 a 2.19a: název školy v portálu pro školy z `identifikace.uplny_nazev` rejstříku (po ruční opravě, před katalogem), #515; tři ruční opravy názvu, které rejstřík nese shodně, odstraněny, seznam prázdný; žádný nový sloupec zdroje. |
 | 1.35 | Oddíl 2.10: soubor nabídek bez JPZ nese identitu škol z rejstříku pro školy mimo katalog (etapa 3b, issue #244); oddíl 2.4 `typZrizovatele` a kód okresu nově i pro web. |
 | 1.34 | Oddíl 2.18: Clarity i na stránkách škol a oborů, události čtení a rozbalení oddílů (#386); web z nich nic nezobrazuje. |
