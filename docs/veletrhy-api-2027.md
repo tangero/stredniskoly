@@ -332,6 +332,23 @@ curl -s -H "Authorization: Bearer $VELETRHY_EDA_TOKEN" "$BASE/api/veletrhy/navrh
 
 Pravidla pro Eduardu: jedna sada operací = jeden patch; `Idempotency-Key` odvodit z názvu patche; jména a e-maily lidí patří jen do `zdrojEmail`/`poznamka`; čas psát do `cas`, ne do `datum`; nejdřív `?nanecisto=1`.
 
+### SQL revize: povinný poslední krok, obnovit cache (#544)
+
+Web čte akce z cache s tagem `veletrhy` bez časové platnosti. Zápis do `veletrh_akce` přímo přes SQL (revize
+připravená pro vlastníka) cache nezneplatní a `/veletrhy` i upoutávky na stránkách škol a oborů ukazují starý stav,
+dokud se cache neobnoví. Revize z 15. 10. 2026 (PR #496) se proto na webu projevila až 28. 10. Každá SQL revize
+veletrhů proto končí tímto voláním (`CRON_SECRET` je tajemství z Vercelu, nikam se nevypisuje):
+
+```bash
+curl -s -X POST https://www.prijimackynaskolu.cz/api/veletrhy/revalidace \
+  -H "Authorization: Bearer $CRON_SECRET"
+# → 200 { "ok": true }; bez platného tajemství 401
+```
+
+Závěrečný komentář SQL revize tento příkaz uvádí. Cesty přes API a administraci (`/api/veletrhy/navrhy`,
+`/api/veletrhy/migrace`, `/admin/veletrhy/akce`) obnovují cache samy. Koncový bod nic nečte ani nezapisuje do
+databáze. Kontrola web vs. databáze (K4 zadání #544, volitelná) není hotová.
+
 ## 13. Otevřené otázky pro Patricka
 
 1. Migrace a seed na produkci: skript s lokálním `DATABASE_URL` (jako 23. 9.), nebo nový endpoint `/api/veletrhy/migrace` chráněný `CRON_SECRET`?
