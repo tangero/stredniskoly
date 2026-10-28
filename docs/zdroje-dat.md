@@ -577,6 +577,7 @@ Soubor `src/data/opravy-nabidky-skol.json` (čtení v `src/lib/opravy-nabidky.ts
 | `zamereni` (`plati_pro: zobrazeni`) | zaměření k zobrazení v názvu oboru, nebo `null` = nezobrazovat; adresy stránek se nemění | ano, stránka školy a stránka oboru (Opava, Ostrava) |
 | `kapacita` (`plati_pro: 2027`) | kapacita oboru ve školním roce 2027/2028 podle školy | jen uloženo pro opravu nabídky 2027, web ji zatím nečte (Boskovice) |
 | `neotevira` (`plati_pro: 2027`) | škola obor pro přijímání 2027 neotevírá | jen uloženo pro opravu nabídky 2027, web ji zatím nečte (Hronov) |
+| `obor_doplneny` (`plati_pro: 2027`) | obor, který škola doplnila do nabídky 2027 (#541): RED IZO, KKOV, název, forma, zdroj s adresou (karta DiPSy nebo web školy) a datum hlášení; z hlášení bez zdroje záznam nevzniká | jen uloženo, web ho nečte; po zveřejnění oficiální nabídky 2027 se záznamy s ní porovnají (`oboryDoplneneSkolou2027`, `chybyDoplnenehoOboru`) |
 
 Rozhodnutí vlastníka 5. 10. 2026: kapacita Boskovic a neotevíraný obor v Hronově se do webu dostanou až s nabídkou 2027. Obor 26-41-L/01 v Bohumíně v datech 2026 není a zdroj, proč, nemáme; soubor ho proto neobsahuje.
 
@@ -866,6 +867,7 @@ _Vygenerováno z `public/stav_datovych_sad.json` dne 2026-10-17. Neupravovat ru�
 
 | Verze | Změna |
 |---|---|
+| 1.38 | Oddíl 2.19: pole `obor_doplneny` (obor doplněný školou do nabídky 2027, #541), jen uloženo, web ho nečte; žádný nový sloupec zdroje. |
 | 1.37 | Nový zdroj: seznamy vystavovatelů od pořadatelů veletrhů (oddíl 1, oddíl 2.15a). První je seznam SOKRATES 1 od OHK Most (27. 10. 2026, 28 škol a 3 firmy), zaslaný v rámci mediálního partnerství a zveřejněný i na webu pořadatele. Oprávnění k zobrazení otevřené, v registru zatím není, web z něj nic nezobrazuje. Oddíl 2.15 a 3 opraveny: seznam vystavovatelů už „v žádném zdroji“ není, existuje pro jednu akci. |
 | 1.36 | Oddíl 2.4 a 2.19a: název školy v portálu pro školy z `identifikace.uplny_nazev` rejstříku (po ruční opravě, před katalogem), #515; tři ruční opravy názvu, které rejstřík nese shodně, odstraněny, seznam prázdný; žádný nový sloupec zdroje. |
 | 1.35 | Oddíl 2.10: soubor nabídek bez JPZ nese identitu škol z rejstříku pro školy mimo katalog (etapa 3b, issue #244); oddíl 2.4 `typZrizovatele` a kód okresu nově i pro web. |
@@ -904,5 +906,3 @@ _Vygenerováno z `public/stav_datovych_sad.json` dne 2026-10-17. Neupravovat ru�
 | 1.2 | Doplněn odvozený soubor pásem přijetí; výsledky všech uchazečů už nejsou nevyužité. |
 | 1.1 | Doplněny maturitní výsledky a školní agregáty JPZ 2017–2023, tedy ověřené zdroje, které nejsou stažené v repozitáři. První verze je vynechala, protože vznikla procházením adresáře `data/`. |
 | 1.0 | První soupis. Vznikl po zjištění, že tři použitelné údaje ležely nepoužité ve zdrojích, které projekt už zpracovával. |
-
-Pole `obor_doplneny` v témže souboru (#541): obor, který škola doplnila do nabídky 2027. Nese RED IZO, KKOV, název, formu, zdroj s adresou (karta DiPSy nebo web školy) a datum hlášení; `plati_pro` je `2027`. Z hlášení samotného bez zdroje záznam nevzniká. Na webu se nečte, po zveřejnění oficiální nabídky 2027 se uložené záznamy s ní porovnají. Funkce `oboryDoplneneSkolou2027` a `chybyDoplnenehoOboru` v `src/lib/opravy-nabidky.ts`.

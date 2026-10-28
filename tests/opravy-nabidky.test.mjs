@@ -76,5 +76,5 @@ test('doplněný obor se nečte při zobrazení názvu a ukládá se jen pro 202
 });
 
 test('každý uložený doplněný obor v souboru oprav má doložený zdroj', () => {
-  for (const o of oboryDoplneneSkolou2027(opravy)) assert.deepEqual(chybyDoplnenehoOboru(o), [], `${o.redizo} ${o.kkov}`);
+  for (const o of opravy.filter(x => x.pole === 'obor_doplneny')) assert.deepEqual(chybyDoplnenehoOboru(o), [], `${o.redizo} ${o.kkov}`);
 });
