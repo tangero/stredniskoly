@@ -904,3 +904,5 @@ _Vygenerováno z `public/stav_datovych_sad.json` dne 2026-10-17. Neupravovat ru�
 | 1.2 | Doplněn odvozený soubor pásem přijetí; výsledky všech uchazečů už nejsou nevyužité. |
 | 1.1 | Doplněny maturitní výsledky a školní agregáty JPZ 2017–2023, tedy ověřené zdroje, které nejsou stažené v repozitáři. První verze je vynechala, protože vznikla procházením adresáře `data/`. |
 | 1.0 | První soupis. Vznikl po zjištění, že tři použitelné údaje ležely nepoužité ve zdrojích, které projekt už zpracovával. |
+
+Pole `obor_doplneny` v témže souboru (#541): obor, který škola doplnila do nabídky 2027. Nese RED IZO, KKOV, název, formu, zdroj s adresou (karta DiPSy nebo web školy) a datum hlášení; `plati_pro` je `2027`. Z hlášení samotného bez zdroje záznam nevzniká. Na webu se nečte, po zveřejnění oficiální nabídky 2027 se uložené záznamy s ní porovnají. Funkce `oboryDoplneneSkolou2027` a `chybyDoplnenehoOboru` v `src/lib/opravy-nabidky.ts`.

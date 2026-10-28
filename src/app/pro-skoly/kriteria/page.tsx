@@ -53,9 +53,24 @@ export default async function PortalKriteriaPage({ searchParams }: { searchParam
     <nav className="mb-5 text-sm text-slate-600"><Link href={`/pro-skoly/profil?skola=${role.redizo}`} className="text-blue-700 hover:underline">Profil školy</Link> / Bodování po oborech</nav>
     <h1 className="mb-2 text-2xl font-bold text-slate-900">Bodování pro {nazev || role.redizo}</h1>
     <p className="mb-6 text-sm text-slate-600">Údaje zadáváte za školu s REDIZO {role.redizo}.{roky.length > 1 ? ` Pravidla ${roky[1]} se do roku ${roky[0]} automaticky nepřenášejí; můžete je ale zkopírovat.` : ''}</p>
+    {roky.length > 0 && <p className="mb-6 text-sm text-slate-600" data-testid="zdroj-oboru">{popisZdrojeOboru(roky, nabidky)}</p>}
     {roky.length === 0
       ? <p role="alert" className="rounded-lg bg-amber-50 p-3 text-sm text-amber-900">Ročník pro zadávání kritérií teď není určený. Zkuste to prosím později.</p>
       : <PortalKriteriaForm redizo={role.redizo} roky={roky} nabidky={nabidky} ulozena={ulozena} podklady={podklady}
           predvyplneni={predvyplneni} dostupne={dostupne} />}
   </PortalObalka>;
+}
+
+/** Věta o tom, z jakého zdroje a ročníku je seznam oborů a jak nahlásit obor, který v něm chybí. */
+function popisZdrojeOboru(roky: number[], nabidky: Record<number, Awaited<ReturnType<typeof oboryProKriteria>>>): string {
+  const casti = roky.map((r) => {
+    const obory = nabidky[r] ?? [];
+    const zdroje: string[] = [];
+    const dipsy = obory.filter((o) => o.zdrojTyp === 'dipsy');
+    const katalog = obory.filter((o) => o.zdrojTyp === 'katalog');
+    if (dipsy.length) zdroje.push('karty nabídky ze systému DiPSy');
+    if (katalog.length) zdroje.push(`nabídka 1. kola ${[...new Set(katalog.map((o) => o.podkladRok))].sort().join(', ')} (CERMAT)`);
+    return zdroje.length ? `pro ${r}: ${zdroje.join(' a ')}` : `pro ${r}: zatím žádný obor`;
+  });
+  return `Seznam oborů vychází z těchto zdrojů: ${casti.join('; ')}. Obor, který škola do nové nabídky přidala, se v seznamu objeví, až ho stát zveřejní. Do té doby nám ho pošlete tlačítkem „Nahlásit chybu“ s kódem oboru a odkazem na zdroj (například kartu v DiPSy nebo stránku školy); bez zdroje ho do dat zapsat nemůžeme.`;
 }

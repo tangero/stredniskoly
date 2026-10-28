@@ -1,5 +1,5 @@
 {
-  "_popis": "Ruční opravy nabídky škol podle hlášení škol z portálu (issue #371). Klíč opravy je RED IZO a KKOV oboru. Pole `plati_pro`: `zobrazeni` se použije hned při zobrazení oboru (název), `2027` se jen uchovává pro opravu nabídky 2027 a na webu se zatím nečte. Zdroj, datum hlášení a RED IZO jsou povinné u každé opravy (kontroluje tests/opravy-nabidky.test.mjs).",
+  "_popis": "Ruční opravy nabídky škol podle hlášení škol z portálu (issue #371). Klíč opravy je RED IZO a KKOV oboru. Pole `plati_pro`: `zobrazeni` se použije hned při zobrazení oboru (název), `2027` se jen uchovává pro opravu nabídky 2027 a na webu se zatím nečte. Zdroj, datum hlášení a RED IZO jsou povinné u každé opravy (kontroluje tests/opravy-nabidky.test.mjs). Pole `obor_doplneny` (plati_pro 2027) uchovává obor, který škola doplnila do nabídky 2027: povinné jsou `nazev`, `forma`, `zdroj`, `zdroj_adresa` (karta DiPSy nebo web školy) a `hlaseno`; z hlášení bez zdroje záznam nevzniká a na webu se nečte (issue #541).",
   "opravy": [
     {
       "redizo": "600017257",
