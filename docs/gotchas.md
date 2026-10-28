@@ -108,3 +108,9 @@ zaměření. Do zdrojů, které stránky čtou, proto nepatří nic, co by hled�
   žádný zápis ani čtení, e-maily ani tlačítko neexistují (E5, E6). Rozdílový skript `scripts/sledovani-rozdil.mjs`
   nad snímky zobrazených hodnot sady zapisuje jen s `--zapis` a nikdo ho zatím nepouští.
 
+
+## Veletrhy: SQL zápis nezneplatní cache webu
+
+Akce veletrhů se čtou přes cache s tagem `veletrhy` bez časové platnosti (`src/lib/veletrhy-zdroj.ts`). Zápis do
+`veletrh_akce` přímo přes SQL (revize pro vlastníka) mimo Next.js cache nezneplatní, web ukazuje starý stav i týdny.
+Po každé SQL revizi zavolej `POST /api/veletrhy/revalidace` s `CRON_SECRET` (postup v `docs/veletrhy-api-2027.md`, #544).
