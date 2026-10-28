@@ -22,6 +22,7 @@ from pathlib import Path
 
 VYSLEDKY = Path("docs/podklady/vysledky-navaznosti-2025-2026")
 FRONTA = Path("docs/podklady/fronta-dohledavani-2025-2026.json")
+NABIDKA_2026 = Path("public/applications_2026.json")
 VYSTUP = Path("public/navaznost_notes.json")
 
 VYZVA = ("Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ "
@@ -30,9 +31,18 @@ NEJISTOTA = "Spojení s dřívější nabídkou nemáme doložené jednoznačně
 NESROVNATELNE = "Starší výsledky proto nejsou s letošní nabídkou plně srovnatelné."
 
 
-def veta(f, obor, zamereni_2025, zamereni_2026):
-    """Jedna věta o tom, co se s nabídkou mezi roky stalo."""
+def veta(f, obor, zamereni_2025, zamereni_2026, obor_trva=False):
+    """Jedna věta o tom, co se s nabídkou mezi roky stalo.
+
+    `obor_trva` říká, že škola obor v nabídce 2026 má (třeba s jiným zaměřením).
+    Poznámka se klíčuje oborem bez zaměření, takže uzavření jednoho zaměření
+    nesmí na stránce zaznít jako konec celého oboru (hlášení #538).
+    """
     typ = f["relationship"]["type"]
+    if typ == "closed" and obor_trva:
+        nabidka = f"zaměření „{zamereni_2025}“" if zamereni_2025 else "jednu z loňských nabídek"
+        return (f"Škola pro přijímací řízení 2026 nevypsala {nabidka} oboru {obor}. "
+                f"Obor sám v nabídce zůstává.")
     if typ == "closed":
         return (f"Obor {obor} škola pro přijímací řízení 2026 nevypsala. "
                 f"V roce 2025 jej v nabídce měla, proto tu najdete starší výsledky.")
@@ -58,6 +68,8 @@ def veta(f, obor, zamereni_2025, zamereni_2026):
 def main():
     fronta = json.loads(FRONTA.read_text())
     ukoly = {t["id"]: t for t in fronta["tasks"]}
+    nabidka_2026 = {f"{r['redizo']}_{r['kkov']}"
+                    for r in json.loads(NABIDKA_2026.read_text())["data"]}
     dnes = date.today().isoformat()
 
     podle_klice = defaultdict(list)
@@ -84,7 +96,8 @@ def main():
                         for r, d in zaznamy if r == 2025), "")
             z26 = next((str(d.get("ZAMĚŘENÍ OBORU") or "").strip()
                         for r, d in zaznamy if r == 2026), "")
-            text = veta(f, f"{obor} ({kkov})" if obor else kkov, z25, z26)
+            text = veta(f, f"{obor} ({kkov})" if obor else kkov, z25, z26,
+                        obor_trva=f"{redizo}_{kkov}" in nabidka_2026)
             if not text:
                 continue
             nejiste = (f["status"] != "potvrzeno"
