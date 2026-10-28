@@ -50,7 +50,7 @@ jobs:
       # Mezinárodní rozhraní Kimi Code; pro účet z kimi.com (Čína) nastav proměnnou repozitáře
       # KIMI_BASE_URL na https://api.kimi.com/coding/.
       KIMI_URL: ${{ vars.KIMI_BASE_URL || 'https://api.kimi.ai/coding/' }}
-      KIMI_MODEL: k3-256k
+      KIMI_MODEL: k3.1-pro
       FAZE: .claude/skills/oponentura/faze
     steps:
       - uses: actions/checkout@v4

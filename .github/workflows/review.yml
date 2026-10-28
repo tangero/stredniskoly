@@ -52,7 +52,7 @@ jobs:
       GH_REPO: ${{ github.repository }}
       # Stejné rozhraní a model jako Oponentura (docs/spoluprace-na-githubu.md, oddíl 3).
       KIMI_URL: ${{ vars.KIMI_BASE_URL || 'https://api.kimi.ai/coding/' }}
-      KIMI_MODEL: k3-256k
+      KIMI_MODEL: k3.1-pro
     steps:
       - uses: actions/checkout@v4
         with:
@@ -181,7 +181,7 @@ jobs:
     env:
       CISLO: ${{ github.event.pull_request.number || inputs.pr }}
       SHA: ${{ needs.review.outputs.sha }}
-      KIMI_MODEL: k3-256k
+      KIMI_MODEL: k3.1-pro
     steps:
       - uses: actions/checkout@v4
         with:
