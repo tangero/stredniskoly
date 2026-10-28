@@ -1,6 +1,6 @@
 # Zdroje dat
 
-Verze 1.37 · 28. 10. 2026 · **Závazný soupis. Před návrhem stránky nebo funkce se prochází celý.**
+Verze 1.38 · 28. 10. 2026 · **Závazný soupis. Před návrhem stránky nebo funkce se prochází celý.**
 
 Tenhle dokument vznikl kvůli konkrétní chybě. Návrh stránky školy jsem sestavil z toho, co web už zobrazoval, místo z toho, co je ve zdrojových souborech. Tři užitečné údaje proto ležely nepoužité v souborech, které jsem měl otevřené: rozpad přihlášek podle priority jako podíl, souběžné přihlášky uchazečů a nejnižší výsledek jednotné zkoušky mezi přijatými. Poslední z nich byl dokonce už spočítaný a uložený v katalogu, zatímco [slovník ukazatelů](slovnik-ukazatelu.md) tvrdil, že ho nemáme.
 
