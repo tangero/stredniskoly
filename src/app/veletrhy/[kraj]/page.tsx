@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
-import { zobrazitelneAkce, overSezonuProtiRegistru } from '@/lib/veletrhy';
+import { zobrazitelneAkce, overSezonuProtiRegistru, overenoK } from '@/lib/veletrhy';
 import { cesskyDen, formatujDen, metaVeletrhuKraje, rocnikAkci } from '@/lib/veletrhy-pocty';
 import { nactiAkce } from '@/lib/veletrhy-zdroj';
 import { nadpisKraje, vsechnyKraje } from '@/lib/kraje.mjs';
@@ -154,7 +154,7 @@ export default async function VeletrhyKrajPage({ params }: Props) {
           </p>
           <p className="mt-3 text-sm text-gray-600">
             Termín a podmínky si před cestou ověřte na stránce pořadatele.{' '}
-            {nadchazejici.length > 0 && `Údaje jsme naposledy ověřovali ${formatujDen(nadchazejici.map((a) => a.overeno).filter((d): d is string => Boolean(d)).sort().at(-1) ?? nadchazejici[0].start!)}.`}
+            {nadchazejici.length > 0 && `Údaje jsme naposledy ověřovali ${formatujDen(overenoK(nadchazejici))}.`}
           </p>
         </section>
       </div>

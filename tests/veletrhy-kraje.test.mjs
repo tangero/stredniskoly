@@ -5,7 +5,9 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import { metaVeletrhuKraje, rocnikAkci } from '../src/lib/veletrhy-pocty.ts';
-import { krajNames } from '../src/lib/kraje.mjs';
+import { krajNames, vsechnyKraje } from '../src/lib/kraje.mjs';
+import { zobrazitelneAkce } from '../src/lib/veletrhy.ts';
+import { createKrajSlug } from '../src/lib/utils.ts';
 
 const KODY = Object.keys(krajNames);
 const akce = [{ mesto: 'Nymburk', online: false }, { mesto: 'Kolín' }, { mesto: 'Nymburk' }];
@@ -49,4 +51,27 @@ test('K4: prázdný kraj netvrdí nadcházející akce', () => {
 test('K5: obnovVeletrhy zneplatní i krajské podstránky', () => {
   const zdroj = fs.readFileSync(new URL('../src/lib/veletrhy-zdroj.ts', import.meta.url), 'utf8');
   assert.match(zdroj, /revalidatePath\('\/veletrhy\/\[kraj\]', 'page'\)/);
+});
+
+test('K1: generateStaticParams vrací slug všech 14 krajů, neznámý slug je 404 (dynamicParams = false)', async () => {
+  const stranka = await import('../src/app/veletrhy/[kraj]/page.tsx');
+  const ocekavane = vsechnyKraje().map((k) => createKrajSlug(k.kod, k.nazev)).sort();
+  assert.equal(ocekavane.length, 14);
+  assert.deepEqual(stranka.generateStaticParams().map((p) => p.kraj).sort(), ocekavane);
+  assert.equal(stranka.dynamicParams, false);
+  const meta = await stranka.generateMetadata({ params: Promise.resolve({ kraj: 'neexistujici-kraj' }) });
+  assert.equal(meta.title, 'Kraj nenalezen');
+});
+
+test('K3: akce krajů dohromady dávají přesně výběr zobrazitelných akcí, každá akce je právě v jednom kraji', () => {
+  const ke = new Date('2026-09-22');
+  const vsechny = zobrazitelneAkce(ke);
+  const idy = [];
+  for (const k of vsechnyKraje()) {
+    for (const a of zobrazitelneAkce(ke).filter((x) => x.krajKod === k.kod)) idy.push(a.id);
+  }
+  const znameKraje = new Set(vsechnyKraje().map((k) => k.kod));
+  const ocekavane = vsechny.filter((a) => znameKraje.has(a.krajKod)).map((a) => a.id);
+  assert.deepEqual([...idy].sort(), [...ocekavane].sort());
+  assert.equal(new Set(idy).size, idy.length);
 });
