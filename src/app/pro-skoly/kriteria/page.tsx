@@ -74,7 +74,7 @@ function popisZdrojeOboru(roky: number[], nabidky: Record<number, Awaited<Return
   });
   const zKatalogu = roky.some((r) => (nabidky[r] ?? []).some((o) => o.zdrojTyp === 'katalog'));
   const chybi = zKatalogu
-    ? 'Obory bez jednotné zkoušky (učební obory a umělecké obory s talentovou zkouškou) ani obor, který škola do nové nabídky přidala, v seznamu nejsou, dokud stát nezveřejní kartu nabídky v DiPSy.'
+    ? 'Obory bez jednotné zkoušky (například učební obory a umělecké obory s talentovou zkouškou) ani obor, který škola do nové nabídky přidala, v seznamu nejsou, dokud stát nezveřejní kartu nabídky v DiPSy.'
     : 'Obor, který škola do nové nabídky přidala, se v seznamu objeví, až ho stát zveřejní.';
   return `Seznam oborů vychází z těchto zdrojů: ${casti.join('; ')}. ${chybi} Nový obor nám do té doby pošlete tlačítkem „Nahlásit chybu“ s kódem oboru a odkazem na zdroj (například kartu v DiPSy nebo stránku školy); bez zdroje ho do dat zapsat nemůžeme.`;
 }
