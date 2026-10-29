@@ -24,6 +24,8 @@ async function novaDb() {
      values ($1, 'https://skola.example.cz/aktuality/', 'W/"abc"', 'Wed, 01 Jan 2026 00:00:00 GMT')`,
     [redizo],
   );
+  // 110 znaků: čtečka titulek nezkracuje (MAX_TITULEK 120), identita se nemění, nesmí se zneplatnit
+  await vloz('00000000-0000-0000-0000-000000000005', '600015700', 'https://skola.example.cz/aktuality#aaaaaaaaaaaaaaaa', 'A'.repeat(110));
   await feed('600015700');
   await feed('600018083');
   await feed('600000001');
