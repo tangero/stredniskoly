@@ -377,7 +377,8 @@ Po otevření nebo aktualizaci PR od vlastníka napíše asistent zadání revie
   nálezy s id, počet řádků PR při prvním review). Další review dostane předchozí nálezy, odpovědi pod nimi a diff
   od posledního review; u předchozích nálezů určí `vyreseno`, `trva` nebo `neplati` (bez stavu nález trvá)
   a nový P2 blokuje jen na řádku změněném od posledního review. Když commit posledního review ve větvi není
-  (force-push), posoudí celý PR.
+  (force-push) nebo jde o ruční opakování téže hlavy, posoudí celý PR. Stav nenese text modelu; popis předchozího
+  nálezu se bere z viditelného řádku komentáře (`- N1 **P2** …`).
 - **Nepovedené review (RA53):** u #517 a #547 selhalo review kvůli vyčerpanému limitu nebo přístupu předplatného
   Kimi (API 403), ne kvůli tvaru výstupu. Takové selhání se neopakuje (hned by selhalo znovu) a komentář řekne
   důvod a co udělat. Neplatný výstup modelu se zkusí znovu, nejvýš třikrát, s upozorněním na tvar. Nepovedené

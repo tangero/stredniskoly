@@ -7,7 +7,7 @@ import { execFileSync } from 'node:child_process';
 import yaml from 'js-yaml';
 import {
   zmeneneRadky, blokuje, vyhodnot, slozReview, slozOpravu, ctiStav, zapisStav, posledniStav,
-  podkladPredchozich, kontextZapisu, nactiVystup, duvodSelhani,
+  podkladPredchozich, kontextZapisu, nactiVystup, duvodSelhani, popisyNalezu,
 } from '../scripts/brana/review.mjs';
 import { review, BOT } from '../scripts/brana/brana.mjs';
 import { rozhodniOpravu, vetoTed, nafukuje, DUVOD_SCHVALENO, ZNACKA_KOLA } from '../scripts/brana/oprava-z-review.mjs';
@@ -117,7 +117,7 @@ const prvni = () => {
 const DIFF_OD = ['diff --git a/src/lib/skola.ts b/src/lib/skola.ts', '--- a/src/lib/skola.ts', '+++ b/src/lib/skola.ts', '@@ -14,1 +14,1 @@', '-x', '+y', ''].join('\n');
 
 test('K3: opakované review: nový P2 mimo změny od review neblokuje, předchozí nález bez stavu trvá', () => {
-  const predchozi = ctiStav(prvni().telo);
+  const predchozi = posledniStav([prvni()], konfig, SHA2);
   const kontext = { radky: RADKY, radkyOd: zmeneneRadky(DIFF_OD), predchozi, pocetRadku: 60 };
   // Model nový nález ve starém kódu (řádek 11) a k N1 nic neřekl.
   const h = vyhodnot({ shrnuti: 'x', nalezy: [nalez({ popis: 'Jiná věc.' })], predchozi: [] }, kontext);
@@ -145,7 +145,7 @@ test('K3: opakované review: nový P2 mimo změny od review neblokuje, předchoz
 });
 
 test('K3: bez mapy změn od review (commit nedostupný) review posoudí celý PR a řekne to', () => {
-  const predchozi = ctiStav(prvni().telo);
+  const predchozi = posledniStav([prvni()], konfig, SHA2);
   const telo = slozReview({ vystup: { shrnuti: 'x', nalezy: [nalez()] }, sha: SHA2, znacka: ZNACKA, model: 'k3', kontext: { radky: RADKY, radkyOd: null, predchozi } });
   assert.match(telo, /Verdikt: Nálezy k opravě \(P2\)/);
   assert.match(telo, /nedalo navázat/);
@@ -261,4 +261,59 @@ test('K4: důvod selhání podle skutečných chyb #517 a #547 (limit a předpla
   assert.match(telo('neplatny'), /ani na třetí pokus/);
   for (const d of ['constructor', '__proto__', 'cokoli']) assert.match(telo(d), /Review se nepodařilo \(výstup modelu chybí nebo je neplatný\)/);
   assert.equal(review({ hlava: { sha: SHA1 }, komentare: [{ autor: APP, cas: 'x', telo: telo('limit') }] }, konfig).ok, false);
+});
+
+test('P5 (#552): stav review nenese text modelu, popis pro další review se bere z viditelného komentáře', () => {
+  const vystup = { shrnuti: 'x', nalezy: [nalez({ popis: 'TEXT-MODELU-POPIS', dukaz: 'TEXT-MODELU-DUKAZ' })] };
+  const telo = slozReview({ vystup, sha: SHA1, znacka: ZNACKA, model: 'k3', kontext: { radky: RADKY } });
+  const ulozeny = Buffer.from(telo.match(/<!-- review:stav ([\w-]+) -->/)[1], 'base64url').toString('utf8');
+  assert.doesNotMatch(ulozeny, /TEXT-MODELU/);
+  assert.deepEqual(Object.keys(JSON.parse(ulozeny).nalezy[0]).sort(), ['blokuje', 'id', 'kategorie', 'priorita', 'radek', 'soubor']);
+  assert.match(telo, /^- N1 \*\*P2\*\* \(chovani\) `src\/lib\/skola.ts:11`: TEXT-MODELU-POPIS Důkaz: TEXT-MODELU-DUKAZ$/m);
+  assert.equal(podkladPredchozich([{ autor: APP, telo }], konfig, SHA2).nalezy[0].popis, 'TEXT-MODELU-POPIS');
+  // Trvající nález nese popis i do dalšího kola (řádek „Předchozí nálezy“).
+  const predchozi = posledniStav([{ autor: APP, telo }], konfig, SHA2);
+  const druhe = slozReview({ vystup: { shrnuti: 'x', nalezy: [] }, sha: SHA2, znacka: ZNACKA, model: 'k3', kontext: { radky: RADKY, radkyOd: {}, predchozi } });
+  assert.match(druhe, /^- N1 \*\*P2\*\* `src\/lib\/skola.ts:11`: TEXT-MODELU-POPIS \| stav: trvá$/m);
+  assert.equal(posledniStav([{ autor: APP, telo }, { autor: APP, telo: druhe }], konfig, 'c'.repeat(40)).nalezy[0].popis, 'TEXT-MODELU-POPIS');
+});
+
+test('P2 (#552): ruční opakování téže hlavy nenaváže na starší review, posoudí celý PR', () => {
+  const starsi = prvni();
+  const posledni = { autor: APP, telo: slozReview({ vystup: { shrnuti: 'x', nalezy: [nalez({ radek: 14 })] }, sha: SHA2, znacka: ZNACKA, model: 'k3', kontext: { radky: RADKY } }) };
+  assert.equal(posledniStav([starsi, posledni], konfig, SHA2), null);
+  assert.equal(podkladPredchozich([starsi, posledni], konfig, SHA2), null);
+  assert.equal(posledniStav([starsi, posledni], konfig, 'c'.repeat(40)).sha, SHA2, 'nová hlava naváže na poslední review');
+});
+
+test('P3 (#553): ruční opakování téže hlavy nemění základ pojistky proti nafukování', () => {
+  const prvniReview = prvni(); // hlava SHA1, 50 řádků
+  const druhe = { autor: APP, telo: slozReview({ vystup: { shrnuti: 'x', nalezy: [] }, sha: SHA2, znacka: ZNACKA, model: 'k3', kontext: { radky: RADKY, radkyOd: {}, predchozi: posledniStav([prvniReview], konfig, SHA2), pocetRadku: 90 } }) };
+  const slozka = fs.mkdtempSync(path.join(os.tmpdir(), 'review-'));
+  const kontext = kontextZapisu({ slozka, komentare: [prvniReview, druhe], konfig, pr: { head: { sha: SHA2 }, additions: 180, deletions: 0 } });
+  fs.rmSync(slozka, { recursive: true });
+  assert.equal(kontext.predchozi, null, 'téže hlavy: celé review');
+  const opakovane = ctiStav(slozReview({ vystup: { shrnuti: 'x', nalezy: [] }, sha: SHA2, znacka: ZNACKA, model: 'k3', kontext }));
+  assert.equal(opakovane.prvni_sha, SHA1);
+  assert.equal(opakovane.prvni_radky, 50);
+  assert.equal(opakovane.radky, 180);
+});
+
+test('#553: každý nález ve stavu má viditelný řádek s popisem, i při víc než 20 blokujících', () => {
+  const nalezy = Array.from({ length: 45 }, (_, i) => nalez({ popis: `Chyba číslo ${i + 1}.` }));
+  const telo = slozReview({ vystup: { shrnuti: 'x', nalezy }, sha: SHA1, znacka: ZNACKA, model: 'k3', kontext: { radky: RADKY } });
+  const stav = ctiStav(telo);
+  assert.equal(stav.nalezy.length, 40);
+  const viditelne = popisyNalezu(telo);
+  const popisy = stav.nalezy.map((n) => viditelne.get(n.id));
+  assert.ok(popisy.every(Boolean), 'žádný uložený nález bez popisu');
+  assert.equal(popisy[20], 'Chyba číslo 21.');
+  assert.match(telo, /- … a dalších 5 nálezů/);
+  assert.match(telo, /Verdikt: Nálezy k opravě/);
+  // Nálezy nad strop se neztratí: neúplný stav vede k celému review v dalším kole.
+  assert.equal(stav.neuplny, true);
+  assert.equal(posledniStav([{ autor: APP, telo }], konfig, 'c'.repeat(40)), null);
+  const malo = slozReview({ vystup: { shrnuti: 'x', nalezy: nalezy.slice(0, 40) }, sha: SHA1, znacka: ZNACKA, model: 'k3', kontext: { radky: RADKY } });
+  assert.equal(ctiStav(malo).neuplny, undefined);
+  assert.equal(posledniStav([{ autor: APP, telo: malo }], konfig, SHA2).nalezy.length, 40);
 });
