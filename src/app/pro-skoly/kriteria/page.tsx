@@ -69,8 +69,12 @@ function popisZdrojeOboru(roky: number[], nabidky: Record<number, Awaited<Return
     const dipsy = obory.filter((o) => o.zdrojTyp === 'dipsy');
     const katalog = obory.filter((o) => o.zdrojTyp === 'katalog');
     if (dipsy.length) zdroje.push('karty nabídky ze systému DiPSy');
-    if (katalog.length) zdroje.push(`nabídka 1. kola ${[...new Set(katalog.map((o) => o.podkladRok))].sort().join(', ')} (CERMAT)`);
+    if (katalog.length) zdroje.push(`nabídka 1. kola ${[...new Set(katalog.map((o) => o.podkladRok))].sort().join(', ')} (CERMAT, jen denní obory s jednotnou přijímací zkouškou)`);
     return zdroje.length ? `pro ${r}: ${zdroje.join(' a ')}` : `pro ${r}: zatím žádný obor`;
   });
-  return `Seznam oborů vychází z těchto zdrojů: ${casti.join('; ')}. Obor, který škola do nové nabídky přidala, se v seznamu objeví, až ho stát zveřejní. Do té doby nám ho pošlete tlačítkem „Nahlásit chybu“ s kódem oboru a odkazem na zdroj (například kartu v DiPSy nebo stránku školy); bez zdroje ho do dat zapsat nemůžeme.`;
+  const zKatalogu = roky.some((r) => (nabidky[r] ?? []).some((o) => o.zdrojTyp === 'katalog'));
+  const chybi = zKatalogu
+    ? 'Obory bez jednotné zkoušky (například učební obory a umělecké obory s talentovou zkouškou) ani obor, který škola do nové nabídky přidala, v seznamu nejsou, dokud stát nezveřejní kartu nabídky v DiPSy.'
+    : 'Obor, který škola do nové nabídky přidala, se v seznamu objeví, až ho stát zveřejní.';
+  return `Seznam oborů vychází z těchto zdrojů: ${casti.join('; ')}. ${chybi} Nový obor nám do té doby pošlete tlačítkem „Nahlásit chybu“ s kódem oboru a odkazem na zdroj (například kartu v DiPSy nebo stránku školy); bez zdroje ho do dat zapsat nemůžeme.`;
 }
