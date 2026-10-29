@@ -7,7 +7,7 @@ import { execFileSync } from 'node:child_process';
 import yaml from 'js-yaml';
 import {
   zmeneneRadky, blokuje, vyhodnot, slozReview, slozOpravu, ctiStav, zapisStav, posledniStav,
-  podkladPredchozich, kontextZapisu, nactiVystup, duvodSelhani,
+  podkladPredchozich, kontextZapisu, nactiVystup, duvodSelhani, popisyNalezu,
 } from '../scripts/brana/review.mjs';
 import { review, BOT } from '../scripts/brana/brana.mjs';
 import { rozhodniOpravu, vetoTed, nafukuje, DUVOD_SCHVALENO, ZNACKA_KOLA } from '../scripts/brana/oprava-z-review.mjs';
@@ -304,9 +304,16 @@ test('#553: každý nález ve stavu má viditelný řádek s popisem, i při ví
   const telo = slozReview({ vystup: { shrnuti: 'x', nalezy }, sha: SHA1, znacka: ZNACKA, model: 'k3', kontext: { radky: RADKY } });
   const stav = ctiStav(telo);
   assert.equal(stav.nalezy.length, 40);
-  const popisy = posledniStav([{ autor: APP, telo }], konfig, SHA2).nalezy.map((n) => n.popis);
+  const viditelne = popisyNalezu(telo);
+  const popisy = stav.nalezy.map((n) => viditelne.get(n.id));
   assert.ok(popisy.every(Boolean), 'žádný uložený nález bez popisu');
   assert.equal(popisy[20], 'Chyba číslo 21.');
   assert.match(telo, /- … a dalších 5 nálezů/);
   assert.match(telo, /Verdikt: Nálezy k opravě/);
+  // Nálezy nad strop se neztratí: neúplný stav vede k celému review v dalším kole.
+  assert.equal(stav.neuplny, true);
+  assert.equal(posledniStav([{ autor: APP, telo }], konfig, 'c'.repeat(40)), null);
+  const malo = slozReview({ vystup: { shrnuti: 'x', nalezy: nalezy.slice(0, 40) }, sha: SHA1, znacka: ZNACKA, model: 'k3', kontext: { radky: RADKY } });
+  assert.equal(ctiStav(malo).neuplny, undefined);
+  assert.equal(posledniStav([{ autor: APP, telo: malo }], konfig, SHA2).nalezy.length, 40);
 });

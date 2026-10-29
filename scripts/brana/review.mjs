@@ -29,7 +29,8 @@ export const TOLERANCE_RADKU = 2;
 const ZNACKA_STAVU = /<!-- review:stav ([A-Za-z0-9_-]+) -->/;
 const MAX_NALEZU = 20;
 // Blokující nálezy se vypisují všechny až do tohoto stropu a stav ukládá přesně ty vypsané: popis nálezu se
-// v dalším kole bere z viditelného řádku (#553). Strop drží komentář pod limitem velikosti GitHubu.
+// v dalším kole bere z viditelného řádku (#553). Strop drží komentář pod limitem velikosti GitHubu. Nad stropem
+// je stav neúplný a další review posoudí celý PR.
 const MAX_BLOKUJICICH = 40;
 const MAX_POPIS = 600;
 const RADEK_COMMIT = /^[\s>*_]*Commit:[\s*_]*`?([0-9a-f]{7,40})\b/im;
@@ -190,6 +191,8 @@ export function posledniStav(komentare = [], konfig, sha = '') {
     // Ruční opakování téže hlavy (#552): navázat na starší review by nálezy posledního review tiše ztratilo,
     // proto se posoudí celý PR.
     if (s.sha === sha) return null;
+    // Neúplný stav (víc blokujících nálezů než strop výpisu): navázat by nálezy nad strop ztratilo.
+    if (s.neuplny) return null;
     // Stav nenese text modelu (P5 zadání #551); popis nálezu se bere z viditelného textu téhož komentáře.
     const popisy = popisyNalezu(k.telo);
     return { ...s, nalezy: (s.nalezy || []).map((n) => ({ ...n, popis: popisy.get(n.id) || '' })) };
@@ -312,6 +315,7 @@ export function slozReview({ vystup, sha, znacka, model, kontext = {}, duvod = '
     prvni_sha: kontext.predchozi?.prvni_sha || kontext.zaklad?.prvni_sha || sha,
     prvni_radky: kontext.predchozi?.prvni_radky ?? kontext.zaklad?.prvni_radky ?? kontext.pocetRadku ?? null,
     radky: kontext.pocetRadku ?? null,
+    ...(blok.length > blokVypsane.length ? { neuplny: true } : {}),
     nalezy: [...h.minule.filter((n) => n.blokuje), ...blokVypsane].map((n) => ({ id: n.id, priorita: n.priorita, kategorie: n.kategorie, soubor: bezpecnyText(cestaNalezu(n.soubor), 200), radek: n.radek, blokuje: true })),
   });
   return `## Review\n\nVerdikt: ${verdikt}\nCommit: ${kratke}\n\n${bezpecnyText(vystup.shrnuti, 1200)}${poznamka}\n\n${casti.join('\n\n')}\n${paticka}\n${stav}`;
