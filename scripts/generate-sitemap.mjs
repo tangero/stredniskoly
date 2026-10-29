@@ -143,6 +143,7 @@ export function buildSitemapPaths(analysisData, schoolsData, rocnik, inspections
   ]);
   for (const year of resultYears) paths.add(`/vysledky/${year}`);
   for (const kraj of buildKrajSlugs(analysisData)) paths.add(`/regiony/${kraj}`);
+  for (const nazev of Object.values(krajNames)) paths.add(`/veletrhy/${slugify(nazev)}`);
   for (const mesto of MESTA) paths.add(`/mesto/${mesto.slug}`);
   for (const slug of schoolSlugs) paths.add(`/skola/${slug}`);
 

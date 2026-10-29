@@ -8,6 +8,7 @@
 // ============================================================================
 
 import { tvar } from './cesky-tvar.ts';
+import { nadpisKraje } from './kraje.mjs';
 
 /**
  * Den v českém kalendáři jako `YYYY-MM-DD`; UTC by mezi půlnocí a ránem
@@ -88,4 +89,43 @@ export function metaVeletrhu(akce: { start: string; end: string; krajKod: string
     `${akci(akce.length)} ${predlozkaV(kraju)} ${krajuText} (${mesice}): veletrhy a přehlídky středních škol ` +
     'po krajích, s městy, termíny a odkazy na pořadatele.';
   return { title, description };
+}
+
+/** Ročník z dat akcí: „2026/27“, nebo „2027“, když všechny leží v jednom roce; bez akcí prázdný řetězec. */
+export function rocnikAkci(akce: { start: string; end: string }[]): string {
+  if (akce.length === 0) return '';
+  const r1 = Number(akce.reduce((m, a) => (a.start < m ? a.start : m), akce[0].start).slice(0, 4));
+  const r2 = Number(akce.reduce((m, a) => (a.end > m ? a.end : m), akce[0].end).slice(0, 4));
+  return r1 === r2 ? `${r1}` : `${r1}/${String(r2).slice(2)}`;
+}
+
+/**
+ * Titulek a popisek krajské podstránky /veletrhy/[kraj] (#545). Titulek nese kraj a ročník,
+ * popisek počet nadcházejících akcí a města, kde se konají; bez nadcházející akce netvrdí žádnou.
+ * `akce` jsou nadcházející akce tohoto kraje, `rocnik` z `rocnikAkci` nad celou sezónou.
+ */
+export function metaVeletrhuKraje(
+  krajKod: string,
+  akce: { mesto: string | null; online?: boolean }[],
+  rocnik: string,
+): { title: string; description: string } {
+  const nadpis = nadpisKraje(krajKod);
+  let title = `Veletrhy středních škol ${nadpis}${rocnik ? ` ${rocnik}` : ''}`;
+  if (title.length > TITULEK_MAX) title = `Veletrhy SŠ ${nadpis}${rocnik ? ` ${rocnik}` : ''}`;
+  if (akce.length === 0) {
+    return {
+      title,
+      description:
+        `Veletrhy a přehlídky středních škol: ${nadpis}. Nadcházející akci teď nevedeme; ` +
+        'najdete tu proběhlé akce a odkaz na nahlášení akce, která chybí.',
+    };
+  }
+  const mesta = [...new Set(akce.filter((a) => a.mesto && !a.online).map((a) => a.mesto!))];
+  const kde = mesta.length > 0 ? ` (${mesta.slice(0, 5).join(', ')}${mesta.length > 5 ? ' a další' : ''})` : '';
+  return {
+    title,
+    description:
+      `${akci(akce.length)}${kde}: veletrhy a přehlídky středních škol, ${nadpis}. ` +
+      'Termíny, místa a odkazy na pořadatele.',
+  };
 }

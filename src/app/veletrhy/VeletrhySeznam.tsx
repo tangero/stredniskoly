@@ -40,6 +40,8 @@ interface Props {
   varianta?: 'b';
   /** „Co si na veletrhu zjistit“. Varianta B to položí vedle seznamu. */
   otazky?: ReactNode;
+  /** Krajská podstránka (#545): bez mapy a čipů, seznam už je jen jednoho kraje. */
+  bezVyberuKraje?: boolean;
 }
 
 /**
@@ -157,7 +159,7 @@ function NejblizsiAkce({ akce }: { akce: VeletrhKarta[] }) {
  * Proběhlé akce filtruje i klient, ne jen server: stránka se přestavuje
  * po hodinách, takže by akce po svém posledním dni chvíli visela dál.
  */
-export function VeletrhySeznam({ akce, den, varianta, otazky }: Props) {
+export function VeletrhySeznam({ akce, den, varianta, otazky, bezVyberuKraje }: Props) {
   const [kraj, setKraj] = useState('');
 
   // První render musí vyjít stejně na serveru i v prohlížeči, jinak React
@@ -302,6 +304,7 @@ export function VeletrhySeznam({ akce, den, varianta, otazky }: Props) {
 
   const telo = (
     <>
+      {!bezVyberuKraje && (
       <nav id={varianta === 'b' ? 'kde' : undefined} aria-label="Kraje s akcemi">
         <p className="text-sm font-medium text-gray-700 mb-2">Kde se veletrh koná</p>
         <div className="lg:grid lg:grid-cols-[minmax(0,3fr)_minmax(0,2fr)] lg:items-center lg:gap-8">
@@ -341,7 +344,20 @@ export function VeletrhySeznam({ akce, den, varianta, otazky }: Props) {
         </div>
         </div>
         <p className="mt-2 text-xs text-gray-500">Hranice krajů: © ČÚZK, RÚIAN, CC BY 4.0</p>
+        {/* Čipy jen filtrují seznam na stránce; samostatné stránky krajů (#545) mají vlastní odkazy. */}
+        <p className="mt-3 text-sm text-gray-600">
+          Veletrhy v samostatné stránce kraje:{' '}
+          {KRAJE.map((k, i) => (
+            <span key={k.kod}>
+              {i > 0 && ' · '}
+              <Link href={`/veletrhy/${k.slug}`} className="text-blue-600 hover:underline">
+                {k.cip}
+              </Link>
+            </span>
+          ))}
+        </p>
       </nav>
+      )}
 
       {vybrany && !vybranyBezAkci && (
         <p className="text-sm text-gray-600">
