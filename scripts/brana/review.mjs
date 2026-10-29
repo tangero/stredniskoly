@@ -186,9 +186,33 @@ export function posledniStav(komentare = [], konfig, sha = '') {
   for (const k of [...komentare].reverse()) {
     if (k.autor !== r.automatika || !znacka || !(k.telo || '').includes(znacka) || NEPODARILO.test(k.telo || '')) continue;
     const s = ctiStav(k.telo);
-    if (s && s.sha !== sha) return s;
+    if (!s) continue;
+    // Ruční opakování téže hlavy (#552): navázat na starší review by nálezy posledního review tiše ztratilo,
+    // proto se posoudí celý PR.
+    if (s.sha === sha) return null;
+    // Stav nenese text modelu (P5 zadání #551); popis nálezu se bere z viditelného textu téhož komentáře.
+    const popisy = popisyNalezu(k.telo);
+    return { ...s, nalezy: (s.nalezy || []).map((n) => ({ ...n, popis: popisy.get(n.id) || '' })) };
   }
   return null;
+}
+
+const RADEK_S_ID = /^- (N\d+) \*\*P[123]\*\*(?: \([a-z-]+\))? (?:`[^`]*`|celý PR): (.*)$/;
+
+/** Popisy nálezů podle id z viditelných řádků komentáře review (bez důkazu a stavu). */
+export function popisyNalezu(telo = '') {
+  const mapa = new Map();
+  for (const radek of String(telo).split('\n')) {
+    const m = radek.match(RADEK_S_ID);
+    if (!m || mapa.has(m[1])) continue;
+    let text = m[2];
+    for (const oddel of [' | stav: ', ' Důkaz: ']) {
+      const i = text.lastIndexOf(oddel);
+      if (i >= 0) text = text.slice(0, i);
+    }
+    mapa.set(m[1], text.trim());
+  }
+  return mapa;
 }
 
 /**
@@ -238,7 +262,7 @@ export const DUVODY_SELHANI = {
   jine: 'výstup modelu chybí nebo je neplatný',
 };
 
-const radekNalezu = (n) => `- **${n.priorita}**${n.kategorie ? ` (${n.kategorie})` : ''} ${misto(n)}: ${bezpecnyText(n.popis)}${n.dukaz ? ` Důkaz: ${bezpecnyText(n.dukaz, 300)}` : ''}`;
+const radekNalezu = (n) => `- ${n.id ? `${n.id} ` : ''}**${n.priorita}**${n.kategorie ? ` (${n.kategorie})` : ''} ${misto(n)}: ${bezpecnyText(n.popis)}${n.dukaz ? ` Důkaz: ${bezpecnyText(n.dukaz, 300)}` : ''}`;
 const podlePriority = (a, b) => PRIORITY.indexOf(a.priorita) - PRIORITY.indexOf(b.priorita);
 const STAV_TEXT = { trva: 'trvá', vyreseno: 'vyřešeno', neplati: 'neplatí (zdůvodnění obstálo)' };
 
@@ -257,7 +281,7 @@ export function slozReview({ vystup, sha, znacka, model, kontext = {}, duvod = '
   const h = vyhodnot(vystup, kontext);
   const verdikt = h.blokujici.length ? `Nálezy k opravě (${h.blokujici.map((n) => n.priorita).join(', ')})` : 'Bez P1 a P2';
   const casti = [];
-  if (h.minule.length) casti.push(`### Předchozí nálezy\n\n${h.minule.map((n) => `- ${n.id} **${n.priorita}** ${misto(n)}: ${STAV_TEXT[n.stav]}${n.dukazStavu ? `. ${bezpecnyText(n.dukazStavu, 300)}` : ''}`).join('\n')}`);
+  if (h.minule.length) casti.push(`### Předchozí nálezy\n\n${h.minule.map((n) => `- ${n.id} **${n.priorita}** ${misto(n)}: ${bezpecnyText(n.popis || '')} | stav: ${STAV_TEXT[n.stav]}${n.dukazStavu ? `. ${bezpecnyText(n.dukazStavu, 300)}` : ''}`).join('\n')}`);
   const blok = h.nove.filter((n) => n.blokuje).sort(podlePriority);
   const doporuceni = h.nove.filter((n) => !n.blokuje).sort(podlePriority);
   const vypis = (seznam) => seznam.slice(0, MAX_NALEZU).map(radekNalezu).join('\n') + (seznam.length > MAX_NALEZU ? `\n- … a dalších ${seznam.length - MAX_NALEZU} nálezů` : '');
@@ -270,7 +294,7 @@ export function slozReview({ vystup, sha, znacka, model, kontext = {}, duvod = '
     prvni_sha: kontext.predchozi?.prvni_sha || sha,
     prvni_radky: kontext.predchozi?.prvni_radky ?? kontext.pocetRadku ?? null,
     radky: kontext.pocetRadku ?? null,
-    nalezy: h.blokujici.map((n) => ({ id: n.id, priorita: n.priorita, kategorie: n.kategorie, soubor: bezpecnyText(cestaNalezu(n.soubor), 200), radek: n.radek, blokuje: true, popis: bezpecnyText(n.popis, 300) })),
+    nalezy: h.blokujici.map((n) => ({ id: n.id, priorita: n.priorita, kategorie: n.kategorie, soubor: bezpecnyText(cestaNalezu(n.soubor), 200), radek: n.radek, blokuje: true })),
   });
   return `## Review\n\nVerdikt: ${verdikt}\nCommit: ${kratke}\n\n${bezpecnyText(vystup.shrnuti, 1200)}${poznamka}\n\n${casti.join('\n\n')}\n${paticka}\n${stav}`;
 }
