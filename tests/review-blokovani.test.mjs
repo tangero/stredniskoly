@@ -285,3 +285,16 @@ test('P2 (#552): ruční opakování téže hlavy nenaváže na starší review,
   assert.equal(podkladPredchozich([starsi, posledni], konfig, SHA2), null);
   assert.equal(posledniStav([starsi, posledni], konfig, 'c'.repeat(40)).sha, SHA2, 'nová hlava naváže na poslední review');
 });
+
+test('P3 (#553): ruční opakování téže hlavy nemění základ pojistky proti nafukování', () => {
+  const prvniReview = prvni(); // hlava SHA1, 50 řádků
+  const druhe = { autor: APP, telo: slozReview({ vystup: { shrnuti: 'x', nalezy: [] }, sha: SHA2, znacka: ZNACKA, model: 'k3', kontext: { radky: RADKY, radkyOd: {}, predchozi: posledniStav([prvniReview], konfig, SHA2), pocetRadku: 90 } }) };
+  const slozka = fs.mkdtempSync(path.join(os.tmpdir(), 'review-'));
+  const kontext = kontextZapisu({ slozka, komentare: [prvniReview, druhe], konfig, pr: { head: { sha: SHA2 }, additions: 180, deletions: 0 } });
+  fs.rmSync(slozka, { recursive: true });
+  assert.equal(kontext.predchozi, null, 'téže hlavy: celé review');
+  const opakovane = ctiStav(slozReview({ vystup: { shrnuti: 'x', nalezy: [] }, sha: SHA2, znacka: ZNACKA, model: 'k3', kontext }));
+  assert.equal(opakovane.prvni_sha, SHA1);
+  assert.equal(opakovane.prvni_radky, 50);
+  assert.equal(opakovane.radky, 180);
+});

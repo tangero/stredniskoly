@@ -181,11 +181,8 @@ export const zapisStav = (stav) => `<!-- review:stav ${Buffer.from(JSON.stringif
  * účtu `automatika` se značkou review; stav z jiného komentáře by šel podvrhnout.
  */
 export function posledniStav(komentare = [], konfig, sha = '') {
-  const r = konfig.rezimy;
-  const znacka = r.review?.znacka_automatiky;
   for (const k of [...komentare].reverse()) {
-    if (k.autor !== r.automatika || !znacka || !(k.telo || '').includes(znacka) || NEPODARILO.test(k.telo || '')) continue;
-    const s = ctiStav(k.telo);
+    const s = stavOdRecenzenta(k, konfig);
     if (!s) continue;
     // Ruční opakování téže hlavy (#552): navázat na starší review by nálezy posledního review tiše ztratilo,
     // proto se posoudí celý PR.
@@ -193,6 +190,23 @@ export function posledniStav(komentare = [], konfig, sha = '') {
     // Stav nenese text modelu (P5 zadání #551); popis nálezu se bere z viditelného textu téhož komentáře.
     const popisy = popisyNalezu(k.telo);
     return { ...s, nalezy: (s.nalezy || []).map((n) => ({ ...n, popis: popisy.get(n.id) || '' })) };
+  }
+  return null;
+}
+
+/** Stav z komentáře automatického review (účet `automatika`, značka, ne nepovedené), jinak null. */
+function stavOdRecenzenta(k, konfig) {
+  const r = konfig.rezimy;
+  const znacka = r.review?.znacka_automatiky;
+  if (k.autor !== r.automatika || !znacka || !(k.telo || '').includes(znacka) || NEPODARILO.test(k.telo || '')) return null;
+  return ctiStav(k.telo);
+}
+
+/** Základ pro pojistku proti nafukování z posledního stavu, i téže hlavy (ruční opakování základ nemění). */
+export function zakladPrvniho(komentare = [], konfig) {
+  for (const k of [...komentare].reverse()) {
+    const s = stavOdRecenzenta(k, konfig);
+    if (s) return { prvni_sha: s.prvni_sha || s.sha, prvni_radky: s.prvni_radky ?? null };
   }
   return null;
 }
@@ -291,8 +305,8 @@ export function slozReview({ vystup, sha, znacka, model, kontext = {}, duvod = '
   const poznamka = kontext.predchozi && !h.opakovane ? '\n\n_Předchozí review se nedalo navázat (commit nedostupný), review posoudilo celý PR._' : '';
   const stav = zapisStav({
     sha,
-    prvni_sha: kontext.predchozi?.prvni_sha || sha,
-    prvni_radky: kontext.predchozi?.prvni_radky ?? kontext.pocetRadku ?? null,
+    prvni_sha: kontext.predchozi?.prvni_sha || kontext.zaklad?.prvni_sha || sha,
+    prvni_radky: kontext.predchozi?.prvni_radky ?? kontext.zaklad?.prvni_radky ?? kontext.pocetRadku ?? null,
     radky: kontext.pocetRadku ?? null,
     nalezy: h.blokujici.map((n) => ({ id: n.id, priorita: n.priorita, kategorie: n.kategorie, soubor: bezpecnyText(cestaNalezu(n.soubor), 200), radek: n.radek, blokuje: true })),
   });
@@ -407,6 +421,7 @@ export function kontextZapisu({ slozka, komentare, konfig, pr }) {
     radky: cti('radky.json')?.radky || null,
     radkyOd: predchozi && od?.od === predchozi.sha ? od.radky : null,
     predchozi,
+    zaklad: zakladPrvniho(komentare, konfig),
     pocetRadku: Number.isInteger(pr.additions) ? pr.additions + (pr.deletions || 0) : null,
   };
 }
