@@ -59,6 +59,10 @@ vlastníka, proto se některá pravidla níže vynucují technicky.
 Od 9. 10. 2026 (#455, RA50) píše review ke každé nové hlavě PR automaticky workflow Review (model Kimi K3, účet
 `prijimacky-ai[bot]`) ve stejném tvaru a při P1 nebo P2 samo napíše `@claude`. Tvoje review dál platí a rozhoduje
 naposledy napsané review k hlavě; napiš ho, když s automatickým nesouhlasíš.
+Od RA53 (#551) automatické review blokuje jen P1 a doložené P2 v kódu PR (kategorie chovani, data, text, pravidla,
+kriterium, bezpecnost, s důkazem a na změněném řádku); ostatní nálezy jsou doporučení pod „Doporučení
+(neblokuje)“. Opakované review posuzuje předchozí nálezy a jen změny od posledního review. Na PR se `schvaleno`
+se kolo oprav nespouští. Ve vlastním review se drž stejného měřítka: P2 bez důkazu a mimo změněné řádky dej jako P3.
 
 1. Review piš jako komentář do PR s verdiktem, číslem commitu, ke kterému se vztahuje, a nálezy
    podle závažnosti (P1 blokuje, P2 opravit, P3 poznámka). Brána ho čte strojově, proto drž tvar:

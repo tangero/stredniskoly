@@ -40,6 +40,9 @@ protokolu dostane po nasazení do Telegramu oddíl „Pro vlastníka“ z popisu
 na PR. Automatické review vzniká samo po každém pushi; ruční spuštění: workflow Review s číslem PR. Review od účtu vlastníka (tedy i tvoje) se nepočítá. Lhůta L běží od review. Nálezy P1 a P2 opraví
 workflow „Oprava z review“ na komentář `@claude` (nejvýš 5 kol, pak štítek `potrebuje-cloveka`);
 do PR se štítkem `potrebuje-cloveka` další `@claude` nepiš, rozhodne člověk.
+Automatické review blokuje jen P1 a doložené P2 na řádcích změněných v PR (u opakovaného review od posledního
+review); ostatní nálezy jsou „Doporučení (neblokuje)“ a PR nedrží (RA53, #551). Na PR se `schvaleno` se kolo oprav
+nespustí: po přidání `schvaleno` na větev nepushuj, souhlas platí jen pro hlavu, ke které byl přidán.
 
 **Lhůta L** se založí znovu při novém commitu, změně oddílu „Rozsah“ propojeného issue a novém nebo
 upraveném protokolu. Push na konci lhůty ji tedy restartuje; nepushuj kosmetické změny do čekajícího PR.
