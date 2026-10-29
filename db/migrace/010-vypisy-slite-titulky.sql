@@ -12,3 +12,9 @@ update skola_novinka
    and zneplatneno is null
    and identita ~ '#[0-9a-f]{16}$'
    and char_length(titulek) > 100;
+
+-- Validátory zdroje (ETag, If-Modified-Since) se u těchto škol vynulují, jinak by sklízeč dostal
+-- odpověď 304, výpis nepřečetl a zneplatněné zprávy by se už neuložily s novým titulkem.
+update skola_feed
+   set etag = null, modified_since = null
+ where redizo in ('600015700', '600009327', '600171337', '600018083');
