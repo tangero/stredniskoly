@@ -28,6 +28,9 @@ const STAVY_PREDCHOZICH = ['vyreseno', 'trva', 'neplati'];
 export const TOLERANCE_RADKU = 2;
 const ZNACKA_STAVU = /<!-- review:stav ([A-Za-z0-9_-]+) -->/;
 const MAX_NALEZU = 20;
+// Blokující nálezy se vypisují všechny až do tohoto stropu a stav ukládá přesně ty vypsané: popis nálezu se
+// v dalším kole bere z viditelného řádku (#553). Strop drží komentář pod limitem velikosti GitHubu.
+const MAX_BLOKUJICICH = 40;
 const MAX_POPIS = 600;
 const RADEK_COMMIT = /^[\s>*_]*Commit:[\s*_]*`?([0-9a-f]{7,40})\b/im;
 const NEPODARILO = /^[\s>*_]*Verdikt:[\s*_]*Review se nepodařilo/im;
@@ -298,8 +301,9 @@ export function slozReview({ vystup, sha, znacka, model, kontext = {}, duvod = '
   if (h.minule.length) casti.push(`### Předchozí nálezy\n\n${h.minule.map((n) => `- ${n.id} **${n.priorita}** ${misto(n)}: ${bezpecnyText(n.popis || '')} | stav: ${STAV_TEXT[n.stav]}${n.dukazStavu ? `. ${bezpecnyText(n.dukazStavu, 300)}` : ''}`).join('\n')}`);
   const blok = h.nove.filter((n) => n.blokuje).sort(podlePriority);
   const doporuceni = h.nove.filter((n) => !n.blokuje).sort(podlePriority);
-  const vypis = (seznam) => seznam.slice(0, MAX_NALEZU).map(radekNalezu).join('\n') + (seznam.length > MAX_NALEZU ? `\n- … a dalších ${seznam.length - MAX_NALEZU} nálezů` : '');
-  if (blok.length) casti.push(`### Nálezy\n\n${vypis(blok)}`);
+  const vypis = (seznam, max = MAX_NALEZU) => seznam.slice(0, max).map(radekNalezu).join('\n') + (seznam.length > max ? `\n- … a dalších ${seznam.length - max} nálezů` : '');
+  const blokVypsane = blok.slice(0, MAX_BLOKUJICICH);
+  if (blok.length) casti.push(`### Nálezy\n\n${vypis(blok, MAX_BLOKUJICICH)}`);
   if (doporuceni.length) casti.push(`### Doporučení (neblokuje)\n\nNález bez blokující kategorie, bez důkazu nebo mimo změněné řádky${h.opakovane ? ' od posledního review' : ''}.\n\n${vypis(doporuceni)}`);
   if (!casti.length) casti.push('Bez nálezů.');
   const poznamka = kontext.predchozi && !h.opakovane ? '\n\n_Předchozí review se nedalo navázat (commit nedostupný), review posoudilo celý PR._' : '';
@@ -308,7 +312,7 @@ export function slozReview({ vystup, sha, znacka, model, kontext = {}, duvod = '
     prvni_sha: kontext.predchozi?.prvni_sha || kontext.zaklad?.prvni_sha || sha,
     prvni_radky: kontext.predchozi?.prvni_radky ?? kontext.zaklad?.prvni_radky ?? kontext.pocetRadku ?? null,
     radky: kontext.pocetRadku ?? null,
-    nalezy: h.blokujici.map((n) => ({ id: n.id, priorita: n.priorita, kategorie: n.kategorie, soubor: bezpecnyText(cestaNalezu(n.soubor), 200), radek: n.radek, blokuje: true })),
+    nalezy: [...h.minule.filter((n) => n.blokuje), ...blokVypsane].map((n) => ({ id: n.id, priorita: n.priorita, kategorie: n.kategorie, soubor: bezpecnyText(cestaNalezu(n.soubor), 200), radek: n.radek, blokuje: true })),
   });
   return `## Review\n\nVerdikt: ${verdikt}\nCommit: ${kratke}\n\n${bezpecnyText(vystup.shrnuti, 1200)}${poznamka}\n\n${casti.join('\n\n')}\n${paticka}\n${stav}`;
 }

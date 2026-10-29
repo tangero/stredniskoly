@@ -298,3 +298,15 @@ test('P3 (#553): ruční opakování téže hlavy nemění základ pojistky prot
   assert.equal(opakovane.prvni_radky, 50);
   assert.equal(opakovane.radky, 180);
 });
+
+test('#553: každý nález ve stavu má viditelný řádek s popisem, i při víc než 20 blokujících', () => {
+  const nalezy = Array.from({ length: 45 }, (_, i) => nalez({ popis: `Chyba číslo ${i + 1}.` }));
+  const telo = slozReview({ vystup: { shrnuti: 'x', nalezy }, sha: SHA1, znacka: ZNACKA, model: 'k3', kontext: { radky: RADKY } });
+  const stav = ctiStav(telo);
+  assert.equal(stav.nalezy.length, 40);
+  const popisy = posledniStav([{ autor: APP, telo }], konfig, SHA2).nalezy.map((n) => n.popis);
+  assert.ok(popisy.every(Boolean), 'žádný uložený nález bez popisu');
+  assert.equal(popisy[20], 'Chyba číslo 21.');
+  assert.match(telo, /- … a dalších 5 nálezů/);
+  assert.match(telo, /Verdikt: Nálezy k opravě/);
+});
