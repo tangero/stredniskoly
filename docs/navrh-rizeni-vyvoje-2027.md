@@ -1,6 +1,6 @@
 # Řízení vývoje: směr určuje člověk, provedení a přehled zajišťuje AI
 
-Verze 0.13r · 9. 10. 2026 · **část A ke schválení hned, část B k rozhodnutí podle měřítek.**
+Verze 0.13s · 29. 10. 2026 · **část A ke schválení hned, část B k rozhodnutí podle měřítek.**
 Stav zavedení: fáze 0 a 1 hotové (4. 10. 2026): brána sloučení je povinná kontrola v rulesetu bez obejití,
 AI slučuje skriptem a workflow Sloučení automaticky (RA40); fáze 2 čeká (postup v
 [postup-zavedeni-faze-0.md](postup-zavedeni-faze-0.md)).
@@ -27,7 +27,7 @@ a výdaje, posílá týdenní přehled a hlásí jen výjimky.
 **Co tím odpadne:** schvalování drobných zadání, kontrola na preview a merge u zhruba 20 PR týdně,
 odpovídání na dotazy v issues, obnova většiny tokenů.
 
-**Co je potřeba schválit:** část A jako celek (rozhodnutí RA1 až RA52 v oddílu 21). Část B se rozhodne
+**Co je potřeba schválit:** část A jako celek (rozhodnutí RA1 až RA53 v oddílu 21). Část B se rozhodne
 po čtyřech týdnech provozu podle měřítek.
 
 **Zavedení po fázích podle přínosu** (oddíl 20): fáze 1 odstraní merge a kontrolu preview, fáze 2 přidá
@@ -368,6 +368,23 @@ Po otevření nebo aktualizaci PR od vlastníka napíše asistent zadání revie
   smyčku oprav. Neplatný výstup modelu dá review bez verdiktu „Bez P1 a P2“. Komentáře píše App `prijimacky-ai`
   v jobu, který hlavu PR nestahuje; brána review od App uzná jen se značkou. Review asistenta platí dál stejně;
   cesty K a H2 dál potřebují `schvaleno`. Kód píše Claude a review dělá jiný model.
+- **Co automatické review blokuje (RA53, #551):** P1 vždy. P2 jen s kategorií `chovani`, `data`, `text`,
+  `pravidla`, `kriterium` nebo `bezpecnost`, s důkazem (vstup a chybný výsledek, citace, číslo kritéria nebo
+  pravidla) a na řádku, který PR přidal nebo změnil (skript to ověří z diffu, tolerance dva řádky). Ostatní nálezy
+  jsou v komentáři pod „Doporučení (neblokuje)“; první kolo oprav je dostane jako nepovinné, další už ne.
+  Follow-up issues z nich nevznikají. Brána se nemění, čte dál jen verdikt.
+- **Opakované review (RA53):** skript ukládá do komentáře review stav (`<!-- review:stav … -->`: hlava, blokující
+  nálezy s id, počet řádků PR při prvním review). Další review dostane předchozí nálezy, odpovědi pod nimi a diff
+  od posledního review; u předchozích nálezů určí `vyreseno`, `trva` nebo `neplati` (bez stavu nález trvá)
+  a nový P2 blokuje jen na řádku změněném od posledního review. Když commit posledního review ve větvi není
+  (force-push), posoudí celý PR.
+- **Nepovedené review (RA53):** u #517 a #547 selhalo review kvůli vyčerpanému limitu nebo přístupu předplatného
+  Kimi (API 403), ne kvůli tvaru výstupu. Takové selhání se neopakuje (hned by selhalo znovu) a komentář řekne
+  důvod a co udělat. Neplatný výstup modelu se zkusí znovu, nejvýš třikrát, s upozorněním na tvar. Nepovedené
+  review nepošle `@claude` a nepočítá se do kol oprav.
+- **Zastavení smyčky (RA53):** od kola 4 se oprava nespustí, když PR narostl víc než dvojnásobně a zároveň aspoň
+  o 100 řádků proti prvnímu review (pak `potrebuje-cloveka`). PR se štítkem `schvaleno` kolo oprav nespustí
+  a review na něm `@claude` nepíše: souhlas na PR platí pro hlavu a push by ho zrušil.
 
 ## 10. Projekty
 
@@ -710,6 +727,7 @@ ověří ho měřítka.
 | RA49 | Autonomní trasy (#440): issue se štítkem `rutina` od automatiky repozitáře (github-actions[bot]: výpadek, regrese) se realizuje bez dokladu „Zdroj:“, v limitu rutiny jako R, jinak L; předání z datové linky (větev `data/*` od App, jen výstupy linky) projde jako automatická obnova dat, potvrzení kódem je souhlas; denní zpráva „Čeká na tebe“ do Telegramu; selhání oponentury do Telegramu a odebrání štítku; tep rutiny s upozorněním po 12 h ticha; nápady AI jdou přes `navrh` k vlastníkovi a bez souhlasu se nerealizují (nahrazuje lhůtu od představení z RA22) | **ano** (rozhodnutí vlastníka, 8. 10. 2026) |
 | RA51 | Plánovač (#461): plánované úlohy spouští cron-job.org každých 5 minut přes workflow Plánovač (jemný token vlastníka jen s právem Actions, mimo repozitář), plány GitHubu jsou záloha; tep rutiny jako úprava komentáře v issue Tep rutiny; issue `trvale` nejsou úkoly | **ano** (rozhodnutí vlastníka, 9. 10. 2026) |
 | RA52 | Hlášení přihlášené školy z portálu (#461) je oprava od školy: realizuje se bez `schvaleno`, PR smí měnit jen soubory s opravami údajů škol (`hlaseni_skol`), v limitu rutiny R, jinak L. Údaje, o kterých rozhoduje škola, AI opraví; oficiální statistiky podle tvrzení školy nepřepisuje a vysvětlí proč. Změna kódu nebo textů webu dál se `schvaleno` | **ano** (rozhodnutí vlastníka, 9. 10. 2026) |
+| RA53 | Automatické review blokuje jen doložené nálezy na změněných řádcích (P1 vždy, P2 jen s blokující kategorií, důkazem a místem v diffu), opakované review posuzuje předchozí nálezy a jen změny od posledního review, neplatný výstup se zkusí znovu, od kola 4 strop při nafouknutí PR, schválený PR smyčku oprav nespustí (#551, oddíl 9d) | **ano** (rozhodnutí vlastníka, 29. 10. 2026) |
 | RA50 | Automatické review PR modelem Kimi K3 (#455) místo asistentky zadání: workflow Review píše pro každou novou hlavu PR review v tvaru, který brána čte, a při P1/P2 žádost `@claude` o opravu; brána ho uzná od App `prijimacky-ai` jen se značkou `review.znacka_automatiky`; model jen čte, verdikt skládá skript; cesty K a H2 dál se souhlasem vlastníka (oddíl 9d) | **ano** (rozhodnutí vlastníka, 9. 10. 2026) |
 | RA48 | Drobné úkoly projektu jako zaškrtávací seznam v oddílu Etapy issue projektu (mimo Rozsah), PR „Souvisí s #N“; sub-issue jen pro úkol s vlastním rozhodnutím a pro hlášení (RA39). Nástěnka: hlavní pohled `no:parent-issue`, automatické archivování zavřených položek. Upravuje RA38 | **ano** (rozhodnutí vlastníka, 7. 10. 2026) |
 | RA47 | Výjimka z RA35 pro automatiku ve workflow: GitHub App `prijimacky-ai` jen pro tento repozitář (token na hodinu, práva po jobech, bez práva Workflows a mimo Bypass list) slučuje PR, mění štítky v Otázce a Oponentuře a zakládá PR s obnovou dat. Brána jí věří jen u automatických obnov dat. Claude Code v relacích, asistent zadání a Tabule beze změny; hlášení z webu později samostatně | **ano** (rozhodnutí vlastníka, #403) |
@@ -743,6 +761,9 @@ Po čtyřech týdnech provozu části A:
 
 ## Změny návrhu
 
+- **0.13s** (29. 10. 2026, rozhodnutí vlastníka, zadání #551): automatické review blokuje jen doložené nálezy
+  v kódu PR, opakované review čte jen změny, opakování neplatného výstupu, zastavení smyčky při nafouknutí
+  a na schváleném PR (RA53).
 - **0.13q** (9. 10. 2026, rozhodnutí vlastníka, zadání #461): plánovač přes cron-job.org, tep rutiny přes komentář,
   issue `trvale` nejsou úkoly (RA51).
 - **0.13r** (9. 10. 2026, rozhodnutí vlastníka, zadání #461): hlášení přihlášené školy bez `schvaleno`, jen opravy

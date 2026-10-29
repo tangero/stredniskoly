@@ -13,9 +13,16 @@ import { matchesGlob } from 'node:path';
 import { pathToFileURL } from 'node:url';
 import { BOT, duveryhodny, odRecenzenta, stopPlati } from './brana.mjs';
 import { REPO, vytvorApi, nactiKonfig, nactiPr, nactiIssue } from './data.mjs';
+import { posledniStav } from './review.mjs';
 
 export const STITEK_CLOVEK = 'potrebuje-cloveka';
 export const VYCHOZI_MAX_KOL = 5;
+// Pojistka proti nafukování (#551): od kola 4 se oprava nespustí, když PR narostl víc než NAFUKNUTI_POMER krát
+// a zároveň aspoň o NAFUKNUTI_RADKU řádků proti prvnímu review.
+export const NAFUKNUTI_OD_KOLA = 4;
+export const NAFUKNUTI_POMER = 2;
+export const NAFUKNUTI_RADKU = 100;
+export const DUVOD_SCHVALENO = 'vlastník PR schválil, opravy by souhlas zrušily';
 export const ZNACKA_KOLA = (kolo) => `<!-- oprava-z-review:kolo=${kolo} -->`;
 const CTENI_KOLA = /<!-- oprava-z-review:kolo=(\d+) -->/;
 const SPOUSTEC = /(^|[^\w@])@claude\b/i;
@@ -45,9 +52,25 @@ export function rozhodniOpravu({ komentar, pr, issues = [], konfig }) {
   for (const i of issues) if (stopPlati(i, konfig)) return nic(`issue #${i.cislo} má štítek stop`);
   for (const i of issues) if (i.rodic && stopPlati(i.rodic, konfig)) return nic(`projekt #${i.rodic.cislo} (rodič issue #${i.cislo}) má štítek stop`);
   if (pr.stitky.includes(STITEK_CLOVEK)) return nic(`PR má štítek ${STITEK_CLOVEK}`);
+  if (pr.stitky.includes('schvaleno')) return nic(DUVOD_SCHVALENO);
   const kola = pocetKol(pr.komentare);
   if (kola >= max) return { akce: 'strop', duvod: `proběhlo ${kola} z ${max} kol oprav`, max };
+  const narust = nafukuje({ kolo: kola + 1, radky: pr.radky, stav: posledniStav(pr.komentare, konfig) });
+  if (narust) return { akce: 'strop', duvod: narust, max };
   return { akce: 'oprava', duvod: `kolo ${kola + 1} z ${max}`, kolo: kola + 1, max };
+}
+
+/**
+ * Nafukuje se PR opravami? Od kola NAFUKNUTI_OD_KOLA porovná počet změněných řádků PR (`radky`, additions
+ * + deletions) s počtem při prvním review (`prvni_radky` ve stavu review). Vrací důvod stropu, nebo null.
+ */
+export function nafukuje({ kolo, radky, stav }) {
+  const prvni = stav?.prvni_radky;
+  if (kolo < NAFUKNUTI_OD_KOLA || !Number.isInteger(radky) || !Number.isInteger(prvni) || prvni <= 0) return null;
+  if (radky > NAFUKNUTI_POMER * prvni && radky - prvni >= NAFUKNUTI_RADKU) {
+    return `PR po opravách narostl z ${prvni} na ${radky} řádků, další kolo by přidávalo kód`;
+  }
+  return null;
 }
 
 /**
@@ -60,6 +83,7 @@ export function vetoTed({ pr, issues = [], konfig }) {
   for (const i of issues) if (stopPlati(i, konfig)) return { ok: false, duvod: `issue #${i.cislo} má štítek stop` };
   for (const i of issues) if (i.rodic && stopPlati(i.rodic, konfig)) return { ok: false, duvod: `projekt #${i.rodic.cislo} (rodič issue #${i.cislo}) má štítek stop` };
   if (pr.stitky.includes(STITEK_CLOVEK)) return { ok: false, duvod: `PR má štítek ${STITEK_CLOVEK}` };
+  if (pr.stitky.includes('schvaleno')) return { ok: false, duvod: DUVOD_SCHVALENO };
   return { ok: true, duvod: 'bez veta' };
 }
 
@@ -107,7 +131,7 @@ async function rozhodni(api) {
   const [{ pr, issues }, p] = await Promise.all([nactiPrSRodici(api, cislo), api(`repos/${REPO}/pulls/${cislo}`)]);
   const rozhodnuti = rozhodniOpravu({
     komentar: { autor: udalost.comment?.user?.login, telo: udalost.comment?.body || '' },
-    pr: { ...pr, hlavaRepo: p.head?.repo?.full_name, zakladnaRepo: p.base?.repo?.full_name },
+    pr: { ...pr, hlavaRepo: p.head?.repo?.full_name, zakladnaRepo: p.base?.repo?.full_name, radky: Number.isInteger(p.additions) ? p.additions + (p.deletions || 0) : null },
     issues,
     konfig,
   });

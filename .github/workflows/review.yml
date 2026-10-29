@@ -10,7 +10,10 @@
 #   aby Claude Code nenačetl nastavení, hooky ani pokyny z větve). Pracovní složka modelu je main.
 # - Model (Kimi K3 přes Claude Code, stejně jako Oponentura) běží přes `env -i` jen se svým klíčem a jen
 #   s nástroji Read, Glob a Grep; žádný token GitHubu. Vrací JSON s nálezy; komentář, verdikt a značku skládá
-#   skript z main, text modelu zbaví zmínek a HTML komentářů. Neplatný výstup = review bez verdiktu „Bez P1 a P2“.
+#   skript z main, text modelu zbaví zmínek a HTML komentářů. Neplatný výstup se zkusí znovu (nejvýš 3 pokusy),
+#   pak je review bez verdiktu „Bez P1 a P2“.
+# - Blokují jen doložené nálezy na změněných řádcích (#551): mapu změněných řádků (radky.json, u opakovaného
+#   review i radky-od-review.json) spočítá skript z main z diffu a předá ji jobu Zápis s výstupem modelu.
 # - Komentáře píše token App prijimacky-ai (komentář z GITHUB_TOKEN by nespustil bránu ani opravu), a to
 #   v samostatném jobu Zápis, který hlavu PR nestahuje a model nespouští; výstup modelu dostane jako artefakt.
 #   Zápis se vynechá, když se hlava mezitím změnila nebo výstup modelu obsahuje klíč.
@@ -84,15 +87,21 @@ jobs:
           fetch-depth: 0
           persist-credentials: false
 
-      # Diff proti main; velké soubory (data) se zkrátí, aby se vešel do kontextu modelu.
+      # Diff proti main; velké soubory (data) se zkrátí, aby se vešel do kontextu modelu. U opakovaného review
+      # i diff od posledního review (#551); když jeho commit ve větvi není (force-push), review posoudí celý PR.
       - name: Diff
         if: steps.priprav.outputs.smi == 'true'
+        env:
+          PREDCHOZI: ${{ steps.priprav.outputs.predchozi_sha }}
         run: |
+          mkdir -p "$RUNNER_TEMP/vystup"
           git -C .review/kod fetch --quiet origin main
           zaklad=$(git -C .review/kod merge-base FETCH_HEAD HEAD)
           git -C .review/kod diff --no-color --stat "$zaklad" HEAD > .review/diff-souhrn.txt
           git -C .review/kod diff --no-color "$zaklad" HEAD > "$RUNNER_TEMP/diff.patch"
-          python3 - "$RUNNER_TEMP/diff.patch" .review/diff.patch <<'PY'
+          node scripts/brana/review.mjs radky "$RUNNER_TEMP/diff.patch" > "$RUNNER_TEMP/vystup/radky.json"
+          zkrat() {
+          python3 - "$1" "$2" <<'PY'
           import re, sys
           text = open(sys.argv[1], encoding="utf-8", errors="replace").read()
           casti = re.split(r"(?m)^(?=diff --git )", text)
@@ -107,6 +116,18 @@ jobs:
               vystup.append(c); celkem += len(c)
           open(sys.argv[2], "w", encoding="utf-8").write("".join(vystup))
           PY
+          }
+          zkrat "$RUNNER_TEMP/diff.patch" .review/diff.patch
+          if [[ "$PREDCHOZI" =~ ^[0-9a-f]{40}$ ]] && git -C .review/kod cat-file -e "$PREDCHOZI^{commit}" 2>/dev/null \
+             && git -C .review/kod merge-base --is-ancestor "$PREDCHOZI" HEAD; then
+            git -C .review/kod diff --no-color "$PREDCHOZI" HEAD > "$RUNNER_TEMP/diff-od-review.patch"
+            node scripts/brana/review.mjs radky "$RUNNER_TEMP/diff-od-review.patch" "$PREDCHOZI" > "$RUNNER_TEMP/vystup/radky-od-review.json"
+            zkrat "$RUNNER_TEMP/diff-od-review.patch" .review/diff-od-review.patch
+            echo "opakované review od ${PREDCHOZI:0:7}: $(wc -c < .review/diff-od-review.patch) znaků"
+          elif [ -f .review/predchozi.json ]; then
+            rm -f .review/predchozi.json
+            echo "::notice::Commit posledního review ve větvi není, review posoudí celý PR."
+          fi
           rm -rf .review/kod/.git .review/kod/.claude .review/kod/.mcp.json .review/kod/CLAUDE.md
           echo "diff: $(wc -c < .review/diff.patch) znaků"
 
@@ -135,16 +156,30 @@ jobs:
             ANTHROPIC_DEFAULT_HAIKU_MODEL="$KIMI_MODEL" ANTHROPIC_DEFAULT_FABLE_MODEL="$KIMI_MODEL" CLAUDE_CODE_SUBAGENT_MODEL="$KIMI_MODEL"
             CLAUDE_CODE_EFFORT_LEVEL=high CLAUDE_CODE_AUTO_COMPACT_WINDOW=262144 CLAUDE_CODE_MAX_CONTEXT_TOKENS=262144)
           surovy="$RUNNER_TEMP/review-surovy.json"
-          for pokus in 1 2; do
-            if env -i "${prostredi[@]}" claude -p "$(cat scripts/brana/review-zadani.md)" --settings "$nastaveni" \
+          zadani="$(cat scripts/brana/review-zadani.md)"
+          # Opakuje se i odpověď v neplatném tvaru (#551); ověřuje ji stejná funkce jako zápis. Vyčerpaný limit
+          # nebo předplatné bez přístupu (příčina selhání u #517 a #547) se neopakuje: další pokus hned nepomůže.
+          # Důvod selhání (jedno slovo ze skriptu, ne text chyby) jde do komentáře přes duvod.txt.
+          duvod=jine
+          for pokus in 1 2 3; do
+            if env -i "${prostredi[@]}" claude -p "$zadani" --settings "$nastaveni" \
                 --allowedTools Read Glob Grep --max-turns 80 --output-format json > "$surovy" \
                && jq -e '.is_error | not' "$surovy" > /dev/null \
                && jq -r '.result // empty' "$surovy" > "$RUNNER_TEMP/review.txt" && [ -s "$RUNNER_TEMP/review.txt" ]; then
-              echo "Kimi: $(wc -c < "$RUNNER_TEMP/review.txt") znaků"; exit 0
+              if node scripts/brana/review.mjs over "$RUNNER_TEMP/review.txt"; then
+                echo "Kimi: $(wc -c < "$RUNNER_TEMP/review.txt") znaků, pokus $pokus"; exit 0
+              fi
+              echo "::warning::Kimi, pokus $pokus: odpověď není platný JSON podle oddílu Výstup"
+              duvod=neplatny
+              zadani="$(cat scripts/brana/review-zadani.md)"$'\n\n'"Předchozí odpověď nebyla platný JSON podle oddílu Výstup, odpověz jen objektem JSON."
+            else
+              echo "::warning::Kimi, pokus $pokus selhal: $(jq -r '(.subtype // "") + " " + ((.result // .) | tostring)' "$surovy" 2>/dev/null | head -c 300)"
+              duvod=$(node scripts/brana/review.mjs duvod "$surovy")
+              if [ "$duvod" = limit ] || [ "$duvod" = predplatne ]; then break; fi
             fi
-            echo "::warning::Kimi, pokus $pokus selhal: $(jq -r '.result // .' "$surovy" 2>/dev/null | head -c 300)"
             sleep 30
           done
+          mkdir -p "$RUNNER_TEMP/vystup" && echo "$duvod" > "$RUNNER_TEMP/vystup/duvod.txt"
           rm -f "$RUNNER_TEMP/review.txt"; exit 1
 
       # Výstup s klíčem se nezapíše vůbec (ani jako neplatné review).

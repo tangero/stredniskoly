@@ -301,6 +301,36 @@
       "akce": "Založit ji podle RA48 (položka seznamu v issue projektu, nebo sub-issue, když potřebuje vlastní rozhodnutí) a realizovat; PR se Souvisí s #<projekt>.",
       "pravidlo": "zadání rutiny, krok 6; CLAUDE.md, pravidlo 2 (RA48)",
       "puvod": "#244, #355"
+    },
+    {
+      "id": "S31",
+      "oblast": "pr",
+      "situace": "Automatické review PR vrátilo jediný nález P2 s kategorií test: ke změněné funkci chybí test prázdného vstupu. Jiný nález není.",
+      "otazka": "Blokuje tento nález sloučení PR?",
+      "ocekavano": "ne",
+      "akce": "Verdikt Bez P1 a P2; nález je v komentáři pod Doporučení (neblokuje) a první kolo oprav ho smí opravit nepovinně.",
+      "pravidlo": "scripts/brana/review.mjs, blokuje (RA53); scripts/brana/review-zadani.md, Kategorie a důkaz",
+      "puvod": "#551"
+    },
+    {
+      "id": "S32",
+      "oblast": "pr",
+      "situace": "Automatické review PR vrátilo nález P2 s kategorií data a důkazem (stránka kraje ukazuje letopočet napevno místo období z registru) na řádku, který PR přidal.",
+      "otazka": "Blokuje tento nález sloučení PR?",
+      "ocekavano": "ano",
+      "akce": "Verdikt Nálezy k opravě (P2) a komentář @claude; kolo oprav nález opraví nebo napíše, proč není chyba.",
+      "pravidlo": "scripts/brana/review.mjs, blokuje (RA53); .claude/claude.md, Stav datových sad",
+      "puvod": "#551"
+    },
+    {
+      "id": "S33",
+      "oblast": "pr",
+      "situace": "PR má štítek schvaleno, který přidal vlastník k aktuální hlavě. Automatické review nové hlavy pak našlo blokující nález P2.",
+      "otazka": "Má se spustit kolo oprav, které pushne nový commit?",
+      "ocekavano": "ne",
+      "akce": "Kolo se nespustí (souhlas na PR platí pro hlavu, push by ho zrušil); nález zůstane v review a rozhodne vlastník.",
+      "pravidlo": "scripts/brana/oprava-z-review.mjs, rozhodniOpravu a vetoTed (RA53)",
+      "puvod": "#551"
     }
   ]
 }

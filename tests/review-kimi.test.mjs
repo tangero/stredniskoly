@@ -36,8 +36,8 @@ test('smiReview: PR vlastníka, asistenta i automatiky ano; fork, cizí, draft, 
 
 test('nactiVystup: platný JSON i v bloku ```json; neplatný tvar, priorita nebo prázdný popis = null', () => {
   const ok = nactiVystup('Tady je výsledek:\n```json\n{"shrnuti":"Mění titulky.","nalezy":[{"priorita":"P2","soubor":"a.ts","radek":3,"popis":"Chybí test."}]}\n```');
-  assert.deepEqual(ok, { shrnuti: 'Mění titulky.', nalezy: [{ priorita: 'P2', soubor: 'a.ts', radek: 3, popis: 'Chybí test.' }] });
-  assert.deepEqual(nactiVystup('{"shrnuti":"x","nalezy":[]}'), { shrnuti: 'x', nalezy: [] });
+  assert.deepEqual(ok, { shrnuti: 'Mění titulky.', nalezy: [{ priorita: 'P2', kategorie: '', soubor: 'a.ts', radek: 3, popis: 'Chybí test.', dukaz: '' }], predchozi: [] });
+  assert.deepEqual(nactiVystup('{"shrnuti":"x","nalezy":[]}'), { shrnuti: 'x', nalezy: [], predchozi: [] });
   assert.equal(nactiVystup(''), null);
   assert.equal(nactiVystup('Bez P1 a P2'), null);
   assert.equal(nactiVystup('{"shrnuti":"x"}'), null);
@@ -51,7 +51,11 @@ test('slozReview: verdikt skládá skript; brána uzná jen „Bez P1 a P2“ (K
   const bez = slozReview({ vystup: { shrnuti: 'Drobná změna.', nalezy: [{ priorita: 'P3', soubor: 'a.ts', radek: 1, popis: 'Styl.' }] }, sha: SHA, znacka: ZNACKA, model: 'k3' });
   assert.match(bez, /^## Review\n\nVerdikt: Bez P1 a P2\nCommit: ccccccc/);
   assert.equal(review(pr(bez), konfig).ok, true);
-  const p2 = slozReview({ vystup: { shrnuti: 'x', nalezy: [{ priorita: 'P2', soubor: 'a.ts', radek: 1, popis: 'Chyba.' }] }, sha: SHA, znacka: ZNACKA, model: 'k3' });
+  // #551: P2 bez kategorie a důkazu (starý tvar) jen doporučuje; blokuje P2 s blokující kategorií a důkazem.
+  const stary = slozReview({ vystup: { shrnuti: 'x', nalezy: [{ priorita: 'P2', soubor: 'a.ts', radek: 1, popis: 'Chyba.' }] }, sha: SHA, znacka: ZNACKA, model: 'k3' });
+  assert.match(stary, /Verdikt: Bez P1 a P2/);
+  assert.match(stary, /### Doporučení \(neblokuje\)/);
+  const p2 = slozReview({ vystup: { shrnuti: 'x', nalezy: [{ priorita: 'P2', kategorie: 'chovani', soubor: 'a.ts', radek: 1, popis: 'Chyba.', dukaz: 'Prázdný vstup shodí stránku.' }] }, sha: SHA, znacka: ZNACKA, model: 'k3' });
   assert.match(p2, /Verdikt: Nálezy k opravě \(P2\)/);
   assert.equal(review(pr(p2), konfig).ok, false);
   const neplatne = slozReview({ vystup: null, sha: SHA, znacka: ZNACKA, model: 'k3' });
