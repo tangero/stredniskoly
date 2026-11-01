@@ -177,7 +177,9 @@ a oponentury a hlášení od veřejnosti bez rozhodnutí (#461). V oddílu „Co
 tlačítka na PR nebo issue. Spouští ji Plánovač; ručně v Actions (Čeká na tebe, Run workflow).
 Od #562 je ranní zpráva řazená podle stáří: nahoře „Čeká přes 3 dny“ od nejstarší s počtem dní, pak „Nové od minulé
 zprávy“, zbytek jen počty po skupinách s odkazem na seznam issues. Stáří je doba od přidání štítku otázky, návrhu nebo
-oponentury, u ostatních od založení (u PR od otevření; přesnější počítání od první kontroly brány je ještě otevřené).
+oponentury, u ostatních od založení; u PR od první kontroly brány, která chtěla jen souhlas (když se ten čas nezjistí,
+od otevření PR). „Nové od minulé zprávy“ se řídí časem vstupu do skupiny, ne stářím: u připomínky je to pozdější z přidání
+štítku `pripominka` a termínu, u hlášení přidání štítku hlášení.
 Večer v 18:30 UTC (19:30 SEČ, v létě 20:30 SELČ) přijde souhrn „Večer na tebe“ jen s položkami, které přibyly od
 minulé zprávy. Její čas se bere z pevných časů Plánovače (ranní 06:52 UTC, večerní 18:30 UTC); historii běhů workflow
 nečteme, protože by potřebovala oprávnění `actions: read`. Bez nových se neposílá. Zadání #562 bod 3 (doporučení po 7 dnech) zatím není hotový.
