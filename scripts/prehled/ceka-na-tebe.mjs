@@ -34,6 +34,8 @@ export function jedenOdstavec(t = '') {
   return t.split('\n').filter((r) => !/^\s*\|/.test(r)).map((r) => r.replace(/^\s*#{1,6}\s*/, '').replace(/^\s*[-*]\s+/, ''))
     .join(' ').replace(/\*\*/g, '').replace(/`/g, '').replace(/\[([^\]]+)\]\([^)]+\)/g, '$1').replace(/\s+/g, ' ').trim();
 }
+/** Seznam otevřených issues se štítky, podle kterých čekají na vlastníka (do pohledu „Moje“ na tabuli, K1). */
+export const ODKAZ_CEKAJICICH = `https://github.com/${REPO}/issues?q=${encodeURIComponent(`is:issue is:open label:${['otazka', 'oponentura', 'navrh', 'pripominka', ...STITKY_VEREJNYCH].join(',')}`)}`;
 const adresa = (cislo, pr = false) => `https://github.com/${REPO}/${pr ? 'pull' : 'issues'}/${cislo}`;
 
 /** Skupiny v pořadí, ve kterém je vlastník má vyřizovat. `akce` je pokyn pod položkou, `tlacitko` popisek tlačítka. */
@@ -65,6 +67,19 @@ export function potrebujeSouhlas(kontrola) {
 }
 
 /**
+ * Čas první kontroly brány z nepřerušené řady posledních kontrol, které chtěly jen souhlas (ms), nebo null.
+ * `kontroly` jsou poslední kontroly jednotlivých commitů PR od nejnovějšího; řadu přeruší kontrola bez žádosti o souhlas.
+ */
+export function souhlasOd(kontroly = []) {
+  let od = null;
+  for (const k of kontroly) {
+    if (!potrebujeSouhlas(k)) break;
+    od = Date.parse(k.completed_at || k.started_at) || od;
+  }
+  return od;
+}
+
+/**
  * Položka PR ke schválení: co a kde zkontrolovat. Cesty z oddílu „Pro vlastníka“ vedou na náhled PR (změna ještě
  * není na webu); bez náhledu jen jako text.
  */
@@ -82,7 +97,8 @@ export function sestavSkupiny({ prs = [], issues = [], ucty, dnes, ted }) {
   for (const p of prs) {
     const odPr = Date.parse(p.od || p.upraveno) || ted;
     if (p.stitky.includes('potrebuje-cloveka')) s.clovek.push({ cislo: p.cislo, pr: true, titulek: p.titulek, radky: [], od: odPr });
-    if (p.souhlas) s.souhlas.push({ ...polozkaPr(p, { nahled: p.nahled }), od: odPr });
+    // Ke schválení od první kontroly brány, která chtěla jen souhlas, ne od otevření PR (#562).
+    if (p.souhlas) s.souhlas.push({ ...polozkaPr(p, { nahled: p.nahled }), od: p.souhlasOd || odPr });
   }
   for (const i of issues) {
     const st = new Set(i.stitky);
@@ -105,12 +121,16 @@ export function sestavSkupiny({ prs = [], issues = [], ucty, dnes, ted }) {
     }
     // Hlášení od veřejnosti bez rozhodnutí, i hlášení škol z portálu: bez schvaleno je nerealizuje nikdo, dokud PR #464 nepustí opravy údajů škol.
     if (STITKY_VEREJNYCH.some((h) => st.has(h)) && !st.has('schvaleno')) {
-      s.hlaseni.push({ ...zaklad, radky: [] });
+      // Do skupiny vstoupilo přidáním štítku hlášení, stáří (od) zůstává od založení.
+      const vstupH = Math.max(0, ...STITKY_VEREJNYCH.map((t) => Date.parse(i.stitkyOd?.[t]) || 0));
+      s.hlaseni.push({ ...zaklad, ...(vstupH ? { vstup: vstupH } : {}), radky: [] });
       continue;
     }
     if (st.has('pripominka')) {
       const t = terminPripominky(i.telo);
-      if (t && t <= dnes) s.pripominka.push({ ...zaklad, radky: [`Termín ${html(t)}. ${html(uvodIssue(i.telo))}`] });
+      // Do skupiny vstoupila později z dvou časů: přidání štítku a termín (stáří zůstává od založení).
+      const vstupP = Math.max(Date.parse(i.stitkyOd?.pripominka) || 0, Date.parse(t) || 0);
+      if (t && t <= dnes) s.pripominka.push({ ...zaklad, ...(vstupP ? { vstup: vstupP } : {}), radky: [`Termín ${html(t)}. ${html(uvodIssue(i.telo))}`] });
     }
   }
   return SKUPINY.filter((g) => s[g.klic].length).map((g) => ({ ...g, polozky: s[g.klic] }));
@@ -123,9 +143,12 @@ export function sestavSkupiny({ prs = [], issues = [], ucty, dnes, ted }) {
  */
 export function zprava(skupiny, { ted = Date.now(), vecer = false, posledni = ted - DEN } = {}) {
   const vse = skupiny.flatMap((g) => g.polozky.map((p) => ({ ...p, g })));
+  // Novost = kdy položka vstoupila do skupiny (`vstup`); bez něj je to totéž co stáří (`od`).
+  const vstup = (p) => p.vstup ?? p.od;
   const dny = (p) => Math.floor((ted - p.od) / DEN);
-  const stare = vse.filter((p) => ted - p.od > STARE_PO).sort((a, b) => a.od - b.od);
-  const nove = vse.filter((p) => p.od >= posledni && !stare.includes(p)).sort((a, b) => a.od - b.od);
+  // Položka, která do skupiny vstoupila po minulé zprávě, je nová i když je její stáří velké (K1).
+  const stare = vse.filter((p) => ted - p.od > STARE_PO && vstup(p) < posledni).sort((a, b) => a.od - b.od);
+  const nove = vse.filter((p) => vstup(p) >= posledni).sort((a, b) => vstup(a) - vstup(b));
   if (!(vecer ? nove : vse).length) return null;
   const tlacitka = [];
   const radek = (p, stari) => {
@@ -146,7 +169,7 @@ export function zprava(skupiny, { ted = Date.now(), vecer = false, posledni = te
   if (!vecer) {
     const zbytek = vse.filter((p) => !stare.includes(p) && !nove.includes(p));
     const pocty = skupiny.map((g) => [g.nadpis, zbytek.filter((p) => p.g === g).length]).filter(([, n]) => n);
-    if (pocty.length) casti.push(`<b>Ostatní</b>\n${pocty.map(([n, c]) => `${n}: ${c}`).join('\n')}\n<a href="https://github.com/${REPO}/issues">seznam issues</a>, <a href="https://github.com/${REPO}/pulls">seznam PR</a>`);
+    if (pocty.length) casti.push(`<b>Ostatní</b>\n${pocty.map(([n, c]) => `${n}: ${c}`).join('\n')}\n<a href="${ODKAZ_CEKAJICICH}">seznam čekajících issues</a>`);
   }
   let text = casti.join('\n\n');
   if (text.length > MAX_DELKA) {
@@ -199,10 +222,23 @@ async function main() {
   for (const p of await api(`repos/${REPO}/pulls?state=open&base=main&per_page=100`)) {
     if (p.draft) continue;
     const d = await api(`repos/${REPO}/commits/${p.head.sha}/check-runs?check_name=${encodeURIComponent(NAZEV_KONTROLY)}&filter=latest`);
-    const kontrola = (d.check_runs || []).filter((k) => k.app?.slug === 'github-actions').sort((a, b) => b.id - a.id)[0];
+    const posledniKontrola = (dd) => (dd.check_runs || []).filter((k) => k.app?.slug === 'github-actions').sort((a, b) => b.id - a.id)[0];
+    const kontrola = posledniKontrola(d);
     const souhlas = potrebujeSouhlas(kontrola);
+    let souhlasOdMs = null;
+    if (souhlas) {
+      // Historie kontrol: commity PR od nejnovějšího, dokud brána chtěla jen souhlas.
+      const commity = (await api(`repos/${REPO}/pulls/${p.number}/commits?per_page=100`)).map((c) => c.sha).reverse();
+      const kontroly = [kontrola];
+      for (const sha of commity.filter((x) => x !== p.head.sha)) {
+        const k = posledniKontrola(await api(`repos/${REPO}/commits/${sha}/check-runs?check_name=${encodeURIComponent(NAZEV_KONTROLY)}&filter=latest`));
+        kontroly.push(k);
+        if (!potrebujeSouhlas(k)) break;
+      }
+      souhlasOdMs = souhlasOd(kontroly);
+    }
     const nahled = souhlas ? adresaNahledu(await api(`repos/${REPO}/commits/${p.head.sha}/statuses?per_page=100`)) : null;
-    prs.push({ cislo: p.number, titulek: p.title, telo: p.body || '', stitky: p.labels.map((l) => l.name), souhlas, nahled, od: p.created_at, upraveno: p.updated_at });
+    prs.push({ cislo: p.number, titulek: p.title, telo: p.body || '', stitky: p.labels.map((l) => l.name), souhlas, nahled, od: p.created_at, souhlasOd: souhlasOdMs, upraveno: p.updated_at });
   }
 
   const issues = new Map();
@@ -213,10 +249,10 @@ async function main() {
       const zaznam = { cislo: i.number, titulek: i.title, telo: i.body || '', stitky, upraveno: i.updated_at, vytvoreno: i.created_at };
       if (stitky.includes('otazka') || stitky.includes('navrh')) zaznam.komentare = await komentare(i.number);
       // Čas přidání štítků, podle kterých položka patří do skupiny (stáří, #562).
-      if (['otazka', 'oponentura', 'navrh'].some((t) => stitky.includes(t))) {
+      if (['otazka', 'oponentura', 'navrh', 'pripominka', ...STITKY_VEREJNYCH].some((t) => stitky.includes(t))) {
         const udalosti = await api(`repos/${REPO}/issues/${i.number}/events?per_page=100`);
         const kdy = (t) => udalosti.filter((u) => u.event === 'labeled' && u.label?.name === t).map((u) => u.created_at).sort().pop();
-        zaznam.stitkyOd = Object.fromEntries(['otazka', 'oponentura', 'navrh'].map((t) => [t, kdy(t)]).filter(([, c]) => c));
+        zaznam.stitkyOd = Object.fromEntries(['otazka', 'oponentura', 'navrh', 'pripominka', ...STITKY_VEREJNYCH].map((t) => [t, kdy(t)]).filter(([, c]) => c));
         zaznam.oponenturaOd = zaznam.stitkyOd.oponentura;
       }
       issues.set(i.number, zaznam);

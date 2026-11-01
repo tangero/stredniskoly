@@ -1,7 +1,7 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import {
-  sestavSkupiny, zprava, polozkaPr, uvodIssue, terminPripominky, potrebujeSouhlas, html, MAX_V_SKUPINE, MAX_TLACITEK, UVIZLA_PO, jedenOdstavec, minulaZprava,
+  sestavSkupiny, zprava, polozkaPr, uvodIssue, terminPripominky, potrebujeSouhlas, html, MAX_V_SKUPINE, MAX_TLACITEK, UVIZLA_PO, jedenOdstavec, minulaZprava, souhlasOd, ODKAZ_CEKAJICICH,
 } from '../scripts/prehled/ceka-na-tebe.mjs';
 
 const TED = Date.parse('2026-10-08T07:00:00Z');
@@ -141,4 +141,29 @@ test('čas minulé zprávy z pevných časů Plánovače, bez čtení historie b
   const z = zprava(g, { ted, posledni: minulaZprava(ted, false) });
   assert.match(z.text, /Nové od minulé zprávy \(1\)[\s\S]*#71/);
   assert.doesNotMatch(z.text, /Nové od minulé zprávy[\s\S]*#70/);
+});
+
+test('PR ke schválení je staré od první kontroly, která chtěla jen souhlas, ne od otevření PR (#562)', () => {
+  const dnu = (n) => new Date(TED - n * 86400000).toISOString();
+  const chybi = (kdy) => ({ conclusion: 'failure', completed_at: kdy, output: { summary: 'chybí souhlas vlastníka' } });
+  // Řada od nejnovějšího: dvě kontroly se souhlasem, starší byla jiná chyba, ta řadu přeruší.
+  assert.equal(souhlasOd([chybi(dnu(0.1)), chybi(dnu(1)), { conclusion: 'failure', output: { summary: 'testy' }, completed_at: dnu(5) }]), Date.parse(dnu(1)));
+  assert.equal(souhlasOd([]), null);
+  const [{ polozky }] = skupiny({ prs: [pr({ od: dnu(20), souhlasOd: Date.parse(dnu(0.1)) })] });
+  assert.ok((TED - polozky[0].od) / 86400000 < 1, 'nový souhlas není 20 dní starý');
+});
+
+test('stará připomínka, která se stala splatnou po minulé zprávě, je mezi novými (#562)', () => {
+  const dnu = (n) => new Date(TED - n * 86400000).toISOString();
+  const g = skupiny({ issues: [issue({ cislo: 80, stitky: ['interni', 'pripominka'], telo: `Termín: ${DNES}\n\nZkontrolovat.`, vytvoreno: dnu(10), stitkyOd: { pripominka: dnu(10) } })] });
+  const z = zprava(g, { ted: TED, posledni: TED - 12 * 3600000 });
+  assert.match(z.text, /Nové od minulé zprávy \(1\)[\s\S]*#80/);
+});
+
+test('ostatní počty mají jeden filtrovaný odkaz na issues (#562)', () => {
+  const dnu = (n) => new Date(TED - n * 86400000).toISOString();
+  const z = zprava(skupiny({ issues: [issue({ cislo: 90, stitky: ['bug-report'], vytvoreno: dnu(1) }), issue({ cislo: 91, stitky: ['bug-report'], vytvoreno: dnu(2) })] }), { ted: TED, posledni: TED - 3600000 });
+  assert.ok(z.text.includes(ODKAZ_CEKAJICICH));
+  assert.match(ODKAZ_CEKAJICICH, /issues\?q=.*label/);
+  assert.doesNotMatch(z.text, /\/pulls/);
 });
