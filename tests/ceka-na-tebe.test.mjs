@@ -111,6 +111,12 @@ test('stáří otázky se počítá od přidání štítku, ne od založení iss
   assert.equal(Math.round((TED - polozky[0].od) / 86400000), 2);
 });
 
+test('dodatečný veřejný štítek už zařazené hlášení neomladí (#562)', () => {
+  const dnu = (n) => new Date(TED - n * 86400000).toISOString();
+  const g = skupiny({ issues: [issue({ cislo: 62, vytvoreno: dnu(7), stitky: ['bug-report', 'puvod:hlaseni'], stitkyOd: { 'bug-report': dnu(7), 'puvod:hlaseni': dnu(0.1) } })] });
+  assert.equal(zprava(g, { ted: TED, vecer: true, posledni: TED - 12 * 3600000 }), null);
+});
+
 test('večerní souhrn: jen nové od ranní zprávy, bez nových nic (#562)', () => {
   const dnu = (n) => new Date(TED - n * 86400000).toISOString();
   const posledni = TED - 12 * 3600000;

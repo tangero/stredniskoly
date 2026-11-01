@@ -122,8 +122,9 @@ export function sestavSkupiny({ prs = [], issues = [], ucty, dnes, ted }) {
     // Hlášení od veřejnosti bez rozhodnutí, i hlášení škol z portálu: bez schvaleno je nerealizuje nikdo, dokud PR #464 nepustí opravy údajů škol.
     if (STITKY_VEREJNYCH.some((h) => st.has(h)) && !st.has('schvaleno')) {
       // Do skupiny vstoupilo přidáním štítku hlášení, stáří (od) zůstává od založení.
-      const vstupH = Math.max(0, ...STITKY_VEREJNYCH.map((t) => Date.parse(i.stitkyOd?.[t]) || 0));
-      s.hlaseni.push({ ...zaklad, ...(vstupH ? { vstup: vstupH } : {}), radky: [] });
+      // Rozhoduje nejstarší čas z právě přítomných veřejných štítků: dodatečný štítek už zařazené hlášení neomladí.
+      const casyH = STITKY_VEREJNYCH.filter((t) => st.has(t)).map((t) => Date.parse(i.stitkyOd?.[t])).filter(Boolean);
+      s.hlaseni.push({ ...zaklad, ...(casyH.length ? { vstup: Math.min(...casyH) } : {}), radky: [] });
       continue;
     }
     if (st.has('pripominka')) {
