@@ -109,3 +109,55 @@ export function naCoCeka(issue, prs = [], dnes = new Date().toISOString().slice(
   }
   return 'čeká na realizaci (hodinová úloha)';
 }
+
+// ---- Pilot tabule (#561): pole „Pro lidi“, „Čeká na“ a „Termín“ ----
+
+const PRO_LIDI = /^Pro lidi:[ \t]*(\S.*)$/m;
+// Formulář zadání vloží pole jako nadpis „### Pro lidi“ a text pod ním.
+const PRO_LIDI_NADPIS = /^#{2,3}[ \t]*Pro lidi[ \t]*\n+(?!#)(\S[^\n]*)/m;
+const PRO_LIDI_MAX = 240;
+export const CEKA_NA = { vlastnik: 'Patrick', kolega: 'kolega', ai: 'AI', nikdo: 'nikdo' };
+
+/**
+ * Text pole „Pro lidi“: řádek `Pro lidi:` nebo oddíl „### Pro lidi“ z těla issue, jinak název issue (a `chybi: true`).
+ * @param {{ titulek?: string, telo?: string }} issue
+ */
+export function proLidi(issue) {
+  const telo = (issue.telo || '').replace(/\r\n?/g, '\n');
+  const m = telo.match(PRO_LIDI) || telo.match(PRO_LIDI_NADPIS);
+  const text = (m ? m[1] : issue.titulek || '').replace(/\s+/g, ' ').trim();
+  return { text: text.length > PRO_LIDI_MAX ? `${text.slice(0, PRO_LIDI_MAX - 1)}…` : text, chybi: !m };
+}
+
+/** Termín připomínky (`Termín: RRRR-MM-DD` v těle) pro datové pole „Termín“, jinak null. */
+export function termin(telo = '') {
+  return telo.match(/Termín:?\s*(\d{4}-\d{2}-\d{2})/)?.[1] || null;
+}
+
+/**
+ * Kdo je na tahu, pro pole „Čeká na“ (issue). Přiřazení kolegovi má přednost; jinak podle stavu karty:
+ * vlastník rozhoduje návrh, souhlas s merge, veřejné hlášení bez rozhodnutí a splatnou připomínku, AI zbytek.
+ * @param {{ stav: 'OPEN'|'CLOSED', stitky: string[], telo?: string, rodic?: number|null, prirazeni?: string[] }} issue
+ * @param {string|null} karta cílový stav karty z `cilovyStav`
+ * @param {{ kolegove?: string[], dnes?: string }} o
+ * @returns {string|null} volba pole, nebo null u trvale
+ */
+export function cekaNa(issue, karta, { kolegove = [], dnes = new Date().toISOString().slice(0, 10) } = {}) {
+  if (karta === null) return null;
+  if (issue.stav === 'CLOSED' || karta === STAVY.hotovo) return CEKA_NA.nikdo;
+  if ((issue.prirazeni || []).some((a) => kolegove.includes(a))) return CEKA_NA.kolega;
+  if (karta === STAVY.navrh || karta === STAVY.cekaNaSouhlas) return CEKA_NA.vlastnik;
+  const s = new Set(issue.stitky);
+  if (s.has('pripominka')) {
+    const t = termin(issue.telo);
+    return t && t > dnes ? CEKA_NA.nikdo : CEKA_NA.vlastnik;
+  }
+  if (karta === STAVY.hlaseni && STITKY_HLASENI.some((h) => s.has(h)) && !s.has('schvaleno') && !issue.rodic) return CEKA_NA.vlastnik;
+  return CEKA_NA.ai;
+}
+
+/** „Čeká na“ u PR: vlastník, když brána čeká na jeho souhlas; zavřený nikdo; jinak AI. */
+export function cekaNaPr({ otevreny, cekaNaSouhlas }) {
+  if (!otevreny) return CEKA_NA.nikdo;
+  return cekaNaSouhlas ? CEKA_NA.vlastnik : CEKA_NA.ai;
+}

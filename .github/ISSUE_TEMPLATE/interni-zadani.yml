@@ -18,6 +18,13 @@ body:
         > **Repozitář je veřejný, issue uvidí kdokoli.** Do zadání nepatří jména, e-maily, telefony ani jiné osobní údaje zákazníků, škol, rodičů ani uchazečů. Nepatří sem ani přístupové kódy, tokeny nebo výpisy z produkční databáze. Školu označte RED IZO, osobu rolí („ředitel školy“, „rodič“).
         >
         > Tento formulář je interní. Chcete-li nahlásit chybu na webu, použijte tlačítko **Nahlásit chybu** na prijimackynaskolu.cz.
+  - type: input
+    id: pro-lidi
+    attributes:
+      label: Pro lidi
+      description: Jedna až dvě věty bez technických slov, co se změní a pro koho. Zobrazí se na tabuli projektů.
+    validations:
+      required: true
   - type: textarea
     id: proc
     attributes:
