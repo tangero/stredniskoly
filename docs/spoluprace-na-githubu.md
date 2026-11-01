@@ -121,7 +121,7 @@ v nastavení pohledu (šipka u názvu pohledu → Fields → Na co čeká).
 | pole | typ | odkud |
 |---|---|---|
 | **Pro lidi** | text | řádek `Pro lidi: …` v těle issue (u formuláře oddíl „Pro lidi“), jinak název issue; interní zadání bez řádku běh ohlásí varováním |
-| **Čeká na** | volba Patrick / kolega / AI / nikdo | přiřazení kolegovi (účty v `rezimy.yml`, klíč `kolegove`, zatím prázdný) má přednost; jinak Patrick u stavů Návrh a Čeká na souhlas s merge, u veřejného hlášení bez rozhodnutí a u splatné připomínky; nikdo u zavřených a připomínek před termínem; AI ostatní. U PR: Patrick, když brána čeká na jeho souhlas |
+| **Čeká na** | volba Patrick / kolega / AI / nikdo | přiřazení kolegovi (účty v `rezimy.yml`, seznam `kolegove` nebo jeden účet `kolega`, zatím žádný) má přednost; jinak Patrick u stavů Návrh a Čeká na souhlas s merge, u veřejného hlášení bez rozhodnutí a u splatné připomínky; nikdo u zavřených a připomínek před termínem; AI ostatní. U PR: Patrick, když brána čeká na jeho souhlas |
 | **Termín** | datum | `Termín: RRRR-MM-DD` u připomínek |
 
 Workflow běží i při úpravě těla issue a při přiřazení. Úkoly jsou seskupené do celků, tedy issues se štítkem

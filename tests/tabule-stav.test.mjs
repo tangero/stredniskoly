@@ -120,3 +120,11 @@ test('„Čeká na“ u PR a termín připomínky', () => {
   assert.equal(termin('Zdroj: vlastník\nTermín: 2026-11-28\n'), '2026-11-28');
   assert.equal(termin('bez termínu'), null);
 });
+
+test('účty kolegů z rezimy.yml: seznam kolegove i jeden účet kolega (review #565)', async () => {
+  const { uctyKolegu } = await import('../scripts/tabule/sync.mjs');
+  assert.deepEqual(uctyKolegu({}), []);
+  assert.deepEqual(uctyKolegu({ kolega: 'kolega-x' }), ['kolega-x']);
+  assert.deepEqual(uctyKolegu({ kolegove: ['a', 'b'], kolega: 'a' }), ['a', 'b']);
+  assert.deepEqual(uctyKolegu({ kolegove: null, kolega: ' ' }), []);
+});
