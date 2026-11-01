@@ -6,9 +6,14 @@
 name: Čeká na tebe
 
 on:
-  # Denně 6:52 UTC (8:52 letního času v Praze) ho spouští Plánovač (#461); vlastní plán GitHubu nemá, protože ho
+  # Denně 6:52 UTC (8:52 letního času v Praze) a večer v 18:30 UTC (vstup vecer) ho spouští Plánovač (#461, #562); vlastní plán GitHubu nemá, protože ho
   # GitHub spouští o hodiny později a zpráva by přišla dvakrát.
   workflow_dispatch:
+    inputs:
+      vecer:
+        description: "Večerní souhrn: jen nové od ranní zprávy"
+        type: string
+        default: "false"
 
 permissions:
   contents: read
@@ -41,4 +46,4 @@ jobs:
           GITHUB_TOKEN: ${{ github.token }}
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
-        run: node scripts/prehled/ceka-na-tebe.mjs
+        run: node scripts/prehled/ceka-na-tebe.mjs ${{ inputs.vecer == 'true' && '--vecer' || '' }}
