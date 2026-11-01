@@ -1,7 +1,7 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import {
-  sestavSkupiny, zprava, polozkaPr, uvodIssue, terminPripominky, potrebujeSouhlas, html, MAX_V_SKUPINE, MAX_TLACITEK, UVIZLA_PO, jedenOdstavec,
+  sestavSkupiny, zprava, polozkaPr, uvodIssue, terminPripominky, potrebujeSouhlas, html, MAX_V_SKUPINE, MAX_TLACITEK, UVIZLA_PO, jedenOdstavec, minulaZprava,
 } from '../scripts/prehled/ceka-na-tebe.mjs';
 
 const TED = Date.parse('2026-10-08T07:00:00Z');
@@ -54,6 +54,7 @@ test('zpráva: HTML Telegramu, tlačítka dvě na řádek, strop položek a tla�
   assert.match(z.text, /^<b>Čeká na tebe: 20<\/b>/);
   assert.match(z.text, /Změna &lt;0&gt; &amp; spol\./);
   assert.match(z.text, new RegExp(`…a dalších ${20 - MAX_V_SKUPINE}`));
+  assert.match(z.text, /Co udělat<\/b>\n.*Když sedí, přidej na PR štítek <code>schvaleno<\/code>/);
   const vsechna = z.tlacitka.flat();
   assert.equal(vsechna.length, MAX_V_SKUPINE);
   assert.ok(vsechna.length <= MAX_TLACITEK);
@@ -121,4 +122,23 @@ test('večerní souhrn: jen nové od ranní zprávy, bez nových nic (#562)', ()
   assert.match(z.text, /#61/);
   assert.doesNotMatch(z.text, /#60|Čeká přes 3 dny|Ostatní/);
   assert.equal(zprava([], { ted: TED }), null);
+});
+
+test('čas minulé zprávy z pevných časů Plánovače, bez čtení historie běhů (#562)', () => {
+  const t = (iso) => Date.parse(iso);
+  // Ráno (06:52 UTC, i se zpožděním): minulá byla včerejší večerní.
+  assert.equal(minulaZprava(t('2026-10-08T07:05:00Z'), false), t('2026-10-07T18:30:00Z'));
+  // Večer (18:30 UTC, i se zpožděním): minulá byla dnešní ranní.
+  assert.equal(minulaZprava(t('2026-10-08T18:41:00Z'), true), t('2026-10-08T06:52:00Z'));
+  // Ruční spuštění před ranním časem: poslední ranní byla včera.
+  assert.equal(minulaZprava(t('2026-10-08T05:00:00Z'), true), t('2026-10-07T06:52:00Z'));
+  // Výběr nových: ranní zpráva ukáže položky přibylé po 18:30 večer, starší ne.
+  const ted = t('2026-10-08T07:05:00Z');
+  const g = skupiny({ issues: [
+    issue({ cislo: 70, vytvoreno: '2026-10-07T17:00:00Z', stitky: ['bug-report'] }),
+    issue({ cislo: 71, vytvoreno: '2026-10-07T20:00:00Z', stitky: ['bug-report'] }),
+  ] });
+  const z = zprava(g, { ted, posledni: minulaZprava(ted, false) });
+  assert.match(z.text, /Nové od minulé zprávy \(1\)[\s\S]*#71/);
+  assert.doesNotMatch(z.text, /Nové od minulé zprávy[\s\S]*#70/);
 });

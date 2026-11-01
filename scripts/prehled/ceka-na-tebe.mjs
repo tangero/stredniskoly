@@ -139,6 +139,10 @@ export function zprava(skupiny, { ted = Date.now(), vecer = false, posledni = te
   const casti = [`<b>${vecer ? 'Večer na tebe' : 'Čeká na tebe'}: ${vecer ? nove.length : vse.length}</b>`];
   if (!vecer && stare.length) casti.push(oddil('⏰ Čeká přes 3 dny', stare, MAX_STARYCH, true));
   if (nove.length) casti.push(oddil(vecer ? '🆕 Nové od ranní zprávy' : '🆕 Nové od minulé zprávy', nove, MAX_V_SKUPINE, false));
+  // Pokyn, co udělat, jednou za skupinu, která má ve zprávě zobrazenou položku (#562, omezení P4).
+  const zobrazene = new Set([...(vecer ? [] : stare.slice(0, MAX_STARYCH)), ...nove.slice(0, MAX_V_SKUPINE)].map((p) => p.g));
+  const pokyny = skupiny.filter((g) => zobrazene.has(g));
+  if (pokyny.length) casti.push(`<b>Co udělat</b>\n${pokyny.map((g) => `${g.nadpis}: ${g.akce}`).join('\n')}`);
   if (!vecer) {
     const zbytek = vse.filter((p) => !stare.includes(p) && !nove.includes(p));
     const pocty = skupiny.map((g) => [g.nadpis, zbytek.filter((p) => p.g === g).length]).filter(([, n]) => n);
@@ -154,6 +158,18 @@ export function zprava(skupiny, { ted = Date.now(), vecer = false, posledni = te
   const radkyTlacitek = [];
   for (let i = 0; i < tlacitka.length; i += 2) radkyTlacitek.push(tlacitka.slice(i, i + 2));
   return { text, tlacitka: radkyTlacitek };
+}
+
+/**
+ * Čas minulé zprávy z pevných časů Plánovače (ranní 06:52 UTC, večerní 18:30 UTC). Čtení historie běhů workflow by
+ * potřebovalo `actions: read` (omezení P3), proto se nečte. Večer: poslední ranní čas, ráno: poslední večerní.
+ */
+export function minulaZprava(ted, vecer) {
+  const [h, m] = vecer ? [6, 52] : [18, 30];
+  const d = new Date(ted);
+  let t = Date.UTC(d.getUTCFullYear(), d.getUTCMonth(), d.getUTCDate(), h, m);
+  if (t > ted) t -= DEN;
+  return t;
 }
 
 async function posliTelegram({ text, tlacitka }) {
@@ -208,10 +224,8 @@ async function main() {
   }
 
   const skupiny = sestavSkupiny({ prs, issues: [...issues.values()], ucty, dnes, ted });
-  // Čas minulé zprávy: poslední úspěšný běh workflow (ranní i večerní), jinak půl dne (večer) nebo den (ráno).
-  const behy = await api(`repos/${REPO}/actions/workflows/ceka-na-tebe.yml/runs?status=success&per_page=1`).catch(() => ({}));
-  const minuly = behy.workflow_runs?.[0]?.created_at;
-  const z = zprava(skupiny, { ted, vecer, posledni: minuly ? Date.parse(minuly) : ted - (vecer ? DEN / 2 : DEN) });
+  // Čas minulé zprávy z pevných časů Plánovače (ranní 06:52 UTC, večerní 18:30 UTC), viz minulaZprava.
+  const z = zprava(skupiny, { ted, vecer, posledni: minulaZprava(ted, vecer) });
   if (!z) return console.log(vecer ? 'Nic nového od ranní zprávy, neposílám.' : 'Nic nečeká na vlastníka, zprávu neposílám.');
   console.log(z.text);
   console.log(JSON.stringify(z.tlacitka));

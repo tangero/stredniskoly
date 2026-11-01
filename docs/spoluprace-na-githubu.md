@@ -173,13 +173,14 @@ pustí v režimu R (přes limit rutiny jako L).
 **Čeká na tebe** (`.github/workflows/ceka-na-tebe.yml`, `scripts/prehled/ceka-na-tebe.mjs`, #440): denně v 8:52
 jedna zpráva do Telegramu, jen když něco čeká na vlastníka. Skupiny: PR ke schválení (věta z oddílu „Pro vlastníka“
 a odkaz na stránku v náhledu), otázky, hotové oponentury, návrhy, splatné připomínky, uvízlé opravy z review
-a oponentury a hlášení od veřejnosti bez rozhodnutí (#461). Pod každou skupinou pokyn, co udělat, pod zprávou
+a oponentury a hlášení od veřejnosti bez rozhodnutí (#461). V oddílu „Co udělat“ pokyn ke každé skupině, která má ve zprávě zobrazenou položku, pod zprávou
 tlačítka na PR nebo issue. Spouští ji Plánovač; ručně v Actions (Čeká na tebe, Run workflow).
 Od #562 je ranní zpráva řazená podle stáří: nahoře „Čeká přes 3 dny“ od nejstarší s počtem dní, pak „Nové od minulé
 zprávy“, zbytek jen počty po skupinách s odkazem na seznam issues. Stáří je doba od přidání štítku otázky, návrhu nebo
 oponentury, u ostatních od založení (u PR od otevření; přesnější počítání od první kontroly brány je ještě otevřené).
 Večer v 18:30 UTC (19:30 SEČ, v létě 20:30 SELČ) přijde souhrn „Večer na tebe“ jen s položkami, které přibyly od
-posledního úspěšného běhu; bez nových se neposílá. Zadání #562 bod 3 (doporučení po 7 dnech) zatím není hotový.
+minulé zprávy. Její čas se bere z pevných časů Plánovače (ranní 06:52 UTC, večerní 18:30 UTC); historii běhů workflow
+nečteme, protože by potřebovala oprávnění `actions: read`. Bez nových se neposílá. Zadání #562 bod 3 (doporučení po 7 dnech) zatím není hotový.
 
 **Tep rutiny** (`.github/workflows/tep-rutiny.yml`, `scripts/provoz/tep-rutiny.mjs`, #440, #461): rutina Claude Code
 na začátku každého běhu přepíše komentář se značkou `tep-rutiny` v issue #462 (štítek `trvale`); spustit workflow
