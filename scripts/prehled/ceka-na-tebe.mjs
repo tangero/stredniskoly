@@ -33,6 +33,7 @@ const adresa = (cislo, pr = false) => `https://github.com/${REPO}/${pr ? 'pull' 
 /** Skupiny v pořadí, ve kterém je vlastník má vyřizovat. `akce` je pokyn pod položkou, `tlacitko` popisek tlačítka. */
 export const SKUPINY = [
   { klic: 'souhlas', nadpis: '✅ Ke schválení', akce: 'Když sedí, přidej na PR štítek <code>schvaleno</code>.', tlacitko: 'schválit' },
+  { klic: 'rozpracovane', nadpis: '🚧 Rozpracované (souhlas zatím ne)', akce: 'Brána chce ještě něco jiného než souhlas (review, testy). Souhlas přidej, až PR přejde do „Ke schválení“.', tlacitko: null },
   { klic: 'otazka', nadpis: '❓ Otázky na tebe', akce: 'Odpověz komentářem v issue, nebo řekni Eduardě či Claude Code.', tlacitko: 'odpovědět' },
   { klic: 'oponentura', nadpis: '⚖️ Oponentura hotová', akce: 'Vyber variantu: <code>schvaleno</code> s komentářem, kterou, nebo <code>zamitnuto</code>.', tlacitko: 'vybrat' },
   { klic: 'navrh', nadpis: '💡 Návrhy', akce: 'Souhlas štítkem <code>schvaleno</code>, odmítnutí <code>zamitnuto</code>.', tlacitko: 'rozhodnout' },
@@ -53,10 +54,23 @@ export function uvodIssue(telo = '') {
 /** Termín připomínky z těla issue (RRRR-MM-DD), nebo null. */
 export const terminPripominky = (telo = '') => (telo.match(/Termín:?\s*(\d{4}-\d{2}-\d{2})/) || [])[1] || null;
 
-/** PR potřebuje souhlas vlastníka, když poslední kontrola brány neprošla kvůli chybějícímu souhlasu. */
-export function potrebujeSouhlas(kontrola) {
-  return kontrola?.conclusion === 'failure' && /chybí souhlas vlastníka|potřebuje schvaleno/.test(kontrola.output?.summary || '');
+const SOUHLAS = /chybí souhlas vlastníka|potřebuje schvaleno/;
+const duvodyKontroly = (kontrola) => (kontrola?.output?.summary || '').split('\n').filter((r) => r.startsWith('- '));
+
+/** Brána v poslední kontrole zmiňuje chybějící souhlas vlastníka (možná vedle dalších důvodů). */
+export function zminujeSouhlas(kontrola) {
+  return kontrola?.conclusion === 'failure' && SOUHLAS.test(kontrola.output?.summary || '');
 }
+
+/** PR je ke schválení jen tehdy, když je jediným důvodem neúspěchu brány chybějící souhlas vlastníka (#560). */
+export function potrebujeSouhlas(kontrola) {
+  if (!zminujeSouhlas(kontrola)) return false;
+  const duvody = duvodyKontroly(kontrola);
+  return duvody.length > 0 && duvody.every((d) => SOUHLAS.test(d));
+}
+
+/** Brána chce souhlas, ale i něco dalšího: PR je rozpracovaný a o souhlas se zatím nežádá. */
+export const rozpracovanyBezSouhlasu = (kontrola) => zminujeSouhlas(kontrola) && !potrebujeSouhlas(kontrola);
 
 /**
  * Položka PR ke schválení: co a kde zkontrolovat. Cesty z oddílu „Pro vlastníka“ vedou na náhled PR (změna ještě
@@ -76,6 +90,7 @@ export function sestavSkupiny({ prs = [], issues = [], ucty, dnes, ted }) {
   for (const p of prs) {
     if (p.stitky.includes('potrebuje-cloveka')) s.clovek.push({ cislo: p.cislo, pr: true, titulek: p.titulek, radky: [] });
     if (p.souhlas) s.souhlas.push(polozkaPr(p, { nahled: p.nahled }));
+    else if (p.rozpracovany) s.rozpracovane.push({ cislo: p.cislo, pr: true, titulek: p.titulek, radky: [] });
   }
   for (const i of issues) {
     const st = new Set(i.stitky);
@@ -117,7 +132,7 @@ export function zprava(skupiny) {
     for (const p of g.polozky.slice(0, MAX_V_SKUPINE)) {
       radky.push(`• <a href="${adresa(p.cislo, p.pr)}">#${p.cislo}</a> ${html(zkrat(p.titulek, 90))}`);
       for (const r of p.radky) radky.push(`   ${r}`);
-      if (tlacitka.length < MAX_TLACITEK) tlacitka.push({ text: `#${p.cislo} ${g.tlacitko}`, url: adresa(p.cislo, p.pr) });
+      if (g.tlacitko && tlacitka.length < MAX_TLACITEK) tlacitka.push({ text: `#${p.cislo} ${g.tlacitko}`, url: adresa(p.cislo, p.pr) });
     }
     if (g.polozky.length > MAX_V_SKUPINE) radky.push(`   …a dalších ${g.polozky.length - MAX_V_SKUPINE}`);
     radky.push(`<i>${g.akce}</i>`);
@@ -164,7 +179,7 @@ async function main() {
     const kontrola = (d.check_runs || []).filter((k) => k.app?.slug === 'github-actions').sort((a, b) => b.id - a.id)[0];
     const souhlas = potrebujeSouhlas(kontrola);
     const nahled = souhlas ? adresaNahledu(await api(`repos/${REPO}/commits/${p.head.sha}/statuses?per_page=100`)) : null;
-    prs.push({ cislo: p.number, titulek: p.title, telo: p.body || '', stitky: p.labels.map((l) => l.name), souhlas, nahled });
+    prs.push({ cislo: p.number, titulek: p.title, telo: p.body || '', stitky: p.labels.map((l) => l.name), souhlas, rozpracovany: rozpracovanyBezSouhlasu(kontrola), nahled });
   }
 
   const issues = new Map();

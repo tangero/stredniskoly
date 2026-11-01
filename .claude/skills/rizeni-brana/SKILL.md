@@ -42,7 +42,20 @@ workflow „Oprava z review“ na komentář `@claude` (nejvýš 5 kol, pak št�
 do PR se štítkem `potrebuje-cloveka` další `@claude` nepiš, rozhodne člověk.
 Automatické review blokuje jen P1 a doložené P2 na řádcích změněných v PR (u opakovaného review od posledního
 review); ostatní nálezy jsou „Doporučení (neblokuje)“ a PR nedrží (RA53, #551). Na PR se `schvaleno` se kolo oprav
-nespustí: po přidání `schvaleno` na větev nepushuj, souhlas platí jen pro hlavu, ke které byl přidán.
+nespustí: po přidání `schvaleno` na větev nepushuj, souhlas platí jen pro hlavu, ke které byl přidán. Co se najde
+potom, jde do dalšího PR nebo do další dávky (platí pro všechny PR, #560).
+
+**Týdenní dávka H2 (RA54, #560).** Změny cest H2 z interních zadání nejdou po jednom, ale do jedné větve
+`rizeni/davka-RRRR-TT` (rok a týden ISO) a jednoho PR týdně:
+- Každé zadání má dál své issue. Popis PR dávky má `Closes #N` pro každé hotové zadání a pro každé jednu větu
+  v `## Pro vlastníka`. Brána bere nejpřísnější režim ze všech propojených issues (test se třemi `Closes`).
+- Část zadání mimo H2 (web, data, testy) jde samostatným PR; do dávky jde jen část, která mění H2.
+- Dávka je draft, dokud nemá zelené testy a review „Bez P1 a P2“ k hlavě. O souhlas (`schvaleno`) se žádá jednou
+  týdně ve čtvrtek. Po souhlasu se do dávky nepushuje; co přijde později, jde do dávky dalšího týdne.
+- Výjimky (vlastní PR mimo dávku): štítek `incident`; oprava, bez které nefunguje brána, sloučení nebo review;
+  zadání, u kterého vlastník napíše „mimo dávku“.
+- Denní zpráva „Čeká na tebe“ ukáže PR v „Ke schválení“ jen tehdy, když brána chybí jedině souhlas; ostatní PR
+  s chybějícím souhlasem jsou v „Rozpracované (souhlas zatím ne)“ bez tlačítka.
 
 **Lhůta L** se založí znovu při novém commitu, změně oddílu „Rozsah“ propojeného issue a novém nebo
 upraveném protokolu. Push na konci lhůty ji tedy restartuje; nepushuj kosmetické změny do čekajícího PR.

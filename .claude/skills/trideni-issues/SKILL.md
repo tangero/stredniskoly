@@ -9,6 +9,10 @@ Pravidla: `CLAUDE.md` (pravidla 1 a 4) a `docs/navrh-rizeni-vyvoje-2027.md`, odd
 
 ## Postup
 
+0. **Zadání měnící kontrolované činnosti K** (`k` v `.github/rezimy.yml`) zakládej s řádkem `Kontrolované činnosti: …`
+   (například `workflows, registr`) v těle a o `schvaleno` požádej vlastníka přímo na issue ve stejné odpovědi,
+   ve které issue zakládáš. Souhlas na issue platí pro K, hotový PR pak na souhlas nečeká (RA54, #560).
+
 1. Splatné připomínky (`pripominka`) vypiš zvlášť (`CLAUDE.md`, pravidlo 1):
    ```bash
    gh issue list -R tangero/stredniskoly --label pripominka --state open --json number,title,body \
