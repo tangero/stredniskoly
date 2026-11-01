@@ -54,7 +54,7 @@ export function uvodIssue(telo = '') {
 /** Termín připomínky z těla issue (RRRR-MM-DD), nebo null. */
 export const terminPripominky = (telo = '') => (telo.match(/Termín:?\s*(\d{4}-\d{2}-\d{2})/) || [])[1] || null;
 
-const SOUHLAS = /chybí souhlas vlastníka|potřebuje schvaleno/;
+const SOUHLAS = /chybí souhlas vlastníka|potřebuje schvaleno|souhlas na issue #\d+ neplatí/;
 const duvodyKontroly = (kontrola) => (kontrola?.output?.summary || '').split('\n').filter((r) => r.startsWith('- '));
 
 /** Brána v poslední kontrole zmiňuje chybějící souhlas vlastníka (možná vedle dalších důvodů). */

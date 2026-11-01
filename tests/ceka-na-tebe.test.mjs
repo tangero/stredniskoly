@@ -72,6 +72,9 @@ test('pomocné funkce', () => {
   assert.equal(potrebujeSouhlas({ conclusion: 'failure', output: { summary: '- chybí review asistenta zadání' } }), false);
   assert.equal(potrebujeSouhlas({ conclusion: 'success', output: { summary: 'chybí souhlas vlastníka' } }), false);
   assert.equal(potrebujeSouhlas(undefined), false);
+  const k = { conclusion: 'failure', output: { summary: '- kontrolovaná činnost (workflows): chybí souhlas vlastníka (PR nemá štítek schvaleno)\n- souhlas na issue #10 neplatí: bez štítku schvaleno' } };
+  assert.equal(potrebujeSouhlas(k), true);
+  assert.equal(rozpracovanyBezSouhlasu(k), false);
 });
 
 test('hlášení od veřejnosti jako skupina, včetně hlášení škol, trvalá issue ne (#461)', () => {
