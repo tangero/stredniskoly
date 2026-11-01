@@ -129,6 +129,7 @@ function reviewKCommitu(komentare, sha) {
 export async function nactiPr(api) {
   const podleIssue = new Map();
   const podlePr = new Map();
+  const souhlasPr = new Map();
   for (const p of await api(`repos/${REPO}/pulls?state=open&base=main&per_page=100`)) {
     const k = await api(`repos/${REPO}/commits/${p.head.sha}/check-runs?check_name=${encodeURIComponent(NAZEV_KONTROLY)}&filter=latest`);
     const posledni = (k.check_runs || []).sort((a, b) => b.id - a.id)[0];
@@ -136,12 +137,14 @@ export async function nactiPr(api) {
     const komentare = await api(`repos/${REPO}/issues/${p.number}/comments?per_page=100`);
     const veta = naCoCekaPr({ draft: p.draft, mergeable: detail.mergeable, kontrola: posledni, review: reviewKCommitu(komentare, p.head.sha) });
     podlePr.set(p.number, veta);
+    // Podle čísla PR i bez propojeného issue: samostatný PR čekající na souhlas je také „Čeká na: Patrick“.
+    souhlasPr.set(p.number, branaCekaNaSouhlas(posledni));
     for (const n of propojenaIssues(p.body)) {
       if (!podleIssue.has(n)) podleIssue.set(n, []);
       podleIssue.get(n).push({ cislo: p.number, cekaNaSouhlas: branaCekaNaSouhlas(posledni), naCoCeka: veta });
     }
   }
-  return { podleIssue, podlePr };
+  return { podleIssue, podlePr, souhlasPr };
 }
 
 /** Rodič (číslo projektu) a souhrn sub-issues otevřených issues z REST API. */
@@ -168,12 +171,20 @@ export async function nactiVazby(api) {
   return vazby;
 }
 
+/**
+ * Účty kolegů pro „Čeká na“ z rezimy.yml: seznam `kolegove`, nebo jeden účet `kolega` (#561).
+ * Dokud tam žádný není, kolega se nepozná.
+ */
+export function uctyKolegu(rezimy = {}) {
+  const ucty = [rezimy.kolegove, rezimy.kolega].flat().filter((u) => typeof u === 'string' && u.trim());
+  return [...new Set(ucty.map((u) => u.trim()))];
+}
+
 async function main() {
   const nanecisto = process.env.NANECISTO === '1' || process.argv.includes('--nanecisto');
   const api = vytvorApi();
-  const [tabule, { podleIssue: prs, podlePr }, vazby, konfig] = await Promise.all([nactiTabuli(), nactiPr(api), nactiVazby(api), nactiKonfig(api)]);
-  // Účty kolegů pro „Čeká na“ (rezimy.yml, `kolegove`); dokud tam nejsou, kolega se nepozná (#561).
-  const kolegove = konfig.rezimy?.kolegove || [];
+  const [tabule, { podleIssue: prs, podlePr, souhlasPr }, vazby, konfig] = await Promise.all([nactiTabuli(), nactiPr(api), nactiVazby(api), nactiKonfig(api)]);
+  const kolegove = uctyKolegu(konfig.rezimy);
   if (!nanecisto) await zalozPole(tabule);
   const volbyCekaNa = new Map((tabule.poleCekaNa?.options || []).map((o) => [o.name, o.id]));
   let poliPilotu = 0;
@@ -216,7 +227,7 @@ async function main() {
     if (c.__typename === 'PullRequest') {
       veta = c.state === 'OPEN' ? podlePr.get(c.number) ?? 'čeká na vyhodnocení' : '';
       if (c.state === 'OPEN') {
-        const kdo = cekaNaPr({ otevreny: true, cekaNaSouhlas: [...prs.values()].flat().some((x) => x.cislo === c.number && x.cekaNaSouhlas) });
+        const kdo = cekaNaPr({ otevreny: true, cekaNaSouhlas: souhlasPr.get(c.number) === true });
         poliPilotu += await srovnejPilot(p, { cekaNa: kdo });
       }
     }
