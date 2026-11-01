@@ -70,6 +70,7 @@ test('pole „Na co čeká“ u issue', async () => {
 });
 
 // Pilot tabule (#561): „Pro lidi“, „Čeká na“, „Termín“.
+import fs from 'node:fs';
 import { proLidi, cekaNa, cekaNaPr, termin, CEKA_NA } from '../scripts/tabule/stav.mjs';
 
 test('K1: pole „Pro lidi“ z řádku v těle issue, jinak název issue', () => {
@@ -82,6 +83,10 @@ test('K1: pole „Pro lidi“ z řádku v těle issue, jinak název issue', () =
   assert.equal(proLidi({ titulek: 'T', telo: '### Proč\n\nx\n\n### Pro lidi\n\nUvidíte novou mapu.\n\n### Co' }).text, 'Uvidíte novou mapu.');
   assert.equal(proLidi({ titulek: 'T', telo: '### Pro lidi\r\n\r\nText z Windows.' }).text, 'Text z Windows.');
   assert.equal(proLidi({ titulek: 'T', telo: '### Pro lidi\n\n### Co' }).chybi, true);
+  // Nevyplněný řádek ze šablony (jen HTML komentář) se počítá jako chybějící (review #565).
+  const sablona = fs.readFileSync('.github/INTERNAL_TEMPLATES/interni-zadani.md', 'utf8');
+  assert.deepEqual(proLidi({ titulek: 'X', telo: sablona }), { text: 'X', chybi: true });
+  assert.equal(proLidi({ titulek: 'X', telo: 'Pro lidi: Uvidíte mapu. <!-- poznámka -->' }).text, 'Uvidíte mapu.');
   assert.equal(proLidi({ titulek: 'T', telo: `Pro lidi: ${'a'.repeat(400)}` }).text.length, 240);
 });
 

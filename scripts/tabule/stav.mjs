@@ -123,7 +123,8 @@ export const CEKA_NA = { vlastnik: 'Patrick', kolega: 'kolega', ai: 'AI', nikdo:
  * @param {{ titulek?: string, telo?: string }} issue
  */
 export function proLidi(issue) {
-  const telo = (issue.telo || '').replace(/\r\n?/g, '\n');
+  // HTML komentáře pryč: nevyplněný řádek ze šablony (`Pro lidi: <!-- … -->`) je prázdný, ne text.
+  const telo = (issue.telo || '').replace(/\r\n?/g, '\n').replace(/<!--[\s\S]*?(-->|$)/g, '');
   const m = telo.match(PRO_LIDI) || telo.match(PRO_LIDI_NADPIS);
   const text = (m ? m[1] : issue.titulek || '').replace(/\s+/g, ' ').trim();
   return { text: text.length > PRO_LIDI_MAX ? `${text.slice(0, PRO_LIDI_MAX - 1)}…` : text, chybi: !m };
