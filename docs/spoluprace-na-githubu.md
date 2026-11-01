@@ -116,6 +116,25 @@ review asistenta zadání k aktuálnímu commitu, u schválených issues bez PR 
 u návrhu „čeká na tvé rozhodnutí“, u připomínky termín a u hlášení projekt, ke kterému patří. Na kartách ho zapneš
 v nastavení pohledu (šipka u názvu pohledu → Fields → Na co čeká).
 
+**Pilot přehledné tabule (#561, od 1. 11. 2026).** Workflow navíc založí tři pole a plní je u otevřených issues (u otevřených PR jen „Čeká na“):
+
+| pole | typ | odkud |
+|---|---|---|
+| **Pro lidi** | text | řádek `Pro lidi: …` v těle issue (u formuláře oddíl „Pro lidi“), jinak název issue; interní zadání bez řádku běh ohlásí varováním |
+| **Čeká na** | volba Patrick / kolega / AI / nikdo | přiřazení kolegovi (účty v `rezimy.yml`, klíč `kolegove`, zatím prázdný) má přednost; jinak Patrick u stavů Návrh a Čeká na souhlas s merge, u veřejného hlášení bez rozhodnutí a u splatné připomínky; nikdo u zavřených a připomínek před termínem; AI ostatní. U PR: Patrick, když brána čeká na jeho souhlas |
+| **Termín** | datum | `Termín: RRRR-MM-DD` u připomínek |
+
+Workflow běží i při úpravě těla issue a při přiřazení. Úkoly jsou seskupené do celků, tedy issues se štítkem
+`projekt` (#306 Řízení vývoje, #331 Měření a přínos, #181 Data 2027, #523 Aktuality a odběry, #541 Opravy údajů
+škol). Pravidla třídění jsou ve skillu `trideni-issues`, body 9 a 10. Pohledy nastaví vlastník (API je neumí):
+
+- **Celky:** filtr `no:parent-issue -label:trvale`, pole Pro lidi, Čeká na, Sub-issue progress;
+- **Moje:** `čeká-na:Patrick is:open`, řazení podle Updated vzestupně;
+- **Hoří:** `čeká-na:Patrick is:open updated:<@today-3d`;
+- **Měření:** `parent-issue:tangero/stredniskoly#331` a připomínky (`label:pripominka`), řazení podle Termínu.
+
+Vyhodnocení pilotu je po dvou týdnech v #561; ostatní repozitáře se připojí až po něm.
+
 **Oponentura** (`.github/workflows/oponentura.yml`, skill `.claude/skills/oponentura`, #358): slouží při rozjezdu
 nového projektu, rutinně se nespouští. Vlastník nebo asistent zadání popíše problém formulářem **Problém pro nový
 projekt** (`.github/ISSUE_TEMPLATE/problem.yml`, pro `gh` `.github/INTERNAL_TEMPLATES/problem.md`): co chceme

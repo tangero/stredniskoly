@@ -68,3 +68,55 @@ test('pole „Na co čeká“ u issue', async () => {
   assert.equal(n(['interni']), 'chybí schvaleno nebo doklad Zdroj:');
   assert.equal(n(['nova-data', 'oblast:data']), 'čeká na nová data (datová linka)');
 });
+
+// Pilot tabule (#561): „Pro lidi“, „Čeká na“, „Termín“.
+import fs from 'node:fs';
+import { proLidi, cekaNa, cekaNaPr, termin, CEKA_NA } from '../scripts/tabule/stav.mjs';
+
+test('K1: pole „Pro lidi“ z řádku v těle issue, jinak název issue', () => {
+  const telo = 'Zdroj: vlastník\n\nPro lidi: Na stránce školy uvidíte i obory pro dospělé.\n\n### Proč';
+  assert.deepEqual(proLidi({ titulek: '[Zadání] Dálkové obory', telo }), { text: 'Na stránce školy uvidíte i obory pro dospělé.', chybi: false });
+  assert.deepEqual(proLidi({ titulek: '[Zadání] Dálkové obory', telo: 'Zdroj: vlastník' }), { text: '[Zadání] Dálkové obory', chybi: true });
+  // Prázdný řádek se nepočítá, dlouhý text se zkrátí.
+  assert.equal(proLidi({ titulek: 'T', telo: 'Pro lidi: \nx' }).chybi, true);
+  // Tvar z formuláře: nadpis a text pod ním; prázdný oddíl (rovnou další nadpis) se nepočítá.
+  assert.equal(proLidi({ titulek: 'T', telo: '### Proč\n\nx\n\n### Pro lidi\n\nUvidíte novou mapu.\n\n### Co' }).text, 'Uvidíte novou mapu.');
+  assert.equal(proLidi({ titulek: 'T', telo: '### Pro lidi\r\n\r\nText z Windows.' }).text, 'Text z Windows.');
+  assert.equal(proLidi({ titulek: 'T', telo: '### Pro lidi\n\n### Co' }).chybi, true);
+  // Nevyplněný řádek ze šablony (jen HTML komentář) se počítá jako chybějící (review #565).
+  const sablona = fs.readFileSync('.github/INTERNAL_TEMPLATES/interni-zadani.md', 'utf8');
+  assert.deepEqual(proLidi({ titulek: 'X', telo: sablona }), { text: 'X', chybi: true });
+  assert.equal(proLidi({ titulek: 'X', telo: 'Pro lidi: Uvidíte mapu. <!-- poznámka -->' }).text, 'Uvidíte mapu.');
+  assert.equal(proLidi({ titulek: 'T', telo: `Pro lidi: ${'a'.repeat(400)}` }).text.length, 240);
+});
+
+test('K2: „Čeká na“ podle stavu karty, kolega podle přiřazení', () => {
+  const o = { dnes: '2026-11-01', kolegove: ['kolega-x'] };
+  const iss = (stitky, extra = {}) => ({ stav: 'OPEN', stitky, ...extra });
+  assert.equal(cekaNa(iss(['interni', 'navrh']), STAVY.navrh, o), CEKA_NA.vlastnik);
+  assert.equal(cekaNa(iss(['interni', 'schvaleno']), STAVY.cekaNaSouhlas, o), CEKA_NA.vlastnik);
+  assert.equal(cekaNa(iss(['interni', 'schvaleno']), STAVY.vPr, o), CEKA_NA.ai);
+  assert.equal(cekaNa(iss(['interni', 'schvaleno']), STAVY.schvaleno, o), CEKA_NA.ai);
+  assert.equal(cekaNa(iss(['interni'], { stav: 'CLOSED' }), STAVY.hotovo, o), CEKA_NA.nikdo);
+  assert.equal(cekaNa(iss(['trvale']), null, o), null);
+  // Veřejné hlášení bez rozhodnutí čeká na vlastníka; s rodičem nebo se schvaleno na AI.
+  assert.equal(cekaNa(iss(['bug-report']), STAVY.hlaseni, o), CEKA_NA.vlastnik);
+  assert.equal(cekaNa(iss(['bug-report'], { rodic: 541 }), STAVY.hlaseni, o), CEKA_NA.ai);
+  assert.equal(cekaNa(iss(['interni']), STAVY.hlaseni, o), CEKA_NA.ai);
+  // Připomínka: před termínem nikdo, od termínu vlastník.
+  assert.equal(cekaNa(iss(['interni', 'pripominka'], { telo: 'Termín: 2026-11-28' }), STAVY.hlaseni, o), CEKA_NA.nikdo);
+  assert.equal(cekaNa(iss(['interni', 'pripominka'], { telo: 'Termín: 2026-11-01' }), STAVY.hlaseni, o), CEKA_NA.vlastnik);
+  // Přiřazení kolegovi má přednost i před návrhem; cizí přiřazení ne.
+  assert.equal(cekaNa(iss(['interni', 'navrh'], { prirazeni: ['kolega-x'] }), STAVY.navrh, o), CEKA_NA.kolega);
+  assert.equal(cekaNa(iss(['interni', 'navrh'], { prirazeni: ['nekdo'] }), STAVY.navrh, o), CEKA_NA.vlastnik);
+  assert.equal(cekaNa(iss(['interni', 'navrh'], { prirazeni: ['kolega-x'] }), STAVY.navrh, { dnes: '2026-11-01' }), CEKA_NA.vlastnik, 'bez seznamu kolegů');
+  assert.deepEqual(Object.values(CEKA_NA), ['Patrick', 'kolega', 'AI', 'nikdo']);
+});
+
+test('„Čeká na“ u PR a termín připomínky', () => {
+  assert.equal(cekaNaPr({ otevreny: true, cekaNaSouhlas: true }), CEKA_NA.vlastnik);
+  assert.equal(cekaNaPr({ otevreny: true, cekaNaSouhlas: false }), CEKA_NA.ai);
+  assert.equal(cekaNaPr({ otevreny: false, cekaNaSouhlas: true }), CEKA_NA.nikdo);
+  assert.equal(termin('Zdroj: vlastník\nTermín: 2026-11-28\n'), '2026-11-28');
+  assert.equal(termin('bez termínu'), null);
+});

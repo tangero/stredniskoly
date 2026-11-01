@@ -9,7 +9,8 @@ name: Tabule
 
 on:
   issues:
-    types: [opened, reopened, closed, labeled, unlabeled]
+    # edited: řádek „Pro lidi“ a termín připomínky v těle issue (#561).
+    types: [opened, reopened, closed, edited, labeled, unlabeled, assigned, unassigned]
   pull_request_target:
     types: [opened, reopened, closed, edited, labeled, unlabeled, synchronize]
   schedule:
