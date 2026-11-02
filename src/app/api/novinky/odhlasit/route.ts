@@ -31,11 +31,11 @@ export async function POST(request: NextRequest) {
   try {
     const vysledek = await odhlas(polozkaId);
     console.log(`✉️ Odhlášení: ${vysledek.ok ? 'provedeno' : 'odkaz neplatí'}, zahozeno ${vysledek.zahozeno}`);
+    return NextResponse.json({ success: true, co: vysledek.co ?? null });
   } catch (chyba) {
     console.error('❌ Odhlášení selhalo:', chyba);
     return NextResponse.json({ error: 'Zkus to prosím za chvíli.' }, { status: 500 });
   }
-  return NextResponse.json({ success: true });
 }
 
 /**

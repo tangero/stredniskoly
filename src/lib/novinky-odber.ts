@@ -217,45 +217,108 @@ export interface OdhlaseniVysledek {
   /** Kolik nepředaných položek se zahodilo. */
   zahozeno: number;
   duvod?: string;
+  /** Co se odhlásilo: termíny, nebo hlídání škol (podle zprávy, ze které odkaz vede). */
+  co?: 'terminy' | 'hlidani';
 }
 
 /**
- * Krok 7: odhlášení jedním kliknutím. Ruší jen odběr té zprávy, ze které odkaz
- * vede, a v téže transakci se vypořádá s jeho nepředanými položkami. Hranicí
- * je předání dávky Resendu: co je `predavana` nebo dál, se nechá dojít.
+ * Krok 7: odhlášení jedním kliknutím. Ruší jen ten odběr, ze které zprávy odkaz
+ * vede (termíny, nebo hlídání škol; P4 zadání #523), a v téže transakci se
+ * vypořádá s jeho nepředanými položkami. Hranicí je předání dávky Resendu:
+ * co je `predavana` nebo dál, se nechá dojít.
  */
 export async function odhlas(polozkaId: string): Promise<OdhlaseniVysledek> {
   return vTransakci(async (s) => {
-    const v = await s.dotaz<{ odberatel_id: string | null }>(
-      `select odberatel_id from polozka_odeslani where id = $1`,
+    const v = await s.dotaz<{ odberatel_id: string | null; zprava: string }>(
+      `select odberatel_id, zprava from polozka_odeslani where id = $1`,
       [polozkaId],
     );
     const odberatelId = v.rows[0]?.odberatel_id;
     if (!odberatelId) return { ok: false, zahozeno: 0, duvod: 'odkaz neplatí' };
 
-    // Odběr je jeden, takže odhlášení znamená konec celého newsletteru.
-    await s.dotaz(`delete from odber_novinek where odberatel_id = $1`, [odberatelId]);
+    if (jeZpravaHlidani(v.rows[0].zprava)) {
+      return { ok: true, zahozeno: await zrusHlidaniTx(s, odberatelId), co: 'hlidani' };
+    }
+    return { ok: true, zahozeno: await zrusTerminyTx(s, odberatelId), co: 'terminy' };
+  });
+}
+
+/** Zprávy hlídání škol mají v evidenci odeslání zprávu `hlidani-RRRR-MM-DD`. */
+export const PREDPONA_ZPRAVY_HLIDANI = 'hlidani-';
+
+export function jeZpravaHlidani(zprava: string): boolean {
+  return zprava.startsWith(PREDPONA_ZPRAVY_HLIDANI);
+}
+
+/** Zruší odběr termínů. Hlídání škol se ho netýká (P4). Vrací počet zahozených položek. */
+export async function zrusTerminyTx(s: Spojeni, odberatelId: string): Promise<number> {
+  await s.dotaz(`delete from odber_novinek where odberatel_id = $1`, [odberatelId]);
+  await s.dotaz(
+    `update doklad_souhlasu
+        set zaniklo = coalesce(zaniklo, now()), smazat_po = coalesce(smazat_po, now() + interval '3 years')
+      where odberatel_id = $1 and ucel = 'novinky'`,
+    [odberatelId],
+  );
+  const zahozeno = await zahodNepredanePolozky(s, odberatelId, 'terminy');
+  await smazOsirelouIdentitu(s, odberatelId);
+  return zahozeno;
+}
+
+/**
+ * Zruší hlídání jedné školy, nebo (bez `redizo`) všech hlídaných škol. Odběr
+ * termínů zůstává. Když nezbyde žádná hlídaná škola, zanikne doklad souhlasu
+ * s hlídáním a čekající souhrn se zahodí.
+ */
+export async function zrusHlidaniTx(s: Spojeni, odberatelId: string, redizo?: string): Promise<number> {
+  if (redizo) {
+    await s.dotaz(`delete from odber_skoly where odberatel_id = $1 and redizo = $2`, [odberatelId, redizo]);
+  } else {
+    await s.dotaz(`delete from odber_skoly where odberatel_id = $1`, [odberatelId]);
+  }
+  const zbyva = await s.dotaz(`select 1 from odber_skoly where odberatel_id = $1 limit 1`, [odberatelId]);
+  let zahozeno = 0;
+  if (zbyva.rowCount === 0) {
     await s.dotaz(
       `update doklad_souhlasu
           set zaniklo = coalesce(zaniklo, now()), smazat_po = coalesce(smazat_po, now() + interval '3 years')
-        where odberatel_id = $1`,
+        where odberatel_id = $1 and ucel = 'hlidani_skol'`,
       [odberatelId],
     );
-    const zahozeno = await zahodNepredanePolozky(s, odberatelId);
-    await smazOsirelouIdentitu(s, odberatelId);
-    return { ok: true, zahozeno };
-  });
+    zahozeno = await zahodNepredanePolozky(s, odberatelId, 'hlidani');
+  }
+  await smazOsirelouIdentitu(s, odberatelId);
+  return zahozeno;
+}
+
+/** Zruší všechno najednou: termíny i hlídání. Nic se nepošle ani nezařadí (P7). */
+export async function zrusVseTx(s: Spojeni, odberatelId: string): Promise<number> {
+  await s.dotaz(`delete from odber_novinek where odberatel_id = $1`, [odberatelId]);
+  await s.dotaz(`delete from odber_skoly where odberatel_id = $1`, [odberatelId]);
+  await s.dotaz(
+    `update doklad_souhlasu
+        set zaniklo = coalesce(zaniklo, now()), smazat_po = coalesce(smazat_po, now() + interval '3 years')
+      where odberatel_id = $1`,
+    [odberatelId],
+  );
+  const zahozeno = await zahodNepredanePolozky(s, odberatelId, 'vse');
+  await smazOsirelouIdentitu(s, odberatelId);
+  return zahozeno;
 }
 
 /**
  * Zahodí nepředané položky odběratele. Dávku, ve které leží, nejdřív zruší,
  * aby ostatní příjemci zůstali ve frontě (P1-1 z code review).
  */
-async function zahodNepredanePolozky(s: Spojeni, odberatelId: string): Promise<number> {
+async function zahodNepredanePolozky(
+  s: Spojeni,
+  odberatelId: string,
+  rozsah: 'terminy' | 'hlidani' | 'vse' = 'vse',
+): Promise<number> {
   const nepredane = await s.dotaz<{ id: string; davka_id: string | null }>(
     `select id, davka_id from polozka_odeslani
-      where odberatel_id = $1 and stav in ('ceka', 'pripravena')`,
-    [odberatelId],
+      where odberatel_id = $1 and stav in ('ceka', 'pripravena')
+        and ($2 = 'vse' or (zprava like 'hlidani-%') = ($2 = 'hlidani'))`,
+    [odberatelId, rozsah],
   );
   let zahozeno = 0;
   for (const p of nepredane.rows) {
@@ -279,20 +342,35 @@ export async function smazOsirelouIdentitu(s: Spojeni, odberatelId: string): Pro
   const v = await s.dotaz(
     `delete from odberatel
       where id = $1
-        and not exists (select 1 from odber_novinek o where o.odberatel_id = $1)`,
+        and not exists (select 1 from odber_novinek o where o.odberatel_id = $1)
+        and not exists (select 1 from odber_skoly h where h.odberatel_id = $1)`,
     [odberatelId],
   );
   return v.rowCount > 0;
 }
 
-export interface Prehled {
-  email: string;
-  odebira: boolean;
-  potvrzeno: string | null;
+export interface HlidanaSkola {
+  redizo: string;
+  nazev: string;
 }
 
+export interface Prehled {
+  email: string;
+  /** Odebírá připomínky termínů. */
+  odebira: boolean;
+  potvrzeno: string | null;
+  /** Hlídané školy (zadání #523, E5). */
+  skoly: HlidanaSkola[];
+}
+
+/** Název školy pro přehled; bez něj se ukáže RED IZO. */
+export type NazevSkoly = (redizo: string) => Promise<string | null>;
+
 /** Správa odběru: co o odběrateli vedeme. Čte se podle položky z e-mailu. */
-export async function prehledPodlePolozky(polozkaId: string): Promise<Prehled | null> {
+export async function prehledPodlePolozky(
+  polozkaId: string,
+  nazevSkoly?: NazevSkoly,
+): Promise<Prehled | null> {
   const v = await dotaz<{ odberatel_id: string | null; email: string | null }>(
     `select p.odberatel_id, o.email
        from polozka_odeslani p left join odberatel o on o.id = p.odberatel_id
@@ -306,17 +384,62 @@ export async function prehledPodlePolozky(polozkaId: string): Promise<Prehled | 
     `select potvrzeno from odber_novinek where odberatel_id = $1`,
     [radek.odberatel_id],
   );
+  const hlidane = await dotaz<{ redizo: string }>(
+    `select redizo from odber_skoly where odberatel_id = $1 order by potvrzeno, redizo`,
+    [radek.odberatel_id],
+  );
+  const skoly: HlidanaSkola[] = [];
+  for (const h of hlidane.rows) {
+    const nazev = nazevSkoly ? await nazevSkoly(h.redizo).catch(() => null) : null;
+    skoly.push({ redizo: h.redizo, nazev: nazev ?? `Škola ${h.redizo}` });
+  }
   return {
     email: radek.email,
     odebira: odber.rows.length > 0,
     potvrzeno: odber.rows[0]?.potvrzeno ?? null,
+    skoly,
   };
 }
 
-/** Odhlášení ze stránky správy. Odběr je jeden, takže je to totéž co odhlas(). */
+export type AkceSpravy =
+  | { akce: 'vse' }
+  | { akce: 'terminy' }
+  | { akce: 'hlidani' }
+  | { akce: 'skola'; redizo: string };
+
+export interface Zbyva {
+  terminy: boolean;
+  skoly: number;
+}
+
+/**
+ * Zrušení ze stránky správy: všechno, termíny, hlídání, nebo jedna škola.
+ * Nic z toho nezakládá ani neodesílá e-mail (P7). Vrací, co adrese zbývá, aby
+ * stránka po zrušení poznala, že už nic nepřijde.
+ */
+export async function spravaProved(polozkaId: string, akce: AkceSpravy): Promise<Zbyva | null> {
+  return vTransakci(async (s) => {
+    const v = await s.dotaz<{ odberatel_id: string | null }>(
+      `select odberatel_id from polozka_odeslani where id = $1`,
+      [polozkaId],
+    );
+    const odberatelId = v.rows[0]?.odberatel_id;
+    if (!odberatelId) return null;
+    if (akce.akce === 'vse') await zrusVseTx(s, odberatelId);
+    else if (akce.akce === 'terminy') await zrusTerminyTx(s, odberatelId);
+    else if (akce.akce === 'hlidani') await zrusHlidaniTx(s, odberatelId);
+    else await zrusHlidaniTx(s, odberatelId, akce.redizo);
+
+    // Po zrušení posledního odběru identita zanikla a nic nezbývá.
+    const terminy = await s.dotaz(`select 1 from odber_novinek where odberatel_id = $1`, [odberatelId]);
+    const skoly = await s.dotaz(`select 1 from odber_skoly where odberatel_id = $1`, [odberatelId]);
+    return { terminy: terminy.rowCount > 0, skoly: skoly.rowCount };
+  });
+}
+
+/** Odhlášení všeho ze stránky správy. */
 export async function odhlasVse(polozkaId: string): Promise<boolean> {
-  const vysledek = await odhlas(polozkaId);
-  return vysledek.ok;
+  return (await spravaProved(polozkaId, { akce: 'vse' })) !== null;
 }
 
 export async function zrusPodleAdresy(email: string): Promise<number> {
@@ -325,16 +448,11 @@ export async function zrusPodleAdresy(email: string): Promise<number> {
     const v = await s.dotaz<{ id: string }>(`select id from odberatel where email = $1`, [norm]);
     const odberatelId = v.rows[0]?.id;
     if (!odberatelId) return 0;
-    const zrusene = await s.dotaz(`delete from odber_novinek where odberatel_id = $1`, [odberatelId]);
-    await s.dotaz(
-      `update doklad_souhlasu
-          set zaniklo = coalesce(zaniklo, now()), smazat_po = coalesce(smazat_po, now() + interval '3 years')
-        where odberatel_id = $1`,
-      [odberatelId],
-    );
-    await zahodNepredanePolozky(s, odberatelId);
-    await smazOsirelouIdentitu(s, odberatelId);
-    return zrusene.rowCount;
+    // Nedoručitelná adresa nebo stížnost končí odběr termínů i hlídání škol.
+    const zrusene = await s.dotaz(`select 1 from odber_novinek where odberatel_id = $1`, [odberatelId]);
+    const hlidane = await s.dotaz(`select 1 from odber_skoly where odberatel_id = $1`, [odberatelId]);
+    await zrusVseTx(s, odberatelId);
+    return zrusene.rowCount + hlidane.rowCount;
   });
 }
 
