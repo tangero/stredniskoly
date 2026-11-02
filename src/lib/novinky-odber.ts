@@ -219,6 +219,8 @@ export interface OdhlaseniVysledek {
   duvod?: string;
   /** Co se odhlásilo: termíny, nebo hlídání škol (podle zprávy, ze které odkaz vede). */
   co?: 'terminy' | 'hlidani';
+  /** Zbývá po odhlášení nějaký další odběr (termíny nebo hlídané školy)? */
+  zbyva?: boolean;
 }
 
 /**
@@ -236,10 +238,16 @@ export async function odhlas(polozkaId: string): Promise<OdhlaseniVysledek> {
     const odberatelId = v.rows[0]?.odberatel_id;
     if (!odberatelId) return { ok: false, zahozeno: 0, duvod: 'odkaz neplatí' };
 
-    if (jeZpravaHlidani(v.rows[0].zprava)) {
-      return { ok: true, zahozeno: await zrusHlidaniTx(s, odberatelId), co: 'hlidani' };
-    }
-    return { ok: true, zahozeno: await zrusTerminyTx(s, odberatelId), co: 'terminy' };
+    const hlidani = jeZpravaHlidani(v.rows[0].zprava);
+    const zahozeno = hlidani ? await zrusHlidaniTx(s, odberatelId) : await zrusTerminyTx(s, odberatelId);
+    const terminy = await s.dotaz(`select 1 from odber_novinek where odberatel_id = $1`, [odberatelId]);
+    const skoly = await s.dotaz(`select 1 from odber_skoly where odberatel_id = $1`, [odberatelId]);
+    return {
+      ok: true,
+      zahozeno,
+      co: hlidani ? 'hlidani' : 'terminy',
+      zbyva: terminy.rowCount > 0 || skoly.rowCount > 0,
+    };
   });
 }
 

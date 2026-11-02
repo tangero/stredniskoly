@@ -7,14 +7,16 @@ import Link from 'next/link';
 export function OdhlaseniKlient() {
   const [stav, setStav] = useState<'formular' | 'posilam' | 'hotovo' | 'chyba'>('formular');
   const [co, setCo] = useState<'terminy' | 'hlidani' | null>(null);
+  const [zbyva, setZbyva] = useState(false);
 
   async function odhlas() {
     setStav('posilam');
     // Token už v adrese není: obslužná cesta ho vyměnila za krátkou relaci.
     const odpoved = await fetch('/api/novinky/odhlasit', { method: 'POST' });
     if (odpoved.ok) {
-      const data = (await odpoved.json().catch(() => ({}))) as { co?: 'terminy' | 'hlidani' | null };
+      const data = (await odpoved.json().catch(() => ({}))) as { co?: 'terminy' | 'hlidani' | null; zbyva?: boolean };
       setCo(data.co ?? null);
+      setZbyva(data.zbyva === true);
     }
     setStav(odpoved.ok ? 'hotovo' : 'chyba');
   }
@@ -29,12 +31,18 @@ export function OdhlaseniKlient() {
           {co === 'hlidani'
             ? 'Hlídání škol jsme zrušili, souhrny o školách už ti posílat nebudeme.'
             : 'Připomínky termínů už ti posílat nebudeme.'}{' '}
-          Kdyby ti ještě dorazil e-mail, který byl v tu chvíli na cestě, další už nepřijde. Ostatní
-          odběry zůstávají, upravit je jde ve{' '}
-          <Link href="/novinky/sprava" className="underline text-blue-700">
-            správě odběru
-          </Link>
-          .
+          Kdyby ti ještě dorazil e-mail, který byl v tu chvíli na cestě, další už nepřijde.
+          {zbyva ? (
+            <>
+              {' '}Druhý odběr zůstává, upravit ho jde ve{' '}
+              <Link href="/novinky/sprava" className="underline text-blue-700">
+                správě odběru
+              </Link>
+              .
+            </>
+          ) : (
+            ' Žádný další odběr už nemáš.'
+          )}
         </p>
       </div>
     );
@@ -47,7 +55,7 @@ export function OdhlaseniKlient() {
       </h1>
       <p className="text-slate-700 mb-6">
         Zrušíme jen ten odběr, ze kterého e-mail přišel: připomínky termínů, nebo hlídání škol.
-        Druhý odběr zůstane; všechno najednou jde odhlásit ve{' '}
+        Pokud máš i druhý odběr, zůstane; všechno najednou jde odhlásit ve{' '}
         <Link href="/novinky/sprava" className="underline text-blue-700">
           správě odběru
         </Link>

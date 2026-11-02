@@ -204,3 +204,36 @@ test('K14: zrušení všeho zahodí čekající položky obou druhů', async () 
   await zrusVseTx(s, a);
   assert.ok((await db.query(`select stav from polozka_odeslani`)).rows.every((r) => r.stav === 'zahozena'));
 });
+
+test('N2: událost commitnutá po sestavení souhrnu se objeví v následujícím souhrnu', async () => {
+  const { db, s } = await novaDb();
+  const o = await odberatel(db, 'rodina@example.test', { skoly: ['600000001'] });
+  await udalost(db, { klic: 'a', veta: 'Událost A.', skoly: ['600000001'], kdy: '2026-11-02T03:00:00Z' });
+  const den1 = zpravaHlidani('2026-11-03');
+  const kdy1 = new Date('2026-11-03T06:00:00Z');
+  await naplnFrontuHlidani(s, den1, kdy1);
+  // Transakce začala 05:59:59, commit přišel až po sestavení souhrnu.
+  await udalost(db, { klic: 'pozdni', veta: 'Pozdní událost.', skoly: ['600000001'], kdy: '2026-11-03T05:59:59Z' });
+  const text1 = (await sestavSouhrny(s, den1, kdy1, NAZEV)).get(o).souhrn.text;
+  assert.ok(text1.includes('Událost A.') && !text1.includes('Pozdní událost.'));
+  await db.query(`update polozka_odeslani set stav = 'odeslana', odeslano = now() where zprava = $1`, [den1]);
+
+  const den2 = zpravaHlidani('2026-11-04');
+  const kdy2 = new Date('2026-11-04T06:00:00Z');
+  assert.equal(await naplnFrontuHlidani(s, den2, kdy2), 1);
+  const text2 = (await sestavSouhrny(s, den2, kdy2, NAZEV)).get(o).souhrn.text;
+  assert.ok(text2.includes('Pozdní událost.') && !text2.includes('Událost A.'));
+});
+
+test('N3: společné zrušení uzavře doklad hlídání a smaže osiřelou identitu', async () => {
+  const { db, s } = await novaDb();
+  const o = await odberatel(db, 'rodina@example.test', { skoly: ['600000001'] });
+  await db.query(
+    `insert into doklad_souhlasu (id, odberatel_id, email_otisk, souhlas_verze, zdroj, ucel) values ($1, $2, 'x', 'v1', 'test', 'hlidani_skol')`,
+    [randomUUID(), o],
+  );
+  await zrusVseTx(s, o);
+  assert.equal((await db.query(`select 1 from odberatel where id = $1`, [o])).rows.length, 0);
+  const d = (await db.query(`select zaniklo, smazat_po from doklad_souhlasu where email_otisk = 'x'`)).rows[0];
+  assert.ok(d.zaniklo && d.smazat_po);
+});

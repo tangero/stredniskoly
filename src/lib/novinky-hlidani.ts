@@ -30,6 +30,15 @@ export function zpravaHlidani(den: string): string {
   return `${PREDPONA_ZPRAVY_HLIDANI}${den}`;
 }
 
+/**
+ * Pojistka proti souběhu: `publikovano` je čas začátku transakce, ne commitu.
+ * Událost, jejíž transakce skončí až po sestavení souhrnu, by jinak mohla
+ * vypadnout z okna navždy. Obě meze okna se proto posouvají o stejný odstup:
+ * událost mladší než odstup počká v dalším souhrnu a okna na sebe navazují
+ * bez mezery i bez překryvu.
+ */
+export const POJISTKA_SOUBEHU_S = 3600;
+
 interface RadekOkna extends RadekUdalosti {
   odberatelId: string;
 }
@@ -60,10 +69,12 @@ export async function udalostiVOkne(
         and ud.publikovano <= coalesce(
               (select d.vlozeno from polozka_odeslani d
                 where d.odberatel_id = os.odberatel_id and d.zprava = $1), $2::timestamptz)
+              - interval '${POJISTKA_SOUBEHU_S} seconds'
         and ud.publikovano > coalesce(
               (select max(p.vlozeno) from polozka_odeslani p
                 where p.odberatel_id = os.odberatel_id and p.zprava like 'hlidani-%'
                   and p.zprava <> $1 and p.stav = 'odeslana'), '-infinity'::timestamptz)
+              - interval '${POJISTKA_SOUBEHU_S} seconds'
         and ($3::uuid[] is null or os.odberatel_id = any($3::uuid[]))
       order by os.odberatel_id, ud.publikovano, ud.id, us.redizo`,
     [zprava, horniMez.toISOString(), odberatele],

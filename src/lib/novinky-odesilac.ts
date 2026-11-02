@@ -24,6 +24,7 @@ import { odhlasovaciOdkaz, otisk, vytvorToken, SPRAVA_PLATNOST_MS } from './novi
 import { DAVKA_MAX } from './novinky-rozpocet.ts';
 import { naplnFrontuHlidani, sestavSouhrny, teloHlidani, zpravaHlidani } from './novinky-hlidani.ts';
 import type { NazevSkoly } from './novinky-odber.ts';
+import { zrusVseTx } from './novinky-odber.ts';
 import calendar from '@/data/admissions-2027.json';
 
 // ============================================================================
@@ -326,21 +327,14 @@ export async function dokonciUcinkyWebhooku(): Promise<number> {
     // Adresu v tabulce nemáme (ukládá se jen otisk), zrušíme proto odběr podle
     // otisku: identitu najdeme přes doklady a položky se stejným otiskem.
     await vTransakci(async (s) => {
-      await s.dotaz(
-        `delete from odber_novinek
-          where odberatel_id in (
-            select p.odberatel_id from polozka_odeslani p
-             where p.adresat_otisk = $1 and p.odberatel_id is not null)`,
+      // Nedoručitelná adresa končí termíny i hlídání škol; společné zrušení
+      // uzavře doklady a smaže osiřelou identitu.
+      const ids = await s.dotaz<{ odberatel_id: string }>(
+        `select distinct p.odberatel_id from polozka_odeslani p
+          where p.adresat_otisk = $1 and p.odberatel_id is not null`,
         [u.email_otisk],
       );
-      // Nedoručitelná adresa končí i hlídání škol.
-      await s.dotaz(
-        `delete from odber_skoly
-          where odberatel_id in (
-            select p.odberatel_id from polozka_odeslani p
-             where p.adresat_otisk = $1 and p.odberatel_id is not null)`,
-        [u.email_otisk],
-      );
+      for (const r of ids.rows) await zrusVseTx(s, r.odberatel_id);
       await s.dotaz(`update webhook_udalost set ucinek_hotov = now() where event_id = $1`, [
         u.event_id,
       ]);
