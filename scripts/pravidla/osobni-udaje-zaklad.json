@@ -1,0 +1,214 @@
+{
+ "popis": "Zmrazený stav nálezů (jen cesty a otisky, žádné adresy ani čísla). Úklid postupně; obnova jen přes --obnov s odůvodněním v commitu.",
+ "nalezy": {
+  "docs/INSPIS_VLNA_1.5_CHANGELOG.md": [
+   "483bffdd1a2f"
+  ],
+  "docs/chaps-tt-format.md": [
+   "5787ea816ca0",
+   "c47b08ed658a"
+  ],
+  "docs/historie/github-email-notifications.md": [
+   "7c87a5991200",
+   "e1dc5a477a8c"
+  ],
+  "docs/issue-3-priklady.md": [
+   "483bffdd1a2f",
+   "ff4a513ec417"
+  ],
+  "docs/podklady/audit-dat-karet-2027/600001431-detail.txt": [
+   "0c8bd4a40902"
+  ],
+  "docs/podklady/audit-dat-karet-2027/600001431-profil.txt": [
+   "0c8bd4a40902"
+  ],
+  "docs/podklady/audit-dat-karet-2027/600001431-skola.txt": [
+   "0c8bd4a40902"
+  ],
+  "docs/podklady/audit-dat-karet-2027/600007774-detail.txt": [
+   "0c8bd4a40902"
+  ],
+  "docs/podklady/audit-dat-karet-2027/600007774-profil.txt": [
+   "0c8bd4a40902"
+  ],
+  "docs/podklady/dopis-poradatelum-veletrhu.md": [
+   "0c8bd4a40902"
+  ],
+  "docs/podklady/pozvanka-pilot-uctu-portalu.md": [
+   "0c8bd4a40902"
+  ],
+  "docs/podklady/prompt-eduarda-veletrhy.md": [
+   "0c8bd4a40902"
+  ],
+  "docs/podklady/vysledky-navaznosti-2025-2026/R-600001661.json": [
+   "387927c5eb69"
+  ],
+  "docs/ucty-portalu-skol-2027.md": [
+   "0c8bd4a40902",
+   "1edfcfd5f392",
+   "b4aa04a0778a"
+  ],
+  "docs/veletrhy-api-2027.md": [
+   "0c8bd4a40902",
+   "31691059a247"
+  ],
+  "docs/veletrhy-skol-2027.md": [
+   "0c8bd4a40902"
+  ],
+  "scripts/generate-admissions-calendar.py": [
+   "a018e8809f52"
+  ],
+  "scripts/portal-posli-pozvanky.mjs": [
+   "0c8bd4a40902"
+  ],
+  "scripts/veletrhy-posli-dopisy.mjs": [
+   "0c8bd4a40902"
+  ],
+  "src/app/admin/portal/pozvanky/page.tsx": [
+   "0c8bd4a40902"
+  ],
+  "src/app/api/portal/uplatnit/route.ts": [
+   "0c8bd4a40902"
+  ],
+  "src/app/ochrana-osobnich-udaju/page.tsx": [
+   "0c8bd4a40902"
+  ],
+  "src/app/pro-skoly/[kod]/page.tsx": [
+   "0c8bd4a40902"
+  ],
+  "src/app/pro-skoly/page.tsx": [
+   "0c8bd4a40902"
+  ],
+  "src/components/BugReportButton.tsx": [
+   "a1cfa4256656"
+  ],
+  "src/components/portal/PortalEditace.tsx": [
+   "0c8bd4a40902"
+  ],
+  "src/components/portal/PortalHlavickaSkoly.tsx": [
+   "0c8bd4a40902"
+  ],
+  "src/components/portal/PortalKodForm.tsx": [
+   "0c8bd4a40902"
+  ],
+  "src/components/portal/PortalPozvankaForm.tsx": [
+   "0c8bd4a40902"
+  ],
+  "src/components/portal/PortalZalozeni.tsx": [
+   "0c8bd4a40902"
+  ],
+  "src/lib/portal-api.ts": [
+   "0c8bd4a40902"
+  ],
+  "src/lib/portal-email.ts": [
+   "0c8bd4a40902"
+  ],
+  "src/lib/portal-oznameni.ts": [
+   "4abf13665d17"
+  ],
+  "src/lib/portal-skol.ts": [
+   "4c148aa08a17"
+  ],
+  "src/lib/portal-ucty.ts": [
+   "0c8bd4a40902",
+   "1edfcfd5f392",
+   "b4aa04a0778a"
+  ],
+  "src/lib/veletrhy-dopis.ts": [
+   "0c8bd4a40902"
+  ],
+  "src/lib/veletrhy-schvaleni.ts": [
+   "0c8bd4a40902"
+  ],
+  "tests/admin.test.mjs": [
+   "1e0d5d9104c1"
+  ],
+  "tests/bug-report-log.test.mjs": [
+   "3c6b490bfa24",
+   "c223cece2b86"
+  ],
+  "tests/novinky-token.test.mjs": [
+   "61c8a12535eb",
+   "ab98cd8f7823",
+   "c65bc6f0df87",
+   "f1f0cea4b75b"
+  ],
+  "tests/oprava-z-review.test.mjs": [
+   "a93c3a11b384"
+  ],
+  "tests/ponauceni.test.mjs": [
+   "f3f770194b8d"
+  ],
+  "tests/portal-kriteria.test.mjs": [
+   "5a7be26b392f"
+  ],
+  "tests/portal-magic.test.mjs": [
+   "1425c951aff4",
+   "27b2d029ade3",
+   "3c6b490bfa24",
+   "44ca032a45bd",
+   "4fa817ab4f9c",
+   "b2891b50edd3"
+  ],
+  "tests/portal-pozvanky.test.mjs": [
+   "27b2d029ade3",
+   "3c6b490bfa24"
+  ],
+  "tests/portal-profil-zapis.test.mjs": [
+   "1777f3430246"
+  ],
+  "tests/portal-skoly.test.mjs": [
+   "27b2d029ade3",
+   "3c6b490bfa24",
+   "4c148aa08a17"
+  ],
+  "tests/portal-ucty.test.mjs": [
+   "09247543f64e",
+   "0c8bd4a40902",
+   "0fcca8c09dc8",
+   "1edfcfd5f392",
+   "3c6b490bfa24",
+   "46af00c4f5c8",
+   "63ff4676926d",
+   "65d866f3e0fc",
+   "75760d0b0c07",
+   "7dd836255ffe",
+   "8888e2c37d92",
+   "9c2bdf66cebb",
+   "a5e765dfe5ff",
+   "a81cb8fe0c2c",
+   "b4aa04a0778a",
+   "b4ed1dc550fe",
+   "c0f4f374fa20",
+   "c7a4e3a4fe9b",
+   "ca59ec0592ec",
+   "f7bdd8b06d50"
+  ],
+  "tests/portal-uplatnit-route.test.mjs": [
+   "1777f3430246"
+  ],
+  "tests/sledovani-udalosti.test.mjs": [
+   "5a7be26b392f",
+   "9cd755857dac"
+  ],
+  "tests/triaz.test.mjs": [
+   "195e833574ed"
+  ],
+  "tests/veletrhy-api-sklad.test.mjs": [
+   "0c8bd4a40902",
+   "5cbfeaa24ff8",
+   "f3f770194b8d",
+   "f7bdd8b06d50"
+  ],
+  "tests/veletrhy-dopis.test.mjs": [
+   "0c8bd4a40902"
+  ],
+  "tests/veletrhy-oslovene.test.mjs": [
+   "5997db2dc68f",
+   "64313f2f30e9",
+   "7222ac0a4d53",
+   "878e7b695827",
+   "e59b130731db"
+  ]
+ }
+}
