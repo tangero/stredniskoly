@@ -16,6 +16,10 @@ ve kterém na něj narazíš (krátce: co se stane, proč, co s tím). Oprava, k
   nepushuj kosmetické změny.
 - **Souhlas `schvaleno` na PR s cestou H2 platí jen pro jeden commit.** Úpravu H2 dodej v jednom commitu;
   každý další commit potřebuje nový souhlas.
+- **Úprava těla issue bez oddílu `## Rozsah` zruší `schvaleno`.** Souhlas brána váže na otisk oddílu Rozsah; když
+  oddíl chybí, bere celé tělo. Odškrtnutí etapy nebo doplnění řádku „Pro lidi“ tak souhlas zneplatní. Postup
+  u takového issue zapisuj komentářem. U issue s oddílem Rozsah přidávej nový oddíl až za něj (stejná nebo vyšší
+  úroveň nadpisu), jinak se stane součástí rozsahu (#561).
 - **Stagnace smyčky oprav (#443) automatická review nevidí.** `scripts/review/stagnace.mjs` čte jen review od účtu
   `asistent` s nadpisy `### P1` a `### P2`; automatické review (RA50) píše App `prijimacky-ai` s nadpisem
   `### Nálezy`, takže opakovaný nález smyčku nezastaví. Do opravy drží smyčku jen strop kol a pojistka proti

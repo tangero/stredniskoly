@@ -13,6 +13,8 @@ Založení:
 
 > **Interní zadání** (Eduarda → schvaluje Patrick → realizuje Claude Code). Chyby na webu hlaste tlačítkem „Nahlásit chybu“ na prijimackynaskolu.cz.
 
+Pro lidi: <!-- Jedna až dvě věty bez technických slov: co se změní a pro koho. Zobrazí se na tabuli projektů (#561). -->
+
 ### Proč / pro koho
 
 …

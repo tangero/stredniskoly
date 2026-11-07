@@ -116,6 +116,25 @@ review asistenta zadání k aktuálnímu commitu, u schválených issues bez PR 
 u návrhu „čeká na tvé rozhodnutí“, u připomínky termín a u hlášení projekt, ke kterému patří. Na kartách ho zapneš
 v nastavení pohledu (šipka u názvu pohledu → Fields → Na co čeká).
 
+**Pilot přehledné tabule (#561, od 1. 11. 2026).** Workflow navíc založí tři pole a plní je u otevřených issues (u otevřených PR jen „Čeká na“):
+
+| pole | typ | odkud |
+|---|---|---|
+| **Pro lidi** | text | řádek `Pro lidi: …` v těle issue (u formuláře oddíl „Pro lidi“), jinak název issue; interní zadání bez řádku běh ohlásí varováním |
+| **Čeká na** | volba Patrick / kolega / AI / nikdo | přiřazení kolegovi (účty v `rezimy.yml`, seznam `kolegove` nebo jeden účet `kolega`, zatím žádný) má přednost; jinak Patrick u stavů Návrh a Čeká na souhlas s merge, u veřejného hlášení bez rozhodnutí a u splatné připomínky; nikdo u zavřených a připomínek před termínem; AI ostatní. U PR: Patrick, když brána čeká na jeho souhlas |
+| **Termín** | datum | `Termín: RRRR-MM-DD` u připomínek |
+
+Workflow běží i při úpravě těla issue a při přiřazení. Úkoly jsou seskupené do celků, tedy issues se štítkem
+`projekt` (#306 Řízení vývoje, #331 Měření a přínos, #181 Data 2027, #523 Aktuality a odběry, #541 Opravy údajů
+škol). Pravidla třídění jsou ve skillu `trideni-issues`, body 9 a 10. Pohledy nastaví vlastník (API je neumí):
+
+- **Celky:** filtr `no:parent-issue -label:trvale`, pole Pro lidi, Čeká na, Sub-issue progress;
+- **Moje:** `čeká-na:Patrick is:open`, řazení podle Updated vzestupně;
+- **Hoří:** `čeká-na:Patrick is:open updated:<@today-3d`;
+- **Měření:** `parent-issue:tangero/stredniskoly#331` a připomínky (`label:pripominka`), řazení podle Termínu.
+
+Vyhodnocení pilotu je po dvou týdnech v #561; ostatní repozitáře se připojí až po něm.
+
 **Oponentura** (`.github/workflows/oponentura.yml`, skill `.claude/skills/oponentura`, #358): slouží při rozjezdu
 nového projektu, rutinně se nespouští. Vlastník nebo asistent zadání popíše problém formulářem **Problém pro nový
 projekt** (`.github/ISSUE_TEMPLATE/problem.yml`, pro `gh` `.github/INTERNAL_TEMPLATES/problem.md`): co chceme
@@ -154,8 +173,16 @@ pustí v režimu R (přes limit rutiny jako L).
 **Čeká na tebe** (`.github/workflows/ceka-na-tebe.yml`, `scripts/prehled/ceka-na-tebe.mjs`, #440): denně v 8:52
 jedna zpráva do Telegramu, jen když něco čeká na vlastníka. Skupiny: PR ke schválení (věta z oddílu „Pro vlastníka“
 a odkaz na stránku v náhledu), otázky, hotové oponentury, návrhy, splatné připomínky, uvízlé opravy z review
-a oponentury a hlášení od veřejnosti bez rozhodnutí (#461). Pod každou skupinou pokyn, co udělat, pod zprávou
+a oponentury a hlášení od veřejnosti bez rozhodnutí (#461). V oddílu „Co udělat“ pokyn ke každé skupině, která má ve zprávě zobrazenou položku, pod zprávou
 tlačítka na PR nebo issue. Spouští ji Plánovač; ručně v Actions (Čeká na tebe, Run workflow).
+Od #562 je ranní zpráva řazená podle stáří: nahoře „Čeká přes 3 dny“ od nejstarší s počtem dní, pak „Nové od minulé
+zprávy“, zbytek jen počty po skupinách s odkazem na seznam issues. Stáří je doba od přidání štítku otázky, návrhu nebo
+oponentury, u ostatních od založení; u PR od první kontroly brány, která chtěla jen souhlas (když se ten čas nezjistí,
+od otevření PR). „Nové od minulé zprávy“ se řídí časem vstupu do skupiny, ne stářím: u připomínky je to pozdější z přidání
+štítku `pripominka` a termínu, u hlášení přidání štítku hlášení.
+Večer v 18:30 UTC (19:30 SEČ, v létě 20:30 SELČ) přijde souhrn „Večer na tebe“ jen s položkami, které přibyly od
+minulé zprávy. Její čas se bere z pevných časů Plánovače (ranní 06:52 UTC, večerní 18:30 UTC); historii běhů workflow
+nečteme, protože by potřebovala oprávnění `actions: read`. Bez nových se neposílá. Zadání #562 bod 3 (doporučení po 7 dnech) zatím není hotový.
 
 **Tep rutiny** (`.github/workflows/tep-rutiny.yml`, `scripts/provoz/tep-rutiny.mjs`, #440, #461): rutina Claude Code
 na začátku každého běhu přepíše komentář se značkou `tep-rutiny` v issue #462 (štítek `trvale`); spustit workflow
@@ -166,7 +193,7 @@ zpráva do Telegramu, pak jednou denně, dokud tep nepřijde. Kdy naposledy hlá
 tohoto repozitáře jen 4 až 5krát denně (měřeno 5. až 9. 10. 2026: hlídání dostupnosti místo 288 běhů 5). Workflow
 Plánovač proto každých 5 minut spouští cron-job.org a Plánovač spustí, co je na řadě podle doby od posledního běhu:
 Dostupnost (5 min), Datová linka ve kroku schválení (15 min), Brána, Triáž, Tep rutiny (hodina) a Čeká na tebe
-(denně 6:52 UTC). Plány GitHubu u workflow zůstávají jako záloha (kromě Čeká na tebe, ta by přišla dvakrát).
+(denně 6:52 UTC a souhrn v 18:30 UTC). Plány GitHubu u workflow zůstávají jako záloha (kromě Čeká na tebe, ta by přišla dvakrát).
 
 Nastavení cron-job.org (vlastník, jednou, asi 10 minut):
 

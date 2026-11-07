@@ -41,5 +41,18 @@ Pravidla: `CLAUDE.md` (pravidla 1 a 4) a `docs/navrh-rizeni-vyvoje-2027.md`, odd
    `Souvisí s`, změněné soubory) a hledej, zda zadání už nevyřešil jiný PR. Podezření napiš do issue
    komentářem s odkazy na PR. Issue sám nezavírej a s realizací počkej na odpověď (štítek `otazka`,
    pravidlo 8).
+9. **Celky (pilot tabule, #561):** každé otevřené interní issue patří pod jeden celek, tedy issue se štítkem
+   `projekt`: Řízení vývoje #306, Měření a přínos #331, Data 2027 #181, Aktuality a odběry #523, Opravy
+   údajů škol #541. Úkol, který potřebuje vlastní rozhodnutí nebo diskusi, připoj jako sub-issue. Drobný
+   úkol zapiš jako položku seznamu v `## Etapy` celku (RA48). Nový celek nezakládej sám, navrhni ho
+   vlastníkovi. **Veřejné hlášení bez rozhodnutí nepřipojuj** pod schválený celek, protože by se tím
+   stalo realizovatelným bez `schvaleno` (RA39). Uveď ho jen odkazem v těle celku, v novém oddílu za
+   oddílem `## Rozsah`, aby se nezměnil schválený rozsah. Issues `trvale` do celků nepatří. Jednou měsíčně
+   celky projdi: hotové navrhni zavřít, překrývající sloučit.
+10. **Pro lidi:** každé nové interní zadání má hned pod dokladem `Zdroj:` řádek `Pro lidi: …`, jednu až dvě
+    věty bez technických slov o tom, co se změní a pro koho. Workflow Tabule ho přenese na kartu do pole
+    „Pro lidi“. U zadání bez řádku ukazuje pole název issue a běh Tabule to ohlásí varováním. Řádek doplň
+    jen u issue, které ještě nemá souhlas, nebo u issue s oddílem `## Rozsah` mimo něj: změna těla
+    issue bez oddílu Rozsah zneplatní `schvaleno`.
 
 Štítky `schvaleno` a `zamitnuto` nepřidávej nikdy, `stop` nikoho jiného neodebírej.
