@@ -1,9 +1,11 @@
 // Denní zpráva „Čeká na tebe“ (#440): všechno, co čeká na rozhodnutí vlastníka, v jedné zprávě do Telegramu,
 // seskupené podle druhu. U každé položky lidská věta, co a kde zkontrolovat (oddíl „Pro vlastníka“ z popisu PR,
 // otázka z issue, první odstavec návrhu), a tlačítko na PR nebo issue, kam přidat `schvaleno` nebo odpovědět.
-// Prázdný den nic neposílá. Spouští ho workflow ceka-na-tebe.yml jednou denně (Plánovač, #461). Bez modelu, jen čte.
+// Ranní zpráva (#562) řadí podle stáří: nahoře „Čeká přes 3 dny“ od nejstarší, pak „Nové od minulé zprávy“, zbytek jen počty.
+// Večerní zpráva (--vecer) obsahuje jen nové od ranní. Prázdná zpráva se neposílá. Spouští ho workflow ceka-na-tebe.yml
+// (Plánovač, #461). Bez modelu, jen čte.
 //
-//   node scripts/prehled/ceka-na-tebe.mjs --nanecisto   jen vypíše (mimo Actions přes gh)
+//   node scripts/prehled/ceka-na-tebe.mjs [--vecer] [--nanecisto]   --nanecisto jen vypíše (mimo Actions přes gh)
 
 import { pathToFileURL } from 'node:url';
 import { REPO, NAZEV_KONTROLY, vytvorApi } from '../brana/data.mjs';
@@ -12,6 +14,10 @@ import { cestyNaWebu, textProVlastnika } from '../brana/oznameni-nasazeni.mjs';
 import { textOtazky } from '../brana/otazka.mjs';
 
 const HODINA = 60 * 60 * 1000;
+const DEN = 24 * HODINA;
+/** Položka starší než tato doba se ve zprávě ukáže nahoře jako „Čeká přes 3 dny“. */
+export const STARE_PO = 3 * DEN;
+export const MAX_STARYCH = 8;
 export const MAX_V_SKUPINE = 6;
 export const MAX_TLACITEK = 12;
 export const MAX_TEXTU = 280;
@@ -28,6 +34,8 @@ export function jedenOdstavec(t = '') {
   return t.split('\n').filter((r) => !/^\s*\|/.test(r)).map((r) => r.replace(/^\s*#{1,6}\s*/, '').replace(/^\s*[-*]\s+/, ''))
     .join(' ').replace(/\*\*/g, '').replace(/`/g, '').replace(/\[([^\]]+)\]\([^)]+\)/g, '$1').replace(/\s+/g, ' ').trim();
 }
+/** Seznam otevřených issues se štítky, podle kterých čekají na vlastníka (do pohledu „Moje“ na tabuli, K1). */
+export const ODKAZ_CEKAJICICH = `https://github.com/${REPO}/issues?q=${encodeURIComponent(`is:issue is:open label:${['otazka', 'oponentura', 'navrh', 'pripominka', ...STITKY_VEREJNYCH].join(',')}`)}`;
 const adresa = (cislo, pr = false) => `https://github.com/${REPO}/${pr ? 'pull' : 'issues'}/${cislo}`;
 
 /** Skupiny v pořadí, ve kterém je vlastník má vyřizovat. `akce` je pokyn pod položkou, `tlacitko` popisek tlačítka. */
@@ -59,6 +67,19 @@ export function potrebujeSouhlas(kontrola) {
 }
 
 /**
+ * Čas první kontroly brány z nepřerušené řady posledních kontrol, které chtěly jen souhlas (ms), nebo null.
+ * `kontroly` jsou poslední kontroly jednotlivých commitů PR od nejnovějšího; řadu přeruší kontrola bez žádosti o souhlas.
+ */
+export function souhlasOd(kontroly = []) {
+  let od = null;
+  for (const k of kontroly) {
+    if (!potrebujeSouhlas(k)) break;
+    od = Date.parse(k.completed_at || k.started_at) || od;
+  }
+  return od;
+}
+
+/**
  * Položka PR ke schválení: co a kde zkontrolovat. Cesty z oddílu „Pro vlastníka“ vedou na náhled PR (změna ještě
  * není na webu); bez náhledu jen jako text.
  */
@@ -74,13 +95,17 @@ export function polozkaPr(p, { nahled } = {}) {
 export function sestavSkupiny({ prs = [], issues = [], ucty, dnes, ted }) {
   const s = Object.fromEntries(SKUPINY.map((g) => [g.klic, []]));
   for (const p of prs) {
-    if (p.stitky.includes('potrebuje-cloveka')) s.clovek.push({ cislo: p.cislo, pr: true, titulek: p.titulek, radky: [] });
-    if (p.souhlas) s.souhlas.push(polozkaPr(p, { nahled: p.nahled }));
+    const odPr = Date.parse(p.od || p.upraveno) || ted;
+    if (p.stitky.includes('potrebuje-cloveka')) s.clovek.push({ cislo: p.cislo, pr: true, titulek: p.titulek, radky: [], od: odPr });
+    // Ke schválení od první kontroly brány, která chtěla jen souhlas, ne od otevření PR (#562).
+    if (p.souhlas) s.souhlas.push({ ...polozkaPr(p, { nahled: p.nahled }), od: p.souhlasOd || odPr });
   }
   for (const i of issues) {
     const st = new Set(i.stitky);
     if (st.has('stop') || st.has('zamitnuto') || st.has('trvale')) continue;
-    const zaklad = { cislo: i.cislo, pr: false, titulek: i.titulek };
+    // Stáří = od přidání štítku, podle kterého položka do skupiny patří; jinak od založení issue (#562).
+    const odDne = (stitek) => Date.parse(i.stitkyOd?.[stitek] || i.vytvoreno || i.upraveno) || ted;
+    const zaklad = { cislo: i.cislo, pr: false, titulek: i.titulek, od: odDne(st.has('otazka') ? 'otazka' : st.has('oponentura') ? 'oponentura' : 'navrh') };
     if (st.has('otazka')) {
       s.otazka.push({ ...zaklad, radky: [html(zkrat(jedenOdstavec(textOtazky(i.komentare || [], ucty)) || 'Text otázky je v issue.', 400))] });
       continue;
@@ -96,43 +121,79 @@ export function sestavSkupiny({ prs = [], issues = [], ucty, dnes, ted }) {
     }
     // Hlášení od veřejnosti bez rozhodnutí, i hlášení škol z portálu: bez schvaleno je nerealizuje nikdo, dokud PR #464 nepustí opravy údajů škol.
     if (STITKY_VEREJNYCH.some((h) => st.has(h)) && !st.has('schvaleno')) {
-      s.hlaseni.push({ ...zaklad, radky: [] });
+      // Do skupiny vstoupilo přidáním štítku hlášení, stáří (od) zůstává od založení.
+      // Rozhoduje nejstarší čas z právě přítomných veřejných štítků: dodatečný štítek už zařazené hlášení neomladí.
+      const casyH = STITKY_VEREJNYCH.filter((t) => st.has(t)).map((t) => Date.parse(i.stitkyOd?.[t])).filter(Boolean);
+      s.hlaseni.push({ ...zaklad, ...(casyH.length ? { vstup: Math.min(...casyH) } : {}), radky: [] });
       continue;
     }
     if (st.has('pripominka')) {
       const t = terminPripominky(i.telo);
-      if (t && t <= dnes) s.pripominka.push({ ...zaklad, radky: [`Termín ${html(t)}. ${html(uvodIssue(i.telo))}`] });
+      // Do skupiny vstoupila později z dvou časů: přidání štítku a termín (stáří zůstává od založení).
+      const vstupP = Math.max(Date.parse(i.stitkyOd?.pripominka) || 0, Date.parse(t) || 0);
+      if (t && t <= dnes) s.pripominka.push({ ...zaklad, ...(vstupP ? { vstup: vstupP } : {}), radky: [`Termín ${html(t)}. ${html(uvodIssue(i.telo))}`] });
     }
   }
   return SKUPINY.filter((g) => s[g.klic].length).map((g) => ({ ...g, polozky: s[g.klic] }));
 }
 
-/** Zpráva v HTML Telegramu a tlačítka s odkazy (inline_keyboard, dvě na řádek). */
-export function zprava(skupiny) {
-  const celkem = skupiny.reduce((n, g) => n + g.polozky.length, 0);
-  const casti = [`<b>Čeká na tebe: ${celkem}</b>`];
+/**
+ * Zpráva v HTML Telegramu a tlačítka s odkazy (inline_keyboard, dvě na řádek). Ranní: „Čeká přes 3 dny“ od nejstarší,
+ * „Nové od minulé zprávy“, ostatní jen počty. Večerní (`vecer`): jen nové. `posledni` je čas minulé zprávy (ms).
+ * Vrací null, když není co poslat.
+ */
+export function zprava(skupiny, { ted = Date.now(), vecer = false, posledni = ted - DEN } = {}) {
+  const vse = skupiny.flatMap((g) => g.polozky.map((p) => ({ ...p, g })));
+  // Novost = kdy položka vstoupila do skupiny (`vstup`); bez něj je to totéž co stáří (`od`).
+  const vstup = (p) => p.vstup ?? p.od;
+  const dny = (p) => Math.floor((ted - p.od) / DEN);
+  // Položka, která do skupiny vstoupila po minulé zprávě, je nová i když je její stáří velké (K1).
+  const stare = vse.filter((p) => ted - p.od > STARE_PO && vstup(p) < posledni).sort((a, b) => a.od - b.od);
+  const nove = vse.filter((p) => vstup(p) >= posledni).sort((a, b) => vstup(a) - vstup(b));
+  if (!(vecer ? nove : vse).length) return null;
   const tlacitka = [];
-  for (const g of skupiny) {
-    const radky = [`<b>${g.nadpis} (${g.polozky.length})</b>`];
-    for (const p of g.polozky.slice(0, MAX_V_SKUPINE)) {
-      radky.push(`• <a href="${adresa(p.cislo, p.pr)}">#${p.cislo}</a> ${html(zkrat(p.titulek, 90))}`);
-      for (const r of p.radky) radky.push(`   ${r}`);
-      if (tlacitka.length < MAX_TLACITEK) tlacitka.push({ text: `#${p.cislo} ${g.tlacitko}`, url: adresa(p.cislo, p.pr) });
-    }
-    if (g.polozky.length > MAX_V_SKUPINE) radky.push(`   …a dalších ${g.polozky.length - MAX_V_SKUPINE}`);
-    radky.push(`<i>${g.akce}</i>`);
-    casti.push(radky.join('\n'));
+  const radek = (p, stari) => {
+    const r = [`• <a href="${adresa(p.cislo, p.pr)}">#${p.cislo}</a> ${html(zkrat(p.titulek, 90))} <i>(${p.g.tlacitko}${stari ? `, ${dny(p)} dní` : ''})</i>`];
+    for (const t of p.radky) r.push(`   ${t}`);
+    if (tlacitka.length < MAX_TLACITEK) tlacitka.push({ text: `#${p.cislo} ${p.g.tlacitko}`, url: adresa(p.cislo, p.pr) });
+    return r.join('\n');
+  };
+  const oddil = (nadpis, polozky, max, stari) => [`<b>${nadpis} (${polozky.length})</b>`, ...polozky.slice(0, max).map((p) => radek(p, stari)),
+    ...(polozky.length > max ? [`   …a dalších ${polozky.length - max}`] : [])].join('\n');
+  const casti = [`<b>${vecer ? 'Večer na tebe' : 'Čeká na tebe'}: ${vecer ? nove.length : vse.length}</b>`];
+  if (!vecer && stare.length) casti.push(oddil('⏰ Čeká přes 3 dny', stare, MAX_STARYCH, true));
+  if (nove.length) casti.push(oddil(vecer ? '🆕 Nové od ranní zprávy' : '🆕 Nové od minulé zprávy', nove, MAX_V_SKUPINE, false));
+  // Pokyn, co udělat, jednou za skupinu, která má ve zprávě zobrazenou položku (#562, omezení P4).
+  const zobrazene = new Set([...(vecer ? [] : stare.slice(0, MAX_STARYCH)), ...nove.slice(0, MAX_V_SKUPINE)].map((p) => p.g));
+  const pokyny = skupiny.filter((g) => zobrazene.has(g));
+  if (pokyny.length) casti.push(`<b>Co udělat</b>\n${pokyny.map((g) => `${g.nadpis}: ${g.akce}`).join('\n')}`);
+  if (!vecer) {
+    const zbytek = vse.filter((p) => !stare.includes(p) && !nove.includes(p));
+    const pocty = skupiny.map((g) => [g.nadpis, zbytek.filter((p) => p.g === g).length]).filter(([, n]) => n);
+    if (pocty.length) casti.push(`<b>Ostatní</b>\n${pocty.map(([n, c]) => `${n}: ${c}`).join('\n')}\n<a href="${ODKAZ_CEKAJICICH}">seznam čekajících issues</a>`);
   }
   let text = casti.join('\n\n');
   if (text.length > MAX_DELKA) {
-    // Zkrácení podle celých skupin, aby se nerozbily značky HTML.
+    // Zkrácení podle celých částí, aby se nerozbily značky HTML.
     const kratke = [casti[0]];
     for (const c of casti.slice(1)) if ([...kratke, c].join('\n\n').length < MAX_DELKA - 80) kratke.push(c);
-    text = `${kratke.join('\n\n')}\n\n…další skupiny se nevešly, celý seznam je na tabuli projektu.`;
+    text = `${kratke.join('\n\n')}\n\n…další části se nevešly, celý seznam je na tabuli projektu.`;
   }
   const radkyTlacitek = [];
   for (let i = 0; i < tlacitka.length; i += 2) radkyTlacitek.push(tlacitka.slice(i, i + 2));
   return { text, tlacitka: radkyTlacitek };
+}
+
+/**
+ * Čas minulé zprávy z pevných časů Plánovače (ranní 06:52 UTC, večerní 18:30 UTC). Čtení historie běhů workflow by
+ * potřebovalo `actions: read` (omezení P3), proto se nečte. Večer: poslední ranní čas, ráno: poslední večerní.
+ */
+export function minulaZprava(ted, vecer) {
+  const [h, m] = vecer ? [6, 52] : [18, 30];
+  const d = new Date(ted);
+  let t = Date.UTC(d.getUTCFullYear(), d.getUTCMonth(), d.getUTCDate(), h, m);
+  if (t > ted) t -= DEN;
+  return t;
 }
 
 async function posliTelegram({ text, tlacitka }) {
@@ -149,6 +210,7 @@ async function posliTelegram({ text, tlacitka }) {
 
 async function main() {
   const nanecisto = process.argv.includes('--nanecisto');
+  const vecer = process.argv.includes('--vecer');
   const api = vytvorApi();
   const ted = Date.now();
   const dnes = new Date(ted).toISOString().slice(0, 10);
@@ -161,10 +223,23 @@ async function main() {
   for (const p of await api(`repos/${REPO}/pulls?state=open&base=main&per_page=100`)) {
     if (p.draft) continue;
     const d = await api(`repos/${REPO}/commits/${p.head.sha}/check-runs?check_name=${encodeURIComponent(NAZEV_KONTROLY)}&filter=latest`);
-    const kontrola = (d.check_runs || []).filter((k) => k.app?.slug === 'github-actions').sort((a, b) => b.id - a.id)[0];
+    const posledniKontrola = (dd) => (dd.check_runs || []).filter((k) => k.app?.slug === 'github-actions').sort((a, b) => b.id - a.id)[0];
+    const kontrola = posledniKontrola(d);
     const souhlas = potrebujeSouhlas(kontrola);
+    let souhlasOdMs = null;
+    if (souhlas) {
+      // Historie kontrol: commity PR od nejnovějšího, dokud brána chtěla jen souhlas.
+      const commity = (await api(`repos/${REPO}/pulls/${p.number}/commits?per_page=100`)).map((c) => c.sha).reverse();
+      const kontroly = [kontrola];
+      for (const sha of commity.filter((x) => x !== p.head.sha)) {
+        const k = posledniKontrola(await api(`repos/${REPO}/commits/${sha}/check-runs?check_name=${encodeURIComponent(NAZEV_KONTROLY)}&filter=latest`));
+        kontroly.push(k);
+        if (!potrebujeSouhlas(k)) break;
+      }
+      souhlasOdMs = souhlasOd(kontroly);
+    }
     const nahled = souhlas ? adresaNahledu(await api(`repos/${REPO}/commits/${p.head.sha}/statuses?per_page=100`)) : null;
-    prs.push({ cislo: p.number, titulek: p.title, telo: p.body || '', stitky: p.labels.map((l) => l.name), souhlas, nahled });
+    prs.push({ cislo: p.number, titulek: p.title, telo: p.body || '', stitky: p.labels.map((l) => l.name), souhlas, nahled, od: p.created_at, souhlasOd: souhlasOdMs, upraveno: p.updated_at });
   }
 
   const issues = new Map();
@@ -172,19 +247,23 @@ async function main() {
     for (const i of await api(`repos/${REPO}/issues?state=open&labels=${stitek}&per_page=100`)) {
       if (i.pull_request || issues.has(i.number)) continue;
       const stitky = i.labels.map((l) => l.name);
-      const zaznam = { cislo: i.number, titulek: i.title, telo: i.body || '', stitky, upraveno: i.updated_at };
+      const zaznam = { cislo: i.number, titulek: i.title, telo: i.body || '', stitky, upraveno: i.updated_at, vytvoreno: i.created_at };
       if (stitky.includes('otazka') || stitky.includes('navrh')) zaznam.komentare = await komentare(i.number);
-      if (stitky.includes('oponentura')) {
+      // Čas přidání štítků, podle kterých položka patří do skupiny (stáří, #562).
+      if (['otazka', 'oponentura', 'navrh', 'pripominka', ...STITKY_VEREJNYCH].some((t) => stitky.includes(t))) {
         const udalosti = await api(`repos/${REPO}/issues/${i.number}/events?per_page=100`);
-        zaznam.oponenturaOd = udalosti.filter((u) => u.event === 'labeled' && u.label?.name === 'oponentura').map((u) => u.created_at).sort().pop();
+        const kdy = (t) => udalosti.filter((u) => u.event === 'labeled' && u.label?.name === t).map((u) => u.created_at).sort().pop();
+        zaznam.stitkyOd = Object.fromEntries(['otazka', 'oponentura', 'navrh', 'pripominka', ...STITKY_VEREJNYCH].map((t) => [t, kdy(t)]).filter(([, c]) => c));
+        zaznam.oponenturaOd = zaznam.stitkyOd.oponentura;
       }
       issues.set(i.number, zaznam);
     }
   }
 
   const skupiny = sestavSkupiny({ prs, issues: [...issues.values()], ucty, dnes, ted });
-  if (!skupiny.length) return console.log('Nic nečeká na vlastníka, zprávu neposílám.');
-  const z = zprava(skupiny);
+  // Čas minulé zprávy z pevných časů Plánovače (ranní 06:52 UTC, večerní 18:30 UTC), viz minulaZprava.
+  const z = zprava(skupiny, { ted, vecer, posledni: minulaZprava(ted, vecer) });
+  if (!z) return console.log(vecer ? 'Nic nového od ranní zprávy, neposílám.' : 'Nic nečeká na vlastníka, zprávu neposílám.');
   console.log(z.text);
   console.log(JSON.stringify(z.tlacitka));
   if (nanecisto) return;
