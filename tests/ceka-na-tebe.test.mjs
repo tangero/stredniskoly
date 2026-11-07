@@ -1,7 +1,7 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import {
-  sestavSkupiny, zprava, polozkaPr, uvodIssue, terminPripominky, potrebujeSouhlas, rozpracovanyBezSouhlasu, html, MAX_V_SKUPINE, MAX_TLACITEK, UVIZLA_PO, jedenOdstavec, minulaZprava, souhlasOd, ODKAZ_CEKAJICICH,
+  sestavSkupiny, zprava, polozkaPr, uvodIssue, terminPripominky, potrebujeSouhlas, rozpracovanyBezSouhlasu, html, MAX_V_SKUPINE, MAX_TLACITEK, UVIZLA_PO, jedenOdstavec, minulaZprava, souhlasOd, ODKAZ_CEKAJICICH, doporuceni,
 } from '../scripts/prehled/ceka-na-tebe.mjs';
 
 const TED = Date.parse('2026-10-08T07:00:00Z');
@@ -190,4 +190,34 @@ test('Ke schválení jen když brána chybí jedině souhlas, jinak rozpracovan�
   const z = zprava(g, { ted: TED, posledni: 0 });
   assert.match(z.text, /Rozpracované \(souhlas zatím ne\)/);
   assert.deepEqual(z.tlacitka.flat().map((b) => b.text), ['#5 schválit']);
+});
+
+const DOP = (t = 'Doporučení: zavřít (duplicita jiného hlášení)\n\nOvěřeno proti datům.') => ({ autor: 'tangero', telo: t + PATICKA });
+
+test('doporučení: poslední komentář AI s řádkem Doporučení, zastaralé po komentáři někoho jiného (#562)', () => {
+  assert.equal(doporuceni([]), null);
+  assert.equal(doporuceni([{ autor: 'cizi', telo: 'Doporučení: opravit' }]), null);
+  const d = doporuceni([DOP()]);
+  assert.equal(d.text, 'zavřít (duplicita jiného hlášení) Ověřeno proti datům.');
+  assert.equal(d.zastarale, false);
+  assert.equal(doporuceni([DOP(), { autor: 'github-actions[bot]', telo: 'info' }]).zastarale, false);
+  assert.equal(doporuceni([DOP(), { autor: 'cizi', telo: 'doplnění' }]).zastarale, true);
+});
+
+test('hlášení a návrh starší 7 dní bez doporučení jsou k doporučení, s aktuálním ne; doporučení je ve zprávě (#562)', () => {
+  const stare = '2026-09-20T00:00:00Z';
+  const mlade = '2026-10-06T00:00:00Z';
+  const hl = (o) => issue({ stitky: ['bug-report'], vytvoreno: stare, ...o });
+  const g = skupiny({ issues: [
+    hl({ cislo: 1 }), hl({ cislo: 2, komentare: [DOP()] }), hl({ cislo: 3, vytvoreno: mlade }),
+    issue({ cislo: 4, vytvoreno: stare }), hl({ cislo: 5, komentare: [DOP(), { autor: 'cizi', telo: 'nové info' }] }),
+  ] });
+  const polozky = g.flatMap((x) => x.polozky);
+  assert.deepEqual(polozky.filter((p) => p.kDoporuceni).map((p) => p.cislo).sort(), [1, 4, 5]);
+  assert.match(polozky.find((p) => p.cislo === 2).radky[0], /^Doporučení: zavřít/);
+  // Zastaralé doporučení se ve zprávě neukazuje.
+  assert.deepEqual(polozky.find((p) => p.cislo === 5).radky, []);
+  // P2: do zprávy nejdou e-maily z textu hlášení, protože se z těla hlášení nic neopisuje.
+  const z = zprava(skupiny({ issues: [hl({ cislo: 6, telo: 'napsal skola@example.cz' })] }), { ted: TED });
+  assert.doesNotMatch(z.text, /example\.cz/);
 });
