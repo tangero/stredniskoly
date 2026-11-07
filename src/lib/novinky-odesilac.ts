@@ -22,6 +22,9 @@ import { odesliDavku, sestavTeloDavky } from './novinky-email.ts';
 import { obalka } from './novinky-email.ts';
 import { odhlasovaciOdkaz, otisk, vytvorToken, SPRAVA_PLATNOST_MS } from './novinky-token.ts';
 import { DAVKA_MAX } from './novinky-rozpocet.ts';
+import { naplnFrontuHlidani, sestavSouhrny, teloHlidani, zpravaHlidani } from './novinky-hlidani.ts';
+import type { NazevSkoly } from './novinky-odber.ts';
+import { zrusVseTx } from './novinky-odber.ts';
 import calendar from '@/data/admissions-2027.json';
 
 // ============================================================================
@@ -193,7 +196,7 @@ function teloProZpravu(z: ZpravaZManifestu, polozky: Polozka[]): string {
 export async function odesliPripravenouDavku(
   davka: DavkaZaznam,
   polozky: Polozka[],
-  z: ZpravaZManifestu,
+  z: Pick<ZpravaZManifestu, 'zprava'>,
 ): Promise<{ odeslano: number; pokracovat: boolean; chyby: string[] }> {
   const chyby: string[] = [];
 
@@ -324,13 +327,14 @@ export async function dokonciUcinkyWebhooku(): Promise<number> {
     // Adresu v tabulce nemáme (ukládá se jen otisk), zrušíme proto odběr podle
     // otisku: identitu najdeme přes doklady a položky se stejným otiskem.
     await vTransakci(async (s) => {
-      await s.dotaz(
-        `delete from odber_novinek
-          where odberatel_id in (
-            select p.odberatel_id from polozka_odeslani p
-             where p.adresat_otisk = $1 and p.odberatel_id is not null)`,
+      // Nedoručitelná adresa končí termíny i hlídání škol; společné zrušení
+      // uzavře doklady a smaže osiřelou identitu.
+      const ids = await s.dotaz<{ odberatel_id: string }>(
+        `select distinct p.odberatel_id from polozka_odeslani p
+          where p.adresat_otisk = $1 and p.odberatel_id is not null`,
         [u.email_otisk],
       );
+      for (const r of ids.rows) await zrusVseTx(s, r.odberatel_id);
       await s.dotaz(`update webhook_udalost set ucinek_hotov = now() where event_id = $1`, [
         u.event_id,
       ]);
@@ -371,3 +375,77 @@ export async function zajistiRozpocet(obdobi: string, ucel: string, limit: numbe
   );
 }
 
+// ============================================================================
+// Souhrn hlídání škol (zadání #523, E5). Podmínky a okno událostí: novinky-hlidani.ts.
+// ============================================================================
+
+export interface VysledekHlidani {
+  zprava: string;
+  naplneno: number;
+  zahozeno: number;
+  odeslano: number;
+  chyby: string[];
+}
+
+/**
+ * Jeden běh: zapíše verzi zprávy dne, založí položky, zahodí ty bez souhrnu
+ * a odešle dávky. Zpráva platí jen v den svého vzniku, takže souhrn, který se
+ * nestihl, se druhý den neposílá (zastaralý stav by rodině vadil víc než výpadek)
+ * a jeho události se zařadí do dalšího souhrnu.
+ */
+export async function zpracujHlidani(
+  kdy: Date,
+  nazevSkoly: NazevSkoly,
+): Promise<VysledekHlidani> {
+  const den = kdy.toISOString().slice(0, 10);
+  const zprava = zpravaHlidani(den);
+  const vysledek: VysledekHlidani = { zprava, naplneno: 0, zahozeno: 0, odeslano: 0, chyby: [] };
+
+  let otiskObsahu = '';
+  const priprava = await vTransakci(async (s) => {
+    otiskObsahu = await zapisVerzi(s, {
+      zprava,
+      nazev: 'Souhrn hlídání škol',
+      rocnik: den,
+      splatnost: den,
+      konec_uzitecnosti: den,
+      predmet: 'Souhrn hlídání škol',
+      html: '',
+      text: '',
+      otisk_kalendare: otiskKalendare(),
+    });
+    return naplnFrontuHlidani(s, zprava, kdy);
+  });
+  vysledek.naplneno = priprava;
+
+  for (let kolo = 0; kolo < 50; kolo += 1) {
+    const pripravena = await vTransakci(async (s) => {
+      const souhrny = await sestavSouhrny(s, zprava, kdy, nazevSkoly);
+      // Položky bez souhrnu (odběratel mezitím zrušil školu) se nepošlou.
+      const zahozeno = await s.dotaz(
+        `update polozka_odeslani set stav = 'zahozena'
+          where zprava = $1 and stav = 'ceka'
+            and (odberatel_id is null or not (odberatel_id = any($2::uuid[])))`,
+        [zprava, [...souhrny.keys()]],
+      );
+      vysledek.zahozeno += zahozeno.rowCount;
+      return pripravDavku(s, {
+        zprava,
+        ucel: 'obsah',
+        otiskObsahu,
+        max: DAVKA_MAX,
+        telo: (polozky) => teloHlidani(polozky, souhrny),
+      });
+    }).catch((chyba) => {
+      vysledek.chyby.push(`dávka hlídání se nepřipravila: ${String(chyba)}`);
+      return null;
+    });
+    if (!pripravena) break;
+
+    const odeslanoVDavce = await odesliPripravenouDavku(pripravena.davka, pripravena.polozky, { zprava });
+    vysledek.odeslano += odeslanoVDavce.odeslano;
+    vysledek.chyby.push(...odeslanoVDavce.chyby);
+    if (!odeslanoVDavce.pokracovat) break;
+  }
+  return vysledek;
+}
