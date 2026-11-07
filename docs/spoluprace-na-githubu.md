@@ -182,7 +182,11 @@ od otevření PR). „Nové od minulé zprávy“ se řídí časem vstupu do sk
 štítku `pripominka` a termínu, u hlášení přidání štítku hlášení.
 Večer v 18:30 UTC (19:30 SEČ, v létě 20:30 SELČ) přijde souhrn „Večer na tebe“ jen s položkami, které přibyly od
 minulé zprávy. Její čas se bere z pevných časů Plánovače (ranní 06:52 UTC, večerní 18:30 UTC); historii běhů workflow
-nečteme, protože by potřebovala oprávnění `actions: read`. Bez nových se neposílá. Zadání #562 bod 3 (doporučení po 7 dnech) zatím není hotový.
+nečteme, protože by potřebovala oprávnění `actions: read`. Bez nových se neposílá.
+Hlášení od veřejnosti a návrh, které čekají přes 7 dní, dostanou od rutiny jeden komentář `Doporučení: opravit | zavřít
+(důvod) | duplicita #N | potřebuje tvůj úsudek (proč)` s nejvýš třemi větami zdůvodnění (skill `trideni-issues`, bod 11;
+seznam vypíše `ceka-na-tebe.mjs --k-doporuceni`). Zpráva ukáže doporučení u položky místo prvního odstavce. Doporučení
+nic nerealizuje ani nemění štítky; nové se píše jen po komentáři někoho jiného než AI.
 
 **Tep rutiny** (`.github/workflows/tep-rutiny.yml`, `scripts/provoz/tep-rutiny.mjs`, #440, #461): rutina Claude Code
 na začátku každého běhu přepíše komentář se značkou `tep-rutiny` v issue #462 (štítek `trvale`); spustit workflow
