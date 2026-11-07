@@ -729,6 +729,7 @@ ověří ho měřítka.
 | RA51 | Plánovač (#461): plánované úlohy spouští cron-job.org každých 5 minut přes workflow Plánovač (jemný token vlastníka jen s právem Actions, mimo repozitář), plány GitHubu jsou záloha; tep rutiny jako úprava komentáře v issue Tep rutiny; issue `trvale` nejsou úkoly | **ano** (rozhodnutí vlastníka, 9. 10. 2026) |
 | RA52 | Hlášení přihlášené školy z portálu (#461) je oprava od školy: realizuje se bez `schvaleno`, PR smí měnit jen soubory s opravami údajů škol (`hlaseni_skol`), v limitu rutiny R, jinak L. Údaje, o kterých rozhoduje škola, AI opraví; oficiální statistiky podle tvrzení školy nepřepisuje a vysvětlí proč. Změna kódu nebo textů webu dál se `schvaleno` | **ano** (rozhodnutí vlastníka, 9. 10. 2026) |
 | RA53 | Automatické review blokuje jen doložené nálezy na změněných řádcích (P1 vždy, P2 jen s blokující kategorií, důkazem a místem v diffu), opakované review posuzuje předchozí nálezy a jen změny od posledního review, neplatný výstup se zkusí znovu, od kola 4 strop při nafouknutí PR, schválený PR smyčku oprav nespustí (#551, oddíl 9d) | **ano** (rozhodnutí vlastníka, 29. 10. 2026) |
+| RA54 | Změny cest H2 z interních zadání jdou do týdenní dávky (větev `rizeni/davka-RRRR-TT`, jeden PR, souhlas jednou týdně ve čtvrtek, po souhlasu se nepushuje; výjimky `incident`, porucha automatiky, „mimo dávku“). Zadání měnící kontrolované činnosti K dostane `schvaleno` na issue hned při založení. „Čeká na tebe“ žádá o souhlas jen u PR, kterému chybí jedině souhlas (#560). Co souhlas vyžaduje, se nemění | **ano** (zadání vlastníka #560, 1. 11. 2026) |
 | RA50 | Automatické review PR modelem Kimi K3 (#455) místo asistentky zadání: workflow Review píše pro každou novou hlavu PR review v tvaru, který brána čte, a při P1/P2 žádost `@claude` o opravu; brána ho uzná od App `prijimacky-ai` jen se značkou `review.znacka_automatiky`; model jen čte, verdikt skládá skript; cesty K a H2 dál se souhlasem vlastníka (oddíl 9d) | **ano** (rozhodnutí vlastníka, 9. 10. 2026) |
 | RA48 | Drobné úkoly projektu jako zaškrtávací seznam v oddílu Etapy issue projektu (mimo Rozsah), PR „Souvisí s #N“; sub-issue jen pro úkol s vlastním rozhodnutím a pro hlášení (RA39). Nástěnka: hlavní pohled `no:parent-issue`, automatické archivování zavřených položek. Upravuje RA38 | **ano** (rozhodnutí vlastníka, 7. 10. 2026) |
 | RA47 | Výjimka z RA35 pro automatiku ve workflow: GitHub App `prijimacky-ai` jen pro tento repozitář (token na hodinu, práva po jobech, bez práva Workflows a mimo Bypass list) slučuje PR, mění štítky v Otázce a Oponentuře a zakládá PR s obnovou dat. Brána jí věří jen u automatických obnov dat. Claude Code v relacích, asistent zadání a Tabule beze změny; hlášení z webu později samostatně | **ano** (rozhodnutí vlastníka, #403) |
@@ -762,6 +763,8 @@ Po čtyřech týdnech provozu části A:
 
 ## Změny návrhu
 
+- **0.13t** (1. 11. 2026, zadání vlastníka #560): týdenní dávka změn H2, souhlas na issue při založení, „Čeká na tebe“
+  žádá o souhlas až u hotového PR (RA54).
 - **0.13s** (29. 10. 2026, rozhodnutí vlastníka, zadání #551): automatické review blokuje jen doložené nálezy
   v kódu PR, opakované review čte jen změny, opakování neplatného výstupu, zastavení smyčky při nafouknutí
   a na schváleném PR (RA53).

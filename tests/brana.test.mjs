@@ -262,6 +262,24 @@ test('H2: změna brány potřebuje souhlas na PR, souhlas na issue nestačí', (
   assert.equal(v.uspech, false);
 });
 
+test('H2: týdenní dávka se třemi propojenými issues, souhlas na PR ji pustí (#560 K2)', () => {
+  const telo = 'Closes #10\nCloses #11\nCloses #12\n\n## Pro vlastníka\nPravidla řízení se změní jednou týdně.\nAdresa: /\n';
+  const tri = [issue(), issue({ cislo: 11 }), issue({ cislo: 12 })];
+  const soubory = [soubor('scripts/brana/brana.mjs')];
+  const bez = run({ pr: pr({ telo }), soubory, issues: tri });
+  assert.equal(bez.rezim, 'H2');
+  assert.equal(bez.uspech, false);
+  const se = run({
+    pr: pr({
+      telo, stitky: ['schvaleno'], udalosti: [schvalenoUdalost(PRED(2))],
+      komentare: [reviewKomentar(), protokolKomentar(), { autor: BOT, cas: PRED(2), telo: ZNACKA.souhlasPr(SHA) }],
+    }),
+    soubory, issues: tri,
+  });
+  assert.equal(se.rezim, 'H2');
+  assert.equal(se.uspech, true, se.duvody.join('; '));
+});
+
 const WF = `name: T
 on: push
 permissions:

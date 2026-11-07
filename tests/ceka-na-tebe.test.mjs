@@ -1,7 +1,7 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import {
-  sestavSkupiny, zprava, polozkaPr, uvodIssue, terminPripominky, potrebujeSouhlas, html, MAX_V_SKUPINE, MAX_TLACITEK, UVIZLA_PO, jedenOdstavec, minulaZprava, souhlasOd, ODKAZ_CEKAJICICH,
+  sestavSkupiny, zprava, polozkaPr, uvodIssue, terminPripominky, potrebujeSouhlas, rozpracovanyBezSouhlasu, html, MAX_V_SKUPINE, MAX_TLACITEK, UVIZLA_PO, jedenOdstavec, minulaZprava, souhlasOd, ODKAZ_CEKAJICICH,
 } from '../scripts/prehled/ceka-na-tebe.mjs';
 
 const TED = Date.parse('2026-10-08T07:00:00Z');
@@ -70,8 +70,11 @@ test('pomocné funkce', () => {
   assert.equal(uvodIssue('Zdroj: vlastník\n\n## Rozsah\n- [ ] K1: x\n\nText **tučně** a [odkaz](https://x).'), 'Text tučně a odkaz.');
   assert.equal(potrebujeSouhlas({ conclusion: 'failure', output: { summary: '- mění pravomoci AI (x): chybí souhlas vlastníka (bez štítku)' } }), true);
   assert.equal(potrebujeSouhlas({ conclusion: 'failure', output: { summary: '- chybí review asistenta zadání' } }), false);
-  assert.equal(potrebujeSouhlas({ conclusion: 'success', output: { summary: 'chybí souhlas vlastníka' } }), false);
+  assert.equal(potrebujeSouhlas({ conclusion: 'success', output: { summary: '- chybí souhlas vlastníka' } }), false);
   assert.equal(potrebujeSouhlas(undefined), false);
+  const k = { conclusion: 'failure', output: { summary: '- kontrolovaná činnost (workflows): chybí souhlas vlastníka (PR nemá štítek schvaleno)\n- souhlas na issue #10 neplatí: bez štítku schvaleno' } };
+  assert.equal(potrebujeSouhlas(k), true);
+  assert.equal(rozpracovanyBezSouhlasu(k), false);
 });
 
 test('hlášení od veřejnosti jako skupina, včetně hlášení škol, trvalá issue ne (#461)', () => {
@@ -151,7 +154,7 @@ test('čas minulé zprávy z pevných časů Plánovače, bez čtení historie b
 
 test('PR ke schválení je staré od první kontroly, která chtěla jen souhlas, ne od otevření PR (#562)', () => {
   const dnu = (n) => new Date(TED - n * 86400000).toISOString();
-  const chybi = (kdy) => ({ conclusion: 'failure', completed_at: kdy, output: { summary: 'chybí souhlas vlastníka' } });
+  const chybi = (kdy) => ({ conclusion: 'failure', completed_at: kdy, output: { summary: '- chybí souhlas vlastníka' } });
   // Řada od nejnovějšího: dvě kontroly se souhlasem, starší byla jiná chyba, ta řadu přeruší.
   assert.equal(souhlasOd([chybi(dnu(0.1)), chybi(dnu(1)), { conclusion: 'failure', output: { summary: 'testy' }, completed_at: dnu(5) }]), Date.parse(dnu(1)));
   assert.equal(souhlasOd([]), null);
@@ -172,4 +175,19 @@ test('ostatní počty mají jeden filtrovaný odkaz na issues (#562)', () => {
   assert.ok(z.text.includes(ODKAZ_CEKAJICICH));
   assert.match(ODKAZ_CEKAJICICH, /issues\?q=.*label/);
   assert.doesNotMatch(z.text, /\/pulls/);
+});
+
+test('Ke schválení jen když brána chybí jedině souhlas, jinak rozpracované bez tlačítka (#560 K3)', () => {
+  const kontrola = (...duvody) => ({ conclusion: 'failure', output: { summary: `${duvody.map((d) => `- ${d}`).join('\n')}\n\nRežim: H2. Oblasti: provoz.` } });
+  const jen = kontrola('mění pravomoci AI (scripts/brana): chybí souhlas vlastníka (bez štítku)');
+  const dalsi = kontrola('mění pravomoci AI (scripts/brana): chybí souhlas vlastníka (bez štítku)', 'chybí review asistenta zadání');
+  assert.equal(potrebujeSouhlas(jen), true);
+  assert.equal(rozpracovanyBezSouhlasu(jen), false);
+  assert.equal(potrebujeSouhlas(dalsi), false);
+  assert.equal(rozpracovanyBezSouhlasu(dalsi), true);
+  const g = skupiny({ prs: [pr(), pr({ cislo: 8, souhlas: false, rozpracovany: true })] });
+  assert.deepEqual(g.map((x) => [x.klic, x.polozky.map((p) => p.cislo)]), [['souhlas', [5]], ['rozpracovane', [8]]]);
+  const z = zprava(g, { ted: TED, posledni: 0 });
+  assert.match(z.text, /Rozpracované \(souhlas zatím ne\)/);
+  assert.deepEqual(z.tlacitka.flat().map((b) => b.text), ['#5 schválit']);
 });

@@ -331,6 +331,36 @@
       "akce": "Kolo se nespustí (souhlas na PR platí pro hlavu, push by ho zrušil); nález zůstane v review a rozhodne vlastník.",
       "pravidlo": "scripts/brana/oprava-z-review.mjs, rozhodniOpravu a vetoTed (RA53)",
       "puvod": "#551"
+    },
+    {
+      "id": "S34",
+      "oblast": "pr",
+      "situace": "Interní zadání od vlastníka mění jen cesty H2 (skript brány). Není to incident, vlastník nenapsal „mimo dávku“. Tento týden už existuje draft PR týdenní dávky rizeni/davka-RRRR-TT, který ještě nemá souhlas.",
+      "otazka": "Má AI změnu přidat do větve týdenní dávky místo otevření samostatného PR?",
+      "ocekavano": "ano",
+      "akce": "Změnu přidat do dávky, do popisu doplnit Closes #N a větu do Pro vlastníka.",
+      "pravidlo": "CLAUDE.md, pravidlo 2 (výjimka týdenní dávka H2, RA54)",
+      "puvod": "#560"
+    },
+    {
+      "id": "S35",
+      "oblast": "pr",
+      "situace": "Týdenní dávka H2 už má štítek schvaleno přidaný vlastníkem k aktuální hlavě. Rutina našla další drobnou úpravu pravidel řízení.",
+      "otazka": "Má AI tu úpravu pushnout do větve dávky?",
+      "ocekavano": "ne",
+      "akce": "Nepushovat; úprava jde do dávky dalšího týdne nebo do dalšího PR.",
+      "pravidlo": "skill rizeni-brana, týdenní dávka H2 (RA54)",
+      "puvod": "#560"
+    },
+    {
+      "id": "S36",
+      "oblast": "pr",
+      "situace": "Zadání s ručně vyznačeným incidentem (štítek incident) opravuje cestu H2, bez které nefunguje brána sloučení.",
+      "otazka": "Má jít jako vlastní PR mimo týdenní dávku?",
+      "ocekavano": "ano",
+      "akce": "Vlastní PR s žádostí o souhlas hned.",
+      "pravidlo": "skill rizeni-brana, výjimky z týdenní dávky H2 (RA54)",
+      "puvod": "#560"
     }
   ]
 }
