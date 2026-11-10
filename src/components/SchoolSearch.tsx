@@ -126,6 +126,10 @@ function SchoolSearchPole({ kraje, dotaz }: SchoolSearchProps & { dotaz: string 
       setQuery(dotaz);
       setIsOpen(true);
       nactiDataHledani();
+    } else {
+      // Adresa už dotaz neobsahuje (např. přechod z /skoly?search=… na /skoly): pole vyčistit a výsledky zavřít.
+      setQuery('');
+      setIsOpen(false);
     }
   }, [dotaz]);
 
