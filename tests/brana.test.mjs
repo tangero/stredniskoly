@@ -772,3 +772,54 @@ test('hlášení přihlášené školy z portálu: jen opravy údajů škol bez 
   const stop = { akce: 'labeled', stitek: 'stop', cas: PRED(1), aktor: 'tangero' };
   assert.equal(run({ predchozi: null, issues: [hlaseni({ stitky: ['portal-skoly', 'stop'], udalosti: [stop] })], soubory: oprava }).uspech, false);
 });
+
+test('zjevná chyba z veřejného hlášení: bez souhlasu v režimu L se selhávajícím testem (RA55, #564)', () => {
+  const stitek = (aktor = 'tangero') => ({ akce: 'labeled', stitek: 'zjevna-chyba', cas: PRED(2), aktor });
+  const hlaseni = (o = {}) => issue({
+    cislo: 600, autor: 'tangero', stitky: ['bug-report', 'zjevna-chyba', 'oblast:detail'], telo: 'Na stránce školy je špatný počet míst.',
+    udalosti: [stitek()], ...o,
+  });
+  const TELO = 'Closes #600\n\n## Pro vlastníka\nU školy uvidíš správný počet míst.\nAdresa: /skola/600000001-x\n\n'
+    + '## Test chyby\n`tests/pocet-mist.test.mjs`: na main selže (očekáváno 30, dostal 3).\n';
+  const oprava = [soubor('src/components/skola/PocetMist.tsx', 6), soubor('tests/pocet-mist.test.mjs', 25)];
+  const zPr = (telo = TELO) => pr({ telo });
+
+  // K1: v limitu rutiny, s testem a oddílem: L, po lhůtě projde, nikdy R (P4).
+  const nove = run({ predchozi: null, pr: zPr(), issues: [hlaseni()], soubory: oprava });
+  assert.equal(nove.rezim, 'L');
+  assert.equal(nove.uspech, false);
+  const pozde = run({ pr: zPr(), issues: [hlaseni()], soubory: oprava });
+  assert.equal(pozde.rezim, 'L');
+  assert.equal(pozde.uspech, true, pozde.duvody.join('; '));
+  assert.match(pozde.duvody.join(), /zjevná chyba #600/);
+  // Asistent zadání a automatika štítek přidat smí.
+  assert.equal(run({ pr: zPr(), issues: [hlaseni({ udalosti: [stitek('eduarda-prijimacky')] })], soubory: oprava }).uspech, true);
+  assert.equal(run({ pr: zPr(), issues: [hlaseni({ udalosti: [stitek('prijimacky-ai[bot]')] })], soubory: oprava }).uspech, true);
+
+  // Štítek od cizího účtu nebo bez dohledatelného přidání nic neuvolní.
+  const cizi = run({ pr: zPr(), issues: [hlaseni({ udalosti: [stitek('nekdo')] })], soubory: oprava });
+  assert.equal(cizi.rezim, 'K');
+  assert.equal(cizi.uspech, false);
+  assert.equal(run({ pr: zPr(), issues: [hlaseni({ udalosti: [] })], soubory: oprava }).rezim, 'K');
+  assert.equal(run({ pr: zPr(), issues: [hlaseni({ udalosti: [stitek('github-actions[bot]')] })], soubory: oprava }).rezim, 'K');
+
+  // Nad limitem rutiny, ve dvou oblastech nebo s cestou K či H2 zůstává K.
+  const velka = run({ pr: zPr(), issues: [hlaseni()], soubory: [soubor('src/components/skola/PocetMist.tsx', 400), oprava[1]] });
+  assert.equal(velka.rezim, 'K');
+  assert.match(velka.duvody.join(), /limit rutiny/);
+  assert.equal(run({ pr: zPr(), issues: [hlaseni()], soubory: [...oprava, soubor('src/app/simulator/page.tsx', 3)] }).rezim, 'K');
+  assert.equal(run({ pr: zPr(), issues: [hlaseni()], soubory: [...oprava, soubor('package.json', 1)] }).rezim, 'K');
+  assert.equal(run({ pr: zPr(), issues: [hlaseni()], soubory: [...oprava, soubor('scripts/brana/brana.mjs', 1)] }).rezim, 'H2');
+
+  // K1.1: bez oddílu „Test chyby“ nebo bez změny v tests/ zůstává K.
+  const bezOddilu = run({ pr: zPr(TELO.replace(/## Test chyby[\s\S]*$/, '')), issues: [hlaseni()], soubory: oprava });
+  assert.equal(bezOddilu.rezim, 'K');
+  assert.match(bezOddilu.duvody.join(), /Test chyby/);
+  assert.equal(run({ pr: zPr('Closes #600\n\n## Pro vlastníka\nText.\n\n## Test chyby\n\n## Kontroly\n- ok\n'), issues: [hlaseni()], soubory: oprava }).rezim, 'K');
+  assert.equal(run({ pr: zPr(), issues: [hlaseni()], soubory: [oprava[0]] }).rezim, 'K');
+
+  // Stop dál platí a bez štítku zjevna-chyba je hlášení K jako dřív.
+  const stop = { akce: 'labeled', stitek: 'stop', cas: PRED(1), aktor: 'tangero' };
+  assert.equal(run({ pr: zPr(), issues: [hlaseni({ stitky: ['bug-report', 'zjevna-chyba', 'stop'], udalosti: [stitek(), stop] })], soubory: oprava }).uspech, false);
+  assert.equal(run({ pr: zPr(), issues: [hlaseni({ stitky: ['bug-report'] })], soubory: oprava }).rezim, 'K');
+});
