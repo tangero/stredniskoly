@@ -203,3 +203,15 @@ test('hlášení a návrh starší 7 dní bez doporučení jsou k doporučení, 
   const z = zprava(skupiny({ issues: [hl({ cislo: 6, telo: 'napsal skola@example.cz' })] }), { ted: TED });
   assert.doesNotMatch(z.text, /example\.cz/);
 });
+
+test('návrhy z týdenního issue jsou ve zprávě jednou položkou (RA55, #564)', () => {
+  const tydenni = issue({ cislo: 800, titulek: 'Návrhy od veřejnosti: týden 2026-41', telo: 'Návrhy.\n\n## Návrhy\n\n- #801 Tmavý režim\n  - Doporučení: odložit\n' });
+  const navrh = issue({ cislo: 801, titulek: 'Tmavý režim', telo: 'Chci tmavý režim.', stitky: ['feature-request'] });
+  const jiny = issue({ cislo: 802, titulek: 'Mapa', telo: 'Chci mapu.', stitky: ['feature-request'] });
+  const chyba = issue({ cislo: 801, titulek: 'Tmavý režim', telo: 'x', stitky: ['feature-request', 'bug-report'] });
+  const cisla = (g) => g.flatMap((s) => s.polozky.map((p) => p.cislo)).sort();
+  assert.deepEqual(cisla(skupiny({ issues: [tydenni, navrh, jiny] })), [800, 802]);
+  // Bez týdenního issue se návrh ukáže jako dřív; hlášení chyby s týmž číslem také.
+  assert.deepEqual(cisla(skupiny({ issues: [navrh, jiny] })), [801, 802]);
+  assert.deepEqual(cisla(skupiny({ issues: [tydenni, chyba] })), [800, 801]);
+});

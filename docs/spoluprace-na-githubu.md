@@ -24,6 +24,7 @@ dokument popisuje nastavení GitHubu, na kterém stojí.
 | `pripominka` | úkol s termínem; před termínem se nerealizuje |
 | `potrebuje-cloveka` | u PR: smyčka oprav z review skončila (strop 5 kol nebo oprava cesty H2), rozhodne člověk; vypisuje ho týdenní přehled |
 | `bug-report`, `portal-skoly`, `feature-request` | veřejná hlášení (tlačítko na webu, portál škol) |
+| `zjevna-chyba` | ověřené veřejné hlášení, které AI opraví bez `schvaleno` (PR v limitu rutiny s testem chyby, režim L); přidává jen vlastník, asistent zadání nebo automatika (RA55) |
 
 **Formuláře v „New issue“** (`.github/ISSUE_TEMPLATE/`):
 
@@ -187,6 +188,8 @@ Hlášení od veřejnosti a návrh, které čekají přes 7 dní, dostanou od ru
 (důvod) | duplicita #N | potřebuje tvůj úsudek (proč)` s nejvýš třemi větami zdůvodnění (skill `trideni-issues`, bod 11;
 seznam vypíše `ceka-na-tebe.mjs --k-doporuceni`). Zpráva ukáže doporučení u položky místo prvního odstavce. Doporučení
 nic nerealizuje ani nemění štítky; nové se píše jen po komentáři někoho jiného než AI.
+Návrhy funkcí (`feature-request`) uvedené v otevřeném týdenním issue „Návrhy od veřejnosti: týden RRRR-TT“
+(`scripts/prehled/navrhy-tyden.mjs`, RA55, #564) zpráva neukazuje jednotlivě; čekají v ní jako jedna položka, týdenní issue.
 
 **Tep rutiny** (`.github/workflows/tep-rutiny.yml`, `scripts/provoz/tep-rutiny.mjs`, #440, #461): rutina Claude Code
 na začátku každého běhu přepíše komentář se značkou `tep-rutiny` v issue #462 (štítek `trvale`); spustit workflow

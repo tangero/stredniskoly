@@ -13,6 +13,7 @@ import { REPO, NAZEV_KONTROLY, vytvorApi } from '../brana/data.mjs';
 import { adresaNahledu } from '../brana/overeni-nahledu.mjs';
 import { cestyNaWebu, textProVlastnika } from '../brana/oznameni-nasazeni.mjs';
 import { textOtazky } from '../brana/otazka.mjs';
+import { TITULEK as TITULEK_TYDNE } from './navrhy-tyden.mjs';
 
 const HODINA = 60 * 60 * 1000;
 const DEN = 24 * HODINA;
@@ -109,8 +110,19 @@ export function polozkaPr(p, { nahled } = {}) {
   return { cislo: p.cislo, pr: true, titulek: p.titulek, radky: [zkontroluj, ...(cesty.length && !nahled ? ['Náhled zatím není, stránky uvidíš až po sloučení.'] : [])] };
 }
 
+/** Čísla návrhů z otevřených týdenních issues „Návrhy od veřejnosti“ (řádky `- #N …`). */
+export function navrhyVTydnu(issues = []) {
+  const cisla = new Set();
+  for (const i of issues.filter((x) => (x.titulek || '').startsWith(TITULEK_TYDNE))) {
+    for (const m of (i.telo || '').matchAll(/^- #(\d+)\b/gm)) cisla.add(Number(m[1]));
+  }
+  return cisla;
+}
+
 /** Rozdělí vstupy do skupin; vrací jen neprázdné skupiny v pořadí SKUPINY. */
 export function sestavSkupiny({ prs = [], issues = [], ucty, dnes, ted }) {
+  // Návrhy uvedené v otevřeném týdenním issue (RA55, #564) jsou ve zprávě jednou položkou, ne každý zvlášť.
+  const vTydnu = navrhyVTydnu(issues);
   const s = Object.fromEntries(SKUPINY.map((g) => [g.klic, []]));
   for (const p of prs) {
     const odPr = Date.parse(p.od || p.upraveno) || ted;
@@ -141,6 +153,7 @@ export function sestavSkupiny({ prs = [], issues = [], ucty, dnes, ted }) {
     }
     // Hlášení od veřejnosti bez rozhodnutí, i hlášení škol z portálu: bez schvaleno je nerealizuje nikdo, dokud PR #464 nepustí opravy údajů škol.
     if (STITKY_VEREJNYCH.some((h) => st.has(h)) && !st.has('schvaleno')) {
+      if (vTydnu.has(i.cislo) && STITKY_VEREJNYCH.every((h) => h === 'feature-request' || !st.has(h))) continue;
       // Do skupiny vstoupilo přidáním štítku hlášení, stáří (od) zůstává od založení.
       // Rozhoduje nejstarší čas z právě přítomných veřejných štítků: dodatečný štítek už zařazené hlášení neomladí.
       const casyH = STITKY_VEREJNYCH.filter((t) => st.has(t)).map((t) => Date.parse(i.stitkyOd?.[t])).filter(Boolean);
