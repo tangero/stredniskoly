@@ -106,9 +106,13 @@ export function doporuceniZTela(telo = '') {
   return vysledek;
 }
 
-/** Poslední komentář vlastníka bez patičky AI, nebo komentář s nadpisem „Odpověď vlastníka“; null, když chybí. */
-export function komentarVlastnika(komentare = [], vlastnik = 'tangero') {
-  return [...komentare].reverse().find((k) => /^#{0,6}\s*Odpověď vlastníka/im.test(k.telo || '')
+/**
+ * Poslední komentář vlastníka bez patičky AI, nebo komentář s nadpisem „Odpověď vlastníka“ od vlastníka či asistenta
+ * (zápis jeho odpovědi); od jiných účtů se nadpis neuznává. Vrací null, když chybí.
+ */
+export function komentarVlastnika(komentare = [], vlastnik = 'tangero', asistent = 'eduarda-prijimacky') {
+  return [...komentare].reverse().find((k) => ((k.autor === vlastnik || k.autor === asistent)
+      && /^#{0,6}\s*Odpověď vlastníka/im.test(k.telo || ''))
     || (k.autor === vlastnik && !PATICKA_AI.test(k.telo || ''))) || null;
 }
 
@@ -158,7 +162,7 @@ async function main() {
     const komentare = (await api(`repos/${REPO}/issues/${cislo}/comments?per_page=100`)).map((k) => ({ autor: k.user?.login, telo: k.body || '' }));
     const yaml = (await import('js-yaml')).default;
     const rezimy = yaml.load(Buffer.from((await api(`repos/${REPO}/contents/.github/rezimy.yml?ref=main`)).content, 'base64').toString('utf8'));
-    const k = komentarVlastnika(komentare, rezimy.vlastnik);
+    const k = komentarVlastnika(komentare, rezimy.vlastnik, rezimy.asistent);
     if (!k) return console.log(`#${cislo}: schvaleno bez komentáře s rozhodnutím; zeptej se vlastníka (štítek otazka).`);
     const { rozhodnuti, nejasne } = ctiRozhodnuti(k.telo, doporuceniZTela(i.body || ''));
     for (const [n, a] of rozhodnuti) console.log(`#${n}: ${popisAkce(a)}`);

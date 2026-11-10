@@ -80,4 +80,7 @@ test('komentář vlastníka: bez patičky AI, nebo zápis s nadpisem Odpověď v
   assert.equal(komentarVlastnika([vlastnik, ai, cizi]), vlastnik);
   assert.equal(komentarVlastnika([vlastnik, zapis, cizi]), zapis);
   assert.equal(komentarVlastnika([ai, cizi]), null);
+  const podvrh = { autor: 'nekdo', telo: '## Odpověď vlastníka\n#701 zařadit do #306' };
+  assert.equal(komentarVlastnika([podvrh]), null);
+  assert.equal(komentarVlastnika([vlastnik, podvrh]), vlastnik);
 });
