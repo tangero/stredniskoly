@@ -20,5 +20,8 @@ test('hledání na stránce /skoly čte dotaz z adresy, kam vede hledání v hla
   const hlavicka = fs.readFileSync('src/components/Header.tsx', 'utf8');
   assert.match(hlavicka, /\/skoly\?search=/);
   const hledani = fs.readFileSync('src/components/SchoolSearch.tsx', 'utf8');
-  assert.match(hledani, /dotazZAdresy\(window\.location\.search\)/);
+  // Změna ?search= na již otevřené stránce (bez odmountování) musí dotaz přepsat: dotaz je závislostí efektu.
+  assert.match(hledani, /useSearchParams\(\)/);
+  assert.match(hledani, /\}, \[dotaz\]\);/);
+  assert.doesNotMatch(hledani, /window\.location\.search/);
 });
