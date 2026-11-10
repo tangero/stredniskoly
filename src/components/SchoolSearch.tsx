@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useMemo, useRef, useEffect } from 'react';
+import { dotazZAdresy } from '@/lib/hledani-z-adresy';
 import Link from 'next/link';
 import type { PolozkaHledani } from '@/types/school';
 import { MESTA } from '@/lib/mesta.mjs';
@@ -100,6 +101,18 @@ export function SchoolSearch({ kraje }: SchoolSearchProps) {
       () => setStavDat('chyba'),
     );
   };
+
+  // Dotaz z hledání v hlavičce (/skoly?search=…, #571): předvyplnit a rovnou ukázat výsledky.
+  useEffect(() => {
+    const dotaz = dotazZAdresy(window.location.search);
+    if (dotaz) {
+      // Adresa je známá až v prohlížeči; jako počáteční stav by se rozešla s HTML ze serveru.
+      // eslint-disable-next-line react-hooks/set-state-in-effect
+      setQuery(dotaz);
+      setIsOpen(true);
+      nactiDataHledani();
+    }
+  }, []);
 
   // Získat unikátní obce a okresy
   const locations = useMemo(() => {
