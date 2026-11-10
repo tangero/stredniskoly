@@ -19,6 +19,7 @@ a každou hodinu. Výsledek zapíše jako kontrolu „Brána sloučení“ na ak
 | L | ostatní interní zadání s dokladem `Zdroj:` | 48 h od prvního vyhodnocení stavu bez `stop` |
 | souhlas | propojené issue se `schvaleno` od Patricka, rozsah od schválení beze změny | hned |
 | R / L | hlášení přihlášené školy z portálu (`portal-skoly`, řádek `**Kanál:**` od webu), PR mění jen cesty `hlaseni_skol` v `rezimy.yml` (soubory oprav údajů škol, testy); v limitu rutiny R, jinak L (RA52) | hned / 48 h |
+| L | veřejné hlášení se štítkem `zjevna-chyba` od vlastníka, asistenta nebo automatiky (RA55, #564): PR v limitu rutiny bez cest K a H2, s oddílem `## Test chyby` a změněným souborem v `tests/`; jinak K. Nikdy R | 48 h |
 | K | cesty z `k` v `rezimy.yml` (migrace, e-maily, portál, nasazení, workflow, závislosti, registr sad, slovník ukazatelů), PR bez zadání, hlášení mimo schválený projekt | `schvaleno` na PR nebo na issue |
 | H2 | brána, `rezimy.yml`, `labeler.yml`, `CLAUDE.md`, workflow se změnou oprávnění nebo secrets | `schvaleno` přímo na PR, platí pro jeden commit |
 
@@ -121,6 +122,9 @@ Adresa: /mesto/praha
 Oddíl **Pro vlastníka** je u PR se zadáním, které mění web, povinný: bez něj brána PR nepustí. Po nasazení jde
 vlastníkovi do Telegramu. Piš ho z pohledu návštěvníka webu: co na stránce uvidí jinak, jednou až třemi větami,
 bez názvů souborů, funkcí a technických slov. Na zvláštní řádek dej adresu (nebo adresy) na webu, kde změnu uvidí.
+
+PR, který opravuje zjevnou chybu (`zjevna-chyba`, RA55), má oddíl `## Test chyby`: název testu, který chybu
+zopakuje, a výpis jeho selhání na `main`. S opravou test projde.
 
 PR, který opravuje hlášení `bug-report`, má navíc oddíl `## Pro oznamovatele`: jedna až dvě věty s vykáním pro
 člověka, který chybu nahlásil, bez adres. Po nasazení je dostane e-mailem (`docs/oznameni-opravy-oznamovateli.md`).

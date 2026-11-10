@@ -317,6 +317,23 @@ export function zjistilaAutomatika(issue) {
   return issue?.autor === BOT && stitky.includes('rutina') && !stitky.includes('trvale');
 }
 
+/**
+ * Zjevná chyba z veřejného hlášení (RA55, #564): štítek `zjevna-chyba` je na issue a naposledy ho přidal vlastník,
+ * asistent zadání nebo automatika (`automatika` v rezimy.yml). Štítek od kohokoli jiného nic neuvolňuje.
+ */
+export function zjevnaChyba(issue, konfig) {
+  if (!(issue?.stitky || []).includes('zjevna-chyba')) return false;
+  const pridani = posledniUdalost(issue.udalosti || [], 'labeled', 'zjevna-chyba');
+  const r = konfig.rezimy;
+  return Boolean(pridani?.aktor) && [r.vlastnik, r.asistent, r.automatika].filter(Boolean).includes(pridani.aktor);
+}
+
+/** Text oddílu `## Test chyby` z popisu PR (název testu a výpis jeho selhání na main), prázdný, když chybí. */
+export function testChyby(telo = '') {
+  const m = (telo || '').match(/^##[ \t]+Test chyby[^\n]*\n([\s\S]*?)(?=^##[ \t]|(?![\s\S]))/im);
+  return m ? m[1].replace(/<!--[\s\S]*?-->/g, '').trim() : '';
+}
+
 /** Text oddílu `## Pro vlastníka` z popisu PR, prázdný, když oddíl chybí nebo je prázdný. */
 export function proVlastnika(telo = '') {
   const m = telo.match(/^##[ \t]+Pro vlastníka[^\n]*\n([\s\S]*?)(?=^##[ \t]|(?![\s\S]))/im);
@@ -516,6 +533,19 @@ export function vyhodnot({ pr, soubory, issues, konfig, zamrznuti, ted, predchoz
           // Rozhodnutí vlastníka 9. 10. 2026 (RA52): hlášení přihlášené školy je oprava od školy.
           ri = vRozsahuRutiny ? 'R' : 'L';
           info.push(`hlášení školy #${i.cislo} z portálu, jen opravy údajů škol (RA52)${ri === 'L' ? '; přesahuje limit rutiny, běží jako drobné zadání' : ''}`);
+        } else if (zjevnaChyba(i, konfig)) {
+          // Zjevná chyba (RA55): bez souhlasu, ale vždy L (48 h na stop), jen v limitu rutiny a se selhávajícím testem.
+          const testy = soubory.some((f) => shoda(f.nazev, r.testy));
+          if (!vRozsahuRutiny) {
+            ri = 'K';
+            blokuje.push(`zjevná chyba #${i.cislo}: oprava přesahuje limit rutiny nebo mění cesty K či H2, potřebuje schvaleno (${s.duvod})`);
+          } else if (!testChyby(pr.telo) || !testy) {
+            ri = 'K';
+            blokuje.push(`zjevná chyba #${i.cislo}: PR potřebuje oddíl „Test chyby“ a změněný test v tests/, jinak schvaleno (${s.duvod})`);
+          } else {
+            ri = 'L';
+            info.push(`zjevná chyba #${i.cislo} z hlášení, ověřená testem (RA55)`);
+          }
         } else if (hlaseniSkoly(i, konfig)) {
           ri = 'K';
           blokuje.push(`hlášení školy #${i.cislo}: PR mění i jiné soubory než opravy údajů škol (hlaseni_skol v rezimy.yml), potřebuje schvaleno (${s.duvod})`);

@@ -1,6 +1,6 @@
 # Řízení vývoje: směr určuje člověk, provedení a přehled zajišťuje AI
 
-Verze 0.13s · 29. 10. 2026 · **část A ke schválení hned, část B k rozhodnutí podle měřítek.**
+Verze 0.13u · 10. 11. 2026 · **část A ke schválení hned, část B k rozhodnutí podle měřítek.**
 Stav zavedení: fáze 0 a 1 hotové (4. 10. 2026): brána sloučení je povinná kontrola v rulesetu bez obejití,
 AI slučuje skriptem a workflow Sloučení automaticky (RA40); fáze 2 čeká (postup v
 [postup-zavedeni-faze-0.md](postup-zavedeni-faze-0.md)).
@@ -27,7 +27,7 @@ a výdaje, posílá týdenní přehled a hlásí jen výjimky.
 **Co tím odpadne:** schvalování drobných zadání, kontrola na preview a merge u zhruba 20 PR týdně,
 odpovídání na dotazy v issues, obnova většiny tokenů.
 
-**Co je potřeba schválit:** část A jako celek (rozhodnutí RA1 až RA53 v oddílu 21). Část B se rozhodne
+**Co je potřeba schválit:** část A jako celek (rozhodnutí RA1 až RA55 v oddílu 21). Část B se rozhodne
 po čtyřech týdnech provozu podle měřítek.
 
 **Zavedení po fázích podle přínosu** (oddíl 20): fáze 1 odstraní merge a kontrolu preview, fáze 2 přidá
@@ -728,6 +728,7 @@ ověří ho měřítka.
 | RA49 | Autonomní trasy (#440): issue se štítkem `rutina` od automatiky repozitáře (github-actions[bot]: výpadek, regrese) se realizuje bez dokladu „Zdroj:“, v limitu rutiny jako R, jinak L; předání z datové linky (větev `data/*` od App, jen výstupy linky) projde jako automatická obnova dat, potvrzení kódem je souhlas; denní zpráva „Čeká na tebe“ do Telegramu; selhání oponentury do Telegramu a odebrání štítku; tep rutiny s upozorněním po 12 h ticha; nápady AI jdou přes `navrh` k vlastníkovi a bez souhlasu se nerealizují (nahrazuje lhůtu od představení z RA22) | **ano** (rozhodnutí vlastníka, 8. 10. 2026) |
 | RA51 | Plánovač (#461): plánované úlohy spouští cron-job.org každých 5 minut přes workflow Plánovač (jemný token vlastníka jen s právem Actions, mimo repozitář), plány GitHubu jsou záloha; tep rutiny jako úprava komentáře v issue Tep rutiny; issue `trvale` nejsou úkoly | **ano** (rozhodnutí vlastníka, 9. 10. 2026) |
 | RA52 | Hlášení přihlášené školy z portálu (#461) je oprava od školy: realizuje se bez `schvaleno`, PR smí měnit jen soubory s opravami údajů škol (`hlaseni_skol`), v limitu rutiny R, jinak L. Údaje, o kterých rozhoduje škola, AI opraví; oficiální statistiky podle tvrzení školy nepřepisuje a vysvětlí proč. Změna kódu nebo textů webu dál se `schvaleno` | **ano** (rozhodnutí vlastníka, 9. 10. 2026) |
+| RA55 | Veřejná hlášení (#564): ověřenou zjevnou chybu (štítek `zjevna-chyba` od vlastníka, asistenta nebo automatiky; rozpor s daty nebo kódem, bez přepisu oficiálních statistik, bez nové funkce, v limitu rutiny bez cest K a H2) AI opraví bez `schvaleno`: PR s testem, který chybu zopakuje, a oddílem `## Test chyby`, brána ho pustí v režimu L, nikdy R. Návrhy funkcí (`feature-request`) jdou do týdenního issue „Návrhy od veřejnosti“ s doporučením, vlastník rozhodne jednou týdně a AI rozhodnutí provede | **ano** (rozhodnutí vlastníka, 1. a 3. 11. 2026) |
 | RA53 | Automatické review blokuje jen doložené nálezy na změněných řádcích (P1 vždy, P2 jen s blokující kategorií, důkazem a místem v diffu), opakované review posuzuje předchozí nálezy a jen změny od posledního review, neplatný výstup se zkusí znovu, od kola 4 strop při nafouknutí PR, schválený PR smyčku oprav nespustí (#551, oddíl 9d) | **ano** (rozhodnutí vlastníka, 29. 10. 2026) |
 | RA54 | Změny cest H2 z interních zadání jdou do týdenní dávky (větev `rizeni/davka-RRRR-TT`, jeden PR, souhlas jednou týdně ve čtvrtek, po souhlasu se nepushuje; výjimky `incident`, porucha automatiky, „mimo dávku“). Zadání měnící kontrolované činnosti K dostane `schvaleno` na issue hned při založení. „Čeká na tebe“ žádá o souhlas jen u PR, kterému chybí jedině souhlas (#560). Co souhlas vyžaduje, se nemění | **ano** (zadání vlastníka #560, 1. 11. 2026) |
 | RA50 | Automatické review PR modelem Kimi K3 (#455) místo asistentky zadání: workflow Review píše pro každou novou hlavu PR review v tvaru, který brána čte, a při P1/P2 žádost `@claude` o opravu; brána ho uzná od App `prijimacky-ai` jen se značkou `review.znacka_automatiky`; model jen čte, verdikt skládá skript; cesty K a H2 dál se souhlasem vlastníka (oddíl 9d) | **ano** (rozhodnutí vlastníka, 9. 10. 2026) |
@@ -763,6 +764,8 @@ Po čtyřech týdnech provozu části A:
 
 ## Změny návrhu
 
+- **0.13u** (10. 11. 2026, rozhodnutí vlastníka, zadání #564): zjevné chyby z veřejných hlášení bez souhlasu
+  v režimu L s testem chyby, návrhy funkcí jednou týdně v jednom issue (RA55).
 - **0.13t** (1. 11. 2026, zadání vlastníka #560): týdenní dávka změn H2, souhlas na issue při založení, „Čeká na tebe“
   žádá o souhlas až u hotového PR (RA54).
 - **0.13s** (29. 10. 2026, rozhodnutí vlastníka, zadání #551): automatické review blokuje jen doložené nálezy
