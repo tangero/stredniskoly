@@ -27,6 +27,8 @@ export const MAX_TLACITEK = 12;
 export const MAX_TEXTU = 280;
 // Oponentura běží do 75 minut; déle se štítkem znamená, že uvízla (starší verze workflow štítek po chybě neodebírala).
 export const UVIZLA_PO = 3 * HODINA;
+// Hlídač uvízlých PR (#306): PR bez pushe a komentáře déle než tato doba a bez sloučení se ukáže s důvodem.
+export const STOJI_PO = DEN;
 const MAX_DELKA = 3900; // limit Telegramu je 4096 znaků
 
 export const html = (t = '') => String(t).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
@@ -52,6 +54,7 @@ export const SKUPINY = [
   { klic: 'hlaseni', nadpis: '📮 Hlášení od veřejnosti', akce: 'Opravit: <code>schvaleno</code>. Není to chyba: zavřít s důvodem, nebo <code>zamitnuto</code>.', tlacitko: 'hlášení' },
   { klic: 'pripominka', nadpis: '⏰ Splatné připomínky', akce: 'Vyhodnocení připraví AI; rozhodnutí z něj je na tobě.', tlacitko: 'připomínka' },
   { klic: 'clovek', nadpis: '🛠 Oprava z review uvízla', akce: 'Smyčka oprav skončila; rozhodni, jak dál (komentář v PR).', tlacitko: 'PR' },
+  { klic: 'stoji', nadpis: '🐢 PR stojí přes den', akce: 'U položky je důvod z brány nebo testů; když čeká jen na čas, nic nedělej, jinak rozhodni v PR.', tlacitko: 'PR' },
   { klic: 'uvizla', nadpis: '⚠️ Uvízlá oponentura', akce: 'Spustíš ji znovu odebráním a přidáním štítku <code>oponentura</code>.', tlacitko: 'oponentura' },
 ];
 
@@ -133,6 +136,21 @@ export function navrhyVTydnu(issues = []) {
   return cisla;
 }
 
+/**
+ * Proč PR stojí (#306, Hlídač uvízlých PR): PR, na který se nečeká se souhlasem a nemá `schvaleno`, `stop` ani
+ * `potrebuje-cloveka`, a od posledního pushe nebo komentáře (`posledniPush`, `posledniKomentar`, ISO) uplynulo
+ * přes STOJI_PO. Vrací { duvod, od } (od = čas poslední aktivity v ms), nebo null. Důvod: konflikt s main,
+ * červené testy (`cerveneTesty`, názvy kontrol), jinak výsledek brány (`brana`).
+ */
+export function procStoji(p, ted) {
+  if (p.souhlas || ['schvaleno', 'stop', 'potrebuje-cloveka'].some((s) => (p.stitky || []).includes(s))) return null;
+  const od = Math.max(Date.parse(p.posledniPush) || 0, Date.parse(p.posledniKomentar) || 0) || Date.parse(p.od) || ted;
+  if (ted - od <= STOJI_PO) return null;
+  if (p.konflikt) return { duvod: 'konflikt s main', od };
+  if (p.cerveneTesty?.length) return { duvod: `červené testy: ${p.cerveneTesty.join(', ')}`, od };
+  return { duvod: p.brana ? `brána: ${p.brana}` : 'důvod se nepodařilo zjistit', od };
+}
+
 /** Rozdělí vstupy do skupin; vrací jen neprázdné skupiny v pořadí SKUPINY. */
 export function sestavSkupiny({ prs = [], issues = [], ucty, dnes, ted }) {
   // Návrhy uvedené v otevřeném týdenním issue (RA55, #564) jsou ve zprávě jednou položkou, ne každý zvlášť.
@@ -144,6 +162,8 @@ export function sestavSkupiny({ prs = [], issues = [], ucty, dnes, ted }) {
     // Ke schválení od první kontroly brány, která chtěla jen souhlas, ne od otevření PR (#562).
     if (p.souhlas) s.souhlas.push({ ...polozkaPr(p, { nahled: p.nahled }), od: p.souhlasOd || odPr });
     else if (p.rozpracovany) s.rozpracovane.push({ cislo: p.cislo, pr: true, titulek: p.titulek, radky: [], od: odPr });
+    const stoji = procStoji(p, ted);
+    if (stoji) s.stoji.push({ cislo: p.cislo, pr: true, titulek: p.titulek, radky: [html(zkrat(stoji.duvod))], od: stoji.od, vstup: stoji.od + STOJI_PO });
   }
   for (const i of issues) {
     const st = new Set(i.stitky);
@@ -293,7 +313,30 @@ async function main() {
       souhlasOdMs = souhlasOd(kontroly);
     }
     const nahled = souhlas ? adresaNahledu(await api(`repos/${REPO}/commits/${p.head.sha}/statuses?per_page=100`)) : null;
-    prs.push({ cislo: p.number, titulek: p.title, telo: p.body || '', stitky: p.labels.map((l) => l.name), souhlas, rozpracovany: rozpracovanyBezSouhlasu(kontrola), nahled, od: p.created_at, souhlasOd: souhlasOdMs, upraveno: p.updated_at });
+    const stitky = p.labels.map((l) => l.name);
+    const zaznam = { cislo: p.number, titulek: p.title, telo: p.body || '', stitky, souhlas, rozpracovany: rozpracovanyBezSouhlasu(kontrola), nahled, od: p.created_at, souhlasOd: souhlasOdMs, upraveno: p.updated_at };
+    // Hlídač uvízlých PR (#306): podklady pro procStoji jen u PR, které do „Ke schválení“ ani „Oprava uvízla“ nepatří.
+    if (!souhlas && !['schvaleno', 'stop', 'potrebuje-cloveka'].some((s) => stitky.includes(s))) {
+      const detail = await api(`repos/${REPO}/pulls/${p.number}`);
+      const testy = await api(`repos/${REPO}/commits/${p.head.sha}/check-runs?filter=latest&per_page=100`);
+      // Potřebujeme čas posledního komentáře i staršího než den (stáří se počítá z poslední aktivity), proto
+      // všechny stránky (nejvýše 10), komentáře jsou řazeny od nejstaršího.
+      const komentarePr = [];
+      for (let strana = 1; strana <= 10; strana++) {
+        const dil = await api(`repos/${REPO}/issues/${p.number}/comments?per_page=100&page=${strana}`);
+        komentarePr.push(...dil);
+        if (dil.length < 100) break;
+      }
+      const radekBrany = (kontrola?.output?.summary || '').split('\n').map((r) => r.replace(/^\s*-\s*/, '').trim()).find((r) => r && !/^PR #/.test(r) && !/^Kontrola na/.test(r));
+      Object.assign(zaznam, {
+        konflikt: detail.mergeable_state === 'dirty',
+        cerveneTesty: (testy.check_runs || []).filter((k) => k.name !== NAZEV_KONTROLY && ['failure', 'timed_out'].includes(k.conclusion)).map((k) => k.name),
+        brana: kontrola ? [kontrola.output?.title, radekBrany].filter(Boolean).join(': ') : null,
+        posledniPush: (await api(`repos/${REPO}/commits/${p.head.sha}`)).commit?.committer?.date,
+        posledniKomentar: komentarePr.at(-1)?.updated_at,
+      });
+    }
+    prs.push(zaznam);
   }
 
   const issues = new Map();
