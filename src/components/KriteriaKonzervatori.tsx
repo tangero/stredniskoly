@@ -1,5 +1,6 @@
 import data from '@/data/kriteria-konzervatori-2027.json';
 import { formatujDen } from '@/lib/veletrhy-pocty';
+import { zobrazeneObdobi } from '@/lib/stav-datovych-sad';
 
 type Skola = { redizo: string; nazev: string; obec: string; obory: string[]; url: string | null; poznamka?: string };
 
@@ -7,11 +8,13 @@ type Skola = { redizo: string; nazev: string; obec: string; obory: string[]; url
  * Odkazy na kritéria přijetí konzervatoří pro nejbližší přijímací řízení (#504). Jen odkazy na web školy,
  * žádné body ani přepis: ten naváže v další etapě zkušebního běhu.
  */
-export function KriteriaKonzervatori() {
+export async function KriteriaKonzervatori() {
   const skoly = data.skoly as Skola[];
+  // Období určuje registr datových sad, ne soubor s odkazy.
+  const skolniRok = await zobrazeneObdobi('kriteria-konzervatori-odkazy');
   return (
     <div id="kriteria-konzervatori" className="mt-6 rounded-xl border border-slate-200 bg-white p-5 scroll-mt-24">
-      <h3 className="font-semibold text-lg">Kritéria přijetí konzervatoří pro školní rok {data.skolniRok}</h3>
+      <h3 className="font-semibold text-lg">Kritéria přijetí konzervatoří pro školní rok {skolniRok}</h3>
       <p className="text-sm text-slate-600 mt-1">
         Kritéria přijetí, tedy pravidla, podle kterých škola uchazeče řadí, vyhlašuje každá konzervatoř na svém webu.
         Odkazy vedou na stránku nebo dokument školy; obsah talentové zkoušky a bodování si přečti tam.

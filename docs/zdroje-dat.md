@@ -838,6 +838,7 @@ _Vygenerováno z `public/stav_datovych_sad.json` dne 2026-10-17. Neupravovat ru�
 | `cermat-prevod-testu` | web | 2024 | `` | — | 2025 | 2027-09, odhad | Testy předchozího roku zůstávají v TAU; jejich převodní tabulka zůstává v souboru prevod_testu_{rok}.json a může se nabízet dál. |
 | `dipsy-kriteria` | web | 2026 | `data/dipsy-kriteria-2026/manifest.jsonl` | — | 2027 | 2027-02, odhad | Kritéria 2026 zůstávají jen jako historie; pro rok 2027 se nesmí tiše použít. |
 | `ruian-kraje` | web | 2026-09-27 | `src/data/mapa-kraju.json` | — | — | neznámo | Nahrazuje se celý. |
+| `kriteria-konzervatori-odkazy` | web | 2027/2028 | `src/data/kriteria-konzervatori-2027.json` | — | 2028/2029 | 2027-10, odhad | Odkazy na starší školní rok se nahradí novými; staré se nezobrazují. |
 
 #### Aktualizace a automatizace
 
@@ -867,6 +868,7 @@ _Vygenerováno z `public/stav_datovych_sad.json` dne 2026-10-17. Neupravovat ru�
 | `cermat-prevod-testu` | ruční | Ručně: nabídka testů v TAU se načítá až po souhlasu s cookies, strojově ji nečteme. | python3 scripts/build-prevod-testu.py | Po přepnutí cermat-uchazeci-kolo1 spustit build-prevod-testu.py; jednou ročně zkontrolovat, jestli TAU nepřidalo nový rok. |
 | `dipsy-kriteria` | ruční | python3 scripts/dipsy-kriteria-scan.py --rok 2027 --redizo … (jen dotaz po jedné škole) | scripts/dipsy-kriteria-sber.py, přepis úsporným schématem, pak python3 scripts/build-kriteria-prijeti.py | Před placeným přepisem ověřit rozpočet (limit 10 USD, docs/podklady/dipsy-kriteria-rozpocet-10-usd-2026.md). |
 | `ruian-kraje` | ruční | Nesledováno: soubor se přegenerovává denně, změna hranic kraje je vzácná a přišla by zákonem. | scripts/build-mapa-kraju.mjs --vstup 1/VUSC_P.shp --stazeno RRRR-MM-DD | Při změně hranic krajů stáhnout zip (asi 250 MB), rozbalit VUSC_P a spustit skript. |
+| `kriteria-konzervatori-odkazy` | ruční | Ručně: každá škola vyhlašuje kritéria na vlastním webu, strojově je nečteme. | Ruční úprava src/data/kriteria-konzervatori-2027.json po ověření odkazů. | Jednou ročně (říjen) projít weby konzervatoří, ověřit letopočet školního roku ve vyhlášení a přepsat odkazy. |
 
 <!-- stav-datovych-sad:do -->
 
