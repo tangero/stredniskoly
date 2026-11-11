@@ -1,0 +1,26 @@
+{
+  "popis": "Odkazy na kritéria přijetí konzervatoří pro přijímací řízení 2027, ručně ověřené na webech škol (zkušební běh #504, tabulka K1). Strojový přepis kritérií naváže v další etapě.",
+  "skolniRok": "2027/2028",
+  "checkedAt": "2026-11-11",
+  "zdrojSeznamuSkol": "public/pro-novinare/konzervatore-skoly.csv (rejstřík MŠMT k 30. 6. 2026)",
+  "skoly": [
+    { "redizo": "600013430", "nazev": "Konzervatoř Brno", "obec": "Brno", "obory": ["Hudba", "Zpěv", "Hudebně dramatické umění"], "url": "https://konzervatorbrno.eu/?page_id=1280" },
+    { "redizo": "600013812", "nazev": "Taneční konzervatoř Brno", "obec": "Brno", "obory": ["Tanec"], "url": "https://www.tkbrno.cz/wp-content/uploads/2026/10/Kriteria_pro_prijimaci_zkousky_2027_2028.pdf" },
+    { "redizo": "600008011", "nazev": "Konzervatoř České Budějovice", "obec": "České Budějovice", "obory": ["Hudba", "Zpěv"], "url": "https://www.konzervatorcb.cz/studium-prijimaci-a-talentove-zkousky" },
+    { "redizo": "600014967", "nazev": "Konzervatoř P. J. Vejvanovského Kroměříž", "obec": "Kroměříž", "obory": ["Hudba", "Zpěv"], "url": "https://www.konzkm.cz/prijimaci-rizeni/" },
+    { "redizo": "600015025", "nazev": "Konzervatoř Evangelické akademie", "obec": "Olomouc", "obory": ["Hudba", "Zpěv"], "url": "https://www.konzervatorolomouc-kea.cz/pro-uchazece/prijimaci-rizeni" },
+    { "redizo": "610550659", "nazev": "Církevní konzervatoř Německého řádu", "obec": "Opava", "obory": ["Hudba", "Zpěv", "Hudebně dramatické umění"], "url": "https://www.konzervator.cz/nastenka/vyhlasujeme-1-kolo-prijimaciho-rizeni-992n" },
+    { "redizo": "600017524", "nazev": "Janáčkova konzervatoř v Ostravě", "obec": "Ostrava", "obory": ["Hudba", "Zpěv", "Tanec", "Hudebně dramatické umění"], "url": "https://www.jko.cz/prijimaci-rizeni" },
+    { "redizo": "600012336", "nazev": "Konzervatoř Pardubice", "obec": "Pardubice", "obory": [], "url": "https://www.konzervatorpardubice.eu/", "poznamka": "Vyhlášení je na úvodní stránce školy." },
+    { "redizo": "600009441", "nazev": "Konzervatoř Plzeň", "obec": "Plzeň", "obory": ["Hudba", "Zpěv"], "url": "https://www.konzervatorplzen.cz/cz/studium/zkousky/talentove/" },
+    { "redizo": "600004660", "nazev": "Konzervatoř Jaroslava Ježka", "obec": "Praha", "obory": ["Hudba", "Zpěv", "Hudebně dramatické umění"], "url": "https://www.kjj.cz/uchazeci/zajemci-o-studium-na-konzervatori/prijimaci-rizeni-do-1-rocniku-oboru-s-talentovou-zkouskou" },
+    { "redizo": "600020738", "nazev": "Konzervatoř a střední škola Jana Deyla", "obec": "Praha", "obory": ["Hudba", "Zpěv"], "url": "https://jandeylconservatory.cz/images/2026-27/documents/Prijimaci-rizeni/R116-26-Prijimaci-rizeni-pro-skolni-rok-2027-28-v2.pdf", "poznamka": "Připojená kritéria vycházejí ze staršího rozhodnutí školy; podrobnosti ověř u školy." },
+    { "redizo": "600005062", "nazev": "Konzervatoř Duncan centre", "obec": "Praha", "obory": ["Současný tanec"], "url": "https://www.duncancentre.cz/prijimacky/" },
+    { "redizo": "600004538", "nazev": "Pražská konzervatoř", "obec": "Praha", "obory": ["Hudba", "Zpěv", "Hudebně dramatické umění"], "url": "https://prazskakonzervator.cz/wp-content/uploads/2026/10/Vyhlaseni-1.-kola-talentove-prijimaci-zkousky_leden_2027_web.pdf" },
+    { "redizo": "600005666", "nazev": "Pražská taneční konzervatoř", "obec": "Praha", "obory": ["Tanec"], "url": "https://konzervator.ptksos.cz/pro-uchazece/prijimaci-rizeni" },
+    { "redizo": "600005780", "nazev": "Taneční centrum Praha – konzervatoř", "obec": "Praha", "obory": ["Tanec"], "url": "https://www.tanecnicentrumpraha.cz/pro-uchazece/" },
+    { "redizo": "600004601", "nazev": "Taneční konzervatoř hlavního města Prahy", "obec": "Praha", "obory": ["Tanec"], "url": "https://www.tkpraha.cz/kriteria-talentove-zkousky-pro-skolni-rok-2027-2028/" },
+    { "redizo": "600011241", "nazev": "Konzervatoř Teplice", "obec": "Teplice", "obory": ["Hudba", "Zpěv"], "url": "https://www.konzervatorteplice.cz/upload/files/dokumenty/vyhlaseni-1-kola-prijimaciho-rizeni-pro-sk-rok-2027-28.pdf", "poznamka": "Vyhlášení odkazuje na stránku kritérií se staršími letopočty; podrobnosti ověř u školy." },
+    { "redizo": "651038880", "nazev": "Mezinárodní konzervatoř Praha", "obec": "Praha", "obory": [], "url": null, "poznamka": "Web školy při ověření nefungoval; nabídku hledej v DiPSy." }
+  ]
+}
