@@ -38,7 +38,9 @@ test('chybějící historická shoda nezabrání detailu ani přesnému načten�
     const r = await fetch(base + offer.href);
     assert.equal(r.status, 200);
     const html = await r.text();
-    assert.ok(html.includes(offer.nazev));
+    // Plný název se do HTML dostával jen přes ladicí data Reactu z `next dev` (Next 16.4 je nevkládá),
+    // proto se ověřuje, že odkaz po přesměrování skončil na stránce školy a ne jinde.
+    assert.match(new URL(r.url).pathname, /^\/skola\/[^/]+/, `${id}: odkaz nevede na stránku školy (${r.url})`);
     // Věta „2027 zatím nejsou potvrzené“ žila jen na stránce /nabidka, která se od 19. 9. 2026
     // přesměrovává na stránku oboru (docs/adresa-oboru-2027.md). Místo ní se ověřuje, že
     // odkaz vede na stránku toho oboru, ne na jiný obor téže školy ani na přehled školy.
