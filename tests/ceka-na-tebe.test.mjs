@@ -243,3 +243,15 @@ test('hlídač uvízlých PR: PR bez pushe a komentáře přes den se ukáže s 
   assert.equal(stoji.polozky[0].od, Date.parse('2026-10-06T09:00:00Z'));
   assert.equal(g.at(-1).klic, 'stoji');
 });
+
+test('hlídač uvízlých PR: nová položka je ve večerní i ranní zprávě s názvem a důvodem (#306)', () => {
+  // Poslední aktivita před 25 hodinami: do skupiny vstoupila před hodinou, minulá zpráva byla před 12 hodinami.
+  const od = new Date(TED - 25 * 3600000).toISOString();
+  const g = skupiny({ prs: [pr({ cislo: 40, titulek: 'Stojící oprava', souhlas: false, posledniPush: od, konflikt: true })] });
+  assert.equal(g.find((x) => x.klic === 'stoji').polozky[0].vstup, Date.parse(od) + 86400000);
+  const posledni = TED - 12 * 3600000;
+  const vecer = zprava(g, { ted: TED, vecer: true, posledni });
+  assert.ok(vecer && vecer.text.includes('#40') && vecer.text.includes('konflikt s main'));
+  const rano = zprava(g, { ted: TED, posledni });
+  assert.ok(rano.text.includes('Nové od minulé zprávy') && rano.text.includes('Stojící oprava') && rano.text.includes('konflikt s main'));
+});

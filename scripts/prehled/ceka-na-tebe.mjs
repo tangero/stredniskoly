@@ -148,7 +148,7 @@ export function sestavSkupiny({ prs = [], issues = [], ucty, dnes, ted }) {
     // Ke schválení od první kontroly brány, která chtěla jen souhlas, ne od otevření PR (#562).
     if (p.souhlas) s.souhlas.push({ ...polozkaPr(p, { nahled: p.nahled }), od: p.souhlasOd || odPr });
     const stoji = procStoji(p, ted);
-    if (stoji) s.stoji.push({ cislo: p.cislo, pr: true, titulek: p.titulek, radky: [html(zkrat(stoji.duvod))], od: stoji.od });
+    if (stoji) s.stoji.push({ cislo: p.cislo, pr: true, titulek: p.titulek, radky: [html(zkrat(stoji.duvod))], od: stoji.od, vstup: stoji.od + STOJI_PO });
   }
   for (const i of issues) {
     const st = new Set(i.stitky);
@@ -304,8 +304,14 @@ async function main() {
     if (!souhlas && !['schvaleno', 'stop', 'potrebuje-cloveka'].some((s) => stitky.includes(s))) {
       const detail = await api(`repos/${REPO}/pulls/${p.number}`);
       const testy = await api(`repos/${REPO}/commits/${p.head.sha}/check-runs?filter=latest&per_page=100`);
-      // Stačí vědět, zda za poslední STOJI_PO přibyl komentář (`since` filtruje podle úpravy, stránkování nevadí).
-      const komentarePr = await api(`repos/${REPO}/issues/${p.number}/comments?since=${new Date(ted - STOJI_PO).toISOString()}&per_page=100`);
+      // Potřebujeme čas posledního komentáře i staršího než den (stáří se počítá z poslední aktivity), proto
+      // všechny stránky (nejvýše 10), komentáře jsou řazeny od nejstaršího.
+      const komentarePr = [];
+      for (let strana = 1; strana <= 10; strana++) {
+        const dil = await api(`repos/${REPO}/issues/${p.number}/comments?per_page=100&page=${strana}`);
+        komentarePr.push(...dil);
+        if (dil.length < 100) break;
+      }
       const radekBrany = (kontrola?.output?.summary || '').split('\n').map((r) => r.replace(/^\s*-\s*/, '').trim()).find((r) => r && !/^PR #/.test(r) && !/^Kontrola na/.test(r));
       Object.assign(zaznam, {
         konflikt: detail.mergeable_state === 'dirty',
