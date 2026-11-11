@@ -174,7 +174,9 @@ pustí v režimu R (přes limit rutiny jako L).
 **Čeká na tebe** (`.github/workflows/ceka-na-tebe.yml`, `scripts/prehled/ceka-na-tebe.mjs`, #440): denně v 8:52
 jedna zpráva do Telegramu, jen když něco čeká na vlastníka. Skupiny: PR ke schválení (věta z oddílu „Pro vlastníka“
 a odkaz na stránku v náhledu), otázky, hotové oponentury, návrhy, splatné připomínky, uvízlé opravy z review
-a oponentury a hlášení od veřejnosti bez rozhodnutí (#461). V oddílu „Co udělat“ pokyn ke každé skupině, která má ve zprávě zobrazenou položku, pod zprávou
+a oponentury, hlášení od veřejnosti bez rozhodnutí (#461) a PR, které stojí (#306, Hlídač uvízlých PR). PR stojí, když od
+posledního pushe nebo komentáře uplynul přes den a PR nečeká na souhlas ani nemá `schvaleno`, `stop` nebo `potrebuje-cloveka`;
+u položky je důvod: konflikt s `main`, červené testy (názvy kontrol), jinak výsledek brány (například lhůta L). V oddílu „Co udělat“ pokyn ke každé skupině, která má ve zprávě zobrazenou položku, pod zprávou
 tlačítka na PR nebo issue. Spouští ji Plánovač; ručně v Actions (Čeká na tebe, Run workflow).
 Od #562 je ranní zpráva řazená podle stáří: nahoře „Čeká přes 3 dny“ od nejstarší s počtem dní, pak „Nové od minulé
 zprávy“, zbytek jen počty po skupinách s odkazem na seznam issues. Stáří je doba od přidání štítku otázky, návrhu nebo

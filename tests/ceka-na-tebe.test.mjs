@@ -215,3 +215,43 @@ test('návrhy z týdenního issue jsou ve zprávě jednou položkou (RA55, #564)
   assert.deepEqual(cisla(skupiny({ issues: [navrh, jiny] })), [801, 802]);
   assert.deepEqual(cisla(skupiny({ issues: [tydenni, chyba] })), [800, 801]);
 });
+
+test('hlídač uvízlých PR: PR bez pushe a komentáře přes den se ukáže s důvodem (#306)', () => {
+  const stary = { souhlas: false, posledniPush: '2026-10-06T08:00:00Z', posledniKomentar: '2026-10-06T09:00:00Z' };
+  const g = skupiny({
+    prs: [
+      pr({ cislo: 30, ...stary, konflikt: true, cerveneTesty: ['TypeScript'] }),
+      pr({ cislo: 31, ...stary, cerveneTesty: ['TypeScript', 'Python testy'] }),
+      pr({ cislo: 32, ...stary, brana: 'Čeká na lhůtu (L): lhůta na veto běží do 2026-10-09 21:45 UTC' }),
+      // Komentář před méně než dnem: PR nestojí.
+      pr({ cislo: 33, ...stary, posledniKomentar: '2026-10-07T12:00:00Z' }),
+      // Čeká na souhlas, má schvaleno, stop nebo potrebuje-cloveka: jinde, nebo se na něj nesahá.
+      pr({ cislo: 34, ...stary, souhlas: true }),
+      pr({ cislo: 35, ...stary, stitky: ['schvaleno'] }),
+      pr({ cislo: 36, ...stary, stitky: ['stop'] }),
+      pr({ cislo: 37, ...stary, stitky: ['potrebuje-cloveka'] }),
+    ],
+  });
+  const stoji = g.find((x) => x.klic === 'stoji');
+  assert.deepEqual(stoji.polozky.map((p) => p.cislo), [30, 31, 32]);
+  assert.deepEqual(stoji.polozky.map((p) => p.radky[0]), [
+    'konflikt s main',
+    'červené testy: TypeScript, Python testy',
+    'brána: Čeká na lhůtu (L): lhůta na veto běží do 2026-10-09 21:45 UTC',
+  ]);
+  // Stáří od poslední aktivity, ne od otevření PR.
+  assert.equal(stoji.polozky[0].od, Date.parse('2026-10-06T09:00:00Z'));
+  assert.equal(g.at(-1).klic, 'stoji');
+});
+
+test('hlídač uvízlých PR: nová položka je ve večerní i ranní zprávě s názvem a důvodem (#306)', () => {
+  // Poslední aktivita před 25 hodinami: do skupiny vstoupila před hodinou, minulá zpráva byla před 12 hodinami.
+  const od = new Date(TED - 25 * 3600000).toISOString();
+  const g = skupiny({ prs: [pr({ cislo: 40, titulek: 'Stojící oprava', souhlas: false, posledniPush: od, konflikt: true })] });
+  assert.equal(g.find((x) => x.klic === 'stoji').polozky[0].vstup, Date.parse(od) + 86400000);
+  const posledni = TED - 12 * 3600000;
+  const vecer = zprava(g, { ted: TED, vecer: true, posledni });
+  assert.ok(vecer && vecer.text.includes('#40') && vecer.text.includes('konflikt s main'));
+  const rano = zprava(g, { ted: TED, posledni });
+  assert.ok(rano.text.includes('Nové od minulé zprávy') && rano.text.includes('Stojící oprava') && rano.text.includes('konflikt s main'));
+});
