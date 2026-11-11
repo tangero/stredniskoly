@@ -373,6 +373,23 @@ skills a nezakládá PR. Přijatý návrh realizuje AI na pokyn vlastníka jako 
 **Vyhodnocení:** když vlastník do konce roku 2026 nepřijme žádný návrh, oddíl se zruší nebo zúží na výpis signálů
 (odebráním volání `pripravPonauceni` z `nactiData` v `tydenni.mjs`, případně jen modelu).
 
+## 5c. Otázka třikrát = pravidlo (#306)
+
+Rozhodnutí vlastníka 3. 11. 2026: na co vlastník odpověděl dvakrát stejně, má se stát trvalým pravidlem, aby se
+AI neptala potřetí. `scripts/prehled/otazky-pravidla.mjs` (testy `tests/otazky-pravidla.test.mjs`) jen čte GitHub:
+
+- **Otázka** je komentář vlastnického účtu s nadpisem „Otázka pro vlastníka“ (pravidlo 8). **Odpověď** je první
+  další komentář v témže issue: komentář vlastníka bez patičky AI a bez značky automatiky (`<!--`), nebo zápis
+  s nadpisem „Odpověď vlastníka“ od vlastníka či asistenta (stejné pravidlo jako u štítku `otazka`).
+- Bere odpovědi za posledních 60 dní (`--dni`). Dvě otázky z různých issues patří do jedné skupiny, když mají
+  podobný text (`podobnost` ze `scripts/review/stagnace.mjs`, práh 0,6, `--prah`) a stejnou odpověď: stejnou
+  zvolenou variantu („A“, „(B)“, „Varianta 2“, „ano“, „ne“), jinak podobný text odpovědi.
+- `--seznam` vypíše skupiny jako JSON, `--navrh` podklad do týdenní dávky H2 (#560): u každé skupiny odkazy na
+  otázky, úryvky otázky a odpovědi bez e-mailů a telefonů a místo pro znění pravidla, které napíše AI.
+
+Nic se nezapisuje a pravidlo neplatí bez souhlasu vlastníka s dávkou. Týdenní spuštění v rutině a zápis do dávky
+přibudou, až bude dávka H2 (#560, PR #563) na `main`; do té doby se skript spouští na požádání.
+
 ## 6. Otevřené
 
 - **Nález secret scanningu č. 1:** klíč Google Maps JavaScript API v
