@@ -47,6 +47,7 @@ const adresa = (cislo, pr = false) => `https://github.com/${REPO}/${pr ? 'pull' 
 /** Skupiny v pořadí, ve kterém je vlastník má vyřizovat. `akce` je pokyn pod položkou, `tlacitko` popisek tlačítka. */
 export const SKUPINY = [
   { klic: 'souhlas', nadpis: '✅ Ke schválení', akce: 'Když sedí, přidej na PR štítek <code>schvaleno</code>.', tlacitko: 'schválit' },
+  { klic: 'rozpracovane', nadpis: '🚧 Rozpracované (souhlas zatím ne)', akce: 'Brána chce ještě něco jiného než souhlas (review, testy). Souhlas přidej, až PR přejde do „Ke schválení“.', tlacitko: null },
   { klic: 'otazka', nadpis: '❓ Otázky na tebe', akce: 'Odpověz komentářem v issue, nebo řekni Eduardě či Claude Code.', tlacitko: 'odpovědět' },
   { klic: 'oponentura', nadpis: '⚖️ Oponentura hotová', akce: 'Vyber variantu: <code>schvaleno</code> s komentářem, kterou, nebo <code>zamitnuto</code>.', tlacitko: 'vybrat' },
   { klic: 'navrh', nadpis: '💡 Návrhy', akce: 'Souhlas štítkem <code>schvaleno</code>, odmítnutí <code>zamitnuto</code>.', tlacitko: 'rozhodnout' },
@@ -83,10 +84,23 @@ export function doporuceni(komentare = []) {
 /** Termín připomínky z těla issue (RRRR-MM-DD), nebo null. */
 export const terminPripominky = (telo = '') => (telo.match(/Termín:?\s*(\d{4}-\d{2}-\d{2})/) || [])[1] || null;
 
-/** PR potřebuje souhlas vlastníka, když poslední kontrola brány neprošla kvůli chybějícímu souhlasu. */
-export function potrebujeSouhlas(kontrola) {
-  return kontrola?.conclusion === 'failure' && /chybí souhlas vlastníka|potřebuje schvaleno/.test(kontrola.output?.summary || '');
+const SOUHLAS = /chybí souhlas vlastníka|potřebuje schvaleno|souhlas na issue #\d+ neplatí/;
+const duvodyKontroly = (kontrola) => (kontrola?.output?.summary || '').split('\n').filter((r) => r.startsWith('- '));
+
+/** Brána v poslední kontrole zmiňuje chybějící souhlas vlastníka (možná vedle dalších důvodů). */
+export function zminujeSouhlas(kontrola) {
+  return kontrola?.conclusion === 'failure' && SOUHLAS.test(kontrola.output?.summary || '');
 }
+
+/** PR je ke schválení jen tehdy, když je jediným důvodem neúspěchu brány chybějící souhlas vlastníka (#560). */
+export function potrebujeSouhlas(kontrola) {
+  if (!zminujeSouhlas(kontrola)) return false;
+  const duvody = duvodyKontroly(kontrola);
+  return duvody.length > 0 && duvody.every((d) => SOUHLAS.test(d));
+}
+
+/** Brána chce souhlas, ale i něco dalšího: PR je rozpracovaný a o souhlas se zatím nežádá. */
+export const rozpracovanyBezSouhlasu = (kontrola) => zminujeSouhlas(kontrola) && !potrebujeSouhlas(kontrola);
 
 /**
  * Čas první kontroly brány z nepřerušené řady posledních kontrol, které chtěly jen souhlas (ms), nebo null.
@@ -147,6 +161,7 @@ export function sestavSkupiny({ prs = [], issues = [], ucty, dnes, ted }) {
     if (p.stitky.includes('potrebuje-cloveka')) s.clovek.push({ cislo: p.cislo, pr: true, titulek: p.titulek, radky: [], od: odPr });
     // Ke schválení od první kontroly brány, která chtěla jen souhlas, ne od otevření PR (#562).
     if (p.souhlas) s.souhlas.push({ ...polozkaPr(p, { nahled: p.nahled }), od: p.souhlasOd || odPr });
+    else if (p.rozpracovany) s.rozpracovane.push({ cislo: p.cislo, pr: true, titulek: p.titulek, radky: [], od: odPr });
     const stoji = procStoji(p, ted);
     if (stoji) s.stoji.push({ cislo: p.cislo, pr: true, titulek: p.titulek, radky: [html(zkrat(stoji.duvod))], od: stoji.od, vstup: stoji.od + STOJI_PO });
   }
@@ -211,9 +226,9 @@ export function zprava(skupiny, { ted = Date.now(), vecer = false, posledni = te
   if (!(vecer ? nove : vse).length) return null;
   const tlacitka = [];
   const radek = (p, stari) => {
-    const r = [`• <a href="${adresa(p.cislo, p.pr)}">#${p.cislo}</a> ${html(zkrat(p.titulek, 90))} <i>(${p.g.tlacitko}${stari ? `, ${dny(p)} dní` : ''})</i>`];
+    const r = [`• <a href="${adresa(p.cislo, p.pr)}">#${p.cislo}</a> ${html(zkrat(p.titulek, 90))} <i>(${[p.g.tlacitko, stari ? `${dny(p)} dní` : null].filter(Boolean).join(', ')})</i>`];
     for (const t of p.radky) r.push(`   ${t}`);
-    if (tlacitka.length < MAX_TLACITEK) tlacitka.push({ text: `#${p.cislo} ${p.g.tlacitko}`, url: adresa(p.cislo, p.pr) });
+    if (p.g.tlacitko && tlacitka.length < MAX_TLACITEK) tlacitka.push({ text: `#${p.cislo} ${p.g.tlacitko}`, url: adresa(p.cislo, p.pr) });
     return r.join('\n');
   };
   const oddil = (nadpis, polozky, max, stari) => [`<b>${nadpis} (${polozky.length})</b>`, ...polozky.slice(0, max).map((p) => radek(p, stari)),
@@ -299,7 +314,7 @@ async function main() {
     }
     const nahled = souhlas ? adresaNahledu(await api(`repos/${REPO}/commits/${p.head.sha}/statuses?per_page=100`)) : null;
     const stitky = p.labels.map((l) => l.name);
-    const zaznam = { cislo: p.number, titulek: p.title, telo: p.body || '', stitky, souhlas, nahled, od: p.created_at, souhlasOd: souhlasOdMs, upraveno: p.updated_at };
+    const zaznam = { cislo: p.number, titulek: p.title, telo: p.body || '', stitky, souhlas, rozpracovany: rozpracovanyBezSouhlasu(kontrola), nahled, od: p.created_at, souhlasOd: souhlasOdMs, upraveno: p.updated_at };
     // Hlídač uvízlých PR (#306): podklady pro procStoji jen u PR, které do „Ke schválení“ ani „Oprava uvízla“ nepatří.
     if (!souhlas && !['schvaleno', 'stop', 'potrebuje-cloveka'].some((s) => stitky.includes(s))) {
       const detail = await api(`repos/${REPO}/pulls/${p.number}`);

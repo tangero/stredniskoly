@@ -57,6 +57,10 @@ a ochranu `main` popisuje `docs/spoluprace-na-githubu.md`. Pro práci platí:
    U změn webu napiš do popisu oddíl `## Pro vlastníka`: jedna až tři věty z pohledu návštěvníka, co na stránce
    uvidí jinak, bez technických slov, a adresy, kde změnu uvidí; bez něj brána PR nepustí. Protokol z preview se
    nevyžaduje (RA45), ověření na náhledu je dobrovolné (skill `overeni-preview`).
+   **Výjimka: týdenní dávka H2 (RA54).** Změny cest H2 (`h2` v `.github/rezimy.yml`) z interních zadání jdou do jedné
+   větve `rizeni/davka-RRRR-TT` (rok a týden ISO) a jednoho PR týdně; popis nese `Closes #N` za každé hotové zadání
+   a pro každé jednu větu v `## Pro vlastníka`. Každé zadání má dál své issue; část mimo H2 jde samostatným PR. Podrobnosti
+   ve skillu `rizeni-brana`.
    Dodávka **po etapách** (určí ji issue nebo vlastník projektu): každá etapa má vlastní větev a PR se „Souvisí
    s #N“, `Closes #N` nese jen poslední etapa (podrobnosti ve skillu `rizeni-brana`).
    **Drobný úkol projektu**, který Patrick rozhodl v rozhovoru a který spadá do rozsahu projektu, zapiš jako
