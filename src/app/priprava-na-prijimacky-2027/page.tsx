@@ -78,7 +78,7 @@ export default function PripravaNaPrijimacky2027Page() {
               Příprava na přijímačky 2027: možnosti zdarma i placené, nanečisto
             </h1>
             <p className="text-slate-200 text-lg max-w-2xl">
-              Přehled ověřených možností, jak se letos připravit na jednotnou přijímací zkoušku.
+              Přehled ověřených možností, jak se ve školním roce 2026/2027 připravit na jednotnou přijímací zkoušku.
               Uvádíme jen to, co jsme ověřili, s odkazy na zdroje. Nejde o žebříček ani o doporučení
               placených kurzů.
             </p>
@@ -249,7 +249,7 @@ export default function PripravaNaPrijimacky2027Page() {
               <article className="rounded-xl border border-slate-200 bg-white p-5">
                 <h3 className="font-semibold text-lg">Scio — trénink pro 8. třídy</h3>
                 <p className="text-slate-700 mt-2 leading-relaxed">
-                  Tato nabídka je pro žáky 8. tříd, ne pro letošní deváťáky, kteří půjdou
+                  Tato nabídka je pro žáky 8. tříd, ne pro žáky 9. tříd školního roku 2026/2027, kteří půjdou
                   k přijímačkám v dubnu 2027. Testuje češtinu, matematiku a obecné studijní
                   předpoklady, ve škole nebo doma, od 26.&nbsp;4. do 21.&nbsp;5.&nbsp;2027
                   za 230&nbsp;Kč za žáka. Výsledky mají být ve ScioDat 4.&nbsp;6.&nbsp;2027.

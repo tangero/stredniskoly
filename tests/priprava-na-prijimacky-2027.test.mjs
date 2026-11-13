@@ -46,7 +46,7 @@ test('placené nabídky mají ověřené ceny a Scio je pro 8. třídy', () => {
   const text = fs.readFileSync(STRANKA, 'utf8');
   assert.match(text, /230\s*&nbsp;Kč za žáka|230&nbsp;Kč za žáka/);
   assert.match(text, /26\.\s*&nbsp;4\.\s*do 21\.\s*&nbsp;5\.\s*&nbsp;2027|26\.&nbsp;4\. do 21\.&nbsp;5\.&nbsp;2027/);
-  assert.match(text, /pro žáky 8\. tříd, ne pro letošní deváťáky/);
+  assert.match(text, /pro žáky 8\. tříd, ne pro žáky 9\. tříd školního roku 2026\/2027/);
   assert.match(text, /www2\.scio\.cz\/trenink-na-prijimaci-zkousky-pro-8-tridy/);
   assert.match(text, /699\s*&nbsp;Kč|699&nbsp;Kč/);
   assert.match(text, /799\s*&nbsp;Kč|799&nbsp;Kč/);
