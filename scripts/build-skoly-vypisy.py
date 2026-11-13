@@ -19,7 +19,11 @@ Co se vyřazuje a proč:
   ručí za něj škola;
 * výpisy, ze kterých čtečka nevzala ani tři položky – sonda je nepřečetla;
 * výpisy, jejichž nejnovější položka je starší než rok – mrtvý archiv nebo
-  špatně vybraná stránka (výroční zprávy, inspekční zprávy).
+  špatně vybraná stránka (výroční zprávy, inspekční zprávy);
+* školy z ``VYRAZENE`` – zdroje vyřazené rozhodnutím vlastníka po kontrole webu.
+
+Sklízeč (``scripts/sklizec-novinek.py``) bere zdroje z tohoto souboru, ne ze
+sloupce ``skola_feed.aktivni``; vyřazení se proto musí projevit tady.
 """
 from __future__ import annotations
 
@@ -35,6 +39,12 @@ VYSTUP = KOREN / "public" / "skoly_vypisy.json"
 DEN_SONDY = dt.date(2026, 10, 1)
 MAX_STARI_DNU = 365
 
+# Zdroje vyřazené rozhodnutím vlastníka (RED IZO → důvod). V tabulce skola_feed
+# je stejné vyřazení v migraci db/migrace/011-vyrazene-vypisy.sql.
+VYRAZENE = {
+    "600013260": "#557: web školy nemá stránku aktualit, jen titulní stránku (kontrola 29. 10. 2026)",
+}
+
 
 def ziva(nejnovejsi: str | None) -> bool:
     return bool(nejnovejsi) and (DEN_SONDY - dt.date.fromisoformat(nejnovejsi)).days <= MAX_STARI_DNU
@@ -43,11 +53,14 @@ def ziva(nejnovejsi: str | None) -> bool:
 def main() -> None:
     feedy = json.loads(FEEDY.read_text())["skoly"]
     skoly: dict[str, dict] = {}
-    vyrazeno = {"ma_feed": 0, "stary_vypis": 0}
+    vyrazeno = {"ma_feed": 0, "stary_vypis": 0, "rucne": 0}
 
     for v in json.loads(PRIMO.read_text())["skoly"]:
         vy = v["vypis"]
         if vy["polozek"] < 3:
+            continue
+        if v["redizo"] in VYRAZENE:
+            vyrazeno["rucne"] += 1
             continue
         if v["redizo"] in feedy:
             vyrazeno["ma_feed"] += 1
@@ -62,6 +75,9 @@ def main() -> None:
     for v in json.loads(TINYFISH.read_text())["skoly"]:
         if v["polozek"] < 3 or v["redizo"] in skoly:
             continue
+        if v["redizo"] in VYRAZENE:
+            vyrazeno["rucne"] += 1
+            continue
         if v["redizo"] in feedy:
             vyrazeno["ma_feed"] += 1
             continue
@@ -75,7 +91,7 @@ def main() -> None:
             "zdroj": [str(PRIMO.relative_to(KOREN)), str(TINYFISH.relative_to(KOREN))],
             "vygenerovano": dt.datetime.now(dt.timezone.utc).date().isoformat(),
             "skript": "scripts/build-skoly-vypisy.py",
-            "poznamka": "Auditní export registru výpisů aktualit; provozní stav zdrojů je v tabulce skola_feed.",
+            "poznamka": "Registr výpisů aktualit, ze kterého čte sklízeč; provozní stav zdrojů (validátory, chyby, splatnost) je v tabulce skola_feed.",
             "skol_html": sum(1 for s in skoly.values() if s["typ"] == "html"),
             "skol_tinyfish": sum(1 for s in skoly.values() if s["typ"] == "tinyfish"),
             "vyrazeno": vyrazeno,
