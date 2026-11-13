@@ -100,7 +100,7 @@ def main() -> None:
     }
     VYSTUP.write_text(json.dumps(vystup, ensure_ascii=False, indent=1) + "\n")
     m = vystup["meta"]
-    print(f"Výpisů: {m['skol_html']} přímo, {m['skol_tinyfish']} přes TinyFish; vyřazeno {vyrazeno} → {VYSTUP.relative_to(KOREN)}")
+    print(f"Výpisů: {m['skol_html']} přímo, {m['skol_tinyfish']} přes TinyFish; vyřazeno {vyrazeno} → {VYSTUP.relative_to(KOREN) if VYSTUP.is_relative_to(KOREN) else VYSTUP}")
 
 
 if __name__ == "__main__":
