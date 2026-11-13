@@ -216,6 +216,9 @@ function RadekOboru({ o, rok }: { o: OborSkoly; rok: number | null }) {
 
 export function ProfilSkoly({ data, skola, odkazy }: ProfilSkolyProps) {
   const { rok, obory, maturita, inspekce, inspis, portal, poloha, okoli, soubeh } = data;
+  // Jarní výsledky a stav po podzimu jsou dva různé údaje; škola může mít jen druhý (#584).
+  const maJarniMaturitu = maturita?.celkem?.passed !== undefined && !!maturita.celkem.registered;
+  const maMaturituPoPodzimu = maturita?.poPodzimu?.celkem?.passed !== undefined && !!maturita.poPodzimu.celkem.registered;
   const u = portal?.udaje ?? {};
   const pole = (k: string) => (u[k]?.hodnota?.trim() ? u[k]! : null);
   // Značka za skupinu polí: „Opravila redakce“ stačí u jediného opraveného,
@@ -336,9 +339,9 @@ export function ProfilSkoly({ data, skola, odkazy }: ProfilSkolyProps) {
                   {pole('dny_otevrenych_dveri') ? <span className="block">Den otevřených dveří podle školy: <b>{pole('dny_otevrenych_dveri')!.hodnota}</b></span> : null}
                 </>,
               } : null,
-              (maturita || inspekce) ? {
+              (maJarniMaturitu || maMaturituPoPodzimu || inspekce) ? {
                 href: '#vede', q: 'Jak dobrá škola je',
-                a: <>{maturita?.celkem?.passed !== undefined && maturita.celkem.registered ? <>maturitu {maturita.celkem.rok} udělalo <b>{cislo(maturita.celkem.passed)} {zOd(maturita.celkem.registered)} {cislo(maturita.celkem.registered)}</b> přihlášených{maturita.celkem.took && maturita.celkem.took !== maturita.celkem.registered ? <> ({cislo(maturita.celkem.passed)} {zOd(maturita.celkem.took)} {cislo(maturita.celkem.took)} z těch, kdo ke zkoušce šli{passRateOfTakers(maturita.celkem) !== null ? `, ${procentoMaturity(passRateOfTakers(maturita.celkem)!)}` : ''})</> : null}{jakCastoNadStredem(maturita.skupiny) ? <>, v češtině <b>{jakCastoNadStredem(maturita.skupiny)} nad středem podobných škol</b></> : null}</> : null}{maturita && inspekce ? '; ' : ''}{inspekce ? (novejsi
+                a: <>{maturita?.celkem?.passed !== undefined && maturita.celkem.registered ? <>maturitu {maturita.celkem.rok} udělalo <b>{cislo(maturita.celkem.passed)} {zOd(maturita.celkem.registered)} {cislo(maturita.celkem.registered)}</b> přihlášených{maturita.celkem.took && maturita.celkem.took !== maturita.celkem.registered ? <> ({cislo(maturita.celkem.passed)} {zOd(maturita.celkem.took)} {cislo(maturita.celkem.took)} z těch, kdo ke zkoušce šli{passRateOfTakers(maturita.celkem) !== null ? `, ${procentoMaturity(passRateOfTakers(maturita.celkem)!)}` : ''})</> : null}{jakCastoNadStredem(maturita.skupiny) ? <>, v češtině <b>{jakCastoNadStredem(maturita.skupiny)} nad středem podobných škol</b></> : null}</> : null}{!maJarniMaturitu && maturita?.poPodzimu?.celkem?.passed !== undefined && maturita.poPodzimu.celkem.registered ? <>po podzimním období {maturita.poPodzimu.rok} měla maturitu za sebou <b>{cislo(maturita.poPodzimu.celkem.passed!)} {zOd(maturita.poPodzimu.celkem.registered!)} {cislo(maturita.poPodzimu.celkem.registered!)}</b> přihlášených</> : null}{(maJarniMaturitu || maMaturituPoPodzimu) && inspekce ? '; ' : ''}{inspekce ? (novejsi
                   ? <>poslední inspekce {formatDatumCz(novejsi.datum)}, shrnutí její zprávy zatím nemáme</>
                   : <>inspekce {rokyInspekce}: přednost „{malePismeno(inspekce.silne[0]?.tag ?? '')}“{inspekce.rizika[0] ? <>, výtka „{malePismeno(inspekce.rizika[0].tag)}“</> : null}</>) : null}</>,
               } : null,
