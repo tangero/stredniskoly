@@ -486,7 +486,7 @@ export function ProfilSkoly({ data, skola, odkazy }: ProfilSkolyProps) {
       </Oddil>
 
       {/* 2 · Jak si škola vede */}
-      <Oddil id="vede" nadpis="Jak si škola vede" stitek={[maturita ? `maturita ${maturita.roky.at(-Math.min(4, maturita.roky.length))}–${maturita.roky.at(-1)}` : null, stitekInspekce].filter(Boolean).join(' · ') || undefined}>
+      <Oddil id="vede" nadpis="Jak si škola vede" stitek={[maturita && maturita.roky.length > 0 ? `maturita ${maturita.roky.at(-Math.min(4, maturita.roky.length))}–${maturita.roky.at(-1)}` : null, stitekInspekce].filter(Boolean).join(' · ') || undefined}>
         {!maturita && !inspekce && !(data.inspekceSeznam && data.inspekceSeznam.inspections.length > 0) && (
           <Karta><p className="text-slate-700">Maturitní výsledky ani shrnutí inspekce pro tuto školu zatím nemáme.</p></Karta>
         )}
@@ -505,7 +505,7 @@ export function ProfilSkoly({ data, skola, odkazy }: ProfilSkolyProps) {
           </Karta>
         )}
         {maturita && (() => {
-          const posledniRok = maturita.roky.at(-1)!;
+          const posledniRok = maturita.roky.at(-1) ?? maturita.poPodzimu?.rok ?? 0;
           const jakCasto = jakCastoNadStredem(maturita.skupiny);
           const celkem = maturita.celkem;
           const vstupy = maturita.skupiny.filter(s => s.vstup).map(s => s.vstup!);
@@ -516,6 +516,7 @@ export function ProfilSkoly({ data, skola, odkazy }: ProfilSkolyProps) {
           const tecka = (stav: string | null) => stav === 'above' ? 'bg-[#16325c]' : stav === 'indistinguishable' ? 'border-2 border-[#16325c] bg-white' : stav === 'below' ? 'border-2 border-dashed border-slate-500 bg-white' : 'bg-slate-200';
           return (
             <>
+              {maturita.skupiny.length > 0 && (<>
               <Karta className="space-y-3">
                 <p className="max-w-[64ch] text-[19px] leading-relaxed text-slate-800">
                   {celkem?.passed !== undefined && celkem.registered ? (
@@ -646,6 +647,7 @@ export function ProfilSkoly({ data, skola, odkazy }: ProfilSkolyProps) {
                 })}
                 <Zdroj>Maturita: společná část, jarní období, CERMAT. Sloupec „ke zkoušce nešlo“ je počet přihlášených maturantů, kteří zkoušku nekonali, a jeho podíl z přihlášených; důvod data neuvádějí, může jít o nemoc i o neuzavřený ročník. Srovnání s podobnými školami stojí na jediné veličině, na průměrném podílu bodů z testu: střed je prostředek podobných škol a podle něj se počítá i srovnání, které bere v úvahu velikost ročníku, takže u malého ročníku bývá rozdíl nerozlišitelný. Údaj „v celé zemi lépe než 84 ze 100 maturantů“ je jiný pohled: neporovnává školu s podobnými školami, ale její maturanty se všemi maturanty v zemi.</Zdroj>
               </Dukaz>
+              </>)}
 
               {maturita.poPodzimu && (() => {
                 const p = maturita.poPodzimu;
@@ -656,8 +658,36 @@ export function ProfilSkoly({ data, skola, odkazy }: ProfilSkolyProps) {
                 return (
                   <Dukaz nadpis="Stav po podzimním období" stitek={`${p.rok}, jaro a podzim dohromady`}>
                     <p className="max-w-[70ch] text-[15px] leading-relaxed text-slate-700">
-                      Kdo maturitu na jaře nesložil nebo k ní nešel, může ji skládat na podzim. Stav po podzimním období říká, kolik přihlášených maturantů mělo maturitu za sebou po jaru a podzimu dohromady. Je to jiný údaj než jarní výsledky výše, proto ho s nimi nesčítáme a v grafu neukazujeme.
+                      Kdo maturitu na jaře nesložil nebo k ní nešel, může ji skládat na podzim. Stav po podzimním období říká, kolik přihlášených maturantů mělo maturitu za sebou po jaru a podzimu dohromady. Je to jiný údaj než jarní výsledky, proto ho s nimi nesčítáme a v grafu ho ukazujeme zvlášť, každý údaj vlastním sloupcem.
                     </p>
+                    <ul className="space-y-3" aria-label="Podíl přihlášených, kteří měli maturitu za sebou, zvlášť po jaru a zvlášť po podzimu">
+                      {radky.map(r => {
+                        const jaro = r.klic === 'CELKEM' ? (maturita.celkem?.rok === p.rok ? maturita.celkem : null) : (() => {
+                          const z = maturita.skupiny.find(s => s.smo16 === r.klic)?.posledni;
+                          return z && z.rok === p.rok ? z.zaznam.spolecna_cast ?? null : null;
+                        })();
+                        const sloupce = [
+                          { id: 'jaro', popisek: 'Po jaru', sc: jaro, barva: 'bg-slate-400' },
+                          { id: 'podzim', popisek: 'Po podzimu', sc: r.sc, barva: 'bg-[#16325c]' },
+                        ].filter(x => x.sc && x.sc.registered && x.sc.passed !== undefined);
+                        if (sloupce.length === 0) return null;
+                        return (
+                          <li key={r.klic} className="space-y-1">
+                            <p className="text-[14px] font-semibold text-[#16325c]">{r.nazev}</p>
+                            {sloupce.map(x => {
+                              const podil = Math.min(100, (x.sc!.passed! / x.sc!.registered!) * 100);
+                              return (
+                                <div key={x.id} className="grid grid-cols-[6.5rem_minmax(0,1fr)_auto] items-center gap-2 text-[13px] text-slate-600">
+                                  <span>{x.popisek}</span>
+                                  <span className="block h-3 rounded-full bg-slate-100"><span className={`block h-3 rounded-full ${x.barva}`} style={{ width: `${podil}%` }} /></span>
+                                  <span className="tabular-nums">{cislo(x.sc!.passed!)} {zOd(x.sc!.registered!)} {cislo(x.sc!.registered!)}</span>
+                                </div>
+                              );
+                            })}
+                          </li>
+                        );
+                      })}
+                    </ul>
                     <div className="overflow-x-auto">
                       <table className="w-full text-[14px] tabular-nums">
                         <thead><tr className="text-left text-[12px] text-slate-500"><th className="py-1.5 pr-2">Obor</th><th className="px-2 text-right">Přihlášení</th><th className="px-2 text-right">Maturitu udělalo</th><th className="px-2 text-right">Neuspěli</th><th className="pl-2 text-right">Ke zkoušce nešlo</th></tr></thead>

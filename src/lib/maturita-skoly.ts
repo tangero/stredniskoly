@@ -50,6 +50,18 @@ export async function maturitaPoPodzimu(m: { soubor: MaturitaSoubor }, redizo: s
   return stavPoPodzimu(m.soubor.stav_po_podzimu?.skoly[redizo]?.roky, obdobi, m.soubor.meta.nejnovejsi_rok);
 }
 
+/**
+ * Totéž bez závislosti na jarním záznamu školy: škola, která je jen v souboru jap, stav po podzimu dostane také.
+ * Vrací i soubor kvůli názvům skupin oborů.
+ */
+export async function maturitaPoPodzimuSkoly(redizo: string): Promise<{ stav: StavPoPodzimu; soubor: MaturitaSoubor } | null> {
+  if (!(await zobrazeneObdobi('cermat-maturita'))) return null;
+  const soubor = await nacti();
+  if (!soubor) return null;
+  const stav = await maturitaPoPodzimu({ soubor }, redizo);
+  return stav ? { stav, soubor } : null;
+}
+
 /** Maturita školy v jedné větě přehledu: stejná věta jako v hlavičce stránky školy. */
 export interface MaturitaVPrehledu {
   rok: number;
