@@ -1,6 +1,6 @@
 # Zdroje dat
 
-Verze 1.38 · 28. 10. 2026 · **Závazný soupis. Před návrhem stránky nebo funkce se prochází celý.**
+Verze 1.39 · 11. 11. 2026 · **Závazný soupis. Před návrhem stránky nebo funkce se prochází celý.**
 
 Tenhle dokument vznikl kvůli konkrétní chybě. Návrh stránky školy jsem sestavil z toho, co web už zobrazoval, místo z toho, co je ve zdrojových souborech. Tři užitečné údaje proto ležely nepoužité v souborech, které jsem měl otevřené: rozpad přihlášek podle priority jako podíl, souběžné přihlášky uchazečů a nejnižší výsledek jednotné zkoušky mezi přijatými. Poslední z nich byl dokonce už spočítaný a uložený v katalogu, zatímco [slovník ukazatelů](slovnik-ukazatelu.md) tvrdil, že ho nemáme.
 
@@ -37,6 +37,7 @@ Ukazatel se pak zavádí podle [slovníku ukazatelů](slovnik-ukazatelu.md). Ten
 | DiPSy, veřejné karty nabídky a přílohy | [DiPSy](https://dipsy.cz/), veřejná odpověď `api.dipsy.gov.cz/v1` | ověřené karty 1. kola 2025 a 2026; místně stažené přílohy pro katalog 2026, dostupnost dalších kol se mění | `id` nabídky (`source_id` v datech CERMATu) + `skolniRok` + `kolo` | průběžně podle zveřejnění škol; hromadný místní sběr 24. 9. 2026, bez veřejného importu pravidel |
 | Dopravní data | PID, GTFS ČR, jízdní řády | celá ČR | zastávka a spoj | podle vydání |
 | Harmonogram přijímacího řízení MŠMT | opis termínů z metodiky MŠMT do `src/data/admissions-2027.json` | jedno přijímací řízení, 3 skupiny a 20 událostí | identifikátor události | ručně, jednou ročně |
+| Kritéria přijetí konzervatoří, odkazy | weby konzervatoří, ručně ověřené odkazy v `src/data/kriteria-konzervatori-2027.json` (zkušební běh #504) | 18 konzervatoří z `public/pro-novinare/konzervatore-skoly.csv`, odkaz u 17 | REDIZO | ručně, jednou ročně po zveřejnění kritérií konzervatoří (říjen) |
 | Veletrhy a přehlídky středních škol | vlastní rešerše pořadatelů, `docs/prijimacky-veletrhy-poradatele-2026.xlsx` → tabulka `veletrh_akce` (od 26. 9. 2026, snímek `src/data/veletrhy-2027.json`) | 25 pořadatelů a vlastní rešerše rozepsané na 95 akcí, sezóna podzim 2026 | identifikátor akce | ručně, jednou ročně; průběžně z nahlášení |
 | Seznamy vystavovatelů od pořadatelů veletrhů | PDF od pořadatele, zaslané v rámci mediálního partnerství; v repozitáři neleží | zatím 1 akce: SOKRATES 1, OHK Most (`sokrates-most-2026`), 28 škol a 3 firmy | identifikátor akce + název školy a obec; RED IZO seznam nenese | při doručení od pořadatele; web z něj nic nezobrazuje |
 | RSS/Atom feedy školních webů | weby škol, sklízeč `scripts/sklizec-novinek.py` | 533 z 1 093 škol s feedem | REDIZO + GUID položky | automaticky 2× denně |
@@ -367,6 +368,21 @@ V registru je jako sada `msmt-harmonogram`, období 2027, obnova nejpozději do 
 Soubor nese rok v názvu: nový ročník znamená nový soubor a přepnutí období v registru.
 
 **Blok `pravidla`** (od 29. 9. 2026, návrh simulátoru oddíl 4): `prihlasek_bezne` a `prihlasek_talentove` (počet přihlášek v 1. kole na obory bez talentové a s talentovou zkouškou, dnes 3 a 2 podle školského zákona, § 60b), `rok_pravidel` (ročník, podle kterého je počet opsán), `overeno_pro_rizeni` (false, dokud se počet neověří v metodice pro nové řízení; text pak říká „podle pravidel {rok_pravidel}“), `zdroj`, `checkedAt`, `poznamka`. Otázka rodiče: kolik oborů se vejde na přihlášku. Používá ho Simulátor přijímaček (kontrola seznamu oblíbených); počet se nepíše do kódu.
+
+
+### 2.13a Kritéria přijetí konzervatoří, odkazy (#504)
+
+`src/data/kriteria-konzervatori-2027.json`: u každé konzervatoře z rejstříku (`public/pro-novinare/konzervatore-skoly.csv`) odkaz na stránku nebo dokument, kde škola vyhlašuje kritéria přijetí pro nejbližší školní rok. Odkazy ověřuje AI ručně na webu školy (rozhoduje letopočet školního roku ve vyhlášení, ne odpověď serveru), DiPSy je k datu ověření pro konzervatoře neměla. Ukazuje je stránka `/prijimacky-2027` v oddílu konzervatoří.
+
+| Pole | Obsah | Otázka rodiče | Používáme |
+|---|---|---|---|
+| `skolniRok`, `checkedAt` | školní rok, pro který kritéria platí, a datum ověření odkazů | platí ten dokument pro můj ročník? | ano, v nadpisu a patě seznamu |
+| `redizo`, `nazev`, `obec` | identita školy (krátký název) | o kterou školu jde? | ano |
+| `obory` | obory, ke kterým škola kritéria pro ten rok zveřejnila (Hudba, Zpěv, Tanec, Současný tanec, Hudebně dramatické umění) | má škola kritéria pro můj obor? | ano |
+| `url` | stránka nebo dokument školy; `null`, když se kritéria nenašla | kde si kritéria přečtu? | ano |
+| `poznamka` | výhrada (starší kritéria ve vyhlášení, odkaz jen na úvodní stránku, nefunkční web) | můžu dokumentu věřit? | ano |
+
+Obsah kritérií (části talentové zkoušky, body, hranice) soubor nenese a web ho zatím neukazuje: strojový přepis s kontrolou je další etapa #504. Registr stavu sad se nemění (mandát #504: sada `dipsy-kriteria` zůstává do únorové etapy #181 beze změny).
 
 ### 2.14 RSS/Atom feedy školních webů
 
@@ -822,6 +838,7 @@ _Vygenerováno z `public/stav_datovych_sad.json` dne 2026-10-17. Neupravovat ru�
 | `cermat-prevod-testu` | web | 2024 | `` | — | 2025 | 2027-09, odhad | Testy předchozího roku zůstávají v TAU; jejich převodní tabulka zůstává v souboru prevod_testu_{rok}.json a může se nabízet dál. |
 | `dipsy-kriteria` | web | 2026 | `data/dipsy-kriteria-2026/manifest.jsonl` | — | 2027 | 2027-02, odhad | Kritéria 2026 zůstávají jen jako historie; pro rok 2027 se nesmí tiše použít. |
 | `ruian-kraje` | web | 2026-09-27 | `src/data/mapa-kraju.json` | — | — | neznámo | Nahrazuje se celý. |
+| `kriteria-konzervatori-odkazy` | web | 2027/2028 | `src/data/kriteria-konzervatori-2027.json` | — | 2028/2029 | 2027-10, odhad | Odkazy na starší školní rok se nahradí novými; staré se nezobrazují. |
 
 #### Aktualizace a automatizace
 
@@ -851,6 +868,7 @@ _Vygenerováno z `public/stav_datovych_sad.json` dne 2026-10-17. Neupravovat ru�
 | `cermat-prevod-testu` | ruční | Ručně: nabídka testů v TAU se načítá až po souhlasu s cookies, strojově ji nečteme. | python3 scripts/build-prevod-testu.py | Po přepnutí cermat-uchazeci-kolo1 spustit build-prevod-testu.py; jednou ročně zkontrolovat, jestli TAU nepřidalo nový rok. |
 | `dipsy-kriteria` | ruční | python3 scripts/dipsy-kriteria-scan.py --rok 2027 --redizo … (jen dotaz po jedné škole) | scripts/dipsy-kriteria-sber.py, přepis úsporným schématem, pak python3 scripts/build-kriteria-prijeti.py | Před placeným přepisem ověřit rozpočet (limit 10 USD, docs/podklady/dipsy-kriteria-rozpocet-10-usd-2026.md). |
 | `ruian-kraje` | ruční | Nesledováno: soubor se přegenerovává denně, změna hranic kraje je vzácná a přišla by zákonem. | scripts/build-mapa-kraju.mjs --vstup 1/VUSC_P.shp --stazeno RRRR-MM-DD | Při změně hranic krajů stáhnout zip (asi 250 MB), rozbalit VUSC_P a spustit skript. |
+| `kriteria-konzervatori-odkazy` | ruční | Ručně: každá škola vyhlašuje kritéria na vlastním webu, strojově je nečteme. | Ruční úprava src/data/kriteria-konzervatori-2027.json po ověření odkazů. | Jednou ročně (říjen) projít weby konzervatoří, ověřit letopočet školního roku ve vyhlášení a přepsat odkazy. |
 
 <!-- stav-datovych-sad:do -->
 
@@ -867,6 +885,7 @@ _Vygenerováno z `public/stav_datovych_sad.json` dne 2026-10-17. Neupravovat ru�
 
 | Verze | Změna |
 |---|---|
+| 1.39 | Nový zdroj: odkazy na kritéria přijetí konzervatoří z webů škol (oddíl 1, oddíl 2.13a, #504); všechna pole použita, obsah kritérií soubor nenese. V registru není podle mandátu #504 (sada `dipsy-kriteria` beze změny do únorové etapy #181). |
 | 1.38 | Oddíl 2.19: pole `obor_doplneny` (obor doplněný školou do nabídky 2027, #541), jen uloženo, web ho nečte; žádný nový sloupec zdroje. |
 | 1.37 | Nový zdroj: seznamy vystavovatelů od pořadatelů veletrhů (oddíl 1, oddíl 2.15a). První je seznam SOKRATES 1 od OHK Most (27. 10. 2026, 28 škol a 3 firmy), zaslaný v rámci mediálního partnerství a zveřejněný i na webu pořadatele. Oprávnění k zobrazení otevřené, v registru zatím není, web z něj nic nezobrazuje. Oddíl 2.15 a 3 opraveny: seznam vystavovatelů už „v žádném zdroji“ není, existuje pro jednu akci. |
 | 1.36 | Oddíl 2.4 a 2.19a: název školy v portálu pro školy z `identifikace.uplny_nazev` rejstříku (po ruční opravě, před katalogem), #515; tři ruční opravy názvu, které rejstřík nese shodně, odstraněny, seznam prázdný; žádný nový sloupec zdroje. |

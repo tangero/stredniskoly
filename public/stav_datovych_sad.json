@@ -1085,6 +1085,42 @@
     "lidsky_krok": "Při změně hranic krajů stáhnout zip (asi 250 MB), rozbalit VUSC_P a spustit skript.",
     "sledovat": []
    }
+  },
+  "kriteria-konzervatori-odkazy": {
+   "nazev": "Kritéria přijetí konzervatoří, odkazy na weby škol",
+   "dokumentace": "docs/zdroje-dat.md#213a-kritéria-přijetí-konzervatoří-odkazy-504",
+   "cyklus": "rocni",
+   "pouziti": "web",
+   "zobrazeno": {
+    "obdobi": "2027/2028",
+    "soubor": "src/data/kriteria-konzervatori-2027.json",
+    "stazeno": "2026-11-11",
+    "poznamka": "Ručně ověřené odkazy na vyhlášení kritérií na webech škol (#504); jen odkazy, žádné body ani přepis. Samostatná sada vedle dipsy-kriteria, ta zůstává na roce 2026."
+   },
+   "ocekavano": {
+    "obdobi": "2028/2029",
+    "kdy": "2027-10",
+    "jistota": "odhad",
+    "zduvodneni": "Konzervatoře vyhlašují kritéria pro další školní rok na podzim (říjen 2026 pro 2027/2028); termín je kontrolní, ne slíbený."
+   },
+   "obnovit_nejpozdeji": "2027-10-31",
+   "po_prepnuti": "Odkazy na starší školní rok se nahradí novými; staré se nezobrazují.",
+   "kontrola_obdobi": {
+    "soubor": "src/data/kriteria-konzervatori-2027.json",
+    "cesta": "skolniRok"
+   },
+   "vystupy": [
+    "src/data/kriteria-konzervatori-2027.json"
+   ],
+   "ukazatele": [],
+   "aktualizace": {
+    "zdroj": "weby konzervatoří (seznam škol: public/pro-novinare/konzervatore-skoly.csv)",
+    "detekce": "Ručně: každá škola vyhlašuje kritéria na vlastním webu, strojově je nečteme.",
+    "import": "Ruční úprava src/data/kriteria-konzervatori-2027.json po ověření odkazů.",
+    "automatizace": "rucni",
+    "lidsky_krok": "Jednou ročně (říjen) projít weby konzervatoří, ověřit letopočet školního roku ve vyhlášení a přepsat odkazy.",
+    "sledovat": []
+   }
   }
  },
  "ukazatele_z_vice_sad": {
