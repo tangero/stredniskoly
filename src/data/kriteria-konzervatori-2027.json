@@ -660,10 +660,10 @@
             {
               "nazev": "2. etapa: hlavní obor",
               "maxBody": 25,
-              "minimum": "minimální počet bodů"
+              "minimum": null
             }
           ],
-          "podminka": "Postup do 2. etapy a v ní minimální počet bodů; body se mezi etapami nepřevádějí.",
+          "podminka": "Postup do 2. etapy a v ní minimální počet bodů; konkrétní hranici bodů pro 2. etapu škola v dokumentu neuvádí; body se mezi etapami nepřevádějí.",
           "poradi": "Podle bodů z hlavního oboru ve 2. etapě; při shodě rozhodují hudební teorie, hlavní obor v 1. etapě, pak los."
         },
         {

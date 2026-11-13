@@ -34,9 +34,10 @@ from pathlib import Path
 MODEL = "deepseek/deepseek-v4.1-flash"  # stejný model jako přepis kritérií 2026
 REZERVA_NA_VOLANI = 0.01
 MAX_ZNAKU = 120_000
+REGISTR = Path(__file__).resolve().parent.parent / "public" / "stav_datovych_sad.json"
 
 INSTRUKCE = """Jsi pečlivý přepisovač. Z dodaného textu kritérií přijímacího řízení konzervatoře \
-(školní rok 2027/2028) vypiš pro každý uvedený obor vzdělání, jak škola hodnotí talentovou zkoušku \
+(školní rok {skolni_rok}) vypiš pro každý uvedený obor vzdělání, jak škola hodnotí talentovou zkoušku \
 a jak řadí uchazeče. Piš česky, stručně a jen to, co v textu výslovně stojí; nic nedopočítávej ani \
 nedomýšlej. Když údaj v textu není, dej null nebo prázdný seznam.
 
@@ -67,12 +68,19 @@ SCHEMA = {"type": "object", "additionalProperties": False, "required": ["obory"]
           "properties": {"obory": {"type": "array", "items": OBOR}}}
 
 
+def skolni_rok() -> str:
+    """Školní rok přepisovaných kritérií z registru: očekávané období sady dipsy-kriteria."""
+    registr = json.loads(REGISTR.read_text(encoding="utf-8"))
+    rok = int(registr["sady"]["dipsy-kriteria"]["ocekavano"]["obdobi"])
+    return f"{rok}/{rok + 1}"
+
+
 def prompt(skola: dict) -> str:
     casti = []
     for cesta in skola["soubory"]:
         casti.append(f"=== DOKUMENT {Path(cesta).name} ===\n{Path(cesta).read_text(encoding='utf-8')}")
     text = "\n\n".join(casti)[:MAX_ZNAKU]
-    return (f"{INSTRUKCE}\n\nŠkola: {skola['nazev']} (RED IZO {skola['redizo']}). "
+    return (f"{INSTRUKCE.format(skolni_rok=skolni_rok())}\n\nŠkola: {skola['nazev']} (RED IZO {skola['redizo']}). "
             f"Obory: {', '.join(skola['obory'])}.\n\n{text}")
 
 
@@ -96,7 +104,9 @@ def zavolej(skola: dict, klic: str) -> dict:
             with urllib.request.urlopen(req, timeout=300) as odpoved:
                 return json.load(odpoved)
         except urllib.error.HTTPError as e:
-            if e.code in (429, 500, 502, 503) and pokus < 2:
+            if e.code == 429:
+                raise SystemExit("OpenRouter vrátil 429, běh zastaven; zapiš výskyt do issue a nic dál nevolej") from e
+            if e.code in (500, 502, 503) and pokus < 2:
                 time.sleep(10 * (pokus + 1))
                 continue
             raise
