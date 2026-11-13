@@ -31,7 +31,12 @@ test('stránka uvádí chybějící oficiální dokument, březen 2027 i plán 2
   assert.match(text, /oficiální dokument/);
   assert.match(text, /msmt\.gov\.cz/);
   assert.match(text, /cermat\.cz/);
-  assert.match(text, /začátkem března 2027/);
+  assert.match(text, /v březnu 2027/);
+  assert.doesNotMatch(text, /začátkem března 2027/);
+  assert.match(text, /Novinky/);
+  assert.match(text, /polovinu března/);
+  assert.match(text, /ČT24/);
+  assert.match(text, /začátek března/);
   assert.match(text, /ohlášený plán/);
   assert.match(text, /ne o platné pravidlo/);
   assert.match(text, /13\.\s*11\.\s*2026|13\.\s*&nbsp;11\.\s*&nbsp;2026|OVERENO = '2026-11-13'/);

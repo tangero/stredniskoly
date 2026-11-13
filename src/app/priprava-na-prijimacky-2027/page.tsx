@@ -29,7 +29,7 @@ const ZDROJE = [
   },
   {
     href: 'https://www.novinky.cz/clanek/domaci-ministerstvo-poodhalilo-jak-bude-vypadat-nahrada-prijimacek-nanecisto-40608360',
-    text: 'Novinky, 13. 11. 2026: cvičné zadání začátkem března 2027, řešení a videa',
+    text: 'Novinky, 13. 11. 2026: cvičné zadání v březnu 2027, řešení a videa',
   },
   {
     href: 'https://prijimacky.cermat.cz/menu/testova-zadani-k-procvicovani/',
@@ -96,7 +96,7 @@ export default function PripravaNaPrijimacky2027Page() {
             <p className="text-sm leading-relaxed">
               K 13. 11. 2026 není na webu ministerstva školství (msmt.gov.cz) ani na webu CERMATu
               (cermat.cz, prijimacky.cermat.cz) oficiální dokument, který by popisoval zrušení
-              lednového nanečisto, cvičné zadání začátkem března 2027 nebo reformu přijímaček od
+              lednového nanečisto, cvičné zadání v březnu 2027 nebo reformu přijímaček od
               roku 2029. Tyto body proto opíráme o vyjádření ministra školství Roberta Plagy z
               12.&nbsp;11.&nbsp;2026, jak je zachytila ČT24 a Novinky. Až ministerstvo nebo CERMAT
               zveřejní oficiální zprávu, text upravíme.
@@ -111,7 +111,7 @@ export default function PripravaNaPrijimacky2027Page() {
                 na základních školách. V této podobě se v roce 2027 konat nebudou.
               </p>
               <p>
-                Ministr školství 12. listopadu 2026 v médiích řekl, že začátkem března 2027
+                Ministr školství 12. listopadu 2026 v médiích řekl, že v březnu 2027
                 CERMAT zveřejní nová cvičná zadání. Žáci si je budou moci zkusit ve škole
                 nebo doma. K zadání mají přibýt správná řešení a vysvětlující videa.
                 Aplikace TAU zůstává.
@@ -170,12 +170,30 @@ export default function PripravaNaPrijimacky2027Page() {
               </article>
 
               <article className="rounded-xl border border-blue-200 bg-blue-50 p-5">
-                <h3 className="font-semibold text-lg">Cvičné zadání a videa začátkem března 2027</h3>
+                <h3 className="font-semibold text-lg">Cvičné zadání a videa v březnu 2027</h3>
                 <p className="text-slate-700 mt-2 leading-relaxed">
-                  Podle vyjádření ministra mají začátkem března 2027 vyjít nová cvičná zadání,
+                  Podle vyjádření ministra mají v březnu 2027 vyjít nová cvičná zadání,
                   řešení a videa, která půjde vyzkoušet ve škole i doma. Přesný den zveřejnění,
                   počet testů a podoba videí v oficiálním dokumentu k 13.&nbsp;11.&nbsp;2026
-                  ještě nejsou. Není to totéž jako loňské lednové nanečisto na školách.
+                  ještě nejsou.{' '}
+                  <a
+                    href="https://www.novinky.cz/clanek/domaci-ministerstvo-poodhalilo-jak-bude-vypadat-nahrada-prijimacek-nanecisto-40608360"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-semibold text-[#0074e4] hover:underline"
+                  >
+                    Novinky
+                  </a>
+                  {' '}uvádějí polovinu března,{' '}
+                  <a
+                    href="https://ct24.ceskatelevize.cz/clanek/domaci/plaga-testy-by-mohly-predchazet-podavani-prihlasek-na-stredni-skoly-od-jara-2029-379553"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-semibold text-[#0074e4] hover:underline"
+                  >
+                    ČT24
+                  </a>
+                  {' '}začátek března. Není to totéž jako loňské lednové nanečisto na školách.
                 </p>
               </article>
             </div>
@@ -258,7 +276,7 @@ export default function PripravaNaPrijimacky2027Page() {
               <Link href="/prijimacky-2027" className="font-semibold text-[#0074e4] hover:underline">
                 kalendář přijímaček 2027
               </Link>
-              . Cvičné zadání začátkem března je ohlášené v médiích; přesný den zveřejnění
+              . Cvičné zadání v březnu je ohlášené v médiích; přesný den zveřejnění
               v oficiálním dokumentu není.
             </p>
             <ol className="space-y-3">
@@ -275,10 +293,28 @@ export default function PripravaNaPrijimacky2027Page() {
                 <div>Přihlášky na střední školy, včetně oborů s talentovou zkouškou.</div>
               </li>
               <li className="rounded-xl border border-amber-200 bg-amber-50 p-5 grid gap-2 md:grid-cols-[190px_1fr]">
-                <div className="font-semibold text-blue-800">začátek března 2027</div>
+                <div className="font-semibold text-blue-800">březen 2027</div>
                 <div>
                   Ohlášené cvičné zadání CERMAT, řešení a videa. Přesný den v oficiálním
-                  dokumentu k 13.&nbsp;11.&nbsp;2026 není.
+                  dokumentu k 13.&nbsp;11.&nbsp;2026 není.{' '}
+                  <a
+                    href="https://www.novinky.cz/clanek/domaci-ministerstvo-poodhalilo-jak-bude-vypadat-nahrada-prijimacek-nanecisto-40608360"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-semibold text-[#0074e4] hover:underline"
+                  >
+                    Novinky
+                  </a>
+                  {' '}uvádějí polovinu března,{' '}
+                  <a
+                    href="https://ct24.ceskatelevize.cz/clanek/domaci/plaga-testy-by-mohly-predchazet-podavani-prihlasek-na-stredni-skoly-od-jara-2029-379553"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-semibold text-[#0074e4] hover:underline"
+                  >
+                    ČT24
+                  </a>
+                  {' '}začátek března.
                 </div>
               </li>
               <li className="rounded-xl border border-slate-200 bg-white p-5 grid gap-2 md:grid-cols-[190px_1fr]">
