@@ -1,26 +1,804 @@
 {
-  "popis": "Odkazy na kritéria přijetí konzervatoří pro přijímací řízení 2027, ručně ověřené na webech škol (zkušební běh #504, tabulka K1). Strojový přepis kritérií naváže v další etapě.",
+  "popis": "Odkazy na kritéria přijetí konzervatoří pro přijímací řízení 2027 ručně ověřené na webech škol (zkušební běh #504, tabulka K1) a u 13 škol strojový přepis kritérií zkontrolovaný proti dokumentu školy (etapy 2 a 3).",
   "skolniRok": "2027/2028",
   "checkedAt": "2026-11-11",
   "zdrojSeznamuSkol": "public/pro-novinare/konzervatore-skoly.csv (rejstřík MŠMT k 30. 6. 2026)",
   "skoly": [
-    { "redizo": "600013430", "nazev": "Konzervatoř Brno", "obec": "Brno", "obory": ["Hudba", "Zpěv", "Hudebně dramatické umění"], "url": "https://konzervatorbrno.eu/?page_id=1280" },
-    { "redizo": "600013812", "nazev": "Taneční konzervatoř Brno", "obec": "Brno", "obory": ["Tanec"], "url": "https://www.tkbrno.cz/wp-content/uploads/2026/10/Kriteria_pro_prijimaci_zkousky_2027_2028.pdf" },
-    { "redizo": "600008011", "nazev": "Konzervatoř České Budějovice", "obec": "České Budějovice", "obory": ["Hudba", "Zpěv"], "url": "https://www.konzervatorcb.cz/studium-prijimaci-a-talentove-zkousky" },
-    { "redizo": "600014967", "nazev": "Konzervatoř P. J. Vejvanovského Kroměříž", "obec": "Kroměříž", "obory": ["Hudba", "Zpěv"], "url": "https://www.konzkm.cz/prijimaci-rizeni/" },
-    { "redizo": "600015025", "nazev": "Konzervatoř Evangelické akademie", "obec": "Olomouc", "obory": ["Hudba", "Zpěv"], "url": "https://www.konzervatorolomouc-kea.cz/pro-uchazece/prijimaci-rizeni" },
-    { "redizo": "610550659", "nazev": "Církevní konzervatoř Německého řádu", "obec": "Opava", "obory": ["Hudba", "Zpěv", "Hudebně dramatické umění"], "url": "https://www.konzervator.cz/nastenka/vyhlasujeme-1-kolo-prijimaciho-rizeni-992n" },
-    { "redizo": "600017524", "nazev": "Janáčkova konzervatoř v Ostravě", "obec": "Ostrava", "obory": ["Hudba", "Zpěv", "Tanec", "Hudebně dramatické umění"], "url": "https://www.jko.cz/prijimaci-rizeni" },
-    { "redizo": "600012336", "nazev": "Konzervatoř Pardubice", "obec": "Pardubice", "obory": [], "url": "https://www.konzervatorpardubice.eu/", "poznamka": "Vyhlášení je na úvodní stránce školy." },
-    { "redizo": "600009441", "nazev": "Konzervatoř Plzeň", "obec": "Plzeň", "obory": ["Hudba", "Zpěv"], "url": "https://www.konzervatorplzen.cz/cz/studium/zkousky/talentove/" },
-    { "redizo": "600004660", "nazev": "Konzervatoř Jaroslava Ježka", "obec": "Praha", "obory": ["Hudba", "Zpěv", "Hudebně dramatické umění"], "url": "https://www.kjj.cz/uchazeci/zajemci-o-studium-na-konzervatori/prijimaci-rizeni-do-1-rocniku-oboru-s-talentovou-zkouskou" },
-    { "redizo": "600020738", "nazev": "Konzervatoř a střední škola Jana Deyla", "obec": "Praha", "obory": ["Hudba", "Zpěv"], "url": "https://jandeylconservatory.cz/images/2026-27/documents/Prijimaci-rizeni/R116-26-Prijimaci-rizeni-pro-skolni-rok-2027-28-v2.pdf", "poznamka": "Připojená kritéria vycházejí ze staršího rozhodnutí školy; podrobnosti ověř u školy." },
-    { "redizo": "600005062", "nazev": "Konzervatoř Duncan centre", "obec": "Praha", "obory": ["Současný tanec"], "url": "https://www.duncancentre.cz/prijimacky/" },
-    { "redizo": "600004538", "nazev": "Pražská konzervatoř", "obec": "Praha", "obory": ["Hudba", "Zpěv", "Hudebně dramatické umění"], "url": "https://prazskakonzervator.cz/wp-content/uploads/2026/10/Vyhlaseni-1.-kola-talentove-prijimaci-zkousky_leden_2027_web.pdf" },
-    { "redizo": "600005666", "nazev": "Pražská taneční konzervatoř", "obec": "Praha", "obory": ["Tanec"], "url": "https://konzervator.ptksos.cz/pro-uchazece/prijimaci-rizeni" },
-    { "redizo": "600005780", "nazev": "Taneční centrum Praha – konzervatoř", "obec": "Praha", "obory": ["Tanec"], "url": "https://www.tanecnicentrumpraha.cz/pro-uchazece/" },
-    { "redizo": "600004601", "nazev": "Taneční konzervatoř hlavního města Prahy", "obec": "Praha", "obory": ["Tanec"], "url": "https://www.tkpraha.cz/kriteria-talentove-zkousky-pro-skolni-rok-2027-2028/" },
-    { "redizo": "600011241", "nazev": "Konzervatoř Teplice", "obec": "Teplice", "obory": ["Hudba", "Zpěv"], "url": "https://www.konzervatorteplice.cz/upload/files/dokumenty/vyhlaseni-1-kola-prijimaciho-rizeni-pro-sk-rok-2027-28.pdf", "poznamka": "Vyhlášení odkazuje na stránku kritérií se staršími letopočty; podrobnosti ověř u školy." },
-    { "redizo": "651038880", "nazev": "Mezinárodní konzervatoř Praha", "obec": "Praha", "obory": [], "url": null, "poznamka": "Web školy při ověření nefungoval; nabídku hledej v DiPSy." }
-  ]
+    {
+      "redizo": "600013430",
+      "nazev": "Konzervatoř Brno",
+      "obec": "Brno",
+      "obory": [
+        "Hudba",
+        "Zpěv",
+        "Hudebně dramatické umění"
+      ],
+      "url": "https://konzervatorbrno.eu/?page_id=1280",
+      "kriteria": [
+        {
+          "obor": "Hudba",
+          "zdroj": "https://konzervatorbrno.eu/wp-content/uploads/2026/10/dipsy_podminky_hudba_2027.pdf",
+          "casti": [
+            {
+              "nazev": "Speciálně odborná zkouška (hlavní obor)",
+              "maxBody": 25,
+              "minimum": "výborný výkon, tedy nejméně 20 bodů"
+            },
+            {
+              "nazev": "Všeobecná hudební zkouška",
+              "maxBody": 0.2,
+              "minimum": "ne nevyhovující výkon"
+            }
+          ],
+          "podminka": "Přijat může být jen uchazeč s výborným výkonem ve speciálně odborné zkoušce, který ve všeobecné hudební zkoušce neměl nevyhovující výkon.",
+          "poradi": "Podle součtu bodů; při shodě rozhodují body ze speciálně odborné zkoušky, pak hodnocení všeobecné hudební zkoušky."
+        },
+        {
+          "obor": "Zpěv",
+          "zdroj": "https://konzervatorbrno.eu/wp-content/uploads/2026/11/dipsy_podminky_zpev-2027.pdf",
+          "casti": [
+            {
+              "nazev": "1. kolo: pěvecká zkouška",
+              "maxBody": 25,
+              "minimum": "nejméně 20 bodů pro postup"
+            },
+            {
+              "nazev": "1. kolo: všeobecná hudební zkouška",
+              "maxBody": 0.2,
+              "minimum": "ne nevyhovující výkon"
+            },
+            {
+              "nazev": "2. kolo: pěvecká zkouška",
+              "maxBody": 25,
+              "minimum": null
+            },
+            {
+              "nazev": "2. kolo: pohybová zkouška",
+              "maxBody": 0.2,
+              "minimum": "výborný výkon"
+            }
+          ],
+          "podminka": "Přijat může být jen uchazeč, který postoupil do 2. kola; body z pěvecké zkoušky 1. kola se do výsledku nepočítají.",
+          "poradi": "Podle součtu bodů; při shodě rozhodují body ze speciálně odborné zkoušky, pak hodnocení všeobecné hudební zkoušky."
+        },
+        {
+          "obor": "Hudebně dramatické umění",
+          "zdroj": "https://konzervatorbrno.eu/wp-content/uploads/2026/11/dipsy_podminky_hdu-2027.pdf",
+          "casti": [
+            {
+              "nazev": "1. kolo: herecká zkouška",
+              "maxBody": 25,
+              "minimum": "nejméně 20 bodů pro postup"
+            },
+            {
+              "nazev": "2. kolo: herecká zkouška",
+              "maxBody": 25,
+              "minimum": null
+            },
+            {
+              "nazev": "2. kolo: pěvecká, pohybová a všeobecná hudební zkouška",
+              "maxBody": null,
+              "minimum": "u každé po 0,20 bodu, ne nevyhovující výkon"
+            }
+          ],
+          "podminka": "Přijat může být jen uchazeč, který postoupil do 2. kola; počítají se body ze 2. kola.",
+          "poradi": "Podle součtu bodů; při shodě rozhodují body z herecké zkoušky, pak hodnocení všeobecné hudební zkoušky."
+        }
+      ]
+    },
+    {
+      "redizo": "600013812",
+      "nazev": "Taneční konzervatoř Brno",
+      "obec": "Brno",
+      "obory": [
+        "Tanec"
+      ],
+      "url": "https://www.tkbrno.cz/wp-content/uploads/2026/10/Kriteria_pro_prijimaci_zkousky_2027_2028.pdf",
+      "kriteria": [
+        {
+          "obor": "Tanec",
+          "zdroj": null,
+          "casti": [
+            {
+              "nazev": "1. část: tělesná stavba a fyzické dispozice",
+              "maxBody": 50,
+              "minimum": "v žádné disciplíně průměr 2,50 nebo nižší"
+            },
+            {
+              "nazev": "2. část: pohybové a taneční předpoklady",
+              "maxBody": 50,
+              "minimum": "v žádné disciplíně průměr 2,50 nebo nižší"
+            },
+            {
+              "nazev": "3. a 4. část: hudební předpoklady, pohovor, vysvědčení a test všeobecného přehledu",
+              "maxBody": 20,
+              "minimum": "mimo vysvědčení v žádné disciplíně průměr 1,50 nebo nižší"
+            }
+          ],
+          "podminka": "Uchazeč musí projít všemi čtyřmi částmi; za vysvědčení přidává škola 0 až 2 body.",
+          "poradi": "Podle součtu bodů ze všech částí; škola přijme 40 uchazečů s nejvyšším součtem."
+        }
+      ]
+    },
+    {
+      "redizo": "600008011",
+      "nazev": "Konzervatoř České Budějovice",
+      "obec": "České Budějovice",
+      "obory": [
+        "Hudba",
+        "Zpěv"
+      ],
+      "url": "https://www.konzervatorcb.cz/studium-prijimaci-a-talentove-zkousky",
+      "kriteria": [
+        {
+          "obor": "Hudba",
+          "zdroj": "https://www.konzervatorcb.cz/useruploads/pdf/P%C5%99%C3%ADj%C3%ADmac%C3%AD%20%C5%99%C3%ADzen%C3%AD/2027-2028/Kriteria_HUDBA_WEB_2027.pdf",
+          "casti": [
+            {
+              "nazev": "Zkouška z hlavního oboru",
+              "maxBody": 250,
+              "minimum": "nejméně 190 bodů"
+            },
+            {
+              "nazev": "Všeobecná hudební teorie (test a ústní zkouška)",
+              "maxBody": 20,
+              "minimum": "nejméně 11 bodů"
+            },
+            {
+              "nazev": "Prospěch ze 7. a 8. ročníku",
+              "maxBody": null,
+              "minimum": "srážka 0 až 60 bodů podle průměru"
+            }
+          ],
+          "podminka": "Vyhovět u zkoušky z hlavního oboru i z hudební teorie a mít v součtu všech tří složek nejméně 201 bodů.",
+          "poradi": "Podle součtu bodů; při shodě text školy postup neuvádí."
+        },
+        {
+          "obor": "Zpěv",
+          "zdroj": "https://www.konzervatorcb.cz/useruploads/pdf/P%C5%99%C3%ADj%C3%ADmac%C3%AD%20%C5%99%C3%ADzen%C3%AD/2027-2028/Kriteria_ZP%C4%9AV_WEB_2027.pdf",
+          "casti": [
+            {
+              "nazev": "Zkouška z hlavního oboru",
+              "maxBody": 250,
+              "minimum": "nejméně 190 bodů"
+            },
+            {
+              "nazev": "Všeobecná hudební teorie (test a ústní zkouška)",
+              "maxBody": 20,
+              "minimum": "nejméně 11 bodů"
+            },
+            {
+              "nazev": "Prospěch ze 7. a 8. ročníku",
+              "maxBody": null,
+              "minimum": "srážka 0 až 60 bodů podle průměru"
+            }
+          ],
+          "podminka": "Vyhovět u zkoušky z hlavního oboru i z hudební teorie a mít v součtu všech tří složek nejméně 201 bodů.",
+          "poradi": "Podle součtu bodů; při shodě text školy postup neuvádí."
+        }
+      ]
+    },
+    {
+      "redizo": "600014967",
+      "nazev": "Konzervatoř P. J. Vejvanovského Kroměříž",
+      "obec": "Kroměříž",
+      "obory": [
+        "Hudba",
+        "Zpěv"
+      ],
+      "url": "https://www.konzkm.cz/prijimaci-rizeni/",
+      "kriteria": [
+        {
+          "obor": "Hudba",
+          "zdroj": null,
+          "casti": [
+            {
+              "nazev": "Praktická část: hra na nástroj",
+              "maxBody": 25,
+              "minimum": null
+            },
+            {
+              "nazev": "Hudebně teoretická část",
+              "maxBody": null,
+              "minimum": "výborný +1 bod, chvalitebný 0, horší známka −2 až −5 bodů"
+            },
+            {
+              "nazev": "Test všeobecného kulturně historického přehledu",
+              "maxBody": null,
+              "minimum": "výborný +1 bod, chvalitebný 0, horší známka −2 až −5 bodů"
+            }
+          ],
+          "podminka": "Nejméně 20 bodů z nejvýše 27.",
+          "poradi": null
+        },
+        {
+          "obor": "Zpěv",
+          "zdroj": null,
+          "casti": [
+            {
+              "nazev": "Praktická část: zpěv",
+              "maxBody": 25,
+              "minimum": null
+            },
+            {
+              "nazev": "Hudebně teoretická část",
+              "maxBody": null,
+              "minimum": "výborný +1 bod, chvalitebný 0, horší známka −2 až −5 bodů"
+            },
+            {
+              "nazev": "Test všeobecného kulturně historického přehledu",
+              "maxBody": null,
+              "minimum": "výborný +1 bod, chvalitebný 0, horší známka −2 až −5 bodů"
+            }
+          ],
+          "podminka": "Nejméně 20 bodů z nejvýše 27.",
+          "poradi": null
+        }
+      ]
+    },
+    {
+      "redizo": "600015025",
+      "nazev": "Konzervatoř Evangelické akademie",
+      "obec": "Olomouc",
+      "obory": [
+        "Hudba",
+        "Zpěv"
+      ],
+      "url": "https://www.konzervatorolomouc-kea.cz/pro-uchazece/prijimaci-rizeni",
+      "kriteria": [
+        {
+          "obor": "Hudba",
+          "zdroj": null,
+          "casti": [
+            {
+              "nazev": "Hlavní obor (zpěv nebo hra na nástroj)",
+              "maxBody": 65,
+              "minimum": "nejméně 40 bodů"
+            },
+            {
+              "nazev": "Talentové předpoklady (intonace, rytmus, sluchová analýza)",
+              "maxBody": 35,
+              "minimum": "nejméně 13 bodů"
+            }
+          ],
+          "podminka": "Celkem nejméně 65 bodů a zároveň minimum v obou částech.",
+          "poradi": "Při shodě rozhodují body z hlavního oboru, pak los."
+        },
+        {
+          "obor": "Zpěv",
+          "zdroj": null,
+          "casti": [
+            {
+              "nazev": "Hlavní obor (zpěv nebo hra na nástroj)",
+              "maxBody": 65,
+              "minimum": "nejméně 40 bodů"
+            },
+            {
+              "nazev": "Talentové předpoklady (intonace, rytmus, sluchová analýza)",
+              "maxBody": 35,
+              "minimum": "nejméně 13 bodů"
+            }
+          ],
+          "podminka": "Celkem nejméně 65 bodů a zároveň minimum v obou částech.",
+          "poradi": "Při shodě rozhodují body z hlavního oboru, pak los."
+        }
+      ]
+    },
+    {
+      "redizo": "610550659",
+      "nazev": "Církevní konzervatoř Německého řádu",
+      "obec": "Opava",
+      "obory": [
+        "Hudba",
+        "Zpěv",
+        "Hudebně dramatické umění"
+      ],
+      "url": "https://www.konzervator.cz/nastenka/vyhlasujeme-1-kolo-prijimaciho-rizeni-992n",
+      "kriteria": [
+        {
+          "obor": "Hudba",
+          "zdroj": "https://www.konzervator.cz/public/files/654/file/vyhl-en---krit-ria-hudba_2027-28.pdf",
+          "casti": [
+            {
+              "nazev": "Praktická zkouška z hlavního oboru s motivačním pohovorem",
+              "maxBody": 50,
+              "minimum": "nejméně 30 bodů"
+            },
+            {
+              "nazev": "Hudebnost a kreativita (intonace, rytmus, sluchová analýza)",
+              "maxBody": 30,
+              "minimum": "nejméně 12 bodů"
+            },
+            {
+              "nazev": "Test ze základů teorie a dějin hudby",
+              "maxBody": 30,
+              "minimum": "nejméně 12 bodů"
+            }
+          ],
+          "podminka": "Minimum bodů v každé ze tří částí.",
+          "poradi": "Podle součtu bodů; při shodě rozhodují postupně praktická zkouška, hudebnost, test a výsledky předchozího vzdělávání."
+        },
+        {
+          "obor": "Zpěv",
+          "zdroj": "https://www.konzervator.cz/public/files/655/file/vyhl-en---krit-ria-zp-v_2027-28.pdf",
+          "casti": [
+            {
+              "nazev": "Praktická zkouška z hlavního oboru s motivačním pohovorem",
+              "maxBody": 50,
+              "minimum": "nejméně 30 bodů; u populárního zpěvu zvlášť pěvecké dispozice a rétorické a pohybové předpoklady"
+            },
+            {
+              "nazev": "Hudebnost a kreativita (intonace, rytmus, sluchová analýza)",
+              "maxBody": 30,
+              "minimum": "nejméně 12 bodů"
+            },
+            {
+              "nazev": "Test ze základů teorie a dějin hudby",
+              "maxBody": 30,
+              "minimum": "nejméně 12 bodů"
+            }
+          ],
+          "podminka": "Minimum bodů v každé ze tří částí.",
+          "poradi": "Podle součtu bodů; při shodě rozhodují postupně hlavní obor, hudebnost, test a výsledky předchozího vzdělávání."
+        },
+        {
+          "obor": "Hudebně dramatické umění",
+          "zdroj": "https://www.konzervator.cz/public/files/656/file/vyhl-en---krit-ria-herectv-_2027-28.pdf",
+          "casti": [
+            {
+              "nazev": "1. fáze: herecké předpoklady a zpěv",
+              "maxBody": 50,
+              "minimum": "nejméně 18 a 12 bodů, celkem 30 pro postup"
+            },
+            {
+              "nazev": "2. fáze: herecké předpoklady",
+              "maxBody": 30,
+              "minimum": "nejméně 18 bodů"
+            },
+            {
+              "nazev": "2. fáze: pohybové schopnosti",
+              "maxBody": 20,
+              "minimum": "nejméně 12 bodů"
+            },
+            {
+              "nazev": "2. fáze: zpěv a všeobecná hudební zkouška",
+              "maxBody": 30,
+              "minimum": "nejméně 9 a 9 bodů"
+            }
+          ],
+          "podminka": "Postup do 2. fáze a minimum bodů v každé části.",
+          "poradi": "Podle součtu bodů; při shodě rozhodují postupně herecké předpoklady, pohyb, zpěv, hudební zkouška a výsledky předchozího vzdělávání."
+        }
+      ]
+    },
+    {
+      "redizo": "600017524",
+      "nazev": "Janáčkova konzervatoř v Ostravě",
+      "obec": "Ostrava",
+      "obory": [
+        "Hudba",
+        "Zpěv",
+        "Tanec",
+        "Hudebně dramatické umění"
+      ],
+      "url": "https://www.jko.cz/prijimaci-rizeni",
+      "kriteria": [
+        {
+          "obor": "Hudba",
+          "zdroj": "https://www.jko.cz/files/files/TZ/HUDBA-_Vyhlaseni_prij_riz_pro_2728.pdf",
+          "casti": [
+            {
+              "nazev": "Hlavní obor, hudebnost a hudebně teoretické znalosti (jedno hodnocení)",
+              "maxBody": 25,
+              "minimum": "nejméně 19 bodů"
+            }
+          ],
+          "podminka": "Nejméně 19 bodů.",
+          "poradi": "Podle bodů; při shodě text školy postup neuvádí."
+        },
+        {
+          "obor": "Zpěv",
+          "zdroj": "https://www.jko.cz/files/files/TZ/PEV-_Vyhlaseni_prij_riz_pro_2728.pdf",
+          "casti": [
+            {
+              "nazev": "1. etapa: předpoklady pro hlavní obor",
+              "maxBody": 25,
+              "minimum": "nejméně 19 bodů pro postup"
+            },
+            {
+              "nazev": "2. etapa: hlavní obor, hudebnost a teorie",
+              "maxBody": 25,
+              "minimum": "nejméně 19 bodů"
+            },
+            {
+              "nazev": "2. etapa: pohybové předpoklady",
+              "maxBody": 25,
+              "minimum": "nejméně 19 bodů"
+            }
+          ],
+          "podminka": "Nejméně 19 bodů v obou částech 2. etapy.",
+          "poradi": "Podle bodů z první části 2. etapy; při shodě rozhoduje druhá část."
+        },
+        {
+          "obor": "Tanec",
+          "zdroj": "https://www.jko.cz/files/files/TZ/TC-_Vyhlaseni_prij_riz_pro_2728.pdf",
+          "casti": [
+            {
+              "nazev": "Hlavní obor",
+              "maxBody": 25,
+              "minimum": "nejméně 19 bodů"
+            },
+            {
+              "nazev": "Hudebnost (muzikálnost, rytmus)",
+              "maxBody": 5,
+              "minimum": "nejméně 3 body"
+            }
+          ],
+          "podminka": "Nejméně 19 bodů z hlavního oboru a 3 body z hudebnosti.",
+          "poradi": "Podle bodů z hlavního oboru; při shodě rozhoduje hudebnost."
+        }
+      ]
+    },
+    {
+      "redizo": "600012336",
+      "nazev": "Konzervatoř Pardubice",
+      "obec": "Pardubice",
+      "obory": [],
+      "url": "https://www.konzervatorpardubice.eu/",
+      "poznamka": "Vyhlášení je na úvodní stránce školy.",
+      "kriteriaPoznamka": "Web školy vyhrazuje vytěžování textů a dat, kritéria jsme proto nepřepisovali."
+    },
+    {
+      "redizo": "600009441",
+      "nazev": "Konzervatoř Plzeň",
+      "obec": "Plzeň",
+      "obory": [
+        "Hudba",
+        "Zpěv"
+      ],
+      "url": "https://www.konzervatorplzen.cz/cz/studium/zkousky/talentove/",
+      "kriteria": [
+        {
+          "obor": "Hudba",
+          "zdroj": "https://www.konzervatorplzen.cz/uws_files/2026-2027/zkousky/prijimacky/Kriteria%20hodnoceni.pdf",
+          "casti": [
+            {
+              "nazev": "Praktická zkouška (hra na nástroj)",
+              "maxBody": 25,
+              "minimum": "známka výborný nebo chvalitebný (nad 15 bodů)"
+            },
+            {
+              "nazev": "Hudební teorie (test a ústní zkouška)",
+              "maxBody": 25,
+              "minimum": "známka nejhůř dobrý"
+            }
+          ],
+          "podminka": "Rozhoduje praktická zkouška; body z obou zkoušek se nesčítají.",
+          "poradi": "Podle bodů z praktické zkoušky v oboru a formě studia; při shodě rozhoduje hudební teorie."
+        },
+        {
+          "obor": "Zpěv",
+          "zdroj": "https://www.konzervatorplzen.cz/uws_files/2026-2027/zkousky/prijimacky/Kriteria%20hodnoceni.pdf",
+          "casti": [
+            {
+              "nazev": "Praktická zkouška (zpěv)",
+              "maxBody": 25,
+              "minimum": "známka výborný nebo chvalitebný (nad 15 bodů)"
+            },
+            {
+              "nazev": "Hudební teorie (test a ústní zkouška)",
+              "maxBody": 25,
+              "minimum": "známka nejhůř dobrý"
+            }
+          ],
+          "podminka": "Rozhoduje praktická zkouška; body z obou zkoušek se nesčítají.",
+          "poradi": "Podle bodů z praktické zkoušky v oboru a formě studia; při shodě rozhoduje hudební teorie."
+        }
+      ]
+    },
+    {
+      "redizo": "600004660",
+      "nazev": "Konzervatoř Jaroslava Ježka",
+      "obec": "Praha",
+      "obory": [
+        "Hudba",
+        "Zpěv",
+        "Hudebně dramatické umění"
+      ],
+      "url": "https://www.kjj.cz/uchazeci/zajemci-o-studium-na-konzervatori/prijimaci-rizeni-do-1-rocniku-oboru-s-talentovou-zkouskou",
+      "kriteria": [
+        {
+          "obor": "Hudba",
+          "zdroj": null,
+          "casti": [
+            {
+              "nazev": "Hudebně teoretická zkouška (písemná a ústní)",
+              "maxBody": null,
+              "minimum": null
+            },
+            {
+              "nazev": "Umělecký výkon v hlavním oboru",
+              "maxBody": null,
+              "minimum": null
+            }
+          ],
+          "podminka": "Body a hranici úspěchu určují vnitřní podmínky zaměření, které jsou přílohou vyhlášení školy.",
+          "poradi": "Podle součtu bodů; při shodě rozhodují hlavní obor, teoretická část, její ústní zkouška a nakonec veřejný los."
+        },
+        {
+          "obor": "Zpěv",
+          "zdroj": null,
+          "casti": [
+            {
+              "nazev": "Hudebně teoretická zkouška (písemná a ústní)",
+              "maxBody": null,
+              "minimum": null
+            },
+            {
+              "nazev": "Umělecký výkon v hlavním oboru",
+              "maxBody": null,
+              "minimum": null
+            }
+          ],
+          "podminka": "Body a hranici úspěchu určují vnitřní podmínky zaměření, které jsou přílohou vyhlášení školy.",
+          "poradi": "Podle součtu bodů; při shodě rozhodují hlavní obor, teoretická část, její ústní zkouška a nakonec veřejný los."
+        },
+        {
+          "obor": "Hudebně dramatické umění",
+          "zdroj": null,
+          "casti": [
+            {
+              "nazev": "Pěvecká část",
+              "maxBody": null,
+              "minimum": null
+            },
+            {
+              "nazev": "Taneční část",
+              "maxBody": null,
+              "minimum": null
+            },
+            {
+              "nazev": "Herecká část",
+              "maxBody": null,
+              "minimum": null
+            }
+          ],
+          "podminka": "Body a hranici úspěchu určují vnitřní podmínky zaměření, které jsou přílohou vyhlášení školy.",
+          "poradi": "Podle součtu bodů; při shodě rozhoduje zpěv, pak tanec, nakonec veřejný los."
+        }
+      ]
+    },
+    {
+      "redizo": "600020738",
+      "nazev": "Konzervatoř a střední škola Jana Deyla",
+      "obec": "Praha",
+      "obory": [
+        "Hudba",
+        "Zpěv"
+      ],
+      "url": "https://jandeylconservatory.cz/images/2026-27/documents/Prijimaci-rizeni/R116-26-Prijimaci-rizeni-pro-skolni-rok-2027-28-v2.pdf",
+      "poznamka": "Připojená kritéria vycházejí ze staršího rozhodnutí školy; podrobnosti ověř u školy.",
+      "kriteriaPoznamka": "Dokument školy uvádí jen vyhlášení a termíny, body a pořadí v něm nejsou."
+    },
+    {
+      "redizo": "600005062",
+      "nazev": "Konzervatoř Duncan centre",
+      "obec": "Praha",
+      "obory": [
+        "Současný tanec"
+      ],
+      "url": "https://www.duncancentre.cz/prijimacky/",
+      "kriteria": [
+        {
+          "obor": "Současný tanec",
+          "zdroj": "https://www.duncancentre.cz/media/4gqhkjdy/krit%C3%A9ria-p%C5%99-do-1-r-2027-2028.pdf",
+          "casti": [
+            {
+              "nazev": "1. část: pohybové a taneční dovednosti, rytmus a muzikalita, čtenářská gramotnost",
+              "maxBody": 60,
+              "minimum": "celkem 30 bodů, v každé zkoušce 10"
+            },
+            {
+              "nazev": "2. část: taneční technika, kreativita a improvizace",
+              "maxBody": 40,
+              "minimum": "celkem 20 bodů, v každé zkoušce 10"
+            },
+            {
+              "nazev": "3. část: taneční adaptabilita a individuální pohovor",
+              "maxBody": 60,
+              "minimum": "20 a 10 bodů"
+            }
+          ],
+          "podminka": "Celkem nejméně 80 bodů ze 160 a minimum v každé zkoušce.",
+          "poradi": "Přijme 22 uchazečů s nejvyšším součtem; při shodě rozhodují postupně taneční adaptabilita, kreativita, technika a průměry na vysvědčeních ze 7. a 8. ročníku."
+        }
+      ]
+    },
+    {
+      "redizo": "600004538",
+      "nazev": "Pražská konzervatoř",
+      "obec": "Praha",
+      "obory": [
+        "Hudba",
+        "Zpěv",
+        "Hudebně dramatické umění"
+      ],
+      "url": "https://prazskakonzervator.cz/wp-content/uploads/2026/10/Vyhlaseni-1.-kola-talentove-prijimaci-zkousky_leden_2027_web.pdf",
+      "kriteria": [
+        {
+          "obor": "Hudba",
+          "zdroj": null,
+          "casti": [
+            {
+              "nazev": "Speciální část (hlavní obor)",
+              "maxBody": 25,
+              "minimum": "nejméně 18 bodů"
+            },
+            {
+              "nazev": "Všeobecná část (hudební teorie)",
+              "maxBody": 24,
+              "minimum": "nejméně 12 bodů"
+            }
+          ],
+          "podminka": "Minimum v obou částech; body se nesčítají.",
+          "poradi": "Podle bodů z hlavního oboru; při shodě rozhodují body z hudební teorie, pak los."
+        },
+        {
+          "obor": "Zpěv",
+          "zdroj": null,
+          "casti": [
+            {
+              "nazev": "1. etapa: hlavní obor",
+              "maxBody": 25,
+              "minimum": "nejméně 18 bodů"
+            },
+            {
+              "nazev": "1. etapa: hudební teorie",
+              "maxBody": 24,
+              "minimum": "nejméně 12 bodů"
+            },
+            {
+              "nazev": "2. etapa: hlavní obor",
+              "maxBody": 25,
+              "minimum": "minimální počet bodů"
+            }
+          ],
+          "podminka": "Postup do 2. etapy a v ní minimální počet bodů; body se mezi etapami nepřevádějí.",
+          "poradi": "Podle bodů z hlavního oboru ve 2. etapě; při shodě rozhodují hudební teorie, hlavní obor v 1. etapě, pak los."
+        },
+        {
+          "obor": "Hudebně dramatické umění",
+          "zdroj": null,
+          "casti": [
+            {
+              "nazev": "1. etapa",
+              "maxBody": 10,
+              "minimum": "nejméně 5 bodů pro postup"
+            },
+            {
+              "nazev": "2. etapa: hudební, pohybová a herecká část",
+              "maxBody": 15,
+              "minimum": "celkem 8 bodů, v každé části aspoň 2"
+            },
+            {
+              "nazev": "3. etapa",
+              "maxBody": 10,
+              "minimum": "nejméně 7 bodů"
+            }
+          ],
+          "podminka": "Postup do 3. etapy a v ní nejméně 7 bodů z 10.",
+          "poradi": "Podle bodů ze 3. etapy; při shodě rozhoduje 2. etapa, pak 1. etapa, pak los."
+        }
+      ]
+    },
+    {
+      "redizo": "600005666",
+      "nazev": "Pražská taneční konzervatoř",
+      "obec": "Praha",
+      "obory": [
+        "Tanec"
+      ],
+      "url": "https://konzervator.ptksos.cz/pro-uchazece/prijimaci-rizeni",
+      "kriteriaPoznamka": "Dokument kritérií je na webu školy v části zakázané pro roboty, nepřepisovali jsme ho."
+    },
+    {
+      "redizo": "600005780",
+      "nazev": "Taneční centrum Praha – konzervatoř",
+      "obec": "Praha",
+      "obory": [
+        "Tanec"
+      ],
+      "url": "https://www.tanecnicentrumpraha.cz/pro-uchazece/",
+      "kriteria": [
+        {
+          "obor": "Tanec",
+          "zdroj": null,
+          "casti": [
+            {
+              "nazev": "Talentové předpoklady",
+              "maxBody": 190,
+              "minimum": "nejméně 152 bodů"
+            },
+            {
+              "nazev": "Test všeobecných znalostí",
+              "maxBody": 18,
+              "minimum": "nejméně 11 bodů"
+            },
+            {
+              "nazev": "Test hudebních znalostí",
+              "maxBody": 12,
+              "minimum": "nejméně 7 bodů"
+            },
+            {
+              "nazev": "Vysvědčení",
+              "maxBody": 10,
+              "minimum": "průměr nejvýše 1,8"
+            }
+          ],
+          "podminka": "Minimum ve všech třech částech zkoušky.",
+          "poradi": null
+        }
+      ]
+    },
+    {
+      "redizo": "600004601",
+      "nazev": "Taneční konzervatoř hlavního města Prahy",
+      "obec": "Praha",
+      "obory": [
+        "Tanec"
+      ],
+      "url": "https://www.tkpraha.cz/kriteria-talentove-zkousky-pro-skolni-rok-2027-2028/",
+      "kriteria": [
+        {
+          "obor": "Tanec",
+          "zdroj": null,
+          "casti": [
+            {
+              "nazev": "I. část: scénické a fyzické předpoklady",
+              "maxBody": 80,
+              "minimum": "nejméně 48 bodů"
+            },
+            {
+              "nazev": "II. část: pohybové dovednosti",
+              "maxBody": 40,
+              "minimum": "nejméně 24 bodů"
+            },
+            {
+              "nazev": "III. část: hudební teorie a test všeobecného přehledu",
+              "maxBody": 20,
+              "minimum": "nejméně 12 bodů"
+            }
+          ],
+          "podminka": "Minimum v každé části a celkem nejméně 84 bodů; dále vhodný zdravotní stav.",
+          "poradi": "Podle celkového součtu bodů."
+        }
+      ]
+    },
+    {
+      "redizo": "600011241",
+      "nazev": "Konzervatoř Teplice",
+      "obec": "Teplice",
+      "obory": [
+        "Hudba",
+        "Zpěv"
+      ],
+      "url": "https://www.konzervatorteplice.cz/upload/files/dokumenty/vyhlaseni-1-kola-prijimaciho-rizeni-pro-sk-rok-2027-28.pdf",
+      "poznamka": "Vyhlášení odkazuje na stránku kritérií se staršími letopočty; podrobnosti ověř u školy.",
+      "kriteriaPoznamka": "Vyhlášení odkazuje na kritéria na webu školy, ta ale nesou starší letopočet; nepřepisovali jsme je."
+    },
+    {
+      "redizo": "651038880",
+      "nazev": "Mezinárodní konzervatoř Praha",
+      "obec": "Praha",
+      "obory": [],
+      "url": null,
+      "poznamka": "Web školy při ověření nefungoval; nabídku hledej v DiPSy."
+    }
+  ],
+  "prepis": {
+    "postup": "strojový přepis textu stránek a PDF škol (scripts/kriteria-konzervatori-prepis.py), každý údaj zkontrolován proti dokumentu školy",
+    "model": "deepseek/deepseek-v4.1-flash",
+    "prepsano": "2026-11-13",
+    "zkontrolovano": "2026-11-13"
+  }
 }
