@@ -245,6 +245,17 @@ export function passRateOfTakers(z: Pick<MaturitaPredmet, 'took' | 'passed' | 'q
 }
 
 /**
+ * Šířka sloupce podílu přihlášených, kteří měli maturitu za sebou (%, 0 až 100), nebo null, když se podíl nesmí
+ * zveřejnit (`counts_only`, `unavailable`, pod deseti konajícími): pak stránka ukáže jen textové počty (#584).
+ */
+export function sirkaSloupcePodilu(z: Pick<MaturitaPredmet, 'registered' | 'took' | 'passed' | 'quality'> | null | undefined): number | null {
+  if (!z || !z.registered || z.passed === undefined) return null;
+  if (z.quality === 'counts_only' || z.quality === 'unavailable') return null;
+  if (z.took !== undefined && z.took < MATURITA_PODILY_OD_KONAJICICH) return null;
+  return Math.min(100, (z.passed / z.registered) * 100);
+}
+
+/**
  * Podíl maturity pro text stránky: jedno desetinné místo, celé číslo bez „,0“ („52,6 %“, „74,1 %“, „100 %“).
  * Podíl pod 100 se nikdy nezaokrouhlí na „100 %“, aby stránka netvrdila, že uspěli všichni.
  */

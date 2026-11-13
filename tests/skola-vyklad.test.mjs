@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import {
   vzdalenostKm, smerStupne, proKohoObor, delkaSlovy, oboryVetou, pocetOboru, shrnutiMaturity, letNadSlovy, jakCastoNadStredem, nazevSkupinyMaturity,
   nazevSObci, podnadpisSkoly, nazevSkolyNadpis, rozdelJazyky, pocetCizichJazyku, pocetMist, mistaPoOborech, vetaNejtezsihoPrijeti,
-  passRateOfTakers, procentoMaturity, stavPoPodzimu,
+  passRateOfTakers, sirkaSloupcePodilu, procentoMaturity, stavPoPodzimu,
 } from '../src/lib/skola-vyklad.ts';
 
 const machar = { lat: 50.184405, lon: 14.6701023 };
@@ -193,4 +193,12 @@ test('stav maturity po podzimu: jen přepnutý rok shodný s jarem, odděleně o
   assert.equal(stavPoPodzimu(roky, '2025', 2026), null);
   // Škola v souboru jap chybí.
   assert.equal(stavPoPodzimu(undefined, '2026', 2026), null);
+});
+
+test('sloupec podílu po podzimu: při counts_only a pod 10 konajícími jen počty bez šířky (#584)', () => {
+  assert.equal(sirkaSloupcePodilu({ registered: 8, took: 8, passed: 7, quality: 'counts_only' }), null);
+  assert.equal(sirkaSloupcePodilu({ registered: 20, took: 9, passed: 7 }), null);
+  assert.equal(sirkaSloupcePodilu({ registered: 20, took: 18, passed: 15, quality: 'unavailable' }), null);
+  assert.equal(sirkaSloupcePodilu({ registered: 20, took: 18, passed: 15, quality: 'complete' }), 75);
+  assert.equal(sirkaSloupcePodilu({ registered: 20, passed: 25 }), 100);
 });

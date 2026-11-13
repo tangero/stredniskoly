@@ -9,7 +9,7 @@ import {
 } from '@/lib/obor-profil';
 import {
   delkaSlovy, jakCastoNadStredem, mistaPoOborech, nazevSObci, pocetMist, oboryVetou, pocetCizichJazyku, pocetOboru, podnadpisSkoly,
-  passRateOfTakers, procentoMaturity, rozdelJazyky, STAV_POPISEK, vetaNejtezsihoPrijeti,
+  passRateOfTakers, sirkaSloupcePodilu, procentoMaturity, rozdelJazyky, STAV_POPISEK, vetaNejtezsihoPrijeti,
 } from '@/lib/skola-vyklad';
 import { formatDatumCz } from '@/lib/portal-skol';
 import type { NovejsiInspekce } from '@/lib/inspekce-aktualnost';
@@ -678,11 +678,11 @@ export function ProfilSkoly({ data, skola, odkazy }: ProfilSkolyProps) {
                           <li key={r.klic} className="space-y-1">
                             <p className="text-[14px] font-semibold text-[#16325c]">{r.nazev}</p>
                             {sloupce.map(x => {
-                              const podil = Math.min(100, (x.sc!.passed! / x.sc!.registered!) * 100);
+                              const podil = sirkaSloupcePodilu(x.sc);
                               return (
                                 <div key={x.id} className="grid grid-cols-[6.5rem_minmax(0,1fr)_auto] items-center gap-2 text-[13px] text-slate-600">
                                   <span>{x.popisek}</span>
-                                  <span className="block h-3 rounded-full bg-slate-100"><span className={`block h-3 rounded-full ${x.barva}`} style={{ width: `${podil}%` }} /></span>
+                                  <span className="block h-3 rounded-full bg-slate-100">{podil !== null ? <span className={`block h-3 rounded-full ${x.barva}`} style={{ width: `${podil}%` }} /> : null}</span>
                                   <span className="tabular-nums">{cislo(x.sc!.passed!)} {zOd(x.sc!.registered!)} {cislo(x.sc!.registered!)}</span>
                                 </div>
                               );
