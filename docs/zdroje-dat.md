@@ -43,7 +43,7 @@ Ukazatel se pak zavádí podle [slovníku ukazatelů](slovnik-ukazatelu.md). Ten
 | RSS/Atom feedy školních webů | weby škol, sklízeč `scripts/sklizec-novinek.py` | 533 z 1 093 škol s feedem | REDIZO + GUID položky | automaticky 2× denně |
 | Hranice krajů, RÚIAN | ČÚZK, SHP za celý stát (`services.cuzk.gov.cz/shp/stat/epsg-5514/1.zip`), vrstva `VUSC_P`, CC BY 4.0 → `src/data/mapa-kraju.json` | 14 krajů | kód NUTS 3 (`CZ0xx`) | ručně, při změně hranic |
 | Microsoft Clarity, souhrny simulátoru | Clarity Data Export API (`www.clarity.ms/export-data/api/v1/project-live-insights`), měřicí skript jen na `/simulator` a stránkách škol a oborů | jen stránka simulátoru, od 5. 10. 2026 | adresa stránky × dimenze | denně skriptem `scripts/clarity-export.mjs` do soukromého repozitáře signálů (#326); web z něj nic nezobrazuje |
-| Ruční opravy nabídky od škol | hlášení škol z portálu, `src/data/opravy-nabidky-skol.json` | 4 opravy (#371) | REDIZO + KKOV | ručně, podle hlášení |
+| Ruční opravy nabídky od škol | hlášení škol z portálu, `src/data/opravy-nabidky-skol.json` | 6 oprav (#371, #570) | REDIZO + KKOV | ručně, podle hlášení |
 | Ruční opravy úředního názvu školy | hlášení školy a ČŠI diff, `src/data/opravy-nazvu-skol.json` | žádná oprava; tři (#476, #319, #374) odstraněny 18. 10. 2026, rejstřík je od snímku k 30. 9. 2026 nese shodně (#515) | RED IZO | ručně, do převzetí názvu rejstříkem MŠMT; hromadně čtvrtletně ze snímku rejstříku (#478) |
 
 **Co v repozitáři není.** Zdroj patří do soupisu i tehdy, když jeho soubor na disku neleží. Takových je několik:
@@ -592,10 +592,10 @@ Soubor `src/data/opravy-nabidky-skol.json` (čtení v `src/lib/opravy-nabidky.ts
 |---|---|---|
 | `zamereni` (`plati_pro: zobrazeni`) | zaměření k zobrazení v názvu oboru, nebo `null` = nezobrazovat; adresy stránek se nemění | ano, stránka školy a stránka oboru (Opava, Ostrava) |
 | `kapacita` (`plati_pro: 2027`) | kapacita oboru ve školním roce 2027/2028 podle školy | jen uloženo pro opravu nabídky 2027, web ji zatím nečte (Boskovice) |
-| `neotevira` (`plati_pro: 2027`) | škola obor pro přijímání 2027 neotevírá | jen uloženo pro opravu nabídky 2027, web ji zatím nečte (Hronov) |
+| `neotevira` (`plati_pro: 2027`) | škola obor pro přijímání 2027 neotevírá | jen uloženo pro opravu nabídky 2027, web ji zatím nečte (Hronov, Karlovy Vary #570) |
 | `obor_doplneny` (`plati_pro: 2027`) | obor, který škola doplnila do nabídky 2027 (#541): RED IZO, KKOV, název, forma, zdroj s adresou (karta DiPSy nebo web školy) a datum hlášení; z hlášení bez zdroje záznam nevzniká | jen uloženo, web ho nečte; po zveřejnění oficiální nabídky 2027 se záznamy s ní porovnají (`oboryDoplneneSkolou2027`, `chybyDoplnenehoOboru`) |
 
-Rozhodnutí vlastníka 5. 10. 2026: kapacita Boskovic a neotevíraný obor v Hronově se do webu dostanou až s nabídkou 2027. Obor 26-41-L/01 v Bohumíně v datech 2026 není a zdroj, proč, nemáme; soubor ho proto neobsahuje.
+Rozhodnutí vlastníka 5. 10. 2026: kapacita Boskovic a neotevíraný obor v Hronově se do webu dostanou až s nabídkou 2027. Stejně je 13. 11. 2026 zapsaný `neotevira` pro dva obory SZŠ Karlovy Vary (600019641, #570). Obor 26-41-L/01 v Bohumíně v datech 2026 není a zdroj, proč, nemáme; soubor ho proto neobsahuje.
 
 ### 2.19a Ruční opravy úředního názvu školy
 
