@@ -1125,15 +1125,15 @@
    }
   },
   "kriteria-konzervatori-odkazy": {
-   "nazev": "Kritéria přijetí konzervatoří, odkazy na weby škol",
-   "dokumentace": "docs/zdroje-dat.md#213a-kritéria-přijetí-konzervatoří-odkazy-504",
+   "nazev": "Kritéria přijetí konzervatoří, odkazy na weby škol a přepis kritérií",
+   "dokumentace": "docs/zdroje-dat.md#213a-kritéria-přijetí-konzervatoří-odkazy-a-přepis-504",
    "cyklus": "rocni",
    "pouziti": "web",
    "zobrazeno": {
     "obdobi": "2027/2028",
     "soubor": "src/data/kriteria-konzervatori-2027.json",
     "stazeno": "2026-11-11",
-    "poznamka": "Ručně ověřené odkazy na vyhlášení kritérií na webech škol (#504); jen odkazy, žádné body ani přepis. Samostatná sada vedle dipsy-kriteria, ta zůstává na roce 2026."
+    "poznamka": "Ručně ověřené odkazy na vyhlášení kritérií na webech škol a u 13 škol strojový přepis kritérií zkontrolovaný proti dokumentu školy (#504, přepis 2026-11-13). Samostatná sada vedle dipsy-kriteria, ta zůstává na roce 2026."
    },
    "ocekavano": {
     "obdobi": "2028/2029",
@@ -1150,13 +1150,15 @@
    "vystupy": [
     "src/data/kriteria-konzervatori-2027.json"
    ],
-   "ukazatele": [],
+   "ukazatele": [
+    "Body talentové zkoušky konzervatoře"
+   ],
    "aktualizace": {
     "zdroj": "weby konzervatoří (seznam škol: public/pro-novinare/konzervatore-skoly.csv)",
-    "detekce": "Ručně: každá škola vyhlašuje kritéria na vlastním webu, strojově je nečteme.",
-    "import": "Ruční úprava src/data/kriteria-konzervatori-2027.json po ověření odkazů.",
+    "detekce": "Ručně: každá škola vyhlašuje kritéria na vlastním webu.",
+    "import": "Ruční úprava src/data/kriteria-konzervatori-2027.json po ověření odkazů, přepis skriptem scripts/kriteria-konzervatori-prepis.py s ruční kontrolou.",
     "automatizace": "rucni",
-    "lidsky_krok": "Jednou ročně (říjen) projít weby konzervatoří, ověřit letopočet školního roku ve vyhlášení a přepsat odkazy.",
+    "lidsky_krok": "Jednou ročně (říjen) projít weby konzervatoří, ověřit letopočet školního roku ve vyhlášení, přepsat odkazy a kritéria a přepis zkontrolovat proti dokumentům škol.",
     "sledovat": []
    }
   }

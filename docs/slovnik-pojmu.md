@@ -1,6 +1,6 @@
 # Slovník pojmů
 
-Verze 1.54 · 13. 11. 2026 · **Závazný pro všechny texty na webu.** Nový pojem se na stránce nepoužije bez zápisu sem.
+Verze 1.55 · 13. 11. 2026 · **Závazný pro všechny texty na webu.** Nový pojem se na stránce nepoužije bez zápisu sem.
 
 Slovník pojmů říká, **jakými slovy mluvíme k rodičům a uchazečům**, aby tatáž věc nezněla na každé stránce jinak. Doplňuje [slovník ukazatelů](slovnik-ukazatelu.md), který říká, **jak se veličina jmenuje v datech a jak se počítá**. Kde se oba liší, platí: v datech, kódu a API název ze slovníku ukazatelů, v textu stránky pojem odsud.
 
@@ -41,6 +41,7 @@ Slovník pojmů říká, **jakými slovy mluvíme k rodičům a uchazečům**, a
 | **místa**, **kapacita** | počet míst, které škola pro obor v kole vypsala | není potřeba | volná místa (jen u 2. kola) |
 | **obor se už nenabírá** | obor vedený v rejstříku jako dobíhající a v zobrazeném ročníku nevypsaný | „škola tenhle obor dokončuje se stávajícími žáky a nové uchazeče do něj nepřijímá“ | zrušený obor, zaniklý obor (dokud to neuvádí škola); jakékoli varování u oboru, který škola v ročníku **vypsala** — mezi vypsanými je dobíhajících nula |
 | **obor bez jednotné zkoušky** | obor, u kterého se jednotná přijímací zkouška nekoná: kategorie C, E, H, J a P a umělecké obory s talentovou zkouškou; od etapy 3a (issue #244) mají obory škol, které web vede, vlastní stránku | v tabulce značka „bez jednotné zkoušky“; na stránce učebního oboru „Body tu nejsou, protože se jednotná přijímací zkouška nekoná“; pod tabulkou oborů na přihlášce „Obory bez odkazu u nás zatím vlastní stránku nemají.“ | obor bez JPZ, obor bez přijímaček, nematuritní obor (není totéž) |
+| **talentová zkouška** | zkouška nadání, kterou konzervatoř koná místo jednotné přijímací zkoušky; skládá se z částí, které škola vyhlásí v kritériích přijetí | „talentová zkouška, tedy zkouška nadání, kterou konzervatoř koná místo jednotné přijímací zkoušky“ | talentovka, talentové přijímačky |
 | **S maturitou / S výučním listem / Po vyučení / Ostatní** | skupiny oborů na stránce školy, ve filtru Vzdělání na stránce města (od etapy 3c-1, #244) a v souhrnu míst v záhlaví města a kraje („Místa v 1. kole … podle toho, čím studium končí“, etapa 3c-4) podle toho, čím studium končí: maturita (K, M, L), výuční list (H, E), nástavba po vyučení (L/5x), ostatní (C, J, P); pořadí je vždy stejné (#393) | nadpis skupiny a přepínač, bez další věty: názvy se vysvětlují samy | maturitní a nematuritní obory (nematuritní je i nástavba), lepší a horší obory |
 | **typ studia v přehledu kraje: Učební obor, Umělecký obor s talentovou zkouškou, Konzervatoř, Praktická škola a obor J** | typy nabídek bez jednotné zkoušky ve filtru typu na stránce kraje (H a E, M a L bez zkoušky, P, C a J); pořadí v kraji u nich není (#244, etapa 3c-2) | jen jako čip filtru a zkratka v řádku školy (učební, umělecký, konzervatoř, praktická) | nematuritní obor, obor bez přijímaček |
 | **učební obor** | obor s výučním listem, kategorie H, případně E | „učební obor, tedy obor s výučním listem“ | učňák, učňovský obor |
@@ -160,7 +161,8 @@ Slovník pojmů říká, **jakými slovy mluvíme k rodičům a uchazečům**, a
 
 | Verze | Změna |
 |---|---|
-| 1.54 | Pojem **stav po podzimním období** pro stav maturity po jarním a podzimním termínu dohromady na stránce školy; nepoužívat „podzimní výsledky“ ani „opravná maturita“, jaro se s ním nesčítá (13. 11. 2026, issue #584). |
+| 1.55 | Pojem **stav po podzimním období** pro stav maturity po jarním a podzimním termínu dohromady na stránce školy; nepoužívat „podzimní výsledky“ ani „opravná maturita“, jaro se s ním nesčítá (13. 11. 2026, issue #584). |
+| 1.54 | Pojem **talentová zkouška** se standardním vysvětlením pro přepis kritérií konzervatoří na `/prijimacky-2027` (13. 11. 2026, issue #504). |
 | 1.53 | Pojem **hlídání škol** pro denní souhrn změn u hlídaných škol; nepoužívat „sledování školy“, „upozornění“ (2. 11. 2026, issue #523, E5). |
 | 1.52 | Pojem **připomínky termínů** pro e-maily před termíny přijímacího řízení a jednu zprávu o výběru školy; nepoužívat „novinky“, „newsletter“, „odběr novinek“ (25. 10. 2026, issue #523, E2). |
 | 1.51 | U pojmu **1. kolo** doplněno: počty přihlášek a přijatých z výsledků 1. kola nesou na stránce školy „v 1. kole“ nebo „(1. kolo)“; počet bez kola se nepoužívá (17. 10. 2026, issue #226). |
