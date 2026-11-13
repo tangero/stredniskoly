@@ -33,8 +33,6 @@ KALENDAR = {
                 {"id": "ss-prihlasky", "start": "2027-02-01", "end": "2027-02-22", "date": "1.–22. února"},
                 {"id": "ss-vysledky", "start": "2027-05-14", "date": "14. května · pátek"},
                 {"id": "k2-prihlasky", "start": "2027-05-19", "end": "2027-05-24", "date": "19.–24. května"},
-                {"id": "jpz-4-1", "start": "2027-04-12", "date": "12. dubna · pondělí"},
-                {"id": "jpz-4-2", "start": "2027-04-13", "date": "13. dubna · úterý"},
             ],
         }
     ]
@@ -128,21 +126,6 @@ class GeneratorTest(unittest.TestCase):
         )
         self.assertEqual(self.novinky.priprav(None), 0)
         self.assertIn("15.–31. ledna 2027", self.vystup("kriteria")["text"])
-
-    def test_datum_kratce_je_bez_dne_v_tydnu(self) -> None:
-        self.sablona(
-            "jpz",
-            "spoustec: kalendar\nudalost: jpz-4-1\npredstih_dni: 0",
-            "# JPZ\n\nZkouška je {{den:jpz-4-1}} a {{datum-kratce:jpz-4-2}}. "
-            "Výsledky vyjdou {{datum-kratce:ss-vysledky}}. Původní zápis je {{datum:ss-vysledky}}.",
-        )
-        self.assertEqual(self.novinky.priprav(None), 0)
-        text = self.vystup("jpz")["text"]
-        self.assertIn("Zkouška je 12. a 13. dubna 2027.", text)
-        self.assertIn("Výsledky vyjdou 14. května 2027.", text)
-        self.assertIn("Původní zápis je 14. května · pátek 2027.", text)
-        self.assertNotIn("pondělí", text)
-        self.assertNotIn("úterý", text)
 
     def test_letopocet_v_sablone_zastavi_generovani(self) -> None:
         self.sablona(

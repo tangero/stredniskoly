@@ -150,14 +150,6 @@ def vypln_sablonu(s: Sablona, kalendar: dict, rocnik: str) -> tuple[str, str]:
         if odkaz == "rocnik":
             telo = telo.replace("{{rocnik}}", rocnik)
             continue
-        if odkaz.startswith("datum-kratce:"):
-            u = udalost(kalendar, odkaz.split(":", 1)[1])
-            telo = telo.replace(f"{{{{{odkaz}}}}}", datum_kratce(u))
-            continue
-        if odkaz.startswith("den:"):
-            u = udalost(kalendar, odkaz.split(":", 1)[1])
-            telo = telo.replace(f"{{{{{odkaz}}}}}", den_udalosti(u))
-            continue
         if odkaz.startswith("datum:"):
             u = udalost(kalendar, odkaz.split(":", 1)[1])
             telo = telo.replace(f"{{{{{odkaz}}}}}", datum_s_rokem(u))
@@ -170,22 +162,6 @@ def vypln_sablonu(s: Sablona, kalendar: dict, rocnik: str) -> tuple[str, str]:
     return predmet, zbytek
 
 
-MESICE_GENITIV = (
-    "ledna",
-    "února",
-    "března",
-    "dubna",
-    "května",
-    "června",
-    "července",
-    "srpna",
-    "září",
-    "října",
-    "listopadu",
-    "prosince",
-)
-
-
 def datum_s_rokem(u: dict) -> str:
     """Termín vždy s rokem (slovník pojmů, §5: rok se píše výslovně).
 
@@ -196,17 +172,6 @@ def datum_s_rokem(u: dict) -> str:
     if re.search(r"\b20\d{2}\b", popis):
         return popis
     return f"{popis} {u['start'][:4]}"
-
-
-def datum_kratce(u: dict) -> str:
-    """Den a měsíc bez dne v týdnu, vždy s rokem z data události."""
-    start = date.fromisoformat(u["start"])
-    return f"{start.day}. {MESICE_GENITIV[start.month - 1]} {start.year}"
-
-
-def den_udalosti(u: dict) -> str:
-    """Číslo dne s tečkou, pro spojení „12. a 13. dubna 2027“."""
-    return f"{date.fromisoformat(u['start']).day}."
 
 
 def na_html(markdown: str) -> str:
