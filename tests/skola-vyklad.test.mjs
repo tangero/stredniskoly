@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import {
   vzdalenostKm, smerStupne, proKohoObor, delkaSlovy, oboryVetou, pocetOboru, shrnutiMaturity, letNadSlovy, jakCastoNadStredem, nazevSkupinyMaturity,
   nazevSObci, podnadpisSkoly, nazevSkolyNadpis, rozdelJazyky, pocetCizichJazyku, pocetMist, mistaPoOborech, vetaNejtezsihoPrijeti,
-  passRateOfTakers, procentoMaturity,
+  passRateOfTakers, procentoMaturity, stavPoPodzimu,
 } from '../src/lib/skola-vyklad.ts';
 
 const machar = { lat: 50.184405, lon: 14.6701023 };
@@ -172,4 +172,25 @@ test('procento maturity netvrdí 100 %, když neuspěli všichni', () => {
   assert.equal(procentoMaturity(99.97), '99,9 %');
   assert.equal(procentoMaturity(95.74), '95,7 %');
   assert.equal(procentoMaturity(50), '50 %');
+});
+
+test('stav maturity po podzimu: jen přepnutý rok shodný s jarem, odděleně od jara (#584)', () => {
+  const roky = {
+    '2026': {
+      CELKEM: { spolecna_cast: { registered: 52, took: 52, passed: 49, failed: 3, absent: 0 } },
+      LYC: { spolecna_cast: { registered: 24, took: 24, passed: 23, failed: 1, absent: 0 } },
+      SZD: { spolecna_cast: { registered: 28, took: 28, passed: 26, failed: 2, absent: 0 } },
+    },
+    '2025': { CELKEM: { spolecna_cast: { registered: 40, passed: 39 } } },
+  };
+  const s = stavPoPodzimu(roky, '2026', 2026);
+  assert.equal(s.rok, 2026);
+  assert.deepEqual([s.celkem.registered, s.celkem.took, s.celkem.passed, s.celkem.failed, s.celkem.absent], [52, 52, 49, 3, 0]);
+  assert.deepEqual(s.skupiny.map(x => [x.smo16, x.spolecnaCast.passed]), [['SZD', 26], ['LYC', 23]]);
+  // Registr sadu nepřepnul: nic.
+  assert.equal(stavPoPodzimu(roky, null, 2026), null);
+  // Jaro je už novější než stav po podzimu: starší podzim vedle nového jara neukazujeme.
+  assert.equal(stavPoPodzimu(roky, '2025', 2026), null);
+  // Škola v souboru jap chybí.
+  assert.equal(stavPoPodzimu(undefined, '2026', 2026), null);
 });

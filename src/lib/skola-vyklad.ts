@@ -200,6 +200,34 @@ export interface RokMaturity {
   stav: StavProtiSkupine | null;
 }
 
+/**
+ * Stav maturity po podzimním období (slovník ukazatelů, oddíl 5; #584): kumulativní stav po jaru i podzimu
+ * ze souboru CERMAT `jap`, ne samostatný podzimní termín. Ukazuje se jen pro týž rok jako nejnovější jarní
+ * výsledky a jen když ho registr přepnul; s jarem se nesčítá a do grafu nekreslí.
+ */
+export interface StavPoPodzimu {
+  rok: number;
+  celkem: MaturitaPredmet | null;
+  skupiny: { smo16: string; spolecnaCast: MaturitaPredmet }[];
+}
+
+export function stavPoPodzimu(
+  roky: Record<string, Record<string, MaturitaSkupinaRoku>> | undefined,
+  obdobi: string | null,
+  rokJara: number,
+): StavPoPodzimu | null {
+  if (!obdobi || Number(obdobi) !== rokJara) return null;
+  const rok = roky?.[obdobi];
+  if (!rok) return null;
+  const skupiny = Object.entries(rok)
+    .filter(([smo16, z]) => smo16 !== 'CELKEM' && z.spolecna_cast?.registered)
+    .map(([smo16, z]) => ({ smo16, spolecnaCast: z.spolecna_cast! }))
+    .sort((a, b) => b.smo16.localeCompare(a.smo16));
+  const celkem = rok.CELKEM?.spolecna_cast?.registered ? rok.CELKEM.spolecna_cast : null;
+  if (!celkem && skupiny.length === 0) return null;
+  return { rok: rokJara, celkem, skupiny };
+}
+
 /** Pod tímto počtem konajících se podíly maturity nezveřejňují (příznak `counts_only`, maturitní návrh §7). */
 export const MATURITA_PODILY_OD_KONAJICICH = 10;
 

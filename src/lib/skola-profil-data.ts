@@ -5,7 +5,7 @@ import { getSouhrnNabidky, souhrnOboru, type SouhrnRocniku } from '@/lib/souhrny
 import { type PortalZaznam } from '@/lib/portal-skol';
 import { potvrzenyProfil } from '@/lib/portal-profil-verejne';
 import { getWebSkoly } from '@/lib/skoly-web';
-import { maturitaSkoly, type MaturitaSoubor } from '@/lib/maturita-skoly';
+import { maturitaPoPodzimu, maturitaSkoly, type MaturitaSoubor } from '@/lib/maturita-skoly';
 import { nenabiraSe } from '@/lib/dobihajici-obory';
 import { getDruheKolo, type DruheKoloNabidky } from '@/lib/druhe-kolo';
 import { zobrazeneObdobi, platnostObdobi } from '@/lib/stav-datovych-sad';
@@ -81,6 +81,8 @@ export interface MaturitaSkoly {
     skolVeSkupine: number | null;
     vstup: { umisteni: number; median: number; obor: string } | null;
   })[];
+  /** Stav po podzimním období téhož roku (#584), odděleně od jarních výsledků; null, dokud není přepnutý. */
+  poPodzimu: { rok: number; celkem: MaturitaPredmet | null; skupiny: { smo16: string; nazev: string; spolecnaCast: MaturitaPredmet }[] } | null;
 }
 
 export interface SkolaVOkoli {
@@ -357,7 +359,15 @@ export async function getProfilSkoly(
           vstup: obor && median !== undefined ? { umisteni: obor.umisteniPrijatych!, median, obor: `${obor.nazev} (${obor.delka}leté)` } : null,
         };
       }).filter(s => s.posledni),
+      poPodzimu: null,
     };
+    const podzim = await maturitaPoPodzimu(maturita, redizo);
+    if (podzim) {
+      maturitaVystup.poPodzimu = {
+        ...podzim,
+        skupiny: podzim.skupiny.map(s => ({ ...s, nazev: nazevSkupinyMaturity(s.smo16, soubor.skupiny[posledniRok]?.[s.smo16]?.nazev) })),
+      };
+    }
     if (maturitaVystup.skupiny.length === 0) maturitaVystup = null;
   }
 

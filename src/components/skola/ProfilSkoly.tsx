@@ -519,11 +519,15 @@ export function ProfilSkoly({ data, skola, odkazy }: ProfilSkolyProps) {
               <Karta className="space-y-3">
                 <p className="max-w-[64ch] text-[19px] leading-relaxed text-slate-800">
                   {celkem?.passed !== undefined && celkem.registered ? (
-                    <>Maturitu v roce {celkem.rok} udělalo <b className="text-[#16325c]">{cislo(celkem.passed)} {zOd(celkem.registered)} {cislo(celkem.registered)}</b> přihlášených maturantů{celkem.passRate !== undefined ? <>, tedy <b className="text-[#16325c]">{procentoMaturity(celkem.passRate)}</b></> : null}.{' '}</>
+                    <>Maturitu {maturita.poPodzimu ? 'v jarním období' : 'v roce'} {celkem.rok} udělalo <b className="text-[#16325c]">{cislo(celkem.passed)} {zOd(celkem.registered)} {cislo(celkem.registered)}</b> přihlášených maturantů{celkem.passRate !== undefined ? <>, tedy <b className="text-[#16325c]">{procentoMaturity(celkem.passRate)}</b></> : null}.{' '}</>
                   ) : null}
                   {/* Úspěšnost maturity z konajících (issue #375): jen když se konající liší od přihlášených, jinak by opakovala totéž číslo. */}
                   {celkem?.passed !== undefined && celkem.took && celkem.registered && celkem.took !== celkem.registered ? (
                     <>Z těch, kdo ke zkoušce skutečně šli, ji udělalo <b className="text-[#16325c]">{cislo(celkem.passed)} {zOd(celkem.took)} {cislo(celkem.took)}</b>{passRateOfTakers(celkem) !== null ? <>, tedy <b className="text-[#16325c]">{procentoMaturity(passRateOfTakers(celkem)!)}</b></> : null}.{' '}</>
+                  ) : null}
+                  {/* Stav po podzimním období (#584): samostatná věta, s jarem se nesčítá. */}
+                  {maturita.poPodzimu?.celkem?.passed !== undefined && maturita.poPodzimu.celkem.registered ? (
+                    <>Po podzimním období {maturita.poPodzimu.rok}, tedy po jaru a podzimu dohromady, měla maturitu za sebou <b className="text-[#16325c]">{cislo(maturita.poPodzimu.celkem.passed)} {zOd(maturita.poPodzimu.celkem.registered)} {cislo(maturita.poPodzimu.celkem.registered)}</b> přihlášených.{' '}</>
                   ) : null}
                   {jakCasto === 'v žádném hodnocení' ? (
                     <>V češtině nebyli maturanti nad středem podobných škol <b className="text-[#16325c]">v žádném hodnocení</b>.</>
@@ -642,6 +646,38 @@ export function ProfilSkoly({ data, skola, odkazy }: ProfilSkolyProps) {
                 })}
                 <Zdroj>Maturita: společná část, jarní období, CERMAT. Sloupec „ke zkoušce nešlo“ je počet přihlášených maturantů, kteří zkoušku nekonali, a jeho podíl z přihlášených; důvod data neuvádějí, může jít o nemoc i o neuzavřený ročník. Srovnání s podobnými školami stojí na jediné veličině, na průměrném podílu bodů z testu: střed je prostředek podobných škol a podle něj se počítá i srovnání, které bere v úvahu velikost ročníku, takže u malého ročníku bývá rozdíl nerozlišitelný. Údaj „v celé zemi lépe než 84 ze 100 maturantů“ je jiný pohled: neporovnává školu s podobnými školami, ale její maturanty se všemi maturanty v zemi.</Zdroj>
               </Dukaz>
+
+              {maturita.poPodzimu && (() => {
+                const p = maturita.poPodzimu;
+                const radky = [
+                  ...(p.celkem ? [{ klic: 'CELKEM', nazev: 'Celá škola', sc: p.celkem }] : []),
+                  ...p.skupiny.map(s => ({ klic: s.smo16, nazev: s.nazev.charAt(0).toUpperCase() + s.nazev.slice(1), sc: s.spolecnaCast })),
+                ];
+                return (
+                  <Dukaz nadpis="Stav po podzimním období" stitek={`${p.rok}, jaro a podzim dohromady`}>
+                    <p className="max-w-[70ch] text-[15px] leading-relaxed text-slate-700">
+                      Kdo maturitu na jaře nesložil nebo k ní nešel, může ji skládat na podzim. Stav po podzimním období říká, kolik přihlášených maturantů mělo maturitu za sebou po jaru a podzimu dohromady. Je to jiný údaj než jarní výsledky výše, proto ho s nimi nesčítáme a v grafu neukazujeme.
+                    </p>
+                    <div className="overflow-x-auto">
+                      <table className="w-full text-[14px] tabular-nums">
+                        <thead><tr className="text-left text-[12px] text-slate-500"><th className="py-1.5 pr-2">Obor</th><th className="px-2 text-right">Přihlášení</th><th className="px-2 text-right">Maturitu udělalo</th><th className="px-2 text-right">Neuspěli</th><th className="pl-2 text-right">Ke zkoušce nešlo</th></tr></thead>
+                        <tbody>
+                          {radky.map(r => (
+                            <tr key={r.klic} className="border-t border-slate-200">
+                              <td className="py-1.5 pr-2">{r.nazev}</td>
+                              <td className="px-2 text-right">{r.sc.registered !== undefined ? cislo(r.sc.registered) : '—'}</td>
+                              <td className="px-2 text-right">{r.sc.passed !== undefined && r.sc.registered ? `${cislo(r.sc.passed)} ${zOd(r.sc.registered)} ${cislo(r.sc.registered)}${r.sc.passRate !== undefined ? ` (${procentoMaturity(r.sc.passRate)})` : ''}` : '—'}</td>
+                              <td className="px-2 text-right">{r.sc.failed !== undefined ? cislo(r.sc.failed) : '—'}</td>
+                              <td className="pl-2 text-right">{r.sc.absent !== undefined ? cislo(r.sc.absent) : '—'}</td>
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
+                    </div>
+                    <Zdroj>Maturita: společná část, stav po podzimním zkušebním období {p.rok}, CERMAT. Není to samostatný podzimní termín, ale stav po obou termínech téhož roku. Podíl z přihlášených uvádíme jen u skupin s aspoň 10 maturanty, kteří ke zkoušce šli.</Zdroj>
+                  </Dukaz>
+                );
+              })()}
             </>
           );
         })()}
