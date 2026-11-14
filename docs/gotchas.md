@@ -148,3 +148,11 @@ Po každé SQL revizi zavolej `POST /api/veletrhy/revalidace` s `CRON_SECRET` (p
 v registru zůstane, se proto sklízí dál, a protože nemá stav, je splatný při každém běhu. Vyřazení zdroje se musí
 projevit v registru (u výpisů `VYRAZENE` ve `scripts/build-skoly-vypisy.py`); migrace nad `skola_feed` jen srovná
 tabulku pro stránku školy a administraci (#557).
+
+## Maturita: jaro a stav po podzimu sdílejí jeden soubor, ale ne sadu
+
+Stav maturity po podzimním období (soubor CERMAT `jap`) je v `public/maturita_skoly.json` pod klíčem `stav_po_podzimu`,
+vedle jarní řady, ale v registru je to samostatná sada `cermat-maturita-podzim` (#584). Jarní obnova klíč převezme
+ze stávajícího výstupu (`--zaklad`), zpracování `jap` jarní řadu nemění (pojistka v lince). Dokud sada není přepnutá,
+klíč v souboru chybí a `kontrola_obdobi` proto vrací `None`, které se shoduje s obdobím `null` v registru
+(`hodnota` v `scripts/stav-datovych-sad.py`). Web stav po podzimu ukáže jen pro týž rok jako nejnovější jaro.

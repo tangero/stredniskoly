@@ -406,16 +406,15 @@
    ],
    "dostupne": [],
    "aktualizace": {
-    "zdroj": "https://data.cermat.cz/files/files/MZ/agregovana_data_skoly/MZ{rok}j_SC_skolobory.xlsx a MZ{rok}jap_SC_skolobory.xlsx",
+    "zdroj": "https://data.cermat.cz/files/files/MZ/agregovana_data_skoly/MZ{rok}j_SC_skolobory.xlsx",
     "katalog": "https://data.cermat.cz/maturitni-zkouska/agregovana-data.html",
     "detekce": "HTTP HEAD a katalogová stránka.",
     "revize": "Soubor jaro 2026 byl přepsán 18. 8. 2026.",
-    "import": "scripts/build-maturita-skoly.py; v datové lince zpracovatel cermat-maturita stáhne k jarnímu souboru tři předchozí jarní ročníky a doplní je do stávajícího výstupu. Stav po podzimu (jap) se nepřebírá.",
+    "import": "scripts/build-maturita-skoly.py; v datové lince zpracovatel cermat-maturita stáhne k jarnímu souboru tři předchozí jarní ročníky a doplní je do stávajícího výstupu. Stav po podzimu (jap) vede samostatná sada cermat-maturita-podzim (#584).",
     "automatizace": "priprava",
     "lidsky_krok": "Schválit úlohu, zkontrolovat počty v pull requestu, přepnout období v registru.",
     "sledovat": [
-     "https://data.cermat.cz/files/files/MZ/agregovana_data_skoly/MZ{rok}j_SC_skolobory.xlsx",
-     "https://data.cermat.cz/files/files/MZ/agregovana_data_skoly/MZ{rok}jap_SC_skolobory.xlsx"
+     "https://data.cermat.cz/files/files/MZ/agregovana_data_skoly/MZ{rok}j_SC_skolobory.xlsx"
     ]
    },
    "kontrola_obdobi": {
@@ -430,6 +429,45 @@
      "poznamka": "Soubor jaro 2026 ověřen proti kontrolnímu součtu, import nezačal."
     }
    ]
+  },
+  "cermat-maturita-podzim": {
+   "nazev": "CERMAT, maturitní výsledky, stav po podzimním období",
+   "dokumentace": "docs/zdroje-dat.md#211-cermat-maturitní-výsledky",
+   "cyklus": "rocni",
+   "pouziti": "web",
+   "zobrazeno": {
+    "obdobi": null,
+    "poznamka": "Zatím nepřevzato; převezme datová linka úlohou ze souboru MZ{rok}jap (#584)."
+   },
+   "ocekavano": {
+    "obdobi": "2026",
+    "kdy": "2026-12",
+    "jistota": "odhad",
+    "zduvodneni": "Soubor MZ2026jap je na data.cermat.cz zveřejněný (ověřeno v #370 23. 10. 2026 a v #584 13. 11. 2026); převezme ho datová linka po sloučení zpracovatele."
+   },
+   "po_prepnuti": "Stav po podzimu předchozích let zůstává ve výstupu; stránka školy ukazuje jen stav po podzimu téhož roku jako nejnovější jarní výsledky, odděleně od nich.",
+   "vystupy": [
+    "public/maturita_skoly.json"
+   ],
+   "ukazatele": [
+    "Stav maturity po podzimním období"
+   ],
+   "dostupne": [],
+   "aktualizace": {
+    "zdroj": "https://data.cermat.cz/files/files/MZ/agregovana_data_skoly/MZ{rok}jap_SC_skolobory.xlsx",
+    "katalog": "https://data.cermat.cz/maturitni-zkouska/agregovana-data.html",
+    "detekce": "HTTP HEAD a katalogová stránka.",
+    "import": "scripts/build-maturita-skoly.py --podzim; v datové lince zpracovatel cermat-maturita doplní do stávajícího public/maturita_skoly.json samostatný klíč stav_po_podzimu, jarní řadu nemění (pojistka v lince).",
+    "automatizace": "priprava",
+    "lidsky_krok": "Schválit úlohu, zkontrolovat počty v pull requestu, přepnout období v registru.",
+    "sledovat": [
+     "https://data.cermat.cz/files/files/MZ/agregovana_data_skoly/MZ{rok}jap_SC_skolobory.xlsx"
+    ]
+   },
+   "kontrola_obdobi": {
+    "soubor": "public/maturita_skoly.json",
+    "cesta": "stav_po_podzimu.meta.nejnovejsi_rok"
+   }
   },
   "cermat-jpz-skoly-2017-2023": {
    "nazev": "CERMAT, školní agregáty JPZ 2017–2023",
@@ -1087,15 +1125,15 @@
    }
   },
   "kriteria-konzervatori-odkazy": {
-   "nazev": "Kritéria přijetí konzervatoří, odkazy na weby škol",
-   "dokumentace": "docs/zdroje-dat.md#213a-kritéria-přijetí-konzervatoří-odkazy-504",
+   "nazev": "Kritéria přijetí konzervatoří, odkazy na weby škol a přepis kritérií",
+   "dokumentace": "docs/zdroje-dat.md#213a-kritéria-přijetí-konzervatoří-odkazy-a-přepis-504",
    "cyklus": "rocni",
    "pouziti": "web",
    "zobrazeno": {
     "obdobi": "2027/2028",
     "soubor": "src/data/kriteria-konzervatori-2027.json",
     "stazeno": "2026-11-11",
-    "poznamka": "Ručně ověřené odkazy na vyhlášení kritérií na webech škol (#504); jen odkazy, žádné body ani přepis. Samostatná sada vedle dipsy-kriteria, ta zůstává na roce 2026."
+    "poznamka": "Ručně ověřené odkazy na vyhlášení kritérií na webech škol a u 13 škol strojový přepis kritérií zkontrolovaný proti dokumentu školy (#504, přepis 2026-11-13). Samostatná sada vedle dipsy-kriteria, ta zůstává na roce 2026."
    },
    "ocekavano": {
     "obdobi": "2028/2029",
@@ -1112,13 +1150,15 @@
    "vystupy": [
     "src/data/kriteria-konzervatori-2027.json"
    ],
-   "ukazatele": [],
+   "ukazatele": [
+    "Body talentové zkoušky konzervatoře"
+   ],
    "aktualizace": {
     "zdroj": "weby konzervatoří (seznam škol: public/pro-novinare/konzervatore-skoly.csv)",
-    "detekce": "Ručně: každá škola vyhlašuje kritéria na vlastním webu, strojově je nečteme.",
-    "import": "Ruční úprava src/data/kriteria-konzervatori-2027.json po ověření odkazů.",
+    "detekce": "Ručně: každá škola vyhlašuje kritéria na vlastním webu.",
+    "import": "Ruční úprava src/data/kriteria-konzervatori-2027.json po ověření odkazů, přepis skriptem scripts/kriteria-konzervatori-prepis.py s ruční kontrolou.",
     "automatizace": "rucni",
-    "lidsky_krok": "Jednou ročně (říjen) projít weby konzervatoří, ověřit letopočet školního roku ve vyhlášení a přepsat odkazy.",
+    "lidsky_krok": "Jednou ročně (říjen) projít weby konzervatoří, ověřit letopočet školního roku ve vyhlášení, přepsat odkazy a kritéria a přepis zkontrolovat proti dokumentům škol.",
     "sledovat": []
    }
   }

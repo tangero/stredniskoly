@@ -5,7 +5,7 @@ import { getSouhrnNabidky, souhrnOboru, type SouhrnRocniku } from '@/lib/souhrny
 import { type PortalZaznam } from '@/lib/portal-skol';
 import { potvrzenyProfil } from '@/lib/portal-profil-verejne';
 import { getWebSkoly } from '@/lib/skoly-web';
-import { maturitaSkoly, type MaturitaSoubor } from '@/lib/maturita-skoly';
+import { maturitaPoPodzimuSkoly, maturitaSkoly, type MaturitaSoubor } from '@/lib/maturita-skoly';
 import { nenabiraSe } from '@/lib/dobihajici-obory';
 import { getDruheKolo, type DruheKoloNabidky } from '@/lib/druhe-kolo';
 import { zobrazeneObdobi, platnostObdobi } from '@/lib/stav-datovych-sad';
@@ -81,6 +81,8 @@ export interface MaturitaSkoly {
     skolVeSkupine: number | null;
     vstup: { umisteni: number; median: number; obor: string } | null;
   })[];
+  /** Stav po podzimním období téhož roku (#584), odděleně od jarních výsledků; null, dokud není přepnutý. */
+  poPodzimu: { rok: number; celkem: MaturitaPredmet | null; skupiny: { smo16: string; nazev: string; spolecnaCast: MaturitaPredmet }[] } | null;
 }
 
 export interface SkolaVOkoli {
@@ -357,8 +359,23 @@ export async function getProfilSkoly(
           vstup: obor && median !== undefined ? { umisteni: obor.umisteniPrijatych!, median, obor: `${obor.nazev} (${obor.delka}leté)` } : null,
         };
       }).filter(s => s.posledni),
+      poPodzimu: null,
     };
     if (maturitaVystup.skupiny.length === 0) maturitaVystup = null;
+  }
+  // Stav po podzimu se načítá nezávisle na jarním záznamu školy (#584).
+  if (rok) {
+    const podzim = await maturitaPoPodzimuSkoly(redizo);
+    if (podzim) {
+      const { stav, soubor } = podzim;
+      const poPodzimu = {
+        ...stav,
+        skupiny: stav.skupiny.map(s => ({ ...s, nazev: nazevSkupinyMaturity(s.smo16, soubor.skupiny[String(soubor.meta.nejnovejsi_rok)]?.[s.smo16]?.nazev) })),
+      };
+      maturitaVystup = maturitaVystup
+        ? { ...maturitaVystup, poPodzimu }
+        : { obdobi: 'jaro', roky: [], celkem: null, skupiny: [], poPodzimu };
+    }
   }
 
   // ---------------------------------------------------------------- inspekce
