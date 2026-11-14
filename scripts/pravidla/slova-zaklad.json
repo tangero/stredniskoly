@@ -1,0 +1,286 @@
+{
+ "popis": "Zmrazený stav nálezů zakázaných slov (otisky). Úklid postupně; obnova jen přes --obnov s odůvodněním v commitu.",
+ "nalezy": {
+  "src/app/admin/auth/route.ts": [
+   "6f180012170c"
+  ],
+  "src/app/admin/novinky-odbery/page.tsx": [
+   "88b6688b4435"
+  ],
+  "src/app/admin/page.tsx": [
+   "31d786d17836",
+   "5a2ec0020933",
+   "93f6dedff993",
+   "b6d5d7c8f80a",
+   "c669de458576",
+   "cec0bc40a697"
+  ],
+  "src/app/admin/portal/oslovene/page.tsx": [
+   "98c5b89f28ae"
+  ],
+  "src/app/admin/prihlaseni/page.tsx": [
+   "13c08d56ac5c",
+   "55223d1b6445",
+   "8b215c3b12e8",
+   "b9675d0d4b91",
+   "c59e3afb5cf4"
+  ],
+  "src/app/admin/prihlaseni/passkey/route.ts": [
+   "10fadba5a05f"
+  ],
+  "src/app/admin/provoz/page.tsx": [
+   "3cdbfbab3cf9"
+  ],
+  "src/app/admin/skolni-novinky/page.tsx": [
+   "31d786d17836",
+   "8f9c4dd37c62",
+   "cec0bc40a697"
+  ],
+  "src/app/admin/veletrhy/rozhodnuti/page.tsx": [
+   "fdbf2388fc9b"
+  ],
+  "src/app/admin/zabezpeceni/page.tsx": [
+   "9b462c0f67e7",
+   "c558846f6b91"
+  ],
+  "src/app/api/bug-report/route.ts": [
+   "a79b5c586497",
+   "b2c806d27c6d"
+  ],
+  "src/app/api/novinky/odeslat/route.ts": [
+   "77b6224e088c"
+  ],
+  "src/app/api/novinky/odhlasit/route.ts": [
+   "77b6224e088c"
+  ],
+  "src/app/api/novinky/potvrdit/route.ts": [
+   "77b6224e088c"
+  ],
+  "src/app/api/novinky/prihlasit/route.ts": [
+   "70cec5024ee2",
+   "77b6224e088c"
+  ],
+  "src/app/api/novinky/sprava/route.ts": [
+   "77b6224e088c"
+  ],
+  "src/app/api/portal-magic/route.ts": [
+   "70aefee3c294"
+  ],
+  "src/app/api/portal-skoly/route.ts": [
+   "82f6e26c9fed"
+  ],
+  "src/app/api/portal/kriteria/route.ts": [
+   "bde9ab162b3f"
+  ],
+  "src/app/api/portal/ucet/route.ts": [
+   "82f6e26c9fed"
+  ],
+  "src/app/api/praha-dostupnost/route.ts": [
+   "08cea8a76195"
+  ],
+  "src/app/dostupnost/DostupnostClient.tsx": [
+   "13b53c7e0688",
+   "b859c800c6d9"
+  ],
+  "src/app/issues/page.tsx": [
+   "7600dc7f7873"
+  ],
+  "src/app/jak-vybrat-skolu/page.tsx": [
+   "0d3c7586ea42",
+   "2df029c459c3",
+   "3122f8c0d31a",
+   "47d149d7afd2",
+   "5de12a7dc7c4",
+   "8ca8dd76c5ea",
+   "8ffa713e587f",
+   "9fbf6d4f5520",
+   "aac4a204bc6d",
+   "c1ca52c56c6d",
+   "daabc3ad0c74",
+   "dcd8f7fd0fbe",
+   "f098a1f17ae2"
+  ],
+  "src/app/layout.tsx": [
+   "32871d85e452"
+  ],
+  "src/app/novinky/sprava/SpravaKlient.tsx": [
+   "e49b1433e71d",
+   "fa1af1ca0690"
+  ],
+  "src/app/o-projektu/page.tsx": [
+   "84a006fd111b",
+   "d4ac5201d728",
+   "f9e36559bf62"
+  ],
+  "src/app/ochrana-osobnich-udaju/page.tsx": [
+   "371a4d678eeb"
+  ],
+  "src/app/page.tsx": [
+   "0d3dcd3c0089",
+   "5a41efa5a9a4",
+   "8cbc679f7ff6",
+   "af1b6a1b95ce",
+   "f2081e1d011f"
+  ],
+  "src/app/praha-dostupnost/PrahaDostupnostClient.tsx": [
+   "1916de58fe7f"
+  ],
+  "src/app/prijimacky-2027/page.tsx": [
+   "0aad66b58614",
+   "0bcfe4bee9e3",
+   "2bc06f463fcd",
+   "d22420eb760f"
+  ],
+  "src/app/pro-novinare/page.tsx": [
+   "069240453c73"
+  ],
+  "src/app/pro-skoly/kriteria/page.tsx": [
+   "c54182a35ff8"
+  ],
+  "src/app/pro-skoly/page.tsx": [
+   "15970afad23b",
+   "3a27ce670784",
+   "3ab2c490b66e",
+   "78e1905c2dd8",
+   "e7484abcb90a"
+  ],
+  "src/app/pro-skoly/prihlaseni/[token]/page.tsx": [
+   "1eaf8289a897",
+   "a4749a4b3e1c"
+  ],
+  "src/app/pro-skoly/profil/page.tsx": [
+   "18fe89c47bfa",
+   "5390f1908def",
+   "7dc3017df726"
+  ],
+  "src/app/prototyp/cim-skoly-ziji/page.tsx": [
+   "3a89d9f32f90"
+  ],
+  "src/app/prototyp/pasma/page.tsx": [
+   "e2073d13056b"
+  ],
+  "src/app/regiony/[kraj]/page.tsx": [
+   "34dfa6ca646a",
+   "8c36a422f13d",
+   "9fa793b41261",
+   "a633ce9f08fc",
+   "cc6fa81f8c3e"
+  ],
+  "src/app/simulator/SimulatorClient.tsx": [
+   "4555b2137fd6",
+   "92324b7edcea",
+   "a1ca15f731f7"
+  ],
+  "src/app/skola/[slug]/inspekce/page.tsx": [
+   "a6c2b8c92bb8"
+  ],
+  "src/app/skola/[slug]/page.tsx": [
+   "507962af4de8"
+  ],
+  "src/app/skola/[slug]/pro-me/page.tsx": [
+   "2290860e17db",
+   "d9d0b9d1c9f3"
+  ],
+  "src/app/skoly/page.tsx": [
+   "662c18118c83",
+   "af82c7052052",
+   "af9592862f4d",
+   "d68a7a569f78"
+  ],
+  "src/app/vysledky/[year]/ResultsClient.tsx": [
+   "5b03b845100f",
+   "81ad3940caa9",
+   "98cf04aa257e",
+   "c6d1fb3aea7e",
+   "ca28e3352ccf",
+   "d17ff0436352",
+   "e5f85a5d99fe",
+   "fed249743e19"
+  ],
+  "src/app/vysledky/[year]/page.tsx": [
+   "a9d0206d50cf",
+   "befc473464d9"
+  ],
+  "src/components/Applications2026Banner.tsx": [
+   "00246452c70e"
+  ],
+  "src/components/ArchivedAdmissionText.tsx": [
+   "6c4781ed9c39",
+   "cc137072b935"
+  ],
+  "src/components/RegionSchoolsTable.tsx": [
+   "53cf1950a98d",
+   "663834c46274",
+   "7e3556efec1d",
+   "9a4d9b88c31c",
+   "c00dcd8c94d2",
+   "e8b482ccea31",
+   "f2c9adeaa1d5"
+  ],
+  "src/components/SchoolResults2026.tsx": [
+   "30142251c899",
+   "e6b857e12f63",
+   "f27cd5c48865"
+  ],
+  "src/components/SchoolsPageTabs.tsx": [
+   "40b8ea9c4742",
+   "78c712731511"
+  ],
+  "src/components/admin/PasskeyTlacitka.tsx": [
+   "0539ea85f452"
+  ],
+  "src/components/nabidka/Odznaky.tsx": [
+   "cb6fcc661f87"
+  ],
+  "src/components/obor/KdeStojim.tsx": [
+   "8af532b7abfd"
+  ],
+  "src/components/obor/ProfilOboru.tsx": [
+   "151d093862ec",
+   "365f3f55c04b",
+   "58585596de85",
+   "5de8fa55d674",
+   "67e04353544e",
+   "991f123235de",
+   "bc784552fb20"
+  ],
+  "src/components/obor/ProfilUcebnihoOboru.tsx": [
+   "365f3f55c04b",
+   "dc9a14327970"
+  ],
+  "src/components/portal/PortalKriteriaForm.tsx": [
+   "c3dc2e473e8a"
+  ],
+  "src/components/school/detail/PasmaPrijetiCard.tsx": [
+   "acf8d4ffac5c"
+  ],
+  "src/components/school/detail/tabs/StatsTab.tsx": [
+   "16894e513b26",
+   "4e12e0be9d15",
+   "750ff0de8929",
+   "ec93eb875200"
+  ],
+  "src/components/school/overview/PriorityCardsGrid.tsx": [
+   "db67251088f2"
+  ],
+  "src/components/simulator/StrategiePrihlasek.tsx": [
+   "02265f893480",
+   "230a702a0cd8"
+  ],
+  "src/components/skola/NovinkySkoly.tsx": [
+   "025278824571",
+   "245f5e4f8d10",
+   "bc63eda93a0c",
+   "f84033236581"
+  ],
+  "src/components/skola/ProfilSkoly.tsx": [
+   "0bc5c6ebf28f",
+   "195cff9bfcc1",
+   "8f7aedb60742",
+   "b1d898fb0def",
+   "be4c99f22150",
+   "ccce35d21f91",
+   "d737dfd2a938"
+  ]
+ }
+}
