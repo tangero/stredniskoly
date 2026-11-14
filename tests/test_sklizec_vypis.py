@@ -57,6 +57,25 @@ VYPIS_S_RUBRIKOU = """<html><body><div class="clanky">
 </div></body></html>"""
 
 
+# Šablona WordPressu (#588): den a zkrácený měsíc bez tečky a bez roku ve dvou prvcích,
+# vedle odkaz na autora a rubriky.
+VYPIS_ZKRATKA_MESICE = """<html><body><div class="vypis">""" + "".join(
+    f"""<article class="pxl-item--archive post-{i}">
+  <div class="pxl-item--image"><a href="/{slug}/"><img src="/obr.png" alt=""></a>
+    <div class="pxl-item--date"><span class="pxl-item--date-day">{den}</span>
+      <span class="pxl-item--date-month">{mes}</span></div></div>
+  <div class="pxl-item--meta"><a href="/author/redakce/">Redakce</a> <a href="/category/archiv/">Archiv</a></div>
+  <h2 class="pxl-item--title"><a href="/{slug}/">{titulek}</a></h2>
+</article>"""
+    for i, (slug, den, mes, titulek) in enumerate([
+        ("tridni-schuzky", "05", "Lis", "Třídní schůzky"),
+        ("den-otevrenych-dveri", "21", "Říj", "Den otevřených dveří"),
+        ("exkurze", "30", "Zář", "Exkurze do elektrárny"),
+        ("ples", "14", "Pro", "Maturitní ples"),
+    ])
+) + "</div></body></html>"
+
+
 def ok(text, url=STRANKA):
     return {"text": text, "url": url, "etag": None, "modified": None}
 
@@ -91,6 +110,23 @@ class CteckaVypisu(unittest.TestCase):
         # Rok po přestupném: letos neexistuje, loni ano.
         self.assertEqual(nv.najdi_datum("29. února", date(2029, 1, 15)), date(2028, 2, 29))
         self.assertEqual(nv.najdi_datum("29. února", date(2028, 3, 1)), date(2028, 2, 29))
+
+    def test_den_a_zkratka_mesice_bez_roku(self):
+        # #588: „05“ a „Lis“ ve dvou prvcích; prosinec je v budoucnu, proto loni.
+        p = nv.precti_vypis(VYPIS_ZKRATKA_MESICE, STRANKA, date(2026, 11, 14))
+        self.assertEqual([(x["titulek"], x["datum"], x["url"]) for x in p], [
+            ("Třídní schůzky", "2026-11-05", "https://skola.example.cz/tridni-schuzky/"),
+            ("Den otevřených dveří", "2026-10-21", "https://skola.example.cz/den-otevrenych-dveri/"),
+            ("Exkurze do elektrárny", "2026-09-30", "https://skola.example.cz/exkurze/"),
+            ("Maturitní ples", "2025-12-14", "https://skola.example.cz/ples/"),
+        ])
+
+    def test_zkratka_mesice_jen_jako_samostatne_slovo(self):
+        dnes = date(2026, 11, 14)
+        self.assertEqual(nv.najdi_datum("05 Lis", dnes), date(2026, 11, 5))
+        self.assertEqual(nv.najdi_datum("3 čvc", dnes), date(2026, 7, 3))
+        self.assertIsNone(nv.najdi_datum("12 listů papíru", dnes))
+        self.assertIsNone(nv.najdi_datum("2 prosby", dnes))
 
     def test_datum_v_budoucnu_se_nebere(self):
         self.assertIsNone(nv.najdi_datum("9. 12. 2026", DNES))
