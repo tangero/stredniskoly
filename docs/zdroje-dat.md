@@ -1,6 +1,6 @@
 # Zdroje dat
 
-Verze 1.38 · 28. 10. 2026 · **Závazný soupis. Před návrhem stránky nebo funkce se prochází celý.**
+Verze 1.41 · 13. 11. 2026 · **Závazný soupis. Před návrhem stránky nebo funkce se prochází celý.**
 
 Tenhle dokument vznikl kvůli konkrétní chybě. Návrh stránky školy jsem sestavil z toho, co web už zobrazoval, místo z toho, co je ve zdrojových souborech. Tři užitečné údaje proto ležely nepoužité v souborech, které jsem měl otevřené: rozpad přihlášek podle priority jako podíl, souběžné přihlášky uchazečů a nejnižší výsledek jednotné zkoušky mezi přijatými. Poslední z nich byl dokonce už spočítaný a uložený v katalogu, zatímco [slovník ukazatelů](slovnik-ukazatelu.md) tvrdil, že ho nemáme.
 
@@ -31,12 +31,13 @@ Ukazatel se pak zavádí podle [slovníku ukazatelů](slovnik-ukazatelu.md). Ten
 | Česká školní inspekce, seznam | opendata.csicr.cz | 9 564 škol | REDIZO | snímky s manifestem |
 | Inspekční zprávy, extrakce | vlastní zpracování zpráv ČŠI | 849 škol | REDIZO | při nové zprávě |
 | INSPIS, profily škol | portál ČŠI | 1 180 škol | REDIZO | ručně |
-| CERMAT, maturitní výsledky | data.cermat.cz, XLSX | jaro 2015 až 2026, stav po podzimu do 2025 | REDIZO, volitelně + SMO16 | ročně |
+| CERMAT, maturitní výsledky | data.cermat.cz, XLSX | jaro 2015 až 2026, stav po podzimu 2015 až 2026 (soubor `MZ2026jap` ověřen 23. 10. 2026 v #370 a 13. 11. 2026 v #584) | REDIZO, volitelně + SMO16 | ročně |
 | CERMAT, školní agregáty JPZ 2017–2023 | data.cermat.cz, XLSX | 7 ročníků | REDIZO + oborová skupina | uzavřená řada |
 | CERMAT, agregáty 2. kola | data.cermat.cz, XLSX | kapacity, přihlášky, výsledky od 2024 | REDIZO + KKOV + zaměření | ročně, výsledky v září |
 | DiPSy, veřejné karty nabídky a přílohy | [DiPSy](https://dipsy.cz/), veřejná odpověď `api.dipsy.gov.cz/v1` | ověřené karty 1. kola 2025 a 2026; místně stažené přílohy pro katalog 2026, dostupnost dalších kol se mění | `id` nabídky (`source_id` v datech CERMATu) + `skolniRok` + `kolo` | průběžně podle zveřejnění škol; hromadný místní sběr 24. 9. 2026, bez veřejného importu pravidel |
 | Dopravní data | PID, GTFS ČR, jízdní řády | celá ČR | zastávka a spoj | podle vydání |
 | Harmonogram přijímacího řízení MŠMT | opis termínů z metodiky MŠMT do `src/data/admissions-2027.json` | jedno přijímací řízení, 3 skupiny a 20 událostí | identifikátor události | ručně, jednou ročně |
+| Kritéria přijetí konzervatoří, odkazy a přepis | weby konzervatoří, ručně ověřené odkazy a zkontrolovaný strojový přepis kritérií v `src/data/kriteria-konzervatori-2027.json` (zkušební běh #504) | 18 konzervatoří z `public/pro-novinare/konzervatore-skoly.csv`, odkaz u 17, přepis u 13 | REDIZO | ručně, jednou ročně po zveřejnění kritérií konzervatoří (říjen) |
 | Veletrhy a přehlídky středních škol | vlastní rešerše pořadatelů, `docs/prijimacky-veletrhy-poradatele-2026.xlsx` → tabulka `veletrh_akce` (od 26. 9. 2026, snímek `src/data/veletrhy-2027.json`) | 25 pořadatelů a vlastní rešerše rozepsané na 95 akcí, sezóna podzim 2026 | identifikátor akce | ručně, jednou ročně; průběžně z nahlášení |
 | Seznamy vystavovatelů od pořadatelů veletrhů | PDF od pořadatele, zaslané v rámci mediálního partnerství; v repozitáři neleží | zatím 1 akce: SOKRATES 1, OHK Most (`sokrates-most-2026`), 28 škol a 3 firmy | identifikátor akce + název školy a obec; RED IZO seznam nenese | při doručení od pořadatele; web z něj nic nezobrazuje |
 | RSS/Atom feedy školních webů | weby škol, sklízeč `scripts/sklizec-novinek.py` | 533 z 1 093 škol s feedem | REDIZO + GUID položky | automaticky 2× denně |
@@ -328,6 +329,8 @@ Rozdíl mezi čistou a hrubou neúspěšností je zásadní a list `vysvetlivky`
 
 **Mapa sloupců je ověřená proti listu `vysvetlivky`** (18. 9. 2026, `scripts/overeni-sloupcu-maturity.py`, doklad `docs/podklady/overeni-sloupcu-maturity.json`). Ověření se opakuje po každém novém ročníku a nekontroluje jen názvy: dopočítává podíly z počtů, takže by odhalilo i sloupec, který se jmenuje správně a nese něco jiného. Všechny čtyři dopočty sedí do posledního místa ve všech řádcích ročníků 2021 až 2026 a **schéma je ve všech šesti ročnících totožné** (98 sloupců, 8 bloků, stejné názvy). Duplicitní klíč `třídění + REDIZO + SMO16` se v žádném ročníku nevyskytuje; kontrolu na něj má od téhož data i `build-maturita-skoly.py`.
 
+**Stav po podzimním období (`MZ{rok}jap_SC_skolobory.xlsx`, sada `cermat-maturita-podzim`, od 13. 11. 2026, #584).** Ověřeno na `MZ2026jap_SC_skolobory.xlsx` 13. 11. 2026: 2 153 157 bajtů, sha256 `acaf03b5…`, shodný s ověřením v #370. Listy `2026` a `vysvetlivky`, stejná hlavička a stejné bloky jako jarní soubor, první řádek hlavičky „VÝSLEDKY PO PODZIMNÍM ZKUŠEBNÍM OBDOBÍ“. Je to kumulativní stav po jaru i podzimu, ne samostatný podzimní termín. Používáme **jen blok společné části** (`PŘIHLÁŠENI`, `KONALI`, `USPĚLI`, `NEUSPĚLI`, `NEKONALI`, `PODÍL ÚSPĚŠNÝCH (%)`, `HRUBÁ NEÚSPĚŠNOST (%)`, `NEÚČAST (%)`) do klíče `stav_po_podzimu` v `public/maturita_skoly.json`, ukazatel *Stav maturity po podzimním období*. **Nepoužíváme** předmětové bloky (čeština, matematika, cizí jazyky): po podzimu se skór a percentil míchají z obou termínů a srovnání s podobnými školami stojí na jaru; `ČISTÁ NEÚSPĚŠNOST (%)` ze stejného důvodu jako u jara.
+
 **Napojení na náš katalog je přímé.** Kódy `SMO16` jsou tytéž, jaké nese sloupec `SKUPINA OBORŮ (16)` v agregátech JPZ: GY8, GY6, GY4, LYC, ST1, ST2, SEK, SHP, SHU, SZE, SZD, SUM, UTE, UOS, NTE, NOS. Zkouška napojení z 13. 9. 2026 dopadla takto:
 
 | Výsledek | Nabídek 2026 |
@@ -369,6 +372,25 @@ V registru je jako sada `msmt-harmonogram`, období 2027, obnova nejpozději do 
 Soubor nese rok v názvu: nový ročník znamená nový soubor a přepnutí období v registru.
 
 **Blok `pravidla`** (od 29. 9. 2026, návrh simulátoru oddíl 4): `prihlasek_bezne` a `prihlasek_talentove` (počet přihlášek v 1. kole na obory bez talentové a s talentovou zkouškou, dnes 3 a 2 podle školského zákona, § 60b), `rok_pravidel` (ročník, podle kterého je počet opsán), `overeno_pro_rizeni` (false, dokud se počet neověří v metodice pro nové řízení; text pak říká „podle pravidel {rok_pravidel}“), `zdroj`, `checkedAt`, `poznamka`. Otázka rodiče: kolik oborů se vejde na přihlášku. Používá ho Simulátor přijímaček (kontrola seznamu oblíbených); počet se nepíše do kódu.
+
+
+### 2.13a Kritéria přijetí konzervatoří, odkazy a přepis (#504)
+
+`src/data/kriteria-konzervatori-2027.json`: u každé konzervatoře z rejstříku (`public/pro-novinare/konzervatore-skoly.csv`) odkaz na stránku nebo dokument, kde škola vyhlašuje kritéria přijetí pro nejbližší školní rok. Odkazy ověřuje AI ručně na webu školy (rozhoduje letopočet školního roku ve vyhlášení, ne odpověď serveru), DiPSy je k datu ověření pro konzervatoře neměla. Ukazuje je stránka `/prijimacky-2027` v oddílu konzervatoří.
+
+| Pole | Obsah | Otázka rodiče | Používáme |
+|---|---|---|---|
+| `skolniRok`, `checkedAt` | školní rok, pro který kritéria platí, a datum ověření odkazů | platí ten dokument pro můj ročník? | ano, v nadpisu a patě seznamu |
+| `redizo`, `nazev`, `obec` | identita školy (krátký název) | o kterou školu jde? | ano |
+| `obory` | obory, ke kterým škola kritéria pro ten rok zveřejnila (Hudba, Zpěv, Tanec, Současný tanec, Hudebně dramatické umění) | má škola kritéria pro můj obor? | ano |
+| `url` | stránka nebo dokument školy; `null`, když se kritéria nenašla | kde si kritéria přečtu? | ano |
+| `poznamka` | výhrada (starší kritéria ve vyhlášení, odkaz jen na úvodní stránku, nefunkční web) | můžu dokumentu věřit? | ano |
+
+| `kriteria[]` | přepis kritérií po oborech (etapy 2 a 3 #504, 13. 11. 2026): `obor`, `zdroj` (dokument pro obor, `null` = dokument v `url`), `casti[]` (`nazev`, `maxBody`, `minimum` slovy), `podminka` (kdy uchazeč talentovou zkoušku splnil), `poradi` (jak škola řadí a rozhoduje při shodě, `null`, když to dokument neuvádí) | z čeho se zkouška skládá, kolik bodů potřebuju a co rozhoduje o pořadí? | ano, rozbalovací blok u školy; body jsou ukazatel *Body talentové zkoušky konzervatoře* |
+| `kriteriaPoznamka` | proč škola přepis nemá (dokument bez kritérií, výhrada vytěžování dat, robots.txt) | proč tu chybí podrobnosti? | ano |
+| `prepis` | postup, model a datum přepisu a kontroly | jak čerstvé a spolehlivé to je? | datum kontroly v patě seznamu |
+
+Přepis vzniká skriptem `scripts/kriteria-konzervatori-prepis.py` z textu stránek a PDF škol (stažených ručně podle ohlášení v issue) do zjednodušeného schématu: konzervatoře mají jen talentovou zkoušku, schéma `dipsy-kriteria-hromadny-prepis.py` s podílem jednotné zkoušky se pro ně nehodí. Každý údaj AI zkontrolovala proti dokumentu školy a chyby modelu opravila; do souboru jde jen zkontrolovaný zápis. Zamítnuto: přílohy přihlášky, lékařské a foniatrické posudky, úpravy pro uchazeče se speciálními vzdělávacími potřebami a cizince (model je vypisuje, ale k výběru školy nepomáhají a liší se po zaměřeních), termíny zkoušek (ukazuje je kalendář nad seznamem obecně a dokument školy přesně). Sada `dipsy-kriteria` zůstává do únorové etapy #181 beze změny (mandát #504).
 
 ### 2.14 RSS/Atom feedy školních webů
 
@@ -654,7 +676,7 @@ Tohle je hlavní důvod existence dokumentu. Seřazeno podle toho, kolik by to d
 | **Školní část zkoušky a požadované přílohy** | DiPSy, `skolniCast`, `typyPriloh` | zjistit, zda je školní zkouška a co doložit | pole se neimportují; bez PDF nejsou dostatečným dokladem bodování |
 | **Živá nabídka 3. a dalších kol** | DiPSy, `/skol-oboro-forma/kolo/{kolo}` | zjistit aktuálně volná místa po 2. kole | máme historické agregáty 2. kola, ne průběžný přehled dalších kol; nabídka se mění |
 | **Souhrnné statistiky přihlášek a výsledkové soubory** | DiPSy, `/app/public-stats`, `vysledkyPrijeti` | celostátní kontext a kontrola zveřejněných výsledků | statistiky by se musely sladit s definicemi CERMATu; výsledková PDF mohou nést údaje o jednotlivcích |
-| **Celé maturitní výsledky** | `MZ{rok}j_SC_skolobory.xlsx` | „Maturitu tu v roce 2026 udělalo 100 % žáků, v češtině jsou nad 80. percentilem.“ Jediná přímá odpověď na otázku, jaké jsou tu nároky. Spárovatelné u 2 782 z 3 091 nabídek | **zpracovává se od 14. 9. 2026** přes datovou linku do `public/maturita_skoly.json` (společná část, čeština, matematika, jaro 2023–2026); cizí jazyky, stav po podzimu a roky před 2021 zamítnuty v [návrhu stránky školy](stranka-skoly-2027.md), oddíl 10. **Ročníky 2021 a 2022 zamítnuty 18. 9. 2026 měřením** (`scripts/delka-rady-maturity.py`): delší okno zařazení nezpevní ani u malých škol |
+| **Celé maturitní výsledky** | `MZ{rok}j_SC_skolobory.xlsx` | „Maturitu tu v roce 2026 udělalo 100 % žáků, v češtině jsou nad 80. percentilem.“ Jediná přímá odpověď na otázku, jaké jsou tu nároky. Spárovatelné u 2 782 z 3 091 nabídek | **zpracovává se od 14. 9. 2026** přes datovou linku do `public/maturita_skoly.json` (společná část, čeština, matematika, jaro 2023–2026); cizí jazyky a roky před 2021 zamítnuty v [návrhu stránky školy](stranka-skoly-2027.md), oddíl 10; stav po podzimu (soubor `jap`, jen společná část) se od 13. 11. 2026 zpracovává samostatně podle rozhodnutí vlastníka v #584, viz oddíl 2.11. **Ročníky 2021 a 2022 zamítnuty 18. 9. 2026 měřením** (`scripts/delka-rady-maturity.py`): delší okno zařazení nezpevní ani u malých škol |
 | Vstupní úroveň školy 2017 až 2023 | `JPZ{rok}_skoly-skolobory_vysledky.xlsx` | „Škola je dlouhodobě žádaná, není to výkyv jednoho roku.“ | soubory nejsou stažené |
 | Výsledek testu u **všech uchazečů**, nejen přijatých | data uchazečů, `c_m_procentni_skor`, vyplněno u 75 % řádků | „S 62 body byl loni v polovině těch, kdo se sem hlásili.“ Jediný způsob, jak dát dítěti vlastní číslo do kontextu | **zpracováno 13. 9. 2026**, na web zatím nenapojeno |
 | **Profil dovedností** uchazečů o obor | položková data, `b1` až `b16.x` | „Kdo se sem dostal, byl silný v porozumění textu.“ Jediný zdroj o tom, co obor vybírá | soubory nikdo nezpracoval |
@@ -807,6 +829,7 @@ _Vygenerováno z `public/stav_datovych_sad.json` dne 2026-10-17. Neupravovat ru�
 | `cermat-uchazeci-kolo2` | web | 2026 | `data/PZ2026_kolo2_uchazeci_prihlasky_vysledky.xlsx` | — | — | 2027-06, odhad | Předchozí ročník se nezobrazuje; soubor zůstává v data/ jako doklad. |
 | `cermat-polozkova-jpz` | analýza | 2025 | `data/JPZ2025_M6_polozkova_data.xlsx` | 2026 | 2027 | 2027-05, odhad | Není na webu; slouží dokladu teze 4. |
 | `cermat-maturita` | web | 2026 | `MZ2026j_SC_skolobory.xlsx` | — | — | 2027-08, odhad | Předchozí jarní ročníky zůstávají ve výstupu; stránka školy z nich počítá počet let nad skupinou oborů. |
+| `cermat-maturita-podzim` | web | nic | `Zatím nepřevzato; převezme datová linka úlohou ze souboru MZ{rok}jap (#584).` | — | 2026 | 2026-12, odhad | Stav po podzimu předchozích let zůstává ve výstupu; stránka školy ukazuje jen stav po podzimu téhož roku jako nejnovější jarní výsledky, odděleně od nich. |
 | `cermat-jpz-skoly-2017-2023` | nepoužito | nic | `Uzavřená řada, soubory nejsou stažené.` | — | — | neznámo | Nepřepíná se. |
 | `msmt-rejstrik-snimky` | web | 2026-09-30 | `data/msmt_rejstrik/rssz-2026-09-30.jsonld` | 2025-06-30, 2025-09-30 | — | 2027-01, odhad | Starší snímky zůstávají pro návaznost oborů mezi roky. |
 | `msmt-rejstrik-csv` | web | 2026-02-11 | `data/Rejstrik_skol/SkolyAMista.csv` | — | — | neznámo | Nahrazuje se celý. |
@@ -824,6 +847,7 @@ _Vygenerováno z `public/stav_datovych_sad.json` dne 2026-10-17. Neupravovat ru�
 | `cermat-prevod-testu` | web | 2024 | `` | — | 2025 | 2027-09, odhad | Testy předchozího roku zůstávají v TAU; jejich převodní tabulka zůstává v souboru prevod_testu_{rok}.json a může se nabízet dál. |
 | `dipsy-kriteria` | web | 2026 | `data/dipsy-kriteria-2026/manifest.jsonl` | — | 2027 | 2027-02, odhad | Kritéria 2026 zůstávají jen jako historie; pro rok 2027 se nesmí tiše použít. |
 | `ruian-kraje` | web | 2026-09-27 | `src/data/mapa-kraju.json` | — | — | neznámo | Nahrazuje se celý. |
+| `kriteria-konzervatori-odkazy` | web | 2027/2028 | `src/data/kriteria-konzervatori-2027.json` | — | 2028/2029 | 2027-10, odhad | Odkazy na starší školní rok se nahradí novými; staré se nezobrazují. |
 
 #### Aktualizace a automatizace
 
@@ -835,7 +859,8 @@ _Vygenerováno z `public/stav_datovych_sad.json` dne 2026-10-17. Neupravovat ru�
 | `cermat-uchazeci-kolo1` | příprava | HTTP HEAD a katalogová stránka Datové soubory. | scripts/build-pasma-prijeti.py, scripts/build-soubeh-prihlasek.py, scripts/build-kontext-prihlasek.py, po pásmech scripts/build-simulator-pasma.py (index simulátoru, čte i kritéria a katalog), po kontextu a souběhu scripts/build-okruhy-oboru.py (okruhy oborů a souběžné přihlášky podle obce, issue #277; oblasti přihlášek ze sloučených dat zobrazeného roku a dvou let před ním, linka je k novému souboru stáhne); doklad stability mezi ročníky scripts/validate-pasma-prijeti.py --rocniky STARY-NOVY. Výstupy nesou rok v názvu, registr ho drží zástupným {obdobi}, ne napevno. Pozor: scripts/enrich_schools_data.py čte sloupce podle pozice a s textovým příznakem přijetí by počítal chybně; datová linka ho nespouští a katalogové minimum se na webu nezobrazuje. | Převzetí mění čísla v dokladech tezí a na webu, proto revize výsledků validace před přepnutím. |
 | `cermat-uchazeci-kolo2` | jen detekce | HTTP HEAD. | scripts/build-pro-novinare.py (balíček uchazečů a souhrn pro /pro-novinare); vstup se ověřuje otiskem proti zobrazenému období. | Stáhnout soubor do data/, přepnout období příkazem prepni se --soubor (zapíše otisk), přegenerovat balíčky pro novináře a zkontrolovat čísla na /pro-novinare. |
 | `cermat-polozkova-jpz` | jen detekce | HTTP HEAD pro šest testů. | Jen dokladový výpočet v scripts/validate-pasma-prijeti.py. | Není na webu, převzetí podle potřeby analýzy. |
-| `cermat-maturita` | příprava | HTTP HEAD a katalogová stránka. | scripts/build-maturita-skoly.py; v datové lince zpracovatel cermat-maturita stáhne k jarnímu souboru tři předchozí jarní ročníky a doplní je do stávajícího výstupu. Stav po podzimu (jap) se nepřebírá. | Schválit úlohu, zkontrolovat počty v pull requestu, přepnout období v registru. |
+| `cermat-maturita` | příprava | HTTP HEAD a katalogová stránka. | scripts/build-maturita-skoly.py; v datové lince zpracovatel cermat-maturita stáhne k jarnímu souboru tři předchozí jarní ročníky a doplní je do stávajícího výstupu. Stav po podzimu (jap) vede samostatná sada cermat-maturita-podzim (#584). | Schválit úlohu, zkontrolovat počty v pull requestu, přepnout období v registru. |
+| `cermat-maturita-podzim` | příprava | HTTP HEAD a katalogová stránka. | scripts/build-maturita-skoly.py --podzim; v datové lince zpracovatel cermat-maturita doplní do stávajícího public/maturita_skoly.json samostatný klíč stav_po_podzimu, jarní řadu nemění (pojistka v lince). | Schválit úlohu, zkontrolovat počty v pull requestu, přepnout období v registru. |
 | `cermat-jpz-skoly-2017-2023` | neaktualizuje se | — | — | Uzavřená řada. |
 | `msmt-rejstrik-snimky` | příprava | HTTP HEAD na adresu snímku ke konci čtvrtletí. Složka nese identifikátor ročníku, který se každý rok mění (e9c07729… pro 2025, 250d6b3f… pro 2026); na přelomu roku ho je nutné dohledat v Národním katalogu otevřených dat. | Soubory se ukládají do data/msmt_rejstrik/; zpracování scripts/enrich-continuity-registry.py a scripts/build-navaznost-notes.py. | Jednou ročně dohledat identifikátor nového ročníku. Po každém přepnutí snímku spustit scripts/build-nazvy-oboru-rejstrik.py a commitnout data/msmt_rejstrik/nazvy-oboru.json; bez toho generátory souběhu a kontextu přihlášek odmítnou běžet. |
 | `msmt-rejstrik-csv` | ruční | Nelze, export z webové aplikace. | scripts/validate-pasma-prijeti.py čte SkolyAMista.csv pro převod IZO na REDIZO. | Doporučeno nahradit čtvrtletním snímkem JSON-LD, který nese IZO i REDIZO; sada by pak zanikla. |
@@ -853,6 +878,7 @@ _Vygenerováno z `public/stav_datovych_sad.json` dne 2026-10-17. Neupravovat ru�
 | `cermat-prevod-testu` | ruční | Ručně: nabídka testů v TAU se načítá až po souhlasu s cookies, strojově ji nečteme. | python3 scripts/build-prevod-testu.py | Po přepnutí cermat-uchazeci-kolo1 spustit build-prevod-testu.py; jednou ročně zkontrolovat, jestli TAU nepřidalo nový rok. |
 | `dipsy-kriteria` | ruční | python3 scripts/dipsy-kriteria-scan.py --rok 2027 --redizo … (jen dotaz po jedné škole) | scripts/dipsy-kriteria-sber.py, přepis úsporným schématem, pak python3 scripts/build-kriteria-prijeti.py | Před placeným přepisem ověřit rozpočet (limit 10 USD, docs/podklady/dipsy-kriteria-rozpocet-10-usd-2026.md). |
 | `ruian-kraje` | ruční | Nesledováno: soubor se přegenerovává denně, změna hranic kraje je vzácná a přišla by zákonem. | scripts/build-mapa-kraju.mjs --vstup 1/VUSC_P.shp --stazeno RRRR-MM-DD | Při změně hranic krajů stáhnout zip (asi 250 MB), rozbalit VUSC_P a spustit skript. |
+| `kriteria-konzervatori-odkazy` | ruční | Ručně: každá škola vyhlašuje kritéria na vlastním webu. | Ruční úprava src/data/kriteria-konzervatori-2027.json po ověření odkazů, přepis skriptem scripts/kriteria-konzervatori-prepis.py s ruční kontrolou. | Jednou ročně (říjen) projít weby konzervatoří, ověřit letopočet školního roku ve vyhlášení, přepsat odkazy a kritéria a přepis zkontrolovat proti dokumentům škol. |
 
 <!-- stav-datovych-sad:do -->
 
@@ -869,6 +895,9 @@ _Vygenerováno z `public/stav_datovych_sad.json` dne 2026-10-17. Neupravovat ru�
 
 | Verze | Změna |
 |---|---|
+| 1.41 | Stav maturity po podzimním období (`MZ{rok}jap`): nová sada `cermat-maturita-podzim`, blok společné části se používá, předmětové bloky ne (oddíl 1, oddíl 2.11, oddíl 5; #584). |
+| 1.40 | Oddíl 2.13a: přepis kritérií konzervatoří (pole `kriteria`, `kriteriaPoznamka`, `prepis`; etapy 2 a 3 #504); zamítnuté údaje přepisu zapsány. |
+| 1.39 | Nový zdroj: odkazy na kritéria přijetí konzervatoří z webů škol (oddíl 1, oddíl 2.13a, #504); všechna pole použita, obsah kritérií soubor nenese. V registru není podle mandátu #504 (sada `dipsy-kriteria` beze změny do únorové etapy #181). |
 | 1.38 | Oddíl 2.19: pole `obor_doplneny` (obor doplněný školou do nabídky 2027, #541), jen uloženo, web ho nečte; žádný nový sloupec zdroje. |
 | 1.37 | Nový zdroj: seznamy vystavovatelů od pořadatelů veletrhů (oddíl 1, oddíl 2.15a). První je seznam SOKRATES 1 od OHK Most (27. 10. 2026, 28 škol a 3 firmy), zaslaný v rámci mediálního partnerství a zveřejněný i na webu pořadatele. Oprávnění k zobrazení otevřené, v registru zatím není, web z něj nic nezobrazuje. Oddíl 2.15 a 3 opraveny: seznam vystavovatelů už „v žádném zdroji“ není, existuje pro jednu akci. |
 | 1.36 | Oddíl 2.4 a 2.19a: název školy v portálu pro školy z `identifikace.uplny_nazev` rejstříku (po ruční opravě, před katalogem), #515; tři ruční opravy názvu, které rejstřík nese shodně, odstraněny, seznam prázdný; žádný nový sloupec zdroje. |

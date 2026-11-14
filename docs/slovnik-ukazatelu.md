@@ -1,6 +1,6 @@
 # Slovník ukazatelů
 
-Verze 1.65 · 17. 10. 2026 · **Závazný soupis. Nový ukazatel se nezavádí bez zápisu sem.**
+Verze 1.67 · 13. 11. 2026 · **Závazný soupis. Nový ukazatel se nezavádí bez zápisu sem.**
 
 Každý ukazatel má jeden název, jednu definici a jeden způsob výpočtu. Když se veličina objeví na webu, v datech, v API nebo v dokumentaci, používá se jméno z tohoto soupisu. Když se způsob výpočtu změní, změní se tady a zároveň se přepíše verze.
 
@@ -551,6 +551,13 @@ Kolik procent bodů celkového hodnocení tvořila v kritériích přijetí jedn
 
 **Kde se zobrazuje:** stránka oboru, důkaz „S kolika body se kdo dostal a kde byste stáli vy“ (komponenta `KdeStojim`, jen u oboru, kde se soutěžící uchazeči nevešli), a prototyp `/prototyp/pasma`; Simulátor přijímaček (`/simulator`: krok 1, skupiny a výhrady v kroku 3). Blok kritérií jen tam, kde podle přepisu nerozhodovala jen JPZ; jinak věta, že škola přijímala podle jednotné přijímací zkoušky.
 
+### Body talentové zkoušky konzervatoře
+Části talentové zkoušky, které konzervatoř vyhlásila v kritériích přijetí, s **nejvyšším počtem bodů** a **minimem** pro postup nebo úspěch, jak je uvádí dokument školy; k tomu podmínka úspěchu a způsob pořadí slovy. Zdroj `src/data/kriteria-konzervatori-2027.json` (pole `kriteria`), přepis textu stránek a PDF škol skriptem `scripts/kriteria-konzervatori-prepis.py` a ruční kontrola každého údaje proti dokumentu školy ([zdroje dat](zdroje-dat.md), oddíl 2.13a). Nic se nedopočítává: číslo je opsané z dokumentu, jednotkou jsou body té školy (desetinné hodnoty jen tam, kde je škola uvádí). Rozsah: konzervatoře z rejstříku, obory 82-44-P až 82-47-P, školní rok podle registru (sada `kriteria-konzervatori-odkazy`).
+
+**Neříká:** Body různých škol nejsou srovnatelné (každá škola má vlastní stupnici, některé hodnotí známkou nebo slovně). Minimum není hranice přijetí: o přijetí rozhoduje pořadí a kapacita. Přepis je zkrácený (bez příloh přihlášky, posudků a úprav pro uchazeče se speciálními potřebami) a škola může dokument po kontrole změnit; platí znění školy. Nepoužívá se k řazení škol ani k výpočtu bodů uchazeče.
+
+**Kde se zobrazuje:** `/prijimacky-2027`, oddíl konzervatoří, rozbalovací blok „Jak škola hodnotí talentovou zkoušku“ u školy.
+
 ## 3. Kohorty přijatých
 
 Devět skupin přijatých podle úrovně a vyváženosti výsledku, například „Výborný matematik“ nebo „Slabší humanitní“. Definice hranic je v `public/cohort_meta.json`.
@@ -672,6 +679,15 @@ Vždy s uvedením předmětu, roku, období a velikosti vzorku.
 
 ### Období
 `jaro` nebo `stav_po_podzimu`. Soubor `jap` je stav po podzimním období, ne samostatný podzimní termín. **Obě období se nesčítají a nepřekrývají v grafu.**
+
+### Stav maturity po podzimním období
+Počty společné části maturity po jarním i podzimním zkušebním období téhož roku dohromady, jak je CERMAT zveřejňuje v souboru `MZ{rok}jap_SC_skolobory.xlsx` (list s nadpisem „VÝSLEDKY PO PODZIMNÍM ZKUŠEBNÍM OBDOBÍ“). Pole `stav_po_podzimu.skoly[redizo].roky[rok][SMO16 nebo CELKEM].spolecna_cast` v `public/maturita_skoly.json`: `registered` přihlášení, `took` konající, `passed` úspěšní, `failed` neúspěšní, `absent` nekonající, `passRate` úspěšní z přihlášených (`PODÍL ÚSPĚŠNÝCH (%)`), `grossFailureRate`, `nonParticipationRate`. Jednotka: počet osob, podíly v procentech 0 až 100. Sada `cermat-maturita-podzim`, generátor `scripts/build-maturita-skoly.py --podzim` (od 13. 11. 2026, issue #584).
+
+**Meze zveřejnění** jako u jara: pod 10 konajícími jen počty (`counts_only`), 10 až 29 s příznakem `small_sample`. Zařazení proti skupině oborů, čeština a matematika se pro tento stav nepočítají.
+
+**Na stránce školy** jen pro týž rok jako nejnovější jarní výsledky a jen po přepnutí sady v registru: věta za celou školu v hlavní kartě a tabulka „Stav po podzimním období“ po skupinách oborů; jarní věta pak nese „v jarním období“. Do grafu ani do tabulky po letech se nekreslí. Pojem v textu je „stav po podzimním období“ ([slovník pojmů](slovnik-pojmu.md)).
+
+**Neříká**, jak dopadl samotný podzimní termín, ani kolik žáků maturitu opakovalo: soubor je kumulativní stav po obou termínech. Nesčítá se s jarní řadou a nesrovnává se s jarem jako zlepšení školy; rozdíl jara a stavu po podzimu ukazuje jen to, kolik maturantů zkoušku dokončilo na podzim. Populace přihlášených se od jara může lišit.
 
 ### Odchylka od očekávaného výsledku
 Výzkumný ukazatel, který by zohlednil vstupní úroveň žáků. **Zatím neexistuje a bez validace se nepublikuje.** Nesmí se nazývat kvalitou školy ani přidanou hodnotou.
@@ -867,6 +883,8 @@ Například „Vyvážený obor“. Způsob zařazení není dohledaný. Platí 
 
 | Verze | Změna |
 |---|---|
+| 1.67 | Nový ukazatel **Stav maturity po podzimním období** (soubor CERMAT `jap`, sada `cermat-maturita-podzim`, klíč `stav_po_podzimu` v `public/maturita_skoly.json`), na stránce školy odděleně od jara (13. 11. 2026, issue #584, rozhodnutí vlastníka vyčlenit K5 z #370). Jarní ukazatele beze změny. |
+| 1.66 | Nový ukazatel **Body talentové zkoušky konzervatoře** (13. 11. 2026, issue #504, etapy 2 a 3): opsané maximum a minimum bodů částí talentové zkoušky z kritérií konzervatoří, zkontrolované proti dokumentu školy. |
 | 1.65 | *Kapacita 2. kola* a *Nevypsané 2. kolo u nenaplněného oboru*: počty přepočteny po rozšíření párování nabídek mezi koly o druhý průchod bez zaměření (17. 10. 2026, issue #282, `docs/druhe-kolo.md`, oddíl 7). Definice a výpočet ukazatelů beze změny; mění se jen to, které nabídky 1. a 2. kola se považují za tutéž: 46 místo 47 %, 618 místo 768 nabídek (37 místo 47 %). |
 | 1.64 | Nový ukazatel **Úspěšnost maturity z konajících** (`passed / took`, funkce `passRateOfTakers`), zobrazený na stránce školy vedle úspěšnosti z přihlášených se stejnými mezemi zveřejnění (17. 10. 2026, issue #375, rozhodnutí vlastníka). `passRate` beze změny. |
 | 1.63 | *Kohorta podle pozice na přihlášce* platí i pro učební obory H (skupina kategorie × první dvojčíslí KKOV, práh 30 nabídek) a umělecké M a L (skupiny souhrnů); C, E, J a P bez kohorty (12. 10. 2026, issue #244, etapa 6, rozhodnutí vlastníka). |

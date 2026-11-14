@@ -1,0 +1,12 @@
+{
+  "rocnik": "2027",
+  "otisk_kalendare": "ad7ad1cbf0b035884bd5e9e2928a908cb85647fb58550a16dc3189a3bc9c0a5e",
+  "zpravy": [
+    {
+      "zprava": "novinky/2027/prvni-zprava",
+      "soubor": "prvni-zprava.json",
+      "splatnost": "2026-11-13",
+      "konec_uzitecnosti": "2026-11-23"
+    }
+  ]
+}

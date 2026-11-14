@@ -117,8 +117,34 @@ zaměření. Do zdrojů, které stránky čtou, proto nepatří nic, co by hled�
   nad snímky zobrazených hodnot sady zapisuje jen s `--zapis` a nikdo ho zatím nepouští.
 
 
+## Souhrn hlídání škol: okno událostí a zpráva dne (#523, E5)
+
+Souhrn hlídání nemá vlastní tabulku ani účel: je to položka `obsah` ve zprávě `hlidani-RRRR-MM-DD` (jedinečný index
+odběratel + zpráva drží „nejvýš jeden za den“). Co z toho plyne:
+- **Okno událostí** se odvozuje od `polozka_odeslani.vlozeno` předchozí **odeslané** položky hlídání, ne od času
+  odeslání. Událost, která se při běhu ještě nestihla commitnout, ale má `publikovano` před začátkem běhu, se ztratí;
+  cron běží brzy ráno, zápis událostí je krátká transakce, takže riziko bereme.
+- Zpráva platí jen v den vzniku (`zprava_verze`: splatnost = konec užitečnosti). Souhrn, který se nestihl odeslat,
+  se druhý den neposílá; jeho události přejdou do dalšího souhrnu, protože okno čte jen odeslané položky.
+- **Odhlášení podle zprávy:** token v e-mailu nese id položky, a podle předpony `hlidani-` se pozná, co se ruší.
+  `smazOsirelouIdentitu` proto kontroluje i `odber_skoly`; bez toho by zrušení termínů smazalo odběratele
+  a kaskádou i hlídané školy.
+- Odkaz ze souhrnu bez odkazu v události vede na `/skola/<RED IZO>`; stránka školy bere z adresy jen předponu
+  s RED IZO a zbytek přesměruje na kanonickou adresu.
+- Kvóta: souhrny jedou z rozpočtu `celkem` jako ostatní zprávy. Po přepnutí sady (stovky škol) může souhrn jít většině
+  hlídajících najednou; strop měsíce drží `rezervujKvotu`, nad strop souhrn odejde až další den a bude platit
+  jen ten.
+
 ## Veletrhy: SQL zápis nezneplatní cache webu
 
 Akce veletrhů se čtou přes cache s tagem `veletrhy` bez časové platnosti (`src/lib/veletrhy-zdroj.ts`). Zápis do
 `veletrh_akce` přímo přes SQL (revize pro vlastníka) mimo Next.js cache nezneplatní, web ukazuje starý stav i týdny.
 Po každé SQL revizi zavolej `POST /api/veletrhy/revalidace` s `CRON_SECRET` (postup v `docs/veletrhy-api-2027.md`, #544).
+
+## Maturita: jaro a stav po podzimu sdílejí jeden soubor, ale ne sadu
+
+Stav maturity po podzimním období (soubor CERMAT `jap`) je v `public/maturita_skoly.json` pod klíčem `stav_po_podzimu`,
+vedle jarní řady, ale v registru je to samostatná sada `cermat-maturita-podzim` (#584). Jarní obnova klíč převezme
+ze stávajícího výstupu (`--zaklad`), zpracování `jap` jarní řadu nemění (pojistka v lince). Dokud sada není přepnutá,
+klíč v souboru chybí a `kontrola_obdobi` proto vrací `None`, které se shoduje s obdobím `null` v registru
+(`hodnota` v `scripts/stav-datovych-sad.py`). Web stav po podzimu ukáže jen pro týž rok jako nejnovější jaro.

@@ -1,7 +1,7 @@
 import { promises as fs } from 'fs';
 import path from 'path';
 import { zobrazeneObdobi } from '@/lib/stav-datovych-sad';
-import { jakCastoNadStredem, shrnutiMaturity, type MaturitaSkupinaRoku } from '@/lib/skola-vyklad';
+import { jakCastoNadStredem, shrnutiMaturity, stavPoPodzimu, type MaturitaSkupinaRoku, type StavPoPodzimu } from '@/lib/skola-vyklad';
 
 /**
  * Maturitní výsledky škol, public/maturita_skoly.json (scripts/build-maturita-skoly.py).
@@ -11,6 +11,11 @@ export interface MaturitaSoubor {
   meta: { roky: number[]; nejnovejsi_rok: number };
   skupiny: Record<string, Record<string, { nazev: string; schools: number; medianPercentScore: number | null; medianPercentile: number | null; percentiles: number[] }>>;
   skoly: Record<string, { nazev: string; roky: Record<string, Record<string, MaturitaSkupinaRoku>> }>;
+  /** Stav po podzimním období (soubor jap, #584): samostatně, jen společná část; s jarem se nesčítá. */
+  stav_po_podzimu?: {
+    meta: { roky: number[]; nejnovejsi_rok: number };
+    skoly: Record<string, { roky: Record<string, Record<string, MaturitaSkupinaRoku>> }>;
+  };
 }
 
 let maturitaCache: MaturitaSoubor | null | undefined;
@@ -34,6 +39,27 @@ export async function maturitaSkoly(redizo: string): Promise<MaturitaSoubor['sko
   const soubor = await nacti();
   const skola = soubor?.skoly[redizo];
   return skola && soubor ? { ...skola, soubor } : null;
+}
+
+/**
+ * Stav po podzimním období školy pro rok nejnovějších jarních výsledků; null, dokud registr sadu
+ * cermat-maturita-podzim nepřepne nebo když škola v souboru jap chybí (#584).
+ */
+export async function maturitaPoPodzimu(m: { soubor: MaturitaSoubor }, redizo: string): Promise<StavPoPodzimu | null> {
+  const obdobi = await zobrazeneObdobi('cermat-maturita-podzim');
+  return stavPoPodzimu(m.soubor.stav_po_podzimu?.skoly[redizo]?.roky, obdobi, m.soubor.meta.nejnovejsi_rok);
+}
+
+/**
+ * Totéž bez závislosti na jarním záznamu školy: škola, která je jen v souboru jap, stav po podzimu dostane také.
+ * Vrací i soubor kvůli názvům skupin oborů.
+ */
+export async function maturitaPoPodzimuSkoly(redizo: string): Promise<{ stav: StavPoPodzimu; soubor: MaturitaSoubor } | null> {
+  if (!(await zobrazeneObdobi('cermat-maturita'))) return null;
+  const soubor = await nacti();
+  if (!soubor) return null;
+  const stav = await maturitaPoPodzimu({ soubor }, redizo);
+  return stav ? { stav, soubor } : null;
 }
 
 /** Maturita školy v jedné větě přehledu: stejná věta jako v hlavičce stránky školy. */

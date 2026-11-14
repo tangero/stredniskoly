@@ -5,6 +5,7 @@ import importlib.util
 import json
 import tempfile
 import unittest
+from unittest import mock
 from pathlib import Path
 
 import openpyxl
@@ -296,10 +297,103 @@ class TestLinkaMaturita(unittest.TestCase):
                 self.uloha("https://example.test/MZ2026j_SC_skolobory.xlsx"), soubor, self.dir, {},
                 stahni_fn=lambda url, cil: (_ for _ in ()).throw(OSError("404")), stavajici=zaklad)
 
-    def test_stav_po_podzimu_se_nepreda(self):
-        vysledek = self.zpracovani.zpracuj_maturitu(
-            self.uloha("https://example.test/MZ2025jap_SC_skolobory.xlsx"), self.dir / "x.xlsx", self.dir, {})
-        self.assertEqual(vysledek["predani"], {})
+    def test_stav_po_podzimu_se_preda_bez_zmeny_jara(self):
+        """Soubor jap (#584) se doplní do stávajícího výstupu jako samostatný stav; jarní řada zůstane."""
+        jaro = self.dir / "MZ2026j_SC_skolobory.xlsx"
+        zapis_soubor(jaro, skupina_gy8())
+        zaklad = self.dir / "zaklad.json"
+        zaklad.write_text(json.dumps(bm.sestav({2026: jaro}, None), ensure_ascii=False), encoding="utf-8")
+        jap = self.dir / "MZ2026jap_SC_skolobory.xlsx"
+        zapis_soubor(jap, radky_beroun())
+        prace = self.dir / "prace"
+        prace.mkdir()
+
+        uloha = dict(self.uloha("https://example.test/MZ2026jap_SC_skolobory.xlsx"), sada="cermat-maturita-podzim")
+        with mock.patch.dict("os.environ", {"LINKA_MIN_PODIL_OBORU": "0"}):
+            vysledek = self.zpracovani.ZPRACOVATELE["cermat-maturita-podzim"](uloha, jap, prace, {}, stavajici=zaklad)
+        self.assertEqual(list(vysledek["predani"].values()), ["public/maturita_skoly.json"])
+        novy = json.loads(Path(next(iter(vysledek["predani"]))).read_text(encoding="utf-8"))
+        puvodni = json.loads(zaklad.read_text(encoding="utf-8"))
+        self.assertEqual(novy["skoly"], puvodni["skoly"])
+        self.assertEqual(novy["skupiny"], puvodni["skupiny"])
+        self.assertEqual(novy["stav_po_podzimu"]["meta"]["nejnovejsi_rok"], 2026)
+        self.assertIn("600019497", novy["stav_po_podzimu"]["skoly"])
+
+    def test_stav_po_podzimu_bez_skol_selze(self):
+        zaklad = self.dir / "zaklad.json"
+        jaro = self.dir / "MZ2026j_SC_skolobory.xlsx"
+        zapis_soubor(jaro, skupina_gy8())
+        zaklad.write_text(json.dumps(bm.sestav({2026: jaro}, None), ensure_ascii=False), encoding="utf-8")
+        jap = self.dir / "MZ2026jap_SC_skolobory.xlsx"
+        zapis_soubor(jap, [])
+        with self.assertRaises(Exception):
+            self.zpracovani.zpracuj_maturitu(
+                self.uloha("https://example.test/MZ2026jap_SC_skolobory.xlsx"), jap, self.dir, {}, stavajici=zaklad)
+
+
+def radek_pocty(trideni, redizo, smo, prihlaseni, konali, uspeli, neuspeli, nekonali):
+    """Řádek s danými počty společné části; podíly jako v souboru CERMATu (z přihlášených)."""
+    r = radek(trideni, redizo, smo, prihlaseni, 70, 10, 60)
+    i = len(IDENT)
+    r[i:i + len(CELKEM)] = [prihlaseni, konali, uspeli, neuspeli, nekonali, 100 * uspeli / prihlaseni,
+                            100 * neuspeli / konali, 100 * (prihlaseni - uspeli) / prihlaseni, 100 * nekonali / prihlaseni]
+    return r
+
+
+def radky_beroun():
+    """Kontrolní počty SZŠ Beroun ze souboru MZ2026jap ověřené v #370 (23. 10. 2026) a v #584."""
+    return [
+        radek_pocty("redizo", "600019497", "CELKEM", 52, 52, 49, 3, 0),
+        radek_pocty("redizo_smo16", "600019497", "LYC", 24, 24, 23, 1, 0),
+        radek_pocty("redizo_smo16", "600019497", "SZD", 28, 28, 26, 2, 0),
+    ]
+
+
+class TestStavPoPodzimu(unittest.TestCase):
+    """Stav po podzimním období (soubor jap, #584): samostatně, bez sčítání s jarem."""
+
+    def setUp(self):
+        self.tmp = tempfile.TemporaryDirectory()
+        self.dir = Path(self.tmp.name)
+        self.jaro = self.dir / "MZ2026j_SC_skolobory.xlsx"
+        zapis_soubor(self.jaro, skupina_gy8() + [radek("redizo", "600019497", "CELKEM", 50, 70, 10, 60)])
+        self.jap = self.dir / "MZ2026jap_SC_skolobory.xlsx"
+        zapis_soubor(self.jap, radky_beroun())
+
+    def tearDown(self):
+        self.tmp.cleanup()
+
+    def test_kontrolni_pocty_beroun(self):
+        vystup = bm.sestav({2026: self.jaro}, None, {2026: self.jap})
+        rok = vystup["stav_po_podzimu"]["skoly"]["600019497"]["roky"]["2026"]
+        pole = ("registered", "took", "passed", "failed", "absent")
+        self.assertEqual([rok["CELKEM"]["spolecna_cast"][p] for p in pole], [52, 52, 49, 3, 0])
+        self.assertEqual([rok["LYC"]["spolecna_cast"][p] for p in pole], [24, 24, 23, 1, 0])
+        self.assertEqual([rok["SZD"]["spolecna_cast"][p] for p in pole], [28, 28, 26, 2, 0])
+        self.assertEqual(vystup["stav_po_podzimu"]["meta"]["obdobi"], "stav_po_podzimu")
+        self.assertEqual(vystup["stav_po_podzimu"]["meta"]["zdroje"][0]["url"].rsplit("/", 1)[-1], "MZ2026jap_SC_skolobory.xlsx")
+
+    def test_jaro_se_nesecte_ani_neprepise(self):
+        jen_jaro = bm.sestav({2026: self.jaro}, None)
+        s_podzimem = bm.sestav({2026: self.jaro}, None, {2026: self.jap})
+        self.assertEqual(jen_jaro["skoly"], s_podzimem["skoly"])
+        self.assertEqual(jen_jaro["skupiny"], s_podzimem["skupiny"])
+        self.assertEqual(s_podzimem["skoly"]["600019497"]["roky"]["2026"]["CELKEM"]["spolecna_cast"]["registered"], 50)
+        self.assertEqual(s_podzimem["meta"]["obdobi"], "jaro")
+
+    def test_jarni_obnova_stav_po_podzimu_zachova(self):
+        s_podzimem = bm.sestav({2026: self.jaro}, None, {2026: self.jap})
+        znovu = bm.sestav({2026: self.jaro}, json.loads(json.dumps(s_podzimem)))
+        self.assertEqual(znovu["stav_po_podzimu"], s_podzimem["stav_po_podzimu"])
+
+    def test_jen_pocty_pod_deseti(self):
+        """Meze zveřejnění platí i pro stav po podzimu: pod 10 konajícími jen počty."""
+        zapis_soubor(self.jap, [radek_pocty("redizo", "600019497", "CELKEM", 8, 8, 7, 1, 0),
+                                radek_pocty("redizo_smo16", "600019497", "SZD", 8, 8, 7, 1, 0)])
+        sc = bm.sestav({2026: self.jaro}, None, {2026: self.jap})["stav_po_podzimu"]["skoly"]["600019497"]["roky"]["2026"]["CELKEM"]["spolecna_cast"]
+        self.assertEqual(sc["quality"], "counts_only")
+        self.assertNotIn("passRate", sc)
+        self.assertEqual(sc["passed"], 7)
 
 
 if __name__ == "__main__":
