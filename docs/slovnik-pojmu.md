@@ -1,6 +1,6 @@
 # Slovník pojmů
 
-Verze 1.54 · 13. 11. 2026 · **Závazný pro všechny texty na webu.** Nový pojem se na stránce nepoužije bez zápisu sem.
+Verze 1.55 · 13. 11. 2026 · **Závazný pro všechny texty na webu.** Nový pojem se na stránce nepoužije bez zápisu sem.
 
 Slovník pojmů říká, **jakými slovy mluvíme k rodičům a uchazečům**, aby tatáž věc nezněla na každé stránce jinak. Doplňuje [slovník ukazatelů](slovnik-ukazatelu.md), který říká, **jak se veličina jmenuje v datech a jak se počítá**. Kde se oba liší, platí: v datech, kódu a API název ze slovníku ukazatelů, v textu stránky pojem odsud.
 
@@ -98,6 +98,7 @@ Slovník pojmů říká, **jakými slovy mluvíme k rodičům a uchazečům**, a
 | **% bodů v testu**, **průměrný podíl bodů** | průměrný procentní skór z didaktického testu; veličina, ve které se porovnává se středem podobných škol | „průměrný podíl bodů, které maturanti v testu získali“ | skór, percentil (jsou to jiné veličiny), body (těmi se měří jednotná zkouška)  |
 | **maturitu udělalo X z Y přihlášených** | úspěšní ze všech přihlášených ke společné části (tak ji počítá CERMAT) | u rozdílu přihlášených a konajících: „1 ke zkoušce nešel“ | úspěšnost bez jmenovatele; podíl z konajících vedle počtu přihlášených (každý podíl nese svůj jmenovatel) |
 | **z těch, kdo ke zkoušce skutečně šli, ji udělalo X z Z** | úspěšní z konajících společné části (ukazatel *Úspěšnost maturity z konajících*); vždy až za větou o přihlášených | pojem se vysvětluje sám; v tabulce zkráceně „z těch, kdo šli ke zkoušce, X z Z“ | úspěšnost bez určení, z koho; z konajících (v textu pro rodiče); samostatně bez čísla z přihlášených |
+| **stav po podzimním období** | kolik přihlášených maturantů mělo společnou část za sebou po jarním a podzimním termínu téhož roku dohromady (ukazatel *Stav maturity po podzimním období*, soubor CERMAT `jap`); vždy odděleně od jarních výsledků | „stav po podzimním období říká, kolik přihlášených maturantů mělo maturitu za sebou po jaru a podzimu dohromady“; jarní věta pak nese „v jarním období“ místo „v roce“ | podzimní výsledky, výsledky podzimního termínu, opravná maturita (soubor není samostatný podzimní termín); součet jara a podzimu |
 | **jak si škola vede** | nadpis oddílu s maturitou a inspekcí | není potřeba | kvalita školy, hodnocení školy |
 | **souběžní uchazeči**, **kam se hlásí stejní uchazeči** | uchazeči, kteří měli na přihlášce tento obor i obor jiné školy | „uchazeči, kteří měli na přihlášce i tento obor“ | konkurence, konkurenční škola |
 | **směr studia** | skupina oborů podle toho, co se v nich učí, podle číselníku oborů MŠMT (první dvojčíslí kódu oboru); lycea podle předmětu, víceletá gymnázia zvlášť (`src/lib/smery-studia.ts`) | „obory seskupené podle toho, co se v nich učí, podle číselníku oborů MŠMT“; u rozcestníku vždy i to, že pořadí směrů nic neříká o obtížnosti přijetí | obor (pro celou skupinu), zaměření (to je část oboru), okruh oborů (ten vzniká z přihlášek), kategorie, žebříček |
@@ -160,6 +161,7 @@ Slovník pojmů říká, **jakými slovy mluvíme k rodičům a uchazečům**, a
 
 | Verze | Změna |
 |---|---|
+| 1.55 | Pojem **stav po podzimním období** pro stav maturity po jarním a podzimním termínu dohromady na stránce školy; nepoužívat „podzimní výsledky“ ani „opravná maturita“, jaro se s ním nesčítá (13. 11. 2026, issue #584). |
 | 1.54 | Pojem **talentová zkouška** se standardním vysvětlením pro přepis kritérií konzervatoří na `/prijimacky-2027` (13. 11. 2026, issue #504). |
 | 1.53 | Pojem **hlídání škol** pro denní souhrn změn u hlídaných škol; nepoužívat „sledování školy“, „upozornění“ (2. 11. 2026, issue #523, E5). |
 | 1.52 | Pojem **připomínky termínů** pro e-maily před termíny přijímacího řízení a jednu zprávu o výběru školy; nepoužívat „novinky“, „newsletter“, „odběr novinek“ (25. 10. 2026, issue #523, E2). |

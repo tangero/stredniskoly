@@ -200,6 +200,34 @@ export interface RokMaturity {
   stav: StavProtiSkupine | null;
 }
 
+/**
+ * Stav maturity po podzimním období (slovník ukazatelů, oddíl 5; #584): kumulativní stav po jaru i podzimu
+ * ze souboru CERMAT `jap`, ne samostatný podzimní termín. Ukazuje se jen pro týž rok jako nejnovější jarní
+ * výsledky a jen když ho registr přepnul; s jarem se nesčítá a do grafu nekreslí.
+ */
+export interface StavPoPodzimu {
+  rok: number;
+  celkem: MaturitaPredmet | null;
+  skupiny: { smo16: string; spolecnaCast: MaturitaPredmet }[];
+}
+
+export function stavPoPodzimu(
+  roky: Record<string, Record<string, MaturitaSkupinaRoku>> | undefined,
+  obdobi: string | null,
+  rokJara: number,
+): StavPoPodzimu | null {
+  if (!obdobi || Number(obdobi) !== rokJara) return null;
+  const rok = roky?.[obdobi];
+  if (!rok) return null;
+  const skupiny = Object.entries(rok)
+    .filter(([smo16, z]) => smo16 !== 'CELKEM' && z.spolecna_cast?.registered)
+    .map(([smo16, z]) => ({ smo16, spolecnaCast: z.spolecna_cast! }))
+    .sort((a, b) => b.smo16.localeCompare(a.smo16));
+  const celkem = rok.CELKEM?.spolecna_cast?.registered ? rok.CELKEM.spolecna_cast : null;
+  if (!celkem && skupiny.length === 0) return null;
+  return { rok: rokJara, celkem, skupiny };
+}
+
 /** Pod tímto počtem konajících se podíly maturity nezveřejňují (příznak `counts_only`, maturitní návrh §7). */
 export const MATURITA_PODILY_OD_KONAJICICH = 10;
 
@@ -214,6 +242,17 @@ export function passRateOfTakers(z: Pick<MaturitaPredmet, 'took' | 'passed' | 'q
   if (z.quality === 'counts_only' || z.quality === 'unavailable') return null;
   if (z.took < MATURITA_PODILY_OD_KONAJICICH || z.passed > z.took) return null;
   return (z.passed / z.took) * 100;
+}
+
+/**
+ * Šířka sloupce podílu přihlášených, kteří měli maturitu za sebou (%, 0 až 100), nebo null, když se podíl nesmí
+ * zveřejnit (`counts_only`, `unavailable`, pod deseti konajícími): pak stránka ukáže jen textové počty (#584).
+ */
+export function sirkaSloupcePodilu(z: Pick<MaturitaPredmet, 'registered' | 'took' | 'passed' | 'quality'> | null | undefined): number | null {
+  if (!z || !z.registered || z.passed === undefined) return null;
+  if (z.quality === 'counts_only' || z.quality === 'unavailable') return null;
+  if (z.took !== undefined && z.took < MATURITA_PODILY_OD_KONAJICICH) return null;
+  return Math.min(100, (z.passed / z.registered) * 100);
 }
 
 /**

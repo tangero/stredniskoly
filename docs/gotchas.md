@@ -140,3 +140,11 @@ odběratel + zpráva drží „nejvýš jeden za den“). Co z toho plyne:
 Akce veletrhů se čtou přes cache s tagem `veletrhy` bez časové platnosti (`src/lib/veletrhy-zdroj.ts`). Zápis do
 `veletrh_akce` přímo přes SQL (revize pro vlastníka) mimo Next.js cache nezneplatní, web ukazuje starý stav i týdny.
 Po každé SQL revizi zavolej `POST /api/veletrhy/revalidace` s `CRON_SECRET` (postup v `docs/veletrhy-api-2027.md`, #544).
+
+## Maturita: jaro a stav po podzimu sdílejí jeden soubor, ale ne sadu
+
+Stav maturity po podzimním období (soubor CERMAT `jap`) je v `public/maturita_skoly.json` pod klíčem `stav_po_podzimu`,
+vedle jarní řady, ale v registru je to samostatná sada `cermat-maturita-podzim` (#584). Jarní obnova klíč převezme
+ze stávajícího výstupu (`--zaklad`), zpracování `jap` jarní řadu nemění (pojistka v lince). Dokud sada není přepnutá,
+klíč v souboru chybí a `kontrola_obdobi` proto vrací `None`, které se shoduje s obdobím `null` v registru
+(`hodnota` v `scripts/stav-datovych-sad.py`). Web stav po podzimu ukáže jen pro týž rok jako nejnovější jaro.
