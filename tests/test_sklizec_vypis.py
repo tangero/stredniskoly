@@ -127,6 +127,10 @@ class CteckaVypisu(unittest.TestCase):
         self.assertEqual(nv.najdi_datum("3 čvc", dnes), date(2026, 7, 3))
         self.assertIsNone(nv.najdi_datum("12 listů papíru", dnes))
         self.assertIsNone(nv.najdi_datum("2 prosby", dnes))
+        # Review #589, N1: číslo a předložka ve větě nejsou datum.
+        self.assertIsNone(nv.najdi_datum("Vstupenky 2 pro každého", dnes))
+        self.assertIsNone(nv.najdi_datum("Vstupenky 2 Pro každého", dnes))
+        self.assertEqual(nv.najdi_datum("  14 Pro ", dnes), date(2025, 12, 14))
 
     def test_datum_v_budoucnu_se_nebere(self):
         self.assertIsNone(nv.najdi_datum("9. 12. 2026", DNES))
