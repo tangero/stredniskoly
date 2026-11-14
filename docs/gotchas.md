@@ -141,6 +141,14 @@ Akce veletrhů se čtou přes cache s tagem `veletrhy` bez časové platnosti (`
 `veletrh_akce` přímo přes SQL (revize pro vlastníka) mimo Next.js cache nezneplatní, web ukazuje starý stav i týdny.
 Po každé SQL revizi zavolej `POST /api/veletrhy/revalidace` s `CRON_SECRET` (postup v `docs/veletrhy-api-2027.md`, #544).
 
+## Školní novinky: sklízeč čte zdroje z registrů v `public/`, ne ze `skola_feed.aktivni`
+
+`scripts/sklizec-novinek.py` bere seznam zdrojů z `public/skoly_feedy.json` a `public/skoly_vypisy.json`; z tabulky
+`skola_feed` dostává jen stav (validátory, splatnost) a jen pro řádky s `aktivni`. Zdroj s `aktivni = false`, který
+v registru zůstane, se proto sklízí dál, a protože nemá stav, je splatný při každém běhu. Vyřazení zdroje se musí
+projevit v registru (u výpisů `VYRAZENE` ve `scripts/build-skoly-vypisy.py`); migrace nad `skola_feed` jen srovná
+tabulku pro stránku školy a administraci (#557).
+
 ## Maturita: jaro a stav po podzimu sdílejí jeden soubor, ale ne sadu
 
 Stav maturity po podzimním období (soubor CERMAT `jap`) je v `public/maturita_skoly.json` pod klíčem `stav_po_podzimu`,
