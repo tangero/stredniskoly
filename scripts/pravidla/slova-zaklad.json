@@ -5,9 +5,11 @@
    "6f180012170c"
   ],
   "src/app/admin/novinky-odbery/page.tsx": [
+   "05e7f5fa60fd",
    "88b6688b4435"
   ],
   "src/app/admin/page.tsx": [
+   "05e7f5fa60fd",
    "31d786d17836",
    "5a2ec0020933",
    "93f6dedff993",
@@ -33,13 +35,16 @@
   ],
   "src/app/admin/skolni-novinky/page.tsx": [
    "31d786d17836",
+   "31d786d17836",
    "8f9c4dd37c62",
+   "cec0bc40a697",
    "cec0bc40a697"
   ],
   "src/app/admin/veletrhy/rozhodnuti/page.tsx": [
    "fdbf2388fc9b"
   ],
   "src/app/admin/zabezpeceni/page.tsx": [
+   "01291e9709bc",
    "9b462c0f67e7",
    "c558846f6b91"
   ],
@@ -61,6 +66,7 @@
    "77b6224e088c"
   ],
   "src/app/api/novinky/sprava/route.ts": [
+   "77b6224e088c",
    "77b6224e088c"
   ],
   "src/app/api/portal-magic/route.ts": [
@@ -83,6 +89,7 @@
    "b859c800c6d9"
   ],
   "src/app/issues/page.tsx": [
+   "7600dc7f7873",
    "7600dc7f7873"
   ],
   "src/app/jak-vybrat-skolu/page.tsx": [
@@ -103,11 +110,11 @@
   "src/app/layout.tsx": [
    "32871d85e452"
   ],
-  "src/app/novinky/sprava/SpravaKlient.tsx": [
-   "e49b1433e71d",
-   "fa1af1ca0690"
+  "src/app/novinky/potvrzeni/PotvrzeniKlient.tsx": [
+   "050700c09219"
   ],
   "src/app/o-projektu/page.tsx": [
+   "0a35d913428a",
    "84a006fd111b",
    "d4ac5201d728",
    "f9e36559bf62"
@@ -128,8 +135,13 @@
   "src/app/prijimacky-2027/page.tsx": [
    "0aad66b58614",
    "0bcfe4bee9e3",
+   "0f26a180baaf",
    "2bc06f463fcd",
    "d22420eb760f"
+  ],
+  "src/app/priprava-na-prijimacky-2027/page.tsx": [
+   "31060c38d066",
+   "6ed51e47a945"
   ],
   "src/app/pro-novinare/page.tsx": [
    "069240453c73"
@@ -145,6 +157,7 @@
    "e7484abcb90a"
   ],
   "src/app/pro-skoly/prihlaseni/[token]/page.tsx": [
+   "1eaf8289a897",
    "1eaf8289a897",
    "a4749a4b3e1c"
   ],
@@ -172,6 +185,7 @@
    "a1ca15f731f7"
   ],
   "src/app/skola/[slug]/inspekce/page.tsx": [
+   "307982d36def",
    "a6c2b8c92bb8"
   ],
   "src/app/skola/[slug]/page.tsx": [
@@ -208,6 +222,9 @@
    "6c4781ed9c39",
    "cc137072b935"
   ],
+  "src/components/KriteriaKonzervatori.tsx": [
+   "147c18efee6b"
+  ],
   "src/components/RegionSchoolsTable.tsx": [
    "53cf1950a98d",
    "663834c46274",
@@ -224,13 +241,17 @@
   ],
   "src/components/SchoolsPageTabs.tsx": [
    "40b8ea9c4742",
-   "78c712731511"
+   "78c712731511",
+   "d21a2578601a"
   ],
   "src/components/admin/PasskeyTlacitka.tsx": [
    "0539ea85f452"
   ],
   "src/components/nabidka/Odznaky.tsx": [
    "cb6fcc661f87"
+  ],
+  "src/components/novinky/OdberFormular.tsx": [
+   "050700c09219"
   ],
   "src/components/obor/KdeStojim.tsx": [
    "8af532b7abfd"
@@ -251,6 +272,12 @@
   "src/components/portal/PortalKriteriaForm.tsx": [
    "c3dc2e473e8a"
   ],
+  "src/components/portal/ProfilUkazka.tsx": [
+   "05e7f5fa60fd"
+  ],
+  "src/components/school-profile/SchoolInfoSection.tsx": [
+   "22f8ae690832"
+  ],
   "src/components/school/detail/PasmaPrijetiCard.tsx": [
    "acf8d4ffac5c"
   ],
@@ -261,7 +288,8 @@
    "ec93eb875200"
   ],
   "src/components/school/overview/PriorityCardsGrid.tsx": [
-   "db67251088f2"
+   "db67251088f2",
+   "e8343bf5895f"
   ],
   "src/components/simulator/StrategiePrihlasek.tsx": [
    "02265f893480",
@@ -276,11 +304,15 @@
   "src/components/skola/ProfilSkoly.tsx": [
    "0bc5c6ebf28f",
    "195cff9bfcc1",
+   "6a159e73c2e3",
+   "6a159e73c2e3",
+   "77131b8fc2f8",
    "8f7aedb60742",
    "b1d898fb0def",
    "be4c99f22150",
    "ccce35d21f91",
-   "d737dfd2a938"
+   "d737dfd2a938",
+   "df833510176a"
   ]
  }
 }

@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """Kontrola 3: osobní údaje v repozitáři (pravidlo 4 v `CLAUDE.md`).
 
-Hledá e-maily mimo `example.cz` a `example.com` a čísla ve tvaru českého telefonu
+Hledá e-maily mimo `example.cz`, `example.com` a domény vyhrazené pro testy (`.test`, `.invalid`,
+`.example`) a čísla ve tvaru českého telefonu
 v `tests/`, `src/`, `scripts/`, `data/` a `docs/`. Výjimky jsou jen v
 `scripts/pravidla/povolene-kontakty.json`:
 
@@ -38,7 +39,8 @@ EMAIL = re.compile(r"[A-Za-z0-9._%+-]+@[A-Za-z0-9-]+(?:\.[A-Za-z0-9-]+)*\.[A-Za-
 TELEFON = re.compile(r"(?<![\w.])(?:\+420[  ]?\d{3}[  ]?\d{3}[  ]?\d{3}|[1-9]\d{2}[  ]\d{3}[  ]\d{3})(?!\w)")
 # Název „souboru“ v e-mailu (obrazek@2x.png) není adresa.
 PRIPONA_SOUBORU = re.compile(r"\.(png|jpe?g|svg|webp|gif|js|mjs|css|ts|avif)$", re.IGNORECASE)
-SMYSLENE_DOMENY = ("@example.cz", "@example.com")
+# Smyšlené adresy: example.cz a example.com podle pravidla 4 a domény vyhrazené pro testy a příklady (RFC 2606).
+SMYSLENE_DOMENY = ("@example.cz", "@example.com", "@example.test", ".test", ".invalid", ".example")
 
 
 def nacti_vyjimky() -> tuple[set[str], list[str]]:

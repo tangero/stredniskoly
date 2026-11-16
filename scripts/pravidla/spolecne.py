@@ -16,6 +16,7 @@ import argparse
 import hashlib
 import json
 import sys
+from collections import Counter
 from dataclasses import dataclass
 from pathlib import Path
 
@@ -54,21 +55,41 @@ def otisk(*casti: str) -> str:
     return hashlib.sha256("\x1f".join(casti).encode("utf-8")).hexdigest()[:12]
 
 
-def nacti_zaklad(soubor: Path) -> set[tuple[str, str]]:
-    """Načte zmrazený základ jako množinu dvojic (cesta, otisk)."""
+def nacti_zaklad(soubor: Path) -> Counter:
+    """Načte zmrazený základ jako počty výskytů dvojic (cesta, otisk).
+
+    Otisk zapsaný v souboru vícekrát znamená víc známých výskytů téhož nálezu v souboru.
+    """
     if not soubor.exists():
-        return set()
+        return Counter()
     data = json.loads(soubor.read_text(encoding="utf-8"))
-    return {(cesta, o) for cesta, otisky in data.get("nalezy", {}).items() for o in otisky}
+    return Counter((cesta, o) for cesta, otisky in data.get("nalezy", {}).items() for o in otisky)
 
 
 def zapis_zaklad(soubor: Path, nalezy: list[Nalez], popis: str) -> None:
-    """Přepíše základ aktuálním stavem."""
+    """Přepíše základ aktuálním stavem; opakovaný výskyt zapíše otisk opakovaně."""
     po_souborech: dict[str, list[str]] = {}
     for n in nalezy:
         po_souborech.setdefault(n.cesta, []).append(n.otisk)
-    data = {"popis": popis, "nalezy": {c: sorted(set(o)) for c, o in sorted(po_souborech.items())}}
+    data = {"popis": popis, "nalezy": {c: sorted(o) for c, o in sorted(po_souborech.items())}}
     soubor.write_text(json.dumps(data, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
+
+
+def nove_nalezy(nalezy: list[Nalez], znamy: Counter) -> list[Nalez]:
+    """Vrátí nálezy nad rámec základu.
+
+    Základ zná u každé dvojice (cesta, otisk) počet výskytů. Když jich v souboru přibude,
+    je novým nálezem každý výskyt nad tento počet (v pořadí řádků ty poslední).
+    """
+    zbyva = Counter(znamy)
+    nove = []
+    for n in nalezy:
+        klic = (n.cesta, n.otisk)
+        if zbyva[klic] > 0:
+            zbyva[klic] -= 1
+        else:
+            nove.append(n)
+    return nove
 
 
 def spust(nazev: str, zaklad: Path, hledej, popis_zakladu: str, argv: list[str] | None = None) -> int:
@@ -93,11 +114,11 @@ def spust(nazev: str, zaklad: Path, hledej, popis_zakladu: str, argv: list[str] 
         print(f"{nazev}: základ přepsán ({len(nalezy)} nálezů).")
         return 0
     znamy = nacti_zaklad(zaklad)
-    nove = [n for n in nalezy if (n.cesta, n.otisk) not in znamy]
+    nove = nove_nalezy(nalezy, znamy)
     for n in nove:
         print(f"{n.cesta}:{n.radek}: {n.popis}. Oprava: {n.oprava}")
     if nove:
-        print(f"{nazev}: {len(nove)} nových nálezů (ve zmrazeném základu je {len(znamy)}).", file=sys.stderr)
+        print(f"{nazev}: {len(nove)} nových nálezů (ve zmrazeném základu je {sum(znamy.values())}).", file=sys.stderr)
         return 1
-    print(f"{nazev}: bez nových nálezů (ve zmrazeném základu je {len(znamy)}).")
+    print(f"{nazev}: bez nových nálezů (ve zmrazeném základu je {sum(znamy.values())}).")
     return 0

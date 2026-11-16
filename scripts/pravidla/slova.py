@@ -1,13 +1,16 @@
 #!/usr/bin/env python3
 """Kontrola 1: slova ze sloupce „Nepoužívat“ slovníku pojmů (`docs/slovnik-pojmu.md`).
 
-Bere jen položky **bez podmínky**. Položky s vysvětlením v závorce nebo s doplňkem
-(„bez čísla“, „jen u 2. kola“) se strojově posoudit nedají; zůstávají na review
-a skript je vypíše jako nekontrolované.
+Bere jen položky **bez podmínky**. Položky s vysvětlením v závorce nebo s dovětkem
+(„bez čísla“, „jako nadpis“, „mimo tento popisek“) se strojově posoudit nedají; zůstávají
+na review a skript je všechny vypíše jako nekontrolované. Ostatní položky se hledají jako
+celé fráze, ať mají kolik chtějí slov („obor bez přijímaček“).
 
 Prohledává texty pro uživatele v `src/app/**` a `src/components/**` (řetězcové
-literály a text JSX, bez komentářů a testů). Shoda je na celé slovo, bez ohledu
-na velikost písmen; pádové tvary jsou ručně v `TVARY`, ne odhadem.
+literály a text JSX, bez komentářů a testů). Text JSX se kontroluje i jednoslovný
+(`<h2>Žebříček</h2>`); jednoslovný řetězec jen tehdy, když nevypadá jako technický klíč
+(má diakritiku nebo velké písmeno). Shoda je na celé slovo, bez ohledu na velikost písmen;
+pádové tvary jsou ručně v `TVARY`, ne odhadem.
 
     python3 scripts/pravidla/slova.py           # kontrola, nenulový návrat při novém nálezu
     python3 scripts/pravidla/slova.py --obnov   # vědomé přepsání základu
@@ -29,8 +32,13 @@ ZAKLAD = spolecne.SLOZKA / "slova-zaklad.json"
 SLOZKY = ("src/app", "src/components")
 PRIPONY = {".ts", ".tsx"}
 
-# Slova, kvůli kterým je položka podmíněná („bez čísla“, „jen u 2. kola“).
-PODMINKY = {"bez", "u", "jen", "pro", "jako", "když", "mimo", "před", "nad", "vedle", "ne", "to", "samotné", "vyjma", "jen", "v"}
+# Položka je podmíněná, když má vysvětlení nebo značku (závorka, středník, uvozovky, zvýraznění),
+# začíná podmínkou („u čehokoli jiného…“, „mimo přehled“), nebo končí dovětkem („kritéria bez roku“).
+# Samotná předložka uvnitř fráze („obor bez přijímaček“) podmínkou není.
+ZNAKY_PODMINKY = "();*[]„“"
+ZACATEK_PODMINKY = re.compile(r"^(?:u|mimo|jako|bez|jen|samotn[éáý])\s", re.IGNORECASE)
+DOVETEK = re.compile(
+    r"\s(?:bez\s+(?:čísla|roku|kola|určení|upřesnění|jmenovatele)|jako|mimo|jen\s+u)(?:\s|$)", re.IGNORECASE)
 
 # Pádové tvary položek, které se v textu běžně skloňují. Rozšiřuj podle nálezů, ne odhadem.
 TVARY: dict[str, list[str]] = {
@@ -46,13 +54,54 @@ TVARY: dict[str, list[str]] = {
 }
 
 
-def _texty_radku():
-    """Načte `texty_radku` z `scripts/kontrola-letopoctu.py` (název souboru má pomlčku)."""
+def _letopocty():
+    """Načte modul `scripts/kontrola-letopoctu.py` (název souboru má pomlčku) kvůli vzorcům textu."""
     cesta = spolecne.KOREN / "scripts" / "kontrola-letopoctu.py"
     spec = importlib.util.spec_from_file_location("kontrola_letopoctu", cesta)
     modul = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(modul)
-    return modul.texty_radku
+    return modul
+
+
+_L = _letopocty()
+KOMENTAR_NA_RADKU = re.compile(r"\{?/\*.*?\*/\}?")
+DIAKRITIKA_NEBO_VELKE = re.compile(r"[A-ZÁ-Žá-ž]")
+
+
+def je_podminena(polozka: str) -> bool:
+    """Pozná položku slovníku, kterou nejde posoudit strojově (má podmínku nebo vysvětlení)."""
+    return (any(z in polozka for z in ZNAKY_PODMINKY)
+            or bool(ZACATEK_PODMINKY.search(polozka)) or bool(DOVETEK.search(polozka)))
+
+
+def texty_souboru(obsah: str):
+    """Vrátí dvojice (číslo řádku, text), které se mohou zobrazit uživateli.
+
+    Na rozdíl od kontroly letopočtů nevyžaduje větu: zakázané slovo může stát samo jako nadpis
+    nebo štítek. Komentáře (řádkové, blokové i JSX `{/* … */}`, i přes víc řádků) se vynechají.
+    """
+    v_komentari = False
+    for cislo, radek in enumerate(obsah.splitlines(), 1):
+        if v_komentari:
+            if "*/" not in radek:
+                continue
+            radek = radek.split("*/", 1)[1]
+            v_komentari = False
+        radek = KOMENTAR_NA_RADKU.sub(" ", radek)
+        holy = radek.strip()
+        if holy.startswith(("/*", "{/*")):
+            v_komentari = True
+            continue
+        if holy.startswith(("//", "*")):
+            continue
+        bez_komentare = radek.split("//")[0]
+        for m in _L.RETEZEC.finditer(bez_komentare):
+            text = next(c for c in m.groups() if c is not None)
+            if _L.je_veta(text) or (text.strip() and DIAKRITIKA_NEBO_VELKE.search(text) and re.fullmatch(r"[^\W\d_]+", text.strip())):
+                yield cislo, text
+        for text in _L.JSX_TEXT.findall(_L.RETEZEC.sub(" ", bez_komentare)):
+            if re.search(r"[^\W\d_]{3}", text):
+                yield cislo, text
 
 
 def nacti_slovnik() -> tuple[list[str], list[str]]:
@@ -73,8 +122,7 @@ def nacti_slovnik() -> tuple[list[str], list[str]]:
             polozka = polozka.strip()
             if not polozka:
                 continue
-            slova = polozka.split()
-            if any(z in polozka for z in "();*[]") or len(slova) > 3 or PODMINKY & {s.lower() for s in slova}:
+            if je_podminena(polozka):
                 nekontrolovane.append(polozka)
             else:
                 kontrolovana.append(polozka.lower())
@@ -94,30 +142,29 @@ def hledej() -> list[Nalez]:
     """Projde texty stránek a vrátí nálezy zakázaných slov."""
     slova, _ = nacti_slovnik()
     vz = vzorce(slova)
-    texty_radku = _texty_radku()
     nalezy: list[Nalez] = []
     for slozka in SLOZKY:
         for soubor in sorted((KOREN / slozka).rglob("*")):
             if soubor.suffix not in PRIPONY or ".test." in soubor.name:
                 continue
             cesta = soubor.relative_to(KOREN).as_posix()
-            for cislo, radek in enumerate(soubor.read_text(encoding="utf-8").splitlines(), 1):
-                for text in texty_radku(radek):
-                    for slovo, vzor in vz:
-                        if vzor.search(text):
-                            nalezy.append(Nalez(
-                                cesta, cislo,
-                                f"text stránky obsahuje „{slovo}“, které slovník pojmů zakazuje",
-                                f"použij pojem z prvního sloupce slovníku (docs/slovnik-pojmu.md) místo „{slovo}“",
-                                spolecne.otisk(slovo, text.strip()),
-                            ))
+            for cislo, text in texty_souboru(soubor.read_text(encoding="utf-8")):
+                for slovo, vzor in vz:
+                    if vzor.search(text):
+                        nalezy.append(Nalez(
+                            cesta, cislo,
+                            f"text stránky obsahuje „{slovo}“, které slovník pojmů zakazuje",
+                            f"použij pojem z prvního sloupce slovníku (docs/slovnik-pojmu.md) místo „{slovo}“",
+                            spolecne.otisk(slovo, text.strip()),
+                        ))
     return nalezy
 
 
 def main(argv: list[str] | None = None) -> int:
     _, nekontrolovane = nacti_slovnik()
-    print(f"Nekontrolováno strojově ({len(nekontrolovane)} podmíněných položek, hlídá je review): "
-          + "; ".join(nekontrolovane[:8]) + (" …" if len(nekontrolovane) > 8 else ""))
+    print(f"Nekontrolováno strojově ({len(nekontrolovane)} podmíněných položek, hlídá je review):")
+    for polozka in nekontrolovane:
+        print(f"  - {polozka}")
     return spolecne.spust(
         "kontrola slov ze slovníku pojmů", ZAKLAD, hledej,
         "Zmrazený stav nálezů zakázaných slov (otisky). Úklid postupně; obnova jen přes --obnov s odůvodněním v commitu.",

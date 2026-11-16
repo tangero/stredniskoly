@@ -47,6 +47,16 @@ class DnesniStav(unittest.TestCase):
         self.assertIn("zájemci", kontrolovana)
         self.assertNotIn("žáci", kontrolovana)  # „žáci (před přijetím)“ je podmíněné
         self.assertTrue(any(p.startswith("žáci") for p in nekontrolovane))
+        for polozka in nekontrolovane:  # K3: vypsaná je každá, ne jen prvních pár
+            self.assertIn(f"  - {polozka}\n", vystup)
+
+    def test_podminka_je_dovetek_ne_predlozka_uvnitr_fraze(self):
+        kontrolovana, nekontrolovane = slova.nacti_slovnik()
+        self.assertIn("obor bez přijímaček", kontrolovana)
+        self.assertIn("kritéria bez roku", nekontrolovane)
+        self.assertTrue(slova.je_podminena("hranice přijetí mimo tento popisek"))
+        self.assertTrue(slova.je_podminena("u čehokoli jiného než u potvrzeného údaje"))
+        self.assertFalse(slova.je_podminena("dali přednost jiné škole"))
 
 
 class NoveSlovo(unittest.TestCase):
@@ -65,6 +75,39 @@ class NoveSlovo(unittest.TestCase):
                 slova.KOREN = puvodni
         self.assertEqual([(n.cesta, n.radek) for n in nalezy], [("src/app/x.tsx", 1)])
         self.assertIn("Oprava", f"{nalezy[0].popis}. Oprava: {nalezy[0].oprava}")
+
+    def _hledej(self, obsah: str):
+        with tempfile.TemporaryDirectory() as tmp:
+            kor = Path(tmp)
+            (kor / "src" / "app").mkdir(parents=True)
+            (kor / "src" / "app" / "x.tsx").write_text(obsah, encoding="utf-8")
+            puvodni = slova.KOREN
+            slova.KOREN = kor
+            try:
+                return [n.radek for n in slova.hledej()]
+            finally:
+                slova.KOREN = puvodni
+
+    def test_samotne_slovo_v_nadpisu_a_viceslovna_fraze_jsou_nalez(self):
+        radky = self._hledej(
+            "<h2>Žebříček</h2>\n"
+            "const stitek = 'Žebříček';\n"
+            "const t = 'Obor bez přijímaček v nabídce';\n"
+            "const klic = 'export';\n"
+            "<div className=\"top\">text</div>\n")
+        self.assertEqual(radky, [1, 2, 3])
+
+    def test_komentare_nejsou_text_stranky(self):
+        radky = self._hledej(
+            "{/* 'konkurence škol' */}\n"
+            "/* 'Žebříček škol v kraji'\n"
+            "   'Žebříček škol v kraji' */\n"
+            "{/*\n"
+            "  <p>Žebříček</p>\n"
+            "*/}\n"
+            "// 'Žebříček škol v kraji'\n"
+            "const a = 1; /* 'Žebříček škol v kraji' */ const b = 'Žebříček škol v kraji';\n")
+        self.assertEqual(radky, [8])
 
     def test_css_trida_top_neni_nalez(self):
         vz = dict(slova.vzorce(["top"]))
@@ -98,6 +141,7 @@ class NovyOsobniUdaj(unittest.TestCase):
 
     def test_smyslene_domeny_soubor_obrazku_a_holych_devet_cislic_nejsou_nalez(self):
         self.assertEqual(self._hledej(f"skola{A}example.cz a{A}example.com logo{A}2x.png id 123456789", "{}"), [])
+        self.assertEqual(self._hledej(f"rodic{A}example.test a{A}skola.test b{A}neco.invalid c{A}skola.example", "{}"), [])
 
     def test_povolena_adresa_a_soubor_jsou_vyjimka(self):
         v = '{"adresy":[{"adresa":"Info' + A + 'Projekt.cz","duvod":"x"}],"soubory":[]}'
@@ -123,6 +167,21 @@ class Zaklad(unittest.TestCase):
                 self.assertEqual(spolecne.spust("t", zaklad, lambda: [n], "p", ["--obnov"]), 0)
                 self.assertEqual(spolecne.spust("t", zaklad, lambda: [n], "p", []), 0)
             self.assertIn("a.ts:3: popis. Oprava: oprava", ven.getvalue())
+
+    def test_dalsi_vyskyt_tehoz_nalezu_v_souboru_je_novy_nalez(self):
+        o = spolecne.otisk("x")
+        prvni = spolecne.Nalez("a.md", 3, "popis", "oprava", o)
+        druhy = spolecne.Nalez("a.md", 9, "popis", "oprava", o)
+        with tempfile.TemporaryDirectory() as tmp:
+            zaklad = Path(tmp) / "z.json"
+            ven = io.StringIO()
+            with contextlib.redirect_stdout(ven), contextlib.redirect_stderr(io.StringIO()):
+                self.assertEqual(spolecne.spust("t", zaklad, lambda: [prvni], "p", ["--obnov"]), 0)
+                self.assertEqual(spolecne.spust("t", zaklad, lambda: [prvni, druhy], "p", []), 1)
+                self.assertIn("a.md:9: popis", ven.getvalue())
+                self.assertNotIn("a.md:3: popis", ven.getvalue())
+                self.assertEqual(spolecne.spust("t", zaklad, lambda: [prvni, druhy], "p", ["--obnov"]), 0)
+                self.assertEqual(spolecne.spust("t", zaklad, lambda: [prvni, druhy], "p", []), 0)
 
     def test_zaklad_neobsahuje_text_nalezu(self):
         for soubor in ("slova-zaklad.json", "osobni-udaje-zaklad.json"):
