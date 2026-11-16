@@ -6,6 +6,7 @@ Podrobná dokumentace jednotlivých oblastí projektu. Nový dokument zapiš sem
 - [Gotchas](gotchas.md) — neočekávané chování a předpoklady, které nejsou vidět z kódu
 - [Slovník ukazatelů](slovnik-ukazatelu.md) — závazné názvy, definice a výpočty všech čísel na webu
 - [Slovník pojmů](slovnik-pojmu.md) — závazné pojmy pro texty na webu, jejich vysvětlení při prvním výskytu a zakázaná slova
+- [Kontroly pravidel](kontroly-pravidel.md) — deterministické kontroly pravidel projektu v `scripts/pravidla/` (slova ze slovníku pojmů, osobní údaje), zmrazený základ
 - [Zdroje dat](zdroje-dat.md) — zdrojové soubory sloupec po sloupci a registr stavu datových sad
 - [Datová linka](datova-linka.md) — zjištění, zpracování, oznámení a schválení nových dat
 - [Druhé kolo](druhe-kolo.md) — zobrazení 2. kola přijímacího řízení

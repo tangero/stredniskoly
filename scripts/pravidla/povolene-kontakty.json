@@ -1,0 +1,47 @@
+{
+ "popis": "Výjimky z kontroly osobních údajů. Adresy: veřejné adresy projektu a úřadů s důvodem. Soubory: kontakty z oficiálních zdrojů dat (výjimka podle souboru, ne podle adresy). Nová výjimka patří do PR s odůvodněním.",
+ "adresy": [
+  {
+   "adresa": "eda@prijimackynaskolu.cz",
+   "duvod": "Veřejná adresa projektu (doména prijimackynaskolu.cz), ne osobní údaj."
+  },
+  {
+   "adresa": "eduarda@prijimackynaskolu.cz",
+   "duvod": "Veřejná adresa projektu (doména prijimackynaskolu.cz), ne osobní údaj."
+  },
+  {
+   "adresa": "noreply@prijimackynaskolu.cz",
+   "duvod": "Veřejná adresa projektu (doména prijimackynaskolu.cz), ne osobní údaj."
+  },
+  {
+   "adresa": "novinky@prijimackynaskolu.cz",
+   "duvod": "Veřejná adresa projektu (doména prijimackynaskolu.cz), ne osobní údaj."
+  },
+  {
+   "adresa": "redakce@prijimackynaskolu.cz",
+   "duvod": "Veřejná adresa projektu (doména prijimackynaskolu.cz), ne osobní údaj."
+  },
+  {
+   "adresa": "upozorneni@novinky.prijimackynaskolu.cz",
+   "duvod": "Veřejná adresa projektu (doména prijimackynaskolu.cz), ne osobní údaj."
+  }
+ ],
+ "soubory": [
+  {
+   "cesta": "data/portal/emaily.json",
+   "duvod": "Předpoklad k ověření vlastníkem: mapa kontaktů škol z rejstříku pro přihlášení do portálu (čte ji src/lib/portal-magic.ts)."
+  },
+  {
+   "cesta": "data/sondy/",
+   "duvod": "Předpoklad k ověření vlastníkem: výstupy sond nad veřejnými weby škol a InspIS; kontakty jsou součást zdrojových stránek."
+  },
+  {
+   "cesta": "data/inspis_school_profiles.json",
+   "duvod": "Profily škol z veřejného InspIS; kontakty jsou součást zdroje."
+  },
+  {
+   "cesta": "docs/podklady/seo-audit-2026-09-20/",
+   "duvod": "Výpis prohlídky veřejného webu projektu a odkazů z něj."
+  }
+ ]
+}
