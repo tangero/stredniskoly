@@ -26,7 +26,7 @@ test('sitemapa sjednotí obory a publikuje jen jednu existující inspekci škol
   assert.deepEqual(paths.filter(p => p.endsWith('/inspekce')), ['/skola/100-skola-praha/inspekce']);
   assert.ok(paths.includes('/skola/100-skola-praha-gymnazium-jazyky'));
   assert.ok(!paths.includes('/skola/100-skola-praha-gymnazium'));
-  for (const p of ['/mesto', '/mesto/praha', '/regiony/hlavni-mesto-praha', '/vysledky/2025']) assert.ok(paths.includes(p));
+  for (const p of ['/mesto', '/mesto/praha', '/regiony/hlavni-mesto-praha', '/vysledky/2025', '/priprava-na-prijimacky-2027']) assert.ok(paths.includes(p));
   for (const p of ['/regiony/praha', '/praha-dostupnost', '/moje-sance']) assert.ok(!paths.includes(p));
   // Krajské podstránky veletrhů (#545): všech 14 krajů, ne jen kraje s katalogem škol.
   assert.equal(paths.filter(p => /^\/veletrhy\/[a-z-]+$/.test(p) && p !== '/veletrhy/nahlasit').length, 14);
