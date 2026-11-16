@@ -1,0 +1,4 @@
+{
+ "popis": "Zmrazený stav nálezů síťových volání (cesty a otisky domén). Dnešní domény jsou v povolene-servery.json, základ je proto prázdný; obnova jen přes --obnov s odůvodněním v commitu.",
+ "nalezy": {}
+}

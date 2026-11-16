@@ -1,0 +1,120 @@
+{
+ "popis": "Domény, které smí být v adresách v kódu volajícím síť (src/, scripts/). Stav při zavedení kontroly 4 (#559, E2); nová doména jen podle zadání a se zápisem do docs/zdroje-dat.md.",
+ "servery": [
+  {
+   "domena": "api.dipsy.gov.cz",
+   "ucel": "Kritéria přijetí a nabídka oborů z DiPSy (skripty dipsy-*).",
+   "dokumentace": "docs/zdroje-dat.md"
+  },
+  {
+   "domena": "data.cermat.cz",
+   "ucel": "Agregovaná data CERMAT o přijímacím řízení a maturitě.",
+   "dokumentace": "docs/zdroje-dat.md"
+  },
+  {
+   "domena": "portal.csicr.cz",
+   "ucel": "Sonda portálu InspIS ČŠI.",
+   "dokumentace": "docs/zdroje-dat.md"
+  },
+  {
+   "domena": "data.pid.cz",
+   "ucel": "Jízdní řády PID pro dostupnost škol v Praze.",
+   "dokumentace": "docs/zdroje-dat.md"
+  },
+  {
+   "domena": "pid.cz",
+   "ucel": "Odkaz na zdroj jízdních řádů PID v odpovědi dostupnosti.",
+   "dokumentace": "docs/zdroje-dat.md"
+  },
+  {
+   "domena": "services.cuzk.gov.cz",
+   "ucel": "Hranice krajů z ČÚZK pro mapu krajů.",
+   "dokumentace": "docs/zdroje-dat.md"
+  },
+  {
+   "domena": "chromeuxreport.googleapis.com",
+   "ucel": "Rychlost stránek z CrUX pro týdenní signály.",
+   "dokumentace": "docs/zdroje-dat.md"
+  },
+  {
+   "domena": "ma.hlidacstatu.cz",
+   "ucel": "Matomo: návštěvnost webu pro přehledy a signály.",
+   "dokumentace": "docs/zdroje-dat.md"
+  },
+  {
+   "domena": "www.prijimackynaskolu.cz",
+   "ucel": "Vlastní web: ověření produkce, dostupnost a absolutní adresy v oznámeních.",
+   "dokumentace": "docs/zdroje-dat.md"
+  },
+  {
+   "domena": "nominatim.openstreetmap.org",
+   "ucel": "Geokódování adres (poloha škol, našeptávač adresy).",
+   "dokumentace": "docs/dojezdovost-postup.md"
+  },
+  {
+   "domena": "ares.gov.cz",
+   "ucel": "Dohledání školy v ARES podle IČO.",
+   "dokumentace": "docs/INSPIS_MISSING_DATA.md"
+  },
+  {
+   "domena": "openrouter.ai",
+   "ucel": "Přepis kritérií a čtení novinek modelem (placená služba, schválená zadáním).",
+   "dokumentace": "docs/predani-kriteria-prijeti-2026-09-25.md"
+  },
+  {
+   "domena": "api.fetch.tinyfish.ai",
+   "ucel": "Čtení výpisů aktualit škol bez RSS.",
+   "dokumentace": "docs/sonda-mimo-rss-2026.md"
+  },
+  {
+   "domena": "api.exa.ai",
+   "ucel": "Jednorázová sonda služeb pro čtení webů škol bez RSS.",
+   "dokumentace": "docs/sonda-mimo-rss-2026.md"
+  },
+  {
+   "domena": "api.parallel.ai",
+   "ucel": "Jednorázová sonda služeb pro čtení webů škol bez RSS.",
+   "dokumentace": "docs/sonda-mimo-rss-2026.md"
+  },
+  {
+   "domena": "api.resend.com",
+   "ucel": "Odesílání e-mailů (odběry, portál škol, hlášení chyb).",
+   "dokumentace": "docs/oznameni-opravy-oznamovateli.md"
+  },
+  {
+   "domena": "api.telegram.org",
+   "ucel": "Zprávy vlastníkovi z brány, přehledů a monitoringu.",
+   "dokumentace": "docs/monitoring-produkce.md"
+  },
+  {
+   "domena": "api.github.com",
+   "ucel": "GitHub API tohoto repozitáře (brána, přehledy, hlášení chyb).",
+   "dokumentace": "docs/spoluprace-na-githubu.md"
+  },
+  {
+   "domena": "github.com",
+   "ucel": "Odkazy na issues a PR ve zprávách; není volání dat.",
+   "dokumentace": "docs/spoluprace-na-githubu.md"
+  },
+  {
+   "domena": "www.hlidacstatu.cz",
+   "ucel": "Odkaz v hlavičce webu; není volání.",
+   "dokumentace": "src/components/Header.tsx"
+  },
+  {
+   "domena": "www.vibecoding.cz",
+   "ucel": "Odkaz v propagačním bloku; není volání.",
+   "dokumentace": "src/components/VibecordingPromo.tsx"
+  },
+  {
+   "domena": "creativecommons.org",
+   "ucel": "Odkaz na text licence; není volání.",
+   "dokumentace": "src/components/portal/PortalEditForm.tsx"
+  },
+  {
+   "domena": "www.w3.org",
+   "ucel": "Jmenný prostor SVG; není volání.",
+   "dokumentace": "src/components/Header.tsx"
+  }
+ ]
+}

@@ -1,0 +1,87 @@
+{
+ "popis": "Zmrazený stav: výskyty ukazatelů bez doloženého výpočtu v src/ (cesty a otisky). Úklid postupně; obnova jen přes --obnov s odůvodněním v commitu.",
+ "nalezy": {
+  "src/app/api/dostupnost/route.ts": [
+   "9a38bc7459d7",
+   "9a38bc7459d7",
+   "9a38bc7459d7",
+   "9a38bc7459d7"
+  ],
+  "src/app/api/praha-dostupnost/route.ts": [
+   "9a38bc7459d7",
+   "9a38bc7459d7",
+   "9a38bc7459d7",
+   "9a38bc7459d7"
+  ],
+  "src/app/api/school-details/[id]/route.ts": [
+   "9a38bc7459d7",
+   "9a38bc7459d7",
+   "9a38bc7459d7"
+  ],
+  "src/app/mesto/[mesto]/page.tsx": [
+   "9a38bc7459d7"
+  ],
+  "src/app/skoly/page.tsx": [
+   "9a38bc7459d7",
+   "9a38bc7459d7"
+  ],
+  "src/components/RegionSchoolsTable.tsx": [
+   "9a38bc7459d7",
+   "9a38bc7459d7",
+   "9a38bc7459d7",
+   "9a38bc7459d7",
+   "9a38bc7459d7",
+   "9a38bc7459d7",
+   "9a38bc7459d7",
+   "9a38bc7459d7",
+   "9a38bc7459d7",
+   "9a38bc7459d7",
+   "9a38bc7459d7",
+   "9a38bc7459d7",
+   "9a38bc7459d7",
+   "9a38bc7459d7",
+   "9a38bc7459d7",
+   "9a38bc7459d7"
+  ],
+  "src/components/SchoolsPageTabs.tsx": [
+   "9a38bc7459d7"
+  ],
+  "src/components/mesto/SkolyPodleSmeru.tsx": [
+   "9a38bc7459d7",
+   "9a38bc7459d7",
+   "9a38bc7459d7",
+   "9a38bc7459d7",
+   "9a38bc7459d7"
+  ],
+  "src/lib/data.ts": [
+   "7ca158dc8b04",
+   "9a38bc7459d7",
+   "9a38bc7459d7",
+   "9a38bc7459d7",
+   "e8bffc33e498"
+  ],
+  "src/lib/mesto-karty.ts": [
+   "9a38bc7459d7",
+   "9a38bc7459d7"
+  ],
+  "src/lib/obor-profil-data.ts": [
+   "9a38bc7459d7",
+   "9a38bc7459d7"
+  ],
+  "src/lib/popularity.ts": [
+   "9a38bc7459d7",
+   "9a38bc7459d7"
+  ],
+  "src/lib/priorities/calculations.ts": [
+   "9a38bc7459d7",
+   "9a38bc7459d7",
+   "9a38bc7459d7",
+   "9a38bc7459d7"
+  ],
+  "src/types/school.ts": [
+   "7ca158dc8b04",
+   "9a38bc7459d7",
+   "e8bffc33e498"
+  ]
+ }
+}
