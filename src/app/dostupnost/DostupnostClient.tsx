@@ -635,10 +635,10 @@ export function DostupnostClient() {
                 <span className="font-medium text-slate-700">Legenda:</span>
                 <span>Body prům = průměrné body JPZ (CJ+MA, max 100)</span>
                 <span className="flex items-center gap-1">
-                  <InfoTooltip title="Konkurence (Index poptávky)">
-                    Poměr přihlášek ke kapacitě. Pod 1,5× = nízká, 1,5-3× = střední, nad 3× = vysoká konkurence.
+                  <InfoTooltip title="Přihlášky na místo">
+                    Počet přihlášek děleno počtem míst: pod 1,5× málo, 1,5-3× středně, nad 3× hodně. Jeden uchazeč podává víc přihlášek, proto toto číslo konkurenci nadsazuje.
                   </InfoTooltip>
-                  Konkurence = přihlášky / kapacita
+                  Přihlášky na místo = přihlášky / kapacita
                 </span>
                 <span className="flex items-center gap-1">
                   <span className="inline-block w-3 h-3 rounded bg-emerald-100" /> &lt;30
@@ -732,8 +732,8 @@ export function DostupnostClient() {
                               </th>
                               <th className="text-center px-3 py-2 font-medium">
                                 Poptávka 2025
-                                <InfoTooltip title="Index konkurence">
-                                  Poměr přihlášek ke kapacitě. Nad 3× = vysoká konkurence.
+                                <InfoTooltip title="Přihlášky na místo">
+                                  Počet přihlášek děleno počtem míst; nad 3× je to hodně. Jeden uchazeč podává víc přihlášek, proto toto číslo konkurenci nadsazuje.
                                 </InfoTooltip>
                               </th>
                             </tr>
