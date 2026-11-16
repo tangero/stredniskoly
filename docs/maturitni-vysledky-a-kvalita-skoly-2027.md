@@ -360,7 +360,7 @@ Výsledek backtestu z prototypu není důkaz; je to vstup pro metodickou oponent
 
 | Krok z §9 | Stav | Kde |
 |---|---|---|
-| 1. Audit zdrojů a ETL | **hotovo** pro jaro 2023–2026; zpracovatel stahuje k jarnímu souboru tři předchozí ročníky a `jap` nepřebírá | `scripts/build-maturita-skoly.py`, `scripts/linka/zpracovani.py` |
+| 1. Audit zdrojů a ETL | **hotovo** pro jaro 2023–2026; zpracovatel stahuje k jarnímu souboru tři předchozí ročníky; `jap` od 13. 11. 2026 jen jako samostatný stav po podzimu (společná část, sada `cermat-maturita-podzim`, #584) | `scripts/build-maturita-skoly.py`, `scripts/linka/zpracovani.py` |
 | 2. Datový profil | **hotovo** v podobě výstupu s oddílem `skupiny` a mezemi zveřejnění | `public/maturita_skoly.json` |
 | 3. Popisný profil školy | **hotovo**: úspěšnost společné části s jmenovatelem, percentil z češtiny, dvojice „podíl volby matematiky a percentil“, vývoj po letech | `src/components/skola/ProfilSkoly.tsx`, `src/lib/skola-profil-data.ts` |
 | 4. Kontextové srovnání | **hotovo**: medián skupiny `SMO16` a kvalifikátor z intervalu `±1,96 · SE` podle §5.2, prahy `n < 10` a `n < 30` | `scripts/build-maturita-skoly.py`, slovník ukazatelů, heslo *Zařazení proti skupině oborů* |

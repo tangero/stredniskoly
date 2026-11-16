@@ -202,6 +202,12 @@ async function jeAdresatZpusobily(s: Spojeni, p: Polozka): Promise<boolean> {
     );
     return v.rowCount > 0;
   }
+  // Souhrn hlídání škol (zpráva `hlidani-RRRR-MM-DD`) potřebuje aspoň jednu
+  // hlídanou školu; odběr termínů mu nestačí a naopak (P4 zadání #523).
+  if (p.zprava.startsWith('hlidani-')) {
+    const h = await s.dotaz(`select 1 from odber_skoly where odberatel_id = $1 limit 1`, [p.odberatel_id]);
+    return h.rowCount > 0;
+  }
   // Uvítání i obsahová zpráva potřebují aktivní odběr; jiná podmínka není,
   // protože odběr je jeden a nemá ročník ani segment.
   const v = await s.dotaz(`select 1 from odber_novinek where odberatel_id = $1`, [p.odberatel_id]);

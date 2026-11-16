@@ -28,6 +28,7 @@ const inspection = '/skola/600009793-gymnazium-a-stredni-odborna-skola-skolni/in
 test('každá veřejná šablona má právě jeden vlastní www canonical', async () => {
   for (const path of ['/', '/mesto', '/mesto/praha', '/regiony', '/regiony/hlavni-mesto-praha',
     '/skoly', '/simulator', '/dostupnost', '/jak-vybrat-skolu', '/prijimacky-2027',
+    '/priprava-na-prijimacky-2027',
     '/vysledky/2026', '/novinky', '/pro-skoly', '/issues', '/changelog', '/ochrana-osobnich-udaju',
     school, program, `${program}/pro-me`, `${school}/inspekce`]) {
     const r = await fetch(base + path, { redirect: 'manual' });

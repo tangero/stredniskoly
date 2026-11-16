@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { OdberBlok } from '@/components/novinky/OdberBlok';
+import { KriteriaKonzervatori } from '@/components/KriteriaKonzervatori';
 import calendar from '@/data/admissions-2027.json';
 import { formatujDen } from '@/lib/veletrhy-pocty';
 
@@ -46,6 +47,7 @@ export default function Admissions2027Page() {
           <aside className="bg-amber-50 border border-amber-200 rounded-xl p-5 mb-6">
             <h2 className="font-bold mb-2">Konzervatoř? Přihlášku podej už v listopadu 2026.</h2>
             <p className="text-sm">Na ostatní střední školy je termín 1.–22. února 2027. Kritéria a kapacity jednotlivých škol pro rok 2027 zatím postupně přibudou. Výsledky 2026 na tomto webu popisují minulý ročník.</p>
+            <p className="text-sm mt-2"><a href="#kriteria-konzervatori" className="font-semibold text-blue-700 underline underline-offset-4">Kritéria přijetí jednotlivých konzervatoří</a></p>
           </aside>
           <div className="bg-white border border-slate-200 rounded-xl p-5 flex flex-col sm:flex-row gap-4 sm:items-center sm:justify-between">
             <div><h2 className="font-semibold">Ulož si termíny</h2><p className="text-sm text-slate-600 mt-1">Soubor obsahuje všechny tři skupiny. Po importu si ponech relevantní události; stažená kopie se sama neaktualizuje.</p></div>
@@ -75,6 +77,7 @@ export default function Admissions2027Page() {
                   <div><h3 className="font-semibold">{event.title}</h3><p className="text-sm text-slate-600 mt-1">{event.note}</p></div>
                 </li>)}
               </ol>
+              {group.id === 'konzervatore' && <KriteriaKonzervatori />}
             </section>
           ))}
           <section id="zatim-nezverejneno" className="pt-10 scroll-mt-24">

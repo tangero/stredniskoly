@@ -2,11 +2,13 @@
 """Maturitní výsledky škol pro web: public/maturita_skoly.json.
 
 Zdroj: CERMAT, agregované výsledky společné části maturitní zkoušky, jarní období,
-soubory MZ{rok}j_SC_skolobory.xlsx. Návrh: docs/maturitni-vysledky-a-kvalita-skoly-2027.md,
+soubory MZ{rok}j_SC_skolobory.xlsx; stav po podzimním období ze souborů MZ{rok}jap_SC_skolobory.xlsx
+(volba --podzim, jen počty a podíly společné části do samostatného klíče `stav_po_podzimu`, #584). Návrh: docs/maturitni-vysledky-a-kvalita-skoly-2027.md,
 názvy polí podle kontraktu v §4 a slovníku ukazatelů, oddíl 5.
 
     python3 scripts/build-maturita-skoly.py \
         --soubor 2025=/cesta/MZ2025j_SC_skolobory.xlsx --soubor 2026=/cesta/MZ2026j_SC_skolobory.xlsx \
+        [--podzim 2026=/cesta/MZ2026jap_SC_skolobory.xlsx] \
         [--zaklad public/maturita_skoly.json] --vystup public/maturita_skoly.json
 
 Pravidla:
@@ -37,6 +39,7 @@ UPOZORNENI_POD = 30
 REFERENCE_MIN_KONALO = 10
 Z_95 = 1.96
 URL = "https://data.cermat.cz/files/files/MZ/agregovana_data_skoly/MZ{rok}j_SC_skolobory.xlsx"
+URL_PODZIM = "https://data.cermat.cz/files/files/MZ/agregovana_data_skoly/MZ{rok}jap_SC_skolobory.xlsx"
 
 BLOKY = {"spolecna_cast": "SPOLECNA CAST MZ CELKEM", "cj": "CESKY JAZYK", "ma": "MATEMATIKA"}
 # (název sloupce po odstranění diakritiky, pole kontraktu). Přesná shoda názvu: sloupec
@@ -223,7 +226,42 @@ def zpracuj_rok(radky: list[dict], rok: int) -> tuple[dict, dict]:
     return skupiny, skoly
 
 
-def sestav(soubory: dict[int, Path], zaklad: dict | None) -> dict:
+def pridej_podzim(vystup: dict, soubory: dict[int, Path]) -> None:
+    """Stav po podzimním období do samostatného klíče `stav_po_podzimu`, odděleně od jarní řady.
+
+    Soubor `jap` je kumulativní stav po podzimním období, ne samostatný podzimní termín (slovník ukazatelů,
+    oddíl 5, Období). Jarní řada se proto nemění, nic se nesčítá a bere se jen blok společné části s mezemi
+    zveřejnění jako u jara; zařazení proti skupině oborů se pro tento stav nepočítá.
+    """
+    podzim = vystup.get("stav_po_podzimu") or {"meta": {}, "skoly": {}}
+    zdroje = {str(z["rok"]): z for z in podzim["meta"].get("zdroje", [])}
+    for rok, cesta in sorted(soubory.items()):
+        if rok < PRVNI_ROK:
+            raise ValueError(f"rok {rok}: společná část před rokem {PRVNI_ROK} je na jiné škále")
+        radky, pocty = nacti(cesta, rok)
+        if not pocty["redizo"] or not pocty["redizo_smo16"]:
+            raise ValueError(f"stav po podzimu {rok}: soubor nemá řádky škol ({pocty})")
+        for skola in podzim["skoly"].values():
+            skola["roky"].pop(str(rok), None)
+        for r in radky:
+            cil = podzim["skoly"].setdefault(r["redizo"], {"roky": {}})
+            cil["roky"].setdefault(str(rok), {})[r["smo16"]] = {"spolecna_cast": omez(r["predmety"]["spolecna_cast"])}
+        zdroje[str(rok)] = {"rok": rok, "url": URL_PODZIM.format(rok=rok), "soubor": cesta.name, "sha256": sha256(cesta),
+                            "radku_redizo": pocty["redizo"], "radku_redizo_smo16": pocty["redizo_smo16"]}
+    podzim["skoly"] = {k: v for k, v in podzim["skoly"].items() if v["roky"]}
+    roky = sorted(int(r) for r in zdroje)
+    podzim["meta"] = {
+        "popis": "Stav po podzimním zkušebním období (soubor jap): kumulativní stav po jaru i podzimu, ne samostatný "
+                 "podzimní termín. Jen společná část celkem; s jarní řadou se nesčítá ani nepřekrývá.",
+        "obdobi": "stav_po_podzimu",
+        "roky": roky,
+        "nejnovejsi_rok": roky[-1],
+        "zdroje": [zdroje[str(r)] for r in roky],
+    }
+    vystup["stav_po_podzimu"] = podzim
+
+
+def sestav(soubory: dict[int, Path], zaklad: dict | None, podzim: dict[int, Path] | None = None) -> dict:
     vystup = zaklad or {"meta": {}, "skupiny": {}, "skoly": {}}
     zdroje = {str(z["rok"]): z for z in vystup["meta"].get("zdroje", [])}
     for rok, cesta in sorted(soubory.items()):
@@ -259,29 +297,42 @@ def sestav(soubory: dict[int, Path], zaklad: dict | None) -> dict:
                  "reference_min_konalo": REFERENCE_MIN_KONALO, "z": Z_95},
         "dokumentace": "docs/maturitni-vysledky-a-kvalita-skoly-2027.md; docs/slovnik-ukazatelu.md, oddíl 5",
     }
+    if podzim:
+        pridej_podzim(vystup, podzim)
     return vystup
 
 
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("--soubor", action="append", required=True, help="ROK=cesta k MZ{rok}j_SC_skolobory.xlsx")
+    ap.add_argument("--soubor", action="append", default=[], help="ROK=cesta k MZ{rok}j_SC_skolobory.xlsx")
+    ap.add_argument("--podzim", action="append", default=[], help="ROK=cesta k MZ{rok}jap_SC_skolobory.xlsx (stav po podzimu)")
     ap.add_argument("--zaklad", help="stávající výstup; roky, které nejsou v --soubor, zůstanou")
     ap.add_argument("--vystup", required=True)
     a = ap.parse_args()
-    soubory = {}
-    for s in a.soubor:
-        rok, _, cesta = s.partition("=")
-        soubory[int(rok)] = Path(cesta)
+
+    def rozloz(seznam: list[str]) -> dict[int, Path]:
+        vysledek = {}
+        for s in seznam:
+            rok, _, cesta = s.partition("=")
+            vysledek[int(rok)] = Path(cesta)
+        return vysledek
+
+    soubory, podzim = rozloz(a.soubor), rozloz(a.podzim)
     zaklad = None
     if a.zaklad and Path(a.zaklad).exists():
         zaklad = json.loads(Path(a.zaklad).read_text(encoding="utf-8"))
-    vystup = sestav(soubory, zaklad)
+    if not soubory and not (podzim and zaklad):
+        ap.error("chybí --soubor; samotné --podzim jde jen se stávajícím výstupem v --zaklad")
+    vystup = sestav(soubory, zaklad, podzim)
     Path(a.vystup).parent.mkdir(parents=True, exist_ok=True)
     Path(a.vystup).write_text(json.dumps(vystup, ensure_ascii=False, separators=(",", ":")) + "\n", encoding="utf-8")
     posledni = str(vystup["meta"]["nejnovejsi_rok"])
     se_zarazenim = sum(1 for s in vystup["skoly"].values() for sk in s["roky"].get(posledni, {}).values()
                        if sk.get("cj", {}).get("groupComparison"))
     print(f"roky {vystup['meta']['roky']}, škol {len(vystup['skoly'])}, v roce {posledni} se zařazením proti skupině {se_zarazenim}")
+    if podzim:
+        p = vystup["stav_po_podzimu"]
+        print(f"stav po podzimu: roky {p['meta']['roky']}, škol {len(p['skoly'])}")
     return 0
 
 

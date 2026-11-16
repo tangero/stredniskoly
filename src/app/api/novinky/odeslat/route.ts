@@ -8,8 +8,10 @@ import {
   obnovUviznute,
   uklidOdesilace,
   zajistiRozpocet,
+  zpracujHlidani,
   zpracujZpravu,
 } from '@/lib/novinky-odesilac';
+import { uplnyNazevZRejstriku } from '@/lib/rejstrik-nazev-skoly';
 import { dovezServisni } from '@/lib/novinky-servisni';
 import { uklid } from '@/lib/novinky-odber';
 import { denniObdobi, kvotaTarifu, limitRozpoctu, mesicniObdobi } from '@/lib/novinky-rozpocet';
@@ -81,6 +83,12 @@ export async function GET(request: NextRequest) {
     for (const z of splatne) {
       vysledky.push(await zpracujZpravu(z, base, kdy));
     }
+    // Souhrn hlídání škol: jeden e-mail denně těm, kdo mají u svých škol událost.
+    // Selhání hlídání nesmí zastavit uklízení ani výsledek běhu.
+    const hlidani = await zpracujHlidani(kdy, uplnyNazevZRejstriku).catch((chyba) => {
+      console.error('❌ Souhrn hlídání škol selhal:', chyba);
+      return { chyba: 'souhrn hlídání selhal, podrobnosti v logu' };
+    });
     const uklidZadosti = await uklid();
     const uklidTel = await uklidOdesilace(kdy);
 
@@ -90,6 +98,7 @@ export async function GET(request: NextRequest) {
       servisni,
       ucinkyWebhooku: ucinky,
       vysledky,
+      hlidani,
       uklid: { ...uklidZadosti, ...uklidTel },
     };
     console.log('✉️ Běh odesílače novinek:', JSON.stringify(souhrn));

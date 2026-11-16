@@ -136,7 +136,7 @@ export function buildSitemapPaths(analysisData, schoolsData, rocnik, inspections
   const schoolSlugs = buildSchoolSlugs(analysisData, schoolsData, rocnik, oboryBezJpz);
   const schoolSet = new Set(schoolSlugs);
   const paths = new Set([
-    '/', '/prijimacky-2027', '/simulator', '/skoly', '/regiony', '/mesto',
+    '/', '/prijimacky-2027', '/priprava-na-prijimacky-2027', '/simulator', '/skoly', '/regiony', '/mesto',
     '/dostupnost', '/jak-vybrat-skolu', '/changelog', '/novinky',
     '/veletrhy', '/veletrhy/nahlasit', '/pro-novinare',
     '/pro-skoly', '/ochrana-osobnich-udaju',

@@ -1,6 +1,8 @@
 'use client';
 
-import { useState, useMemo, useRef, useEffect } from 'react';
+import { Suspense, useState, useMemo, useRef, useEffect } from 'react';
+import { useSearchParams } from 'next/navigation';
+import { dotazZAdresy } from '@/lib/hledani-z-adresy';
 import Link from 'next/link';
 import type { PolozkaHledani } from '@/types/school';
 import { MESTA } from '@/lib/mesta.mjs';
@@ -81,7 +83,22 @@ function nactiPolozkyHledani(): Promise<PolozkaHledani[]> {
   return polozkyHledaniPromise;
 }
 
+// Parametry adresy se čtou přes useSearchParams, aby se dotaz změnil i při přechodu z hlavičky na již otevřenou
+// stránku (komponenta zůstane připojená). Bez parametrů se stránka předrenderuje jako dosud.
 export function SchoolSearch({ kraje }: SchoolSearchProps) {
+  return (
+    <Suspense fallback={<SchoolSearchPole kraje={kraje} dotaz="" />}>
+      <SchoolSearchSAdresou kraje={kraje} />
+    </Suspense>
+  );
+}
+
+function SchoolSearchSAdresou({ kraje }: SchoolSearchProps) {
+  const dotaz = dotazZAdresy(`?${useSearchParams().toString()}`);
+  return <SchoolSearchPole kraje={kraje} dotaz={dotaz} />;
+}
+
+function SchoolSearchPole({ kraje, dotaz }: SchoolSearchProps & { dotaz: string }) {
   const [schools, setSchools] = useState<PolozkaHledani[]>([]);
   const [stavDat, setStavDat] = useState<'nacitani' | 'hotovo' | 'chyba'>('nacitani');
   const [query, setQuery] = useState('');
@@ -100,6 +117,21 @@ export function SchoolSearch({ kraje }: SchoolSearchProps) {
       () => setStavDat('chyba'),
     );
   };
+
+  // Dotaz z hledání v hlavičce (/skoly?search=…, #571): předvyplnit a rovnou ukázat výsledky.
+  useEffect(() => {
+    if (dotaz) {
+      // Adresa je známá až v prohlížeči; jako počáteční stav by se rozešla s HTML ze serveru.
+      // eslint-disable-next-line react-hooks/set-state-in-effect
+      setQuery(dotaz);
+      setIsOpen(true);
+      nactiDataHledani();
+    } else {
+      // Adresa už dotaz neobsahuje (např. přechod z /skoly?search=… na /skoly): pole vyčistit a výsledky zavřít.
+      setQuery('');
+      setIsOpen(false);
+    }
+  }, [dotaz]);
 
   // Získat unikátní obce a okresy
   const locations = useMemo(() => {

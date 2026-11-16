@@ -43,6 +43,15 @@ RE_DATUM = re.compile(
 )
 # Datum bez roku („25. září“) píše řada výpisů; rok se doplní jako nejbližší minulý.
 RE_DATUM_BEZ_ROKU = re.compile(r"(?<!\d)(\d{1,2})\.\s?(" + "|".join(MESICE) + r")(?!\s*20\d{2})", re.I)
+# Šablony WordPressu píšou den a zkrácený měsíc bez tečky („05 Lis“, #588). Zkratky jsou ty
+# z češtiny WordPressu; jen celé slovo, aby „12 listů“ nebylo datum. Platí jen pro celý text
+# jednoho prvku („05 Lis“ v prvku data), aby věta „Vstupenky 2 pro každého“ nebyla datum.
+ZKRATKY_MESICU = {
+    "led": 1, "úno": 2, "bře": 3, "dub": 4, "kvě": 5, "čvn": 6,
+    "čvc": 7, "srp": 8, "zář": 9, "říj": 10, "lis": 11, "pro": 12,
+}
+RE_DATUM_ZKRATKA = re.compile(
+    r"(?<![\d.])(\d{1,2})\s+(" + "|".join(ZKRATKY_MESICU) + r")(?!\w)(?!\.?\s*20\d{2})", re.I)
 
 
 def najdi_datum(text, dnes):
@@ -59,12 +68,16 @@ def najdi_datum(text, dnes):
             continue
         if dt.date(2015, 1, 1) <= d <= dnes + dt.timedelta(days=1):
             return d
-    for m in RE_DATUM_BEZ_ROKU.finditer(text or ""):
+    bez_roku = [(m, MESICE) for m in RE_DATUM_BEZ_ROKU.finditer(text or "")]
+    zkratka = RE_DATUM_ZKRATKA.fullmatch((text or "").strip())
+    if zkratka:
+        bez_roku.append((zkratka, ZKRATKY_MESICU))
+    for m, mesice in sorted(bez_roku, key=lambda x: x[0].start()):
         # Letos, a je-li to v budoucnu nebo takové datum letos není (29. února),
         # loni. Neplatné v obou letech se přeskočí.
         for rok in (dnes.year, dnes.year - 1):
             try:
-                d = dt.date(rok, MESICE[m.group(2).lower()], int(m.group(1)))
+                d = dt.date(rok, mesice[m.group(2).lower()], int(m.group(1)))
             except ValueError:
                 continue
             if d <= dnes + dt.timedelta(days=1):
@@ -175,7 +188,19 @@ def _datum_uzlu(uzel, dnes):
             if d:
                 return d
         stack.extend(u.deti)
-    return najdi_datum(uzel.cely_text(), dnes)
+    d = najdi_datum(uzel.cely_text(), dnes)
+    if d:
+        return d
+    # Den a zkratka měsíce („05 Lis“) jen jako celý text prvku data, v pořadí dokumentu.
+    stack = [uzel]
+    while stack:
+        u = stack.pop()
+        if RE_DATUM_ZKRATKA.fullmatch(u.cely_text()):
+            d = najdi_datum(u.cely_text(), dnes)
+            if d:
+                return d
+        stack.extend(reversed(u.deti))
+    return None
 
 
 def precti_vypis(html, base, dnes):

@@ -53,7 +53,7 @@ Náhodný vzorek 30 škol s přečteným výpisem (seed 20261001), po opravě v�
 - titulek čistý u zhruba 27 z 30; zbytek nese datum nebo útržek perexu;
 - datum věrohodné u 28 z 30; dvakrát čtečka vzala datum z textu titulku (termín akce místo data vydání).
 
-Čtečka používá dvě strategie: skupina sourodých bloků s odkazem a datem (výpis s odkazy na články) a skupina nadpisů s datem (celý text zprávy přímo ve výpisu, odkazem je pak stránka výpisu). Druhá strategie je potřeba asi u čtvrtiny škol. Data bez roku („25. září“) dostanou nejbližší minulý rok.
+Čtečka používá dvě strategie: skupina sourodých bloků s odkazem a datem (výpis s odkazy na články) a skupina nadpisů s datem (celý text zprávy přímo ve výpisu, odkazem je pak stránka výpisu). Druhá strategie je potřeba asi u čtvrtiny škol. Data bez roku („25. září“) dostanou nejbližší minulý rok. Totéž platí pro den se zkratkou měsíce bez tečky, jak ho píšou šablony WordPressu („05 Lis“, zkratky led, úno, bře, dub, kvě, čvn, čvc, srp, zář, říj, lis, pro; jen jako celý text jednoho prvku, takže věta „Vstupenky 2 pro každého“ datum nenese; #588).
 
 **Co sonda neměří:** úplnost (kolik zpráv výpis obsahuje a čtečka je minula), stabilitu při opakovaném čtení a chování při stránkování výpisu. Přesnost je z ruční kontroly 30 škol, ne z referenčního vzorku.
 

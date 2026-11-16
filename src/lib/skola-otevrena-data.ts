@@ -101,7 +101,7 @@ export function sestavOtevrenaData(skola: SkolaZakladni, d: ProfilSkolyData, obd
         };
       })() : null,
     })),
-    maturita: d.maturita ? {
+    maturita: d.maturita && d.maturita.skupiny.length ? {
       obdobi: 'jaro',
       skupiny_oboru: d.maturita.skupiny.map(s => ({
         smo16: s.smo16,

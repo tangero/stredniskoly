@@ -19,6 +19,7 @@ a každou hodinu. Výsledek zapíše jako kontrolu „Brána sloučení“ na ak
 | L | ostatní interní zadání s dokladem `Zdroj:` | 48 h od prvního vyhodnocení stavu bez `stop` |
 | souhlas | propojené issue se `schvaleno` od Patricka, rozsah od schválení beze změny | hned |
 | R / L | hlášení přihlášené školy z portálu (`portal-skoly`, řádek `**Kanál:**` od webu), PR mění jen cesty `hlaseni_skol` v `rezimy.yml` (soubory oprav údajů škol, testy); v limitu rutiny R, jinak L (RA52) | hned / 48 h |
+| L | veřejné hlášení se štítkem `zjevna-chyba` od vlastníka, asistenta nebo automatiky (RA55, #564): PR v limitu rutiny bez cest K a H2, s oddílem `## Test chyby` a změněným souborem v `tests/`; jinak K. Nikdy R | 48 h |
 | K | cesty z `k` v `rezimy.yml` (migrace, e-maily, portál, nasazení, workflow, závislosti, registr sad, slovník ukazatelů), PR bez zadání, hlášení mimo schválený projekt | `schvaleno` na PR nebo na issue |
 | H2 | brána, `rezimy.yml`, `labeler.yml`, `CLAUDE.md`, workflow se změnou oprávnění nebo secrets | `schvaleno` přímo na PR, platí pro jeden commit |
 
@@ -42,7 +43,20 @@ workflow „Oprava z review“ na komentář `@claude` (nejvýš 5 kol, pak št�
 do PR se štítkem `potrebuje-cloveka` další `@claude` nepiš, rozhodne člověk.
 Automatické review blokuje jen P1 a doložené P2 na řádcích změněných v PR (u opakovaného review od posledního
 review); ostatní nálezy jsou „Doporučení (neblokuje)“ a PR nedrží (RA53, #551). Na PR se `schvaleno` se kolo oprav
-nespustí: po přidání `schvaleno` na větev nepushuj, souhlas platí jen pro hlavu, ke které byl přidán.
+nespustí: po přidání `schvaleno` na větev nepushuj, souhlas platí jen pro hlavu, ke které byl přidán. Co se najde
+potom, jde do dalšího PR nebo do další dávky (platí pro všechny PR, #560).
+
+**Týdenní dávka H2 (RA54, #560).** Změny cest H2 z interních zadání nejdou po jednom, ale do jedné větve
+`rizeni/davka-RRRR-TT` (rok a týden ISO) a jednoho PR týdně:
+- Každé zadání má dál své issue. Popis PR dávky má `Closes #N` pro každé hotové zadání a pro každé jednu větu
+  v `## Pro vlastníka`. Brána bere nejpřísnější režim ze všech propojených issues (test se třemi `Closes`).
+- Část zadání mimo H2 (web, data, testy) jde samostatným PR; do dávky jde jen část, která mění H2.
+- Dávka je draft, dokud nemá zelené testy a review „Bez P1 a P2“ k hlavě. O souhlas (`schvaleno`) se žádá jednou
+  týdně ve čtvrtek. Po souhlasu se do dávky nepushuje; co přijde později, jde do dávky dalšího týdne.
+- Výjimky (vlastní PR mimo dávku): štítek `incident`; oprava, bez které nefunguje brána, sloučení nebo review;
+  zadání, u kterého vlastník napíše „mimo dávku“.
+- Denní zpráva „Čeká na tebe“ ukáže PR v „Ke schválení“ jen tehdy, když brána chybí jedině souhlas; ostatní PR
+  s chybějícím souhlasem jsou v „Rozpracované (souhlas zatím ne)“ bez tlačítka.
 
 **Lhůta L** se založí znovu při novém commitu, změně oddílu „Rozsah“ propojeného issue a novém nebo
 upraveném protokolu. Push na konci lhůty ji tedy restartuje; nepushuj kosmetické změny do čekajícího PR.
@@ -108,6 +122,9 @@ Adresa: /mesto/praha
 Oddíl **Pro vlastníka** je u PR se zadáním, které mění web, povinný: bez něj brána PR nepustí. Po nasazení jde
 vlastníkovi do Telegramu. Piš ho z pohledu návštěvníka webu: co na stránce uvidí jinak, jednou až třemi větami,
 bez názvů souborů, funkcí a technických slov. Na zvláštní řádek dej adresu (nebo adresy) na webu, kde změnu uvidí.
+
+PR, který opravuje zjevnou chybu (`zjevna-chyba`, RA55), má oddíl `## Test chyby`: název testu, který chybu
+zopakuje, a výpis jeho selhání na `main`. S opravou test projde.
 
 PR, který opravuje hlášení `bug-report`, má navíc oddíl `## Pro oznamovatele`: jedna až dvě věty s vykáním pro
 člověka, který chybu nahlásil, bez adres. Po nasazení je dostane e-mailem (`docs/oznameni-opravy-oznamovateli.md`).

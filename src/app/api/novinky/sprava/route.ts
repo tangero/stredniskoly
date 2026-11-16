@@ -1,12 +1,15 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { jeDbNastavena } from '@/lib/novinky-db';
-import { odhlasVse, prehledPodlePolozky } from '@/lib/novinky-odber';
+import { prehledPodlePolozky, spravaProved } from '@/lib/novinky-odber';
+import type { AkceSpravy } from '@/lib/novinky-odber';
+import { uplnyNazevZRejstriku } from '@/lib/rejstrik-nazev-skoly';
 import { overToken } from '@/lib/novinky-token';
 import { nastavRelaciSpravy, precitRelaciSpravy } from '@/lib/novinky-relace';
 
 // ============================================================================
 // Správa odběru z odkazu v e-mailu (docs/novinky-k-prijimackam-2027.md, krok 7).
-// GET vrátí přehled odběrů, POST s akcí `vse` odhlásí všechny účely.
+// GET vrátí přehled odběrů (termíny a hlídané školy), POST zruší všechno (`vse`),
+// termíny (`terminy`), hlídání (`hlidani`) nebo jednu školu (`skola` + `redizo`).
 // ============================================================================
 
 /**
@@ -34,7 +37,7 @@ export async function GET(request: NextRequest) {
   const polozkaId = precitRelaciSpravy(request);
   if (!polozkaId) return NextResponse.json({ error: 'Odkaz vypršel.' }, { status: 400 });
 
-  const prehled = await prehledPodlePolozky(polozkaId);
+  const prehled = await prehledPodlePolozky(polozkaId, uplnyNazevZRejstriku);
   if (!prehled) return NextResponse.json({ error: 'Odběr už neexistuje.' }, { status: 404 });
   return NextResponse.json(prehled);
 }
@@ -52,9 +55,16 @@ export async function POST(request: NextRequest) {
   } catch {
     // Prázdné tělo znamená odhlášení všeho.
   }
-  if (telo.akce !== 'vse') {
+  let akce: AkceSpravy | null = null;
+  if (telo.akce === 'vse' || telo.akce === 'terminy' || telo.akce === 'hlidani') {
+    akce = { akce: telo.akce };
+  } else if (telo.akce === 'skola' && typeof telo.redizo === 'string' && /^\d{6,10}$/.test(telo.redizo)) {
+    akce = { akce: 'skola', redizo: telo.redizo };
+  }
+  if (!akce) {
     return NextResponse.json({ error: 'Neznámá akce.' }, { status: 400 });
   }
-  const ok = await odhlasVse(polozkaId);
-  return NextResponse.json({ success: ok });
+  // Zrušení nikdy nespouští e-mail ani potvrzení (P7); odpověď říká, co zbývá.
+  const zbyva = await spravaProved(polozkaId, akce);
+  return NextResponse.json({ success: zbyva !== null, zbyva });
 }

@@ -68,6 +68,13 @@ test('zbylá místa po 1. kole bez JPZ se neukazují záporná: JSON ořízne na
   assert.match(md, /Zbylá místa po 1\. kole:\*\* 5 ze? 14/);
 });
 
+test('škola jen se stavem po podzimu (bez jarního záznamu) nevypisuje prázdný jarní blok (#584)', () => {
+  const jenPodzim = { ...profil, maturita: { obdobi: 'jaro', roky: [], celkem: null, skupiny: [], poPodzimu: { rok: 2026, celkem: { registered: 20, took: 20, passed: 18 }, skupiny: [] } } };
+  const d = sestavOtevrenaData(skola, jenPodzim, { vysledky: 2026, uchazeci: 2025, maturita: '2026' });
+  assert.equal(d.maturita, null);
+  assert.doesNotMatch(otevrenaDataMarkdown(d), /Maturita, společná část/);
+});
+
 test('strojové podoby nesou kanonickou adresu stránky školy (#405)', () => {
   const o = sestavOtevrenaData(skola, profil, { vysledky: 2026, uchazeci: 2026, maturita: '2026' });
   const h = hlavickyOtevrenychDat(o, 'application/json');

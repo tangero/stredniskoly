@@ -43,7 +43,7 @@ test('jiný obor a jiná škola zůstanou beze změny', () => {
   assert.equal(nazevSZamerenim(opravy, '600000001', '37-42-M/01', 'Logistika', 'Jazyky'), 'Logistika - Jazyky');
 });
 
-test('opravy pro 2027 (Boskovice kapacita, Hronov neotevírá) jsou uložené a zobrazení je nečte', () => {
+test('opravy pro 2027 (Boskovice kapacita, Hronov a Karlovy Vary neotevírají) jsou uložené a zobrazení je nečte', () => {
   const pro2027 = opravyProNabidku2027(opravy);
   const boskovice = pro2027.find(o => o.redizo === '600013367' && o.pole === 'kapacita');
   assert.equal(boskovice?.hodnota, 58);
@@ -51,8 +51,14 @@ test('opravy pro 2027 (Boskovice kapacita, Hronov neotevírá) jsou uložené a 
   const hronov = pro2027.find(o => o.redizo === '691012431' && o.pole === 'neotevira');
   assert.equal(hronov?.hodnota, true);
   assert.equal(hronov?.kkov, '34-52-L/01');
+  const kvLab = pro2027.find(o => o.redizo === '600019641' && o.kkov === '53-43-M/01' && o.pole === 'neotevira');
+  const kvZub = pro2027.find(o => o.redizo === '600019641' && o.kkov === '53-44-M/03' && o.pole === 'neotevira');
+  assert.equal(kvLab?.hodnota, true);
+  assert.equal(kvZub?.hodnota, true);
   // Zobrazení názvu se jich netýká.
   assert.equal(nazevSZamerenim(opravy, '600013367', '75-31-M/01', 'Předškolní a mimoškolní pedagogika', ''), 'Předškolní a mimoškolní pedagogika');
+  assert.equal(nazevSZamerenim(opravy, '600019641', '53-43-M/01', 'Laboratorní asistent', ''), 'Laboratorní asistent');
+  assert.equal(nazevSZamerenim(opravy, '600019641', '53-44-M/03', 'Asistent zubního technika', ''), 'Asistent zubního technika');
 });
 
 test('obor doplněný školou pro 2027: záznam bez zdroje, adresy nebo data hlášení se odmítne', () => {

@@ -95,8 +95,15 @@ def dosad_obdobi(cesta: str, sada: dict) -> str:
 
 
 def hodnota(soubor: Path, cesta: str):
+    """Hodnota pole podle cesty s tečkami; None, když pole v datech ještě není.
+
+    Sada, jejíž data se teprve převezmou do existujícího souboru (stav maturity po podzimu, #584),
+    má v registru období null a v souboru zatím žádný klíč; obojí se pak shoduje.
+    """
     data = json.loads(soubor.read_text(encoding="utf-8"))
     for cast in cesta.split("."):
+        if not isinstance(data, dict) or cast not in data:
+            return None
         data = data[cast]
     return data
 

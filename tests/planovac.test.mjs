@@ -38,3 +38,12 @@ test('denní zprávu spouští jen plánovač, ne plán GitHubu (jinak by přiš
   const w = yaml.load(fs.readFileSync('.github/workflows/ceka-na-tebe.yml', 'utf8'));
   assert.equal('schedule' in (w.on ?? w[true]), false);
 });
+
+test('večerní souhrn Čeká na tebe je na řadě po 18:30 UTC, i když ráno běžela ranní zpráva (#562)', () => {
+  const u = { workflow: 'c.yml', denne: '18:30' };
+  const ranni = '2026-10-08T06:53:00Z';
+  assert.equal(naRade(u, ranni, Date.parse('2026-10-08T18:00:00Z')), false);
+  assert.equal(naRade(u, ranni, Date.parse('2026-10-08T18:31:00Z')), true);
+  assert.equal(naRade(u, '2026-10-08T18:31:00Z', Date.parse('2026-10-08T19:00:00Z')), false);
+  assert.equal(naRade({ workflow: 'c.yml', denne: '06:52' }, '2026-10-08T18:31:00Z', Date.parse('2026-10-09T06:53:00Z')), true);
+});

@@ -87,6 +87,41 @@ export default function OchranaOsobnichUdajuPage() {
               sama propadne do 72 hodin. Adresu, kterou vám zadal někdo jiný, tedy nikde nedržíme.
             </p>
 
+            <h2 className="text-2xl font-bold mt-8 mb-3">Hlídání škol e-mailem</h2>
+            <p className="text-slate-700">
+              Když si necháte hlídat školu, pošleme vám jednou denně jeden souhrn, ve kterém bude
+              všechno, co se u hlídaných škol ten den změnilo. V den bez změny nepošleme nic.
+              Zpracováváme:
+            </p>
+            <ul className="list-disc pl-6 text-slate-700 space-y-1">
+              <li>
+                <strong>e-mailovou adresu</strong>, na kterou souhrn posíláme,
+              </li>
+              <li>
+                <strong>seznam hlídaných škol</strong> (jejich RED IZO) a čas, kdy jste je začali
+                hlídat; z toho je vidět, které školy vás zajímají,
+              </li>
+              <li>
+                <strong>doklad souhlasu</strong> s hlídáním: znění souhlasu a čas potvrzení; je
+                oddělený od souhlasu s odběrem termínů,
+              </li>
+              <li>
+                <strong>záznam o odeslaných souhrnech</strong> a jejich doručení, aby se souhrn
+                neposlal dvakrát a aby nedoručitelná adresa hlídání ukončila.
+              </li>
+            </ul>
+            <p className="text-slate-700 mt-3">
+              <strong>Právní titul je váš souhlas</strong> (čl. 6 odst. 1 písm. a GDPR). Hlídání se
+              potvrzuje odkazem v e-mailu, stejně jako odběr termínů, a stejně platí, že ho zakládá
+              dospělý. Seznam hlídaných škol použijeme jen pro tyto souhrny. Hlídání a odběr termínů
+              jsou dva oddělené souhlasy: když zrušíte jedno, druhé zůstává.
+            </p>
+            <p className="text-slate-700 mt-3">
+              Hlídání jde zrušit jedním kliknutím v každém souhrnu, nebo po jednotlivých školách ve
+              správě odběru, kde jde také zrušit všechno najednou. Po zrušení všeho už vám od nás
+              nepřijde žádný e-mail, ani potvrzení zrušení.
+            </p>
+
             <h2 className="text-2xl font-bold mt-8 mb-3">Nahlášení akce do přehledu veletrhů</h2>
             <p className="text-slate-700">
               Když nám formulářem nahlásíte veletrh nebo přehlídku středních škol, zpracováváme:
@@ -118,7 +153,11 @@ export default function OchranaOsobnichUdajuPage() {
                 se neodhlásíte; odhlásit se jde jedním kliknutím v každém e-mailu,
               </li>
               <li>
-                <strong>doklad souhlasu:</strong> 3 roky po skončení odběru, a to už jen jako otisk
+                <strong>hlídání škol:</strong> do zrušení; zrušením hlídané školy její záznam
+                mizí, zrušením posledního hlídání mizí i adresa, pokud neodebíráte nic jiného,
+              </li>
+              <li>
+                <strong>doklad souhlasu:</strong> 3 roky po skončení odběru nebo hlídání, a to už jen jako otisk
                 adresy bez adresy samotné; slouží k obraně, kdyby někdo namítl, že souhlas nedal,
               </li>
               <li>

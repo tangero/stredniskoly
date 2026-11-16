@@ -8,6 +8,10 @@ vlastníka, proto se některá pravidla níže vynucují technicky.
 
 ## Zadání (issues)
 
+0. **Kontrolované činnosti K:** když zadání vzniká v rozhovoru s vlastníkem a mění činnosti K (`k` v `.github/rezimy.yml`),
+   napiš do těla issue řádek `Kontrolované činnosti: …` a požádej o `schvaleno` přímo na issue ve stejné odpovědi,
+   ve které issue zakládáš (RA54, #560). Změny cest H2 jdou do týdenní dávky, souhlas se pro ně žádá na PR.
+
 1. **Interní zadání** zakládej formulářem „Interní zadání“ nebo se štítkem `interni` a s oblastí
    `oblast:<slug>` (seznam v `.github/labeler.yml`).
 2. **Oddíl „Rozsah“:** každé zadání má nadpis `## Rozsah` s cílem, mandátem a hranicemi. Brána z něj

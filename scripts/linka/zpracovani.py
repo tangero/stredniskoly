@@ -218,6 +218,42 @@ def zpracuj_druhe_kolo(uloha: dict, soubor: Path, prace: Path, struktura: dict, 
     }
 
 
+def zpracuj_maturitu_po_podzimu(uloha: dict, soubor: Path, prace: Path, stavajici: Path | None = None) -> dict:
+    """Stav po podzimním období (soubor jap, sada cermat-maturita-podzim, #584).
+
+    Doplní do stávajícího výstupu samostatný klíč `stav_po_podzimu`; jarní řada zůstane beze změny a s tímto stavem
+    se nesčítá. Web stav ukáže až po přepnutí sady cermat-maturita-podzim v registru.
+    """
+    rok = int(uloha["obdobi"])
+    if stavajici is None:
+        stavajici = jadro.KOREN / "public" / "maturita_skoly.json"
+    if not stavajici.exists():
+        raise ValueError("stav po podzimu se doplňuje do stávajícího public/maturita_skoly.json, který chybí")
+    vystup = prace / "maturita_skoly.json"
+    zprava = spust("build-maturita-skoly.py", "--podzim", f"{rok}={soubor}", "--zaklad", str(stavajici),
+                   "--vystup", str(vystup))
+    novy = json.loads(vystup.read_text(encoding="utf-8"))
+    predchozi = json.loads(stavajici.read_text(encoding="utf-8"))
+    if novy["skoly"] != predchozi["skoly"] or novy["skupiny"] != predchozi["skupiny"]:
+        raise ValueError("zpracování stavu po podzimu změnilo jarní řadu; jaro a stav po podzimu se nesmí míchat")
+    podzim = novy["stav_po_podzimu"]
+    skol_nove = sum(1 for s in podzim["skoly"].values() if str(rok) in s["roky"])
+    if skol_nove == 0:
+        raise ValueError("zpracování stavu po podzimu nevrátilo žádnou školu; zkontroluj listy a hlavičku souboru")
+    skol_jaro = sum(1 for s in novy["skoly"].values() if str(rok) in s["roky"])
+    min_podil = float(os.environ.get("LINKA_MIN_PODIL_OBORU", "0.5"))
+    if skol_jaro and skol_nove < min_podil * skol_jaro:
+        raise ValueError(f"podezřele málo škol ve stavu po podzimu: {skol_nove} proti {skol_jaro} na jaře {rok}")
+    return {
+        "zpracovatel": "cermat-maturita-podzim",
+        "vystupy_skriptu": [zprava],
+        "srovnani": {"popis": f"stav po podzimu {rok}: škol {skol_nove}; jaro {rok}: škol {skol_jaro}; jarní řada beze změny"},
+        "predani": {str(vystup): "public/maturita_skoly.json"},
+        "dopad": "Doplní do public/maturita_skoly.json klíč stav_po_podzimu; jarní výsledky se nemění. Web stav po podzimu "
+                 "ukáže až po přepnutí sady cermat-maturita-podzim v registru, odděleně od jarních výsledků.",
+    }
+
+
 def zpracuj_maturitu(uloha: dict, soubor: Path, prace: Path, struktura: dict, stahni_fn=jadro.stahni,
                      stavajici: Path | None = None) -> dict:
     """Jarní maturitní výsledky: nový rok a tři předchozí, aby zařazení proti skupině šlo číst přes čtyři roky.
@@ -233,13 +269,7 @@ def zpracuj_maturitu(uloha: dict, soubor: Path, prace: Path, struktura: dict, st
             aby pojistka neporovnávala syntetická data s ostrým webem.
     """
     if "jap_" in uloha["url"]:
-        return {
-            "zpracovatel": "cermat-maturita",
-            "vystupy_skriptu": [],
-            "srovnani": {"popis": "stav po podzimním období se na web nepřebírá; web ukazuje jen jarní období"},
-            "predani": {},
-            "dopad": "Nic se nepředá. Stav po podzimu a jaro se podle maturitního návrhu nesčítají a nepřekrývají.",
-        }
+        return zpracuj_maturitu_po_podzimu(uloha, soubor, prace, stavajici)
     rok = int(uloha["obdobi"])
     soubory = {rok: soubor}
     for starsi in range(rok - 3, rok):
@@ -415,7 +445,8 @@ def zpracuj_jizdni_rady(uloha: dict, soubor: Path, prace: Path, struktura: dict,
 
 
 ZPRACOVATELE = {"cermat-uchazeci-kolo1": zpracuj_uchazeci, "cermat-kolo2-agregaty": zpracuj_druhe_kolo,
-                "cermat-maturita": zpracuj_maturitu, "doprava-gtfs": zpracuj_jizdni_rady}
+                "cermat-maturita": zpracuj_maturitu, "cermat-maturita-podzim": zpracuj_maturitu,
+                "doprava-gtfs": zpracuj_jizdni_rady}
 S_DALSIMI_SOUBORY = (zpracuj_druhe_kolo, zpracuj_maturitu, zpracuj_uchazeci)
 
 

@@ -24,6 +24,7 @@ dokument popisuje nastavení GitHubu, na kterém stojí.
 | `pripominka` | úkol s termínem; před termínem se nerealizuje |
 | `potrebuje-cloveka` | u PR: smyčka oprav z review skončila (strop 5 kol nebo oprava cesty H2), rozhodne člověk; vypisuje ho týdenní přehled |
 | `bug-report`, `portal-skoly`, `feature-request` | veřejná hlášení (tlačítko na webu, portál škol) |
+| `zjevna-chyba` | ověřené veřejné hlášení, které AI opraví bez `schvaleno` (PR v limitu rutiny s testem chyby, režim L); přidává jen vlastník, asistent zadání nebo automatika (RA55) |
 
 **Formuláře v „New issue“** (`.github/ISSUE_TEMPLATE/`):
 
@@ -173,8 +174,24 @@ pustí v režimu R (přes limit rutiny jako L).
 **Čeká na tebe** (`.github/workflows/ceka-na-tebe.yml`, `scripts/prehled/ceka-na-tebe.mjs`, #440): denně v 8:52
 jedna zpráva do Telegramu, jen když něco čeká na vlastníka. Skupiny: PR ke schválení (věta z oddílu „Pro vlastníka“
 a odkaz na stránku v náhledu), otázky, hotové oponentury, návrhy, splatné připomínky, uvízlé opravy z review
-a oponentury a hlášení od veřejnosti bez rozhodnutí (#461). Pod každou skupinou pokyn, co udělat, pod zprávou
+a oponentury, hlášení od veřejnosti bez rozhodnutí (#461) a PR, které stojí (#306, Hlídač uvízlých PR). PR stojí, když od
+posledního pushe nebo komentáře uplynul přes den a PR nečeká na souhlas ani nemá `schvaleno`, `stop` nebo `potrebuje-cloveka`;
+u položky je důvod: konflikt s `main`, červené testy (názvy kontrol), jinak výsledek brány (například lhůta L). V oddílu „Co udělat“ pokyn ke každé skupině, která má ve zprávě zobrazenou položku, pod zprávou
 tlačítka na PR nebo issue. Spouští ji Plánovač; ručně v Actions (Čeká na tebe, Run workflow).
+Od #562 je ranní zpráva řazená podle stáří: nahoře „Čeká přes 3 dny“ od nejstarší s počtem dní, pak „Nové od minulé
+zprávy“, zbytek jen počty po skupinách s odkazem na seznam issues. Stáří je doba od přidání štítku otázky, návrhu nebo
+oponentury, u ostatních od založení; u PR od první kontroly brány, která chtěla jen souhlas (když se ten čas nezjistí,
+od otevření PR). „Nové od minulé zprávy“ se řídí časem vstupu do skupiny, ne stářím: u připomínky je to pozdější z přidání
+štítku `pripominka` a termínu, u hlášení přidání štítku hlášení.
+Večer v 18:30 UTC (19:30 SEČ, v létě 20:30 SELČ) přijde souhrn „Večer na tebe“ jen s položkami, které přibyly od
+minulé zprávy. Její čas se bere z pevných časů Plánovače (ranní 06:52 UTC, večerní 18:30 UTC); historii běhů workflow
+nečteme, protože by potřebovala oprávnění `actions: read`. Bez nových se neposílá.
+Hlášení od veřejnosti a návrh, které čekají přes 7 dní, dostanou od rutiny jeden komentář `Doporučení: opravit | zavřít
+(důvod) | duplicita #N | potřebuje tvůj úsudek (proč)` s nejvýš třemi větami zdůvodnění (skill `trideni-issues`, bod 11;
+seznam vypíše `ceka-na-tebe.mjs --k-doporuceni`). Zpráva ukáže doporučení u položky místo prvního odstavce. Doporučení
+nic nerealizuje ani nemění štítky; nové se píše jen po komentáři někoho jiného než AI.
+Návrhy funkcí (`feature-request`) uvedené v otevřeném týdenním issue „Návrhy od veřejnosti: týden RRRR-TT“
+(`scripts/prehled/navrhy-tyden.mjs`, RA55, #564) zpráva neukazuje jednotlivě; čekají v ní jako jedna položka, týdenní issue.
 
 **Tep rutiny** (`.github/workflows/tep-rutiny.yml`, `scripts/provoz/tep-rutiny.mjs`, #440, #461): rutina Claude Code
 na začátku každého běhu přepíše komentář se značkou `tep-rutiny` v issue #462 (štítek `trvale`); spustit workflow
@@ -185,7 +202,7 @@ zpráva do Telegramu, pak jednou denně, dokud tep nepřijde. Kdy naposledy hlá
 tohoto repozitáře jen 4 až 5krát denně (měřeno 5. až 9. 10. 2026: hlídání dostupnosti místo 288 běhů 5). Workflow
 Plánovač proto každých 5 minut spouští cron-job.org a Plánovač spustí, co je na řadě podle doby od posledního běhu:
 Dostupnost (5 min), Datová linka ve kroku schválení (15 min), Brána, Triáž, Tep rutiny (hodina) a Čeká na tebe
-(denně 6:52 UTC). Plány GitHubu u workflow zůstávají jako záloha (kromě Čeká na tebe, ta by přišla dvakrát).
+(denně 6:52 UTC a souhrn v 18:30 UTC). Plány GitHubu u workflow zůstávají jako záloha (kromě Čeká na tebe, ta by přišla dvakrát).
 
 Nastavení cron-job.org (vlastník, jednou, asi 10 minut):
 
@@ -355,6 +372,23 @@ skills a nezakládá PR. Přijatý návrh realizuje AI na pokyn vlastníka jako 
 
 **Vyhodnocení:** když vlastník do konce roku 2026 nepřijme žádný návrh, oddíl se zruší nebo zúží na výpis signálů
 (odebráním volání `pripravPonauceni` z `nactiData` v `tydenni.mjs`, případně jen modelu).
+
+## 5c. Otázka třikrát = pravidlo (#306)
+
+Rozhodnutí vlastníka 3. 11. 2026: na co vlastník odpověděl dvakrát stejně, má se stát trvalým pravidlem, aby se
+AI neptala potřetí. `scripts/prehled/otazky-pravidla.mjs` (testy `tests/otazky-pravidla.test.mjs`) jen čte GitHub:
+
+- **Otázka** je komentář vlastnického účtu s nadpisem „Otázka pro vlastníka“ (pravidlo 8). **Odpověď** je první
+  další komentář v témže issue: komentář vlastníka bez patičky AI a bez značky automatiky (`<!--`), nebo zápis
+  s nadpisem „Odpověď vlastníka“ od vlastníka či asistenta (stejné pravidlo jako u štítku `otazka`).
+- Bere odpovědi za posledních 60 dní (`--dni`). Dvě otázky z různých issues patří do jedné skupiny, když mají
+  podobný text (`podobnost` ze `scripts/review/stagnace.mjs`, práh 0,6, `--prah`) a stejnou odpověď: stejnou
+  zvolenou variantu („A“, „(B)“, „Varianta 2“, „ano“, „ne“), jinak podobný text odpovědi.
+- `--seznam` vypíše skupiny jako JSON, `--navrh` podklad do týdenní dávky H2 (#560): u každé skupiny odkazy na
+  otázky, úryvky otázky a odpovědi bez e-mailů a telefonů a místo pro znění pravidla, které napíše AI.
+
+Nic se nezapisuje a pravidlo neplatí bez souhlasu vlastníka s dávkou. Týdenní spuštění v rutině a zápis do dávky
+přibudou, až bude dávka H2 (#560, PR #563) na `main`; do té doby se skript spouští na požádání.
 
 ## 6. Otevřené
 
