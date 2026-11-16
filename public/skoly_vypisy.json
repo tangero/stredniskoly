@@ -4,14 +4,15 @@
    "data/sondy/mimo-rss-20261001.json",
    "data/sondy/mimo-rss-tinyfish-20261001.json"
   ],
-  "vygenerovano": "2026-10-01",
+  "vygenerovano": "2026-11-13",
   "skript": "scripts/build-skoly-vypisy.py",
-  "poznamka": "Auditní export registru výpisů aktualit; provozní stav zdrojů je v tabulce skola_feed.",
-  "skol_html": 276,
+  "poznamka": "Registr výpisů aktualit, ze kterého čte sklízeč; provozní stav zdrojů (validátory, chyby, splatnost) je v tabulce skola_feed.",
+  "skol_html": 275,
   "skol_tinyfish": 59,
   "vyrazeno": {
    "ma_feed": 0,
-   "stary_vypis": 8
+   "stary_vypis": 8,
+   "rucne": 1
   }
  },
  "skoly": {
@@ -794,12 +795,6 @@
    "typ": "tinyfish",
    "zdroj": "vypis",
    "web": "http://www.soukraliky.orlicko.cz"
-  },
-  "600013260": {
-   "feed_url": "https://www.gymnaziumrajec.cz/",
-   "typ": "html",
-   "zdroj": "vypis",
-   "web": "https://www.gymnaziumrajec.cz/"
   },
   "600013278": {
    "feed_url": "https://www.skolaac.cz/aktuality",
