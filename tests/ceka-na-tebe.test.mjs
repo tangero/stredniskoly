@@ -273,3 +273,22 @@ test('hlídač uvízlých PR: nová položka je ve večerní i ranní zprávě s
   const rano = zprava(g, { ted: TED, posledni });
   assert.ok(rano.text.includes('Nové od minulé zprávy') && rano.text.includes('Stojící oprava') && rano.text.includes('konflikt s main'));
 });
+
+test('PR ke schválení jsou na začátku zprávy před starými i novými položkami (#561)', () => {
+  const dnu = (n) => new Date(TED - n * 86400000).toISOString();
+  const g = skupiny({
+    prs: [pr({ cislo: 5, souhlasOd: Date.parse(dnu(0.1)) }), pr({ cislo: 6, souhlasOd: Date.parse(dnu(6)) })],
+    issues: [issue({ cislo: 41, vytvoreno: dnu(9), stitky: ['bug-report'] }), issue({ cislo: 43, vytvoreno: dnu(0.1), stitky: ['bug-report'] })],
+  });
+  const t = zprava(g, { ted: TED, posledni: TED - 86400000 / 2 }).text;
+  const i = (s) => t.indexOf(s);
+  assert.ok(i('Ke schválení (2)') > 0 && i('Ke schválení (2)') < i('Čeká přes 3 dny') && i('Čeká přes 3 dny') < i('Nové od minulé zprávy'));
+  assert.ok(i('#6') < i('#5') && i('#5') < i('#41'), 'ke schválení od nejstaršího, před ostatními');
+  assert.doesNotMatch(t.slice(i('Čeká přes 3 dny')), /#5\b|#6\b/);
+  // Tlačítka ke schválení jdou první.
+  assert.deepEqual(zprava(g, { ted: TED, posledni: TED - 86400000 / 2 }).tlacitka.flat().slice(0, 2).map((b) => b.text), ['#6 schválit', '#5 schválit']);
+  // Večer jen ke schválení, které přibylo od ranní zprávy.
+  const v = zprava(g, { ted: TED, vecer: true, posledni: TED - 86400000 / 2 }).text;
+  assert.match(v, /^<b>Večer na tebe: 2<\/b>\n\n<b>✅ Ke schválení \(1\)<\/b>/);
+  assert.doesNotMatch(v, /#6\b/);
+});
