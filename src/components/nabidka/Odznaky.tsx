@@ -89,7 +89,7 @@ export function VetaObtiznosti({ u }: { u: UdajeObtiznosti }) {
   const nesplnili = u.nesplniliPodminky;
   if (nesplnili !== null && nesplnili > 0 && u.prihlasky
       && (nesplnili >= (u.prijati ?? 0) || nesplnili >= 0.2 * u.prihlasky)) {
-    casti.push(`${cislo(nesplnili)} ${zOd(u.prihlasky)} ${cislo(u.prihlasky)} přihlášených nedosáhlo požadavků školy`);
+    casti.push(`${cislo(nesplnili)} ${zOd(u.prihlasky)} ${cislo(u.prihlasky)} uchazečů nedosáhlo požadavků školy`);
   }
 
   if (casti.length === 0) return null;

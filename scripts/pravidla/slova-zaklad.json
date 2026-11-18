@@ -84,10 +84,6 @@
   "src/app/api/praha-dostupnost/route.ts": [
    "08cea8a76195"
   ],
-  "src/app/dostupnost/DostupnostClient.tsx": [
-   "13b53c7e0688",
-   "b859c800c6d9"
-  ],
   "src/app/issues/page.tsx": [
    "7600dc7f7873",
    "7600dc7f7873"
@@ -246,9 +242,6 @@
   ],
   "src/components/admin/PasskeyTlacitka.tsx": [
    "0539ea85f452"
-  ],
-  "src/components/nabidka/Odznaky.tsx": [
-   "cb6fcc661f87"
   ],
   "src/components/novinky/OdberFormular.tsx": [
    "050700c09219"
