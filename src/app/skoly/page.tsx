@@ -7,16 +7,21 @@ import { getAllSchools, getAllKraje, getSchoolAnalysis } from '@/lib/data';
 import { createSlug } from '@/lib/utils';
 import { SchoolsPageTabs } from '@/components/SchoolsPageTabs';
 import Link from 'next/link';
+import { zobrazeneObdobi } from '@/lib/stav-datovych-sad';
 
-export const metadata: Metadata = {
-  alternates: { canonical: '/skoly' },
-  title: 'Nejžádanější studijní obory',
-  description: 'Středoškolské obory v ČR s nejvíce přihláškami na místo v 1. kole přijímacího řízení a statistiky podle měst. Historická data nejsou odhadem osobního přijetí.',
-  openGraph: {
-    title: 'Nejžádanější studijní obory | Přijímačky na střední školy',
-    description: 'Středoškolské obory v ČR s nejvíce přihláškami na místo v 1. kole přijímacího řízení.',
-  },
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const rok = await zobrazeneObdobi('cermat-prihlasky');
+  const vRoce = rok ? ` v roce ${rok}` : '';
+  return {
+    alternates: { canonical: '/skoly' },
+    title: 'Nejžádanější studijní obory',
+    description: `Středoškolské obory v ČR s nejvíce přihláškami na místo v 1. kole přijímacího řízení${vRoce} a statistiky podle měst. Historická data nejsou odhadem osobního přijetí.`,
+    openGraph: {
+      title: 'Nejžádanější studijní obory | Přijímačky na střední školy',
+      description: `Středoškolské obory v ČR s nejvíce přihláškami na místo v 1. kole přijímacího řízení${vRoce}.`,
+    },
+  };
+}
 
 export default async function SchoolsPage() {
   const [schools, kraje, analysis] = await Promise.all([
