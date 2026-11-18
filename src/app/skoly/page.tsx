@@ -10,7 +10,14 @@ import Link from 'next/link';
 import { zobrazeneObdobi } from '@/lib/stav-datovych-sad';
 
 export async function generateMetadata(): Promise<Metadata> {
-  const rok = await zobrazeneObdobi('cermat-prihlasky');
+  // Ukazatel „přihlášky na místo“ stojí na dvou sadách; platí nejstarší zobrazené období.
+  const roky = await Promise.all([
+    zobrazeneObdobi('cermat-prihlasky'),
+    zobrazeneObdobi('cermat-kapacity'),
+  ]);
+  const rok = roky.every(Boolean)
+    ? roky.reduce((a, b) => (Number(b) < Number(a) ? b : a))
+    : null;
   const vRoce = rok ? ` v roce ${rok}` : '';
   return {
     alternates: { canonical: '/skoly' },
