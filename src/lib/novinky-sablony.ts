@@ -2,7 +2,7 @@ import { obalka } from './novinky-email.ts';
 import { potvrzovaciOdkaz } from './novinky-token.ts';
 
 // ============================================================================
-// Texty servisních e-mailů odběru (potvrzení, uvítání).
+// Texty servisních e-mailů odběru (potvrzení termínů a hlídání, uvítání).
 //
 // Obsahové zprávy vznikají jinak: generují se ze šablon v `content/novinky/`
 // do `public/novinky/{rocnik}/` a schvalují se sloučením pull requestu
@@ -46,6 +46,49 @@ export function potvrzovaciEmail(para: PotvrzeniPara): { predmet: string; html: 
     odkaz,
     '',
     'Odkaz platí 72 hodin a použít ho jde jednou. Pokud jsi o odběr nežádal, e-mail ignoruj.',
+    '',
+    PATICKA_POTVRZENI,
+  ].join('\n');
+  return { predmet, html, text };
+}
+
+export interface PotvrzeniHlidaniPara extends PotvrzeniPara {
+  /** Kolik škol žádost nese; jména se do e-mailu nedávají, rodina ví, co vybrala. */
+  skol: number;
+}
+
+/** Počet škol slovy: „vybranou školu“, „2 vybrané školy“, „5 vybraných škol“. */
+export function skolSlovy(n: number): string {
+  if (n === 1) return 'vybranou školu';
+  if (n >= 2 && n <= 4) return `${n} vybrané školy`;
+  return `${n} vybraných škol`;
+}
+
+/**
+ * Potvrzení hlídání škol (#523, E6). Stejná cesta jako potvrzení termínů, jen
+ * text říká, co hlídání pošle: jeden denní souhrn, když se u škol něco změní.
+ */
+export function potvrzovaciEmailHlidani(para: PotvrzeniHlidaniPara): { predmet: string; html: string; text: string } {
+  const odkaz = potvrzovaciOdkaz(para.token);
+  const co = `hlídat ${skolSlovy(para.skol)}: když se na webu u školy něco změní (dny otevřených dveří, kritéria přijetí, nová data), přijde jeden souhrnný e-mail denně; v den bez změny nepřijde nic`;
+
+  const predmet = 'Potvrď hlídání škol na prijimackynaskolu.cz';
+  const html = obalka(
+    `<p>Dobrý den,</p>
+     <p>někdo zadal tuto adresu, aby mohl ${co}. Hlídání začne, až ho potvrdíš:</p>
+     <p style="text-align: center; margin: 24px 0;">
+       <a href="${odkaz}" style="display: inline-block; background: #0074e4; color: #ffffff; padding: 12px 24px; text-decoration: none; border-radius: 6px; font-weight: 600;">Potvrdit hlídání</a>
+     </p>
+     <p>Odkaz platí 72 hodin a použít ho jde jednou. Pokud jsi o hlídání nežádal, e-mail prostě ignoruj: bez potvrzení nic dalšího nepřijde a adresu si nikam neukládáme.</p>`,
+    PATICKA_POTVRZENI,
+  );
+  const text = [
+    'Dobrý den,',
+    '',
+    `někdo zadal tuto adresu, aby mohl ${co}. Hlídání začne, až ho potvrdíš na této adrese:`,
+    odkaz,
+    '',
+    'Odkaz platí 72 hodin a použít ho jde jednou. Pokud jsi o hlídání nežádal, e-mail ignoruj.',
     '',
     PATICKA_POTVRZENI,
   ].join('\n');

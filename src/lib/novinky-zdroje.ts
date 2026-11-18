@@ -24,6 +24,9 @@ export const POVOLENE_ZDROJE: readonly string[] = [
   'skola-hlidat',
 ];
 
+/** Kategorie událostí odběru v Matomu (technický klíč, ne text pro čtenáře). */
+export const MATOMO_KATEGORIE_ODBERU = 'Novinky';
+
 export function urciZdroj(hodnota: unknown): string {
   return typeof hodnota === 'string' && POVOLENE_ZDROJE.includes(hodnota) ? hodnota : 'neznamy';
 }

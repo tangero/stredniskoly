@@ -17,10 +17,12 @@ import { readFileSync, writeFileSync } from 'fs';
 import { dirname, join } from 'path';
 import { fileURLToPath } from 'url';
 import { Pool } from '@neondatabase/serverless';
-import { MIGRACE_SLEDOVANI, TABULKY_SLEDOVANI } from '../src/lib/sledovani-schema.ts';
+import { MIGRACE_SLEDOVANI, MIGRACE_ZADOST_HLIDANI, TABULKY_SLEDOVANI } from '../src/lib/sledovani-schema.ts';
 
 const KOREN = join(dirname(fileURLToPath(import.meta.url)), '..');
 const MIGRACE = join(KOREN, 'db', 'migrace', '009-sledovani-skol.sql');
+// Žádost o hlídání (#523, E6): samostatný soubor, 009 už v produkci běží.
+const MIGRACE_ZADOST = join(KOREN, 'db', 'migrace', '012-zadost-hlidani.sql');
 
 function zapisSql() {
   const hlavicka = [
@@ -33,6 +35,8 @@ function zapisSql() {
   ].join('\n');
   writeFileSync(MIGRACE, `${hlavicka}${MIGRACE_SLEDOVANI.join(';\n\n')};\n`, 'utf8');
   console.log(`Zapsáno ${MIGRACE_SLEDOVANI.length} příkazů do ${MIGRACE}`);
+  writeFileSync(MIGRACE_ZADOST, `${hlavicka}${MIGRACE_ZADOST_HLIDANI.join(';\n\n')};\n`, 'utf8');
+  console.log(`Zapsáno ${MIGRACE_ZADOST_HLIDANI.length} příkazů do ${MIGRACE_ZADOST}`);
 }
 
 function url() {
@@ -66,8 +70,9 @@ async function main() {
       console.log(`Existuje ${existuji.length} z ${TABULKY_SLEDOVANI.length}: ${existuji.join(', ') || '–'}`);
       return;
     }
-    for (const prikaz of MIGRACE_SLEDOVANI) await pool.query(prikaz);
-    console.log(`Migrace hotova: ${MIGRACE_SLEDOVANI.length} příkazů.`);
+    const prikazy = [...MIGRACE_SLEDOVANI, ...MIGRACE_ZADOST_HLIDANI];
+    for (const prikaz of prikazy) await pool.query(prikaz);
+    console.log(`Migrace hotova: ${prikazy.length} příkazů.`);
   } finally {
     await pool.end();
   }

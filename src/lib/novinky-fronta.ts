@@ -504,12 +504,15 @@ export async function zapisVysledekPolozky(
 export async function najdiServisniPolozky(
   s: Spojeni,
   max = 50,
-): Promise<Array<Polozka & { rocnik: string; jti: string | null }>> {
-  const v = await s.dotaz<Polozka & { rocnik: string; jti: string | null }>(
+): Promise<Array<Polozka & { rocnik: string; jti: string | null; skol: number | null }>> {
+  // Počet škol u potvrzení hlídání (#523, E6); `to_jsonb`, aby dotaz prošel i bez migrace 012.
+  const v = await s.dotaz<Polozka & { rocnik: string; jti: string | null; skol: number | null }>(
     `select p.id, p.zprava, p.ucel, p.odberatel_id, p.zadost_jti, p.adresat_otisk,
             coalesce(u.email, z.email) as email,
             split_part(p.zprava, '/', 2) as rocnik,
-            z.jti as jti
+            z.jti as jti,
+            jsonb_array_length(case when jsonb_typeof(to_jsonb(z) -> 'skoly') = 'array'
+                                    then to_jsonb(z) -> 'skoly' end) as skol
        from polozka_odeslani p
        left join odberatel u on u.id = p.odberatel_id
        left join zadost_o_potvrzeni z on z.jti = p.zadost_jti

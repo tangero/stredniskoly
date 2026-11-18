@@ -135,6 +135,13 @@ odběratel + zpráva drží „nejvýš jeden za den“). Co z toho plyne:
   hlídajících najednou; strop měsíce drží `rezervujKvotu`, nad strop souhrn odejde až další den a bude platit
   jen ten.
 
+## Žádost o potvrzení: sloupce `ucel` a `skoly` se čtou přes `to_jsonb` (#523, E6)
+
+Migrace `012-zadost-hlidani.sql` přidává do `zadost_o_potvrzeni` sloupce `ucel` a `skoly`. Čtení žádosti
+(`najdiAktivniZadost`, `potvrd`, `najdiServisniPolozky`) je bere přes `to_jsonb(z) ->> 'ucel'`, takže potvrzení
+termínů funguje i v databázi, kde migrace ještě neběžela. Zápis s těmito sloupci dělá jen `prihlasHlidani`, a to
+jen při `HLIDANI_ZAPNUTO=1`. Proměnnou proto zapni až po migraci 012, jinak přihlášení k hlídání skončí chybou 500.
+
 ## Veletrhy: SQL zápis nezneplatní cache webu
 
 Akce veletrhů se čtou přes cache s tagem `veletrhy` bez časové platnosti (`src/lib/veletrhy-zdroj.ts`). Zápis do

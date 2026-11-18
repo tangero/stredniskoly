@@ -15,14 +15,15 @@ export const metadata = {
   robots: { index: false, follow: false },
 };
 
-export default function PotvrzeniPage() {
+export default async function PotvrzeniPage({ searchParams }: { searchParams: Promise<{ co?: string }> }) {
+  const { co } = await searchParams;
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
       <main className="flex-1">
         <section className="py-16">
           <div className="max-w-xl mx-auto px-4">
-            <PotvrzeniKlient />
+            <PotvrzeniKlient hlidani={co === 'hlidani'} />
           </div>
         </section>
       </main>
