@@ -100,18 +100,46 @@ export function rocnikAkci(akce: { start: string; end: string }[]): string {
 }
 
 /**
+ * Místo v titulku krajské podstránky (#594): krajské město, které lidé hledají. Když je město už
+ * v názvu kraje („Hlavní město Praha“), stojí v titulku samo; jinak „<město> a <kraj>“.
+ * Kraj bez záznamu má v titulku název kraje jako dosud.
+ */
+const MESTO_V_TITULKU: Record<string, string> = {
+  CZ010: 'Praha',
+  CZ064: 'Brno',
+};
+
+/**
+ * Značka akce, kterou lidé hledají v kraji (#594), za pomlčkou na konci titulku. Do popisku
+ * se dostane jen tehdy, když nadcházející akce kraje nese tento název.
+ */
+const ZNACKA_AKCE: Record<string, string> = {
+  CZ071: 'Scholaris',
+};
+
+function mistoVTitulku(krajKod: string, nadpis: string): string {
+  const mesto = MESTO_V_TITULKU[krajKod];
+  if (!mesto) return nadpis;
+  return nadpis.includes(mesto) ? mesto : `${mesto} a ${nadpis}`;
+}
+
+/**
  * Titulek a popisek krajské podstránky /veletrhy/[kraj] (#545). Titulek nese kraj a ročník,
- * popisek počet nadcházejících akcí a města, kde se konají; bez nadcházející akce netvrdí žádnou.
+ * u vybraných krajů krajské město nebo značku akce (#594), popisek počet nadcházejících akcí a města,
+ * kde se konají; bez nadcházející akce netvrdí žádnou.
  * `akce` jsou nadcházející akce tohoto kraje, `rocnik` z `rocnikAkci` nad celou sezónou.
  */
 export function metaVeletrhuKraje(
   krajKod: string,
-  akce: { mesto: string | null; online?: boolean }[],
+  akce: { mesto: string | null; online?: boolean; nazev?: string }[],
   rocnik: string,
 ): { title: string; description: string } {
   const nadpis = nadpisKraje(krajKod);
-  let title = `Veletrhy středních škol ${nadpis}${rocnik ? ` ${rocnik}` : ''}`;
-  if (title.length > TITULEK_MAX) title = `Veletrhy SŠ ${nadpis}${rocnik ? ` ${rocnik}` : ''}`;
+  const misto = mistoVTitulku(krajKod, nadpis);
+  const znacka = ZNACKA_AKCE[krajKod];
+  const konec = `${rocnik ? ` ${rocnik}` : ''}${znacka ? ` – ${znacka}` : ''}`;
+  let title = `Veletrhy středních škol ${misto}${konec}`;
+  if (title.length > TITULEK_MAX) title = `Veletrhy SŠ ${misto}${konec}`;
   if (akce.length === 0) {
     return {
       title,
@@ -122,10 +150,11 @@ export function metaVeletrhuKraje(
   }
   const mesta = [...new Set(akce.filter((a) => a.mesto && !a.online).map((a) => a.mesto!))];
   const kde = mesta.length > 0 ? ` (${mesta.slice(0, 5).join(', ')}${mesta.length > 5 ? ' a další' : ''})` : '';
+  const sZnackou = znacka && akce.some((a) => a.nazev?.includes(znacka)) ? ` včetně ${znacka}` : '';
   return {
     title,
     description:
-      `${akci(akce.length)}${kde}: veletrhy a přehlídky středních škol, ${nadpis}. ` +
+      `${akci(akce.length)}${kde}: veletrhy a přehlídky středních škol${sZnackou}, ${nadpis}. ` +
       'Termíny, místa a odkazy na pořadatele.',
   };
 }

@@ -5,7 +5,7 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import { metaVeletrhuKraje, rocnikAkci } from '../src/lib/veletrhy-pocty.ts';
-import { krajNames, vsechnyKraje } from '../src/lib/kraje.mjs';
+import { krajNames, nadpisKraje, vsechnyKraje } from '../src/lib/kraje.mjs';
 import { zobrazitelneAkce } from '../src/lib/veletrhy.ts';
 import { createKrajSlug } from '../src/lib/utils.ts';
 
@@ -32,6 +32,54 @@ test('K2: každý z 14 krajů má unikátní titulek do 60 znaků a popisek s n�
   assert.equal(
     metaVeletrhuKraje('CZ020', akce, '2026/27').title,
     'Veletrhy středních škol Středočeský kraj 2026/27',
+  );
+});
+
+// #594: krajské město nebo značka akce v titulku tří krajů, ostatních 11 beze změny.
+const TITULKY_594 = {
+  CZ064: 'Veletrhy středních škol Brno a Jihomoravský kraj 2026',
+  CZ010: 'Veletrhy středních škol Praha 2026',
+  CZ071: 'Veletrhy středních škol Olomoucký kraj 2026 – Scholaris',
+};
+
+test('#594 K1–K3: Brno, Praha a Scholaris v titulku krajských stránek', () => {
+  for (const [kod, ocekavany] of Object.entries(TITULKY_594)) {
+    const m = metaVeletrhuKraje(kod, akce, '2026');
+    assert.equal(m.title, ocekavany);
+    assert.ok(m.title.length <= 60, m.title);
+  }
+});
+
+test('#594 K5: titulky s ročníkem 2026 jsou unikátní a do 60 znaků u všech 14 krajů', () => {
+  const tituly = new Set(KODY.map((kod) => metaVeletrhuKraje(kod, akce, '2026').title));
+  assert.equal(tituly.size, 14);
+  for (const t of tituly) assert.ok(t.length <= 60, t);
+});
+
+test('#594 K6: zbylých 11 krajů má titulek jako dosud', () => {
+  const ostatni = KODY.filter((kod) => !(kod in TITULKY_594));
+  assert.equal(ostatni.length, 11);
+  for (const kod of ostatni) {
+    for (const rocnik of ['2026', '2026/27']) {
+      assert.equal(
+        metaVeletrhuKraje(kod, akce, rocnik).title,
+        `Veletrhy středních škol ${nadpisKraje(kod)} ${rocnik}`,
+      );
+    }
+  }
+});
+
+test('#594: popisek Olomouckého kraje jmenuje Scholaris jen u nadcházející akce s tímto názvem', () => {
+  const se = metaVeletrhuKraje('CZ071', [{ mesto: 'Olomouc', nazev: 'Scholaris Olomouc 2026' }], '2026');
+  assert.match(se.description, /včetně Scholaris, Olomoucký kraj/);
+  assert.ok(se.description.length <= 200, se.description);
+  const bez = metaVeletrhuKraje('CZ071', [{ mesto: 'Olomouc', nazev: 'Burza škol' }], '2026');
+  assert.doesNotMatch(bez.description, /Scholaris/);
+  assert.doesNotMatch(metaVeletrhuKraje('CZ071', [], '2026').description, /Scholaris/);
+  // Jinde se popisek nemění ani s akcí stejného jména.
+  assert.doesNotMatch(
+    metaVeletrhuKraje('CZ064', [{ mesto: 'Brno', nazev: 'Scholaris Brno' }], '2026').description,
+    /Scholaris/,
   );
 });
 
