@@ -8,23 +8,25 @@ import Link from 'next/link';
  * stránku, odběr vzniká až odesláním formuláře (POST). Robot poštovního systému
  * tedy odběr nezaloží.
  */
-export function PotvrzeniKlient() {
+export function PotvrzeniKlient({ hlidani = false }: { hlidani?: boolean }) {
   const [stav, setStav] = useState<'formular' | 'posilam' | 'hotovo' | 'chyba'>('formular');
   const [chyba, setChyba] = useState<string | null>(null);
   const [rocnik, setRocnik] = useState<string | null>(null);
+  const [potvrzenoHlidani, setPotvrzenoHlidani] = useState(false);
 
   async function potvrd() {
     setStav('posilam');
     setChyba(null);
     try {
       const odpoved = await fetch('/api/novinky/potvrdit', { method: 'POST' });
-      const data = (await odpoved.json().catch(() => ({}))) as { error?: string; rocnik?: string; zdroj?: string };
+      const data = (await odpoved.json().catch(() => ({}))) as { error?: string; rocnik?: string; zdroj?: string; hlidani?: boolean };
       if (!odpoved.ok) {
         setChyba(data.error ?? 'Potvrzení se nepovedlo.');
         setStav('chyba');
         return;
       }
       setRocnik(data.rocnik ?? null);
+      setPotvrzenoHlidani(data.hlidani === true);
       setStav('hotovo');
       try {
         localStorage.setItem('novinky-odber', 'potvrzeno');
@@ -37,6 +39,21 @@ export function PotvrzeniKlient() {
       setChyba('Nepovedlo se odeslat. Zkontroluj připojení.');
       setStav('chyba');
     }
+  }
+
+  if (stav === 'hotovo' && potvrzenoHlidani) {
+    // Hlídání škol (#523, E6): uvítání se neposílá, první zprávou je denní souhrn.
+    return (
+      <div>
+        <h1 className="text-2xl font-bold mb-3" style={{ color: '#28313b' }}>
+          Hlídání je potvrzené
+        </h1>
+        <p className="text-slate-700">
+          Když se na webu u hlídaných škol něco změní, pošleme ti jeden souhrnný e-mail denně. V den
+          bez změny nepřijde nic. Každý souhrn má odkaz, kterým hlídání upravíš nebo zrušíš.
+        </p>
+      </div>
+    );
   }
 
   if (stav === 'hotovo') {
@@ -62,11 +79,11 @@ export function PotvrzeniKlient() {
   return (
     <div>
       <h1 className="text-2xl font-bold mb-3" style={{ color: '#28313b' }}>
-        Potvrď odběr termínů
+        {hlidani ? 'Potvrď hlídání škol' : 'Potvrď odběr termínů'}
       </h1>
       <p className="text-slate-700 mb-6">
-        Kliknutím dole odběr začne. Do té doby jsme nic nezaložili: držíme jen tvou žádost, která
-        sama propadne do 72 hodin.
+        Kliknutím dole {hlidani ? 'hlídání' : 'odběr'} začne. Do té doby jsme nic nezaložili: držíme
+        jen tvou žádost, která sama propadne do 72 hodin.
       </p>
       <button
         type="button"
@@ -74,7 +91,7 @@ export function PotvrzeniKlient() {
         disabled={stav === 'posilam'}
         className="rounded-lg bg-blue-700 px-5 py-3 font-semibold text-white hover:bg-blue-600 disabled:opacity-60"
       >
-        {stav === 'posilam' ? 'Potvrzuji…' : 'Potvrdit odběr'}
+        {stav === 'posilam' ? 'Potvrzuji…' : hlidani ? 'Potvrdit hlídání' : 'Potvrdit odběr'}
       </button>
       {chyba && (
         <p className="mt-4 text-sm text-red-600">

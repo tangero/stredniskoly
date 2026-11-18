@@ -88,6 +88,68 @@ export async function prihlas(vstup: PrihlaseniVstup): Promise<PrihlaseniVyslede
   });
 }
 
+/** Zpráva potvrzovacího e-mailu hlídání; liší se od potvrzení termínů šablonou (#523, E6). */
+export const ZPRAVA_POTVRZENI_HLIDANI = 'novinky/potvrzeni-hlidani';
+/** Kolik škol jde přihlásit k hlídání jednou žádostí (simulátor posílá zvažované školy). */
+export const MAX_SKOL_NA_ZADOST = 20;
+
+/** RED IZO je devět číslic; ostatní se zahodí, duplicity se sloučí. */
+export function platneRedizo(hodnoty: unknown): string[] {
+  if (!Array.isArray(hodnoty)) return [];
+  const vysledek: string[] = [];
+  for (const h of hodnoty) {
+    if (typeof h === 'string' && /^\d{9}$/.test(h) && !vysledek.includes(h)) vysledek.push(h);
+  }
+  return vysledek.slice(0, MAX_SKOL_NA_ZADOST);
+}
+
+export interface PrihlaseniHlidaniVstup extends PrihlaseniVstup {
+  skoly: string[];
+}
+
+/**
+ * Krok 1 hlídání škol (#523, E6): stejné limity a stejná fronta jako přihlášení
+ * k termínům, žádost ale nese účel `hlidani_skol` a seznam škol. Odběr termínů
+ * nevzniká a stávající odběratel termínů hlídání bez nového potvrzení nedostane (P4).
+ * Potřebuje migraci 012 (sloupce `ucel` a `skoly`).
+ */
+export async function prihlasHlidani(vstup: PrihlaseniHlidaniVstup): Promise<PrihlaseniVysledek> {
+  const email = normalizujEmail(vstup.email);
+  const skoly = platneRedizo(vstup.skoly);
+  if (!skoly.length) return { poslat: false, duvod: 'bez škol' };
+  const otiskEmailu = otisk(`email:${email}`);
+  const otiskIp = otisk(`ip:${vstup.ip}`);
+
+  return vTransakci(async (s) => {
+    if (!(await zvysLimit(s, otiskEmailu, LIMIT_NA_ADRESU))) {
+      return { poslat: false, duvod: 'limit adresy' };
+    }
+    if (!(await zvysLimit(s, otiskIp, LIMIT_NA_IP))) {
+      return { poslat: false, duvod: 'limit IP' };
+    }
+
+    const jti = noveJti();
+    await s.dotaz(
+      `insert into zadost_o_potvrzeni (jti, email, souhlas_verze, zdroj, plati_do, ucel, skoly)
+       values ($1, $2, $3, $4, now() + ($5::text || ' milliseconds')::interval, 'hlidani_skol', $6::text[])`,
+      [jti, email, SOUHLAS_VERZE, vstup.zdroj, String(ZADOST_PLATNOST_MS), skoly],
+    );
+
+    const polozkaId = await zaradPolozku(s, {
+      zprava: ZPRAVA_POTVRZENI_HLIDANI,
+      ucel: 'potvrzeni',
+      zadostJti: jti,
+      adresatOtisk: otiskEmailu,
+    });
+    return {
+      poslat: true,
+      jti,
+      token: vytvorToken(jti, ZADOST_PLATNOST_MS),
+      polozkaId: polozkaId ?? undefined,
+    };
+  });
+}
+
 /**
  * Počitadlo v okně 24 hodin. Otisk je HMAC s odděleným tajemstvím, takže
  * tabulka nenese adresu ani IP.
@@ -115,6 +177,23 @@ export interface Zadost {
   email: string;
   souhlas_verze: string;
   zdroj: string;
+  /** `novinky` (termíny), nebo `hlidani_skol` (#523, E6). */
+  ucel: string;
+  /** Školy k hlídání (RED IZO); u termínů prázdné. */
+  skoly: string[];
+}
+
+/**
+ * Sloupce žádosti. `ucel` a `skoly` přidává migrace 012; čtou se přes `to_jsonb`,
+ * aby potvrzení termínů fungovalo i v databázi, kde migrace ještě neběžela.
+ */
+const SLOUPCE_ZADOSTI = `z.jti, z.email, z.souhlas_verze, z.zdroj,
+       coalesce(to_jsonb(z) ->> 'ucel', 'novinky') as ucel,
+       coalesce(to_jsonb(z) -> 'skoly', '[]'::jsonb) as skoly`;
+
+function zadostZRadku(r: Omit<Zadost, 'skoly'> & { skoly: unknown }): Zadost {
+  const skoly = typeof r.skoly === 'string' ? JSON.parse(r.skoly) : r.skoly;
+  return { ...r, skoly: Array.isArray(skoly) ? skoly.filter((x): x is string => typeof x === 'string') : [] };
 }
 
 /**
@@ -122,13 +201,13 @@ export interface Zadost {
  * takže robot poštovního systému odběr nevytvoří.
  */
 export async function najdiAktivniZadost(jti: string): Promise<Zadost | null> {
-  const v = await dotaz<Zadost>(
-    `select jti, email, souhlas_verze, zdroj
-       from zadost_o_potvrzeni
-      where jti = $1 and spotrebovano is null and plati_do > now()`,
+  const v = await dotaz<Omit<Zadost, 'skoly'> & { skoly: unknown }>(
+    `select ${SLOUPCE_ZADOSTI}
+       from zadost_o_potvrzeni z
+      where z.jti = $1 and z.spotrebovano is null and z.plati_do > now()`,
     [jti],
   );
-  return v.rows[0] ?? null;
+  return v.rows[0] ? zadostZRadku(v.rows[0]) : null;
 }
 
 export interface PotvrzeniVysledek {
@@ -141,6 +220,10 @@ export interface PotvrzeniVysledek {
   uvitaniPolozkaId?: string;
   /** Identifikátor zprávy uvítání; nese `jti`, viz poznámka u potvrzení. */
   uvitaniZprava?: string;
+  /** Potvrzené hlídání škol, ne odběr termínů (#523, E6). */
+  hlidani?: boolean;
+  /** Kolik škol se potvrzením začalo hlídat. */
+  skol?: number;
 }
 
 /**
@@ -149,17 +232,32 @@ export interface PotvrzeniVysledek {
  */
 export async function potvrd(jti: string): Promise<PotvrzeniVysledek> {
   return vTransakci(async (s) => {
-    const v = await s.dotaz<Zadost>(
-      `update zadost_o_potvrzeni set spotrebovano = now()
-        where jti = $1 and spotrebovano is null and plati_do > now()
-        returning jti, email, souhlas_verze, zdroj`,
+    const v = await s.dotaz<Omit<Zadost, 'skoly'> & { skoly: unknown }>(
+      `update zadost_o_potvrzeni z set spotrebovano = now()
+        where z.jti = $1 and z.spotrebovano is null and z.plati_do > now()
+        returning ${SLOUPCE_ZADOSTI}`,
       [jti],
     );
-    const zadost = v.rows[0];
-    if (!zadost) return { ok: false, duvod: 'žádost už byla použita nebo propadla' };
+    if (!v.rows[0]) return { ok: false, duvod: 'žádost už byla použita nebo propadla' };
+    const zadost = zadostZRadku(v.rows[0]);
 
     const email = normalizujEmail(zadost.email);
     const odberatelId = await zajistiOdberatele(s, email);
+
+    if (zadost.ucel === 'hlidani_skol') {
+      // Hlídání: jen vazba na školy a doklad s vlastním účelem. Odběr termínů
+      // nevzniká (P4) a uvítání se neposílá; první zprávou je denní souhrn.
+      const skoly = platneRedizo(zadost.skoly);
+      for (const redizo of skoly) {
+        await s.dotaz(
+          `insert into odber_skoly (odberatel_id, redizo, zdroj) values ($1, $2, $3)
+           on conflict (odberatel_id, redizo) do nothing`,
+          [odberatelId, redizo, zadost.zdroj],
+        );
+      }
+      await zapisDoklad(s, odberatelId, email, zadost, 'hlidani_skol');
+      return { ok: true, odberatelId, email, zdroj: zadost.zdroj, hlidani: true, skol: skoly.length };
+    }
 
     await s.dotaz(
       `insert into odber_novinek (odberatel_id, zdroj) values ($1, $2)
@@ -204,11 +302,21 @@ async function zapisDoklad(
   odberatelId: string,
   email: string,
   zadost: Zadost,
+  ucel: 'novinky' | 'hlidani_skol' = 'novinky',
 ): Promise<void> {
+  // Doklad termínů se zapisuje beze sloupce `ucel` (výchozí `novinky`), jako dřív.
+  if (ucel === 'novinky') {
+    await s.dotaz(
+      `insert into doklad_souhlasu (id, odberatel_id, email_otisk, souhlas_verze, zdroj)
+       values ($1, $2, $3, $4, $5)`,
+      [noveId(), odberatelId, otisk(`email:${email}`), zadost.souhlas_verze, zadost.zdroj],
+    );
+    return;
+  }
   await s.dotaz(
-    `insert into doklad_souhlasu (id, odberatel_id, email_otisk, souhlas_verze, zdroj)
-     values ($1, $2, $3, $4, $5)`,
-    [noveId(), odberatelId, otisk(`email:${email}`), zadost.souhlas_verze, zadost.zdroj],
+    `insert into doklad_souhlasu (id, odberatel_id, email_otisk, souhlas_verze, zdroj, ucel)
+     values ($1, $2, $3, $4, $5, $6)`,
+    [noveId(), odberatelId, otisk(`email:${email}`), zadost.souhlas_verze, zadost.zdroj, ucel],
   );
 }
 

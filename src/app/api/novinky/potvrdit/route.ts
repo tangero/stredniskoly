@@ -56,7 +56,10 @@ export async function GET(request: NextRequest) {
   }
 
   // Token z adresy zmizí hned: do analytiky ani do logů nesmí.
-  const odpoved = NextResponse.redirect(new URL('/novinky/potvrzeni', request.url));
+  // Stránka podle účelu žádosti řekne, co se potvrzuje (termíny, nebo hlídání škol, #523 E6).
+  const cil = new URL('/novinky/potvrzeni', request.url);
+  if (zadost.ucel === 'hlidani_skol') cil.searchParams.set('co', 'hlidani');
+  const odpoved = NextResponse.redirect(cil);
   odpoved.cookies.set(COOKIE, podepisRelaci(jti, secret), {
     httpOnly: true,
     secure: true,
@@ -84,7 +87,7 @@ export async function POST(request: NextRequest) {
 
   const vysledek = await potvrd(jti);
   const odpoved = vysledek.ok
-    ? NextResponse.json({ success: true, zdroj: vysledek.zdroj })
+    ? NextResponse.json({ success: true, zdroj: vysledek.zdroj, hlidani: vysledek.hlidani === true, skol: vysledek.skol ?? 0 })
     : NextResponse.json({ error: vysledek.duvod ?? 'Potvrzení se nepovedlo.' }, { status: 400 });
   odpoved.cookies.delete(COOKIE);
 

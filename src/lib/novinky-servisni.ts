@@ -10,7 +10,8 @@ import {
 import type { Polozka, UcelPolozky } from './novinky-fronta.ts';
 import { odesliDavku, sestavTeloDavky } from './novinky-email.ts';
 import type { ZpravaProAdresata } from './novinky-email.ts';
-import { potvrzovaciEmail, uvitaciEmail } from './novinky-sablony.ts';
+import { potvrzovaciEmail, potvrzovaciEmailHlidani, uvitaciEmail } from './novinky-sablony.ts';
+import { ZPRAVA_POTVRZENI_HLIDANI } from './novinky-odber.ts';
 import {
   odhlasovaciOdkaz,
   vytvorToken,
@@ -57,10 +58,17 @@ export function obsahServisni(para: {
   email: string;
   rocnik: string;
   jti?: string | null;
+  /** Zpráva položky; potvrzení hlídání má vlastní šablonu (#523, E6). */
+  zprava?: string;
+  /** Počet škol v žádosti o hlídání. */
+  skol?: number;
 }): ZpravaProAdresata {
   if (para.ucel === 'potvrzeni') {
     if (!para.jti) throw new Error('potvrzení bez žádosti nelze poslat');
-    const sablona = potvrzovaciEmail({ token: vytvorToken(para.jti, ZADOST_PLATNOST_MS) });
+    const token = vytvorToken(para.jti, ZADOST_PLATNOST_MS);
+    const sablona = para.zprava === ZPRAVA_POTVRZENI_HLIDANI
+      ? potvrzovaciEmailHlidani({ token, skol: Math.max(1, para.skol ?? 1) })
+      : potvrzovaciEmail({ token });
     return { polozkaId: para.polozkaId, email: para.email, ...sablona };
   }
 
@@ -89,6 +97,8 @@ export async function odesliServisni(
     ucel: 'potvrzeni' | 'uvitani';
     rocnik: string;
     jti?: string | null;
+    /** Počet škol u potvrzení hlídání. */
+    skol?: number;
   },
   kdy = new Date(),
 ): Promise<VysledekServisni> {
@@ -116,6 +126,8 @@ export async function odesliServisni(
               email: p.email,
               rocnik: polozka.rocnik,
               jti: p.zadost_jti ?? polozka.jti,
+              zprava: polozka.zprava,
+              skol: polozka.skol,
             }),
           ),
         ),
@@ -172,6 +184,7 @@ export async function dovezServisni(
         ucel: p.ucel === 'potvrzeni' ? 'potvrzeni' : 'uvitani',
         rocnik,
         jti: p.jti,
+        skol: p.skol ?? undefined,
       },
       kdy,
     );

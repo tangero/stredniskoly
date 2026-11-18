@@ -32,3 +32,15 @@ export const MIGRACE_SLEDOVANI: string[] = [
   // Doklad souhlasu dostane účel. Dosavadní doklady patří odběru novinek.
   `alter table doklad_souhlasu add column if not exists ucel text not null default 'novinky'`,
 ];
+
+/**
+ * Žádost o potvrzení nese, k čemu se člověk přihlašuje, a u hlídání které školy
+ * (zadání #523, E6, varianta A podle odpovědi vlastníka 18. 11. 2026). Generuje se
+ * do db/migrace/012-zadost-hlidani.sql; dosavadní žádosti patří odběru termínů.
+ * Bez této migrace hlídání nejde zapnout (`HLIDANI_ZAPNUTO`), čtení žádosti na ní
+ * nezávisí (`najdiAktivniZadost`).
+ */
+export const MIGRACE_ZADOST_HLIDANI: string[] = [
+  `alter table zadost_o_potvrzeni add column if not exists ucel text not null default 'novinky'`,
+  `alter table zadost_o_potvrzeni add column if not exists skoly text[]`,
+];

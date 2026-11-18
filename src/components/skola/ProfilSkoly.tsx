@@ -22,6 +22,8 @@ import { SchemaOkoli } from '@/components/skola/SchemaOkoli';
 import { NovinkySkoly, ZeZivotaSkoly } from '@/components/skola/NovinkySkoly';
 import { VeletrhVMeste } from '@/components/veletrhy/VeletrhVMeste';
 import { OdberBlok, OdkazNaOdber } from '@/components/novinky/OdberBlok';
+import { HlidatSkolu } from '@/components/novinky/HlidatSkolu';
+import { jeHlidaniZapnuto } from '@/lib/novinky-hlidani-zapnuto';
 import { vetyDruhehoKola } from '@/lib/druhe-kolo-vyklad';
 
 /**
@@ -301,6 +303,8 @@ export function ProfilSkoly({ data, skola, odkazy }: ProfilSkolyProps) {
           <div className="flex flex-wrap items-center gap-3">
             {data.web && <a href={data.web} rel="noopener noreferrer" className="rounded-lg bg-[#0074e4] px-4 py-2.5 text-[15px] font-semibold text-white hover:bg-[#005fbd]">Web školy</a>}
             <Link href="/simulator" className="rounded-lg border border-[#0074e4] px-4 py-2.5 text-[15px] font-semibold text-[#0074e4] hover:bg-blue-50">Porovnat v simulátoru</Link>
+            {/* Hlídání školy (#523, E6): při vypnutém hlídání se nevykreslí nic (P6). */}
+            {jeHlidaniZapnuto() && <HlidatSkolu redizo={data.redizo} nazev={skola.nazev} />}
           </div>
           {/* Hlavička netvrdí, že škola cokoli potvrdila: škola doplňuje jen vlastní pole,
               obory, místa, přijímání a maturita jsou z oficiálních dat. Značka „Doplnila
