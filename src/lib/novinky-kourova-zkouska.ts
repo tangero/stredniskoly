@@ -12,6 +12,8 @@ import {
   potvrd,
   prehledPodlePolozky,
   prihlas,
+  prihlasHlidani,
+  spravaProved,
   uklid,
 } from './novinky-odber.ts';
 import { dokonciUcinkyWebhooku, obnovUviznute, uklidOdesilace } from './novinky-odesilac.ts';
@@ -188,6 +190,67 @@ export async function kourovaZkouska(kdy = new Date()): Promise<VysledekZkousky>
         [potvrzeni.odberatelId],
       );
       tvrd('doklad souhlasu je zapsaný', doklady.rows[0]?.pocet === 1);
+    }
+
+    // --- Hlídání škol (#523, E6): přihlášení, potvrzení, nezávislost odběrů --
+    // Nic se neodesílá: položka fronty zůstane ve stavu `ceka` a poklid ji smaže.
+    // Potřebuje migraci 012 (sloupec `skoly`); bez ní se krok jen oznámí.
+    const sloupecSkoly = await dotaz<{ pocet: number }>(
+      `select count(*)::int as pocet from information_schema.columns
+        where table_name = 'zadost_o_potvrzeni' and column_name = 'skoly'`,
+    );
+    if (sloupecSkoly.rows[0]?.pocet !== 1) {
+      tvrd('hlídání škol: migrace 012 ještě neběžela, krok přeskočen', true);
+    } else if (potvrzeni.odberatelId) {
+      // Zkušební adresa už vyčerpala denní limit z kroku výše; počitadlo je její.
+      await dotaz(`delete from limit_potvrzeni where otisk = $1`, [otisk(`email:${adresa}`)]);
+      const hlidani = await prihlasHlidani({
+        email: adresa,
+        zdroj: 'novinky',
+        ip: IP_ZKOUSKY,
+        skoly: ['999999991', '999999992'],
+      });
+      tvrd('hlídání: přihlášení založilo žádost', hlidani.poslat === true && Boolean(hlidani.jti), hlidani.duvod);
+      if (hlidani.jti) {
+        const zadostHlidani = await najdiAktivniZadost(hlidani.jti);
+        tvrd(
+          'hlídání: žádost nese účel a školy',
+          zadostHlidani?.ucel === 'hlidani_skol' && zadostHlidani.skoly.length === 2,
+        );
+        const potvrzeniHlidani = await potvrd(hlidani.jti);
+        tvrd(
+          'hlídání: potvrzení prošlo',
+          potvrzeniHlidani.ok === true && potvrzeniHlidani.hlidani === true && potvrzeniHlidani.skol === 2,
+          potvrzeniHlidani.duvod,
+        );
+        tvrd('hlídání: potvrzení nezakládá uvítání', !potvrzeniHlidani.uvitaniPolozkaId);
+        tvrd(
+          'hlídání: odběratel je tentýž jako u termínů',
+          potvrzeniHlidani.odberatelId === potvrzeni.odberatelId,
+        );
+        const stav = async () => {
+          const t = await dotaz<{ pocet: number }>(
+            `select count(*)::int as pocet from odber_novinek where odberatel_id = $1`,
+            [potvrzeni.odberatelId],
+          );
+          const h = await dotaz<{ pocet: number }>(
+            `select count(*)::int as pocet from odber_skoly where odberatel_id = $1`,
+            [potvrzeni.odberatelId],
+          );
+          return { terminy: t.rows[0]?.pocet ?? -1, skoly: h.rows[0]?.pocet ?? -1 };
+        };
+        const po = await stav();
+        tvrd('hlídání: obě školy hlídané a termíny zůstaly', po.skoly === 2 && po.terminy === 1, JSON.stringify(po));
+        if (potvrzeni.uvitaniPolozkaId) {
+          const zbyva = await spravaProved(potvrzeni.uvitaniPolozkaId, { akce: 'hlidani' });
+          const poZruseni = await stav();
+          tvrd(
+            'hlídání: zrušení hlídání nechá odběr termínů',
+            zbyva?.terminy === true && zbyva.skoly === 0 && poZruseni.skoly === 0 && poZruseni.terminy === 1,
+            JSON.stringify(poZruseni),
+          );
+        }
+      }
     }
 
     // --- Kroky 6 a 7: správa a odhlášení -----------------------------------

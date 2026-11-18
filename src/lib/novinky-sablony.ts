@@ -79,7 +79,7 @@ export function potvrzovaciEmailHlidani(para: PotvrzeniHlidaniPara): { predmet: 
      <p style="text-align: center; margin: 24px 0;">
        <a href="${odkaz}" style="display: inline-block; background: #0074e4; color: #ffffff; padding: 12px 24px; text-decoration: none; border-radius: 6px; font-weight: 600;">Potvrdit hlídání</a>
      </p>
-     <p>Odkaz platí 72 hodin a použít ho jde jednou. Pokud jsi o hlídání nežádal, e-mail prostě ignoruj: bez potvrzení nic dalšího nepřijde a adresu si nikam neukládáme.</p>`,
+     <p>Odkaz platí 72 hodin a použít ho jde jednou. Pokud jsi o hlídání nežádal, e-mail prostě ignoruj: bez potvrzení nic dalšího nepřijde a nepotvrzená žádost sama propadne do 72 hodin.</p>`,
     PATICKA_POTVRZENI,
   );
   const text = [
