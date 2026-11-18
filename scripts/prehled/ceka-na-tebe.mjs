@@ -211,7 +211,7 @@ export function sestavSkupiny({ prs = [], issues = [], ucty, dnes, ted }) {
 }
 
 /**
- * Zpráva v HTML Telegramu a tlačítka s odkazy (inline_keyboard, dvě na řádek). Ranní: „Čeká přes 3 dny“ od nejstarší,
+ * Zpráva v HTML Telegramu a tlačítka s odkazy (inline_keyboard, dvě na řádek). Nahoře „Ke schválení“ (#561), ranní pak „Čeká přes 3 dny“ od nejstarší,
  * „Nové od minulé zprávy“, ostatní jen počty. Večerní (`vecer`): jen nové. `posledni` je čas minulé zprávy (ms).
  * Vrací null, když není co poslat.
  */
@@ -221,9 +221,13 @@ export function zprava(skupiny, { ted = Date.now(), vecer = false, posledni = te
   const vstup = (p) => p.vstup ?? p.od;
   const dny = (p) => Math.floor((ted - p.od) / DEN);
   // Položka, která do skupiny vstoupila po minulé zprávě, je nová i když je její stáří velké (K1).
-  const stare = vse.filter((p) => ted - p.od > STARE_PO && vstup(p) < posledni).sort((a, b) => a.od - b.od);
-  const nove = vse.filter((p) => vstup(p) >= posledni).sort((a, b) => vstup(a) - vstup(b));
-  if (!(vecer ? nove : vse).length) return null;
+  // PR ke schválení stojí na začátku zprávy ve vlastním oddílu bez ohledu na stáří (#561); ve večerní jen nové.
+  const jeSouhlas = (p) => p.g.klic === 'souhlas';
+  const keSchvaleni = vse.filter((p) => jeSouhlas(p) && (!vecer || vstup(p) >= posledni)).sort((a, b) => a.od - b.od);
+  const ostatni = vse.filter((p) => !jeSouhlas(p));
+  const stare = ostatni.filter((p) => ted - p.od > STARE_PO && vstup(p) < posledni).sort((a, b) => a.od - b.od);
+  const nove = ostatni.filter((p) => vstup(p) >= posledni).sort((a, b) => vstup(a) - vstup(b));
+  if (!(vecer ? [...keSchvaleni, ...nove] : vse).length) return null;
   const tlacitka = [];
   const radek = (p, stari) => {
     const r = [`• <a href="${adresa(p.cislo, p.pr)}">#${p.cislo}</a> ${html(zkrat(p.titulek, 90))} <i>(${[p.g.tlacitko, stari ? `${dny(p)} dní` : null].filter(Boolean).join(', ')})</i>`];
@@ -233,15 +237,17 @@ export function zprava(skupiny, { ted = Date.now(), vecer = false, posledni = te
   };
   const oddil = (nadpis, polozky, max, stari) => [`<b>${nadpis} (${polozky.length})</b>`, ...polozky.slice(0, max).map((p) => radek(p, stari)),
     ...(polozky.length > max ? [`   …a dalších ${polozky.length - max}`] : [])].join('\n');
-  const casti = [`<b>${vecer ? 'Večer na tebe' : 'Čeká na tebe'}: ${vecer ? nove.length : vse.length}</b>`];
+  const casti = [`<b>${vecer ? 'Večer na tebe' : 'Čeká na tebe'}: ${vecer ? keSchvaleni.length + nove.length : vse.length}</b>`];
+  const souhlasG = skupiny.find((g) => g.klic === 'souhlas');
+  if (keSchvaleni.length) casti.push(oddil(souhlasG.nadpis, keSchvaleni, MAX_V_SKUPINE, !vecer));
   if (!vecer && stare.length) casti.push(oddil('⏰ Čeká přes 3 dny', stare, MAX_STARYCH, true));
   if (nove.length) casti.push(oddil(vecer ? '🆕 Nové od ranní zprávy' : '🆕 Nové od minulé zprávy', nove, MAX_V_SKUPINE, false));
   // Pokyn, co udělat, jednou za skupinu, která má ve zprávě zobrazenou položku (#562, omezení P4).
-  const zobrazene = new Set([...(vecer ? [] : stare.slice(0, MAX_STARYCH)), ...nove.slice(0, MAX_V_SKUPINE)].map((p) => p.g));
+  const zobrazene = new Set([...keSchvaleni.slice(0, MAX_V_SKUPINE), ...(vecer ? [] : stare.slice(0, MAX_STARYCH)), ...nove.slice(0, MAX_V_SKUPINE)].map((p) => p.g));
   const pokyny = skupiny.filter((g) => zobrazene.has(g));
   if (pokyny.length) casti.push(`<b>Co udělat</b>\n${pokyny.map((g) => `${g.nadpis}: ${g.akce}`).join('\n')}`);
   if (!vecer) {
-    const zbytek = vse.filter((p) => !stare.includes(p) && !nove.includes(p));
+    const zbytek = ostatni.filter((p) => !stare.includes(p) && !nove.includes(p));
     const pocty = skupiny.map((g) => [g.nadpis, zbytek.filter((p) => p.g === g).length]).filter(([, n]) => n);
     if (pocty.length) casti.push(`<b>Ostatní</b>\n${pocty.map(([n, c]) => `${n}: ${c}`).join('\n')}\n<a href="${ODKAZ_CEKAJICICH}">seznam čekajících issues</a>`);
   }

@@ -178,7 +178,9 @@ a oponentury, hlášení od veřejnosti bez rozhodnutí (#461) a PR, které stoj
 posledního pushe nebo komentáře uplynul přes den a PR nečeká na souhlas ani nemá `schvaleno`, `stop` nebo `potrebuje-cloveka`;
 u položky je důvod: konflikt s `main`, červené testy (názvy kontrol), jinak výsledek brány (například lhůta L). V oddílu „Co udělat“ pokyn ke každé skupině, která má ve zprávě zobrazenou položku, pod zprávou
 tlačítka na PR nebo issue. Spouští ji Plánovač; ručně v Actions (Čeká na tebe, Run workflow).
-Od #562 je ranní zpráva řazená podle stáří: nahoře „Čeká přes 3 dny“ od nejstarší s počtem dní, pak „Nové od minulé
+Od #561 stojí na začátku zprávy oddíl „Ke schválení“ se všemi PR, kterým chybí jedině souhlas (od nejstaršího, jejich
+tlačítka jdou první); večerní souhrn v něm ukáže jen PR, které do skupiny přibyly od ranní zprávy.
+Od #562 je ranní zpráva řazená podle stáří: pod ním „Čeká přes 3 dny“ od nejstarší s počtem dní, pak „Nové od minulé
 zprávy“, zbytek jen počty po skupinách s odkazem na seznam issues. Stáří je doba od přidání štítku otázky, návrhu nebo
 oponentury, u ostatních od založení; u PR od první kontroly brány, která chtěla jen souhlas (když se ten čas nezjistí,
 od otevření PR). „Nové od minulé zprávy“ se řídí časem vstupu do skupiny, ne stářím: u připomínky je to pozdější z přidání
