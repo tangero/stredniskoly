@@ -1,0 +1,59 @@
+# Šablona tabule pro další repozitáře (#561, etapa E3). Do cílového repozitáře patří jako
+# `.github/workflows/tabule.yml`, skript jako `.github/tabule/tabule.mjs`.
+# Návod: docs/spoluprace-na-githubu.md v tangero/stredniskoly, oddíl 3.
+#
+# Přidá nové issue na společnou tabuli vlastníka a srovná stav karty (Nové / V práci / Hotovo),
+# pole „Pro lidi“ a „Čeká na“. Kód z PR se nespouští (pull_request_target, checkout výchozí větve).
+#
+# PROJECT_TOKEN: klasický token se scopes `project` a `repo`; fine-grained token ani GitHub App do projektu
+# na osobním účtu zapisovat neumí. Jiný secret workflow nepotřebuje.
+name: Tabule
+
+on:
+  issues:
+    types: [opened, reopened, closed, edited, assigned, unassigned]
+  pull_request_target:
+    types: [opened, reopened, closed, edited]
+  schedule:
+    - cron: "17 4 * * *"
+  workflow_dispatch:
+    inputs:
+      nanecisto:
+        description: "Jen vypsat změny"
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+  issues: read
+  pull-requests: read
+
+jobs:
+  sync:
+    name: Karty na tabuli
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    # Srovnání je idempotentní a čte aktuální stav; zrušený čekající běh nahradí novější.
+    concurrency:
+      group: tabule-sync
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.repository.default_branch }}
+          persist-credentials: false
+          sparse-checkout: .github/tabule
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Srovnat karty
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          PROJECT_TOKEN: ${{ secrets.PROJECT_TOKEN }}
+          REPO: ${{ github.repository }}
+          VLASTNIK: ${{ github.repository_owner }}
+          CISLO_PROJEKTU: ${{ vars.TABULE_CISLO_PROJEKTU || '1' }}
+          KOLEGOVE: ${{ vars.TABULE_KOLEGOVE }}
+          NANECISTO: ${{ inputs.nanecisto && '1' || '' }}
+        run: node .github/tabule/tabule.mjs
