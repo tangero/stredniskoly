@@ -134,7 +134,37 @@ Workflow běží i při úpravě těla issue a při přiřazení. Úkoly jsou se
 - **Hoří:** `čeká-na:Patrick is:open updated:<@today-3d`;
 - **Měření:** `parent-issue:tangero/stredniskoly#331` a připomínky (`label:pripominka`), řazení podle Termínu.
 
-Vyhodnocení pilotu je po dvou týdnech v #561; ostatní repozitáře se připojí až po něm.
+Vyhodnocení pilotu je v #561 (15. 11. 2026); vlastník 18. 11. rozhodl pokračovat šablonou pro další repozitáře.
+
+**Šablona pro další repozitáře** (`docs/sablony/tabule-repozitar/`, #561, E3). Jednoduché workflow bez logiky štítků
+brány, které do stejné tabule přidá issues dalšího repozitáře. Karty ostatních repozitářů nemění, stejně jako
+`scripts/tabule/` tady mění jen karty tohoto repozitáře.
+
+| co | podle čeho |
+|---|---|
+| přidání na tabuli | otevřené issue, které na tabuli chybí (zavřená se nepřidávají) |
+| stav **Nové** / **V práci** / **Hotovo** | zavřené issue je Hotovo; otevřené s otevřeným PR, který má v popisu `Closes #N`, `Fixes #N` nebo `Souvisí s #N`, je V práci; jinak Nové |
+| **Pro lidi** | řádek `Pro lidi: …` v těle issue (nebo oddíl „### Pro lidi“), jinak název issue |
+| **Čeká na** | přiřazení: kolega (účty v proměnné repozitáře `TABULE_KOLEGOVE`) má přednost, pak vlastník repozitáře (Patrick), jiný přiřazený účet (agent, bot) je AI; zavřené nikdo; otevřené bez přiřazení prázdné |
+
+Workflow běží při založení, úpravě, zavření a přiřazení issue, při otevření, úpravě a zavření PR, denně ve 4:17 UTC
+a ručně (Actions → Tabule → Run workflow, volba „Jen vypsat změny“). Kód z PR nespouští (`pull_request_target`,
+checkout jen složky `.github/tabule` z výchozí větve), oprávnění má jen na čtení; do tabule zapisuje tokenem
+`PROJECT_TOKEN`. Stavy a pole hledá podle názvu a nezakládá je; co chybí, ohlásí varováním v běhu.
+
+Nasazení do repozitáře (sezení nad daným repozitářem podle jeho pravidel, postup se odškrtává v `## Etapy` v #561;
+neveřejné repozitáře se tam uvádějí jen jako „neveřejný repozitář 1 až 3“):
+
+1. Zkopírovat `tabule.yml` do `.github/workflows/tabule.yml` a `tabule.mjs` do `.github/tabule/tabule.mjs`.
+2. Vlastník vloží do repozitáře secret `PROJECT_TOKEN` (klasický token se scopes `project` a `repo`; `repo` kvůli
+   neveřejným repozitářům, `public_repo` jim nestačí).
+3. Vlastník jednou přidá v nastavení tabule do pole Status volby **Nové** a **V práci** (Hotovo už existuje; API
+   volby stavu měnit neumí). Pole „Pro lidi“ a „Čeká na“ založil skript tohoto repozitáře, šablona je jen používá.
+4. Nepovinné proměnné repozitáře: `TABULE_KOLEGOVE` (účty kolegů oddělené čárkou), `TABULE_CISLO_PROJEKTU`
+   (výchozí 1).
+5. Ověření: ruční běh „Jen vypsat změny“, pak ostrý běh. Nové issue se má objevit ve stavu Nové, zavřené
+   v Hotovo (kritérium K4 v #561); výpis běhu se zapíše do #561.
+
 
 **Oponentura** (`.github/workflows/oponentura.yml`, skill `.claude/skills/oponentura`, #358): slouží při rozjezdu
 nového projektu, rutinně se nespouští. Vlastník nebo asistent zadání popíše problém formulářem **Problém pro nový
