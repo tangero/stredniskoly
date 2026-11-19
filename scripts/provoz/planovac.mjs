@@ -18,6 +18,8 @@ export const ULOHY = [
   { workflow: 'brana-slouceni.yml', interval: 60 },
   { workflow: 'triaz.yml', interval: 60 },
   { workflow: 'tep-rutiny.yml', interval: 60 },
+  // Hlídač uvízlých PR (#306): konflikt s main a červené testy předá smyčce oprav.
+  { workflow: 'hlidac-pr.yml', interval: 60 },
   { workflow: 'ceka-na-tebe.yml', denne: '06:52' },
   // Večerní souhrn (#562): 19:30 SEČ, v létě 20:30 SELČ. Stejné workflow; jen nové od ranní zprávy.
   { workflow: 'ceka-na-tebe.yml', denne: '18:30', inputs: { vecer: 'true' } },
