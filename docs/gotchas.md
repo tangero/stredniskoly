@@ -142,6 +142,10 @@ Migrace `012-zadost-hlidani.sql` přidává do `zadost_o_potvrzeni` sloupce `uce
 termínů funguje i v databázi, kde migrace ještě neběžela. Zápis s těmito sloupci dělá jen `prihlasHlidani`, a to
 jen při `HLIDANI_ZAPNUTO=1`. Proměnnou proto zapni až po migraci 012, jinak přihlášení k hlídání skončí chybou 500.
 
+Stránka `/simulator` je statická: zda nabídne výběr škol k hlídání (E6b), se rozhodne při sestavení podle
+`HLIDANI_ZAPNUTO`. Po zapnutí nebo vypnutí proměnné je proto potřeba nové nasazení, jinak simulátor ukazuje
+stav z posledního sestavení.
+
 ## Veletrhy: SQL zápis nezneplatní cache webu
 
 Akce veletrhů se čtou přes cache s tagem `veletrhy` bez časové platnosti (`src/lib/veletrhy-zdroj.ts`). Zápis do
