@@ -63,6 +63,11 @@ export function cekaNa({ stav, prirazeni = [] }, { vlastnik, kolegove = [] }) {
 }
 
 /** Seznam účtů z proměnné oddělené čárkami nebo mezerami. */
+/** Má se pole „Čeká na“ přepsat? Ano, kdykoli se liší od cíle, i u zavřené karty s dosud prázdným polem (→ „nikdo“). */
+export function zmenitCekaNa(cil, karta) {
+  return cil.cekaNa !== karta.cekaNa;
+}
+
 export function seznamUctu(text = '') {
   return [...new Set((text || '').split(/[\s,]+/).map((u) => u.trim()).filter(Boolean))];
 }
@@ -223,7 +228,7 @@ async function main() {
       if (tabule.pole.has(POLE.proLidi)) { console.log(`#${issue.cislo}: Pro lidi → ${cil.proLidi}`); zmen++; await nastav(karta, POLE.proLidi, { text: cil.proLidi }); }
       else chybi.add(`pole „${POLE.proLidi}“`);
     }
-    if (cil.cekaNa !== karta.cekaNa && (issue.stav === 'OPEN' || karta.cekaNa)) {
+    if (zmenitCekaNa(cil, karta)) {
       const v = polozkaVolby(POLE.cekaNa, cil.cekaNa);
       if (v !== undefined) { console.log(`#${issue.cislo}: Čeká na → ${cil.cekaNa || '(prázdné)'}`); zmen++; await nastav(karta, POLE.cekaNa, v); }
     }

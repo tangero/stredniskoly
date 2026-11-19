@@ -3,7 +3,7 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import {
-  STAVY, CEKA_NA, propojenaIssues, stavKarty, proLidi, cekaNa, seznamUctu, cilKarty,
+  STAVY, CEKA_NA, propojenaIssues, stavKarty, proLidi, cekaNa, seznamUctu, cilKarty, zmenitCekaNa,
 } from '../docs/sablony/tabule-repozitar/tabule.mjs';
 
 const ucty = { vlastnik: 'vlastnik-uctu', kolegove: ['kolega-uctu'] };
@@ -55,4 +55,11 @@ test('workflow šablony: jen PROJECT_TOKEN, jen čtení a bez kódu z PR', () =>
   // Šablona nesmí nést logiku štítků brány sloučení (#561, bod 4).
   const skript = readFileSync(new URL('../docs/sablony/tabule-repozitar/tabule.mjs', import.meta.url), 'utf8');
   assert.doesNotMatch(skript, /schvaleno|navrh|k-overeni|brana/);
+});
+
+test('zavřené issue s prázdným polem „Čeká na“ se přepíše na „nikdo“', () => {
+  const cil = cilKarty({ cislo: 1, stav: 'CLOSED', titulek: 'x', telo: '', stitky: [], prirazeni: [] }, { otevrenePr: new Set(), ...ucty });
+  assert.equal(cil.cekaNa, CEKA_NA.nikdo);
+  assert.equal(zmenitCekaNa(cil, { cekaNa: null }), true);
+  assert.equal(zmenitCekaNa(cil, { cekaNa: CEKA_NA.nikdo }), false);
 });
