@@ -20,6 +20,8 @@ import { VyhradaNahore, VyhradySimulatoru, type TerminKriterii } from '@/compone
 import { navrhniPojistku, posunVPoradi, talentovaZPasem, type PravidlaPrihlasek } from '@/lib/strategie-prihlasek';
 import { useZadaneTesty, ZadaniTestu } from '@/components/obor/ZadaniTestu';
 import { TRIDA_TAU, type DruhTestu, type PrevodDruhu, type PrevodTestu } from '@/lib/prevod-testu-vypocet';
+import { skolyKHlidani } from '@/lib/simulator-hlidani';
+import { HlidatZvazovaneSkoly } from '@/components/novinky/HlidatZvazovaneSkoly';
 
 interface School {
   id: string;
@@ -109,9 +111,11 @@ export interface SimulatorClientProps {
   rokKriterii: number | null;
   /** Kdy školy zveřejní kritéria nového řízení (harmonogram, ss-kriteria). */
   terminKriterii: TerminKriterii | null;
+  /** Je hlídání škol zapnuté (`jeHlidaniZapnuto`, #523 E6b)? Bez něj se výběr škol k hlídání neukáže. */
+  hlidani?: boolean;
 }
 
-export function SimulatorClient({ rokPasem, prevod, pravidla, rokKriterii, terminKriterii }: SimulatorClientProps) {
+export function SimulatorClient({ rokPasem, prevod, pravidla, rokKriterii, terminKriterii, hlidani = false }: SimulatorClientProps) {
   const params = useSearchParams();
   const showingSelection = params.get('vyber') === '1' || params.get('srovnani') === '1';
   // Uložený výběr je stav aplikace, nikoli obsah adresy: odkaz už celý výběr neunese.
@@ -362,6 +366,12 @@ export function SimulatorClient({ rokPasem, prevod, pravidla, rokKriterii, termi
     return { id, label: school ? popisekOboru(school) : popisekNedohledaneho(dohledani) };
   });
 
+  // Hlídání škol ze zvažovaných nabízíme až po zadání výsledku testu (#523, E6b, K15).
+  const skolyHlidani = hlidani && bodySkupiny !== null ? skolyKHlidani(selectedIds, id => {
+    const school = catalogIndex.get(normalizeSchoolKey(id));
+    return school ? school.nazev_display || school.nazev : null;
+  }) : [];
+
   function changeTime(raw: string) {
     setMinuteInput(raw);
     const number = Number(raw);
@@ -459,6 +469,7 @@ export function SimulatorClient({ rokPasem, prevod, pravidla, rokKriterii, termi
         polozky={polozkyStrategie} pravidla={pravidla} rok={rokPasem}
         onMove={move} navrhyPojistky={navrhyPojistky} navrhyUcebniPojistky={navrhyUcebniPojistky} onAdd={toggle}
       />}
+      {skolyHlidani.length > 0 && <HlidatZvazovaneSkoly skoly={skolyHlidani} />}
       {razeniControls(true)}
       {seznam(selectedIds.flatMap(id => { const school = catalogIndex.get(normalizeSchoolKey(id)); return school ? [school] : []; }), razeni, true)}
       {selectedIds.map(id => { const school = catalogIndex.get(normalizeSchoolKey(id)); return school ? null : <div key={id} className="my-4"><p>{!catalog && !error ? 'Načítám uložený obor…' : 'Uložený obor se nepodařilo jednoznačně dohledat. Výběr zůstal zachovaný.'}</p><button className={button} onClick={() => toggle(id)}>Odebrat nedohledaný obor</button></div>; })}

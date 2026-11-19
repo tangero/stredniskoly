@@ -22,6 +22,7 @@ export const POVOLENE_ZDROJE: readonly string[] = [
   'pruvodce-jak-vybrat',
   'kalendar-pripominky',
   'skola-hlidat',
+  'simulator-hlidat',
 ];
 
 /** Kategorie událostí odběru v Matomu (technický klíč, ne text pro čtenáře). */
