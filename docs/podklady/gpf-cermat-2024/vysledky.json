@@ -1,0 +1,2758 @@
+{
+ "zdroj": "JPZ2024_MA4_polozkova_data.xlsx",
+ "mapovani": "docs/podklady/gpf-cermat-2024/mapovani.json",
+ "ukazatel": "podíl získaných bodů (váženo body) a podíl vynechání",
+ "terminy": {
+  "M4-A": {
+   "kontroly": {
+    "uchazecu": 91166,
+    "neshoda_souctu_b_a_dt_body": 0,
+    "pozice_nad_maximem": {},
+    "k9_s_nenulovymi_body": {}
+   },
+   "vsichni": {
+    "polozky": {
+     "b1": {
+      "podil_bodu": 0.1778,
+      "vynechani": 0.2397
+     },
+     "b2": {
+      "podil_bodu": 0.159,
+      "vynechani": 0.3347
+     },
+     "b3.1": {
+      "podil_bodu": 0.6221,
+      "vynechani": 0.0502
+     },
+     "b3.2": {
+      "podil_bodu": 0.6354,
+      "vynechani": 0.0502
+     },
+     "b4.1": {
+      "podil_bodu": 0.0883,
+      "vynechani": 0.045
+     },
+     "b4.2": {
+      "podil_bodu": 0.6958,
+      "vynechani": 0.045
+     },
+     "b4.3": {
+      "podil_bodu": 0.3179,
+      "vynechani": 0.045
+     },
+     "b5.1": {
+      "podil_bodu": 0.3511,
+      "vynechani": 0.0697
+     },
+     "b5.2": {
+      "podil_bodu": 0.2734,
+      "vynechani": 0.0697
+     },
+     "b6.1": {
+      "podil_bodu": 0.2676,
+      "vynechani": 0.3111
+     },
+     "b6.2": {
+      "podil_bodu": 0.2677,
+      "vynechani": 0.3111
+     },
+     "b7.1": {
+      "podil_bodu": 0.5554,
+      "vynechani": 0.1275
+     },
+     "b7.2": {
+      "podil_bodu": 0.5625,
+      "vynechani": 0.1275
+     },
+     "b8.1": {
+      "podil_bodu": 0.2424,
+      "vynechani": 0.4014
+     },
+     "b8.2": {
+      "podil_bodu": 0.2069,
+      "vynechani": 0.4014
+     },
+     "b9": {
+      "podil_bodu": 0.3136,
+      "vynechani": 0.2228
+     },
+     "b10": {
+      "podil_bodu": 0.2639,
+      "vynechani": 0.4295
+     },
+     "b11": {
+      "podil_bodu": 0.6672,
+      "vynechani": 0.0143
+     },
+     "b12": {
+      "podil_bodu": 0.4334,
+      "vynechani": 0.0373
+     },
+     "b13": {
+      "podil_bodu": 0.3102,
+      "vynechani": 0.0621
+     },
+     "b14": {
+      "podil_bodu": 0.4719,
+      "vynechani": 0.0347
+     },
+     "b15": {
+      "podil_bodu": 0.3465,
+      "vynechani": 0.0165
+     },
+     "b16": {
+      "podil_bodu": 0.6211,
+      "vynechani": 0.0183
+     }
+    },
+    "dovednosti": {
+     "A3.1": {
+      "pozice": [
+       "b1",
+       "b15"
+      ],
+      "max": 4,
+      "ziskano": 1.217,
+      "podil_bodu": 0.3044,
+      "podil_ztracenych_bodu": 0.0932
+     },
+     "M1.2": {
+      "pozice": [
+       "b2",
+       "b6.1",
+       "b6.2",
+       "b8.1",
+       "b8.2",
+       "b13"
+      ],
+      "max": 12,
+      "ziskano": 2.908,
+      "podil_bodu": 0.2423,
+      "podil_ztracenych_bodu": 0.3046
+     },
+     "N2.2": {
+      "pozice": [
+       "b3.1"
+      ],
+      "max": 2,
+      "ziskano": 1.244,
+      "podil_bodu": 0.6221,
+      "podil_ztracenych_bodu": 0.0253
+     },
+     "N6.1": {
+      "pozice": [
+       "b3.2",
+       "b16"
+      ],
+      "max": 8,
+      "ziskano": 4.998,
+      "podil_bodu": 0.6247,
+      "podil_ztracenych_bodu": 0.1006
+     },
+     "A2.1": {
+      "pozice": [
+       "b4.1",
+       "b4.2",
+       "b4.3"
+      ],
+      "max": 4,
+      "ziskano": 1.42,
+      "podil_bodu": 0.3549,
+      "podil_ztracenych_bodu": 0.0864
+     },
+     "A3.3": {
+      "pozice": [
+       "b5.1",
+       "b5.2",
+       "b14"
+      ],
+      "max": 6,
+      "ziskano": 2.193,
+      "podil_bodu": 0.3655,
+      "podil_ztracenych_bodu": 0.1275
+     },
+     "N1.4": {
+      "pozice": [
+       "b7.1",
+       "b7.2"
+      ],
+      "max": 4,
+      "ziskano": 2.236,
+      "podil_bodu": 0.559,
+      "podil_ztracenych_bodu": 0.0591
+     },
+     "G1.1": {
+      "pozice": [
+       "b9",
+       "b10",
+       "b11"
+      ],
+      "max": 8,
+      "ziskano": 3.067,
+      "podil_bodu": 0.3834,
+      "podil_ztracenych_bodu": 0.1653
+     },
+     "G2.1": {
+      "pozice": [
+       "b12"
+      ],
+      "max": 2,
+      "ziskano": 0.867,
+      "podil_bodu": 0.4334,
+      "podil_ztracenych_bodu": 0.038
+     }
+    },
+    "prumer_bodu": 20.15
+   },
+   "rozptyl": {
+    "sd_uvnitr_dovednosti_prumer": 0.0936,
+    "sd_mezi_dovednostmi": 0.131,
+    "dovednosti_s_2_a_vice_polozkami": 7
+   },
+   "varianta_vedlejsi": {
+    "N1.4": {
+     "pozice": [
+      "b1",
+      "b7.1",
+      "b7.2"
+     ],
+     "max": 5,
+     "ziskano": 2.414,
+     "podil_bodu": 0.4828,
+     "podil_ztracenych_bodu": 0.0866
+    },
+    "M1.2": {
+     "pozice": [
+      "b2",
+      "b8.1",
+      "b8.2",
+      "b12"
+     ],
+     "max": 8,
+     "ziskano": 2.084,
+     "podil_bodu": 0.2605,
+     "podil_ztracenych_bodu": 0.1982
+    },
+    "N2.2": {
+     "pozice": [
+      "b3.1"
+     ],
+     "max": 2,
+     "ziskano": 1.244,
+     "podil_bodu": 0.6221,
+     "podil_ztracenych_bodu": 0.0253
+    },
+    "N6.1": {
+     "pozice": [
+      "b3.2",
+      "b16"
+     ],
+     "max": 8,
+     "ziskano": 4.998,
+     "podil_bodu": 0.6247,
+     "podil_ztracenych_bodu": 0.1006
+    },
+    "A2.1": {
+     "pozice": [
+      "b4.1",
+      "b4.2",
+      "b4.3"
+     ],
+     "max": 4,
+     "ziskano": 1.42,
+     "podil_bodu": 0.3549,
+     "podil_ztracenych_bodu": 0.0864
+    },
+    "A3.3": {
+     "pozice": [
+      "b5.1",
+      "b5.2",
+      "b13",
+      "b14"
+     ],
+     "max": 8,
+     "ziskano": 2.813,
+     "podil_bodu": 0.3516,
+     "podil_ztracenych_bodu": 0.1738
+    },
+    "G1.1": {
+     "pozice": [
+      "b6.1",
+      "b6.2",
+      "b9",
+      "b10",
+      "b11"
+     ],
+     "max": 12,
+     "ziskano": 4.138,
+     "podil_bodu": 0.3448,
+     "podil_ztracenych_bodu": 0.2634
+    },
+    "M1.1": {
+     "pozice": [
+      "b15"
+     ],
+     "max": 3,
+     "ziskano": 1.04,
+     "podil_bodu": 0.3465,
+     "podil_ztracenych_bodu": 0.0657
+    }
+   },
+   "pasma": {
+    "dolni": {
+     "uchazecu": 30389,
+     "body_od_do": [
+      0,
+      13
+     ],
+     "polozky": {
+      "b1": {
+       "podil_bodu": 0.0221,
+       "vynechani": 0.2984
+      },
+      "b2": {
+       "podil_bodu": 0.0066,
+       "vynechani": 0.5459
+      },
+      "b3.1": {
+       "podil_bodu": 0.3077,
+       "vynechani": 0.1275
+      },
+      "b3.2": {
+       "podil_bodu": 0.2923,
+       "vynechani": 0.1275
+      },
+      "b4.1": {
+       "podil_bodu": 0.0127,
+       "vynechani": 0.1015
+      },
+      "b4.2": {
+       "podil_bodu": 0.3673,
+       "vynechani": 0.1015
+      },
+      "b4.3": {
+       "podil_bodu": 0.0695,
+       "vynechani": 0.1015
+      },
+      "b5.1": {
+       "podil_bodu": 0.0646,
+       "vynechani": 0.1576
+      },
+      "b5.2": {
+       "podil_bodu": 0.0386,
+       "vynechani": 0.1576
+      },
+      "b6.1": {
+       "podil_bodu": 0.0105,
+       "vynechani": 0.4928
+      },
+      "b6.2": {
+       "podil_bodu": 0.0161,
+       "vynechani": 0.4928
+      },
+      "b7.1": {
+       "podil_bodu": 0.2256,
+       "vynechani": 0.2274
+      },
+      "b7.2": {
+       "podil_bodu": 0.2309,
+       "vynechani": 0.2274
+      },
+      "b8.1": {
+       "podil_bodu": 0.0064,
+       "vynechani": 0.6229
+      },
+      "b8.2": {
+       "podil_bodu": 0.006,
+       "vynechani": 0.6229
+      },
+      "b9": {
+       "podil_bodu": 0.1236,
+       "vynechani": 0.317
+      },
+      "b10": {
+       "podil_bodu": 0.0349,
+       "vynechani": 0.5765
+      },
+      "b11": {
+       "podil_bodu": 0.327,
+       "vynechani": 0.0368
+      },
+      "b12": {
+       "podil_bodu": 0.1667,
+       "vynechani": 0.0538
+      },
+      "b13": {
+       "podil_bodu": 0.21,
+       "vynechani": 0.0736
+      },
+      "b14": {
+       "podil_bodu": 0.1905,
+       "vynechani": 0.0638
+      },
+      "b15": {
+       "podil_bodu": 0.2164,
+       "vynechani": 0.036
+      },
+      "b16": {
+       "podil_bodu": 0.3222,
+       "vynechani": 0.042
+      }
+     },
+     "dovednosti": {
+      "A3.1": {
+       "pozice": [
+        "b1",
+        "b15"
+       ],
+       "max": 4,
+       "ziskano": 0.671,
+       "podil_bodu": 0.1678,
+       "podil_ztracenych_bodu": 0.0789
+      },
+      "M1.2": {
+       "pozice": [
+        "b2",
+        "b6.1",
+        "b6.2",
+        "b8.1",
+        "b8.2",
+        "b13"
+       ],
+       "max": 12,
+       "ziskano": 0.511,
+       "podil_bodu": 0.0426,
+       "podil_ztracenych_bodu": 0.2722
+      },
+      "N2.2": {
+       "pozice": [
+        "b3.1"
+       ],
+       "max": 2,
+       "ziskano": 0.615,
+       "podil_bodu": 0.3077,
+       "podil_ztracenych_bodu": 0.0328
+      },
+      "N6.1": {
+       "pozice": [
+        "b3.2",
+        "b16"
+       ],
+       "max": 8,
+       "ziskano": 2.518,
+       "podil_bodu": 0.3147,
+       "podil_ztracenych_bodu": 0.1299
+      },
+      "A2.1": {
+       "pozice": [
+        "b4.1",
+        "b4.2",
+        "b4.3"
+       ],
+       "max": 4,
+       "ziskano": 0.519,
+       "podil_bodu": 0.1298,
+       "podil_ztracenych_bodu": 0.0825
+      },
+      "A3.3": {
+       "pozice": [
+        "b5.1",
+        "b5.2",
+        "b14"
+       ],
+       "max": 6,
+       "ziskano": 0.588,
+       "podil_bodu": 0.0979,
+       "podil_ztracenych_bodu": 0.1283
+      },
+      "N1.4": {
+       "pozice": [
+        "b7.1",
+        "b7.2"
+       ],
+       "max": 4,
+       "ziskano": 0.913,
+       "podil_bodu": 0.2283,
+       "podil_ztracenych_bodu": 0.0731
+      },
+      "G1.1": {
+       "pozice": [
+        "b9",
+        "b10",
+        "b11"
+       ],
+       "max": 8,
+       "ziskano": 1.13,
+       "podil_bodu": 0.1412,
+       "podil_ztracenych_bodu": 0.1628
+      },
+      "G2.1": {
+       "pozice": [
+        "b12"
+       ],
+       "max": 2,
+       "ziskano": 0.333,
+       "podil_bodu": 0.1667,
+       "podil_ztracenych_bodu": 0.0395
+      }
+     },
+     "prumer_bodu": 7.8
+    },
+    "stredni": {
+     "uchazecu": 30388,
+     "body_od_do": [
+      13,
+      25
+     ],
+     "polozky": {
+      "b1": {
+       "podil_bodu": 0.1,
+       "vynechani": 0.2791
+      },
+      "b2": {
+       "podil_bodu": 0.0644,
+       "vynechani": 0.3708
+      },
+      "b3.1": {
+       "podil_bodu": 0.7079,
+       "vynechani": 0.0215
+      },
+      "b3.2": {
+       "podil_bodu": 0.7201,
+       "vynechani": 0.0215
+      },
+      "b4.1": {
+       "podil_bodu": 0.0552,
+       "vynechani": 0.0311
+      },
+      "b4.2": {
+       "podil_bodu": 0.769,
+       "vynechani": 0.0311
+      },
+      "b4.3": {
+       "podil_bodu": 0.302,
+       "vynechani": 0.0311
+      },
+      "b5.1": {
+       "podil_bodu": 0.312,
+       "vynechani": 0.0459
+      },
+      "b5.2": {
+       "podil_bodu": 0.2219,
+       "vynechani": 0.0459
+      },
+      "b6.1": {
+       "podil_bodu": 0.1447,
+       "vynechani": 0.3591
+      },
+      "b6.2": {
+       "podil_bodu": 0.1343,
+       "vynechani": 0.3591
+      },
+      "b7.1": {
+       "podil_bodu": 0.5811,
+       "vynechani": 0.1275
+      },
+      "b7.2": {
+       "podil_bodu": 0.5881,
+       "vynechani": 0.1275
+      },
+      "b8.1": {
+       "podil_bodu": 0.103,
+       "vynechani": 0.4748
+      },
+      "b8.2": {
+       "podil_bodu": 0.0878,
+       "vynechani": 0.4748
+      },
+      "b9": {
+       "podil_bodu": 0.2665,
+       "vynechani": 0.243
+      },
+      "b10": {
+       "podil_bodu": 0.1733,
+       "vynechani": 0.5034
+      },
+      "b11": {
+       "podil_bodu": 0.7466,
+       "vynechani": 0.0053
+      },
+      "b12": {
+       "podil_bodu": 0.4051,
+       "vynechani": 0.0363
+      },
+      "b13": {
+       "podil_bodu": 0.2539,
+       "vynechani": 0.0642
+      },
+      "b14": {
+       "podil_bodu": 0.4459,
+       "vynechani": 0.0295
+      },
+      "b15": {
+       "podil_bodu": 0.3124,
+       "vynechani": 0.0103
+      },
+      "b16": {
+       "podil_bodu": 0.6705,
+       "vynechani": 0.0102
+      }
+     },
+     "dovednosti": {
+      "A3.1": {
+       "pozice": [
+        "b1",
+        "b15"
+       ],
+       "max": 4,
+       "ziskano": 1.037,
+       "podil_bodu": 0.2593,
+       "podil_ztracenych_bodu": 0.0951
+      },
+      "M1.2": {
+       "pozice": [
+        "b2",
+        "b6.1",
+        "b6.2",
+        "b8.1",
+        "b8.2",
+        "b13"
+       ],
+       "max": 12,
+       "ziskano": 1.576,
+       "podil_bodu": 0.1313,
+       "podil_ztracenych_bodu": 0.3345
+      },
+      "N2.2": {
+       "pozice": [
+        "b3.1"
+       ],
+       "max": 2,
+       "ziskano": 1.416,
+       "podil_bodu": 0.7079,
+       "podil_ztracenych_bodu": 0.0187
+      },
+      "N6.1": {
+       "pozice": [
+        "b3.2",
+        "b16"
+       ],
+       "max": 8,
+       "ziskano": 5.463,
+       "podil_bodu": 0.6829,
+       "podil_ztracenych_bodu": 0.0814
+      },
+      "A2.1": {
+       "pozice": [
+        "b4.1",
+        "b4.2",
+        "b4.3"
+       ],
+       "max": 4,
+       "ziskano": 1.428,
+       "podil_bodu": 0.357,
+       "podil_ztracenych_bodu": 0.0825
+      },
+      "A3.3": {
+       "pozice": [
+        "b5.1",
+        "b5.2",
+        "b14"
+       ],
+       "max": 6,
+       "ziskano": 1.96,
+       "podil_bodu": 0.3266,
+       "podil_ztracenych_bodu": 0.1297
+      },
+      "N1.4": {
+       "pozice": [
+        "b7.1",
+        "b7.2"
+       ],
+       "max": 4,
+       "ziskano": 2.338,
+       "podil_bodu": 0.5846,
+       "podil_ztracenych_bodu": 0.0533
+      },
+      "G1.1": {
+       "pozice": [
+        "b9",
+        "b10",
+        "b11"
+       ],
+       "max": 8,
+       "ziskano": 2.813,
+       "podil_bodu": 0.3516,
+       "podil_ztracenych_bodu": 0.1665
+      },
+      "G2.1": {
+       "pozice": [
+        "b12"
+       ],
+       "max": 2,
+       "ziskano": 0.81,
+       "podil_bodu": 0.4051,
+       "podil_ztracenych_bodu": 0.0382
+      }
+     },
+     "prumer_bodu": 18.84
+    },
+    "horni": {
+     "uchazecu": 30389,
+     "body_od_do": [
+      25,
+      50
+     ],
+     "polozky": {
+      "b1": {
+       "podil_bodu": 0.4112,
+       "vynechani": 0.1415
+      },
+      "b2": {
+       "podil_bodu": 0.4061,
+       "vynechani": 0.0874
+      },
+      "b3.1": {
+       "podil_bodu": 0.8505,
+       "vynechani": 0.0015
+      },
+      "b3.2": {
+       "podil_bodu": 0.8937,
+       "vynechani": 0.0015
+      },
+      "b4.1": {
+       "podil_bodu": 0.1969,
+       "vynechani": 0.0026
+      },
+      "b4.2": {
+       "podil_bodu": 0.9509,
+       "vynechani": 0.0026
+      },
+      "b4.3": {
+       "podil_bodu": 0.5822,
+       "vynechani": 0.0026
+      },
+      "b5.1": {
+       "podil_bodu": 0.6766,
+       "vynechani": 0.0055
+      },
+      "b5.2": {
+       "podil_bodu": 0.5597,
+       "vynechani": 0.0055
+      },
+      "b6.1": {
+       "podil_bodu": 0.6476,
+       "vynechani": 0.0815
+      },
+      "b6.2": {
+       "podil_bodu": 0.6528,
+       "vynechani": 0.0815
+      },
+      "b7.1": {
+       "podil_bodu": 0.8597,
+       "vynechani": 0.0277
+      },
+      "b7.2": {
+       "podil_bodu": 0.8687,
+       "vynechani": 0.0277
+      },
+      "b8.1": {
+       "podil_bodu": 0.6179,
+       "vynechani": 0.1066
+      },
+      "b8.2": {
+       "podil_bodu": 0.527,
+       "vynechani": 0.1066
+      },
+      "b9": {
+       "podil_bodu": 0.5507,
+       "vynechani": 0.1084
+      },
+      "b10": {
+       "podil_bodu": 0.5835,
+       "vynechani": 0.2086
+      },
+      "b11": {
+       "podil_bodu": 0.928,
+       "vynechani": 0.0007
+      },
+      "b12": {
+       "podil_bodu": 0.7284,
+       "vynechani": 0.0219
+      },
+      "b13": {
+       "podil_bodu": 0.4666,
+       "vynechani": 0.0483
+      },
+      "b14": {
+       "podil_bodu": 0.7793,
+       "vynechani": 0.0109
+      },
+      "b15": {
+       "podil_bodu": 0.5108,
+       "vynechani": 0.0031
+      },
+      "b16": {
+       "podil_bodu": 0.8708,
+       "vynechani": 0.0026
+      }
+     },
+     "dovednosti": {
+      "A3.1": {
+       "pozice": [
+        "b1",
+        "b15"
+       ],
+       "max": 4,
+       "ziskano": 1.944,
+       "podil_bodu": 0.4859,
+       "podil_ztracenych_bodu": 0.127
+      },
+      "M1.2": {
+       "pozice": [
+        "b2",
+        "b6.1",
+        "b6.2",
+        "b8.1",
+        "b8.2",
+        "b13"
+       ],
+       "max": 12,
+       "ziskano": 6.636,
+       "podil_bodu": 0.553,
+       "podil_ztracenych_bodu": 0.3313
+      },
+      "N2.2": {
+       "pozice": [
+        "b3.1"
+       ],
+       "max": 2,
+       "ziskano": 1.701,
+       "podil_bodu": 0.8505,
+       "podil_ztracenych_bodu": 0.0185
+      },
+      "N6.1": {
+       "pozice": [
+        "b3.2",
+        "b16"
+       ],
+       "max": 8,
+       "ziskano": 7.012,
+       "podil_bodu": 0.8765,
+       "podil_ztracenych_bodu": 0.061
+      },
+      "A2.1": {
+       "pozice": [
+        "b4.1",
+        "b4.2",
+        "b4.3"
+       ],
+       "max": 4,
+       "ziskano": 2.312,
+       "podil_bodu": 0.578,
+       "podil_ztracenych_bodu": 0.1042
+      },
+      "A3.3": {
+       "pozice": [
+        "b5.1",
+        "b5.2",
+        "b14"
+       ],
+       "max": 6,
+       "ziskano": 4.031,
+       "podil_bodu": 0.6719,
+       "podil_ztracenych_bodu": 0.1216
+      },
+      "N1.4": {
+       "pozice": [
+        "b7.1",
+        "b7.2"
+       ],
+       "max": 4,
+       "ziskano": 3.457,
+       "podil_bodu": 0.8642,
+       "podil_ztracenych_bodu": 0.0336
+      },
+      "G1.1": {
+       "pozice": [
+        "b9",
+        "b10",
+        "b11"
+       ],
+       "max": 8,
+       "ziskano": 5.259,
+       "podil_bodu": 0.6573,
+       "podil_ztracenych_bodu": 0.1693
+      },
+      "G2.1": {
+       "pozice": [
+        "b12"
+       ],
+       "max": 2,
+       "ziskano": 1.457,
+       "podil_bodu": 0.7284,
+       "podil_ztracenych_bodu": 0.0335
+      }
+     },
+     "prumer_bodu": 33.81
+    }
+   },
+   "skupiny": {
+    "gy4_na_1_miste": {
+     "uchazecu": 18530,
+     "polozky": {
+      "b1": {
+       "podil_bodu": 0.3684,
+       "vynechani": 0.1569
+      },
+      "b2": {
+       "podil_bodu": 0.3479,
+       "vynechani": 0.1325
+      },
+      "b3.1": {
+       "podil_bodu": 0.8137,
+       "vynechani": 0.0046
+      },
+      "b3.2": {
+       "podil_bodu": 0.8572,
+       "vynechani": 0.0046
+      },
+      "b4.1": {
+       "podil_bodu": 0.1799,
+       "vynechani": 0.0053
+      },
+      "b4.2": {
+       "podil_bodu": 0.921,
+       "vynechani": 0.0053
+      },
+      "b4.3": {
+       "podil_bodu": 0.5292,
+       "vynechani": 0.0053
+      },
+      "b5.1": {
+       "podil_bodu": 0.6125,
+       "vynechani": 0.0112
+      },
+      "b5.2": {
+       "podil_bodu": 0.5026,
+       "vynechani": 0.0112
+      },
+      "b6.1": {
+       "podil_bodu": 0.5478,
+       "vynechani": 0.1338
+      },
+      "b6.2": {
+       "podil_bodu": 0.536,
+       "vynechani": 0.1338
+      },
+      "b7.1": {
+       "podil_bodu": 0.7564,
+       "vynechani": 0.0657
+      },
+      "b7.2": {
+       "podil_bodu": 0.7643,
+       "vynechani": 0.0657
+      },
+      "b8.1": {
+       "podil_bodu": 0.4929,
+       "vynechani": 0.1914
+      },
+      "b8.2": {
+       "podil_bodu": 0.4219,
+       "vynechani": 0.1914
+      },
+      "b9": {
+       "podil_bodu": 0.494,
+       "vynechani": 0.1289
+      },
+      "b10": {
+       "podil_bodu": 0.4859,
+       "vynechani": 0.2598
+      },
+      "b11": {
+       "podil_bodu": 0.8685,
+       "vynechani": 0.0034
+      },
+      "b12": {
+       "podil_bodu": 0.6251,
+       "vynechani": 0.0288
+      },
+      "b13": {
+       "podil_bodu": 0.3986,
+       "vynechani": 0.0535
+      },
+      "b14": {
+       "podil_bodu": 0.6841,
+       "vynechani": 0.0183
+      },
+      "b15": {
+       "podil_bodu": 0.4624,
+       "vynechani": 0.0081
+      },
+      "b16": {
+       "podil_bodu": 0.7893,
+       "vynechani": 0.0081
+      }
+     },
+     "dovednosti": {
+      "A3.1": {
+       "pozice": [
+        "b1",
+        "b15"
+       ],
+       "max": 4,
+       "ziskano": 1.756,
+       "podil_bodu": 0.4389,
+       "podil_ztracenych_bodu": 0.1125
+      },
+      "M1.2": {
+       "pozice": [
+        "b2",
+        "b6.1",
+        "b6.2",
+        "b8.1",
+        "b8.2",
+        "b13"
+       ],
+       "max": 12,
+       "ziskano": 5.49,
+       "podil_bodu": 0.4575,
+       "podil_ztracenych_bodu": 0.3263
+      },
+      "N2.2": {
+       "pozice": [
+        "b3.1"
+       ],
+       "max": 2,
+       "ziskano": 1.627,
+       "podil_bodu": 0.8137,
+       "podil_ztracenych_bodu": 0.0187
+      },
+      "N6.1": {
+       "pozice": [
+        "b3.2",
+        "b16"
+       ],
+       "max": 8,
+       "ziskano": 6.45,
+       "podil_bodu": 0.8062,
+       "podil_ztracenych_bodu": 0.0777
+      },
+      "A2.1": {
+       "pozice": [
+        "b4.1",
+        "b4.2",
+        "b4.3"
+       ],
+       "max": 4,
+       "ziskano": 2.159,
+       "podil_bodu": 0.5398,
+       "podil_ztracenych_bodu": 0.0923
+      },
+      "A3.3": {
+       "pozice": [
+        "b5.1",
+        "b5.2",
+        "b14"
+       ],
+       "max": 6,
+       "ziskano": 3.598,
+       "podil_bodu": 0.5997,
+       "podil_ztracenych_bodu": 0.1204
+      },
+      "N1.4": {
+       "pozice": [
+        "b7.1",
+        "b7.2"
+       ],
+       "max": 4,
+       "ziskano": 3.041,
+       "podil_bodu": 0.7604,
+       "podil_ztracenych_bodu": 0.048
+      },
+      "G1.1": {
+       "pozice": [
+        "b9",
+        "b10",
+        "b11"
+       ],
+       "max": 8,
+       "ziskano": 4.677,
+       "podil_bodu": 0.5846,
+       "podil_ztracenych_bodu": 0.1666
+      },
+      "G2.1": {
+       "pozice": [
+        "b12"
+       ],
+       "max": 2,
+       "ziskano": 1.25,
+       "podil_bodu": 0.6251,
+       "podil_ztracenych_bodu": 0.0376
+      }
+     },
+     "prumer_bodu": 30.05
+    },
+    "ostatni": {
+     "uchazecu": 72636,
+     "polozky": {
+      "b1": {
+       "podil_bodu": 0.1292,
+       "vynechani": 0.2608
+      },
+      "b2": {
+       "podil_bodu": 0.1109,
+       "vynechani": 0.3863
+      },
+      "b3.1": {
+       "podil_bodu": 0.5732,
+       "vynechani": 0.0618
+      },
+      "b3.2": {
+       "podil_bodu": 0.5788,
+       "vynechani": 0.0618
+      },
+      "b4.1": {
+       "podil_bodu": 0.0649,
+       "vynechani": 0.0552
+      },
+      "b4.2": {
+       "podil_bodu": 0.6383,
+       "vynechani": 0.0552
+      },
+      "b4.3": {
+       "podil_bodu": 0.264,
+       "vynechani": 0.0552
+      },
+      "b5.1": {
+       "podil_bodu": 0.2844,
+       "vynechani": 0.0846
+      },
+      "b5.2": {
+       "podil_bodu": 0.2149,
+       "vynechani": 0.0846
+      },
+      "b6.1": {
+       "podil_bodu": 0.1961,
+       "vynechani": 0.3564
+      },
+      "b6.2": {
+       "podil_bodu": 0.1993,
+       "vynechani": 0.3564
+      },
+      "b7.1": {
+       "podil_bodu": 0.5042,
+       "vynechani": 0.1433
+      },
+      "b7.2": {
+       "podil_bodu": 0.5111,
+       "vynechani": 0.1433
+      },
+      "b8.1": {
+       "podil_bodu": 0.1785,
+       "vynechani": 0.455
+      },
+      "b8.2": {
+       "podil_bodu": 0.1521,
+       "vynechani": 0.455
+      },
+      "b9": {
+       "podil_bodu": 0.2676,
+       "vynechani": 0.2468
+      },
+      "b10": {
+       "podil_bodu": 0.2073,
+       "vynechani": 0.4728
+      },
+      "b11": {
+       "podil_bodu": 0.6159,
+       "vynechani": 0.017
+      },
+      "b12": {
+       "podil_bodu": 0.3845,
+       "vynechani": 0.0395
+      },
+      "b13": {
+       "podil_bodu": 0.2876,
+       "vynechani": 0.0642
+      },
+      "b14": {
+       "podil_bodu": 0.4178,
+       "vynechani": 0.0389
+      },
+      "b15": {
+       "podil_bodu": 0.317,
+       "vynechani": 0.0186
+      },
+      "b16": {
+       "podil_bodu": 0.5782,
+       "vynechani": 0.0208
+      }
+     },
+     "dovednosti": {
+      "A3.1": {
+       "pozice": [
+        "b1",
+        "b15"
+       ],
+       "max": 4,
+       "ziskano": 1.08,
+       "podil_bodu": 0.27,
+       "podil_ztracenych_bodu": 0.0902
+      },
+      "M1.2": {
+       "pozice": [
+        "b2",
+        "b6.1",
+        "b6.2",
+        "b8.1",
+        "b8.2",
+        "b13"
+       ],
+       "max": 12,
+       "ziskano": 2.249,
+       "podil_bodu": 0.1874,
+       "podil_ztracenych_bodu": 0.3012
+      },
+      "N2.2": {
+       "pozice": [
+        "b3.1"
+       ],
+       "max": 2,
+       "ziskano": 1.146,
+       "podil_bodu": 0.5732,
+       "podil_ztracenych_bodu": 0.0264
+      },
+      "N6.1": {
+       "pozice": [
+        "b3.2",
+        "b16"
+       ],
+       "max": 8,
+       "ziskano": 4.627,
+       "podil_bodu": 0.5784,
+       "podil_ztracenych_bodu": 0.1042
+      },
+      "A2.1": {
+       "pozice": [
+        "b4.1",
+        "b4.2",
+        "b4.3"
+       ],
+       "max": 4,
+       "ziskano": 1.231,
+       "podil_bodu": 0.3078,
+       "podil_ztracenych_bodu": 0.0855
+      },
+      "A3.3": {
+       "pozice": [
+        "b5.1",
+        "b5.2",
+        "b14"
+       ],
+       "max": 6,
+       "ziskano": 1.834,
+       "podil_bodu": 0.3057,
+       "podil_ztracenych_bodu": 0.1287
+      },
+      "N1.4": {
+       "pozice": [
+        "b7.1",
+        "b7.2"
+       ],
+       "max": 4,
+       "ziskano": 2.031,
+       "podil_bodu": 0.5076,
+       "podil_ztracenych_bodu": 0.0608
+      },
+      "G1.1": {
+       "pozice": [
+        "b9",
+        "b10",
+        "b11"
+       ],
+       "max": 8,
+       "ziskano": 2.656,
+       "podil_bodu": 0.3321,
+       "podil_ztracenych_bodu": 0.165
+      },
+      "G2.1": {
+       "pozice": [
+        "b12"
+       ],
+       "max": 2,
+       "ziskano": 0.769,
+       "podil_bodu": 0.3845,
+       "podil_ztracenych_bodu": 0.038
+      }
+     },
+     "prumer_bodu": 17.62
+    }
+   }
+  },
+  "M4-B": {
+   "kontroly": {
+    "uchazecu": 89203,
+    "neshoda_souctu_b_a_dt_body": 0,
+    "pozice_nad_maximem": {},
+    "k9_s_nenulovymi_body": {}
+   },
+   "vsichni": {
+    "polozky": {
+     "b1": {
+      "podil_bodu": 0.504,
+      "vynechani": 0.1352
+     },
+     "b2": {
+      "podil_bodu": 0.3444,
+      "vynechani": 0.178
+     },
+     "b3.1": {
+      "podil_bodu": 0.7258,
+      "vynechani": 0.0324
+     },
+     "b3.2": {
+      "podil_bodu": 0.5781,
+      "vynechani": 0.0324
+     },
+     "b4.1": {
+      "podil_bodu": 0.363,
+      "vynechani": 0.0381
+     },
+     "b4.2": {
+      "podil_bodu": 0.2304,
+      "vynechani": 0.0381
+     },
+     "b4.3": {
+      "podil_bodu": 0.4053,
+      "vynechani": 0.0381
+     },
+     "b5.1": {
+      "podil_bodu": 0.4747,
+      "vynechani": 0.0781
+     },
+     "b5.2": {
+      "podil_bodu": 0.6929,
+      "vynechani": 0.0781
+     },
+     "b6.1": {
+      "podil_bodu": 0.3954,
+      "vynechani": 0.2386
+     },
+     "b6.2": {
+      "podil_bodu": 0.4181,
+      "vynechani": 0.2386
+     },
+     "b7.1": {
+      "podil_bodu": 0.478,
+      "vynechani": 0.1482
+     },
+     "b7.2": {
+      "podil_bodu": 0.3498,
+      "vynechani": 0.1482
+     },
+     "b8.1": {
+      "podil_bodu": 0.3901,
+      "vynechani": 0.2252
+     },
+     "b8.2": {
+      "podil_bodu": 0.1859,
+      "vynechani": 0.2252
+     },
+     "b9": {
+      "podil_bodu": 0.3204,
+      "vynechani": 0.2861
+     },
+     "b10": {
+      "podil_bodu": 0.3685,
+      "vynechani": 0.2051
+     },
+     "b11": {
+      "podil_bodu": 0.7302,
+      "vynechani": 0.0054
+     },
+     "b12": {
+      "podil_bodu": 0.3271,
+      "vynechani": 0.0226
+     },
+     "b13": {
+      "podil_bodu": 0.6595,
+      "vynechani": 0.0073
+     },
+     "b14": {
+      "podil_bodu": 0.5629,
+      "vynechani": 0.0264
+     },
+     "b15": {
+      "podil_bodu": 0.3951,
+      "vynechani": 0.0067
+     },
+     "b16": {
+      "podil_bodu": 0.7433,
+      "vynechani": 0.006
+     }
+    },
+    "dovednosti": {
+     "M1.1": {
+      "pozice": [
+       "b1"
+      ],
+      "max": 1,
+      "ziskano": 0.504,
+      "podil_bodu": 0.504,
+      "podil_ztracenych_bodu": 0.0193
+     },
+     "N6.1": {
+      "pozice": [
+       "b2",
+       "b11",
+       "b16"
+      ],
+      "max": 10,
+      "ziskano": 6.609,
+      "podil_bodu": 0.6609,
+      "podil_ztracenych_bodu": 0.1317
+     },
+     "N2.2": {
+      "pozice": [
+       "b3.1",
+       "b3.2"
+      ],
+      "max": 4,
+      "ziskano": 2.608,
+      "podil_bodu": 0.6519,
+      "podil_ztracenych_bodu": 0.0541
+     },
+     "A2.1": {
+      "pozice": [
+       "b4.1",
+       "b4.2",
+       "b4.3",
+       "b7.1"
+      ],
+      "max": 6,
+      "ziskano": 2.36,
+      "podil_bodu": 0.3933,
+      "podil_ztracenych_bodu": 0.1413
+     },
+     "A3.3": {
+      "pozice": [
+       "b5.1",
+       "b5.2",
+       "b7.2"
+      ],
+      "max": 6,
+      "ziskano": 3.035,
+      "podil_bodu": 0.5058,
+      "podil_ztracenych_bodu": 0.1151
+     },
+     "M1.2": {
+      "pozice": [
+       "b6.1",
+       "b6.2",
+       "b14"
+      ],
+      "max": 6,
+      "ziskano": 2.753,
+      "podil_bodu": 0.4588,
+      "podil_ztracenych_bodu": 0.1261
+     },
+     "A1.1": {
+      "pozice": [
+       "b8.1",
+       "b8.2"
+      ],
+      "max": 4,
+      "ziskano": 1.152,
+      "podil_bodu": 0.288,
+      "podil_ztracenych_bodu": 0.1106
+     },
+     "G1.1": {
+      "pozice": [
+       "b9",
+       "b10",
+       "b13"
+      ],
+      "max": 8,
+      "ziskano": 3.386,
+      "podil_bodu": 0.4232,
+      "podil_ztracenych_bodu": 0.1792
+     },
+     "N1.4": {
+      "pozice": [
+       "b12"
+      ],
+      "max": 2,
+      "ziskano": 0.654,
+      "podil_bodu": 0.3271,
+      "podil_ztracenych_bodu": 0.0523
+     },
+     "S1.1": {
+      "pozice": [
+       "b15"
+      ],
+      "max": 3,
+      "ziskano": 1.185,
+      "podil_bodu": 0.3951,
+      "podil_ztracenych_bodu": 0.0705
+     }
+    },
+    "prumer_bodu": 24.25
+   },
+   "rozptyl": {
+    "sd_uvnitr_dovednosti_prumer": 0.1167,
+    "sd_mezi_dovednostmi": 0.1177,
+    "dovednosti_s_2_a_vice_polozkami": 7
+   },
+   "varianta_vedlejsi": {
+    "M1.1": {
+     "pozice": [
+      "b1"
+     ],
+     "max": 1,
+     "ziskano": 0.504,
+     "podil_bodu": 0.504,
+     "podil_ztracenych_bodu": 0.0193
+    },
+    "G1.1": {
+     "pozice": [
+      "b2",
+      "b6.1",
+      "b6.2",
+      "b9",
+      "b10",
+      "b13"
+     ],
+     "max": 14,
+     "ziskano": 5.702,
+     "podil_bodu": 0.4073,
+     "podil_ztracenych_bodu": 0.3222
+    },
+    "N2.2": {
+     "pozice": [
+      "b3.1",
+      "b3.2"
+     ],
+     "max": 4,
+     "ziskano": 2.608,
+     "podil_bodu": 0.6519,
+     "podil_ztracenych_bodu": 0.0541
+    },
+    "A2.1": {
+     "pozice": [
+      "b4.1",
+      "b4.2",
+      "b4.3",
+      "b7.1"
+     ],
+     "max": 6,
+     "ziskano": 2.36,
+     "podil_bodu": 0.3933,
+     "podil_ztracenych_bodu": 0.1413
+    },
+    "A3.3": {
+     "pozice": [
+      "b5.1",
+      "b5.2",
+      "b7.2"
+     ],
+     "max": 6,
+     "ziskano": 3.035,
+     "podil_bodu": 0.5058,
+     "podil_ztracenych_bodu": 0.1151
+    },
+    "A1.1": {
+     "pozice": [
+      "b8.1",
+      "b8.2"
+     ],
+     "max": 4,
+     "ziskano": 1.152,
+     "podil_bodu": 0.288,
+     "podil_ztracenych_bodu": 0.1106
+    },
+    "N6.1": {
+     "pozice": [
+      "b11",
+      "b16"
+     ],
+     "max": 8,
+     "ziskano": 5.92,
+     "podil_bodu": 0.7401,
+     "podil_ztracenych_bodu": 0.0807
+    },
+    "N2.3": {
+     "pozice": [
+      "b12"
+     ],
+     "max": 2,
+     "ziskano": 0.654,
+     "podil_bodu": 0.3271,
+     "podil_ztracenych_bodu": 0.0523
+    },
+    "M1.2": {
+     "pozice": [
+      "b14"
+     ],
+     "max": 2,
+     "ziskano": 1.126,
+     "podil_bodu": 0.5629,
+     "podil_ztracenych_bodu": 0.0339
+    },
+    "S1.1": {
+     "pozice": [
+      "b15"
+     ],
+     "max": 3,
+     "ziskano": 1.185,
+     "podil_bodu": 0.3951,
+     "podil_ztracenych_bodu": 0.0705
+    }
+   },
+   "pasma": {
+    "dolni": {
+     "uchazecu": 29735,
+     "body_od_do": [
+      0,
+      16
+     ],
+     "polozky": {
+      "b1": {
+       "podil_bodu": 0.2344,
+       "vynechani": 0.2182
+      },
+      "b2": {
+       "podil_bodu": 0.0416,
+       "vynechani": 0.3097
+      },
+      "b3.1": {
+       "podil_bodu": 0.4361,
+       "vynechani": 0.0851
+      },
+      "b3.2": {
+       "podil_bodu": 0.2428,
+       "vynechani": 0.0851
+      },
+      "b4.1": {
+       "podil_bodu": 0.0816,
+       "vynechani": 0.0886
+      },
+      "b4.2": {
+       "podil_bodu": 0.0149,
+       "vynechani": 0.0886
+      },
+      "b4.3": {
+       "podil_bodu": 0.0751,
+       "vynechani": 0.0886
+      },
+      "b5.1": {
+       "podil_bodu": 0.0983,
+       "vynechani": 0.2008
+      },
+      "b5.2": {
+       "podil_bodu": 0.3484,
+       "vynechani": 0.2008
+      },
+      "b6.1": {
+       "podil_bodu": 0.0235,
+       "vynechani": 0.4663
+      },
+      "b6.2": {
+       "podil_bodu": 0.0319,
+       "vynechani": 0.4663
+      },
+      "b7.1": {
+       "podil_bodu": 0.0556,
+       "vynechani": 0.3067
+      },
+      "b7.2": {
+       "podil_bodu": 0.0179,
+       "vynechani": 0.3067
+      },
+      "b8.1": {
+       "podil_bodu": 0.1841,
+       "vynechani": 0.2685
+      },
+      "b8.2": {
+       "podil_bodu": 0.0468,
+       "vynechani": 0.2685
+      },
+      "b9": {
+       "podil_bodu": 0.0746,
+       "vynechani": 0.4459
+      },
+      "b10": {
+       "podil_bodu": 0.0743,
+       "vynechani": 0.3299
+      },
+      "b11": {
+       "podil_bodu": 0.381,
+       "vynechani": 0.0128
+      },
+      "b12": {
+       "podil_bodu": 0.157,
+       "vynechani": 0.0309
+      },
+      "b13": {
+       "podil_bodu": 0.3092,
+       "vynechani": 0.018
+      },
+      "b14": {
+       "podil_bodu": 0.2109,
+       "vynechani": 0.0491
+      },
+      "b15": {
+       "podil_bodu": 0.2428,
+       "vynechani": 0.0138
+      },
+      "b16": {
+       "podil_bodu": 0.4502,
+       "vynechani": 0.0154
+      }
+     },
+     "dovednosti": {
+      "M1.1": {
+       "pozice": [
+        "b1"
+       ],
+       "max": 1,
+       "ziskano": 0.234,
+       "podil_bodu": 0.2344,
+       "podil_ztracenych_bodu": 0.0189
+      },
+      "N6.1": {
+       "pozice": [
+        "b2",
+        "b11",
+        "b16"
+       ],
+       "max": 10,
+       "ziskano": 3.546,
+       "podil_bodu": 0.3546,
+       "podil_ztracenych_bodu": 0.1595
+      },
+      "N2.2": {
+       "pozice": [
+        "b3.1",
+        "b3.2"
+       ],
+       "max": 4,
+       "ziskano": 1.358,
+       "podil_bodu": 0.3394,
+       "podil_ztracenych_bodu": 0.0653
+      },
+      "A2.1": {
+       "pozice": [
+        "b4.1",
+        "b4.2",
+        "b4.3",
+        "b7.1"
+       ],
+       "max": 6,
+       "ziskano": 0.358,
+       "podil_bodu": 0.0596,
+       "podil_ztracenych_bodu": 0.1394
+      },
+      "A3.3": {
+       "pozice": [
+        "b5.1",
+        "b5.2",
+        "b7.2"
+       ],
+       "max": 6,
+       "ziskano": 0.929,
+       "podil_bodu": 0.1549,
+       "podil_ztracenych_bodu": 0.1253
+      },
+      "M1.2": {
+       "pozice": [
+        "b6.1",
+        "b6.2",
+        "b14"
+       ],
+       "max": 6,
+       "ziskano": 0.533,
+       "podil_bodu": 0.0888,
+       "podil_ztracenych_bodu": 0.1351
+      },
+      "A1.1": {
+       "pozice": [
+        "b8.1",
+        "b8.2"
+       ],
+       "max": 4,
+       "ziskano": 0.462,
+       "podil_bodu": 0.1154,
+       "podil_ztracenych_bodu": 0.0874
+      },
+      "G1.1": {
+       "pozice": [
+        "b9",
+        "b10",
+        "b13"
+       ],
+       "max": 8,
+       "ziskano": 1.065,
+       "podil_bodu": 0.1331,
+       "podil_ztracenych_bodu": 0.1713
+      },
+      "N1.4": {
+       "pozice": [
+        "b12"
+       ],
+       "max": 2,
+       "ziskano": 0.314,
+       "podil_bodu": 0.157,
+       "podil_ztracenych_bodu": 0.0417
+      },
+      "S1.1": {
+       "pozice": [
+        "b15"
+       ],
+       "max": 3,
+       "ziskano": 0.729,
+       "podil_bodu": 0.2428,
+       "podil_ztracenych_bodu": 0.0561
+      }
+     },
+     "prumer_bodu": 9.53
+    },
+    "stredni": {
+     "uchazecu": 29734,
+     "body_od_do": [
+      16,
+      31
+     ],
+     "polozky": {
+      "b1": {
+       "podil_bodu": 0.4806,
+       "vynechani": 0.1494
+      },
+      "b2": {
+       "podil_bodu": 0.2467,
+       "vynechani": 0.1984
+      },
+      "b3.1": {
+       "podil_bodu": 0.8171,
+       "vynechani": 0.0118
+      },
+      "b3.2": {
+       "podil_bodu": 0.6443,
+       "vynechani": 0.0118
+      },
+      "b4.1": {
+       "podil_bodu": 0.3315,
+       "vynechani": 0.0238
+      },
+      "b4.2": {
+       "podil_bodu": 0.1389,
+       "vynechani": 0.0238
+      },
+      "b4.3": {
+       "podil_bodu": 0.382,
+       "vynechani": 0.0238
+      },
+      "b5.1": {
+       "podil_bodu": 0.4842,
+       "vynechani": 0.0316
+      },
+      "b5.2": {
+       "podil_bodu": 0.792,
+       "vynechani": 0.0316
+      },
+      "b6.1": {
+       "podil_bodu": 0.3146,
+       "vynechani": 0.2358
+      },
+      "b6.2": {
+       "podil_bodu": 0.3418,
+       "vynechani": 0.2358
+      },
+      "b7.1": {
+       "podil_bodu": 0.4479,
+       "vynechani": 0.1306
+      },
+      "b7.2": {
+       "podil_bodu": 0.2271,
+       "vynechani": 0.1306
+      },
+      "b8.1": {
+       "podil_bodu": 0.3217,
+       "vynechani": 0.2886
+      },
+      "b8.2": {
+       "podil_bodu": 0.0958,
+       "vynechani": 0.2886
+      },
+      "b9": {
+       "podil_bodu": 0.2609,
+       "vynechani": 0.33
+      },
+      "b10": {
+       "podil_bodu": 0.2982,
+       "vynechani": 0.2402
+      },
+      "b11": {
+       "podil_bodu": 0.84,
+       "vynechani": 0.0031
+      },
+      "b12": {
+       "podil_bodu": 0.246,
+       "vynechani": 0.0277
+      },
+      "b13": {
+       "podil_bodu": 0.7392,
+       "vynechani": 0.0033
+      },
+      "b14": {
+       "podil_bodu": 0.5528,
+       "vynechani": 0.0262
+      },
+      "b15": {
+       "podil_bodu": 0.3446,
+       "vynechani": 0.0053
+      },
+      "b16": {
+       "podil_bodu": 0.8139,
+       "vynechani": 0.0024
+      }
+     },
+     "dovednosti": {
+      "M1.1": {
+       "pozice": [
+        "b1"
+       ],
+       "max": 1,
+       "ziskano": 0.481,
+       "podil_bodu": 0.4806,
+       "podil_ztracenych_bodu": 0.0196
+      },
+      "N6.1": {
+       "pozice": [
+        "b2",
+        "b11",
+        "b16"
+       ],
+       "max": 10,
+       "ziskano": 7.057,
+       "podil_bodu": 0.7057,
+       "podil_ztracenych_bodu": 0.1112
+      },
+      "N2.2": {
+       "pozice": [
+        "b3.1",
+        "b3.2"
+       ],
+       "max": 4,
+       "ziskano": 2.923,
+       "podil_bodu": 0.7307,
+       "podil_ztracenych_bodu": 0.0407
+      },
+      "A2.1": {
+       "pozice": [
+        "b4.1",
+        "b4.2",
+        "b4.3",
+        "b7.1"
+       ],
+       "max": 6,
+       "ziskano": 2.13,
+       "podil_bodu": 0.355,
+       "podil_ztracenych_bodu": 0.1462
+      },
+      "A3.3": {
+       "pozice": [
+        "b5.1",
+        "b5.2",
+        "b7.2"
+       ],
+       "max": 6,
+       "ziskano": 3.007,
+       "podil_bodu": 0.5011,
+       "podil_ztracenych_bodu": 0.1131
+      },
+      "M1.2": {
+       "pozice": [
+        "b6.1",
+        "b6.2",
+        "b14"
+       ],
+       "max": 6,
+       "ziskano": 2.419,
+       "podil_bodu": 0.4031,
+       "podil_ztracenych_bodu": 0.1353
+      },
+      "A1.1": {
+       "pozice": [
+        "b8.1",
+        "b8.2"
+       ],
+       "max": 4,
+       "ziskano": 0.835,
+       "podil_bodu": 0.2087,
+       "podil_ztracenych_bodu": 0.1196
+      },
+      "G1.1": {
+       "pozice": [
+        "b9",
+        "b10",
+        "b13"
+       ],
+       "max": 8,
+       "ziskano": 3.156,
+       "podil_bodu": 0.3945,
+       "podil_ztracenych_bodu": 0.183
+      },
+      "N1.4": {
+       "pozice": [
+        "b12"
+       ],
+       "max": 2,
+       "ziskano": 0.492,
+       "podil_bodu": 0.246,
+       "podil_ztracenych_bodu": 0.057
+      },
+      "S1.1": {
+       "pozice": [
+        "b15"
+       ],
+       "max": 3,
+       "ziskano": 1.034,
+       "podil_bodu": 0.3446,
+       "podil_ztracenych_bodu": 0.0743
+      }
+     },
+     "prumer_bodu": 23.53
+    },
+    "horni": {
+     "uchazecu": 29734,
+     "body_od_do": [
+      31,
+      50
+     ],
+     "polozky": {
+      "b1": {
+       "podil_bodu": 0.7971,
+       "vynechani": 0.038
+      },
+      "b2": {
+       "podil_bodu": 0.745,
+       "vynechani": 0.0259
+      },
+      "b3.1": {
+       "podil_bodu": 0.9242,
+       "vynechani": 0.0005
+      },
+      "b3.2": {
+       "podil_bodu": 0.8471,
+       "vynechani": 0.0005
+      },
+      "b4.1": {
+       "podil_bodu": 0.676,
+       "vynechani": 0.002
+      },
+      "b4.2": {
+       "podil_bodu": 0.5373,
+       "vynechani": 0.002
+      },
+      "b4.3": {
+       "podil_bodu": 0.7587,
+       "vynechani": 0.002
+      },
+      "b5.1": {
+       "podil_bodu": 0.8415,
+       "vynechani": 0.0017
+      },
+      "b5.2": {
+       "podil_bodu": 0.9384,
+       "vynechani": 0.0017
+      },
+      "b6.1": {
+       "podil_bodu": 0.8479,
+       "vynechani": 0.0137
+      },
+      "b6.2": {
+       "podil_bodu": 0.8806,
+       "vynechani": 0.0137
+      },
+      "b7.1": {
+       "podil_bodu": 0.9305,
+       "vynechani": 0.0073
+      },
+      "b7.2": {
+       "podil_bodu": 0.8043,
+       "vynechani": 0.0073
+      },
+      "b8.1": {
+       "podil_bodu": 0.6646,
+       "vynechani": 0.1183
+      },
+      "b8.2": {
+       "podil_bodu": 0.415,
+       "vynechani": 0.1183
+      },
+      "b9": {
+       "podil_bodu": 0.6258,
+       "vynechani": 0.0826
+      },
+      "b10": {
+       "podil_bodu": 0.7331,
+       "vynechani": 0.0452
+      },
+      "b11": {
+       "podil_bodu": 0.9698,
+       "vynechani": 0.0003
+      },
+      "b12": {
+       "podil_bodu": 0.5785,
+       "vynechani": 0.0092
+      },
+      "b13": {
+       "podil_bodu": 0.93,
+       "vynechani": 0.0005
+      },
+      "b14": {
+       "podil_bodu": 0.9251,
+       "vynechani": 0.0039
+      },
+      "b15": {
+       "podil_bodu": 0.5978,
+       "vynechani": 0.0008
+      },
+      "b16": {
+       "podil_bodu": 0.9659,
+       "vynechani": 0.0002
+      }
+     },
+     "dovednosti": {
+      "M1.1": {
+       "pozice": [
+        "b1"
+       ],
+       "max": 1,
+       "ziskano": 0.797,
+       "podil_bodu": 0.7971,
+       "podil_ztracenych_bodu": 0.0197
+      },
+      "N6.1": {
+       "pozice": [
+        "b2",
+        "b11",
+        "b16"
+       ],
+       "max": 10,
+       "ziskano": 9.225,
+       "podil_bodu": 0.9225,
+       "podil_ztracenych_bodu": 0.0751
+      },
+      "N2.2": {
+       "pozice": [
+        "b3.1",
+        "b3.2"
+       ],
+       "max": 4,
+       "ziskano": 3.543,
+       "podil_bodu": 0.8857,
+       "podil_ztracenych_bodu": 0.0443
+      },
+      "A2.1": {
+       "pozice": [
+        "b4.1",
+        "b4.2",
+        "b4.3",
+        "b7.1"
+       ],
+       "max": 6,
+       "ziskano": 4.592,
+       "podil_bodu": 0.7653,
+       "podil_ztracenych_bodu": 0.1364
+      },
+      "A3.3": {
+       "pozice": [
+        "b5.1",
+        "b5.2",
+        "b7.2"
+       ],
+       "max": 6,
+       "ziskano": 5.168,
+       "podil_bodu": 0.8614,
+       "podil_ztracenych_bodu": 0.0806
+      },
+      "M1.2": {
+       "pozice": [
+        "b6.1",
+        "b6.2",
+        "b14"
+       ],
+       "max": 6,
+       "ziskano": 5.307,
+       "podil_bodu": 0.8846,
+       "podil_ztracenych_bodu": 0.0671
+      },
+      "A1.1": {
+       "pozice": [
+        "b8.1",
+        "b8.2"
+       ],
+       "max": 4,
+       "ziskano": 2.159,
+       "podil_bodu": 0.5398,
+       "podil_ztracenych_bodu": 0.1784
+      },
+      "G1.1": {
+       "pozice": [
+        "b9",
+        "b10",
+        "b13"
+       ],
+       "max": 8,
+       "ziskano": 5.937,
+       "podil_bodu": 0.7421,
+       "podil_ztracenych_bodu": 0.1999
+      },
+      "N1.4": {
+       "pozice": [
+        "b12"
+       ],
+       "max": 2,
+       "ziskano": 1.157,
+       "podil_bodu": 0.5785,
+       "podil_ztracenych_bodu": 0.0817
+      },
+      "S1.1": {
+       "pozice": [
+        "b15"
+       ],
+       "max": 3,
+       "ziskano": 1.793,
+       "podil_bodu": 0.5978,
+       "podil_ztracenych_bodu": 0.1169
+      }
+     },
+     "prumer_bodu": 39.68
+    }
+   },
+   "skupiny": {
+    "gy4_na_1_miste": {
+     "uchazecu": 18475,
+     "polozky": {
+      "b1": {
+       "podil_bodu": 0.6962,
+       "vynechani": 0.0783
+      },
+      "b2": {
+       "podil_bodu": 0.6142,
+       "vynechani": 0.0758
+      },
+      "b3.1": {
+       "podil_bodu": 0.8939,
+       "vynechani": 0.0024
+      },
+      "b3.2": {
+       "podil_bodu": 0.7936,
+       "vynechani": 0.0024
+      },
+      "b4.1": {
+       "podil_bodu": 0.6034,
+       "vynechani": 0.0054
+      },
+      "b4.2": {
+       "podil_bodu": 0.4765,
+       "vynechani": 0.0054
+      },
+      "b4.3": {
+       "podil_bodu": 0.6796,
+       "vynechani": 0.0054
+      },
+      "b5.1": {
+       "podil_bodu": 0.7509,
+       "vynechani": 0.0079
+      },
+      "b5.2": {
+       "podil_bodu": 0.8948,
+       "vynechani": 0.0079
+      },
+      "b6.1": {
+       "podil_bodu": 0.7068,
+       "vynechani": 0.0657
+      },
+      "b6.2": {
+       "podil_bodu": 0.7369,
+       "vynechani": 0.0657
+      },
+      "b7.1": {
+       "podil_bodu": 0.8109,
+       "vynechani": 0.0361
+      },
+      "b7.2": {
+       "podil_bodu": 0.6673,
+       "vynechani": 0.0361
+      },
+      "b8.1": {
+       "podil_bodu": 0.5635,
+       "vynechani": 0.1618
+      },
+      "b8.2": {
+       "podil_bodu": 0.3394,
+       "vynechani": 0.1618
+      },
+      "b9": {
+       "podil_bodu": 0.5411,
+       "vynechani": 0.1351
+      },
+      "b10": {
+       "podil_bodu": 0.6277,
+       "vynechani": 0.087
+      },
+      "b11": {
+       "podil_bodu": 0.911,
+       "vynechani": 0.0018
+      },
+      "b12": {
+       "podil_bodu": 0.5026,
+       "vynechani": 0.0148
+      },
+      "b13": {
+       "podil_bodu": 0.8617,
+       "vynechani": 0.0021
+      },
+      "b14": {
+       "podil_bodu": 0.8108,
+       "vynechani": 0.0122
+      },
+      "b15": {
+       "podil_bodu": 0.5422,
+       "vynechani": 0.0025
+      },
+      "b16": {
+       "podil_bodu": 0.9004,
+       "vynechani": 0.002
+      }
+     },
+     "dovednosti": {
+      "M1.1": {
+       "pozice": [
+        "b1"
+       ],
+       "max": 1,
+       "ziskano": 0.696,
+       "podil_bodu": 0.6962,
+       "podil_ztracenych_bodu": 0.0208
+      },
+      "N6.1": {
+       "pozice": [
+        "b2",
+        "b11",
+        "b16"
+       ],
+       "max": 10,
+       "ziskano": 8.453,
+       "podil_bodu": 0.8453,
+       "podil_ztracenych_bodu": 0.1059
+      },
+      "N2.2": {
+       "pozice": [
+        "b3.1",
+        "b3.2"
+       ],
+       "max": 4,
+       "ziskano": 3.375,
+       "podil_bodu": 0.8438,
+       "podil_ztracenych_bodu": 0.0428
+      },
+      "A2.1": {
+       "pozice": [
+        "b4.1",
+        "b4.2",
+        "b4.3",
+        "b7.1"
+       ],
+       "max": 6,
+       "ziskano": 4.061,
+       "podil_bodu": 0.6768,
+       "podil_ztracenych_bodu": 0.1327
+      },
+      "A3.3": {
+       "pozice": [
+        "b5.1",
+        "b5.2",
+        "b7.2"
+       ],
+       "max": 6,
+       "ziskano": 4.626,
+       "podil_bodu": 0.771,
+       "podil_ztracenych_bodu": 0.094
+      },
+      "M1.2": {
+       "pozice": [
+        "b6.1",
+        "b6.2",
+        "b14"
+       ],
+       "max": 6,
+       "ziskano": 4.509,
+       "podil_bodu": 0.7515,
+       "podil_ztracenych_bodu": 0.102
+      },
+      "A1.1": {
+       "pozice": [
+        "b8.1",
+        "b8.2"
+       ],
+       "max": 4,
+       "ziskano": 1.806,
+       "podil_bodu": 0.4514,
+       "podil_ztracenych_bodu": 0.1502
+      },
+      "G1.1": {
+       "pozice": [
+        "b9",
+        "b10",
+        "b13"
+       ],
+       "max": 8,
+       "ziskano": 5.23,
+       "podil_bodu": 0.6537,
+       "podil_ztracenych_bodu": 0.1896
+      },
+      "N1.4": {
+       "pozice": [
+        "b12"
+       ],
+       "max": 2,
+       "ziskano": 1.005,
+       "podil_bodu": 0.5026,
+       "podil_ztracenych_bodu": 0.0681
+      },
+      "S1.1": {
+       "pozice": [
+        "b15"
+       ],
+       "max": 3,
+       "ziskano": 1.627,
+       "podil_bodu": 0.5422,
+       "podil_ztracenych_bodu": 0.094
+      }
+     },
+     "prumer_bodu": 35.39
+    },
+    "ostatni": {
+     "uchazecu": 70728,
+     "polozky": {
+      "b1": {
+       "podil_bodu": 0.4538,
+       "vynechani": 0.1501
+      },
+      "b2": {
+       "podil_bodu": 0.274,
+       "vynechani": 0.2047
+      },
+      "b3.1": {
+       "podil_bodu": 0.6819,
+       "vynechani": 0.0403
+      },
+      "b3.2": {
+       "podil_bodu": 0.5218,
+       "vynechani": 0.0403
+      },
+      "b4.1": {
+       "podil_bodu": 0.3003,
+       "vynechani": 0.0467
+      },
+      "b4.2": {
+       "podil_bodu": 0.1661,
+       "vynechani": 0.0467
+      },
+      "b4.3": {
+       "podil_bodu": 0.3336,
+       "vynechani": 0.0467
+      },
+      "b5.1": {
+       "podil_bodu": 0.4025,
+       "vynechani": 0.0964
+      },
+      "b5.2": {
+       "podil_bodu": 0.6402,
+       "vynechani": 0.0964
+      },
+      "b6.1": {
+       "podil_bodu": 0.314,
+       "vynechani": 0.2838
+      },
+      "b6.2": {
+       "podil_bodu": 0.3349,
+       "vynechani": 0.2838
+      },
+      "b7.1": {
+       "podil_bodu": 0.391,
+       "vynechani": 0.1775
+      },
+      "b7.2": {
+       "podil_bodu": 0.2668,
+       "vynechani": 0.1775
+      },
+      "b8.1": {
+       "podil_bodu": 0.3448,
+       "vynechani": 0.2417
+      },
+      "b8.2": {
+       "podil_bodu": 0.1458,
+       "vynechani": 0.2417
+      },
+      "b9": {
+       "podil_bodu": 0.2628,
+       "vynechani": 0.3256
+      },
+      "b10": {
+       "podil_bodu": 0.3008,
+       "vynechani": 0.2359
+      },
+      "b11": {
+       "podil_bodu": 0.683,
+       "vynechani": 0.0063
+      },
+      "b12": {
+       "podil_bodu": 0.2813,
+       "vynechani": 0.0246
+      },
+      "b13": {
+       "podil_bodu": 0.6066,
+       "vynechani": 0.0086
+      },
+      "b14": {
+       "podil_bodu": 0.4982,
+       "vynechani": 0.0301
+      },
+      "b15": {
+       "podil_bodu": 0.3567,
+       "vynechani": 0.0077
+      },
+      "b16": {
+       "podil_bodu": 0.7023,
+       "vynechani": 0.0071
+      }
+     },
+     "dovednosti": {
+      "M1.1": {
+       "pozice": [
+        "b1"
+       ],
+       "max": 1,
+       "ziskano": 0.454,
+       "podil_bodu": 0.4538,
+       "podil_ztracenych_bodu": 0.0191
+      },
+      "N6.1": {
+       "pozice": [
+        "b2",
+        "b11",
+        "b16"
+       ],
+       "max": 10,
+       "ziskano": 6.128,
+       "podil_bodu": 0.6128,
+       "podil_ztracenych_bodu": 0.1351
+      },
+      "N2.2": {
+       "pozice": [
+        "b3.1",
+        "b3.2"
+       ],
+       "max": 4,
+       "ziskano": 2.407,
+       "podil_bodu": 0.6018,
+       "podil_ztracenych_bodu": 0.0556
+      },
+      "A2.1": {
+       "pozice": [
+        "b4.1",
+        "b4.2",
+        "b4.3",
+        "b7.1"
+       ],
+       "max": 6,
+       "ziskano": 1.916,
+       "podil_bodu": 0.3193,
+       "podil_ztracenych_bodu": 0.1425
+      },
+      "A3.3": {
+       "pozice": [
+        "b5.1",
+        "b5.2",
+        "b7.2"
+       ],
+       "max": 6,
+       "ziskano": 2.619,
+       "podil_bodu": 0.4365,
+       "podil_ztracenych_bodu": 0.1179
+      },
+      "M1.2": {
+       "pozice": [
+        "b6.1",
+        "b6.2",
+        "b14"
+       ],
+       "max": 6,
+       "ziskano": 2.294,
+       "podil_bodu": 0.3823,
+       "podil_ztracenych_bodu": 0.1293
+      },
+      "A1.1": {
+       "pozice": [
+        "b8.1",
+        "b8.2"
+       ],
+       "max": 4,
+       "ziskano": 0.981,
+       "podil_bodu": 0.2453,
+       "podil_ztracenych_bodu": 0.1053
+      },
+      "G1.1": {
+       "pozice": [
+        "b9",
+        "b10",
+        "b13"
+       ],
+       "max": 8,
+       "ziskano": 2.904,
+       "podil_bodu": 0.363,
+       "podil_ztracenych_bodu": 0.1778
+      },
+      "N1.4": {
+       "pozice": [
+        "b12"
+       ],
+       "max": 2,
+       "ziskano": 0.563,
+       "podil_bodu": 0.2813,
+       "podil_ztracenych_bodu": 0.0501
+      },
+      "S1.1": {
+       "pozice": [
+        "b15"
+       ],
+       "max": 3,
+       "ziskano": 1.07,
+       "podil_bodu": 0.3567,
+       "podil_ztracenych_bodu": 0.0673
+      }
+     },
+     "prumer_bodu": 21.34
+    }
+   }
+  }
+ },
+ "srovnani_terminu_ocistene": {
+  "hlavni": {
+   "A1.1": {
+    "M4-B": -0.197,
+    "rozdil_B_minus_A": null
+   },
+   "A2.1": {
+    "M4-A": -0.0481,
+    "M4-B": -0.0917,
+    "rozdil_B_minus_A": -0.0436
+   },
+   "A3.1": {
+    "M4-A": -0.0986,
+    "rozdil_B_minus_A": null
+   },
+   "A3.3": {
+    "M4-A": -0.0375,
+    "M4-B": 0.0208,
+    "rozdil_B_minus_A": 0.0583
+   },
+   "G1.1": {
+    "M4-A": -0.0196,
+    "M4-B": -0.0618,
+    "rozdil_B_minus_A": -0.0422
+   },
+   "G2.1": {
+    "M4-A": 0.0304,
+    "rozdil_B_minus_A": null
+   },
+   "M1.1": {
+    "M4-B": 0.019,
+    "rozdil_B_minus_A": null
+   },
+   "M1.2": {
+    "M4-A": -0.1607,
+    "M4-B": -0.0262,
+    "rozdil_B_minus_A": 0.1345
+   },
+   "N1.4": {
+    "M4-A": 0.156,
+    "M4-B": -0.1579,
+    "rozdil_B_minus_A": -0.3139
+   },
+   "N2.2": {
+    "M4-A": 0.2191,
+    "M4-B": 0.1669,
+    "rozdil_B_minus_A": -0.0522
+   },
+   "N6.1": {
+    "M4-A": 0.2217,
+    "M4-B": 0.1759,
+    "rozdil_B_minus_A": -0.0458
+   },
+   "S1.1": {
+    "M4-B": -0.0899,
+    "rozdil_B_minus_A": null
+   }
+  },
+  "vedlejsi": {
+   "A1.1": {
+    "M4-B": -0.197,
+    "rozdil_B_minus_A": null
+   },
+   "A2.1": {
+    "M4-A": -0.0481,
+    "M4-B": -0.0917,
+    "rozdil_B_minus_A": -0.0436
+   },
+   "A3.3": {
+    "M4-A": -0.0514,
+    "M4-B": 0.0208,
+    "rozdil_B_minus_A": 0.0722
+   },
+   "G1.1": {
+    "M4-A": -0.0582,
+    "M4-B": -0.0777,
+    "rozdil_B_minus_A": -0.0195
+   },
+   "M1.1": {
+    "M4-A": -0.0565,
+    "M4-B": 0.019,
+    "rozdil_B_minus_A": 0.0755
+   },
+   "M1.2": {
+    "M4-A": -0.1425,
+    "M4-B": 0.0779,
+    "rozdil_B_minus_A": 0.2204
+   },
+   "N1.4": {
+    "M4-A": 0.0798,
+    "rozdil_B_minus_A": null
+   },
+   "N2.2": {
+    "M4-A": 0.2191,
+    "M4-B": 0.1669,
+    "rozdil_B_minus_A": -0.0522
+   },
+   "N2.3": {
+    "M4-B": -0.1579,
+    "rozdil_B_minus_A": null
+   },
+   "N6.1": {
+    "M4-A": 0.2217,
+    "M4-B": 0.2551,
+    "rozdil_B_minus_A": 0.0334
+   },
+   "S1.1": {
+    "M4-B": -0.0899,
+    "rozdil_B_minus_A": null
+   }
+  }
+ },
+ "prah_stability": 0.07
+}
