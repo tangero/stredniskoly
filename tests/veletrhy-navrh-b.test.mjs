@@ -95,7 +95,8 @@ test('na kartě varianty B je datum vidět ve dlaždici a věta s datem je pro �
 
 test('veřejná stránka /veletrhy je varianta B, indexovaná, bez přepisu a s přesměrováním prototypu (#429)', () => {
   const config = readFileSync(new URL('../next.config.ts', import.meta.url), 'utf8');
-  assert.equal(config.includes("key: 'varianta'"), false);
+  // Přepis ?varianta=b patří stránce města. Veletrhy ho nemají: varianta B je veřejná stránka.
+  assert.equal(/source: '\/veletrhy'[\s\S]{0,180}key: 'varianta'/.test(config), false);
   assert.match(config, /source: '\/prototyp\/veletrhy', destination: '\/veletrhy', permanent: true/);
   const verejna = readFileSync(new URL('../src/app/veletrhy/page.tsx', import.meta.url), 'utf8');
   assert.match(verejna, /varianta="b"/);

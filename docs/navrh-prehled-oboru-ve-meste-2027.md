@@ -302,10 +302,19 @@ Generátor okruhů u každého oboru okruhu spočítá *Jistotu zařazení do ok
 
 Výpočet trvá asi 9 minut navíc ke generátoru; přegeneruje se s ním při každém novém ročníku.
 
+## 15. Zkouška rozložení (8. 10. 2026)
+
+Veřejná stránka `/mesto/{město}` se nemění. Nové rozložení je nezalistovaný prototyp: adresa `/mesto/{město}?varianta=b` se přepíše na `/prototyp/mesto/{město}` a v prohlížeči parametr zůstane. Stránka nese `noindex`, není v sitemapě a nikam na ni nevede odkaz. Do `robots.txt` se nezapisuje, aby vyhledávač stihl `noindex` přečíst. Návštěvníci se mezi verze nepřiřazují.
+
+Ve velkém městě se seznam oborů otevře až po výběru směru. Dlaždice mají velikost podle počtu oborů; velikost neříká nic o obtížnosti přijetí ani o kvalitě školy. Pořadí směrů je pořadí číselníku. „Zobrazit všechny směry“ je textové tlačítko, ne dlaždice. Filtry (vzdělání, obtížnost přijetí, zřizovatel, hledání) jsou pod výběrem směru a platí uvnitř něj. Úvod neopakuje rozdělení podle vzdělání ani součet míst; součet míst vybraných oborů je jeden řádek u otevřeného směru. Okruhy oborů na prototypu nejsou, věta odkazuje na stránku oboru. Malé město zůstává u rozbalených karet, střední dlaždice ukáže a seznam nechá otevřený.
+
+Nový ukazatel nevzniká. Sloupce z oddílu 5, které se do seznamu nehodí (maturitní výsledky, rozložení bodů, druhé kolo, seznam vystavovatelů veletrhu), se nepoužívají ani tady.
+
 ## Historie
 
 | Verze | Datum | Změna |
 |---|---|---|
+| 0.7 | 8. 10. 2026 | nezalistovaná zkouška rozložení, parametr `varianta=b` (oddíl 15) |
 | 0.6 | 5. 10. 2026 | shodná jména okruhů: část obce a převažující obor (oddíl 13) |
 | 0.5 | 4. 10. 2026 | okruh oboru na stránce oboru (oddíl 12) |
 | 0.4 | 4. 10. 2026 | okruhy zpět na stránce města se jménem ze směrů studia; hodnocení podnětu se sítí oborů (oddíl 11) |
