@@ -419,8 +419,10 @@ AI neptala potřetí. `scripts/prehled/otazky-pravidla.mjs` (testy `tests/otazky
 - `--seznam` vypíše skupiny jako JSON, `--navrh` podklad do týdenní dávky H2 (#560): u každé skupiny odkazy na
   otázky, úryvky otázky a odpovědi bez e-mailů a telefonů a místo pro znění pravidla, které napíše AI.
 
-Nic se nezapisuje a pravidlo neplatí bez souhlasu vlastníka s dávkou. Týdenní spuštění v rutině a zápis do dávky
-přibudou, až bude dávka H2 (#560, PR #563) na `main`; do té doby se skript spouští na požádání.
+Nic se nezapisuje a pravidlo neplatí bez souhlasu vlastníka s dávkou. Rutina skript spouští jednou týdně ve
+čtvrtek, než požádá o souhlas s dávkou H2 (skill `trideni-issues`, bod 13): ke každé skupině napíše znění pravidla
+a vloží ho do dávky `rizeni/davka-RRRR-TT` s odkazy na otázky a s novou kontrolní situací. Bez skupiny se nic
+nezapisuje; skupinu, kterou vlastník v dávce odmítl, rutina znovu nenavrhuje.
 
 ## 6. Otevřené
 

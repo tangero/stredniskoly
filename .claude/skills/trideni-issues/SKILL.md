@@ -84,4 +84,12 @@ Pravidla: `CLAUDE.md` (pravidla 1 a 4) a `docs/navrh-rizeni-vyvoje-2027.md`, odd
     zamítnuté zavři se zdvořilým komentářem bez osobních údajů, odložené zapiš do příštího týdne. Po provedení
     týdenní issue zavři. Nejasný řádek rozhodnutí neprováděj a zeptej se (`otazka`).
 
+13. **Otázka třikrát = pravidlo (#306).** Jednou týdně ve čtvrtek, než se žádá o souhlas s týdenní dávkou H2,
+    spusť `node scripts/prehled/otazky-pravidla.mjs --navrh`. Když vypíše skupinu otázek, na které vlastník
+    odpověděl aspoň dvakrát stejně, napiš znění trvalého pravidla (do `CLAUDE.md` nebo do skillu, kterého se
+    otázka týká) a vlož ho do dávky `rizeni/davka-RRRR-TT` s odkazy na otázky z podkladu a s novou situací
+    v `tests/pravidla/kontrolni-situace.json`. Popis dávky nese u návrhu `Souvisí s #306` a jednu větu
+    v `## Pro vlastníka`. Pravidlo platí až po souhlasu s dávkou; do té doby se na stejnou věc dál ptej podle
+    pravidla 8. Bez skupiny se nic nezapisuje. Skupinu, kterou vlastník v dávce odmítl, znovu nenavrhuj.
+
 Štítky `schvaleno` a `zamitnuto` nepřidávej nikdy, `stop` nikoho jiného neodebírej.
