@@ -121,8 +121,6 @@
   "src/app/page.tsx": [
    "0d3dcd3c0089",
    "5a41efa5a9a4",
-   "8cbc679f7ff6",
-   "af1b6a1b95ce",
    "f2081e1d011f"
   ],
   "src/app/praha-dostupnost/PrahaDostupnostClient.tsx": [
@@ -192,10 +190,7 @@
    "d9d0b9d1c9f3"
   ],
   "src/app/skoly/page.tsx": [
-   "662c18118c83",
-   "af82c7052052",
-   "af9592862f4d",
-   "d68a7a569f78"
+   "af82c7052052"
   ],
   "src/app/vysledky/[year]/ResultsClient.tsx": [
    "5b03b845100f",
@@ -237,8 +232,7 @@
   ],
   "src/components/SchoolsPageTabs.tsx": [
    "40b8ea9c4742",
-   "78c712731511",
-   "d21a2578601a"
+   "78c712731511"
   ],
   "src/components/admin/PasskeyTlacitka.tsx": [
    "0539ea85f452"

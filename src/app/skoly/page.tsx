@@ -7,16 +7,28 @@ import { getAllSchools, getAllKraje, getSchoolAnalysis } from '@/lib/data';
 import { createSlug } from '@/lib/utils';
 import { SchoolsPageTabs } from '@/components/SchoolsPageTabs';
 import Link from 'next/link';
+import { zobrazeneObdobi } from '@/lib/stav-datovych-sad';
 
-export const metadata: Metadata = {
-  alternates: { canonical: '/skoly' },
-  title: 'Nejžádanější studijní obory',
-  description: 'Žebříček nejžádanějších středoškolských oborů v ČR. Převis poptávky 2026 a statistiky podle měst. Historická data nejsou odhadem osobního přijetí.',
-  openGraph: {
-    title: 'Nejžádanější studijní obory | Přijímačky na střední školy',
-    description: 'Žebříček nejžádanějších středoškolských oborů v ČR.',
-  },
-};
+export async function generateMetadata(): Promise<Metadata> {
+  // Ukazatel „přihlášky na místo“ stojí na dvou sadách; platí nejstarší zobrazené období.
+  const roky = await Promise.all([
+    zobrazeneObdobi('cermat-prihlasky'),
+    zobrazeneObdobi('cermat-kapacity'),
+  ]);
+  const rok = roky.every(Boolean)
+    ? roky.reduce((a, b) => (Number(b) < Number(a) ? b : a))
+    : null;
+  const vRoce = rok ? ` v roce ${rok}` : '';
+  return {
+    alternates: { canonical: '/skoly' },
+    title: 'Nejžádanější studijní obory',
+    description: `Středoškolské obory v ČR s nejvíce přihláškami na místo v 1. kole přijímacího řízení${vRoce} a statistiky podle měst. Historická data nejsou odhadem osobního přijetí.`,
+    openGraph: {
+      title: 'Nejžádanější studijní obory | Přijímačky na střední školy',
+      description: `Středoškolské obory v ČR s nejvíce přihláškami na místo v 1. kole přijímacího řízení${vRoce}.`,
+    },
+  };
+}
 
 export default async function SchoolsPage() {
   const [schools, kraje, analysis] = await Promise.all([

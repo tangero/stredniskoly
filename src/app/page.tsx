@@ -67,6 +67,8 @@ export default async function HomePage() {
   const totalKraje = kraje.length;
   const upozorneniNabidka = await nabidkaOboru();
   const terminyJpz = terminyJednotneZkousky();
+  const rokPasem = await zobrazeneObdobi('cermat-uchazeci-kolo1');
+  const vRoce = rokPasem ? ` v roce ${rokPasem}` : '';
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -236,7 +238,7 @@ export default async function HomePage() {
             {[
               { step: 1, title: 'Zadej své body', description: 'Vlož očekávané body z českého jazyka a matematiky (každý test max. 50 bodů).' },
               { step: 2, title: 'Vyber školy', description: 'Filtruj podle kraje, obce nebo typu školy. Vyber školy, které tě zajímají.' },
-              { step: 3, title: 'Uvidíš své šance', description: 'Simulátor ti ukáže, kam bys byl přijat na základě loňských dat.' },
+              { step: 3, title: 'Uvidíš, jak dopadli uchazeči', description: `Simulátor rozdělí obory podle toho, jak by ses se svým výsledkem dostal v 1. kole${vRoce}. Popisuje uchazeče z tohoto roku, ne tvé přijetí.` },
             ].map(item => (
               <div key={item.step} className="text-center p-6 bg-white" style={{ borderRadius: '4px' }}>
                 <div
@@ -308,7 +310,7 @@ export default async function HomePage() {
       <section className="py-16 text-white" style={{ backgroundColor: '#0074e4' }}>
         <div className="max-w-4xl mx-auto px-4 text-center">
           <h2 className="text-2xl md:text-3xl font-bold mb-4">Vyzkoušej zdarma</h2>
-          <p className="opacity-90 mb-8">Žádná registrace, žádné reklamy. Jen ty a tvoje šance.</p>
+          <p className="opacity-90 mb-8">Žádná registrace, žádné reklamy. Zadej výsledek cvičného testu, tedy testu z minulých přijímaček v aplikaci CERMAT TAU, a uvidíš, jak dopadli uchazeči v 1. kole{vRoce}.</p>
           <Link
             href="/simulator"
             className="inline-block bg-white px-8 py-3.5 font-semibold text-base no-underline uppercase tracking-wide transition-all hover:opacity-90"

@@ -311,6 +311,7 @@ export function SchoolsPageTabs({ schools }: SchoolsPageTabsProps) {
             <h2 className="text-xl font-semibold">Nejžádanější studijní obory 2026</h2>
             <p className="text-slate-600 text-sm mt-1">
               Obory s nejvyšším poměrem přihlášek na místo v 1. kole přijímacího řízení 2026.
+              Jeden uchazeč podává víc přihlášek, proto toto číslo konkurenci nadsazuje.
               Zobrazeno {previs2026.length} oborů.
             </p>
           </div>
@@ -327,7 +328,7 @@ export function SchoolsPageTabs({ schools }: SchoolsPageTabsProps) {
                   <th className="text-left px-3 py-2 font-medium text-slate-600">Město</th>
                   <th className="text-right px-3 py-2 font-medium text-slate-600">Přihlášek</th>
                   <th className="text-right px-3 py-2 font-medium text-slate-600">Míst</th>
-                  <th className="text-right px-3 py-2 font-medium text-slate-600">Převis</th>
+                  <th className="text-right px-3 py-2 font-medium text-slate-600">Přihlášky na místo</th>
                 </tr>
               </thead>
               <tbody>
