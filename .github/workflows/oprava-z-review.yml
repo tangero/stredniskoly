@@ -18,6 +18,10 @@
 #   přispěvatele a ručně spuštěné testy se do povinných kontrol PR nepočítaly, #395). Nasazení náhledu
 #   push od App nespustí (podmínka v testy.yml), protože nasazovací job spouští skript z větve s VERCEL_TOKEN.
 #   Náhled pro protokol spustí vlastník nebo Claude Code.
+# - Hlídač uvízlých PR (#306, hlidac-pr.yml): `@claude` od App se značkou hlídače spustí kolo s druhem `testy`
+#   (oprava červených testů) nebo `konflikt`. U konfliktu job „Oprava“ sloučí main do větve, Claude vyřeší jen
+#   konflikty a výsledek se předá jako git bundle. Job „Zápis“ pushne jen slučovací commit nad hlavou PR, jehož
+#   druhý rodič je z main, který v cestách H2 převzal stav main a nepřináší změny workflow (kontrola-konflikt).
 name: Oprava z review
 
 on:
@@ -46,6 +50,7 @@ jobs:
     outputs:
       akce: ${{ steps.stagnace.outputs.akce || steps.rozhodni.outputs.akce }}
       duvod: ${{ steps.stagnace.outputs.duvod || steps.rozhodni.outputs.duvod }}
+      druh: ${{ steps.rozhodni.outputs.druh }}
       kolo: ${{ steps.rozhodni.outputs.kolo }}
       max: ${{ steps.rozhodni.outputs.max }}
       vetev: ${{ steps.rozhodni.outputs.vetev }}
@@ -71,9 +76,10 @@ jobs:
         run: node scripts/brana/oprava-z-review.mjs rozhodni
 
       # Stagnace (#327): opakovaný nález P1 nebo P2 ve dvou review po sobě změní `oprava` na `strop`.
+      # Kolo hlídače (#306) nález z review neopravuje, stagnace se ho netýká.
       - name: Stagnace
         id: stagnace
-        if: steps.rozhodni.outputs.akce == 'oprava'
+        if: steps.rozhodni.outputs.akce == 'oprava' && steps.rozhodni.outputs.druh == ''
         env:
           GITHUB_TOKEN: ${{ github.token }}
           AKCE: ${{ steps.rozhodni.outputs.akce }}
@@ -163,6 +169,7 @@ jobs:
       contents: read
     env:
       PRED: ${{ needs.rozhodnuti.outputs.sha }}
+      DRUH: ${{ needs.rozhodnuti.outputs.druh }}
     steps:
       - uses: actions/checkout@v4
         with:
@@ -181,8 +188,22 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
+      # Konflikt (#306): sloučit aktuální main. Bez konfliktu je hotovo a Claude se nespouští.
+      - name: Sloučení main
+        id: slouceni
+        if: needs.rozhodnuti.outputs.druh == 'konflikt'
+        run: |
+          git fetch --no-tags origin +refs/heads/main:refs/remotes/origin/main
+          if git merge --no-edit origin/main; then
+            echo "konflikt=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "konflikt=true" >> "$GITHUB_OUTPUT"
+            git diff --name-only --diff-filter=U
+          fi
+
       - name: Claude
         id: claude
+        if: needs.rozhodnuti.outputs.druh != 'konflikt' || steps.slouceni.outputs.konflikt == 'true'
         uses: anthropics/claude-code-action@v1
         with:
           claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
@@ -192,13 +213,19 @@ jobs:
           allowed_bots: prijimacky-ai
           claude_args: >-
             --max-turns 80
-            --allowedTools "Read,Edit,MultiEdit,Write,Glob,Grep,Bash(git status:*),Bash(git diff:*),Bash(git log:*),Bash(git add:*),Bash(git commit:*),Bash(npm test:*),Bash(npm run test:js:*),Bash(npm run test:mesto:*),Bash(npx tsc:*),Bash(npx eslint:*),Bash(node --experimental-strip-types --test:*)"
+            --allowedTools "Read,Edit,MultiEdit,Write,Glob,Grep,Bash(git status:*),Bash(git diff:*),Bash(git log:*),Bash(git add:*),Bash(git commit:*),Bash(git merge --abort),Bash(npm test:*),Bash(npm run test:js:*),Bash(npm run test:mesto:*),Bash(npx tsc:*),Bash(npx eslint:*),Bash(node --experimental-strip-types --test:*)"
           prompt: |
             Jsi Claude Code ve workflow „Oprava z review“ repozitáře ${{ github.repository }}, PR #${{ github.event.issue.number }},
             větev ${{ needs.rozhodnuti.outputs.vetev }}, kolo ${{ needs.rozhodnuti.outputs.kolo }} z ${{ needs.rozhodnuti.outputs.max }}.
             Pravidla projektu jsou v CLAUDE.md a .claude/claude.md; mluv česky.
 
-            Úkol: oprav ve větvi PR nálezy P1 a P2 z komentáře níže. Nálezy P3 neopravuj, pokud o to komentář výslovně nežádá.
+            Druh kola: ${{ needs.rozhodnuti.outputs.druh || 'review' }}.
+            - `review`: oprav ve větvi PR nálezy P1 a P2 z komentáře níže. Nálezy P3 neopravuj, pokud o to komentář výslovně nežádá.
+            - `testy` (hlídač uvízlých PR): spusť testy uvedené v komentáři, najdi příčinu selhání a oprav ji. Testy nevypínej ani nemaž.
+            - `konflikt` (hlídač uvízlých PR): větev je uprostřed `git merge origin/main` s konflikty (`git status`). Vyřeš jen
+              konflikty tak, aby zůstalo chování obou stran, `git add` a dokonči sloučení `git commit --no-edit`; nic jiného neměň
+              a necommituj nic dalšího. V cestách `h2` a v .github/workflows vezmi verzi z main. Když obě strany mění tutéž logiku
+              a výběr jedné by chování ztratil, spusť `git merge --abort` a do souhrnu napiš, co je potřeba rozhodnout.
             - Měň jen to, co nálezy vyžadují; žádné refaktory ani úpravy mimo nálezy.
             - Neměň soubory z cest `h2` v .github/rezimy.yml (brána, rezimy.yml, labeler.yml, CLAUDE.md, .claude/…)
               ani nic v .github/workflows. Když nález takovou změnu vyžaduje, neopravuj ho a napiš proč.
@@ -221,10 +248,21 @@ jobs:
         env:
           EXEC: ${{ steps.claude.outputs.execution_file }}
           CLAUDE: ${{ steps.claude.outcome }}
+          SLOUCENI: ${{ steps.slouceni.outcome }}
+          KONFLIKT: ${{ steps.slouceni.outputs.konflikt }}
         run: |
           mkdir -p "$RUNNER_TEMP/vysledek/patche"
           echo "$CLAUDE" > "$RUNNER_TEMP/vysledek/claude.txt"
-          if [ "$CLAUDE" = "success" ] && [ "$(git rev-parse HEAD)" != "$PRED" ]; then
+          if [ "$DRUH" = "konflikt" ]; then
+            # Slučovací commit se přes patch nepřenese; předává se git bundle od hlavy PR. Nedokončené sloučení se nepředá.
+            ok=false
+            [ "$SLOUCENI" = "success" ] && [ "$KONFLIKT" = "false" ] && ok=true
+            [ "$KONFLIKT" = "true" ] && [ "$CLAUDE" = "success" ] && ok=true
+            if [ "$ok" = "true" ] && [ "$(git rev-parse HEAD)" != "$PRED" ] && ! git rev-parse -q --verify MERGE_HEAD >/dev/null; then
+              git bundle create "$RUNNER_TEMP/vysledek/vetev.bundle" HEAD "^$PRED"
+            fi
+            [ "$KONFLIKT" = "false" ] && echo "Sloučení \`main\` proběhlo bez konfliktu, Claude se nespouštěl." > "$RUNNER_TEMP/vysledek/souhrn.md"
+          elif [ "$CLAUDE" = "success" ] && [ "$(git rev-parse HEAD)" != "$PRED" ]; then
             git format-patch --binary "$PRED..HEAD" -o "$RUNNER_TEMP/vysledek/patche"
           fi
           if [ -n "$EXEC" ] && [ -f "$EXEC" ]; then
@@ -259,6 +297,7 @@ jobs:
       MAX: ${{ needs.rozhodnuti.outputs.max }}
       VETEV: ${{ needs.rozhodnuti.outputs.vetev }}
       PRED: ${{ needs.rozhodnuti.outputs.sha }}
+      DRUH: ${{ needs.rozhodnuti.outputs.druh }}
     steps:
       - uses: actions/checkout@v4
         with:
@@ -294,6 +333,20 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          # Konflikt (#306): bundle se slučovacím commitem; kontrola z main ověří rodiče, H2 a workflow.
+          if [ "$DRUH" = "konflikt" ]; then
+            bundle="$RUNNER_TEMP/vysledek/vetev.bundle"
+            if [ ! -f "$bundle" ]; then
+              echo "push=false" >> "$GITHUB_OUTPUT"
+              echo "duvod=sloučení main nedokončeno (Claude: $(cat "$RUNNER_TEMP/vysledek/claude.txt" 2>/dev/null || echo nespuštěn)); rozhodne člověk" >> "$GITHUB_OUTPUT"
+              exit 0
+            fi
+            git fetch --no-tags origin +refs/heads/main:refs/remotes/origin/main
+            git fetch "$bundle" HEAD
+            git reset -q --hard FETCH_HEAD
+            node ../main/scripts/brana/oprava-z-review.mjs kontrola-konflikt "$PRED" "$(git rev-parse origin/main)"
+            exit 0
+          fi
           shopt -s nullglob
           patche=("$RUNNER_TEMP"/vysledek/patche/*.patch)
           if [ ${#patche[@]} -eq 0 ]; then

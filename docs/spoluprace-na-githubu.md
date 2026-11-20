@@ -230,10 +230,20 @@ na začátku každého běhu přepíše komentář se značkou `tep-rutiny` v is
 neumí (403). Kontrola (Plánovač každou hodinu) počítá ticho od poslední úpravy komentáře: po 12 hodinách přijde
 zpráva do Telegramu, pak jednou denně, dokud tep nepřijde. Kdy naposledy hlásila, si pamatuje ve vlastním komentáři.
 
+**Hlídač PR** (`.github/workflows/hlidac-pr.yml`, `scripts/provoz/hlidac-pr.mjs`, #306, varianta A z 18. 11. 2026):
+jednou za hodinu projde otevřené PR vlastníka a asistenta zadání. U PR s konfliktem s `main` nebo s červenými testy
+(joby workflow Testy kromě nasazení na Vercel, až všechny doběhnou) napíše tokenem App jeden komentář `@claude` se
+značkou `<!-- hlidac-pr:sha=…;duvod=konflikt|testy -->`; za hlavu PR a důvod jen jednou, nejvýš 3 komentáře za běh.
+PR se `schvaleno`, `stop` nebo `potrebuje-cloveka` nechá být. Komentář spustí Opravu z review: u testů Claude opraví
+příčinu, u konfliktu job Oprava sloučí `main` do větve, Claude vyřeší jen konflikty a job Zápis pushne slučovací
+commit, jen když je jeho první rodič hlava PR, druhý commit z `main`, v cestách H2 převzal stav `main` a nepřináší
+změny workflow. Jinak nic nepushne a PR dál ukazuje Čeká na tebe ve skupině „PR stojí přes den“. Kola hlídače se
+počítají do stropu kol oprav a stagnace se jich netýká.
+
 **Plánovač** (`.github/workflows/planovac.yml`, `scripts/provoz/planovac.mjs`, #461): GitHub spouští plánované běhy
 tohoto repozitáře jen 4 až 5krát denně (měřeno 5. až 9. 10. 2026: hlídání dostupnosti místo 288 běhů 5). Workflow
 Plánovač proto každých 5 minut spouští cron-job.org a Plánovač spustí, co je na řadě podle doby od posledního běhu:
-Dostupnost (5 min), Datová linka ve kroku schválení (15 min), Brána, Triáž, Tep rutiny (hodina) a Čeká na tebe
+Dostupnost (5 min), Datová linka ve kroku schválení (15 min), Brána, Triáž, Tep rutiny, Hlídač PR (hodina) a Čeká na tebe
 (denně 6:52 UTC a souhrn v 18:30 UTC). Plány GitHubu u workflow zůstávají jako záloha (kromě Čeká na tebe, ta by přišla dvakrát).
 
 Nastavení cron-job.org (vlastník, jednou, asi 10 minut):
@@ -303,6 +313,7 @@ a jen s právy, která job potřebuje:
 | CSI Weekly Refresh, Záloha veletrhů | PR s obnovou dat | contents, pull-requests zápis |
 | Datová linka | PR z předání schválených dat (jen `gh pr create`, větev pushuje `GITHUB_TOKEN`, #440) | pull-requests zápis, contents čtení |
 | Oprava z review (`oprava-z-review.yml`, job Zápis, #410) | push opravy do větve PR, aby testy u PR běžely bez schvalování spuštění | contents zápis |
+| Hlídač PR (`hlidac-pr.yml`, #306) | komentář `@claude` se značkou hlídače u konfliktu nebo červených testů (komentář od App spustí smyčku oprav) | issues, pull-requests zápis; contents čtení |
 | Review (`review.yml`, job Zápis, #455) | komentář s automatickým review a žádost `@claude` o opravu (komentář od App spustí bránu i smyčku oprav) | issues, pull-requests zápis; contents čtení |
 | Týdenní přehled | jen ověření, že se App přihlásí | metadata čtení |
 

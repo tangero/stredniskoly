@@ -167,3 +167,10 @@ vedle jarní řady, ale v registru je to samostatná sada `cermat-maturita-podzi
 ze stávajícího výstupu (`--zaklad`), zpracování `jap` jarní řadu nemění (pojistka v lince). Dokud sada není přepnutá,
 klíč v souboru chybí a `kontrola_obdobi` proto vrací `None`, které se shoduje s obdobím `null` v registru
 (`hodnota` v `scripts/stav-datovych-sad.py`). Web stav po podzimu ukáže jen pro týž rok jako nejnovější jaro.
+
+## Hlídač PR: sloučení main se změnou workflow pushne jen člověk
+
+Kolo konfliktu ze smyčky oprav (#306) pushuje tokenem App, který nemá oprávnění `workflows`. Push, jehož nové
+commity mění `.github/workflows/`, GitHub takovému tokenu odmítá, a to podle všeho i u commitů z `main` přinesených
+sloučením (v tomto repozitáři zatím neověřeno). Kontrola `kontrola-konflikt` proto takové sloučení preventivně nepushne a napíše důvod do PR; konflikt pak sloučí člověk nebo rutina
+Claude Code (krok 4a). Totéž platí pro konflikt v cestách H2: smyčka v nich bere jen stav `main`.

@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import yaml from 'js-yaml';
 import { BOT } from '../scripts/brana/brana.mjs';
-import { rozhodniOpravu, pocetKol, zasahH2, vetoTed, cestyZDiffu, nactiPrSRodici, ZNACKA_KOLA, STITEK_CLOVEK } from '../scripts/brana/oprava-z-review.mjs';
+import { rozhodniOpravu, pocetKol, zasahH2, vetoTed, cestyZDiffu, nactiPrSRodici, ZNACKA_KOLA, STITEK_CLOVEK, ZNACKA_HLIDACE, odHlidace, posudSlouceni } from '../scripts/brana/oprava-z-review.mjs';
 
 const konfig = { rezimy: yaml.load(fs.readFileSync('.github/rezimy.yml', 'utf8')), oblasti: {} };
 const REPO = 'tangero/stredniskoly';
@@ -157,4 +157,49 @@ test('akce Claude ve smyčce oprav pustí App z automatického review (#455), ji
   const wf = yaml.load(fs.readFileSync('.github/workflows/oprava-z-review.yml', 'utf8'));
   const krok = Object.values(wf.jobs).flatMap((j) => j.steps ?? []).find((s) => String(s.uses ?? '').startsWith('anthropics/claude-code-action@'));
   assert.equal(krok.with.allowed_bots, konfig.rezimy.automatika.replace(/\[bot\]$/, ''));
+});
+
+// Hlídač uvízlých PR (#306, varianta A): komentář App se značkou hlídače spustí kolo s druhem konflikt nebo testy.
+const HLAVA = 'a'.repeat(40);
+const hlidac = (duvod, sha = HLAVA, o = {}) => komentar({ autor: konfig.rezimy.automatika, telo: `@claude Větev má konflikt s main.\n\n${ZNACKA_HLIDACE(sha, duvod)}`, ...o });
+
+test('hlídač: komentář App se značkou k aktuální hlavě spustí kolo s druhem', () => {
+  const k = rozhodni({ komentar: hlidac('konflikt'), pr: pr({ hlava: { sha: HLAVA } }) });
+  assert.deepEqual(k, { akce: 'oprava', duvod: 'kolo 1 z 5', kolo: 1, max: 5, druh: 'konflikt' });
+  assert.equal(rozhodni({ komentar: hlidac('testy'), pr: pr({ hlava: { sha: HLAVA } }) }).druh, 'testy');
+  // Běžné review druh nenese, výstup zůstává stejný.
+  assert.equal('druh' in rozhodni(), false);
+});
+
+test('hlídač: k jiné hlavě, cizí účet se značkou ani PR se schvaleno opravu nespustí', () => {
+  const stara = rozhodni({ komentar: hlidac('konflikt', 'b'.repeat(40)), pr: pr({ hlava: { sha: HLAVA } }) });
+  assert.deepEqual([stara.akce, stara.duvod], ['nic', 'hlídač psal k jiné hlavě PR, než je teď']);
+  assert.equal(rozhodni({ komentar: hlidac('konflikt', HLAVA, { autor: BOT }), pr: pr({ hlava: { sha: HLAVA } }) }).akce, 'nic');
+  assert.equal(rozhodni({ komentar: hlidac('konflikt', HLAVA, { autor: 'nekdo-z-internetu' }), pr: pr({ hlava: { sha: HLAVA } }) }).akce, 'nic');
+  assert.equal(rozhodni({ komentar: hlidac('konflikt'), pr: pr({ hlava: { sha: HLAVA }, stitky: ['schvaleno'] }) }).akce, 'nic');
+  assert.equal(rozhodni({ komentar: hlidac('konflikt'), pr: pr({ hlava: { sha: HLAVA }, komentare: [1, 2, 3, 4, 5].map(kolo) }) }).akce, 'strop');
+  assert.equal(odHlidace({ autor: konfig.rezimy.automatika, telo: '<!-- hlidac-pr:sha=abc;duvod=konflikt -->' }, konfig), null);
+});
+
+test('posudSlouceni: projde jen sloučení main nad hlavou PR bez vlastních změn H2 a workflow', () => {
+  const pred = 'c'.repeat(40);
+  const m = 'd'.repeat(40);
+  const ok = posudSlouceni({ pred, rodice: [pred, m], zMain: true, zmenene: ['src/a.ts', 'scripts/brana/brana.mjs'], odlisneOdMain: ['src/a.ts'], konfig });
+  assert.equal(ok.push, true);
+  // H2 soubor, který se po sloučení liší od main (vlastní řešení konfliktu), rozhodne člověk.
+  const h2 = posudSlouceni({ pred, rodice: [pred, m], zMain: true, zmenene: ['scripts/brana/brana.mjs'], odlisneOdMain: ['scripts/brana/brana.mjs'], konfig });
+  assert.deepEqual([h2.push, h2.h2], [false, 'scripts/brana/brana.mjs']);
+  assert.equal(posudSlouceni({ pred, rodice: [pred, m], zMain: true, zmenene: ['.github/workflows/testy.yml'], odlisneOdMain: [], konfig }).push, false);
+  assert.equal(posudSlouceni({ pred, rodice: [m], zMain: true, zmenene: [], konfig }).push, false);
+  assert.equal(posudSlouceni({ pred, rodice: [m, pred], zMain: true, zmenene: [], konfig }).push, false);
+  assert.equal(posudSlouceni({ pred, rodice: [pred, m], zMain: false, zmenene: [], konfig }).push, false);
+});
+
+test('workflow: kolo hlídače nespouští stagnaci a konflikt předává bundle s kontrolou z main', () => {
+  const w = yaml.load(fs.readFileSync('.github/workflows/oprava-z-review.yml', 'utf8'));
+  const krok = (job, nazev) => w.jobs[job].steps.find((s) => s.name === nazev);
+  assert.match(krok('rozhodnuti', 'Stagnace').if, /druh == ''/);
+  assert.equal(w.jobs.oprava.permissions.contents, 'read');
+  assert.match(krok('oprava', 'Sloučení main').run, /git merge --no-edit origin\/main/);
+  assert.match(krok('zapis', 'Použití patche a kontrola').run, /oprava-z-review\.mjs kontrola-konflikt/);
 });
