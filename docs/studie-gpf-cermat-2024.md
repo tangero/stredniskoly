@@ -88,8 +88,8 @@ Uvnitř dovednosti se úlohy liší hodně. V termínu A získali uchazeči u um
 a u rozkladu podle vzorce 70 %, obojí je A2.1 „výrazy“. V G1.1 mají uzavřené úlohy na úhly 66 až
 67 %, otevřené konstrukce 26 až 37 %: rozdíl jde zčásti na vrub formátu (u uzavřené úlohy se dá
 hádat). Směrodatná odchylka podílu bodů mezi položkami je v termínu A uvnitř dovedností 0,094
-a mezi dovednostmi 0,135, v termínu B 0,117 a 0,110. Na úrovni jednotlivé dovednosti GPF tedy
-dovednost obtížnost úlohy nevysvětluje.
+a mezi dovednostmi 0,131, v termínu B 0,117 a 0,118. Úlohy téže dovednosti se tedy liší skoro
+stejně jako dovednosti mezi sebou a příslušnost k dovednosti GPF obtížnost úlohy vysvětluje jen málo.
 
 ### Kde se ztrácejí body
 

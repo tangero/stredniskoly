@@ -206,7 +206,7 @@
    },
    "rozptyl": {
     "sd_uvnitr_dovednosti_prumer": 0.0936,
-    "sd_mezi_dovednostmi": 0.1352,
+    "sd_mezi_dovednostmi": 0.131,
     "dovednosti_s_2_a_vice_polozkami": 7
    },
    "varianta_vedlejsi": {
@@ -1501,7 +1501,7 @@
    },
    "rozptyl": {
     "sd_uvnitr_dovednosti_prumer": 0.1167,
-    "sd_mezi_dovednostmi": 0.1104,
+    "sd_mezi_dovednostmi": 0.1177,
     "dovednosti_s_2_a_vice_polozkami": 7
    },
    "varianta_vedlejsi": {
