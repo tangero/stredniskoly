@@ -65,10 +65,11 @@ def kontroly(termin: str, df: pd.DataFrame, mapa: dict) -> dict:
     rozpor = {}
     for c in b:
         k = "k" + c[1:]
-        if k in df.columns:
-            n = int(((df[k] == 9) & (df[c] > 0)).sum())
+        casti = [k] if k in df.columns else [x for x in df.columns if x.startswith(k + ".")]
+        for x in casti:
+            n = int(((df[x] == 9) & (df[c] > 0)).sum())
             if n:
-                rozpor[c] = n
+                rozpor[x] = n
     vysl["k9_s_nenulovymi_body"] = rozpor
     return vysl
 
@@ -113,12 +114,15 @@ def souhrn(df: pd.DataFrame, mapa: dict, varianta: str = "hlavni") -> dict:
 
 
 def rozptyl(mapa: dict, polozky: dict) -> dict:
-    """Liší se položky téže dovednosti mezi sebou víc než dovednosti navzájem?"""
+    """Liší se položky téže dovednosti mezi sebou víc než dovednosti navzájem?
+    Průměr dovednosti je vážený maximálními body, stejně jako `podil_bodu` ve `souhrn`."""
     skupiny: dict[str, list[float]] = {}
+    vahy: dict[str, list[int]] = {}
     for c, m in mapa.items():
         skupiny.setdefault(m["gpf"], []).append(polozky[c]["podil_bodu"])
+        vahy.setdefault(m["gpf"], []).append(m["max"])
     uvnitr = [statistics.pstdev(v) for v in skupiny.values() if len(v) >= 2]
-    prumery = [statistics.mean(v) for v in skupiny.values()]
+    prumery = [sum(p * w for p, w in zip(v, vahy[g])) / sum(vahy[g]) for g, v in skupiny.items()]
     return {
         "sd_uvnitr_dovednosti_prumer": round(statistics.mean(uvnitr), 4) if uvnitr else None,
         "sd_mezi_dovednostmi": round(statistics.pstdev(prumery), 4),

@@ -152,9 +152,3 @@ Studie nemá issue, proto je záznam zde.
   session. Do repozitáře se z nich nic nekopíruje, GPF je odkázané přes commit.
 - Osobní údaje se nestahují ani neukládají. Položková data jsou anonymní a výstup obsahuje jen
   souhrny.
-
-## Co zbývá
-
-- `docs/zdroje-dat.md`, oddíl 2.3, u sloupců `b*` a `k*` uvádí „nemá smysl“ a mezi položkovými
-  daty vede i rok 2025, který v `data/` není. Studie ukazuje, že body po úlohách smysl mají
-  (vynechávání, srovnání oblastí). Soubor jsem neměnil, oprava patří k rozhodnutí o pokračování.
