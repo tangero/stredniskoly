@@ -66,10 +66,12 @@ def kontroly(termin: str, df: pd.DataFrame, mapa: dict) -> dict:
     for c in b:
         k = "k" + c[1:]
         casti = [k] if k in df.columns else [x for x in df.columns if x.startswith(k + ".")]
-        for x in casti:
-            n = int(((df[x] == 9) & (df[c] > 0)).sum())
-            if n:
-                rozpor[x] = n
+        if not casti:
+            continue
+        # Body jsou jen za celou úlohu, proto je rozpor jen tehdy, když jsou 9 všechny podúlohy.
+        n = int(((df[casti] == 9).all(axis=1) & (df[c] > 0)).sum())
+        if n:
+            rozpor[k] = n
     vysl["k9_s_nenulovymi_body"] = rozpor
     return vysl
 
