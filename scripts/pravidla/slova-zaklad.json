@@ -119,8 +119,7 @@
    "371a4d678eeb"
   ],
   "src/app/page.tsx": [
-   "0d3dcd3c0089",
-   "5a41efa5a9a4",
+   "8762ee78669f",
    "f2081e1d011f"
   ],
   "src/app/praha-dostupnost/PrahaDostupnostClient.tsx": [
@@ -193,18 +192,11 @@
    "af82c7052052"
   ],
   "src/app/vysledky/[year]/ResultsClient.tsx": [
-   "5b03b845100f",
-   "81ad3940caa9",
-   "98cf04aa257e",
-   "c6d1fb3aea7e",
-   "ca28e3352ccf",
-   "d17ff0436352",
-   "e5f85a5d99fe",
+   "799c3eb7e4f5",
    "fed249743e19"
   ],
   "src/app/vysledky/[year]/page.tsx": [
-   "a9d0206d50cf",
-   "befc473464d9"
+   "376bad4a549e"
   ],
   "src/components/Applications2026Banner.tsx": [
    "00246452c70e"
@@ -226,9 +218,8 @@
    "f2c9adeaa1d5"
   ],
   "src/components/SchoolResults2026.tsx": [
-   "30142251c899",
-   "e6b857e12f63",
-   "f27cd5c48865"
+   "7854eda34277",
+   "93e31030ed71"
   ],
   "src/components/SchoolsPageTabs.tsx": [
    "40b8ea9c4742",
@@ -271,8 +262,7 @@
   "src/components/school/detail/tabs/StatsTab.tsx": [
    "16894e513b26",
    "4e12e0be9d15",
-   "750ff0de8929",
-   "ec93eb875200"
+   "750ff0de8929"
   ],
   "src/components/school/overview/PriorityCardsGrid.tsx": [
    "db67251088f2",

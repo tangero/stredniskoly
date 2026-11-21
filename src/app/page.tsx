@@ -103,7 +103,7 @@ export default async function HomePage() {
               </Link>
               <Link href="/vysledky/2026" className="rounded-lg border border-slate-600 p-5 hover:bg-slate-800">
                 <h3 className="font-bold mb-2">Obnovené výsledky 2026 →</h3>
-                <p className="text-sm text-slate-300">Průměrné skóre přijatých podle CERMAT, platnost k 17. srpnu 2026. Průměr není hranice přijetí.</p>
+                <p className="text-sm text-slate-300">Průměr JPZ přijatých podle CERMAT, platnost k 17. srpnu 2026. Průměr není hranice přijetí.</p>
               </Link>
             </div>
           </div>

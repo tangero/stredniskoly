@@ -68,7 +68,7 @@ function ResultCard({ result }: { result: SchoolResult }) {
       </div>
 
       <div className="p-5 bg-white">
-        <p className="text-xs text-slate-600 mb-4">Průměr přijatých není hranice přijetí. Skór CERMAT je přepočtený na škálu 0–100 (ČJ a MA 0–50); u upravených testů nejde o původní body. Pořadí nehodnotí kvalitu výuky.</p>
+        <p className="text-xs text-slate-600 mb-4">Průměr přijatých není hranice přijetí. Procentní výsledek CERMAT je přepočtený na škálu 0–100 (ČJ a MA 0–50); u upravených testů nejde o původní body. Pořadí nehodnotí kvalitu výuky.</p>
         <div className="flex items-end gap-4 mb-4">
           <div>
             <div className="text-xs text-slate-500 mb-1">Průměr ČJ+MA — přijatí</div>

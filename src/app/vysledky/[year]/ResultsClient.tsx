@@ -29,9 +29,9 @@ interface Props {
 
 function KeyInsights({ results, year }: { results: SchoolResult[]; year: number }) {
   const insights = [
-    { title: 'Průměr není hranice přijetí', text: 'Skóre popisuje přijaté uchazeče. Samo o sobě neříká, kolik bodů stačilo k přijetí ani jaká bude hranice příští rok.' },
+    { title: 'Průměr není hranice přijetí', text: 'Průměr JPZ přijatých popisuje body přijatých uchazečů. Sám o sobě neříká, kolik bodů stačilo k přijetí ani jaká bude hranice příští rok.' },
     { title: 'Výsledky oborů s JPZ', text: `Přehled obsahuje ${results.length.toLocaleString('cs-CZ')} oborů a zaměření z ${year}, nikoli všechny střední školy. Zahrnujeme denní nezkrácené obory s kladným zveřejněným průměrem.` },
-    { title: 'Srovnatelná škála', text: 'Procentní skór CERMAT dělíme dvěma: ČJ a MA mají škálu 0–50, součet 0–100. U upravených testů to nemusí být původní počet bodů.' },
+    { title: 'Srovnatelná škála', text: 'Procentní výsledek CERMAT dělíme dvěma: ČJ a MA mají škálu 0–50, součet 0–100. U upravených testů to nemusí být původní počet bodů.' },
     { title: 'Připravuj se podle svých potřeb', text: 'Zkus si cvičný test z obou předmětů a projdi vlastní chyby. Průměr přijatých na škole neurčuje, který předmět potřebuješ procvičit ty.' },
   ].map(item => ({ ...item, icon: '', color: 'border-blue-400 bg-blue-50', titleColor: 'text-blue-900', textColor: 'text-slate-700' }));
 
@@ -79,7 +79,7 @@ function ComparisonTable({ results, year }: { results: SchoolResult[]; year: num
                 <th className="text-left px-4 py-3 text-sm font-semibold rounded-tl-xl">Typ školy</th>
                 <th className="text-right px-4 py-3 text-sm font-semibold">Kapacita</th>
                 <th className="text-right px-4 py-3 text-sm font-semibold">Přijatých</th>
-                <th className="text-right px-4 py-3 text-sm font-semibold">Průměr skóre oborů (0–100)</th>
+                <th className="text-right px-4 py-3 text-sm font-semibold">Body přijatých, průměr oborů (0–100)</th>
                 <th className="text-right px-4 py-3 text-sm font-semibold rounded-tr-xl">Δ u spárovaných oborů</th>
               </tr>
             </thead>
@@ -129,8 +129,8 @@ function RankingSection({ results, activeType, onTypeChange }: {
   return (
     <section className="py-12 px-4 bg-white">
       <div className="max-w-4xl mx-auto">
-        <h2 className="text-2xl font-bold text-slate-900 mb-2">Gymnázia podle skóre přijatých</h2>
-        <p className="text-slate-500 text-sm mb-6">Seřazeno podle průměrného skóre ČJ+MA přijatých (škála 0–100). Pořadí nehodnotí kvalitu výuky.</p>
+        <h2 className="text-2xl font-bold text-slate-900 mb-2">Gymnázia podle bodů přijatých</h2>
+        <p className="text-slate-500 text-sm mb-6">Seřazeno podle průměru JPZ přijatých z ČJ+MA (škála 0–100). Pořadí nehodnotí kvalitu výuky.</p>
         <div className="flex gap-2 mb-6">
           {gymTypes.map(t => (
             <button
@@ -177,7 +177,7 @@ function AdviceSection({ year }: { year: number }) {
     <section className="py-10 px-4 bg-slate-900 text-white">
       <div className="max-w-4xl mx-auto">
         <h2 className="text-2xl font-bold mb-3">Připravuješ se na přijímačky {year + 1}?</h2>
-        <p className="text-slate-300 mb-5">Historické skóre je jeden z podkladů. Při výběru zvaž obsah oboru, dojíždění a prostředí školy. Kapacity a pravidla bodování si ověř v kritériích pro nový ročník.</p>
+        <p className="text-slate-300 mb-5">Body přijatých z minulých let jsou jeden z podkladů. Při výběru zvaž obsah oboru, dojíždění a prostředí školy. Kapacity a pravidla bodování si ověř v kritériích pro nový ročník.</p>
         <Link href="/prijimacky-2027" className="inline-block rounded-lg bg-blue-700 px-5 py-3 font-semibold hover:bg-blue-600">Termíny přijímaček 2027 →</Link>
       </div>
     </section>

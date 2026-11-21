@@ -198,7 +198,7 @@ export function StatsTab({ program, extendedStats, data2026, result2026, souhrn 
             <p className="mt-4 text-sm text-slate-600">Průměr z historického importu vyjádřený na standardní škále testu. Nevypovídá o obtížnosti testu ani o hranici přijetí.</p>
             <details className="mt-4 text-sm text-slate-600">
               <summary className="cursor-pointer text-blue-700">Zdroj a způsob přepočtu</summary>
-              <p className="mt-2">Zdroj: schools_data.json, ročník 2025. Procentní skór dělíme dvěma a zaokrouhlujeme na desetinu bodu. Vymezení skupiny a počet osob nejsou v tomto importu doloženy; proto údaj neoznačujeme za průměr přijatých.</p>
+              <p className="mt-2">Zdroj: schools_data.json, ročník 2025. Procentní výsledek dělíme dvěma a zaokrouhlujeme na desetinu bodu. Vymezení skupiny a počet osob nejsou v tomto importu doloženy; proto údaj neoznačujeme za průměr přijatých.</p>
               <ul className="mt-2 space-y-1">
                 {Object.values(extendedStats.subjectAverages).map(score => (
                   <li key={score.sourceField}>{score.sourceField}: {score.sourceValue === null ? 'chybí' : `${score.sourceValue.toLocaleString('cs-CZ')} % maxima`}</li>
