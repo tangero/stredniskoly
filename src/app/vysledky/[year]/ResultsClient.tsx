@@ -352,7 +352,7 @@ export function ResultsClient({
             Co přineslo přijímací řízení {year}?
           </h1>
           <p className="text-slate-400 text-lg mb-10 max-w-2xl">
-            Přehled skóre přijatých v oborech s JPZ a srovnání s rokem {year - 1}.
+            Přehled průměru JPZ přijatých v oborech s JPZ a srovnání s rokem {year - 1}.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             <div className="bg-white/10 rounded-xl p-5 text-center">

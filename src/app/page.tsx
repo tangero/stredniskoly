@@ -148,7 +148,7 @@ export default async function HomePage() {
               <span className="group-hover:translate-x-1 transition-transform">&rarr;</span>
             </Link>
             <p className="mt-1 text-sm" style={{ color: '#818c99' }}>
-              Průměrné skóre přijatých v denních nezkrácených oborech s JPZ. Data CERMAT k 17. 8. 2026.
+              Průměr JPZ přijatých v denních nezkrácených oborech s JPZ. Data CERMAT k 17. 8. 2026.
             </p>
           </div>
 
