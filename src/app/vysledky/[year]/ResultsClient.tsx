@@ -382,7 +382,7 @@ export function ResultsClient({
 
       <aside className="max-w-4xl mx-auto px-4 pt-6 text-sm text-slate-600">
         <p>Zdroj: <a href={resultsMeta.source.url} className="text-blue-700 underline">CERMAT, první kolo {year}</a> · platnost {new Date(resultsMeta.source.valid_at + 'T12:00:00Z').toLocaleDateString('cs-CZ', { timeZone: 'Europe/Prague' })} · ověřeno {new Date(resultsMeta.source.checked_at + 'T12:00:00Z').toLocaleDateString('cs-CZ', { timeZone: 'Europe/Prague' })}.</p>
-        <p className="mt-2">{resultsMeta.schools.toLocaleString('cs-CZ')} škol (REDIZO), {results.length.toLocaleString('cs-CZ')} oborů a zaměření. Dalších {resultsMeta.without_positive_score} oborů v tomto rozsahu nemá kladný zveřejněný průměr a ve skórovém přehledu není. Nejde o celkové počty míst a přijatých v celé ČR.</p>
+        <p className="mt-2">{resultsMeta.schools.toLocaleString('cs-CZ')} škol (REDIZO), {results.length.toLocaleString('cs-CZ')} oborů a zaměření. Dalších {resultsMeta.without_positive_score} oborů v tomto rozsahu nemá kladný zveřejněný průměr a v přehledu průměrů JPZ není. Nejde o celkové počty míst a přijatých v celé ČR.</p>
       </aside>
       {/* ② Jak výsledky číst */}
       <KeyInsights results={results} year={year} />

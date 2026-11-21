@@ -110,7 +110,7 @@ export default async function HomePage() {
           <p className="text-lg mb-8 max-w-2xl mx-auto text-slate-600">
             Prozkoumej obory s jednotnou přijímací zkouškou a jejich historické výsledky.
             Přehled zatím nepokrývá všechny formy studia ani obory bez JPZ, například učební obory a konzervatoře.
-            Simulátor porovnává cvičné skóre s minulými výsledky; přijetí v roce 2027 závisí na kritériích školy a výsledcích uchazečů.
+            Simulátor porovnává cvičné body s minulými výsledky; přijetí v roce 2027 závisí na kritériích školy a výsledcích uchazečů.
             Autor: <a href="https://cs.wikipedia.org/wiki/Patrick_Zandl" className="text-blue-700">Patrick Zandl</a>, kvůli svým dětem.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

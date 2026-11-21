@@ -96,7 +96,7 @@ function ResultCard({ result }: { result: SchoolResult }) {
 
         <div className="mb-3 px-3 py-2 bg-amber-50 border border-amber-200 rounded-lg text-xs text-amber-800">
           <strong>Pozn.:</strong> Toto je <strong>průměr bodů přijatých</strong> studentů z JPZ testů (ČJ+MA),
-          nikoli minimum pro přijetí. Body z CERMATu jsou přepočtené z % skóru (1 b. = 2 %).
+          nikoli minimum pro přijetí. Body z CERMATu jsou přepočtené z procentního výsledku testu (1 b. = 2 %).
         </div>
 
         {result.rank_in_type && result.type_total && (
