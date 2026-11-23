@@ -727,7 +727,7 @@ export function DostupnostClient() {
                               <th className="text-center px-3 py-2 font-medium">
                                 Průměr 2026
                                 <InfoTooltip title="Průměrné body JPZ">
-                                  Průměrný přepočtený skór ČJ + MA přijatých konajících JPZ v 1. kole 2026, z maxima 100. Není to hranice přijetí ani hodnocení kvality školy.
+                                  Průměrné přepočtené body ČJ + MA přijatých konajících JPZ v 1. kole 2026, z maxima 100. Není to hranice přijetí ani hodnocení kvality školy.
                                 </InfoTooltip>
                               </th>
                               <th className="text-center px-3 py-2 font-medium">

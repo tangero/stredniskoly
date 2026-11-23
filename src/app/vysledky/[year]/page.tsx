@@ -17,7 +17,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     alternates: { canonical: `/vysledky/${year}` },
     title: `Výsledky přijímacích zkoušek ${year} — přehled škol a oborů`,
-    description: `Přehled výsledků denních nezkrácených oborů s JPZ z 1. kola přijímacích zkoušek ${year}. Skóre přijatých a pořadí oborů s ověřeným průměrem.`,
+    description: `Přehled výsledků denních nezkrácených oborů s JPZ z 1. kola přijímacích zkoušek ${year}. Průměr JPZ přijatých a pořadí oborů s ověřeným průměrem.`,
   };
 }
 

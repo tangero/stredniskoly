@@ -103,14 +103,14 @@ export default async function HomePage() {
               </Link>
               <Link href="/vysledky/2026" className="rounded-lg border border-slate-600 p-5 hover:bg-slate-800">
                 <h3 className="font-bold mb-2">Obnovené výsledky 2026 →</h3>
-                <p className="text-sm text-slate-300">Průměrné skóre přijatých podle CERMAT, platnost k 17. srpnu 2026. Průměr není hranice přijetí.</p>
+                <p className="text-sm text-slate-300">Průměr JPZ přijatých podle CERMAT, platnost k 17. srpnu 2026. Průměr není hranice přijetí.</p>
               </Link>
             </div>
           </div>
           <p className="text-lg mb-8 max-w-2xl mx-auto text-slate-600">
             Prozkoumej obory s jednotnou přijímací zkouškou a jejich historické výsledky.
             Přehled zatím nepokrývá všechny formy studia ani obory bez JPZ, například učební obory a konzervatoře.
-            Simulátor porovnává cvičné skóre s minulými výsledky; přijetí v roce 2027 závisí na kritériích školy a výsledcích uchazečů.
+            Simulátor porovnává cvičné body s minulými výsledky; přijetí v roce 2027 závisí na kritériích školy a výsledcích uchazečů.
             Autor: <a href="https://cs.wikipedia.org/wiki/Patrick_Zandl" className="text-blue-700">Patrick Zandl</a>, kvůli svým dětem.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -148,7 +148,7 @@ export default async function HomePage() {
               <span className="group-hover:translate-x-1 transition-transform">&rarr;</span>
             </Link>
             <p className="mt-1 text-sm" style={{ color: '#818c99' }}>
-              Průměrné skóre přijatých v denních nezkrácených oborech s JPZ. Data CERMAT k 17. 8. 2026.
+              Průměr JPZ přijatých v denních nezkrácených oborech s JPZ. Data CERMAT k 17. 8. 2026.
             </p>
           </div>
 
