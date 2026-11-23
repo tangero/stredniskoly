@@ -43,6 +43,6 @@ test('chyby, které by mohly nést adresu (Resend, databáze), jdou do logu pře
 test('bezEmailu nahradí adresu a zbytek textu nechá', () => {
   assert.equal(bezEmailu('422 - {"message":"Invalid `to` field: skola@example.cz"}'), '422 - {"message":"Invalid `to` field: [e-mail]"}');
   assert.equal(bezEmailu('Key (email)=(rodic.novak+test@example.co.uk) already exists.'), 'Key (email)=([e-mail]) already exists.');
-  assert.equal(bezEmailu('<skola@example.cz>, a@b.cz'), '<[e-mail]>, [e-mail]');
+  assert.equal(bezEmailu('<skola@example.cz>, a@b.test'), '<[e-mail]>, [e-mail]');
   assert.equal(bezEmailu('bez adresy, issue #12'), 'bez adresy, issue #12');
 });

@@ -290,7 +290,7 @@ curl -s -X POST "$BASE/api/veletrhy/navrhy?nanecisto=1" \
     }
   }],
   "zdrojUrl": "https://www.ohktrebic.cz/akce-a-seminare/veletrh-vzdelavani-didacta-2026/",
-  "zdrojEmail": "formulář /veletrhy/nahlasit 2026-09-25, Reply-To reditel@ohktrebic.cz",
+  "zdrojEmail": "formulář /veletrhy/nahlasit 2026-09-25, Reply-To poradatel@example.cz",
   "poznamka": "Konec akce pořadatel neuvádí – 16:00 nevymýšlet."
 }
 JSON

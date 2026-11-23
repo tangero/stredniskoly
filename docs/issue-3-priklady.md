@@ -25,7 +25,7 @@ gh issue view 3 --json title,body,labels,url
 # - Kategorie: bug, data
 # - Priorita: HIGH (špatná data ovlivňují uživatele)
 # - URL: /simulator
-# - Kontakt: matoushonzirek@seznam.cz
+# - Kontakt: oznamovatel@example.cz
 ```
 
 **Output Clauda:**
@@ -77,7 +77,7 @@ TaskCreate({
     2. Nebo rozdělit na "JPZ body" a "Celkové body"
     3. Testovat na mobilu (484x919 viewport)
 
-    Kontakt: matoushonzirek@seznam.cz
+    Kontakt: oznamovatel@example.cz
     Issue: https://github.com/tangero/stredniskoly/issues/3
   `,
   activeForm: "Opravuji zobrazení bodů v simulátoru"
@@ -261,7 +261,7 @@ Simulator nyní jasně rozlišuje:
 Děkujeme za nahlášení! 🙏
 
 ---
-📧 Kontakt: matoushonzirek@seznam.cz - zaslán email s potvrzením opravy"
+📧 Kontakt: oznamovatel@example.cz - zaslán email s potvrzením opravy"
 ```
 
 ---
@@ -275,7 +275,7 @@ Děkujeme za nahlášení! 🙏
 
 **Email draft:**
 ```
-Komu: matoushonzirek@seznam.cz
+Komu: oznamovatel@example.cz
 Předmět: Oprava: Nesrovnalost minimálních bodů v simulátoru
 
 Dobrý den,

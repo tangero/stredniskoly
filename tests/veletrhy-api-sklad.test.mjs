@@ -60,7 +60,7 @@ const NOVA = {
 
 const pridat = (akce = NOVA) => [{ op: 'pridat', akce }];
 const zaloz = (tx, operace, klic = 'k1') =>
-  tx((t) => zalozNavrh(t, { klic, autor: 'eduarda', operace, zdrojUrl: NOVA.url, zdrojEmail: 'Reply-To x@y.cz' }, DNES));
+  tx((t) => zalozNavrh(t, { klic, autor: 'eduarda', operace, zdrojUrl: NOVA.url, zdrojEmail: 'Reply-To x@y.test' }, DNES));
 
 // ---------------------------------------------------------------------------
 // Validace

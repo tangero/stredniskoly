@@ -80,7 +80,7 @@ test('kanál se vytáhne z těla issue; e-mail editora se neextrahuje', () => {
     '**Škola:** Gymnázium',
     '**REDIZO:** 600171701',
     '**Kanál:** magic-link',
-    '**Kontakt editora (interní, nepublikovat):** reditel@gym.cz',
+    '**Kontakt editora (interní, nepublikovat):** reditel@gym.test',
   ].join('\n');
   assert.equal(extrahujKanalZIssue(body), 'magic-link');
   assert.equal(extrahujKanalZIssue(body.replace('magic-link', 'kod')), 'kod');

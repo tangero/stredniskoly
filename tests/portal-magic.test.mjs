@@ -76,14 +76,14 @@ test('magic odkaz vede na /pro-skoly/link/<token>', () => {
 
 test('lookup e-mailu: normalizace, case-insensitive, neznámý → null', async () => {
   const mapa = {
-    '600171701': ['renata.schejbalova@gymstola.cz', 'dana.tvrska@gymstola.cz'],
-    '600007774': ['info@gbl.cz'],
+    '600171701': ['reditelka@gym-a.test', 'poradkyne@gym-a.test'],
+    '600007774': ['info@gym-b.test'],
   };
-  assert.equal(await najdiRedizoPodleEmailu('  Renata.Schejbalova@GYMSTOLA.cz ', mapa), '600171701');
-  assert.equal(await najdiRedizoPodleEmailu('info@gbl.cz', mapa), '600007774');
-  assert.equal(await najdiRedizoPodleEmailu('nekdo@jinak.cz', mapa), null);
+  assert.equal(await najdiRedizoPodleEmailu('  Reditelka@GYM-A.test ', mapa), '600171701');
+  assert.equal(await najdiRedizoPodleEmailu('info@gym-b.test', mapa), '600007774');
+  assert.equal(await najdiRedizoPodleEmailu('nekdo@jinak.test', mapa), null);
   assert.equal(await najdiRedizoPodleEmailu('', mapa), null);
-  assert.equal(normalizeEmail('  A@B.CZ '), 'a@b.cz');
+  assert.equal(normalizeEmail('  A@B.TEST '), 'a@b.test');
 });
 
 test('anti-enumerace: odpověď magic endpointu je konstantní a neprozradí, zda e-mail známe', () => {
@@ -122,7 +122,7 @@ test('potvrzovací e-mail je best-effort: bez RESEND_API_KEY vrátí false a neh
   delete process.env.RESEND_API_KEY;
   try {
     const vysledek = await posliPotvrzovaciEmail({
-      email: 'reditel@skola.cz',
+      email: 'reditel@skola.test',
       nazevSkoly: 'Gymnázium Test',
       skolaUrl: 'https://www.prijimackynaskolu.cz/skola/600171701-gymnazium',
     });
