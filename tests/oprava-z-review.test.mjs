@@ -39,7 +39,7 @@ test('cizí účet, bot, fork ani cizí PR opravu nespustí', () => {
 
 test('komentář bez @claude nic nespustí, zmínka v e-mailu také ne', () => {
   assert.equal(rozhodni({ komentar: komentar({ telo: 'Review: bez P1 a P2' }) }).akce, 'nic');
-  assert.equal(rozhodni({ komentar: komentar({ telo: 'napiš na x@claude.ai' }) }).akce, 'nic');
+  assert.equal(rozhodni({ komentar: komentar({ telo: 'napiš na x@claude.test' }) }).akce, 'nic');
   assert.equal(rozhodni({ komentar: komentar({ telo: 'Opravit:\n@Claude P2 v src/x.ts' }) }).akce, 'oprava');
 });
 

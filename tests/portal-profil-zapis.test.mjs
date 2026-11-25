@@ -254,7 +254,7 @@ test('kritéria vlastními slovy projdou validací, zápisem i čtením beze ztr
   const text = 'Součet testů CERMAT; matematika se počítá 1,5×. K tomu až 10 bodů za prospěch.';
   const overeno = validatePortalPayload({
     souhlas_cc_by: true,
-    kontakt_email: 'reditelka@skola.cz',
+    kontakt_email: 'reditelka@skola.test',
     udaje_sedi: true,
     udaje: { kriteria_vlastnimi_slovy: text, odkaz_kriteria: 'https://skola.cz/prijimacky.pdf' },
   });
@@ -274,7 +274,7 @@ test('kritéria vlastními slovy projdou validací, zápisem i čtením beze ztr
 test('pole nad 2 000 znaků validace odmítne nahlas, ne tichým oříznutím', () => {
   const overeno = validatePortalPayload({
     souhlas_cc_by: true,
-    kontakt_email: 'reditelka@skola.cz',
+    kontakt_email: 'reditelka@skola.test',
     udaje_sedi: true,
     udaje: { kriteria_vlastnimi_slovy: 'x'.repeat(2001) },
   });

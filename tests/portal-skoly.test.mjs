@@ -46,7 +46,7 @@ test('validace kódu: revokovaný kód se odmítne', async () => {
 
 const VALID_BASE = {
   souhlas_cc_by: true,
-  kontakt_email: 'reditel@skola.cz',
+  kontakt_email: 'reditel@skola.test',
   udaje: { dny_otevrenych_dveri: '18. 11. 2026 a 13. 1. 2027' },
 };
 
@@ -100,16 +100,16 @@ test('payload: ubytování akceptuje jen ano/ne/prázdno', () => {
 });
 
 test('payload: potvrzení „údaje sedí“ samo o sobě stačí k odeslání', () => {
-  const v = validatePortalPayload({ souhlas_cc_by: true, kontakt_email: 'a@b.cz', udaje: {}, udaje_sedi: true });
+  const v = validatePortalPayload({ souhlas_cc_by: true, kontakt_email: 'a@b.test', udaje: {}, udaje_sedi: true });
   assert.equal(v.ok, true);
   assert.equal(v.udaje_sedi, true);
 });
 
 test('payload: úplně prázdné podání bez potvrzení se odmítne', () => {
-  assert.equal(validatePortalPayload({ souhlas_cc_by: true, kontakt_email: 'a@b.cz', udaje: {} }).ok, false);
+  assert.equal(validatePortalPayload({ souhlas_cc_by: true, kontakt_email: 'a@b.test', udaje: {} }).ok, false);
   // samotná nesrovnalost stačí
   assert.equal(
-    validatePortalPayload({ souhlas_cc_by: true, kontakt_email: 'a@b.cz', udaje: {}, nesrovnalost: 'Kapacita je jiná.' }).ok,
+    validatePortalPayload({ souhlas_cc_by: true, kontakt_email: 'a@b.test', udaje: {}, nesrovnalost: 'Kapacita je jiná.' }).ok,
     true,
   );
 });
@@ -129,7 +129,7 @@ const PAYLOAD = {
   udaje_sedi: true,
   nesrovnalost: '',
   souhlas_cc_by: true,
-  kontakt_email: 'reditel@skola.cz',
+  kontakt_email: 'reditel@skola.test',
 };
 
 test('mapování do portal_skol.json: hodnoty nesou datum a zdroj „skola“', () => {
@@ -144,7 +144,7 @@ test('mapování do portal_skol.json: hodnoty nesou datum a zdroj „skola“', 
   });
   assert.equal(z.udaje.ubytovani.hodnota, 'ano');
   // interní kontakt se do publikovaného záznamu nedostane
-  assert.equal(JSON.stringify(z).includes('reditel@skola.cz'), false);
+  assert.equal(JSON.stringify(z).includes('reditel@skola.test'), false);
   assert.equal(zaznamMaObsah(z), true);
 });
 
@@ -181,7 +181,7 @@ test('definice polí portálu mají unikátní klíče a limity', () => {
 test('nová nepovinná pole stravování a kontakt na výchovného poradce', () => {
   const keys = PORTAL_POLE.map((p) => p.key);
   assert.ok(keys.includes('stravovani') && keys.includes('kontakt_vychovny_poradce'));
-  const v = validatePortalPayload({ ...PAYLOAD, udaje: { stravovani: 'vlastní jídelna', kontakt_vychovny_poradce: 'poradce@skola.cz' } });
+  const v = validatePortalPayload({ ...PAYLOAD, udaje: { stravovani: 'vlastní jídelna', kontakt_vychovny_poradce: 'poradce@skola.test' } });
   assert.equal(v.ok, true);
   assert.equal(v.udaje.stravovani, 'vlastní jídelna');
   const prazdne = validatePortalPayload({ ...PAYLOAD, udaje: { stravovani: '' }, udaje_sedi: true });

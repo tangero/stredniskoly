@@ -7,7 +7,7 @@ import { zavadec } from './_zavadec.mjs';
 // dělat, druhý už nepřijde. Formulář jde obejít prostým POSTem, takže pojistka
 // musí držet tady — a musí být hlídaná, jinak ji příští refaktor tiše odnese.
 
-const UDAJE = { jmeno: 'Jana Nováková', funkce: 'ředitelka', email: 'reditelka@skola.cz', zverejnit_jmeno: false };
+const UDAJE = { jmeno: 'Jana Nováková', funkce: 'ředitelka', email: 'reditelka@skola.test', zverejnit_jmeno: false };
 
 /** Route s podstrčenými závislostmi; `dohled` sbírá, co se skutečně stalo. */
 function nactiRoute({ nazev = 'Gymnázium', redizo = '600006247' } = {}) {

@@ -65,7 +65,7 @@ gh api repos/tangero/stredniskoly/subscription -X PUT \
 #### Secret 1: `MAIL_USERNAME`
 ```
 Název: MAIL_USERNAME
-Hodnota: tvuj.email@gmail.com
+Hodnota: tvuj.email@example.cz
 ```
 
 #### Secret 2: `MAIL_PASSWORD`
@@ -82,7 +82,7 @@ Hodnota: abcd efgh ijkl mnop
 #### Secret 3: `NOTIFICATION_EMAIL`
 ```
 Název: NOTIFICATION_EMAIL
-Hodnota: email.kam.chces.notifikace@gmail.com
+Hodnota: notifikace@example.cz
 ```
 
 ### Krok 2: Workflow soubor je už vytvořen

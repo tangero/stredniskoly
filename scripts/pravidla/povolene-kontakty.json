@@ -24,6 +24,10 @@
   {
    "adresa": "upozorneni@novinky.prijimackynaskolu.cz",
    "duvod": "Veřejná adresa projektu (doména prijimackynaskolu.cz), ne osobní údaj."
+  },
+  {
+   "adresa": "noreply@anthropic.com",
+   "duvod": "Neosobní adresa firmy v řádku Co-Authored-By citovaném z historie commitů, ne osobní údaj."
   }
  ],
  "soubory": [

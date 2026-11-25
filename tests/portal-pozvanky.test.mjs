@@ -130,7 +130,7 @@ async function zachytOdeslani(posli) {
 test('pozvánka odchází jménem člověka, ne asistentky', async () => {
   const telo = await zachytOdeslani(() =>
     posliPozvankuDoPilotu({
-      email: 'reditel@skola.cz',
+      email: 'reditel@skola.test',
       osloveni: 'Vážený pane řediteli',
       nazevSkoly: 'Gymnázium Testovací',
       kod: KOD,
@@ -152,7 +152,7 @@ test('pozvánka druhé vlny předá Resendu klíč proti duplicitnímu odeslán�
   };
   try {
     assert.equal(await posliPozvankuDoPilotu({
-      email: 'reditel@skola.cz', osloveni: 'Dobrý den', nazevSkoly: 'Gymnázium Testovací',
+      email: 'reditel@skola.test', osloveni: 'Dobrý den', nazevSkoly: 'Gymnázium Testovací',
       kod: KOD, vlna: 2, idempotencyKey: 'portal-pozvanka-v2-600000001',
     }), true);
     assert.equal(hlavicky['Idempotency-Key'], 'portal-pozvanka-v2-600000001');
@@ -167,7 +167,7 @@ test('provozní e-mail naopak odchází jménem asistentky', async () => {
   // Kdyby se jméno bralo natvrdo z pozvánky, chodilo by jméno člověka i tam,
   // kde ve skutečnosti odpovídá Eduarda.
   const telo = await zachytOdeslani(() =>
-    posliVitejteEmail({ email: 'a@b.cz', nazevSkoly: 'G', jmeno: 'Jana', profilUrl: 'https://x.test' }),
+    posliVitejteEmail({ email: 'a@b.test', nazevSkoly: 'G', jmeno: 'Jana', profilUrl: 'https://x.test' }),
   );
   assert.equal(telo.from, 'Eduarda z Přijímačky na školu <eda@prijimackynaskolu.cz>');
 });
