@@ -174,3 +174,10 @@ Kolo konfliktu ze smyčky oprav (#306) pushuje tokenem App, který nemá oprávn
 commity mění `.github/workflows/`, GitHub takovému tokenu odmítá, a to podle všeho i u commitů z `main` přinesených
 sloučením (v tomto repozitáři zatím neověřeno). Kontrola `kontrola-konflikt` proto takové sloučení preventivně nepushne a napíše důvod do PR; konflikt pak sloučí člověk nebo rutina
 Claude Code (krok 4a). Totéž platí pro konflikt v cestách H2: smyčka v nich bere jen stav `main`.
+
+## CERMAT: data.cermat.cz přesměrovává na data.cermat.gov.cz
+
+Adresy souborů v registru (`data.cermat.cz/files/…`) vracejí od nejpozději 26. 11. 2026 odpověď 301 na stejnou cestu
+na `data.cermat.gov.cz`. `curl` bez `-L` uloží místo souboru 169bajtovou stránku přesměrování a skript pak spadne
+na neplatném XLSX; `urllib` (detekce `stav-datovych-sad.py zjisti`) přesměrování následuje sám. Otisky souborů
+na nové adrese se shodují s registrem (#593).
