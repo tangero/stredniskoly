@@ -9,7 +9,7 @@ import yaml from 'js-yaml';
 
 const SLOZKA = '.github/workflows';
 const AKCE = 'actions/create-github-app-token@';
-const S_APP = ['csi-weekly-refresh.yml', 'datova-linka.yml', 'oponentura.yml', 'oprava-z-review.yml', 'otazka.yml', 'review.yml', 'slouceni.yml', 'tydenni-prehled.yml', 'veletrhy-snimek.yml'];
+const S_APP = ['csi-weekly-refresh.yml', 'datova-linka.yml', 'hlidac-pr.yml', 'oponentura.yml', 'oprava-z-review.yml', 'otazka.yml', 'review.yml', 'slouceni.yml', 'tydenni-prehled.yml', 'veletrhy-snimek.yml'];
 // Spouštěče, které běží nad kódem z main (nebo z větve, kterou spustil člověk s právem zápisu), ne nad kódem PR.
 // pull_request_target spouští definici z main; job s tokenem App pak nesmí stáhnout hlavu PR (kontrola níže, #455).
 const BEZPECNE_SPOUSTECE = new Set(['schedule', 'workflow_dispatch', 'workflow_run', 'issues', 'issue_comment', 'pull_request_target']);

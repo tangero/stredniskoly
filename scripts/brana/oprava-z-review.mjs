@@ -4,6 +4,8 @@
 //   node scripts/brana/oprava-z-review.mjs rozhodni           (job „Rozhodnutí“, čte událost komentáře)
 //   node scripts/brana/oprava-z-review.mjs veto <pr>          (před začátkem kola a před pushem: stop, štítek)
 //   node scripts/brana/oprava-z-review.mjs kontrola <sha>     (job „Zápis“, po použití patche, před pushem)
+//   node scripts/brana/oprava-z-review.mjs kontrola-konflikt <sha> <main-sha>
+//                                                             (job „Zápis“, po sloučení main kvůli konfliktu, #306)
 //
 // Výsledek zapisuje do GITHUB_OUTPUT. Konfiguraci čte z main přes API, jako brána.
 
@@ -26,6 +28,19 @@ export const DUVOD_SCHVALENO = 'vlastník PR schválil, opravy by souhlas zruši
 export const ZNACKA_KOLA = (kolo) => `<!-- oprava-z-review:kolo=${kolo} -->`;
 const CTENI_KOLA = /<!-- oprava-z-review:kolo=(\d+) -->/;
 const SPOUSTEC = /(^|[^\w@])@claude\b/i;
+// Hlídač uvízlých PR (#306, scripts/provoz/hlidac-pr.mjs): komentář `@claude` od App (`automatika`) s touto značkou
+// spustí kolo oprav. Důvod `konflikt` znamená sloučení main do větve, `testy` opravu červených testů.
+export const DUVODY_HLIDACE = ['konflikt', 'testy'];
+export const ZNACKA_HLIDACE = (sha, duvod) => `<!-- hlidac-pr:sha=${sha};duvod=${duvod} -->`;
+const CTENI_HLIDACE = /<!-- hlidac-pr:sha=([0-9a-f]{40});duvod=(konflikt|testy) -->/;
+
+/** Komentář hlídače: od účtu `automatika` se značkou hlídače. Vrací { sha, duvod }, nebo null. */
+export function odHlidace(komentar, konfig) {
+  const automatika = konfig.rezimy.automatika;
+  if (!automatika || komentar.autor !== automatika) return null;
+  const m = String(komentar.telo || '').match(CTENI_HLIDACE);
+  return m ? { sha: m[1], duvod: m[2] } : null;
+}
 
 /** Počet kol oprav na PR: komentáře se značkou kola, které napsal workflow (autor BOT). */
 export function pocetKol(komentare = []) {
@@ -41,10 +56,13 @@ export function rozhodniOpravu({ komentar, pr, issues = [], konfig }) {
   const max = Number(konfig.rezimy.review?.max_kol_oprav) || VYCHOZI_MAX_KOL;
   const nic = (duvod) => ({ akce: 'nic', duvod, max });
   if (!SPOUSTEC.test(komentar.telo || '')) return nic('komentář neobsahuje @claude');
-  // Automatika smí jen se značkou automatického review (#455); jinak vlastník nebo asistent zadání.
-  if (!duveryhodny(komentar.autor, konfig) && !odRecenzenta(komentar, konfig)) {
-    return nic(`komentář napsal účet ${komentar.autor || 'neznámý'}, ne vlastník, asistent zadání ani automatické review`);
+  // Automatika smí jen se značkou automatického review (#455) nebo hlídače (#306); jinak vlastník nebo asistent zadání.
+  const hlidac = odHlidace(komentar, konfig);
+  if (!duveryhodny(komentar.autor, konfig) && !odRecenzenta(komentar, konfig) && !hlidac) {
+    return nic(`komentář napsal účet ${komentar.autor || 'neznámý'}, ne vlastník, asistent zadání, automatické review ani hlídač`);
   }
+  // Hlídač psal k určité hlavě; po novém pushi je jeho důvod neověřený a nové kolo by bylo zbytečné.
+  if (hlidac && hlidac.sha !== pr.hlava?.sha) return nic('hlídač psal k jiné hlavě PR, než je teď');
   if (!duveryhodny(pr.autor, konfig)) return nic(`PR založil účet ${pr.autor || 'neznámý'}, ne vlastník ani asistent zadání`);
   if (!pr.hlavaRepo || pr.hlavaRepo !== pr.zakladnaRepo) return nic('PR je z forku');
   if (pr.stav !== 'open') return nic('PR není otevřený');
@@ -57,7 +75,8 @@ export function rozhodniOpravu({ komentar, pr, issues = [], konfig }) {
   if (kola >= max) return { akce: 'strop', duvod: `proběhlo ${kola} z ${max} kol oprav`, max };
   const narust = nafukuje({ kolo: kola + 1, radky: pr.radky, stav: posledniStav(pr.komentare, konfig) });
   if (narust) return { akce: 'strop', duvod: narust, max };
-  return { akce: 'oprava', duvod: `kolo ${kola + 1} z ${max}`, kolo: kola + 1, max };
+  const oprava = { akce: 'oprava', duvod: `kolo ${kola + 1} z ${max}`, kolo: kola + 1, max };
+  return hlidac ? { ...oprava, druh: hlidac.duvod } : oprava;
 }
 
 /**
@@ -99,6 +118,22 @@ export function zasahH2(soubory, konfig) {
 }
 
 /**
+ * Kontrola sloučení main kvůli konfliktu (#306). `rodice` jsou rodiče nové hlavy, `zmenene` soubory změněné proti
+ * hlavě před opravou (`pred`), `odlisneOdMain` soubory, ve kterých se nová hlava liší od sloučeného main (druhý rodič).
+ * Push projde jen se slučovacím commitem [pred, commit z main], který v cestách H2 převzal stav main beze změny
+ * (konflikt v H2 rozhodne člověk) a nepřináší změny workflow (token App je pushnout nesmí). Vrací { push, duvod, h2? }.
+ */
+export function posudSlouceni({ pred, rodice = [], zMain, zmenene = [], odlisneOdMain = [], konfig }) {
+  if (rodice.length !== 2 || rodice[0] !== pred) return { push: false, duvod: 'výsledek není jeden slučovací commit nad hlavou PR' };
+  if (!zMain) return { push: false, duvod: 'druhý rodič sloučení není commit z main' };
+  const h2 = zasahH2(zmenene, konfig).filter((s) => odlisneOdMain.includes(s));
+  if (h2.length) return { push: false, h2: h2.join(', '), duvod: `sloučení mění cesty H2 jinak než main: ${h2.join(', ')}` };
+  const workflow = zmenene.filter((s) => s.startsWith('.github/workflows/'));
+  if (workflow.length) return { push: false, duvod: `sloučení přináší změny workflow z main (${workflow.join(', ')}), token App je pushnout nesmí; sloučí člověk` };
+  return { push: true, duvod: `sloučen main, změněno souborů: ${zmenene.length}` };
+}
+
+/**
  * PR s propojenými issues a jejich rodiči. Na rozdíl od brány chyba při načtení rodiče (jiná než 404)
  * běh zastaví: neověřené veto zastaveného projektu nesmí pustit opravu.
  */
@@ -135,7 +170,7 @@ async function rozhodni(api) {
     issues,
     konfig,
   });
-  vystup({ ...rozhodnuti, pr: cislo, vetev: p.head?.ref, sha: p.head?.sha });
+  vystup({ druh: '', ...rozhodnuti, pr: cislo, vetev: p.head?.ref, sha: p.head?.sha });
 }
 
 const git = (...args) => execFileSync('git', args, { encoding: 'utf8' }).trim();
@@ -161,13 +196,31 @@ async function kontrola(api, pred) {
   vystup({ push: true, duvod: `změněno souborů: ${soubory.length}` });
 }
 
+async function kontrolaKonfliktu(api, pred, mainSha) {
+  if (!/^[0-9a-f]{40}$/.test(pred || '') || !/^[0-9a-f]{40}$/.test(mainSha || '')) throw new Error('kontrola-konflikt potřebuje plné sha hlavy před opravou a main');
+  const konfig = await nactiKonfig(api);
+  const hlava = git('rev-parse', 'HEAD');
+  if (hlava === pred) return vystup({ push: false, duvod: 'sloučení nevytvořilo žádný commit' });
+  const rodice = git('rev-list', '--parents', '-n', '1', hlava).split(' ').slice(1);
+  let zMain = false;
+  try {
+    git('merge-base', '--is-ancestor', rodice[1] || '', mainSha);
+    zMain = true;
+  } catch { /* není z main */ }
+  const diff = (a, b) => cestyZDiffu(execFileSync('git', ['diff', '--name-only', '--no-renames', '-z', a, b], { encoding: 'utf8' }));
+  const zmenene = diff(pred, hlava);
+  const odlisneOdMain = rodice[1] ? diff(rodice[1], hlava) : zmenene;
+  vystup(posudSlouceni({ pred, rodice, zMain, zmenene, odlisneOdMain, konfig }));
+}
+
 async function main() {
-  const [prikaz, arg] = process.argv.slice(2);
+  const [prikaz, arg, arg2] = process.argv.slice(2);
   const api = vytvorApi();
   if (prikaz === 'rozhodni') return rozhodni(api);
   if (prikaz === 'veto') return veto(api, arg);
   if (prikaz === 'kontrola') return kontrola(api, arg);
-  throw new Error('použití: oprava-z-review.mjs rozhodni | veto <pr> | kontrola <sha>');
+  if (prikaz === 'kontrola-konflikt') return kontrolaKonfliktu(api, arg, arg2);
+  throw new Error('použití: oprava-z-review.mjs rozhodni | veto <pr> | kontrola <sha> | kontrola-konflikt <sha> <main-sha>');
 }
 
 if (import.meta.url === pathToFileURL(process.argv[1] || '').href) {

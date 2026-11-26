@@ -1,0 +1,61 @@
+# Hlídač uvízlých PR (#306, scripts/provoz/hlidac-pr.mjs): jednou za hodinu (Plánovač) najde otevřené PR vlastníka
+# nebo asistenta zadání s konfliktem s main nebo s červenými testy a napíše do nich jeden komentář `@claude` se značkou
+# hlídače. Komentář tokenem App spustí workflow Oprava z review: u konfliktu sloučí main do větve, u testů opraví
+# příčinu. Za hlavu PR a důvod jen jednou; PR se `schvaleno`, `stop` nebo `potrebuje-cloveka` nechá být.
+#
+# Pojistky: kód z PR se nespouští (checkout main, skript z main); GITHUB_TOKEN jen čte. Token App vzniká až pro zápis
+# komentáře a má jen issues a pull-requests zápis (contents čtení kvůli konfiguraci z main). Nic neslučuje, nepushuje
+# a štítky nemění; o opravě rozhoduje skript smyčky oprav z main podle svých pravidel (strop kol, veto, H2).
+name: Hlídač PR
+
+on:
+  workflow_dispatch:
+  schedule:
+    # Záloha Plánovače, v 41. minutě.
+    - cron: "41 * * * *"
+
+permissions: {}
+
+concurrency:
+  group: hlidac-pr
+  cancel-in-progress: false
+
+jobs:
+  hlidac:
+    name: Hlídač PR
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: read
+      pull-requests: read
+      issues: read
+      checks: read
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          persist-credentials: false
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+
+      - name: Závislosti skriptů (main)
+        run: npm ci --ignore-scripts --no-audit --no-fund
+
+      - name: Token App prijimacky-ai
+        id: app
+        uses: actions/create-github-app-token@v3
+        with:
+          client-id: ${{ secrets.PRIJIMACKY_AI_CLIENT_ID }}
+          private-key: ${{ secrets.PRIJIMACKY_AI_PRIVATE_KEY }}
+          permission-contents: read
+          permission-issues: write
+          permission-pull-requests: write
+
+      - name: Hlídač
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          APP_TOKEN: ${{ steps.app.outputs.token }}
+        run: node scripts/provoz/hlidac-pr.mjs

@@ -353,6 +353,11 @@ Po otevření nebo aktualizaci PR od vlastníka napíše asistent zadání revie
   nad 80 % zastaví další opravu rozhodnutím `strop`. Cesta v apostrofech může nést číslo řádku nebo
   rozsah (`src/lib/skola.ts:42`, `src/lib/skola.ts:42-48`); při porovnání se použije jen cesta souboru,
   protože se řádky při opravě mohou posunout. Nález v jiném souboru se za stagnaci nepovažuje.
+- **Hlídač uvízlých PR** (#306, varianta A): u PR s konfliktem s `main` nebo s červenými testy napíše workflow
+  Hlídač PR tokenem App komentář `@claude` se značkou hlídače, jednou za hlavu PR a důvod. Kolo testů opraví
+  příčinu jako běžné kolo. Kolo konfliktu sloučí `main` do větve, Claude řeší jen konflikty a výsledek předá jako
+  git bundle; zapisovací job pushne jen slučovací commit nad hlavou PR s druhým rodičem z `main`, bez vlastních
+  změn v cestách H2 a bez změn workflow. Kola hlídače se počítají do stropu, stagnace se jich netýká.
 - **Brána:** u PR, které mění web, vyžaduje pro aktuální hlavu review od účtu `asistent` s verdiktem
   „Bez P1 a P2“ a řádkem `Commit:` (`review.vyzadovat`). Review od vlastníka se nepočítá, protože přes
   jeho účet pracuje Claude Code, který PR připravil. Výjimky: změny bez dopadu na web (`bez_preview`)
