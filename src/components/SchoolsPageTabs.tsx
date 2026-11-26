@@ -126,7 +126,7 @@ export function SchoolsPageTabs({ schools }: SchoolsPageTabsProps) {
 
   const tabs: { id: TabId; label: string }[] = [
     { id: 'previs2026', label: 'Nejžádanější obory 2026' },
-    { id: 'mesta', label: 'Převis podle měst' },
+    { id: 'mesta', label: 'Přihlášky na místo podle měst' },
   ];
 
   const handleTabChange = (tabId: TabId) => {
@@ -394,9 +394,10 @@ export function SchoolsPageTabs({ schools }: SchoolsPageTabsProps) {
       {activeTab === 'mesta' && (
         <div>
           <div className="mb-4">
-            <h2 className="text-xl font-semibold">Převis poptávky podle měst (2026)</h2>
+            <h2 className="text-xl font-semibold">Přihlášky na místo podle měst</h2>
             <p className="text-slate-600 text-sm mt-1">
               Agregovaná data za všechny školy v daném městě, rozdělená podle typu a délky studia.
+              Jeden uchazeč podává víc přihlášek, proto toto číslo konkurenci nadsazuje.
             </p>
           </div>
 

@@ -188,18 +188,12 @@
    "2290860e17db",
    "d9d0b9d1c9f3"
   ],
-  "src/app/skoly/page.tsx": [
-   "af82c7052052"
-  ],
   "src/app/vysledky/[year]/ResultsClient.tsx": [
    "799c3eb7e4f5",
    "fed249743e19"
   ],
   "src/app/vysledky/[year]/page.tsx": [
    "376bad4a549e"
-  ],
-  "src/components/Applications2026Banner.tsx": [
-   "00246452c70e"
   ],
   "src/components/ArchivedAdmissionText.tsx": [
    "6c4781ed9c39",
@@ -220,10 +214,6 @@
   "src/components/SchoolResults2026.tsx": [
    "7854eda34277",
    "93e31030ed71"
-  ],
-  "src/components/SchoolsPageTabs.tsx": [
-   "40b8ea9c4742",
-   "78c712731511"
   ],
   "src/components/admin/PasskeyTlacitka.tsx": [
    "0539ea85f452"

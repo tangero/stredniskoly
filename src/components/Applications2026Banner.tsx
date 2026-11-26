@@ -45,7 +45,7 @@ export function Applications2026Banner({ data2026, rok, platnost }: Props) {
     </dl>
     {summary && <p className="mt-4 text-sm text-slate-700">{summary}</p>}
     {!nabidka && <p className="mt-4 text-sm text-slate-700">Přihlášky na místo a první priority uvádíme u jednotlivých oborů. Součet za celou školu by sčítal různé konkurzy a tytéž uchazeče počítal víckrát.</p>}
-    <p className="mt-4 text-sm text-slate-600">Historická poptávka není osobní pravděpodobnost přijetí. Nabídku a kritéria pro příští přijímací řízení ověřte u školy.</p>
+    <p className="mt-4 text-sm text-slate-600">Přihlášky z minulých let nejsou osobní pravděpodobnost přijetí. Nabídku a kritéria pro příští přijímací řízení ověřte u školy.</p>
     <div className="mt-4 flex flex-wrap justify-between gap-3 border-t border-slate-100 pt-4 text-sm"><span className="text-slate-500">Zdroj: CERMAT{platnost ? `, stav k ${datum(platnost)}` : ''}.</span><Link href="/simulator" className="text-blue-700">Porovnat obory →</Link></div></div>
   </section>;
 }
