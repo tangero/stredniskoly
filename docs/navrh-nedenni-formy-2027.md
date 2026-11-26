@@ -102,7 +102,9 @@ CERMAT 2026 nese kombinovanou). Zdrojem nabídky proto zůstává CERMAT.
 | balíček konzervatoří pro novináře | všechny formy, forma ve sloupci |
 | starší ročníky katalogu 2024 a 2025 | nedenní záznamy se stejným id jako denní (soupis zdrojů, past 8); 22 nevypsaných nedenních nabídek 2026 má stránku (známý dluh) |
 
-Zbývá tedy ukázat **181 nedenních nabídek** (253 bez 72 nástaveb): 87 M, 52 H, 32 konzervatoří P, 9 K a 1 J.
+Zbývá tedy **181 nedenních nabídek** (253 bez 72 nástaveb): 87 M, 52 H, 32 konzervatoří P, 9 K a 1 J. Varianta A je
+ukáže jen u škol, které mají stránku (133 ze 141); nabídky 8 škol bez stránky v katalogu nezobrazí (jejich počet
+určí E1), takže 181 je horní mez.
 
 ## 4. Zvážené nepoužité sloupce
 
@@ -140,7 +142,7 @@ Zbývá tedy ukázat **181 nedenních nabídek** (253 bez 72 nástaveb): 87 M, 5
 | | Varianta A (doporučená) | Varianta B | Varianta C |
 |---|---|---|---|
 | co návštěvník uvidí | na stránce školy oddíl „Studium při práci a pro dospělé“: obor, forma, délka, místa, přihlášky a přijatí v 1. kole, místa ve 2. kole | A + vlastní stránka nedenní nabídky a filtr formy v hledání škol | B + pásma přijetí a souběžné přihlášky u nabídek s aspoň 10 přijatými |
-| nabídek | 181 (+72 nástaveb, které už jsou) | 253 | 253, pásma u nejvýš 56 |
+| nabídek | nejvýš 181 (u 133 škol se stránkou; +72 nástaveb, které už jsou) | 253 | 253, pásma u nejvýš 56 |
 | změna adres a katalogu | ne, samostatný výstup z generátoru oborů bez zkoušky (`build-obory-bez-jpz.py`) | nový klíč s formou, nové adresy, sitemap | jako B, navíc generátory z dat uchazečů |
 | přehledy pro deváťáky (město, obtížnost, simulátor) | beze změny | beze změny | beze změny |
 | odhad | 1 až 2 PR v limitu etapy | 4 až 6 PR | 6 a víc PR |
@@ -152,7 +154,7 @@ přesunuly do nového oddílu, aby škola neměla dva oddíly s nedenním studie
 Navrhované etapy varianty A:
 
 - **E1:** generátor vydá nedenní nabídky 1. a 2. kola (forma, délka, místa, přihlášky, přijatí), test na počty
-  z tohoto dokumentu; zápis do soupisu zdrojů, slovníku ukazatelů (rozsah platnosti) a slovníku pojmů.
+  z tohoto dokumentu; vyřadí nabídky 8 škol bez stránky a jejich počet zapíše do dokumentu; zápis do soupisu zdrojů, slovníku ukazatelů (rozsah platnosti) a slovníku pojmů.
 - **E2:** oddíl na stránce školy, sloučení s oddílem nástaveb z #425, odkaz ze stránky denního oboru
   na nedenní formu téhož oboru u téže školy („obor nabízí škola i v dálkové formě“).
 
