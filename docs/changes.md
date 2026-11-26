@@ -2,6 +2,16 @@
 
 Záznam změn chování systému: požadavek, co se změnilo a proč, datum. Nejnovější nahoře.
 
+## 2026-11-20: nezalistovaný prototyp rozložení stránky města (varianta B)
+
+- **Požadavek:** vlastník v rozhovoru 20. 11. 2026 (uložit rozdělanou práci z 8. 10. 2026 do PR); bez issue.
+- **Co:** adresa `/mesto/{město}?varianta=b` se v `next.config.ts` (rewrite `beforeFiles`) přepíše na
+  `/prototyp/mesto/{město}`. Ve velkém městě se seznam oborů otevře až po výběru směru dlaždicí, filtry platí
+  uvnitř zvoleného směru, střední město ukáže dlaždice a seznam nechá otevřený, malé zůstává u rozbalených karet.
+  Stránka nese `noindex`, není v sitemapě a nevede na ni odkaz. Veřejná stránka `/mesto/{město}` se nemění.
+  Popis v `docs/navrh-prehled-oboru-ve-meste-2027.md`, oddíl 15.
+- **Proč:** zkouška rozložení před rozhodnutím, zda veřejnou stránku města přestavět.
+
 ## 2026-10-19: týdenní souhrn signálů v administraci (#528)
 
 - **Požadavek:** issue #528 (zdroj: vlastník, 19. 10. 2026), varianta „z artefaktu workflow“ bez databáze,

@@ -253,6 +253,77 @@ test('vykreslení: malé město nemá čipy ani filtry, rok bez registru se nevy
   assert.doesNotMatch(text(html), /v 1\. kole \d{4}/);
 });
 
+/** Dva směry, aby se u varianty B ve velkém městě dlaždice vůbec ukázaly. */
+function kartyDvouSmeru() {
+  const radek = (id, obor, smer) => ({
+    id, obor, doplnek: obor, delka: '4leté', zamereni: '', smer, druh: 'jpz',
+    zarazeni: null, mista: 30, href: null, nevypsano: false, vzdelani: 'maturita', zbylaMista: null,
+  });
+  return [
+    {
+      redizo: '1', nazev: 'Gymnázium, Křenová', href: null, zrizovatel: 'verejna',
+      radky: [radek('1_79-41-K/41', 'Zkušební gymnázium', 'gymnazia')],
+    },
+    {
+      redizo: '2', nazev: 'Průmyslovka, Křížová', href: null, zrizovatel: 'verejna',
+      radky: [radek('2_26-41-M/01', 'Zkušební elektro', 'technika')],
+    },
+  ];
+}
+
+test('varianta B: velké město začíná výběrem směru a seznam oborů schová', () => {
+  const karty = kartyDvouSmeru();
+  const html = renderToStaticMarkup(React.createElement(SkolyPodleSmeru, {
+    skoly: karty, rok: 2026, velikost: 'velke', hlavicka: null, varianta: 'b',
+  }));
+  const viditelne = text(html);
+  assert.match(html, /data-varianta="b"/);
+  assert.match(viditelne, /Vyberte směr studia/);
+  assert.match(viditelne, /Gymnázia/);
+  assert.match(viditelne, /Technika a IT/);
+  assert.match(viditelne, /obory seskupené podle toho, co se v nich učí/);
+  assert.match(viditelne, /Pořadí směrů nic neříká o obtížnosti přijetí/);
+  assert.doesNotMatch(viditelne, /Zkušební gymnázium|Zkušební elektro|Křenová/);
+  assert.doesNotMatch(viditelne, /Tomuto výběru neodpovídá žádný obor/);
+
+  const verejne = text(vykresli(karty));
+  assert.match(verejne, /Všechny směry/);
+  assert.match(verejne, /Zkušební gymnázium/);
+  assert.match(verejne, /Zkušební elektro/);
+  assert.equal(vykresli(karty).includes('data-varianta'), false);
+});
+
+test('varianta B: střední město seznam ukáže, malé zůstane u karet', () => {
+  const karty = kartyDvouSmeru();
+  const stredni = text(renderToStaticMarkup(React.createElement(SkolyPodleSmeru, {
+    skoly: karty, rok: 2026, velikost: 'stredni', hlavicka: null, varianta: 'b',
+  })));
+  assert.match(stredni, /Zkušební gymnázium/);
+  assert.match(stredni, /Vyberte směr studia/);
+  const male = text(renderToStaticMarkup(React.createElement(SkolyPodleSmeru, {
+    skoly: karty, rok: null, velikost: 'male', hlavicka: null, varianta: 'b',
+  })));
+  assert.match(male, /Zkušební gymnázium/);
+  assert.doesNotMatch(male, /Vyberte směr studia/);
+});
+
+test('přepis varianta=b vede na prototyp města a veřejná stránka parametr nečte', () => {
+  const config = fs.readFileSync('next.config.ts', 'utf8');
+  assert.match(config, /beforeFiles/);
+  assert.match(config, /source: '\/mesto\/:mesto'/);
+  assert.match(config, /key: 'varianta', value: 'b'/);
+  assert.match(config, /destination: '\/prototyp\/mesto\/:mesto'/);
+  assert.match(config, /source: '\/skola\/:slug\.md'/);
+  const prototyp = fs.readFileSync('src/app/prototyp/mesto/[mesto]/page.tsx', 'utf8');
+  assert.match(prototyp, /index:\s*false/);
+  assert.match(prototyp, /varianta="b"/);
+  assert.doesNotMatch(prototyp, /OkruhyMesta/);
+  const verejna = fs.readFileSync('src/app/mesto/[mesto]/page.tsx', 'utf8');
+  assert.doesNotMatch(verejna, /searchParams/);
+  assert.doesNotMatch(verejna, /varianta=/);
+  assert.equal(fs.readFileSync('scripts/generate-sitemap.mjs', 'utf8').includes('prototyp/mesto'), false);
+});
+
 test('vykreslení: obor s doloženým výsledkem nenese „nevypsán“', async () => {
   const { stats, karty } = await kartyMesta('Praha');
   const hlaseni = (text(vykresli(karty)).match(/nevypsán/g) ?? []).length;

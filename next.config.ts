@@ -181,9 +181,18 @@ const nextConfig: NextConfig = {
   // Komprese
   compress: true,
 
-  // Rewrites pro strojově čitelné formáty stránek škol
+  // Rewrites pro strojově čitelné formáty stránek škol a pro zkoušku
+  // rozložení stránky města. beforeFiles běží dřív, než stránka /mesto/[mesto]
+  // požadavek spolkne; ta parametr nečte, aby jí zůstala hodinová revalidace.
   async rewrites() {
     return {
+      beforeFiles: [
+        {
+          source: '/mesto/:mesto',
+          has: [{ type: 'query', key: 'varianta', value: 'b' }],
+          destination: '/prototyp/mesto/:mesto',
+        },
+      ],
       afterFiles: [
         { source: '/skola/:slug.md', destination: '/api/skola/:slug/md' },
         { source: '/skola/:slug.json', destination: '/api/skola/:slug/json' },
