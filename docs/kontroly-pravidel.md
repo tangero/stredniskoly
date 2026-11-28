@@ -22,9 +22,10 @@ ne na další větu v pravidlech.
 |---|---|---|---|
 | Slova ze slovníku pojmů | `slova.py` | `.claude/claude.md`, Slovník pojmů, bod 1 | Slova ze sloupce „Nepoužívat“ v textech `src/app/**` a `src/components/**` |
 | Osobní údaje | `osobni_udaje.py` | `CLAUDE.md`, pravidlo 4 | E-maily mimo `example.cz`, `example.com` a domény vyhrazené pro testy (`.test`, `.invalid`, `.example`) a čísla ve tvaru českého telefonu v `tests/`, `src/`, `scripts/`, `data/`, `docs/` |
+| Ukazatele | `ukazatele.py` | `.claude/claude.md`, Slovník ukazatelů, body 1 a 2 | Ukazatel z registru sad bez zápisu ve slovníku ukazatelů; identifikátory ukazatelů bez doloženého výpočtu v kódu `src/` |
+| Nová síťová volání | `sit.py` | `CLAUDE.md`, pravidlo 7 | Domény v adresách v souborech `src/` a `scripts/`, které volají síť, mimo seznam `povolene-servery.json` |
 
-Připravené další etapy zadání: kontroly ukazatelů a nových síťových volání (E2), pravidlo „podruhé = kontrola“
-a týdenní skript opakovaných nálezů (E3).
+Připravená další etapa zadání: pravidlo „podruhé = kontrola“ a týdenní skript opakovaných nálezů (E3).
 
 ### Slova ze slovníku pojmů
 
@@ -48,3 +49,25 @@ a týdenní skript opakovaných nálezů (E3).
 - Výpis ani základ hodnotu nálezu neopisují.
 - Zmrazený základ obsahuje i dnešní nálezy v testech a dokumentech, které pravidlo 4 porušují. Jejich úklid
   (nahradit smyšlenými adresami) je samostatné zadání.
+
+### Ukazatele
+
+- Registr sad (`public/stav_datovych_sad.json`) vede ukazatele **názvem**, ne identifikátorem. Kontrola proto
+  porovnává názvy z polí `ukazatele` a `ukazatele_z_vice_sad` s nadpisy slovníku ukazatelů, stejně jako
+  `scripts/stav-datovych-sad.py kontrola`. Nález míří na řádek registru.
+- Identifikátory bez doloženého výpočtu bere z nadpisů oddílu „Ukazatele bez doloženého výpočtu“ slovníku
+  (v obrácených apostrofech, dnes `obtiznost`, `category_code`, `category_name`). Hledá je jako celé slovo
+  v `src/**/*.ts(x)` mimo komentáře a testy. Nový ukazatel v tom oddílu se začne hlídat sám.
+- Dnešní výskyty jsou ve zmrazeném základu. Otisk je jen identifikátor, takže přesun řádku nálezem není, ale
+  další výskyt v témže souboru ano.
+
+### Nová síťová volání
+
+- Soubor „volá síť“, když obsahuje `fetch(` nebo klienta HTTP (`axios`, `requests`, `urllib.request`, `httpx`…).
+  V takovém souboru se kontrolují všechny domény v adresách `http(s)://…` mimo komentáře, tedy i odkazy a jmenné
+  prostory; ty jsou v seznamu s poznámkou „není volání“.
+- Seznam `scripts/pravidla/povolene-servery.json` vede u každé domény účel a soubor s dokumentací. Při zavedení
+  byl naplněn tehdejším stavem, základ je proto prázdný.
+- Nová doména je nález: zdroj zapiš do `docs/zdroje-dat.md`, doménu do seznamu a volání přidej jen podle zadání.
+- Kontrola nevidí adresu složenou za běhu (proměnná prostředí, adresa z dat, například weby škol ve sklízeči).
+  Takové volání dál hlídá review.

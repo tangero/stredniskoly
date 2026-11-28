@@ -17,8 +17,10 @@ KOREN = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(KOREN / "scripts" / "pravidla"))
 
 import osobni_udaje  # noqa: E402
+import sit  # noqa: E402
 import slova  # noqa: E402
 import spolecne  # noqa: E402
+import ukazatele  # noqa: E402
 
 
 A = "@"  # složeno, aby test sám nebyl nálezem kontroly osobních údajů
@@ -39,6 +41,12 @@ class DnesniStav(unittest.TestCase):
 
     def test_osobni_udaje_projdou_na_dnesnim_stavu(self):
         self.assertEqual(spust(osobni_udaje)[0], 0)
+
+    def test_ukazatele_projdou_na_dnesnim_stavu(self):
+        self.assertEqual(spust(ukazatele)[0], 0)
+
+    def test_sit_projde_na_dnesnim_stavu(self):
+        self.assertEqual(spust(sit)[0], 0)
 
     def test_slova_vypisou_podminene_polozky_jako_nekontrolovane(self):
         kod, vystup = spust(slova)
@@ -156,6 +164,115 @@ class NovyOsobniUdaj(unittest.TestCase):
             self.assertTrue(polozka.get("duvod"), polozka)
 
 
+class NovyUkazatel(unittest.TestCase):
+    SLOVNIK = (
+        "# Slovník\n## 1. Poptávka\n### Kapacita míst\ntext\n## 6a. Veletrhy\ntext\n"
+        "## 7. Ukazatele bez doloženého výpočtu\n### Index obtížnosti (`obtiznost`)\n"
+        "Pole `jine_pole` v textu identifikátorem ukazatele není.\n## 8. Jak zavést nový ukazatel\n")
+
+    def _hledej(self, registr: str, kod: str):
+        with tempfile.TemporaryDirectory() as tmp:
+            kor = Path(tmp)
+            for slozka in ("docs", "public", "src/lib"):
+                (kor / slozka).mkdir(parents=True)
+            (kor / "docs" / "slovnik-ukazatelu.md").write_text(self.SLOVNIK, encoding="utf-8")
+            (kor / "public" / "stav_datovych_sad.json").write_text(registr, encoding="utf-8")
+            (kor / "src" / "lib" / "x.ts").write_text(kod, encoding="utf-8")
+            (kor / "src" / "lib" / "x.test.ts").write_text("const a = o.obtiznost;\n", encoding="utf-8")
+            puvodni = ukazatele.KOREN
+            ukazatele.KOREN = kor
+            try:
+                return ukazatele.hledej()
+            finally:
+                ukazatele.KOREN = puvodni
+
+    def test_ukazatel_registru_bez_zapisu_ve_slovniku_je_nalez_s_radkem(self):
+        registr = (
+            '{\n "sady": {\n  "a": {"ukazatele": ["Kapacita míst",\n   "Vymyšlený ukazatel"]}\n },\n'
+            ' "ukazatele_z_vice_sad": {"Veletrhy": ["a"]}\n}\n')
+        nalezy = self._hledej(registr, "export const a = 1;\n")
+        self.assertEqual([(n.cesta, n.radek) for n in nalezy], [("public/stav_datovych_sad.json", 4)])
+        self.assertIn("Vymyšlený ukazatel", nalezy[0].popis)
+        self.assertIn("docs/slovnik-ukazatelu.md", nalezy[0].oprava)
+
+    def test_ukazatel_bez_vypoctu_v_kodu_je_nalez_mimo_komentare_a_testy(self):
+        kod = (
+            "// o.obtiznost v komentáři\n"
+            "/* obtiznost\n   obtiznost */\n"
+            "const a = o.obtiznost + o.jine_pole;\n"
+            "const b = o.obtiznost_prijeti; // obtiznost\n"
+            "const url = 'https://example.cz/x'; const c = radek['obtiznost'];\n")
+        nalezy = self._hledej('{"sady": {}}', kod)
+        self.assertEqual([(n.cesta, n.radek) for n in nalezy], [("src/lib/x.ts", 4), ("src/lib/x.ts", 6)])
+        self.assertIn("Oprava", f"{nalezy[0].popis}. Oprava: {nalezy[0].oprava}")
+
+    def test_slovnik_v_repozitari_vede_ukazatele_bez_vypoctu(self):
+        self.assertIn("obtiznost", ukazatele.nacti_slovnik()[1])
+
+
+class NoveSitoveVolani(unittest.TestCase):
+    def _hledej(self, soubory: dict[str, str], povolene: str = '{"servery":[{"domena":"Data.Cermat.cz","ucel":"x","dokumentace":"y"}]}'):
+        with tempfile.TemporaryDirectory() as tmp:
+            kor = Path(tmp)
+            (kor / "src").mkdir()
+            (kor / "scripts").mkdir()
+            for cesta, obsah in soubory.items():
+                (kor / cesta).write_text(obsah, encoding="utf-8")
+            (kor / "p.json").write_text(povolene, encoding="utf-8")
+            puvodni = (sit.KOREN, sit.POVOLENE)
+            sit.KOREN, sit.POVOLENE = kor, kor / "p.json"
+            try:
+                return sit.hledej()
+            finally:
+                sit.KOREN, sit.POVOLENE = puvodni
+
+    def test_nova_domena_ve_volajicim_kodu_je_nalez_s_radkem_a_navodem(self):
+        nalezy = self._hledej({
+            "src/a.ts": "const a = 1;\nconst r = await fetch('https://api.nova-sluzba.cz/v1');\n"
+                        "await fetch('https://data.cermat.cz/x'); // https://komentar.cz\n",
+            "scripts/b.py": "import requests\n# https://komentar.cz/x\nr = requests.get('https://jiny-server.cz/a')\n",
+        })
+        self.assertEqual([(n.cesta, n.radek) for n in nalezy], [("src/a.ts", 2), ("scripts/b.py", 3)])
+        self.assertIn("nové síťové volání", nalezy[0].popis)
+        self.assertIn("docs/zdroje-dat.md", nalezy[0].oprava)
+        self.assertIn("povolene-servery.json", nalezy[0].oprava)
+
+    def test_odkaz_v_souboru_bez_volani_a_smyslena_domena_nejsou_nalez(self):
+        self.assertEqual(self._hledej({
+            "src/odkaz.tsx": "<a href=\"https://www.skola-kdekoli.cz\">web školy</a>\n",
+            "src/volani.ts": "await fetch('https://skola.example.cz/a'); await fetch('http://localhost:3000/x');\n",
+            "src/volani.test.ts": "await fetch('https://neznamy-server.cz/a');\n",
+        }), [])
+
+    def test_povolene_servery_v_repozitari_maji_ucel_a_dokumentaci(self):
+        import json
+        data = json.loads(sit.POVOLENE.read_text(encoding="utf-8"))
+        self.assertTrue(data["servery"])
+        for polozka in data["servery"]:
+            self.assertTrue(polozka.get("ucel"), polozka)
+            self.assertTrue((KOREN / polozka["dokumentace"]).exists(), polozka)
+
+
+class KodBezKomentaru(unittest.TestCase):
+    def test_komentare_zmizi_adresa_a_vzor_cesty_v_retezci_zustanou(self):
+        kod = (
+            "a /* x */ b\n"
+            "c /* začátek\n uvnitř\n konec */ d\n"
+            "const u = 'https://server.cz/a'; // poznámka\n"
+            "const vzor = 'src/*.ts';\n"
+            "const dalsi = 1;\n")
+        radky = dict(spolecne.kod_bez_komentaru(kod))
+        self.assertEqual(sorted(radky), [1, 2, 4, 5, 6, 7])
+        self.assertNotIn("x", radky[1])
+        self.assertIn("https://server.cz/a", radky[5])
+        self.assertNotIn("poznámka", radky[5])
+        self.assertIn("dalsi", radky[7])
+
+    def test_python_vynecha_jen_cele_radky_komentare(self):
+        radky = dict(spolecne.kod_bez_komentaru("# komentář\nx = 'a#b'\n", python=True))
+        self.assertEqual(radky, {2: "x = 'a#b'"})
+
+
 class Zaklad(unittest.TestCase):
     def test_novy_nalez_shodi_kontrolu_a_obnova_ho_prijme(self):
         n = spolecne.Nalez("a.ts", 3, "popis", "oprava", spolecne.otisk("x"))
@@ -184,7 +301,7 @@ class Zaklad(unittest.TestCase):
                 self.assertEqual(spolecne.spust("t", zaklad, lambda: [prvni, druhy], "p", []), 0)
 
     def test_zaklad_neobsahuje_text_nalezu(self):
-        for soubor in ("slova-zaklad.json", "osobni-udaje-zaklad.json"):
+        for soubor in ("slova-zaklad.json", "osobni-udaje-zaklad.json", "ukazatele-zaklad.json", "sit-zaklad.json"):
             text = (KOREN / "scripts" / "pravidla" / soubor).read_text(encoding="utf-8")
             self.assertNotIn(A, text)
 

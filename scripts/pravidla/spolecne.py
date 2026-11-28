@@ -15,6 +15,7 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import re
 import sys
 from collections import Counter
 from dataclasses import dataclass
@@ -53,6 +54,41 @@ def otisk(*casti: str) -> str:
         Prvních 12 znaků SHA-256.
     """
     return hashlib.sha256("\x1f".join(casti).encode("utf-8")).hexdigest()[:12]
+
+
+KOMENTAR_NA_RADKU = re.compile(r"\{?/\*.*?\*/\}?")
+# Řádkový komentář `//`, ne dvojité lomítko v adrese (`https://…`).
+RADKOVY_KOMENTAR = re.compile(r"(?<!:)//.*$")
+
+
+def kod_bez_komentaru(obsah: str, python: bool = False):
+    """Vrátí dvojice (číslo řádku, řádek kódu) bez komentářů.
+
+    Args:
+        obsah: Text zdrojového souboru.
+        python: U Pythonu se vynechají jen celé řádky začínající `#`; jinak komentáře
+            JavaScriptu a JSX (`//`, `/* … */`, `{/* … */}`, i přes víc řádků).
+    """
+    v_komentari = False
+    for cislo, radek in enumerate(obsah.splitlines(), 1):
+        if python:
+            if not radek.lstrip().startswith("#"):
+                yield cislo, radek
+            continue
+        if v_komentari:
+            if "*/" not in radek:
+                continue
+            radek = radek.split("*/", 1)[1]
+            v_komentari = False
+        radek = KOMENTAR_NA_RADKU.sub(" ", radek)
+        pred, zacatek, _ = radek.partition("/*")
+        # `/*` uvnitř řetězce (vzor cesty 'src/*.ts') komentář nezačíná: před ním je lichý počet uvozovek.
+        if zacatek and not any(pred.count(u) % 2 for u in "'\"`"):
+            radek = pred
+            v_komentari = True
+        radek = RADKOVY_KOMENTAR.sub("", radek)
+        if radek.strip() and not radek.strip().startswith("*"):
+            yield cislo, radek
 
 
 def nacti_zaklad(soubor: Path) -> Counter:
