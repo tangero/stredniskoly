@@ -147,7 +147,7 @@ function Kriteria({ k }: { k: KriteriaOboru }) {
         </>
       )}
       {p.minima.length > 0 && <div>
-          <p>Minimální podmínky:</p>
+          <p>Minimální požadavky školy, tedy vylučující část kritérií, například minimum bodů:</p>
           <ul className="list-disc space-y-0.5 pl-5">
             {p.minima.map((m, i) => <li key={i}>{m.replace(/\.$/, '')}</li>)}
           </ul>

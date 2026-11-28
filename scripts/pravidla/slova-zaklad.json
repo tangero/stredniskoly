@@ -228,9 +228,6 @@
   "src/components/novinky/OdberFormular.tsx": [
    "050700c09219"
   ],
-  "src/components/obor/KdeStojim.tsx": [
-   "8af532b7abfd"
-  ],
   "src/components/obor/ProfilOboru.tsx": [
    "151d093862ec",
    "365f3f55c04b",
@@ -257,9 +254,8 @@
    "acf8d4ffac5c"
   ],
   "src/components/school/detail/tabs/StatsTab.tsx": [
-   "16894e513b26",
    "4e12e0be9d15",
-   "750ff0de8929"
+   "bee65847baa8"
   ],
   "src/components/school/overview/PriorityCardsGrid.tsx": [
    "db67251088f2",
