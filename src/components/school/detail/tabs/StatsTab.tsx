@@ -177,7 +177,7 @@ export function StatsTab({ program, extendedStats, data2026, result2026, souhrn 
                 </tr>
               ))}</tbody>
             </table>
-            <p className="mt-4 text-sm text-slate-600">Počty popisují výsledek řízení v roce 2025. Nevyjadřují osobní šanci na přijetí. Rozhodují podmínky konkrétního oboru; priorita určuje pořadí vašich preferencí.</p>
+            <p className="mt-4 text-sm text-slate-600">Počty popisují výsledek řízení v roce 2025. Nevyjadřují osobní šanci na přijetí. Rozhodují kritéria přijetí konkrétního oboru; pořadí na přihlášce šanci na přijetí nemění, škola řadí jen podle svých kritérií.</p>
           </div>
         )}
 
