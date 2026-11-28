@@ -152,13 +152,15 @@ Dvanáct souborů, 390 MB. Jeden řádek je jeden uchazeč a jeden didaktický t
 |---|---|---|---|
 | `id_ss` | identifikátor uchazeče napříč testy | spojení češtiny a matematiky | **ano** od 27. 9. 2026, 2024: spojení testů v termínu pro převod TAU (v matematice sloupec `id`) |
 | `ss1_redizo` až `ss5_redizo`, `ss1_kkov` až `ss5_` | volby uchazeče | kam se hlásili | **ne** |
-| `ss1_smo16` až `ss5_` | skupina maturitních oborů | srovnatelná skupina | **ne** |
+| `ss1_smo16` až `ss5_` | skupina maturitních oborů | srovnatelná skupina | **ano, jen ověřovací studie** (20. 11. 2026): `ss1_smo16 == GY4` vybírá uchazeče o čtyřletá gymnázia pro srovnání s ostatními (`scripts/studie-gpf-cermat-2024.py`); na webu **ne** |
 | `ss1_kraj` až `ss5_` | kraj každé volby | hlásí se i mimo kraj | **ne** |
 | `zkouska_zkratka` | který test a termín | liší se řádné termíny | **ano** jako list souboru (2024 nese termín v názvu listu): převod TAU po termínech |
 | `dt_body` | body z testu | jak si uchazeči stáli | **ano** od 27. 9. 2026: pořadí pro převod výsledku cvičného testu TAU |
 | `dt_uspesnost` | procento z maxima | totéž v procentech | **ne** |
-| `k1.1` až `k16.x` | odpovědi na jednotlivé položky | žádná přímá | **ne** a nemá smysl |
-| `b1` až `b16.x` | body za jednotlivé úlohy | žádná přímá | **ne** a nemá smysl |
+| `k1.1` až `k16.x` | odpovědi na jednotlivé položky; u otevřených úloh 9 = vynechání | v čem uchazeči úlohu vynechávají | **ano, jen ověřovací studie** (20. 11. 2026): podíl kódu 9 po úlohách, na webu **ne** |
+| `b1` až `b16.x` | body za jednotlivé úlohy | v čem byli uchazeči silní a slabí | **ano, jen ověřovací studie** (20. 11. 2026): podíl bodů po úlohách a po dovednostech GPF, na webu **ne** |
+
+Ověřovací studie [Test z matematiky podle dovedností GPF](studie-gpf-cermat-2024.md) (testy M4-A a M4-B 2024) body po úlohách použila a ukázala, že smysl mají (vynechávání, srovnání dovedností). Do webu nejdou: rámec GPF pokrývá jen 12 z 35 dovedností. Zvážené a nepoužité: `dt_uspesnost` (totéž co `dt_body`), volby škol `ss*_redizo`/`ss*_kkov` a kraje (studie se neptá, kam se uchazeči hlásili). **Nový externí zdroj:** repozitář github.com/edu-ai-00/EDU-AI-asistent-EDIT (soubor `src/lib/gpf/gpf-matematika.json`, commit `b990286`), z něj se jen odkazuje, nic se do repozitáře nekopíruje. Rok 2025 mezi položkovými daty v `data/` není.
 
 Podrobnost jednotlivých úloh rodiči nepomůže přímo, ale součty bodů po úlohách ano: jsou jediným zdrojem o tom, **v čem byli silní ti, kdo se na obor hlásili**.
 
